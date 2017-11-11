@@ -1,0 +1,8 @@
+$ cat .gitignore
+
+build/
+dist/
+*.ipynb
+*.xml
+.idea
+petpy.egg*

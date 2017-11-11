@@ -1,0 +1,131 @@
+
+
+.. _api:
+
+.. currentmodule:: petpy.api
+.. include:: parameters.rst
+
+API Reference
+=============
+
+:mod:`Petfinder` -- Petfinder API Wrapper
+-----------------------------------------
+
+.. class:: Petfinder([key], [secret=None], [host='http://api.petfinder.com/'])
+
+    The Petfinder class provides the wrapper for the Petfinder API. The API methods are listed below
+
+Pet Methods
+-----------
+
+.. method:: Petfinder.breed_list([animal], [outputformat='json'])
+
+    Method for calling the 'breed.list' method of the Petfinder API. Returns the available breeds
+    for the selected animal.
+
+    :param animal: |animal|
+    :param outputformat: |outputformat|
+    :rtype: json or str. If the parameter :code:`outputformat` is 'json',
+        the result is formatted as a JSON object. Otherwise, the return object is a text
+        representation of an XML object.
+
+.. method:: Petfinder.pet_find([location], [animal=None], [breed=None], [size=None], [sex=None], [age=None], [offset=None], [count=None, [output=None], [outputformat='json'])
+
+    Returns a collection of pet records matching input parameters. Wrapper for 'pet.find' method in the Petfinder API.
+
+    :param location: |location|
+    :param animal: |animal|
+    :param breed: |breed|
+    :param size: |size|
+    :param sex: |sex|
+    :param age: |age|
+    :param offset: |offset|
+    :param count: |count|
+    :param output: |output|
+    :param outputformat: |outputformat|
+    :rtype: json or str. If the parameter :code:`outputformat` is 'json',
+            the result is formatted as a JSON object. Otherwise, the return object is a text
+            representation of an XML object.
+
+.. method:: Petfinder.pet_get([petId], [outputformat='json'])
+
+    Returns a single record for a pet. Wrapper for 'pet.get' method in the Petfinder API.
+
+    :param petId: |petId|
+    :param outputformat: |outputformat|
+    :rtype: json or str. If the parameter :code:`outputformat` is 'json',
+                the result is formatted as a JSON object. Otherwise, the return object is a text
+                representation of an XML object.
+
+.. method:: Petfinder.pet_getRandom([animal=None], [breed=None], [size=None], [sex=None], [location=None], [shelterId=None], [output=None], [outputformat='json'])
+
+    Returns a randomly selected pet record. The possible result can be filtered with input parameters.
+    Wrapper for 'pet.getRandom' method in the Petfinder API.
+
+    :param animal: |animal|
+    :param breed: |breed|
+    :param size: |size|
+    :param sex: |sex|
+    :param location: |location|
+    :param shelterId: |shelterId|
+    :param output: |output|
+    :param outputformat: |outputformat|
+    :rtype: json or str. If the parameter :code:`outputformat` is 'json',
+                the result is formatted as a JSON object. Otherwise, the return object is a text
+                representation of an XML object.
+
+Shelter Methods
+---------------
+
+.. method:: Petfinder.shelter_find([location], [name=None], [offset=None], [count=None], [outputformat='json'])
+
+    Returns a collection of shelter records matching input parameters. Wrapper for the 'shelter.find' method
+    in the Petfinder API.
+
+    :param location: |location|
+    :param name: |name|
+    :param offset: |offset|
+    :param count: |count|
+    :param outputformat: |outputformat|
+    :rtype: json or str. If the parameter :code:`outputformat` is 'json',
+                the result is formatted as a JSON object. Otherwise, the return object is a text
+                representation of an XML object.
+
+.. method:: Petfinder.shelter_get(shelterId, outputformat='json')
+
+    Returns a single shelter record. Wrapper for the 'shelter.get' method in the Petfinder API.
+
+    :param shelterId: |shelterId|
+    :param outputformat: |outputformat|
+    :rtype: json or str. If the parameter :code:`outputformat` is 'json',
+                the result is formatted as a JSON object. Otherwise, the return object is a text
+                representation of an XML object.
+
+.. method:: Petfinder.shelter_getPets(shelterId, status=None, offset=None, count=None, output=None, outputformat='json')
+
+    Returns a collection of pet records for an individual shelter. Wrapper for the 'shelter_getPets' method
+    in the Petfinder API.
+
+    :param shelterId: |shelterId|
+    :param status: |status|
+    :param offset: |offset|
+    :param count: |count|
+    :param output: |output|
+    :param outputformat: |outputformat|
+    :rtype: json or str. If the parameter :code:`outputformat` is 'json',
+                the result is formatted as a JSON object. Otherwise, the return object is a text
+                representation of an XML object.
+
+.. method:: Petfinder.shelter_listByBreed(animal, breed, offset=None, count=None, outputformat='json')
+
+    Returns a list of shelter IDs listing animals matching the input animal breed. Wrapper for the
+    'shelter.listByBreed' method in the Petfinder API.
+
+    :param animal: |animal|
+    :param breed: |breed|
+    :param offset: |offset|
+    :param count: |count|
+    :param outputformat: |outputformat|
+    :rtype: json or str. If the parameter :code:`outputformat` is 'json',
+                the result is formatted as a JSON object. Otherwise, the return object is a text
+                representation of an XML object.

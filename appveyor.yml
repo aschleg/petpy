@@ -1,0 +1,15 @@
+build: false
+environment:
+  matrix:
+    - PYTHON: "C:\\Python27"
+    - PYTHON: "C:\\Python33"
+    - PYTHON: "C:\\Python34"
+    - PYTHON: "C:\\Python35"
+install:
+  - pip install pytest
+  - pip install pyyaml
+  - pip install numpy-indexed
+  - pip install vcrpy
+  - python setup.py install
+test_script:
+  - pytest

@@ -1,0 +1,103 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.18.4]
+    method: GET
+    uri: http://api.petfinder.com/pet.find?count=1&format=json&location=98133
+  response:
+    body:
+      string: !!binary |
+        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
+        Kez+A8cBDdfvEAAA
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['1608']
+      Content-Type: [application/json]
+      Date: ['Fri, 10 Nov 2017 23:43:41 GMT']
+      Vary: [Accept-Encoding]
+      X-Frame-Options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.18.4]
+    method: GET
+    uri: http://api.petfinder.com/pet.find?count=1&format=xml&location=98133
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['1709']
+      Content-Type: [text/xml; charset=iso-8859-1]
+      Date: ['Fri, 10 Nov 2017 23:43:42 GMT']
+      Vary: [Accept-Encoding]
+      X-Frame-Options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+version: 1
