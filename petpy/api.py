@@ -1,5 +1,6 @@
 import requests
 from six.moves.urllib.parse import urljoin
+import xml.etree.ElementTree as ET
 
 
 class Petfinder(object):
@@ -77,7 +78,7 @@ class Petfinder(object):
         return _output(url, args)
 
     def pet_find(self, location, animal=None, breed=None, size=None, sex=None, age=None, offset=None,
-                 count=None, output=None, outputformat='json'):
+                 count=None, output=None, pages=None, outputformat='json'):
         r"""
         Returns a collection of pet records matching input parameters.
 
@@ -97,11 +98,16 @@ class Petfinder(object):
             Filters the search to the desired gender of the animal. Must be one of 'M' (male) or 'F' (female).
         age : str, optional
             Returns animals with specified age. Must be one of 'Baby', 'Young', 'Adult', 'Senior'.
-        offset : str or int, optional
-            This parameter can be set to the value of :code:`lastOffset` that is returned in a previous call
-            to :code:`pet_find()` to retrieve the next set of results.
+        offset : int, optional
+            Can be set to the value of :code:`lastOffset` returned from the previous call to retrieve the next
+            set of results. The :code:`pages` parameter can also be used to pull a desired number of paged
+            results.
         count : str or int, optional
             The number of records to return. Default is 25.
+        pages : int, optional
+            The number of pages of results to return. For example, if :code:`pages=4` with the default
+             :code:`count` parameter (25), 100 results would be returned. The paged results are returned
+             as a list.
         output : str, optional
             Sets the amount of information returned in each record. 'basic' returns a simple record while
             'full' returns a complete record with description. Defaults to 'basic'.
@@ -110,10 +116,11 @@ class Petfinder(object):
 
         Returns
         -------
-        json or str
+        json, list of json, str or list of str
             Pet records matching the desired search parameters. If the parameter :code:`outputformat` is 'json',
             the result is formatted as a JSON object. Otherwise, the return object is a text
-            representation of an XML object.
+            representation of an XML object. If the :code:`pages` parameter is set, the paged results are
+            returned as a list.
 
         """
         url = urljoin(self.host, 'pet.find')
@@ -121,7 +128,7 @@ class Petfinder(object):
         args = _parameters(key=self.key, animal=animal, breed=breed, size=size, sex=sex, location=location,
                            age=age, offset=offset, count=count, output=output, outputformat=outputformat)
 
-        return _output(url, args)
+        return _output(url, args, pages = pages)
 
     def pet_get(self, petId, outputformat='json'):
         r"""
@@ -132,7 +139,7 @@ class Petfinder(object):
         petId : str
             ID of the pet record to return.
         outputformat : str, default='json'
-            Output type of results. Must be one of 'json' (default) or 'xml'
+            Output type of results. Must be one of 'json' (default) or 'xml'.
 
         Returns
         -------
@@ -190,7 +197,7 @@ class Petfinder(object):
 
         return _output(url, args)
 
-    def shelter_find(self, location, name=None, offset=None, count=None, outputformat='json'):
+    def shelter_find(self, location, name=None, offset=None, count=None, pages=None, outputformat='json'):
         r"""
         Returns a collection of shelter records matching input parameters
 
@@ -200,9 +207,16 @@ class Petfinder(object):
             ZIP/postal code, state, or city and state to perform the search.
         name : str, optional (:code:`location` must be specified)
             Full or partial shelter name
-        offset : str or int, optional
-            This parameter can be set to the value of :code:`lastOffset` that is returned in a previous call
-            to :code:`shelter_find()` to retrieve the next set of results.
+        offset : int, optional
+            Can be set to the value of :code:`lastOffset` returned from the previous call to retrieve the next
+            set of results. The :code:`pages` parameter can also be used to pull a desired number of paged
+            results.
+        count : str or int, optional
+            The number of records to return. Default is 25.
+        pages : int, optional
+            The number of pages of results to return. For example, if :code:`pages=4` with the default
+             :code:`count` parameter (25), 100 results would be returned. The paged results are returned
+             as a list.
         output : str, optional
             Sets the amount of information returned in each record. 'basic' returns a simple record while
             'full' returns a complete record with description. Defaults to 'basic'.
@@ -211,10 +225,11 @@ class Petfinder(object):
 
         Returns
         -------
-        json or str
+        json, list of json, str or list of str
             Shelters matching specified input parameters. If the parameter :code:`outputformat` is 'json',
             the result is formatted as a JSON object. Otherwise, the return object is a text
-            representation of an XML object.
+            representation of an XML object. If the :code:`pages` parameter is set, the paged results are
+            returned as a list.
 
         """
         url = urljoin(self.host, 'shelter.find')
@@ -222,7 +237,7 @@ class Petfinder(object):
         args = _parameters(key=self.key, location=location, offset=offset,
                            name=name, count=count, outputformat=outputformat)
 
-        return _output(url, args)
+        return _output(url, args, pages = pages)
 
     def shelter_get(self, shelterId, outputformat='json'):
         r"""
@@ -249,7 +264,8 @@ class Petfinder(object):
 
         return _output(url, args)
 
-    def shelter_getPets(self, shelterId, status=None, offset=None, count=None, output=None, outputformat='json'):
+    def shelter_getPets(self, shelterId, status=None, offset=None, count=None, output=None,
+                        pages=None, outputformat='json'):
         r"""
         Returns a collection of pet records for an individual shelter.
 
@@ -260,11 +276,16 @@ class Petfinder(object):
         status : str, optional
             Filters returned collection of pet records by the pet's status. Must be one of 'A' (adoptable, default),
             'H' (hold), 'P' (pending), 'X' (adopted/removed).
-        offset : str or int, optional
-            This parameter can be set to the value of :code:`lastOffset` that is returned in a previous call
-            to :code:`shelter_find()` to retrieve the next set of results.
+        offset : int, optional
+            Can be set to the value of :code:`lastOffset` returned from the previous call to retrieve the next
+            set of results. The :code:`pages` parameter can also be used to pull a desired number of paged
+            results.
         count : str or int, optional
             The number of records to return. Default is 25.
+        pages : int, optional
+            The number of pages of results to return. For example, if :code:`pages=4` with the default
+             :code:`count` parameter (25), 100 results would be returned. The paged results are returned
+             as a list.
         output : str, optional
             Sets the amount of information returned in each record. 'basic' returns a simple record while
             'full' returns a complete record with description. Defaults to 'basic'.
@@ -273,10 +294,11 @@ class Petfinder(object):
 
         Returns
         -------
-        json or str
+        json, list of json, str or list of str
             Pet records of given shelter matching optional input parameters. If the parameter
-            :code:`outputformat` is 'json', the result is formatted as a JSON object. Otherwise,
-            the return object is a text representation of an XML object.
+            :code:`outputformat` is 'json', the result is formatted as a JSON object. Otherwise, the return
+            object is a text representation of an XML object. If the :code:`pages` parameter is set, the
+            paged results are returned as a list.
 
         """
         url = urljoin(self.host, 'shelter.getPets')
@@ -284,9 +306,9 @@ class Petfinder(object):
         args = _parameters(key=self.key, id=shelterId, status=status, offset=offset, count=count,
                            output=output, outputformat=outputformat)
 
-        return _output(url, args)
+        return _output(url, args, pages = pages)
 
-    def shelter_listByBreed(self, animal, breed, offset=None, count=None, outputformat='json'):
+    def shelter_listByBreed(self, animal, breed, offset=None, count=None, pages=None, outputformat='json'):
         r"""
         Returns a list of shelter IDs listing animals matching the input animal breed.
 
@@ -297,17 +319,26 @@ class Petfinder(object):
             'reptile', or 'smallfurry'.
         breed : str
             Specifies the breed of the animal to search.
+        offset : int, optional
+            Can be set to the value of :code:`lastOffset` returned from the previous call to retrieve the next
+            set of results. The :code:`pages` parameter can also be used to pull a desired number of paged
+            results.
         count : str or int, optional
             The number of records to return. Default is 25.
+        pages : int, optional
+            The number of pages of results to return. For example, if :code:`pages=4` with the default
+            :code:`count` parameter (25), 100 results would be returned. The paged results are returned
+            as a list.
         outputformat : str, default='json'
             Output type of results. Must be one of 'json' (default) or 'xml'
 
         Returns
         -------
-        json or str
+        json, list of json, str or list of str
             Shelter IDs listing animals matching the input animal breed. If the parameter
-            :code:`outputformat` is 'json', the result is formatted as a JSON object. Otherwise,
-            the return object is a text representation of an XML object.
+            :code:`outputformat` is 'json', the result is formatted as a JSON object. Otherwise, the
+            return object is a text representation of an XML object. If the :code:`pages` parameter
+            is set, the paged results are returned as a list.
 
         """
         url = urljoin(self.host, 'shelter.listByBreed')
@@ -315,7 +346,7 @@ class Petfinder(object):
         args = _parameters(key=self.key, animal=animal, breed=breed, offset=offset, count=count,
                            outputformat=outputformat)
 
-        return _output(url, args)
+        return _output(url, args, pages = pages)
 
 
 def _parameters(key,
@@ -359,11 +390,51 @@ def _parameters(key,
     return args
 
 
-def _output(url, args):
+def _output(url, args, pages=None):
 
     r = requests.get(url, args)
+    outputformat = args['format']
 
-    if args['format'] in ('json', None) or args['format'] is not 'xml':
-        return r.json()
+    if outputformat is 'json':
+        r = r.json()
     else:
-        return r.text
+        r = r.text
+
+    if pages is None:
+
+        return r
+
+    else:
+        result = [r]
+        outputformat = args['format']
+
+        if outputformat is 'json':
+            lastoffset = r.json()['petfinder']['lastOffset']['$t']
+        else:
+            lastoffset = ET.fromstring(r)[1].text
+
+        try:
+            count = args['count']
+        except KeyError:
+            count = 25
+
+        for i in range(0, pages):
+
+            args.update(offset=lastoffset)
+            r = requests.get(url, args)
+
+            if outputformat is 'json':
+                result.append(r.json())
+                lastoffset = r.json()['petfinder']['lastOffset']['$t']
+
+            else:
+                result.append(r.text)
+                lastoffset = ET.fromstring(r)[1].text
+
+            if int(lastoffset) + count >= 2000:
+                print('Next result set would exceed maximum 2,000 records per search, '
+                      'returning results up to page ' + str(pages - 1))
+
+                return result
+
+        return result

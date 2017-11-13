@@ -1,6 +1,5 @@
 $ cat .gitignore
 
-build/
 dist/
 *.ipynb
 *.xml
