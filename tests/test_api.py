@@ -199,7 +199,7 @@ def test_shelter_listByBreed(top_level_keys, petfinder_keys):
     assert r[1].tag == 'shelters'
 
 
-@vcr.use_cassette('tests/cassettes/paging.yml', filter_query_parameters=['key'])
+#@vcr.use_cassette('tests/cassettes/paging.yml', filter_query_parameters=['key'])
 def test_paging_results(top_level_keys):
 
     response1 = pf.pet_find(location='98133', pages=3)
