@@ -411,7 +411,7 @@ def _output(url, args, pages=None):
         if outputformat is 'json':
             lastoffset = r['petfinder']['lastOffset']['$t']
         else:
-            lastoffset = ET.fromstring(r)[1].text
+            lastoffset = ET.fromstring(r.encode('utf-8'))[1].text
 
         try:
             count = args['count']
