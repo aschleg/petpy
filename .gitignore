@@ -1,5 +1,6 @@
 $ cat .gitignore
 
+.cache/
 dist/
 *.ipynb
 *.xml

@@ -16,8 +16,7 @@ tape = vcr.VCR(
 )
 
 
-key = os.environ.get('PETFINDER_KEY')
-
+#key = os.environ.get('PETFINDER_KEY')
 
 def authenticate():
     pf = Petfinder(str(key))
@@ -203,8 +202,8 @@ def test_shelter_listByBreed(top_level_keys, petfinder_keys):
 
 def test_paging_results(top_level_keys):
 
-    response1 = pf.pet_find('WA', pages=3)
-    response2 = pf.pet_find('WA', pages=3, outputformat='xml')
+    response1 = pf.pet_find(location='98133', pages=3)
+    response2 = pf.pet_find(location='98133', pages=3, outputformat='xml')
 
     assert isinstance(response1, list)
 
