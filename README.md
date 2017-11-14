@@ -45,8 +45,8 @@ API methods documentation can also be found [here](https://www.petfinder.com/dev
 
 ## Documentation
 
-[Petpy documentation](http://petpy.readthedocs.io/en/latest/)
-[Petfinder API documentation](https://www.petfinder.com/developers/api-docs)
+* [Petpy documentation](http://petpy.readthedocs.io/en/latest/)
+* [Petfinder API documentation](https://www.petfinder.com/developers/api-docs)
 
 ## Installation
 
