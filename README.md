@@ -1,5 +1,3 @@
-![](https://www.petfinder.com/wp-content/themes/petfinder2013/img/pet_finder_logo_tm.svg =300x200 "Petfinder.com")
-
 # Petpy - Python Wrapper for the Petfinder API
 
 [![Documentation Status](https://readthedocs.org/projects/petpy/badge/?version=latest)](http://petpy.readthedocs.io/en/latest/?badge=latest)
