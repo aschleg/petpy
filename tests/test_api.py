@@ -16,7 +16,7 @@ tape = vcr.VCR(
 )
 
 
-#key = os.environ.get('PETFINDER_KEY')
+key = os.environ.get('PETFINDER_KEY')
 
 def authenticate():
     pf = Petfinder(str(key))
