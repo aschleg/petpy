@@ -3,6 +3,7 @@ $ cat .gitignore
 .cache/
 dist/
 *.ipynb
+*.pyc
 *.xml
 .idea
 petpy.egg*

@@ -5,7 +5,26 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/xjxufxt7obd84ygr?svg=true)](https://ci.appveyor.com/project/aschleg/petpy)
 [![Coverage Status](https://coveralls.io/repos/github/aschleg/petpy/badge.svg)](https://coveralls.io/github/aschleg/petpy)
 
-Petpy is an easy-to-use and convenient Python wrapper for the [Petfinder API](https://www.petfinder.com/developers/api-docs)
+Petpy is an easy-to-use and convenient Python wrapper for the [Petfinder API](https://www.petfinder.com/developers/api-docs).
+
+## Example
+
+After receiving an API key from [Petfinder](https://www.petfinder.com/developers/api-key), usage of petpy to extract
+data from the Petfinder database is straightforward.
+
+~~~
+import petpy
+
+pf = petpy.Petfinder(key)
+
+cats = pf.breed_list('cat')
+
+pf.pet_getRandom()
+~~~
+
+The above simple example creates an authenticated connection to the Petfinder API and then uses that connection to
+pull the entire list of cat breeds listed in the Petfinder database. The next line returns a randomly selected
+pet record.
 
 ## Available Methods
 
