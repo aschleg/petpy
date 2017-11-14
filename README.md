@@ -3,6 +3,8 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/xjxufxt7obd84ygr?svg=true)](https://ci.appveyor.com/project/aschleg/petpy)
 [![Coverage Status](https://coveralls.io/repos/github/aschleg/petpy/badge.svg)](https://coveralls.io/github/aschleg/petpy)
 
+![](http://www.petfinder.com/banner-images/widgets/40.jpg "Petfinder.com")
+
 # Petpy
 
 Wrapper for the [Petfinder API](https://www.petfinder.com/developers/api-docs).

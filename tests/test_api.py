@@ -199,4 +199,21 @@ def test_shelter_listByBreed(top_level_keys, petfinder_keys):
 
     assert r[0].tag == 'header'
     assert r[1].tag == 'shelters'
-    #assert r[1][0].tag == 'shelter'
+
+
+def test_paging_results(top_level_keys):
+
+    response1 = pf.pet_find('WA', pages=3)
+    response2 = pf.pet_find('WA', pages=3, outputformat='xml')
+
+    assert isinstance(response1, list)
+
+    assert len(response1) == len(response2) == 4
+
+    for i in response1:
+        assert set(i.keys()).issubset(top_level_keys)
+
+    for j in response2:
+        r = ET.fromstring(j.encode('utf-8'))
+        assert r[0].tag == 'header'
+        assert r[1].tag == 'lastOffset'

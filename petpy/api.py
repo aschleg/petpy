@@ -409,7 +409,7 @@ def _output(url, args, pages=None):
         outputformat = args['format']
 
         if outputformat is 'json':
-            lastoffset = r.json()['petfinder']['lastOffset']['$t']
+            lastoffset = r['petfinder']['lastOffset']['$t']
         else:
             lastoffset = ET.fromstring(r)[1].text
 
@@ -429,7 +429,7 @@ def _output(url, args, pages=None):
 
             else:
                 result.append(r.text)
-                lastoffset = ET.fromstring(r)[1].text
+                lastoffset = ET.fromstring(r.text)[1].text
 
             if int(lastoffset) + count >= 2000:
                 print('Next result set would exceed maximum 2,000 records per search, '
