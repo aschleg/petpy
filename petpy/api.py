@@ -237,7 +237,7 @@ class Petfinder(object):
         args = _parameters(key=self.key, location=location, offset=offset,
                            name=name, count=count, outputformat=outputformat)
 
-        return _output(url, args, pages = pages)
+        return _output(url, args, pages=pages)
 
     def shelter_get(self, shelterId, outputformat='json'):
         r"""
@@ -306,7 +306,7 @@ class Petfinder(object):
         args = _parameters(key=self.key, id=shelterId, status=status, offset=offset, count=count,
                            output=output, outputformat=outputformat)
 
-        return _output(url, args, pages = pages)
+        return _output(url, args, pages=pages)
 
     def shelter_listByBreed(self, animal, breed, offset=None, count=None, pages=None, outputformat='json'):
         r"""
@@ -346,7 +346,7 @@ class Petfinder(object):
         args = _parameters(key=self.key, animal=animal, breed=breed, offset=offset, count=count,
                            outputformat=outputformat)
 
-        return _output(url, args, pages = pages)
+        return _output(url, args, pages=pages)
 
 
 def _parameters(key,
@@ -429,7 +429,7 @@ def _output(url, args, pages=None):
 
             else:
                 result.append(r.text)
-                lastoffset = ET.fromstring(r.text)[1].text
+                lastoffset = ET.fromstring(r.text.encode('utf-8'))[1].text
 
             if int(lastoffset) + count >= 2000:
                 print('Next result set would exceed maximum 2,000 records per search, '
