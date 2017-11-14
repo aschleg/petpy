@@ -7,9 +7,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/xjxufxt7obd84ygr?svg=true)](https://ci.appveyor.com/project/aschleg/petpy)
 [![Coverage Status](https://coveralls.io/repos/github/aschleg/petpy/badge.svg)](https://coveralls.io/github/aschleg/petpy)
 
-
-
-Wrapper for the [Petfinder API](https://www.petfinder.com/developers/api-docs).
+Petpy is an easy-to-use and convenient Python wrapper for the [Petfinder API](https://www.petfinder.com/developers/api-docs)
 
 ## Available Methods
 
@@ -31,6 +29,7 @@ API methods documentation can also be found [here](https://www.petfinder.com/dev
 ## Documentation
 
 [Petpy documentation](http://petpy.readthedocs.io/en/latest/)
+[Petfinder API documentation](https://www.petfinder.com/developers/api-docs)
 
 ## Installation
 
