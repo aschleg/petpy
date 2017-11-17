@@ -9,6 +9,7 @@ environment:
 install:
   - pip install pytest
   - pip install pyyaml
+  - pip install pandas
   - pip install vcrpy
   - python setup.py install
 test_script:
