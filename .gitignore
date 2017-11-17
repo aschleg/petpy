@@ -7,3 +7,4 @@ dist/
 *.xml
 .idea
 petpy.egg*
+/build

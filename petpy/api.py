@@ -1,6 +1,8 @@
-import requests
+import pandas as pd
+from pandas.io.json import json_normalize
 from six.moves.urllib.parse import urljoin
-import xml.etree.ElementTree as ET
+
+from petpy._lib import _parameters, _query
 
 
 class Petfinder(object):
@@ -50,7 +52,7 @@ class Petfinder(object):
         self.secret = secret
         self.host = 'http://api.petfinder.com/'
 
-    def breed_list(self, animal, outputformat='json'):
+    def breed_list(self, animal, outputformat='json', return_df=False):
         r"""
         Method for calling the 'breed.list' method of the Petfinder API. Returns the available breeds
         for the selected animal.
@@ -61,24 +63,38 @@ class Petfinder(object):
             Return breeds of animal. Must be one of 'barnyard', 'bird', 'cat', 'dog', 'horse',
             'reptile', or 'smallfurry'
         outputformat : str, default='json'
-            Output type of results. Must be one of 'json' (default) or 'xml'
+            Output type of results. Must be one of 'json' (default) or 'xml'.
+        return_df : boolean, default=False
+            If True, coerces results returned from the Petfinder API into a pandas DataFrame.
 
         Returns
         -------
-        json or str
+        json, str or pandas DataFrame
             The breeds of the animal. If the parameter :code:`outputformat` is 'json',
             the result is formatted as a JSON object. Otherwise, the return object is a text
-            representation of an XML object.
+            representation of an XML object. If :code:`return_df` is :code:`True`, :code:`outputformat`
+            is overridden and the results are converted to a pandas DataFrame. Please note there may
+            be some loss of data when the conversion is made; however, this loss is primarily confined
+            to the call encoding and timestamp information and metadata of the associated media (photos)
+            with a record.
 
         """
-        url = urljoin(self.host, 'breed.list')
+        method = 'breed.list'
+        url = urljoin(self.host, method)
 
-        args = _parameters(key=self.key, animal=animal, outputformat=outputformat)
+        if return_df == True:
+            args = _parameters(key=self.key, animal=animal, outputformat='json')
+            r = _query(url, args)
+            r = json_normalize(r['petfinder']['breeds']['breed'])
+            r.rename(columns={'$t': animal + ' breeds'}, inplace=True)
+        else:
+            args = _parameters(key=self.key, animal=animal, outputformat=outputformat)
+            r = _query(url, args)
 
-        return _output(url, args)
+        return r
 
     def pet_find(self, location, animal=None, breed=None, size=None, sex=None, age=None, offset=None,
-                 count=None, output=None, pages=None, outputformat='json'):
+                 count=None, output=None, pages=None, outputformat='json', return_df=False):
         r"""
         Returns a collection of pet records matching input parameters.
 
@@ -112,25 +128,38 @@ class Petfinder(object):
             Sets the amount of information returned in each record. 'basic' returns a simple record while
             'full' returns a complete record with description. Defaults to 'basic'.
         outputformat : str, default='json'
-            Output type of results. Must be one of 'json' (default) or 'xml'
+            Output type of results. Must be one of 'json' (default) or 'xml'.
+        return_df : boolean, default=False
+            If True, coerces results returned from the Petfinder API into a pandas DataFrame.
 
         Returns
         -------
-        json, list of json, str or list of str
+        json, list of json, str or list of str, or pandas DataFrame
             Pet records matching the desired search parameters. If the parameter :code:`outputformat` is 'json',
             the result is formatted as a JSON object. Otherwise, the return object is a text
             representation of an XML object. If the :code:`pages` parameter is set, the paged results are
-            returned as a list.
+            returned as a list. If :code:`return_df` is :code:`True`, :code:`outputformat`
+            is overridden and the results are converted to a pandas DataFrame. Please note there may
+            be some loss of data when the conversion is made; however, this loss is primarily confined
+            to the call encoding and timestamp information and metadata of the associated media (photos)
+            with a record.
 
         """
-        url = urljoin(self.host, 'pet.find')
+        method = 'pet.find'
+        url = urljoin(self.host, method)
 
         args = _parameters(key=self.key, animal=animal, breed=breed, size=size, sex=sex, location=location,
                            age=age, offset=offset, count=count, output=output, outputformat=outputformat)
 
-        return _output(url, args, pages = pages)
 
-    def pet_get(self, petId, outputformat='json'):
+        if return_df == True and outputformat != 'json':
+            args.update(format='json')
+
+        r = _query(url, args, pages=pages, return_df=return_df, method=method)
+
+        return r
+
+    def pet_get(self, petId, outputformat='json', return_df=False):
         r"""
         Returns a single record for a pet.
 
@@ -140,23 +169,36 @@ class Petfinder(object):
             ID of the pet record to return.
         outputformat : str, default='json'
             Output type of results. Must be one of 'json' (default) or 'xml'.
+        return_df : boolean, default=False
+            If True, coerces results returned from the Petfinder API into a pandas DataFrame.
 
         Returns
         -------
-        json or str
+        json, str or pandas DataFrame
             Matching record corresponding to input pet ID. If the parameter :code:`outputformat` is 'json',
             the result is formatted as a JSON object. Otherwise, the return object is a text
-            representation of an XML object.
+            representation of an XML object. If :code:`return_df` is :code:`True`, :code:`outputformat`
+            is overridden and the results are converted to a pandas DataFrame. Please note there may
+            be some loss of data when the conversion is made; however, this loss is primarily confined
+            to the call encoding and timestamp information and metadata of the associated media (photos)
+            with a record.
 
         """
-        url = urljoin(self.host, 'pet.get')
+        method = 'pet.get'
+        url = urljoin(self.host, method)
 
         args = _parameters(key=self.key, id=petId, outputformat=outputformat)
 
-        return _output(url, args)
+        if return_df == True and outputformat != 'json':
+            args.update(format='json')
+
+        r = _query(url, args, return_df=return_df, method=method)
+
+        return r
 
     def pet_getRandom(self, animal=None, breed=None, size=None,
-                      sex=None, location=None, shelterId=None, output=None, outputformat='json'):
+                      sex=None, location=None, shelterId=None,
+                      output=None, records=None, return_df=False, outputformat='json'):
         r"""
         Returns a randomly selected pet record. The possible result can be filtered with input parameters.
 
@@ -179,25 +221,54 @@ class Petfinder(object):
         output : str, optional
             Sets the amount of information returned in each record. 'basic' returns a simple record while
             'full' returns a complete record with description. Defaults to 'basic'.
+        records : int, optional
+            Returns :code:`records` random results. Each returned record is counted as one call to the
+            Petfinder API.
         outputformat : str, default='json'
-            Output type of results. Must be one of 'json' (default) or 'xml'
+            Output type of results. Must be one of 'json' (default) or 'xml'.
+        return_df : boolean, default=False
+            If True, coerces results returned from the Petfinder API into a pandas DataFrame. If
+            :code:`output` is not 'basic' or 'full', return_df is overridden to False as the API
+            returns a simplified JSON object containing only a randomly selected petId.
 
         Returns
         -------
-        json or str
+        json, str, list, or pandas DataFrame
             Randomly selected pet record. If the parameter :code:`outputformat` is 'json',
             the result is formatted as a JSON object. Otherwise, the return object is a text
-            representation of an XML object.
+            representation of an XML object. If :code:`records` is specified, a list of the results
+            is returned. If :code:`return_df` is :code:`True`, :code:`outputformat`
+            is overridden and the results are converted to a pandas DataFrame. Please note there may
+            be some loss of data when the conversion is made; however, this loss is primarily confined
+            to the call encoding and timestamp information and metadata of the associated media (photos)
+            with a record.
 
         """
-        url = urljoin(self.host, 'pet.getRandom')
+        method = 'pet.getRandom'
+        url = urljoin(self.host, method)
 
         args = _parameters(key=self.key, animal=animal, breed=breed, size=size, sex=sex,
                            location=location, shelterId=shelterId, output=output, outputformat=outputformat)
 
-        return _output(url, args)
+        if output not in ('basic', 'full'):
+            return_df = False
 
-    def shelter_find(self, location, name=None, offset=None, count=None, pages=None, outputformat='json'):
+        if records is not None:
+            results = []
+            for _ in range(0, records):
+                results.append(_query(url, args, return_df=return_df, method=method))
+
+            if return_df == True:
+                results = pd.concat(results)
+
+            return results
+
+        else:
+
+            return _query(url, args, return_df=return_df, method=method)
+
+    def shelter_find(self, location, name=None, offset=None, count=None, pages=None,
+                     return_df=False, outputformat='json'):
         r"""
         Returns a collection of shelter records matching input parameters
 
@@ -221,25 +292,35 @@ class Petfinder(object):
             Sets the amount of information returned in each record. 'basic' returns a simple record while
             'full' returns a complete record with description. Defaults to 'basic'.
         outputformat : str, default='json'
-            Output type of results. Must be one of 'json' (default) or 'xml'
+            Output type of results. Must be one of 'json' (default) or 'xml'.
+        return_df : boolean, default=False
+            If True, coerces results returned from the Petfinder API into a pandas DataFrame.
 
         Returns
         -------
-        json, list of json, str or list of str
+        json, list of json, str, list of str or pandas DataFrame
             Shelters matching specified input parameters. If the parameter :code:`outputformat` is 'json',
             the result is formatted as a JSON object. Otherwise, the return object is a text
             representation of an XML object. If the :code:`pages` parameter is set, the paged results are
-            returned as a list.
+            returned as a list. If :code:`return_df` is :code:`True`, :code:`outputformat`
+            is overridden and the results are converted to a pandas DataFrame. Please note there may
+            be some loss of data when the conversion is made; however, this loss is primarily confined
+            to the call encoding and timestamp information and metadata of the associated media (photos)
+            with a record.
 
         """
-        url = urljoin(self.host, 'shelter.find')
+        method = 'shelter.find'
+        url = urljoin(self.host, method)
 
         args = _parameters(key=self.key, location=location, offset=offset,
                            name=name, count=count, outputformat=outputformat)
 
-        return _output(url, args, pages=pages)
+        if return_df == True and outputformat != 'json':
+            args.update(format='json')
 
-    def shelter_get(self, shelterId, outputformat='json'):
+        return _query(url, args, pages=pages, return_df=return_df, method=method)
+
+    def shelter_get(self, shelterId, return_df=False, outputformat='json'):
         r"""
         Returns a single shelter record
 
@@ -248,24 +329,34 @@ class Petfinder(object):
         shelterId : str
             Desired shelter's ID
         outputformat : str, default='json'
-            Output type of results. Must be one of 'json' (default) or 'xml'
+            Output type of results. Must be one of 'json' (default) or 'xml'.
+        return_df : boolean, default=False
+            If True, coerces results returned from the Petfinder API into a pandas DataFrame.
 
         Returns
         -------
-        json or str
+        json, str or pandas DataFrame
             Shelter record of input shelter ID. If the parameter :code:`outputformat` is 'json',
             the result is formatted as a JSON object. Otherwise, the return object is a text
-            representation of an XML object.
+            representation of an XML object. If :code:`return_df` is :code:`True`, :code:`outputformat`
+            is overridden and the results are converted to a pandas DataFrame. Please note there may
+            be some loss of data when the conversion is made; however, this loss is primarily confined
+            to the call encoding and timestamp information and metadata of the associated media (photos)
+            with a record.
 
         """
-        url = urljoin(self.host, 'shelter.get')
+        method = 'shelter.get'
+        url = urljoin(self.host, method)
 
         args = _parameters(key=self.key, id=shelterId, outputformat=outputformat)
 
-        return _output(url, args)
+        if return_df == True and outputformat != 'json':
+            args.update(format='json')
+
+        return _query(url, args, return_df=return_df, method=method)
 
     def shelter_getPets(self, shelterId, status=None, offset=None, count=None, output=None,
-                        pages=None, outputformat='json'):
+                        pages=None, outputformat='json', return_df=False):
         r"""
         Returns a collection of pet records for an individual shelter.
 
@@ -290,25 +381,37 @@ class Petfinder(object):
             Sets the amount of information returned in each record. 'basic' returns a simple record while
             'full' returns a complete record with description. Defaults to 'basic'.
         outputformat : str, default='json'
-            Output type of results. Must be one of 'json' (default) or 'xml'
+            Output type of results. Must be one of 'json' (default) or 'xml'.
+        return_df : boolean, default=False
+            If True, coerces results returned from the Petfinder API into a pandas DataFrame.
 
         Returns
         -------
-        json, list of json, str or list of str
+        json, list of json, str, list of str, or pandas DataFrame
             Pet records of given shelter matching optional input parameters. If the parameter
             :code:`outputformat` is 'json', the result is formatted as a JSON object. Otherwise, the return
             object is a text representation of an XML object. If the :code:`pages` parameter is set, the
-            paged results are returned as a list.
+            paged results are returned as a list. If :code:`return_df` is :code:`True`, :code:`outputformat`
+            is overridden and the results are converted to a pandas DataFrame. Please note there may
+            be some loss of data when the conversion is made; however, this loss is primarily confined
+            to the call encoding and timestamp information and metadata of the associated media (photos)
+            with a record.
 
         """
-        url = urljoin(self.host, 'shelter.getPets')
+        method = 'shelter.getPets'
+        url = urljoin(self.host, method)
 
         args = _parameters(key=self.key, id=shelterId, status=status, offset=offset, count=count,
                            output=output, outputformat=outputformat)
 
-        return _output(url, args, pages=pages)
+        if return_df == True and outputformat != 'json':
+            args.update(format='json')
 
-    def shelter_listByBreed(self, animal, breed, offset=None, count=None, pages=None, outputformat='json'):
+        return _query(url, args, pages=pages, return_df=return_df, method=method)
+
+
+    def shelter_listByBreed(self, animal, breed, offset=None, count=None, pages=None,
+                            outputformat='json', return_df=False):
         r"""
         Returns a list of shelter IDs listing animals matching the input animal breed.
 
@@ -330,111 +433,30 @@ class Petfinder(object):
             :code:`count` parameter (25), 100 results would be returned. The paged results are returned
             as a list.
         outputformat : str, default='json'
-            Output type of results. Must be one of 'json' (default) or 'xml'
+            Output type of results. Must be one of 'json' (default) or 'xml'.
+        return_df : boolean, default=False
+            If True, coerces results returned from the Petfinder API into a pandas DataFrame.
 
         Returns
         -------
-        json, list of json, str or list of str
+        json, list of json, str, list of str or pandas DataFrame
             Shelter IDs listing animals matching the input animal breed. If the parameter
             :code:`outputformat` is 'json', the result is formatted as a JSON object. Otherwise, the
             return object is a text representation of an XML object. If the :code:`pages` parameter
-            is set, the paged results are returned as a list.
+            is set, the paged results are returned as a list. If :code:`return_df` is :code:`True`, :code:`outputformat`
+            is overridden and the results are converted to a pandas DataFrame. Please note there may
+            be some loss of data when the conversion is made; however, this loss is primarily confined
+            to the call encoding and timestamp information and metadata of the associated media (photos)
+            with a record.
 
         """
-        url = urljoin(self.host, 'shelter.listByBreed')
+        method = 'shelter.listByBreed'
+        url = urljoin(self.host, method)
 
         args = _parameters(key=self.key, animal=animal, breed=breed, offset=offset, count=count,
                            outputformat=outputformat)
 
-        return _output(url, args, pages=pages)
+        if return_df == True and outputformat != 'json':
+            args.update(format='json')
 
-
-def _parameters(key,
-                animal=None,  # ('barnyard','bird', 'cat', 'dog', 'horse', 'reptile', 'smallfurry'),
-                breed=None,
-                size=None,  # ('S', 'M', 'L', 'XL'),
-                sex=None,  # ('M', 'F'),
-                location=None,
-                name=None, # Name of shelter
-                age=None, # ('Baby', 'Young', 'Adult', 'Senior')
-                petId=None,
-                shelterId=None,
-                status=None, # (A=Adoptable, H=Hold, P=Pending, X=Adopted/Removed)
-                output=None,  # 'basic',
-                outputformat='json',
-                offset=None,
-                count=None,
-                id=None):
-
-    args = {
-        'key': key,
-        'animal': animal,
-        'breed': breed,
-        'size': size,
-        'sex': sex,
-        'age': age,
-        'location': location,
-        'name': name,
-        'petId': petId,
-        'shelterId': shelterId,
-        'status': status,
-        'output': output,
-        'format': outputformat,
-        'offset': offset,
-        'count': count,
-        'id': id
-    }
-
-    args = {key: val for key, val in args.items() if val is not None}
-
-    return args
-
-
-def _output(url, args, pages=None):
-
-    r = requests.get(url, args)
-    outputformat = args['format']
-
-    if outputformat is 'json':
-        r = r.json()
-    else:
-        r = r.text
-
-    if pages is None:
-
-        return r
-
-    else:
-        result = [r]
-        outputformat = args['format']
-
-        if outputformat is 'json':
-            lastoffset = r['petfinder']['lastOffset']['$t']
-        else:
-            lastoffset = ET.fromstring(r.encode('utf-8'))[1].text
-
-        try:
-            count = args['count']
-        except KeyError:
-            count = 25
-
-        for i in range(0, pages):
-
-            args.update(offset=lastoffset)
-            r = requests.get(url, args)
-
-            if outputformat is 'json':
-                result.append(r.json())
-                lastoffset = r.json()['petfinder']['lastOffset']['$t']
-
-            else:
-                result.append(r.text)
-                lastoffset = ET.fromstring(r.text.encode('utf-8'))[1].text
-
-            if int(lastoffset) + count >= 2000:
-                print('Next result set would exceed maximum 2,000 records per search, '
-                      'returning results up to page ' + str(pages - 1))
-
-                return result
-
-        return result
+        return _query(url, args, pages=pages, return_df=return_df, method=method)
