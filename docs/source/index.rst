@@ -32,7 +32,11 @@ some of the usage of the petpy library.
 The example starts by creating an authenticated connection to the Petfinder API which is then used to pull the
 list of cat breeds available in the Petfinder database as well as a randomly selected pet record.
 
+Contents
+========
+
 .. toctree::
    :maxdepth: 1
 
    api.rst
+   versions.rst

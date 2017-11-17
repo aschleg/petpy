@@ -36,6 +36,7 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="petpy 1.0.0 documentation" href="index.html"/>
+        <link rel="next" title="Version History" href="versions.html"/>
         <link rel="prev" title="Petpy - Python Wrapper of the Petfinder API" href="index.html"/> 
 
   
@@ -96,6 +97,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#shelter-methods">Shelter Methods</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="versions.html">Version History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="versions.html#version-1-5-0">Version 1.5.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="versions.html#version-1-0-0">Version 1.0.0</a></li>
 </ul>
 
             
@@ -159,7 +163,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <span class="target" id="api"></span><div class="section" id="api-reference">
+  <span class="target" id="api-parameters"><span id="api"></span></span><div class="section" id="api-reference">
 <h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="petfinder-petfinder-api-wrapper">
 <h2><code class="xref py py-mod docutils literal"><span class="pre">Petfinder</span></code> &#8211; Petfinder API Wrapper<a class="headerlink" href="#petfinder-petfinder-api-wrapper" title="Permalink to this headline">¶</a></h2>
@@ -174,7 +178,7 @@
 <h2>Pet Methods<a class="headerlink" href="#pet-methods" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="petpy.api.Petfinder.breed_list">
-<code class="descclassname">Petfinder.</code><code class="descname">breed_list</code><span class="sig-paren">(</span><span class="optional">[</span><em>animal</em><span class="optional">]</span><span class="optional">[</span>, <em>outputformat='json'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder.breed_list" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">Petfinder.</code><code class="descname">breed_list</code><span class="sig-paren">(</span><span class="optional">[</span><em>animal</em><span class="optional">]</span><span class="optional">[</span>, <em>outputformat='json'</em><span class="optional">]</span><span class="optional">[</span>, <em>return_df=False</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder.breed_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Method for calling the &#8216;breed.list&#8217; method of the Petfinder API. Returns the available breeds
 for the selected animal.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -184,12 +188,17 @@ for the selected animal.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>animal</strong> &#8211; Return breeds of animal. Must be one of &#8216;barnyard&#8217;, &#8216;bird&#8217;, &#8216;cat&#8217;, &#8216;dog&#8217;, &#8216;horse&#8217;, &#8216;reptile&#8217;, or &#8216;smallfurry&#8217;.</li>
 <li><strong>outputformat</strong> &#8211; Output type of results. Must be one of &#8216;json&#8217; (default) or &#8216;xml&#8217;.</li>
+<li><strong>return_df</strong> &#8211; If True, coerces results returned from the Petfinder API into a pandas DataFrame.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json or str. If the parameter <code class="code docutils literal"><span class="pre">outputformat</span></code> is &#8216;json&#8217;,
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json, str. or pandas DataFrame If the parameter <code class="code docutils literal"><span class="pre">outputformat</span></code> is &#8216;json&#8217;,
 the result is formatted as a JSON object. Otherwise, the return object is a text
-representation of an XML object.</p>
+representation of an XML object. If <code class="code docutils literal"><span class="pre">return_df</span></code> is <code class="code docutils literal"><span class="pre">True</span></code>, <code class="code docutils literal"><span class="pre">outputformat</span></code>
+is overridden and the results are converted to a pandas DataFrame. Please note there may
+be some loss of data when the conversion is made; however, this loss is primarily confined
+to the call encoding and timestamp information and metadata of the associated media (photos)
+with a record.</p>
 </td>
 </tr>
 </tbody>
@@ -198,7 +207,7 @@ representation of an XML object.</p>
 
 <dl class="method">
 <dt id="petpy.api.Petfinder.pet_find">
-<code class="descclassname">Petfinder.</code><code class="descname">pet_find</code><span class="sig-paren">(</span><span class="optional">[</span><em>location</em><span class="optional">]</span><span class="optional">[</span>, <em>animal=None</em><span class="optional">]</span><span class="optional">[</span>, <em>breed=None</em><span class="optional">]</span><span class="optional">[</span>, <em>size=None</em><span class="optional">]</span><span class="optional">[</span>, <em>sex=None</em><span class="optional">]</span><span class="optional">[</span>, <em>age=None</em><span class="optional">]</span><span class="optional">[</span>, <em>offset=None</em><span class="optional">]</span><span class="optional">[</span>, <em>count=None</em><span class="optional">]</span><span class="optional">[</span>, <em>pages=None</em><span class="optional">]</span><span class="optional">[</span>, <em>output=None</em><span class="optional">]</span><span class="optional">[</span>, <em>outputformat='json'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder.pet_find" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">Petfinder.</code><code class="descname">pet_find</code><span class="sig-paren">(</span><em>[location], [animal=None], [breed=None], [size=None], [sex=None], [age=None], [offset=None], [count=None], [pages=None], [output=None], [outputformat='json'], [return_df=False</em><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder.pet_find" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a collection of pet records matching input parameters. Wrapper for &#8216;pet.find&#8217; method in the Petfinder API.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -216,13 +225,18 @@ representation of an XML object.</p>
 <li><strong>pages</strong> &#8211; The number of pages of results to return. For example, if <code class="code docutils literal"><span class="pre">pages=4</span></code> with the default <code class="code docutils literal"><span class="pre">count</span></code> parameter (25), 100 results would be returned. The paged results are returned as a list.</li>
 <li><strong>output</strong> &#8211; Sets the amount of information returned in each record. &#8216;basic&#8217; returns a simple record while &#8216;full&#8217; returns a complete record with description. Defaults to &#8216;basic&#8217;.</li>
 <li><strong>outputformat</strong> &#8211; Output type of results. Must be one of &#8216;json&#8217; (default) or &#8216;xml&#8217;.</li>
+<li><strong>return_df</strong> &#8211; If True, coerces results returned from the Petfinder API into a pandas DataFrame.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json, list of json, str or list of str. Pet records matching the desired search parameters.
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json, list of json, str, list of str or pandas DataFrame. Pet records matching the desired search parameters.
 If the parameter <code class="code docutils literal"><span class="pre">outputformat</span></code> is &#8216;json&#8217;, the result is formatted as a JSON object.
 Otherwise, the return object is a text representation of an XML object. If the <code class="code docutils literal"><span class="pre">pages</span></code>
-parameter is set, the paged results are returned as a list.</p>
+parameter is set, the paged results are returned as a list. If <code class="code docutils literal"><span class="pre">return_df</span></code> is <code class="code docutils literal"><span class="pre">True</span></code>,
+<code class="code docutils literal"><span class="pre">outputformat</span></code> is overridden and the results are converted to a pandas DataFrame. Please
+note there may be some loss of data when the conversion is made; however, this loss is primarily
+confined to the call encoding and timestamp information and metadata of the associated media (photos)
+with a record.</p>
 </td>
 </tr>
 </tbody>
@@ -231,7 +245,7 @@ parameter is set, the paged results are returned as a list.</p>
 
 <dl class="method">
 <dt id="petpy.api.Petfinder.pet_get">
-<code class="descclassname">Petfinder.</code><code class="descname">pet_get</code><span class="sig-paren">(</span><span class="optional">[</span><em>petId</em><span class="optional">]</span><span class="optional">[</span>, <em>outputformat='json'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder.pet_get" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">Petfinder.</code><code class="descname">pet_get</code><span class="sig-paren">(</span><span class="optional">[</span><em>petId</em><span class="optional">]</span><span class="optional">[</span>, <em>outputformat='json'</em><span class="optional">]</span><span class="optional">[</span>, <em>return_df=False</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder.pet_get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a single record for a pet. Wrapper for &#8216;pet.get&#8217; method in the Petfinder API.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -240,12 +254,17 @@ parameter is set, the paged results are returned as a list.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>petId</strong> &#8211; ID of the pet record to return.</li>
 <li><strong>outputformat</strong> &#8211; Output type of results. Must be one of &#8216;json&#8217; (default) or &#8216;xml&#8217;.</li>
+<li><strong>return_df</strong> &#8211; If True, coerces results returned from the Petfinder API into a pandas DataFrame.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json or str. If the parameter <code class="code docutils literal"><span class="pre">outputformat</span></code> is &#8216;json&#8217;,
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json, str or pandas DataFrame. If the parameter <code class="code docutils literal"><span class="pre">outputformat</span></code> is &#8216;json&#8217;,
 the result is formatted as a JSON object. Otherwise, the return object is a text
-representation of an XML object.</p>
+representation of an XML object. If <code class="code docutils literal"><span class="pre">return_df</span></code> is <code class="code docutils literal"><span class="pre">True</span></code>, <code class="code docutils literal"><span class="pre">outputformat</span></code>
+is overridden and the results are converted to a pandas DataFrame. Please note there may
+be some loss of data when the conversion is made; however, this loss is primarily confined
+to the call encoding and timestamp information and metadata of the associated media (photos)
+with a record.</p>
 </td>
 </tr>
 </tbody>
@@ -254,7 +273,7 @@ representation of an XML object.</p>
 
 <dl class="method">
 <dt id="petpy.api.Petfinder.pet_getRandom">
-<code class="descclassname">Petfinder.</code><code class="descname">pet_getRandom</code><span class="sig-paren">(</span><span class="optional">[</span><em>animal=None</em><span class="optional">]</span><span class="optional">[</span>, <em>breed=None</em><span class="optional">]</span><span class="optional">[</span>, <em>size=None</em><span class="optional">]</span><span class="optional">[</span>, <em>sex=None</em><span class="optional">]</span><span class="optional">[</span>, <em>location=None</em><span class="optional">]</span><span class="optional">[</span>, <em>shelterId=None</em><span class="optional">]</span><span class="optional">[</span>, <em>output=None</em><span class="optional">]</span><span class="optional">[</span>, <em>outputformat='json'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder.pet_getRandom" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">Petfinder.</code><code class="descname">pet_getRandom</code><span class="sig-paren">(</span><span class="optional">[</span><em>animal=None</em><span class="optional">]</span><span class="optional">[</span>, <em>breed=None</em><span class="optional">]</span><span class="optional">[</span>, <em>size=None</em><span class="optional">]</span><span class="optional">[</span>, <em>sex=None</em><span class="optional">]</span><span class="optional">[</span>, <em>location=None</em><span class="optional">]</span><span class="optional">[</span>, <em>shelterId=None</em><span class="optional">]</span><span class="optional">[</span>, <em>records=None</em><span class="optional">]</span><span class="optional">[</span>, <em>output=None</em><span class="optional">]</span><span class="optional">[</span>, <em>outputformat='json'</em><span class="optional">]</span><span class="optional">[</span>, <em>return_df=False</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder.pet_getRandom" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a randomly selected pet record. The possible result can be filtered with input parameters.
 Wrapper for &#8216;pet.getRandom&#8217; method in the Petfinder API.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -269,13 +288,19 @@ Wrapper for &#8216;pet.getRandom&#8217; method in the Petfinder API.</p>
 <li><strong>location</strong> &#8211; ZIP/postal code, state, or city and state to perform the search.</li>
 <li><strong>shelterId</strong> &#8211; Filter results to a specific shelter.</li>
 <li><strong>output</strong> &#8211; Sets the amount of information returned in each record. &#8216;basic&#8217; returns a simple record while &#8216;full&#8217; returns a complete record with description. Defaults to &#8216;basic&#8217;.</li>
+<li><strong>records</strong> &#8211; Returns <code class="code docutils literal"><span class="pre">records</span></code> random results. Each returned record is counted as one call to the Petfinder API.</li>
 <li><strong>outputformat</strong> &#8211; Output type of results. Must be one of &#8216;json&#8217; (default) or &#8216;xml&#8217;.</li>
+<li><strong>return_df</strong> &#8211; If True, coerces results returned from the Petfinder API into a pandas DataFrame.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json or str. If the parameter <code class="code docutils literal"><span class="pre">outputformat</span></code> is &#8216;json&#8217;,
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json, str or pandas DataFrame. If the parameter <code class="code docutils literal"><span class="pre">outputformat</span></code> is &#8216;json&#8217;,
 the result is formatted as a JSON object. Otherwise, the return object is a text
-representation of an XML object.</p>
+representation of an XML object. If <code class="code docutils literal"><span class="pre">records</span></code> is specified, a list of the results
+is returned. If <code class="code docutils literal"><span class="pre">return_df</span></code> is <code class="code docutils literal"><span class="pre">True</span></code>, <code class="code docutils literal"><span class="pre">outputformat</span></code> is overridden and
+the results are converted to a pandas DataFrame. Please note there may be some loss of data
+when the conversion is made; however, this loss is primarily confined to the call encoding
+and timestamp information and metadata of the associated media (photos) with a record.</p>
 </td>
 </tr>
 </tbody>
@@ -287,7 +312,7 @@ representation of an XML object.</p>
 <h2>Shelter Methods<a class="headerlink" href="#shelter-methods" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="petpy.api.Petfinder.shelter_find">
-<code class="descclassname">Petfinder.</code><code class="descname">shelter_find</code><span class="sig-paren">(</span><span class="optional">[</span><em>location</em><span class="optional">]</span><span class="optional">[</span>, <em>name=None</em><span class="optional">]</span><span class="optional">[</span>, <em>offset=None</em><span class="optional">]</span><span class="optional">[</span>, <em>count=None</em><span class="optional">]</span><span class="optional">[</span>, <em>pages=None</em><span class="optional">]</span><span class="optional">[</span>, <em>outputformat='json'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder.shelter_find" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">Petfinder.</code><code class="descname">shelter_find</code><span class="sig-paren">(</span><span class="optional">[</span><em>location</em><span class="optional">]</span><span class="optional">[</span>, <em>name=None</em><span class="optional">]</span><span class="optional">[</span>, <em>offset=None</em><span class="optional">]</span><span class="optional">[</span>, <em>count=None</em><span class="optional">]</span><span class="optional">[</span>, <em>pages=None</em><span class="optional">]</span><span class="optional">[</span>, <em>outputformat='json'</em><span class="optional">]</span><span class="optional">[</span>, <em>return_df=False</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder.shelter_find" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a collection of shelter records matching input parameters. Wrapper for the &#8216;shelter.find&#8217; method
 in the Petfinder API.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -301,13 +326,18 @@ in the Petfinder API.</p>
 <li><strong>count</strong> &#8211; The number of records to return. Default is 25.</li>
 <li><strong>pages</strong> &#8211; The number of pages of results to return. For example, if <code class="code docutils literal"><span class="pre">pages=4</span></code> with the default <code class="code docutils literal"><span class="pre">count</span></code> parameter (25), 100 results would be returned. The paged results are returned as a list.</li>
 <li><strong>outputformat</strong> &#8211; Output type of results. Must be one of &#8216;json&#8217; (default) or &#8216;xml&#8217;.</li>
+<li><strong>return_df</strong> &#8211; If True, coerces results returned from the Petfinder API into a pandas DataFrame.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json, list of json, str or list of str. Shelters matching specified input parameters.
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json, list of json, str, list of str or pandas DataFrame. Shelters matching specified input parameters.
 If the parameter <code class="code docutils literal"><span class="pre">outputformat</span></code> is &#8216;json&#8217;, the result is formatted as a JSON
 object. Otherwise, the return object is a text representation of an XML object. If
-the <code class="code docutils literal"><span class="pre">pages</span></code> parameter is set, the paged results are returned as a list.</p>
+the <code class="code docutils literal"><span class="pre">pages</span></code> parameter is set, the paged results are returned as a list. If <code class="code docutils literal"><span class="pre">return_df</span></code>
+is <code class="code docutils literal"><span class="pre">True</span></code>, <code class="code docutils literal"><span class="pre">outputformat</span></code> is overridden and the results are converted to a pandas
+DataFrame. Please note there may be some loss of data when the conversion is made; however,
+this loss is primarily confined to the call encoding and timestamp information and metadata
+of the associated media (photos) with a record.</p>
 </td>
 </tr>
 </tbody>
@@ -316,7 +346,7 @@ the <code class="code docutils literal"><span class="pre">pages</span></code> pa
 
 <dl class="method">
 <dt id="petpy.api.Petfinder.shelter_get">
-<code class="descclassname">Petfinder.</code><code class="descname">shelter_get</code><span class="sig-paren">(</span><em>shelterId</em>, <em>outputformat='json'</em><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder.shelter_get" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">Petfinder.</code><code class="descname">shelter_get</code><span class="sig-paren">(</span><span class="optional">[</span><em>shelterId</em><span class="optional">]</span><span class="optional">[</span>, <em>outputformat='json'</em><span class="optional">]</span><span class="optional">[</span>, <em>return_df=False</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder.shelter_get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a single shelter record. Wrapper for the &#8216;shelter.get&#8217; method in the Petfinder API.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -325,12 +355,17 @@ the <code class="code docutils literal"><span class="pre">pages</span></code> pa
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>shelterId</strong> &#8211; Filter results to a specific shelter.</li>
 <li><strong>outputformat</strong> &#8211; Output type of results. Must be one of &#8216;json&#8217; (default) or &#8216;xml&#8217;.</li>
+<li><strong>return_df</strong> &#8211; If True, coerces results returned from the Petfinder API into a pandas DataFrame.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json or str. If the parameter <code class="code docutils literal"><span class="pre">outputformat</span></code> is &#8216;json&#8217;,
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json, str or pandas DataFrame. If the parameter <code class="code docutils literal"><span class="pre">outputformat</span></code> is &#8216;json&#8217;,
 the result is formatted as a JSON object. Otherwise, the return object is a text
-representation of an XML object.</p>
+representation of an XML object. If <code class="code docutils literal"><span class="pre">return_df</span></code> is <code class="code docutils literal"><span class="pre">True</span></code>, <code class="code docutils literal"><span class="pre">outputformat</span></code>
+is overridden and the results are converted to a pandas DataFrame. Please note there may
+be some loss of data when the conversion is made; however, this loss is primarily confined
+to the call encoding and timestamp information and metadata of the associated media (photos)
+with a record.</p>
 </td>
 </tr>
 </tbody>
@@ -339,7 +374,7 @@ representation of an XML object.</p>
 
 <dl class="method">
 <dt id="petpy.api.Petfinder.shelter_getPets">
-<code class="descclassname">Petfinder.</code><code class="descname">shelter_getPets</code><span class="sig-paren">(</span><span class="optional">[</span><em>shelterId</em><span class="optional">]</span><span class="optional">[</span>, <em>status=None</em><span class="optional">]</span><span class="optional">[</span>, <em>offset=None</em><span class="optional">]</span><span class="optional">[</span>, <em>count=None</em><span class="optional">]</span><span class="optional">[</span>, <em>output=None</em><span class="optional">]</span><span class="optional">[</span>, <em>pages=None</em><span class="optional">]</span><span class="optional">[</span>, <em>outputformat='json'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder.shelter_getPets" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">Petfinder.</code><code class="descname">shelter_getPets</code><span class="sig-paren">(</span><span class="optional">[</span><em>shelterId</em><span class="optional">]</span><span class="optional">[</span>, <em>status=None</em><span class="optional">]</span><span class="optional">[</span>, <em>offset=None</em><span class="optional">]</span><span class="optional">[</span>, <em>count=None</em><span class="optional">]</span><span class="optional">[</span>, <em>output=None</em><span class="optional">]</span><span class="optional">[</span>, <em>pages=None</em><span class="optional">]</span><span class="optional">[</span>, <em>outputformat='json'</em><span class="optional">]</span><span class="optional">[</span>, <em>return_df=False</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder.shelter_getPets" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a collection of pet records for an individual shelter. Wrapper for the &#8216;shelter_getPets&#8217; method
 in the Petfinder API.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -354,14 +389,19 @@ in the Petfinder API.</p>
 <li><strong>pages</strong> &#8211; The number of pages of results to return. For example, if <code class="code docutils literal"><span class="pre">pages=4</span></code> with the default <code class="code docutils literal"><span class="pre">count</span></code> parameter (25), 100 results would be returned. The paged results are returned as a list.</li>
 <li><strong>output</strong> &#8211; Sets the amount of information returned in each record. &#8216;basic&#8217; returns a simple record while &#8216;full&#8217; returns a complete record with description. Defaults to &#8216;basic&#8217;.</li>
 <li><strong>outputformat</strong> &#8211; Output type of results. Must be one of &#8216;json&#8217; (default) or &#8216;xml&#8217;.</li>
+<li><strong>return_df</strong> &#8211; If True, coerces results returned from the Petfinder API into a pandas DataFrame.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json, list of json, str or list of str.
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json, list of json, str, list of str or pandas DataFrame.
 Pet records of given shelter matching optional input parameters. If the parameter
 <code class="code docutils literal"><span class="pre">outputformat</span></code> is &#8216;json&#8217;, the result is formatted as a JSON object. Otherwise, the return
 object is a text representation of an XML object. If the <code class="code docutils literal"><span class="pre">pages</span></code> parameter is set, the
-paged results are returned as a list.</p>
+paged results are returned as a list. If <code class="code docutils literal"><span class="pre">return_df</span></code> is <code class="code docutils literal"><span class="pre">True</span></code>, <code class="code docutils literal"><span class="pre">outputformat</span></code>
+is overridden and the results are converted to a pandas DataFrame. Please note there may
+be some loss of data when the conversion is made; however, this loss is primarily confined
+to the call encoding and timestamp information and metadata of the associated media (photos)
+with a record.</p>
 </td>
 </tr>
 </tbody>
@@ -370,7 +410,7 @@ paged results are returned as a list.</p>
 
 <dl class="method">
 <dt id="petpy.api.Petfinder.shelter_listByBreed">
-<code class="descclassname">Petfinder.</code><code class="descname">shelter_listByBreed</code><span class="sig-paren">(</span><span class="optional">[</span><em>animal</em><span class="optional">]</span><span class="optional">[</span>, <em>breed</em><span class="optional">]</span><span class="optional">[</span>, <em>offset=None</em><span class="optional">]</span><span class="optional">[</span>, <em>count=None</em><span class="optional">]</span><span class="optional">[</span>, <em>pages=None</em><span class="optional">]</span><span class="optional">[</span>, <em>outputformat='json'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder.shelter_listByBreed" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">Petfinder.</code><code class="descname">shelter_listByBreed</code><span class="sig-paren">(</span><span class="optional">[</span><em>animal</em><span class="optional">]</span><span class="optional">[</span>, <em>breed</em><span class="optional">]</span><span class="optional">[</span>, <em>offset=None</em><span class="optional">]</span><span class="optional">[</span>, <em>count=None</em><span class="optional">]</span><span class="optional">[</span>, <em>pages=None</em><span class="optional">]</span><span class="optional">[</span>, <em>outputformat='json'</em><span class="optional">]</span><span class="optional">[</span>, <em>return_df=False</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder.shelter_listByBreed" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of shelter IDs listing animals matching the input animal breed. Wrapper for the
 &#8216;shelter.listByBreed&#8217; method in the Petfinder API.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -384,13 +424,18 @@ paged results are returned as a list.</p>
 <li><strong>count</strong> &#8211; The number of records to return. Default is 25.</li>
 <li><strong>pages</strong> &#8211; The number of pages of results to return. For example, if <code class="code docutils literal"><span class="pre">pages=4</span></code> with the default <code class="code docutils literal"><span class="pre">count</span></code> parameter (25), 100 results would be returned. The paged results are returned as a list.</li>
 <li><strong>outputformat</strong> &#8211; Output type of results. Must be one of &#8216;json&#8217; (default) or &#8216;xml&#8217;.</li>
+<li><strong>return_df</strong> &#8211; If True, coerces results returned from the Petfinder API into a pandas DataFrame.</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json, list of json, str or list of str. Shelter IDs listing animals matching the input
 animal breed. If the parameter <code class="code docutils literal"><span class="pre">outputformat</span></code> is &#8216;json&#8217;, the result is formatted
 as a JSON object. Otherwise, the return object is a text representation of an XML object.
-If the <code class="code docutils literal"><span class="pre">pages</span></code> parameter is set, the paged results are returned as a list.</p>
+If the <code class="code docutils literal"><span class="pre">pages</span></code> parameter is set, the paged results are returned as a list. If <code class="code docutils literal"><span class="pre">return_df</span></code>
+is <code class="code docutils literal"><span class="pre">True</span></code>, <code class="code docutils literal"><span class="pre">outputformat</span></code> is overridden and the results are converted to a pandas
+DataFrame. Please note there may be some loss of data when the conversion is made; however,
+this loss is primarily confined to the call encoding and timestamp information and metadata
+of the associated media (photos) with a record.</p>
 </td>
 </tr>
 </tbody>
@@ -409,6 +454,8 @@ If the <code class="code docutils literal"><span class="pre">pages</span></code>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="versions.html" class="btn btn-neutral float-right" title="Version History" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="Petpy - Python Wrapper of the Petfinder API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
