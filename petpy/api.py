@@ -3,7 +3,7 @@ from pandas.io.json import json_normalize
 from six.moves.urllib.parse import urljoin
 from six import string_types
 
-from petpy._lib import _parameters, _query, _return_multiple_get_calls
+from petpy._lib import _parameters, _query
 
 
 class Petfinder(object):
@@ -193,6 +193,7 @@ class Petfinder(object):
         if return_df == True and outputformat != 'json':
             args.update(format='json')
 
+<<<<<<< HEAD
     def pets_get(self, petId, outputformat='json', return_df=False):
         r"""
         Convenience wrapper of :code:`pet_get` for returning multiple pet records given a list or
@@ -231,6 +232,12 @@ class Petfinder(object):
         if return_df:
             args.update(outputformat='json')
 
+=======
+        r = _query(url, args, return_df=return_df, method=method)
+
+        return r
+
+>>>>>>> parent of fb03829... commit latest
     def pet_getRandom(self, animal=None, breed=None, size=None,
                       sex=None, location=None, shelterId=None,
                       output=None, records=None, return_df=False, outputformat='json'):
@@ -386,6 +393,7 @@ class Petfinder(object):
         args = _parameters(key=self.key, id=shelterId, outputformat=outputformat)
 
         if return_df == True and outputformat != 'json':
+<<<<<<< HEAD
             args.update(format='json')
 
         if isinstance(shelterId, (string_types, int)):
@@ -431,6 +439,8 @@ class Petfinder(object):
         args = _parameters(key=self.key, id=shelterId, outputformat=outputformat)
 
         if return_df and outputformat != 'json':
+=======
+>>>>>>> parent of fb03829... commit latest
             args.update(format='json')
 
         if isinstance(shelterId, (list, tuple)):
