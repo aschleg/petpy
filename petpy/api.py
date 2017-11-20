@@ -1,6 +1,7 @@
 from pandas import DataFrame, concat
 from pandas.io.json import json_normalize
 from six.moves.urllib.parse import urljoin
+from six import string_types
 
 from petpy._lib import _parameters, _query, _return_multiple_get_calls
 
@@ -191,7 +192,7 @@ class Petfinder(object):
         if return_df and outputformat != 'json':
             args.update(format='json')
 
-        if isinstance(petId, (str, int)):
+        if isinstance(petId, (string_types, int)):
             return _query(url, args, return_df=return_df, method=method)
 
         else:
