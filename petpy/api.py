@@ -193,6 +193,12 @@ class Petfinder(object):
         if return_df == True and outputformat != 'json':
             args.update(format='json')
 
+        if isinstance(petId, (string_types, int)):
+            return _query(url, args, return_df=return_df, method=method)
+
+        else:
+            return self.pets_get(petId, outputformat=outputformat, return_df=return_df)
+
     def pets_get(self, petId, outputformat='json', return_df=False):
         r"""
         Convenience wrapper of :code:`pet_get` for returning multiple pet records given a list or
@@ -230,6 +236,13 @@ class Petfinder(object):
 
         if return_df:
             args.update(outputformat='json')
+
+        if isinstance(petId, (list, tuple)):
+            return _return_multiple_get_calls(call_id=petId, url=url, args=args, return_df=return_df, method=method)
+
+        else:
+
+            return self.pet_get(petId, outputformat=outputformat, return_df=return_df)
 
     def pet_getRandom(self, animal=None, breed=None, size=None,
                       sex=None, location=None, shelterId=None,
