@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; petpy 1.0.0 documentation</title>
+  <title>API Reference &mdash; petpy 1.5.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="petpy 1.0.0 documentation" href="index.html"/>
+    <link rel="top" title="petpy 1.5.0 documentation" href="index.html"/>
         <link rel="next" title="Version History" href="versions.html"/>
         <link rel="prev" title="Petpy - Python Wrapper of the Petfinder API" href="index.html"/> 
 
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                1.0.0
+                1.5.0
               </div>
             
           
@@ -98,6 +98,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="versions.html">Version History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="versions.html#version-1-5-1">Version 1.5.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="versions.html#version-1-5-0">Version 1.5.0</a></li>
 <li class="toctree-l1"><a class="reference internal" href="versions.html#version-1-0-0">Version 1.0.0</a></li>
 </ul>
@@ -272,6 +273,34 @@ with a record.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="petpy.api.Petfinder.pets_get">
+<code class="descclassname">Petfinder.</code><code class="descname">pets_get</code><span class="sig-paren">(</span><span class="optional">[</span><em>petId</em><span class="optional">]</span><span class="optional">[</span>, <em>outputformat='json'</em><span class="optional">]</span><span class="optional">[</span>, <em>return_df=False</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder.pets_get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience wrapper of <code class="code docutils literal"><span class="pre">pet_get</span></code> for returning multiple pet records given a list or tuple of pet IDs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>petId</strong> &#8211; list or tuple containing pet IDs to search.</li>
+<li><strong>outputformat</strong> &#8211; Output type of results. Must be one of &#8216;json&#8217; (default) or &#8216;xml&#8217;.</li>
+<li><strong>return_df</strong> &#8211; If True, coerces results returned from the Petfinder API into a pandas DataFrame.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list or pandas DataFrame. Matching record corresponding to input pet ID. If the parameter
+<code class="code docutils literal"><span class="pre">outputformat</span></code> is &#8216;json&#8217;, the result is formatted as a JSON object. Otherwise,
+the return object is a text representation of an XML object. If <code class="code docutils literal"><span class="pre">return_df</span></code>
+is <code class="code docutils literal"><span class="pre">True</span></code>, <code class="code docutils literal"><span class="pre">outputformat</span></code> is overridden and the results are converted to a
+pandas DataFrame. Please note there may be some loss of data when the conversion is made;
+however, this loss is primarily confined to the call encoding and timestamp information and
+metadata of the associated media (photos) with a record.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="petpy.api.Petfinder.pet_getRandom">
 <code class="descclassname">Petfinder.</code><code class="descname">pet_getRandom</code><span class="sig-paren">(</span><span class="optional">[</span><em>animal=None</em><span class="optional">]</span><span class="optional">[</span>, <em>breed=None</em><span class="optional">]</span><span class="optional">[</span>, <em>size=None</em><span class="optional">]</span><span class="optional">[</span>, <em>sex=None</em><span class="optional">]</span><span class="optional">[</span>, <em>location=None</em><span class="optional">]</span><span class="optional">[</span>, <em>shelterId=None</em><span class="optional">]</span><span class="optional">[</span>, <em>records=None</em><span class="optional">]</span><span class="optional">[</span>, <em>output=None</em><span class="optional">]</span><span class="optional">[</span>, <em>outputformat='json'</em><span class="optional">]</span><span class="optional">[</span>, <em>return_df=False</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder.pet_getRandom" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a randomly selected pet record. The possible result can be filtered with input parameters.
@@ -366,6 +395,34 @@ is overridden and the results are converted to a pandas DataFrame. Please note t
 be some loss of data when the conversion is made; however, this loss is primarily confined
 to the call encoding and timestamp information and metadata of the associated media (photos)
 with a record.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="petpy.api.Petfinder.shelters_get">
+<code class="descclassname">Petfinder.</code><code class="descname">shelters_get</code><span class="sig-paren">(</span><span class="optional">[</span><em>shelterId</em><span class="optional">]</span><span class="optional">[</span>, <em>outputformat='json'</em><span class="optional">]</span><span class="optional">[</span>, <em>return_df=False</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder.shelters_get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns multiple shelter records given a list or tuple of shelter IDs. Convenience wrapper function of <code class="code docutils literal"><span class="pre">shelter_get()</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>shelterId</strong> &#8211; list or tuple containing shelter IDs to search.</li>
+<li><strong>outputformat</strong> &#8211; Output type of results. Must be one of &#8216;json&#8217; (default) or &#8216;xml&#8217;.</li>
+<li><strong>return_df</strong> &#8211; If True, coerces results returned from the Petfinder API into a pandas DataFrame.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list or pandas DataFrame. Shelter record of input shelter ID. If the parameter
+<code class="code docutils literal"><span class="pre">outputformat</span></code> is &#8216;json&#8217;, the result is formatted as a JSON object. Otherwise,
+the return object is a text representation of an XML object. If <code class="code docutils literal"><span class="pre">return_df</span></code> is
+<code class="code docutils literal"><span class="pre">True</span></code>, <code class="code docutils literal"><span class="pre">outputformat</span></code> is overridden and the results are converted to a
+pandas DataFrame. Please note there may be some loss of data when the conversion is made;
+however, this loss is primarily confined to the call encoding and timestamp information
+and metadata of the associated media (photos) with a record.</p>
 </td>
 </tr>
 </tbody>
@@ -489,7 +546,7 @@ of the associated media (photos) with a record.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.0.0',
+            VERSION:'1.5.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

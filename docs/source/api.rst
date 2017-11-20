@@ -74,6 +74,21 @@ Pet Methods
             to the call encoding and timestamp information and metadata of the associated media (photos)
             with a record.
 
+.. method:: Petfinder.pets_get([petId], [outputformat='json'], [return_df=False])
+
+    Convenience wrapper of :code:`pet_get` for returning multiple pet records given a list or tuple of pet IDs.
+
+    :param petId: list or tuple containing pet IDs to search.
+    :param outputformat: |outputformat|
+    :param return_df: |return_df|
+    :rtype: list or pandas DataFrame. Matching record corresponding to input pet ID. If the parameter
+            :code:`outputformat` is 'json', the result is formatted as a JSON object. Otherwise,
+            the return object is a text representation of an XML object. If :code:`return_df`
+            is :code:`True`, :code:`outputformat` is overridden and the results are converted to a
+            pandas DataFrame. Please note there may be some loss of data when the conversion is made;
+            however, this loss is primarily confined to the call encoding and timestamp information and
+            metadata of the associated media (photos) with a record.
+
 .. method:: Petfinder.pet_getRandom([animal=None], [breed=None], [size=None], [sex=None], [location=None], [shelterId=None], [records=None], [output=None], [outputformat='json'], [return_df=False])
 
     Returns a randomly selected pet record. The possible result can be filtered with input parameters.
@@ -135,6 +150,21 @@ Shelter Methods
             be some loss of data when the conversion is made; however, this loss is primarily confined
             to the call encoding and timestamp information and metadata of the associated media (photos)
             with a record.
+
+.. method:: Petfinder.shelters_get([shelterId], [outputformat='json'], [return_df=False])
+
+    Returns multiple shelter records given a list or tuple of shelter IDs. Convenience wrapper function of :code:`shelter_get()`.
+
+    :param shelterId: list or tuple containing shelter IDs to search.
+    :param outputformat: |outputformat|
+    :param return_df: |return_df|
+    :rtype: list or pandas DataFrame. Shelter record of input shelter ID. If the parameter
+            :code:`outputformat` is 'json', the result is formatted as a JSON object. Otherwise,
+            the return object is a text representation of an XML object. If :code:`return_df` is
+            :code:`True`, :code:`outputformat` is overridden and the results are converted to a
+            pandas DataFrame. Please note there may be some loss of data when the conversion is made;
+            however, this loss is primarily confined to the call encoding and timestamp information
+            and metadata of the associated media (photos) with a record.
 
 .. method:: Petfinder.shelter_getPets([shelterId], [status=None], [offset=None], [count=None], [output=None], [pages=None], [outputformat='json'], [return_df=False])
 
