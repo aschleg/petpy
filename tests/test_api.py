@@ -2,6 +2,7 @@ import os
 import xml.etree.ElementTree as ET
 import pytest
 import vcr
+import pandas as pd
 from six import string_types
 
 from petpy import Petfinder
@@ -54,10 +55,15 @@ def test_breed_list(top_level_keys, petfinder_keys):
 
     response1 = pf.breed_list('cat')
     response2 = pf.breed_list('dog', 'xml')
+    response3 = pf.breed_list('cat', return_df=True)
+
     r = ET.fromstring(response2.encode('utf-8'))
 
     assert isinstance(response1, dict)
     assert isinstance(response2, string_types)
+
+    assert isinstance(response3, pd.DataFrame)
+    assert 'breeds' in list(response3.columns)[0]
 
     assert set(response1.keys()).issubset(top_level_keys)
     assert set(response1['petfinder'].keys()).issubset(petfinder_keys)
@@ -71,10 +77,13 @@ def test_breed_list(top_level_keys, petfinder_keys):
 def test_pet_find(top_level_keys, petfinder_keys):
     response1 = pf.pet_find(location='98133', count=1)
     response2 = pf.pet_find(location='98133', count=1, outputformat='xml')
+    response3 = pf.pet_find('98133', outputformat='xml', return_df=True)
+
     r = ET.fromstring(response2.encode('utf-8'))
 
     assert isinstance(response1, dict)
     assert isinstance(response2, string_types)
+    assert isinstance(response3, pd.DataFrame)
 
     assert set(response1.keys()).issubset(top_level_keys)
     assert set(response1['petfinder'].keys()).issubset(petfinder_keys)
@@ -89,10 +98,22 @@ def test_pet_getRandom(top_level_keys, petfinder_keys):
 
     response1 = pf.pet_getRandom()
     response2 = pf.pet_getRandom(outputformat='xml')
+    response3 = pf.pet_getRandom(return_df=True)
+
+    records = 5
+    response4 = pf.pet_getRandom(records=records)
+    response5 = pf.pet_getRandom(records=records, return_df=True)
+
     r = ET.fromstring(response2.encode('utf-8'))
 
     assert isinstance(response1, dict)
     assert isinstance(response2, string_types)
+    assert isinstance(response3, pd.DataFrame)
+
+    assert isinstance(response4, list)
+    assert len(response4) == records
+
+    assert isinstance(response5, pd.DataFrame)
 
     assert set(response1.keys()).issubset(top_level_keys)
     assert set(response1['petfinder'].keys()).issubset(petfinder_keys)
@@ -130,10 +151,13 @@ def test_shelter_find(top_level_keys, petfinder_keys):
 
     response1 = pf.shelter_find('98115')
     response2 = pf.shelter_find('98115', outputformat='xml')
+    response3 = pf.shelter_find('98115', outputformat='xml', return_df=True)
+
     r = ET.fromstring(response2.encode('utf-8'))
 
     assert isinstance(response1, dict)
     assert isinstance(response2, string_types)
+    assert isinstance(response3, pd.DataFrame)
 
     assert set(response1.keys()).issubset(top_level_keys)
     assert set(response1['petfinder'].keys()).issubset(petfinder_keys)
