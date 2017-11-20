@@ -295,11 +295,11 @@ class Petfinder(object):
         method = 'pet.getRandom'
         url = urljoin(self.host, method)
 
+        if return_df and output not in ('basic', 'full'):
+            output = 'full'
+
         args = _parameters(key=self.key, animal=animal, breed=breed, size=size, sex=sex,
                            location=location, shelterId=shelterId, output=output, outputformat=outputformat)
-
-        if output not in ('basic', 'full'):
-            return_df = False
 
         if records is not None:
             results = []
