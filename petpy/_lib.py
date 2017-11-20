@@ -188,3 +188,16 @@ def _query(url, args, pages=None, return_df=False, method=None):
             result = concat(result)
 
         return result
+
+
+def _return_multiple_get_calls(call_id, url, args, return_df, method):
+    responses = []
+
+    for i in call_id:
+        args.update(id=i)
+        responses.append(_query(url, args, return_df=return_df, method=method))
+
+    if return_df:
+        return concat(responses, axis=0)
+
+    return responses
