@@ -199,6 +199,35 @@ class Petfinder(object):
             return self.pets_get(petId, outputformat=outputformat, return_df=return_df)
 
     def pets_get(self, petId, outputformat='json', return_df=False):
+        r"""
+        Convenience wrapper of :code:`pet_get` for returning multiple pet records given a list or
+        tuple of pet IDs.
+
+        Parameters
+        ----------
+        petId : list or tuple
+            List or tuple containing the pet IDs to search.
+        outputformat : str, default='json'
+            Output type of results. Must be one of 'json' (default) or 'xml'.
+        return_df : boolean, default=False
+            If True, coerces results returned from the Petfinder API into a pandas DataFrame.
+
+        Returns
+        -------
+        list or pandas DataFrame
+            Matching record corresponding to input pet ID. If the parameter :code:`outputformat` is 'json',
+            the result is formatted as a JSON object. Otherwise, the return object is a text
+            representation of an XML object. If :code:`return_df` is :code:`True`, :code:`outputformat`
+            is overridden and the results are converted to a pandas DataFrame. Please note there may
+            be some loss of data when the conversion is made; however, this loss is primarily confined
+            to the call encoding and timestamp information and metadata of the associated media (photos)
+            with a record.
+
+        See Also
+        --------
+        pet_get : Wrapped function called by :code:`pets_get`.
+
+        """
         method = 'pet.get'
         url = urljoin(self.host, method)
 
@@ -288,7 +317,7 @@ class Petfinder(object):
     def shelter_find(self, location, name=None, offset=None, count=None, pages=None,
                      return_df=False, outputformat='json'):
         r"""
-        Returns a collection of shelter records matching input parameters
+        Returns a collection of shelter records matching input parameters.
 
         Parameters
         ----------
@@ -337,7 +366,7 @@ class Petfinder(object):
 
     def shelter_get(self, shelterId, return_df=False, outputformat='json'):
         r"""
-        Returns a single shelter record
+        Returns a single shelter record.
 
         Parameters
         ----------
@@ -368,7 +397,59 @@ class Petfinder(object):
         if return_df and outputformat != 'json':
             args.update(format='json')
 
-        return _query(url, args, return_df=return_df, method=method)
+        if isinstance(shelterId, (string_types, int)):
+            return _query(url, args, return_df=return_df, method=method)
+
+        else:
+
+            return self.shelters_get(shelterId, return_df=return_df, outputformat=outputformat)
+
+    def shelters_get(self, shelterId, return_df=False, outputformat='json'):
+        r"""
+        Returns multiple shelter records given a list or tuple of shelter IDs. Convenience wrapper function
+        of :code:`shelter_get()`.
+
+        Parameters
+        ----------
+        shelterId : list or tuple
+            List or tuple containing the shelter IDs to search.
+        outputformat : str, default='json'
+            Output type of results. Must be one of 'json' (default) or 'xml'.
+        return_df : boolean, default=False
+            If True, coerces results returned from the Petfinder API into a pandas DataFrame.
+
+        Returns
+        -------
+        list or pandas DataFrame
+            Shelter record of input shelter ID. If the parameter :code:`outputformat` is 'json',
+            the result is formatted as a JSON object. Otherwise, the return object is a text
+            representation of an XML object. If :code:`return_df` is :code:`True`, :code:`outputformat`
+            is overridden and the results are converted to a pandas DataFrame. Please note there may
+            be some loss of data when the conversion is made; however, this loss is primarily confined
+            to the call encoding and timestamp information and metadata of the associated media (photos)
+            with a record.
+
+        See Also
+        --------
+        shelter_get
+
+        """
+        method = 'shelter.get'
+        url = urljoin(self.host, method)
+
+        args = _parameters(key=self.key, id=shelterId, outputformat=outputformat)
+
+        if return_df and outputformat != 'json':
+            args.update(format='json')
+
+        if isinstance(shelterId, (list, tuple)):
+            return _return_multiple_get_calls(call_id=shelterId, url=url, args=args,
+                                              return_df=return_df, method=method)
+
+        else:
+
+            return self.shelter_get(shelterId, return_df=return_df, outputformat=outputformat)
+
 
     def shelter_getPets(self, shelterId, status=None, offset=None, count=None, output=None,
                         pages=None, outputformat='json', return_df=False):
