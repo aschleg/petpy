@@ -188,7 +188,6 @@ def _query(url, args, pages=None, return_df=False, method=None):
             result = concat(result)
 
         return result
-<<<<<<< HEAD
 
 
 def _return_multiple_get_calls(call_id, url, args, return_df, method):
@@ -202,5 +201,3 @@ def _return_multiple_get_calls(call_id, url, args, return_df, method):
         return concat(responses, axis=0)
 
     return responses
-=======
->>>>>>> parent of fb03829... commit latest
