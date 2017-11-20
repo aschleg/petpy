@@ -8,4 +8,3 @@ dist/
 .idea
 petpy.egg*
 /build
-docs/vignettes/

@@ -43,11 +43,6 @@ API methods documentation can also be found [here](https://www.petfinder.com/dev
 | shelter_getPets()     | shelter.getPets      | Returns a collection of pet records for an individual shelter.                                     |
 | shelter_listByBreed() | shelter.listByBreed  | Returns a list of shelter IDs listing animals matching the input animal breed.                     |
 
-## Getting a Petfinder API Key
-
-[Register with Petfinder](https://www.petfinder.com/developers/api-key) to receive an API key which will be
-used to authenticate requests made to the API.
-
 ## Documentation
 
 * [Petpy documentation](http://petpy.readthedocs.io/en/latest/)

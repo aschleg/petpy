@@ -1,9 +1,9 @@
-from pandas import DataFrame, concat
+import pandas as pd
 from pandas.io.json import json_normalize
 from six.moves.urllib.parse import urljoin
 from six import string_types
 
-from petpy._lib import _parameters, _query, _return_multiple_get_calls
+from petpy._lib import _parameters, _query
 
 
 class Petfinder(object):
@@ -83,7 +83,7 @@ class Petfinder(object):
         method = 'breed.list'
         url = urljoin(self.host, method)
 
-        if return_df:
+        if return_df == True:
             args = _parameters(key=self.key, animal=animal, outputformat='json')
             r = _query(url, args)
             r = json_normalize(r['petfinder']['breeds']['breed'])
@@ -152,7 +152,8 @@ class Petfinder(object):
         args = _parameters(key=self.key, animal=animal, breed=breed, size=size, sex=sex, location=location,
                            age=age, offset=offset, count=count, output=output, outputformat=outputformat)
 
-        if return_df and outputformat != 'json':
+
+        if return_df == True and outputformat != 'json':
             args.update(format='json')
 
         r = _query(url, args, pages=pages, return_df=return_df, method=method)
@@ -189,9 +190,10 @@ class Petfinder(object):
 
         args = _parameters(key=self.key, id=petId, outputformat=outputformat)
 
-        if return_df and outputformat != 'json':
+        if return_df == True and outputformat != 'json':
             args.update(format='json')
 
+<<<<<<< HEAD
         if isinstance(petId, (string_types, int)):
             return _query(url, args, return_df=return_df, method=method)
 
@@ -235,13 +237,11 @@ class Petfinder(object):
 
         if return_df:
             args.update(outputformat='json')
+=======
+        r = _query(url, args, return_df=return_df, method=method)
+>>>>>>> parent of fb03829... commit latest
 
-        if isinstance(petId, (list, tuple)):
-            return _return_multiple_get_calls(call_id=petId, url=url, args=args, return_df=return_df, method=method)
-
-        else:
-
-            return self.pet_get(petId, outputformat=outputformat, return_df=return_df)
+        return r
 
     def pet_getRandom(self, animal=None, breed=None, size=None,
                       sex=None, location=None, shelterId=None,
@@ -297,16 +297,16 @@ class Petfinder(object):
         args = _parameters(key=self.key, animal=animal, breed=breed, size=size, sex=sex,
                            location=location, shelterId=shelterId, output=output, outputformat=outputformat)
 
-        if return_df and output is None:
-            args.update(output='full')
+        if output not in ('basic', 'full'):
+            return_df = False
 
         if records is not None:
             results = []
             for _ in range(0, records):
                 results.append(_query(url, args, return_df=return_df, method=method))
 
-            if return_df:
-                results = concat(results)
+            if return_df == True:
+                results = pd.concat(results)
 
             return results
 
@@ -335,6 +335,9 @@ class Petfinder(object):
             The number of pages of results to return. For example, if :code:`pages=4` with the default
              :code:`count` parameter (25), 100 results would be returned. The paged results are returned
              as a list.
+        output : str, optional
+            Sets the amount of information returned in each record. 'basic' returns a simple record while
+            'full' returns a complete record with description. Defaults to 'basic'.
         outputformat : str, default='json'
             Output type of results. Must be one of 'json' (default) or 'xml'.
         return_df : boolean, default=False
@@ -359,7 +362,7 @@ class Petfinder(object):
         args = _parameters(key=self.key, location=location, offset=offset,
                            name=name, count=count, outputformat=outputformat)
 
-        if return_df and outputformat != 'json':
+        if return_df == True and outputformat != 'json':
             args.update(format='json')
 
         return _query(url, args, pages=pages, return_df=return_df, method=method)
@@ -394,7 +397,7 @@ class Petfinder(object):
 
         args = _parameters(key=self.key, id=shelterId, outputformat=outputformat)
 
-        if return_df and outputformat != 'json':
+        if return_df == True and outputformat != 'json':
             args.update(format='json')
 
         if isinstance(shelterId, (string_types, int)):
@@ -500,10 +503,11 @@ class Petfinder(object):
         args = _parameters(key=self.key, id=shelterId, status=status, offset=offset, count=count,
                            output=output, outputformat=outputformat)
 
-        if return_df and outputformat != 'json':
+        if return_df == True and outputformat != 'json':
             args.update(format='json')
 
         return _query(url, args, pages=pages, return_df=return_df, method=method)
+
 
     def shelter_listByBreed(self, animal, breed, offset=None, count=None, pages=None,
                             outputformat='json', return_df=False):
@@ -551,7 +555,7 @@ class Petfinder(object):
         args = _parameters(key=self.key, animal=animal, breed=breed, offset=offset, count=count,
                            outputformat=outputformat)
 
-        if return_df and outputformat != 'json':
+        if return_df == True and outputformat != 'json':
             args.update(format='json')
 
         return _query(url, args, pages=pages, return_df=return_df, method=method)
