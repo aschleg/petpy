@@ -85,11 +85,11 @@ def _parameters(key,
                 size=None,  # ('S', 'M', 'L', 'XL'),
                 sex=None,  # ('M', 'F'),
                 location=None,
-                name=None, # Name of shelter
-                age=None, # ('Baby', 'Young', 'Adult', 'Senior')
+                name=None,  # Name of shelter
+                age=None,  # ('Baby', 'Young', 'Adult', 'Senior')
                 petId=None,
                 shelterId=None,
-                status=None, # (A=Adoptable, H=Hold, P=Pending, X=Adopted/Removed)
+                status=None,  # (A=Adoptable, H=Hold, P=Pending, X=Adopted/Removed)
                 output=None,  # 'basic',
                 outputformat='json',
                 offset=None,
@@ -122,7 +122,7 @@ def _parameters(key,
 
 def _query(url, args, pages=None, return_df=False, method=None):
 
-    if return_df == True:
+    if return_df:
         args.update(format='json')
         outputformat = 'json'
     else:
@@ -137,7 +137,7 @@ def _query(url, args, pages=None, return_df=False, method=None):
 
     if pages is None:
 
-        if return_df == False:
+        if not return_df:
             return r
         else:
             r = _coerce_to_dataframe(r, method)
@@ -146,7 +146,7 @@ def _query(url, args, pages=None, return_df=False, method=None):
 
     else:
 
-        if return_df == True:
+        if return_df:
             result = [_coerce_to_dataframe(r, method)]
         else:
             result = [r]
@@ -167,7 +167,7 @@ def _query(url, args, pages=None, return_df=False, method=None):
             r = requests.get(url, args)
 
             if outputformat is 'json':
-                if return_df == True:
+                if return_df:
                     result.append(_coerce_to_dataframe(r.json(), method))
                 else:
                     result.append(r.json())
@@ -184,7 +184,20 @@ def _query(url, args, pages=None, return_df=False, method=None):
 
                 return result
 
-        if return_df == True:
+        if return_df:
             result = concat(result)
 
         return result
+
+
+def _return_multiple_get_calls(call_id, url, args, return_df, method):
+        responses = []
+
+        for i in call_id:
+            args.update(id=i)
+            responses.append(_query(url, args, return_df=return_df, method=method))
+
+        if return_df:
+            return concat(responses, axis=0)
+
+        return responses
