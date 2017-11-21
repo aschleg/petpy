@@ -254,10 +254,13 @@ def test_shelter_listByBreed(top_level_keys, petfinder_keys):
 
     response1 = pf.shelter_listByBreed('cat', 'American Shorthair', count=1)
     response2 = pf.shelter_listByBreed('cat', 'American Shorthair', count=1, outputformat='xml')
+    response3 = pf.shelter_listByBreed('cat', 'American Shorthair', outputformat='xml', return_df=True)
+
     r = ET.fromstring(response2.encode('utf-8'))
 
     assert isinstance(response1, dict)
     assert isinstance(response2, string_types)
+    assert isinstance(response3, DataFrame)
 
     assert set(response1.keys()).issubset(top_level_keys)
     assert set(response1['petfinder'].keys()).issubset(petfinder_keys)
