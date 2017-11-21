@@ -3,8 +3,9 @@ $ cat .gitignore
 .cache/
 dist/
 *.ipynb
+*.ipynb_checkpoints
 *.pyc
-*.xml
 .idea
 petpy.egg*
 /build
+docs/vignettes/api_key

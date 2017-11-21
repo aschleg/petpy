@@ -85,12 +85,12 @@ class Petfinder(object):
 
         if return_df == True:
             args = _parameters(key=self.key, animal=animal, outputformat='json')
-            r = _query(url, args)
+            r = _query(url, args, method=method, return_df=return_df)
             r = json_normalize(r['petfinder']['breeds']['breed'])
             r.rename(columns={'$t': animal + ' breeds'}, inplace=True)
         else:
             args = _parameters(key=self.key, animal=animal, outputformat=outputformat)
-            r = _query(url, args)
+            r = _query(url, args, method=method, return_df=return_df)
 
         return r
 

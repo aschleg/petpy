@@ -5,7 +5,7 @@ Version History
 
 Changelog and version changes made with each release.
 
-Version 1.5.1
+Version 1.5.3
 -------------
 
 - Slight fix to :code:`pet_getRandom()` method. Before, if the method parameter :code:`return_df = True`, but
