@@ -1,0 +1,493 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.18.4]
+    method: GET
+    uri: http://api.petfinder.com/shelter.find?count=5&format=json&location=WA
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA9WV32+bMBDH/xXL2mP5YQgQeEoUqS/tuqrZtGnTHjy4gBWwkW3yY1X/99qEJdmS
+        aVVbVdpLiO7O37v74OPu8QR4LgrGS5xhpoQzHkepQ/AFnqxAKia4sRPXN4YW9ILxAiTO7vFk09Rc
+        ZRvFjL/Sus08b71eu+vQFbL0At8n3pf31/O8goY6jCtNeQ5GpaZKf1gsFGgr88784gg/XGBVQa1N
+        Rmsd/uPs2z3ORce13O6DP81tdC14yXRXwN7ukCBwg3gcWDenzcFz25Wg0dzoFOgOVN6BDWkrwW2M
+        Ta2pPoR/nlo3LQoJSgW7CNMDq/cRrRVUVk/2cpNKaBvg5qKxZ3OmD/VOux+d5Nb8k7V7azr2077S
+        Bd3sUtRU/97QKHFDkhIbxIqj6sgoPSqQ2NMPF6/B6VKU5RbNJMASzehq+zqwFlY1t6K50RyAbWkl
+        xNvgCqLRy3ElSXSC6w5KMx20RlPOGvOYg1yxHBQSC3Rl5gnNbIotctClUOY2G6YS0K0UpaTNMdSd
+        XODHTpDGThKOE/wMzrQQraZmRidLk7xvb+uWYnVC+Aq4PsM3fALfZJSc4Rv8wXfoh8QkQvFIV2i6
+        AmTwvin2vwMO0zD+nwDH4ZP4us8AHEbpmc8lzYUaZh/dgF4LuXzpB9NK/nP076BoBC/OoIuegC4k
+        p7Mf+6ez/90YKqDDGtOsAdNN0x5dE5I4hDgB+eiHGUkyEnz9dV26fjuZE4qWAwqzOw91EN+3bwHv
+        N+dg913S2ydmXWZc3BjcyjCB3Xa8FrlpqF+0wyKlLXP329ay8lQfqTzfTb2DZ6MMrYdHOgppBcQH
+        AAA=
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['629']
+      Content-Type: [application/json]
+      Date: ['Tue, 21 Nov 2017 03:17:12 GMT']
+      Vary: [Accept-Encoding]
+      X-Frame-Options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.18.4]
+    method: GET
+    uri: http://api.petfinder.com/shelter.get?format=json&id=WA149
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA1VSwU6EMBD9FdN4XEpbVhc4sffVGFej8VbbLjSBltAiqxv/3SkQWG/TN2/evJnp
+        BRXKCCu1KVGOtLNRmt5lEUUbVHypzmlrAKeYANAqf9JGqg7lF1Scm9q4/Ow05Cvv2zyOh2HAQ4Jt
+        V8aMEBq/PxyOolINj7RxnhuhQMVVqvaThrC98d13CG89yLwe0e8G1daU2vdSLXhEGcPsPmUhbXiz
+        Zp76UvmbI+jIm2flRK8Cpa2sCRwIoa1f6W/7kOZSdso5NjHAnq4XRhsEXdDrRrmisj4QsLBNqBXa
+        r373/WffmQD/6HZBs5Rko9MTP08tau7/D7Td4YRmNJC0vHJHt9mVQRqq4VkpPi/d60bBRM3ajBG6
+        iyiNGH0hSU53OU0+0Dx37wINKhwv53XApVcXlBAU9Jc7zzjBdMQLOG5u7CMs3LVcqOmWBytgnPFb
+        zGfnrcbL3wiLit3IdDHBWbxmzk6C7h93AVaJcgIAAA==
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['373']
+      Content-Type: [application/json]
+      Date: ['Tue, 21 Nov 2017 03:17:13 GMT']
+      Vary: [Accept-Encoding]
+      X-Frame-Options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.18.4]
+    method: GET
+    uri: http://api.petfinder.com/shelter.get?format=json&id=WA254
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA1VSwW6DMAz9lSrasYQktCtwoqq0U7fDumnTbllIIRokiISWbtq/z6EIupvz/Pz8
+        bOcHZVILkytdoBQpa4I4XicBRUuUnWRrldGAU0wAaKQ7Kp3LFqU/KOvrStu0twrypXNNGobn8xmf
+        I2zaImSE0PD9cX8Qpax5oLR1XAsJKraUlbtqCNNp1158eOdA5vWAfpeoMrpQrsvlhAeUMczuY+bT
+        mtdz5sEUxWWxa6X8Wuz46bJ4llZ00vOa0mhPhBB6u7nmbevTPM9baS27MsCjqibG0asKLypAsx0k
+        swsvjcHC1L5aKDfb3nafXas9/K2aCU1ikgyGj7y/Nqm4+z/XaoMjmlBPUvmNP7Ze3VikvhqepeTj
+        7p2qJcxUz80YoZuA0oDRFxKldJPS6AONk3fW06DC8mJcCBx8dkEJQV5/OveIE0wHPIMbp9o8wd5t
+        w4W8nnRvBIwz/I7x+rxRePoiflGhHZg2JDgJ50xvc9D9A2IivxZ5AgAA
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['384']
+      Content-Type: [application/json]
+      Date: ['Tue, 21 Nov 2017 03:17:13 GMT']
+      Vary: [Accept-Encoding]
+      X-Frame-Options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.18.4]
+    method: GET
+    uri: http://api.petfinder.com/shelter.get?format=json&id=WA252
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA1VSTY+bMBD9K5bV49rYJgkJJ6KVetkPVU2rXfVmwQSsgo2w89VV/3vHJAvpCfNm
+        /Oa98fugBdjSVcbWNKfGO7ZeLzdM0gdaHGHwxlnEJRcI9BD2xlYw0PyDFueutT4/e4P1JoQ+T5LT
+        6cRPKXdDnSghZPL+8rwrG+g0M9YHbUtAFt9AG64cpTvYMFzi8UtAmp87+veBts7WJhwqmHAmleIq
+        y5axbHU3V75DjQp1S7bWdPjZwXA0JXji9uQJPZHHOOJCGPnqPE4lj3oA8m1w9aC7yNY3zs50SqyY
+        2qxYlq6zWEXRYa6+bSOmq2oA7xXC+IfmTDt16Mr1QeOeit84fLR34bU7xnulCbPTJ7Ahgn9MP2Gb
+        tUhVBPf6fCVvdfh/EYuMp9lilGaqO11qqe6kydmPXMklWS1CQ7ZHILhe7GpA394wmA7QYtffLUBm
+        TEqm5A+R5jLLZfrrcxEHH9vwhtc1XAVicGZxUoiRf4rNDRdcjniBWcmte8X3870u4RqNZ1eiyzFl
+        txTp3vAparx0XeLHTp8IvknmytlXyPsPPm1MGcECAAA=
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['431']
+      Content-Type: [application/json]
+      Date: ['Tue, 21 Nov 2017 03:17:13 GMT']
+      Vary: [Accept-Encoding]
+      X-Frame-Options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.18.4]
+    method: GET
+    uri: http://api.petfinder.com/shelter.get?format=json&id=WA63
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA1VSTW+jMBD9K8jaYzG2SSBwIuqx3T00Xe1qb5aZgFWwEXa+WvW/d0xSyJ4wb2ae
+        3xu/D1KBUbbWpiEl0c7Gm826iDl5INURRqetQZxThsAAfq9NDSMpP0h17jvjyrPTWG+9H8okOZ1O
+        9JRSOzaJYIwnf38+71QLvYy1cV4aBcjiWuj8lUPZg/HjJRx/eKT5vSOfD6SzptH+UMOMx1wIKvJ8
+        HcpG9kvlBRpUKLtoa3SPnx2MR63ARXYfPaGn6DFccQlzQ2vNMihYFosii9MizUIV5fml+mcbMFnX
+        IzgnEMY/tKG7uUPWdvASN1K94TWTkQtt7DHMKe0XT09gfADf9TBjxYalIoB7eb6Sd9L/b3mV0zRf
+        5aFJ13e6svROGV/s8Iyvo2zl22h7hGhHySe2tSBvr+V1D2ixH+4WwPOY81jwV5aWPC95+u97EQcX
+        2nDCyQauAjEiizjO2MQ/B+SGM8onvMJUlMb+wpdyg1RwDcGzVehyytMtL3LQdA4VVbZP3NTpEkaL
+        ZKmcXY28X2uG1NarAgAA
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['414']
+      Content-Type: [application/json]
+      Date: ['Tue, 21 Nov 2017 03:17:13 GMT']
+      Vary: [Accept-Encoding]
+      X-Frame-Options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.18.4]
+    method: GET
+    uri: http://api.petfinder.com/shelter.get?format=json&id=WA604
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA1VS0W6DIBT9lYXssSJou1af3HvXLO2WLXsjQJVMwQhOu6b/vosa7d7g3HMP557L
+        FWVScyOUzlGKlDXBbrdJAopWKPuRjVVGA04xAaCW7qy0kA1Kryjrq1LbtLcK6oVzdRqGXdfhLsam
+        ycOIEBp+vuxPvJAVC5S2jmkuQcUWsnSjBjetds3FHx8dyLyf0G2FSqNz5VohZzygUYTjTRL5smbV
+        Unll3NiHo7S8lQ8H6TrTfHtSXRjtWXCEh93S8PHsy0yIRlobjQwwqMqZUXvJZlDMLqwwBnNT+Sau
+        3GL1KEVltPD4r6pnONmRzeDyzPpRvGTu/zDrLY5jSj1JiTtfT2R9Z436brgWkk2BO1VJmKVaHosI
+        3QaUBhF9I3FKtyldf6Fp4tZ6GnRYlk9BwJYXF5QQ5PXnHU84wXTAM1hsqs0BwraQiBz3uDccxhm+
+        xLRyVis8/wufVGgHpg0JTsKl0lvI6vYHLMDF6m4CAAA=
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['374']
+      Content-Type: [application/json]
+      Date: ['Tue, 21 Nov 2017 03:17:14 GMT']
+      Vary: [Accept-Encoding]
+      X-Frame-Options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.18.4]
+    method: GET
+    uri: http://api.petfinder.com/shelter.get?format=json&id=WA149
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA1VSwU6EMBD9FdN4XErbXV3gxN5XY1yNxlttu9AEWkKLoBv/3SkQWG/TN2/evJnp
+        BeXKCCu1KVCGtLNRktylEUUblH+p1mlrAKeYANAof9ZGqhZlF5QPdWVcNjgN+dL7Jovjvu9xv8W2
+        LWJGCI3fH44nUaqaR9o4z41QoOJKVflJQ9jO+PY7hLceZF5P6HeDKmsK7TupFjyijGF2n7CQNrxe
+        M09dofzNCXTkzbNyolOB0pTWBA6E0Nav9LdDSHMpW+UcmxhgT1cLowmCLui1o1xeWh8IWNg61Art
+        V7+H7rNrTYB/dLOgaULS0emZD1OLivv/A+32eEtTGkhaXrmju/TKIA3V8CwVn5fuda1gonptxgjd
+        R5RGjL6QbUb3Gd19oHnuzgUaVDhezOuAS68uKCEo6C93nnGC6YjncNzM2EdYuGu4UNMtj1bAOOO3
+        mM/OG42XvxEWFbuR6WKC03jNDE6C7h8UqGlMcgIAAA==
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['373']
+      Content-Type: [application/json]
+      Date: ['Tue, 21 Nov 2017 03:17:14 GMT']
+      Vary: [Accept-Encoding]
+      X-Frame-Options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.18.4]
+    method: GET
+    uri: http://api.petfinder.com/shelter.get?format=json&id=WA254
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA1VSwW6DMAz9lSrasYQkbVfgRFVpp26HddOm3bKQQjRIEAmFbtq/z6EIupvz/Pz8
+        bOcHpVILkymdowQpa4Io2sQBRUuUnmVjldGAU0wAqKU7KZ3JBiU/KO2rUtuktwryhXN1EoZd1+Fu
+        hU2Th4wQGr4/Ho6ikBUPlLaOayFBxRaydFcNYVrtmosP7xzIvB7R7xKVRufKtZmc8IAyhtl9xHxa
+        82rOPJg8vyz2jZRfiz0/XxbP0opWel5dGO2JEEJvN9e87XyaZ1kjrWVXBnhU5cQ4eVXhRQVoNoNk
+        euGFMViYylcL5Wbbu/azbbSHv1U9oXFE4sHwiffXJiV3/+dab/GKxtSTVHbjj23WNxapr4ZnIfm4
+        e6cqCTNVczNG6DagNGD0hawSuk3o+gONk7fW06DC8nxcCBx8dkEJQV5/OveIE0wHPIUbJ9o8wd5t
+        zYW8nvRgBIwz/I7x+rxWePoiflGhHZg2JDgO50xvM9D9AwGLgNN5AgAA
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['384']
+      Content-Type: [application/json]
+      Date: ['Tue, 21 Nov 2017 03:17:14 GMT']
+      Vary: [Accept-Encoding]
+      X-Frame-Options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.18.4]
+    method: GET
+    uri: http://api.petfinder.com/shelter.get?format=json&id=WA252
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA1VSy27bMBD8FYLIMaJIyrZsnWQE6CVpUdQJUvRGUGuJqEQKIv1q0H/PUnYl9yRq
+        djk7s5wPWoLVrjK2pgU13iXr9XKTCPpIyyMM3jiLuGAcgR7C3tgKBlp80PLctdYXZ2+w3oTQF2l6
+        Op3YKWNuqFPJuUh/fn3Z6QY6lRjrg7IakMU30IYrh3YHG4ZLPD4EpHnb0b+PtHW2NuFQwYQnQkom
+        83wZy1Z1c+UH1KhQtWRrTYefHQxHo8ETtyfP6Ik8xREXkpAvzuNU8qQGIN8HVw+qi2x94+xMJ/kq
+        kZtVkmfrPFZRdJir79uIqaoawHuJMP6hOdNOHapyfVC4p/I3Dh/tXVjtjvGeNmF2+gw2RPCP6Sds
+        s+aZjOBena/krQr/L2KRsyxfjNJMdadLLuWdNDH7ESuxJKtFaMj2CATXi10NqNsbBtMBWuz6uwWI
+        PBEikeKVZ4XIC7H49W8RBx/b8IZXNVwFYnBmcYLzkX+KzQ3nTIx4iVkprPuG7+d7peEajRen0eWY
+        sluKVG/YFDWmXZf6sdOnnG3SuXL2FfJ+Al3Ec9zBAgAA
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['432']
+      Content-Type: [application/json]
+      Date: ['Tue, 21 Nov 2017 03:17:14 GMT']
+      Vary: [Accept-Encoding]
+      X-Frame-Options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.18.4]
+    method: GET
+    uri: http://api.petfinder.com/shelter.get?format=json&id=WA63
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA1VSTW+jMBD9K8jaYzG2SSBwIuqx3T00Xe1qb5aZgFWwEXa+WvW/d0xSyJ4wb2ae
+        3xu/D1KBUbbWpiEl0c7Gm826iDl5INURRqetQZxThsAAfq9NDSMpP0h17jvjyrPTWG+9H8okOZ1O
+        9JRSOzaJYIwnf38+71QLvYy1cV4aBcjiWuj8lUPZg/HjJRx/eKT5vSOfD6SzptH+UMOMx1wIKvJ8
+        HcpG9kvlBRpUKLtoa3SPnx2MR63ARXYfPaGn6DFccQlzQ2vNMihYFosii9MizUIV5fml+mcbMFnX
+        IzgnEMY/tKG7uUPWdvASN1K94TWTkQtt7DHMKe0XT09gfADf9TBjxYalIoB7eb6Sd9L/b3mV0zRf
+        5aFJ13e6svROGV/s8Iyvo2zl22h7hGhHySe2tSBvr+V1D2ixH+4WwPOY81jwV5aWPC/5+t/3Ig4u
+        tOGEkw1cBWJEFnGcsYl/DsgNZ5RPeIWpKI39hS/lBqngGoJnq9DllKdbXuSg6RwqqmyfuKnTJYwW
+        yVI5uxp5vwDoFL/wqwIAAA==
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['415']
+      Content-Type: [application/json]
+      Date: ['Tue, 21 Nov 2017 03:17:15 GMT']
+      Vary: [Accept-Encoding]
+      X-Frame-Options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.18.4]
+    method: GET
+    uri: http://api.petfinder.com/shelter.get?format=json&id=WA604
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA1VS0W6DIBT9lYXssSJoXatP7r1rlnbLlr0RoEqmYASnXdN/38Ua7d7g3HMP557L
+        BeVScyOULlCGlDXBdpukAUUrlP/I1iqjAaeYANBId1JayBZlF5QPdaVtNlgF9dK5JgvDvu9xH2PT
+        FmFECA0/X3ZHXsqaBUpbxzSXoGJLWbmbBjeddu3ZHx8dyLwf0XWFKqML5TohZzygUYTjJI18WbN6
+        qbwybuzDQVreyYe9dL1pvz2pKY32LDjCw25p+Hj2ZSZEK62NbgwwqKqZ0XjJdlTMz6w0BnNT+yau
+        3GL1IEVttPD4r2pmON2SZHR5YsNNvGLu/zDrDY5jSj1JiTtfT2R9Z436briWkk2BO1VLmKVeHosI
+        3QSUBhF9I3FGNxlNvtA0cWc9DTosK6YgYMuLC0oI8vrzjiecYDriOSw202YPYVtIRN72uDMcxhm/
+        xLRy1ig8/wufVGhHpg0JTsOlMljI6voHzPuRCW4CAAA=
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['374']
+      Content-Type: [application/json]
+      Date: ['Tue, 21 Nov 2017 03:17:15 GMT']
+      Vary: [Accept-Encoding]
+      X-Frame-Options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.18.4]
+    method: GET
+    uri: http://api.petfinder.com/shelter.get?format=xml&id=WA149
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA0VRTW/jIBS851cg380Dp93EFqHbe1tVza662htrUxspBsvgJt1f3wd2nNvMm4F5
+        H+Lh0p/Ipx69cfaQccoyom3tGmPbQ2a8y/f7+zLn2YPcbMSgw4exjR4JvrK+unhzyLoQhgrgfD7T
+        85a6sYWCMQ5/np+Odad7lRvrg7K1zgj6K+teVK/9oGo960+uViGlLz+pwdA1idauB5+MHhgt4aZc
+        fJPJDRGdVkgREbEMIhnlAq4kCsFgZlD9IAvGdznnecF/sW3FdxW//yvgpkc3ojD5CInAXWjJGROQ
+        UKqh16tWE0huWO0C1l6E7/QpLG2ZRr4/8rtSAKJYsLgC+Tq1OpCjm2xD3rSvJy0gCdGhmmbEFL5k
+        LLRYaG3Cl3yc/k2jxb4iubatMWnuaP7nvxlkuWdlISDC9BgTw/glfx/jTDOO9ROeIUw4492ObnmJ
+        G1wrSXa2nVnOi4IWP/b4560YLUPn7HUrH+qyIDydOckhTuvjsGOa9WfnQhTigQXMnrjBdW/idmq5
+        +QYqSkJ2qAIAAA==
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['409']
+      Content-Type: [text/xml; charset=iso-8859-1]
+      Date: ['Tue, 21 Nov 2017 03:17:15 GMT']
+      Vary: [Accept-Encoding]
+      X-Frame-Options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.18.4]
+    method: GET
+    uri: http://api.petfinder.com/shelter.get?format=xml&id=WA254
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA0VRy27bMBC8+ysI3SU+HNeWQDMJAvSU9tA0aNEbS9ESEYsURCq2+vVdUrJ8m90Z
+        cnZ2+eO1O6NPPXjj7DGjBcmQtsrVxjbHzHiXHw67MqfZo9hseK/DydhaDwheWV9dvTlmbQh9hfHl
+        ciku28INDWaEUPz72+ubanUnc2N9kFbpDIG+su677LTvpdIz/+qUDMl9+Un2plidCuU67JPQY1KU
+        +M5cfZ2JDeKtllACQnwJIkhBOb4VkQgGPIPsesEI3eeU5oz+JNuK7iu6+8PxnY9qQGH0ESIOu9CC
+        EsJxQqkHWi8bjXBS41XO8ToL960+h2UsU4tfz2z3wDGg2LCwAvHVNc2EXgatP9CL/JzQD+3VqDlO
+        bJTJuh7Aii5GS8mWUpkwiefx7zhYGC4Wt9k12M1jzf/8M70oD6RkHEeYHrvRhmES728x2Ixj/wy3
+        CCMEfdgXW1rCGtdOop1t5iqnjBXsywH+vDejpG+dva3mJK8LgvuZszjFyComVhB4SHmfJtk6F+/M
+        8ayKi1zXx+8XF5v//Q+HX68CAAA=
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['419']
+      Content-Type: [text/xml; charset=iso-8859-1]
+      Date: ['Tue, 21 Nov 2017 03:17:15 GMT']
+      Vary: [Accept-Encoding]
+      X-Frame-Options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.18.4]
+    method: GET
+    uri: http://api.petfinder.com/shelter.get?format=xml&id=WA252
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA01STY+bMBC951dY3MEfJJAgx9topV52W1XNVrvqzQIHrIKNsPPVX98xsKQnP897
+        nnkzY/5061p0UYPT1uwjmpAIKVPaSpt6H2ln4+12s4tp9CRWK94rf9KmUgOCV8YVN6f3UeN9X2B8
+        vV6Ta5rYocaMEIo/vr0ey0Z1MtbGeWlKFSHQF8Z+l51yvSzVxL/aUvqx+pxJ9jpZKiWl7bAbhQ6T
+        ZIcfzM1VkVgh3igJV0CIz40IklCOPy+B8Bpqetn1ghGax5TGjL6RtKB5QbPfHD/4oAbkzy5AxGEW
+        SlBCOB7RGAOtk7VCeFTjRc7x4oW7RrV+tqUr8X5gG8YxoBAwMALxU9VgT7boYHQHx1ENF10qh+wJ
+        vcD80bM9G39HMfpqHaRCz3JQ6Mdg60F2HI85QjJZVQMYooLRjG5QtvYNOlwUOnK8UP/p2Gy71P4u
+        XpTx0FmAn40r8Dr1NKX/q3ux25IU3Ac4Pg3Ghrv4dQxTmXCIt7BIf4YprfMkzdc5x0tkpK2pp1tM
+        GUtYnm9AsQSDpG+sUbCjLGa7LM7TLeSYYoE9ydtsHr6DboWsbO8l/Igvf2Beo5N7UtsLxxMfNrLs
+        gT++jlj9A0eq9n74AgAA
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['471']
+      Content-Type: [text/xml; charset=iso-8859-1]
+      Date: ['Tue, 21 Nov 2017 03:17:16 GMT']
+      Vary: [Accept-Encoding]
+      X-Frame-Options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.18.4]
+    method: GET
+    uri: http://api.petfinder.com/shelter.get?format=xml&id=WA63
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA01Sy5KbMBC8+ytU3NEDbDCUrI0rx93kECeV1N5UIINqQaKQ/MrXZwQszome6R5N
+        zwz85d536KpGp605RAzTCClT2Vqb5hBpZ+P9flfELHoRmw0flD9rU6sRQZVx5d3pQ9R6P5SE3G43
+        fEuxHRuSUMrIn29vp6pVvYy1cV6aSkUI9KWx32Wv3CArNfNvtpJ+6r68JAeN1064sj1xk9ARigvy
+        ZO6ujsQG8VZJCAEhvgwiKGacfAaB8Bp6etkPIqEsjxmLE/aTpiXLS5a9c/LkgxqQv7gAEYddKMEo
+        5WRCUw60TjYKkUlNVjknqxfuWtX5xZauxe9jlnICIMQGNiB+qAbcyQ4dje7hc1LjVVfKIXtGr7B+
+        9NVejH9wMqlDmazrETozkbCM7VC29S06XhU6YU5W7j9hshistH+IV2U8zBDg54gKXM3u5/f/6kEU
+        e5omnAQ4lQYP40P8OoX5ZxzyHZzMX2Af2xyn+TbnZM1MtDXNHMUsSXCS5ztQrMkgGVprFFwji5Mi
+        i9MizTiZc4E9y/tiHg6vOyFrO3gJt//yAauZnDxwY6+czHzY/bpx/vxJxOYfxeQMQuICAAA=
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['452']
+      Content-Type: [text/xml; charset=iso-8859-1]
+      Date: ['Tue, 21 Nov 2017 03:17:16 GMT']
+      Vary: [Accept-Encoding]
+      X-Frame-Options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.18.4]
+    method: GET
+    uri: http://api.petfinder.com/shelter.get?format=xml&id=WA604
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA0VRyU7DMBS89yus3OMlobSNXAN3QIhFIG6W4zYWjR3FLmn5ep6dNL3NvBl73sLv
+        Tu0B/ereG2e3GcM0Q9oqVxu732bGu3y9Xm5ylt2JxYJ3OuyMrXWP4JX11cmbbdaE0FWEDMOAhxK7
+        fk8KShn5enp8U41uZW6sD9IqnSHwV9Y9y1b7Tio96o9OyZDSp59kZ/CchJVriU9GTyjekKty8nUm
+        Fog3WgIFhPg0iKCYcXIhUQgGMoNsO1FQtsoZywv2TsuKrSp2+83JVY9uQOHoI0QcdqEFo5SThFIN
+        vF7uNSLJTWY7J3Mv3Df6EKa2TC0+H27pDSeAYsHCCsSLVM6jV+3VUaNnHQbX/3CSpOiRdd1DDptS
+        JlpMVJlwFq+6bp2tobXILp1rCBubGj/6M53YrOmy4CTC9NodbejP4uMtjjXiWD/AJcIRxrxZ4bJk
+        sMS5kmRn9yPLWVHgcrmBP6/FaOkaZy+L2cnThOB65iC6OHCf5r0/y8a5eFxORjFub94Zv55ZLP4B
+        YrVtZKQCAAA=
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['407']
+      Content-Type: [text/xml; charset=iso-8859-1]
+      Date: ['Tue, 21 Nov 2017 03:17:16 GMT']
+      Vary: [Accept-Encoding]
+      X-Frame-Options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.18.4]
+    method: GET
+    uri: http://api.petfinder.com/shelter.get?format=json&id=WA149
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA1VSwW6DMAz9lSrasYQk7VrgRO/dNK2bNu2WJSlEggSRMNiq/fsciqC7Oc/Pz892
+        LihXRlipTYEypJ2NkuQ+jShao/xLtU5bAzjFBIBG+bM2UrUou6B8qCvjssFpyJfeN1kc932P+w22
+        bREzQmj8/nA8iVLVPNLGeW6EAhVXqspfNYTtjG+/Q3jnQeb1hH7XqLKm0L6TasYjyhhmu4SFtOH1
+        knnqCuVXJ9CRq2flRKcCpSmtCRwIoa1f6G+HkOZStso5dmWAPV3NjCYIuqDXjnJ5aX0gYGHrUCu0
+        X/weus+uNQH+0c2MpglJR6dnPlxbVNz/H2i7xxua0kDS8sYd3aY3Bmmohmep+LR0r2sFE9VLM0bo
+        PqI0YvSFbDK6z+juA01zdy7QoMLxYloHXHpxQQlBQX++84QTTEc8h+Nmxj7Cwl3Dhbre8mgFjDN+
+        i+nsvNF4/hthUbEbmS4mOI2XzOAk6P4BldmwUXICAAA=
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['374']
+      Content-Type: [application/json]
+      Date: ['Tue, 21 Nov 2017 03:17:16 GMT']
+      Vary: [Accept-Encoding]
+      X-Frame-Options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+version: 1
