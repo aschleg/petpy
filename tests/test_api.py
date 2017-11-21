@@ -125,15 +125,23 @@ def test_pet_getRandom(top_level_keys, petfinder_keys):
 
 @vcr.use_cassette('tests/cassettes/pet_get.yml', filter_query_parameters=['key'])
 def test_pet_get(top_level_keys, petfinder_pet_get_keys):
-    # Call pet_getRandom to get a valid petId to ensure test is run correctly
-    petid = pf.pet_getRandom()['petfinder']['petIds']['id']['$t']
+    # Call pet_getRandom to get a valid petId to ensure test is run
+    petids = []
+    ids = pf.pet_getRandom(records=5)
 
-    response1 = pf.pet_get(petid)
-    response2 = pf.pet_get(petid, outputformat='xml')
+    for i in ids:
+        petids.append(i['petfinder']['petIds']['id']['$t'])
+
+    response1 = pf.pet_get(petids[0])
+    response2 = pf.pet_get(petids[0], outputformat='xml')
+    response3 = pf.pet_get(petids[0], outputformat='xml', return_df=True)
+    response4 = pf.pet_get(petids, outputformat='xml', return_df=True)
+
     r = ET.fromstring(response2.encode('utf-8'))
 
     assert isinstance(response1, dict)
     assert isinstance(response2, string_types)
+    assert isinstance(response3, pd.DataFrame)
 
     assert set(response1.keys()).issubset(top_level_keys)
     assert set(response1['petfinder'].keys()).issubset(petfinder_pet_get_keys)
@@ -173,10 +181,13 @@ def test_shelter_get(top_level_keys, petfinder_shelter_get_keys):
 
     response1 = pf.shelter_get(shelterid)
     response2 = pf.shelter_get(shelterid, outputformat='xml')
+    response3 = pf.shelter_get(shelterid, outputformat='xml', return_df=True)
+
     r = ET.fromstring(response2.encode('utf-8'))
 
     assert isinstance(response1, dict)
     assert isinstance(response2, string_types)
+    assert isinstance(response3, pd.DataFrame)
 
     assert set(response1.keys()).issubset(top_level_keys)
     assert set(response1['petfinder']['shelter'].keys()).issubset(petfinder_shelter_get_keys)
@@ -192,10 +203,13 @@ def test_shelter_getPets(top_level_keys, petfinder_keys):
 
     response1 = pf.shelter_getPets(shelterid, count=1)
     response2 = pf.shelter_getPets(shelterid, count=1, outputformat='xml')
+    response3 = pf.shelter_getPets(shelterid, outputformat='xml', return_df=True)
+
     r = ET.fromstring(response2.encode('utf-8'))
 
     assert isinstance(response1, dict)
     assert isinstance(response2, string_types)
+    assert isinstance(response3, pd.DataFrame)
 
     assert set(response1.keys()).issubset(top_level_keys)
     assert set(response1['petfinder'].keys()).issubset(petfinder_keys)

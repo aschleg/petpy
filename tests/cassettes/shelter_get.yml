@@ -11,20 +11,19 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA1VSwU7DMAz9lSlC4rKmSTq0rqciIXEZIG0gELco9dpIbVLVGR1M+3eSrmrhlOT5
-        +dnP8ZnkYJQttClJRjTaKE3vNhEnS5J/QYfaGo9zyjzQgjtoU0BHsjPJT01tMDuh9vHKuTaL477v
-        aZ9Q25WxYIzHH0/bvaqgkZE26KRR4FVqie7lcEBwQebGBXlyWRKsoHa+YkDHe7gqezSu+564b/tA
-        rq0ptTsWMOERF4ImK5GGsJHNHHn03qC7xcUDSFctdrZfPNhysQNURwjstrIm0EMTTro58/0+hGVR
-        dIAorgzvRtcToxy08+uBfkDdoBpGEFKVdnPn+8p2UGsz1PzR7RTYpDxJAniQp2uRWrr/7lZruk5S
-        EUi6+NNfwvmfFnnIvvh3BXL8Jqcb8KaauZpgfB1xHgn2KpLsjmeCfZLR+nGYvs9AWY4T8bsxt8EZ
-        I0F/2owRZ5QPeO7XITP22Y8fW6ng+vtbq7yfYZHGRZGtptM2UWWbGAcmxoxu4jlywsLr/gJyvwbq
-        pAIAAA==
+        H4sIAAAAAAAAA1VSwU7DMAz9lSlC4kLTJB1a21ORJnEZIDEQiFuUem2kNqnqjA4Q/07SVe04JXl+
+        fvZz/EMKMMqW2lQkJxptlKa3WcTJDSk+oUdtjcc5ZR7owB20KaEn+Q8pTm1jMD+h9vHauS6P42EY
+        6JBQ21exYIzH7w+7vaqhlZE26KRR4FUaie7pcEBwQebKBXnye0Owhsb5igGd7uGq7NG4/mvmvu4D
+        ubGm0u5YwoxHXAiarEUawka2S+Tee4P+GldbkK5ePdthtbXV6hlQHSGwu9qaQA9NOOmWzLe7EJZl
+        2QOiODO8G93MjGrULs4H+gH1o2oYQUhV2i2d72vbQ6PNWPNbd3MgS3mSBPAgT+cijXT/3a03dJOk
+        IpB0edFfwvlFizxk//p3DXL6Jqdb8KbapZpgfBNxHgn+wlgusnzNPshk/ThO32egrKaJ+N1Y2uCM
+        kaA/b8aEM8pHvPDrkBv76MePnVRw/v2dVd7PuEjToshO03mbqLJtjCMTY0azeImcsPS6f+QC2mmk
+        AgAA
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
-      Content-Length: ['403']
       Content-Type: [application/json]
-      Date: ['Mon, 20 Nov 2017 23:51:20 GMT']
+      Date: ['Tue, 21 Nov 2017 00:29:40 GMT']
       Vary: [Accept-Encoding]
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
@@ -40,19 +39,19 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA1VSwU6tMBD9lZvGxI2UtmgulxUmJm70LbzPaNw1ZYQm0BKmV+7T+O9vCgR0RTnn
-        zJkznX6xEpzxlXU1K5hFn+T5zSGR7IqVHzCg9Y5wyQUBPYR36yoYWPHFynPXOizOaIlvQuiLNB3H
-        kY8Z90OdKiFk+vr4cDQNdDqxDoN2BsgFG2jD7GH8yYXhXzxeBLJ5PrLvK9Z6V9twqmDFE6kUz65V
-        Hmmnu425p9wwXOLuDnRodk9+3N35evcEaE4Q1X3jXZTTkRKErfLlNtK6qgZAVLOCktp2VdSTdzl/
-        kIYfJtc4Xiw1NmzJj40foLVu6vlp+5U45DLLIviuz3OTVoff013v+T7LVRTZ6ke+TMofEWWspt8G
-        9LKBYDugmbqtmRJyn0iZKPFXZcWNLJR8Y8vkJ4wyqkBdLxdCa99SSCFY9F+XvuCCywkvadOF83/o
-        9rHXBubFPnhD40xvZHkDurd8fSjc+C7FSYmp4Id0Y85Yke9/v2ipln8CAAA=
+        H4sIAAAAAAAAA1VSQW6kMBD8ysiKtJdgbDPRMJxYKdJesjlkdpUoN8t0wBLYiPaESaL8PW1AkJww
+        VdXV1W5/sBKc8ZV1NSuYRZ/k+c0xkeyala8woPWOcMkFAT2EF+sqGFjxwcpL1zosLmiJb0LoizQd
+        x5GPGfdDnSohZPr09+5kGuh0Yh0G7QyQCzbQhtnD+LMLw1s8XgWy+X9in9es9a624VzBiidSKZ7t
+        VR5pp7uN+UO5YfiFu1vQodk9+HF36+vdA6A5Q1T3jXdRTkdKELbKx9+R1lU1AKKaFZTUtquinrzL
+        +YM0/DC5xvFiqbFhS35q/ACtdVPPd9uvxDGXWRbBF32Zm7Q6/Jxuf+CHLFdRZKtv+TIpv0WUsZp+
+        G9DLBoLtgGbqtmZKyEMiZaLkPyEKdSz28pktk58xyqgCdb1cCK19SyGFYNF/XfqCCy4nvKRNF87f
+        0+1jrw3Mi73zhsaZ3sjyBnRv+fpQuPFdipMSU8GP6cZcsCLfLynVdRV/AgAA
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
-      Content-Length: ['386']
+      Content-Length: ['387']
       Content-Type: [application/json]
-      Date: ['Mon, 20 Nov 2017 23:51:21 GMT']
+      Date: ['Tue, 21 Nov 2017 00:29:41 GMT']
       Vary: [Accept-Encoding]
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
@@ -68,20 +67,48 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA0VSTW+jMBC951dYXHrCX7QKQY7blSrtpdtD09Wu9maBC5bARthZ0v76jg0hJ96b
-        eeOZeYN4vAw9+q8nb5w9ZgzTDGlbu8bY9pgZ7/KyfDjkLHuUu50YdfgwttETgirrq4s3x6wLYawI
-        mecZzwV2U0s4pYz8/fVyqjs9qNxYH5StdYZAX1n3qgbtR1XrJf/iahVS9/UlNRq8dcK1G4hPQk8o
-        PpBb5uKbTO6Q6LQCCgiJdRFJMRPkSmIiGOgZ1DBKTtk+Zyzn9J0X1QOrOPsnyC0f1YDC2UeIBHih
-        JaNUkIRSDLRetRqRpCabXJBtFuE73Yd1LNPIPz8KBjMBigELFsif4LGe7jx61ip06M3N6Nm16E37
-        +qwFSZooVk0zQUO2tlspX2ltwqc8dW7SvbFQlvh1CQ19l/mWp77MKA8lKwpBIkz17mzD9Cl/n+KG
-        C47xHo4SzrDx/R7vi5ILskVS2tl2YTnjHBf3vATFFoySsXP26tGHuqwIDml62abdn5aPh5tOaev4
-        +wiySKKdm4nidne5+wYbNVbFtQIAAA==
+        H4sIAAAAAAAAA0VSTW+cMBC976+wuPSEv9hqWeR1WilSLmkP2UaJerPAAUtgI+wNm/76jg3Lnnhv
+        5o1n5g3i4Tr06FNP3jh7yhimGdK2do2x7Skz3uVl+f2Ys+xB7nZi1OHD2EZPCKqsr67enLIuhLEi
+        ZJ5nPBfYTS3hlDLy/uv5XHd6ULmxPihb6wyBvrLutxq0H1Wtl/yzq1VI3deX1Gjw1gnXbiA+CT2h
+        +EjumatvMrlDotMKKCAk1kUkxUyQG4mJYKBnUMMoOWWHnLGcsz+UVvxY7dlfQe75qAYULj5CJMAL
+        LRmlgiSUYqD1qtWIJDXZ5IJsswjf6T6sY5lGvv0sGMwEKAYsWCCfwGM9ffPoUavQoRc3o0fXohft
+        64sWJGmiWDXNBA3Z2m6lfKW1CV/y3LlJ98ZCWeK3JTT0XeZbnvpnRnksWVEIEmGqdxcbpi/5eo4b
+        LjjGezhKuMDG+wM+FCUXZIuktLPtwnLGOS72vATFFoySsXP25tGHuq4IDml62abdfywfDzed0tbx
+        9xFkkUQ7NxPF/e5y9x+0yMxVtQIAAA==
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
       Content-Length: ['421']
       Content-Type: [text/xml; charset=iso-8859-1]
-      Date: ['Mon, 20 Nov 2017 23:51:21 GMT']
+      Date: ['Tue, 21 Nov 2017 00:29:41 GMT']
+      Vary: [Accept-Encoding]
+      X-Frame-Options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.18.4]
+    method: GET
+    uri: http://api.petfinder.com/shelter.get?format=json&id=WA311
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA1VSQW6kMBD8ysiKtJdgbDPRMJxYKdJesjlkdpUoN8t0wBLYiPaESaL8PW1AkJww
+        VdXV1W5/sBKc8ZV1NSuYRZ/k+c0xkeyala8woPWOcMkFAT2EF+sqGFjxwcpL1zosLmiJb0LoizQd
+        x5GPGfdDnSohZPr09+5kGuh0Yh0G7QyQCzbQhtnD+LMLw1s8XgWy+X9in9es9a624VzBiidSKZ7t
+        VR5pp7uN+UO5YfiFu1vQodk9+HF36+vdA6A5Q1T3jXdRTkdKELbKx9+R1lU1AKKaFZTUtquinrzL
+        +YM0/DC5xvFiqbFhS35q/ACtdVPPd9uvxDGXWRbBF32Zm7Q6/Jxuf+CHLFdRZKtv+TIpv0WUsZp+
+        G9DLBoLtgGbqtmZKyEMiZaLkPyEKdSz28pktk58xyqgCdb1cCK19SyGFYNF/XfqCCy4nvKRNF87f
+        0+1jrw3Mi73zhsaZ3sjyBnRv+fpQuPFdipMSU8GP6cZcsCLfLynVdRV/AgAA
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['387']
+      Content-Type: [application/json]
+      Date: ['Tue, 21 Nov 2017 00:29:41 GMT']
       Vary: [Accept-Encoding]
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
