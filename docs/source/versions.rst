@@ -6,7 +6,7 @@ Version History
 Changelog and version changes made with each release.
 
 Version 1.5.1
-=============
+-------------
 
 - Slight fix to :code:`pet_getRandom()` method. Before, if the method parameter :code:`return_df = True`, but
   the parameter :code:`output` was not one of 'basic' or 'full', the :code:`return_df` parameter was overridden
@@ -20,14 +20,13 @@ Version 1.5.1
 - More code cleanup, formatting and simplification.
 
 Version 1.5.0
-=============
+-------------
 
 - Add option to convert returned results into a pandas DataFrame.
 - Formatting and code cleanup.
 - Updated docstrings
 
-
 Version 1.0.0
-=============
+-------------
 
 First major release.
