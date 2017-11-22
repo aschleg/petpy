@@ -52,7 +52,7 @@ API methods documentation can also be found [here](https://www.petfinder.com/dev
 
 A series of IPython notebooks that introduce and explore the `petpy` library.
 
-* [01 - Introduction](docs/vignettes/html/01-Introduction.html)
+* [01 - Introduction](docs/vignettes/01-Introduction.ipynb)
 
 ## Installation
 
