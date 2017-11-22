@@ -5,6 +5,12 @@ Version History
 
 Changelog and version changes made with each release.
 
+Version 1.5.5
+-------------
+
+- :code:`shelter_getPets()` method now returns a complete flattened pandas DataFrame when the parameter
+  :code:`return_df = True`.
+
 Version 1.5.4
 -------------
 
