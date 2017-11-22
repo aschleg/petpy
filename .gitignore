@@ -2,7 +2,7 @@ $ cat .gitignore
 
 .cache/
 dist/
-*.ipynb
+Untitled.ipynb
 *.ipynb_checkpoints
 *.pyc
 .idea

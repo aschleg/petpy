@@ -7,14 +7,14 @@ import xml.etree.ElementTree as ET
 
 def _coerce_to_dataframe(x, method):
 
-    if 'pet' in method:
+    if 'pet' in method or 'Pet' in method:
 
         res = media_df = opt_df = breed_df = DataFrame()
 
         if method == 'pet.get' or method == 'pet.getRandom':
             res, breed_df, opt_df, media_df = _pet_find_get_coerce(x['petfinder']['pet'])
 
-        elif method == 'pet.find':
+        elif method == 'pet.find' or method == 'shelter.getPets':
 
             res = media_df = opt_df = breed_df = DataFrame()
 
@@ -38,14 +38,12 @@ def _coerce_to_dataframe(x, method):
         except KeyError:
             pass
 
-    elif 'shelter' in method:
+    else:
 
         if method == 'shelter.find' or method == 'shelter.listByBreed':
             df = json_normalize(x['petfinder']['shelters']['shelter'])
         elif method == 'shelter.get':
             df = json_normalize(x['petfinder']['shelter'])
-        elif method == 'shelter.getPets':
-            df = json_normalize(x['petfinder']['pets']['pet'])
         else:
             raise ValueError('unknown API method')
 
