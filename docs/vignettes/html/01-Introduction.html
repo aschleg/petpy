@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>01 - Introduction</title>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>01-Introduction</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -13,8 +11,8 @@
 *
 */
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1109,7 +1107,6 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2538,7 +2535,6 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3029,7 +3025,6 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8760,6 +8755,9 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
+[dir="rtl"] #ipython_notebook {
+  float: right !important;
+}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -8962,8 +8960,14 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
+[dir="rtl"] #tabs li {
+  float: right;
+}
 ul#tabs {
   margin-bottom: 4px;
+}
+[dir="rtl"] ul#tabs {
+  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -8986,6 +8990,16 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
+}
+[dir="rtl"] .list_toolbar .tree-buttons {
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-right {
+  padding-top: 1px;
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-left {
+  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9122,6 +9136,9 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
+[dir="rtl"] #tree-selector a {
+  float: right;
+}
 #button-select-all {
   min-width: 50px;
 }
@@ -9211,6 +9228,9 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
+[dir="rtl"] #new-menu {
+  text-align: right;
+}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9255,6 +9275,9 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
+}
+[dir="rtl"] #running .col-sm-8 {
+  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9551,6 +9574,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9571,11 +9595,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11246,7 +11265,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 20ex;
+  width: 21ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11558,6 +11577,7 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
+  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11571,6 +11591,9 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
+}
+.terminal-app .terminal .xterm-rows {
+  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11631,8 +11654,10 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11643,9 +11668,11 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
@@ -11699,9 +11726,7 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}
-
-@media print {
+}@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -11722,7 +11747,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -11746,8 +11771,7 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11755,8 +11779,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11765,8 +11788,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11774,8 +11796,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11803,8 +11824,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11813,8 +11833,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11822,8 +11841,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11836,7 +11854,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">petpy</span>
@@ -11847,8 +11865,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11858,8 +11875,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11870,7 +11886,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -11886,7 +11902,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pf</span> <span class="o">=</span> <span class="n">petpy</span><span class="o">.</span><span class="n">Petfinder</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
@@ -11897,8 +11913,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11907,8 +11922,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11917,8 +11931,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11926,8 +11939,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11936,8 +11948,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11945,8 +11956,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11955,8 +11965,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11965,8 +11974,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11974,8 +11982,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11986,7 +11993,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cats</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">breed_list</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">)</span>
@@ -11997,8 +12004,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12009,7 +12015,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cats</span>
@@ -12023,7 +12029,11 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[20]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[5]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -12136,7 +12146,7 @@ div#notebook {
     {&#39;$t&#39;: &#39;Turkish Van&#39;},
     {&#39;$t&#39;: &#39;Tuxedo&#39;}]},
   &#39;header&#39;: {&#39;status&#39;: {&#39;code&#39;: {&#39;$t&#39;: &#39;100&#39;}, &#39;message&#39;: {}},
-   &#39;timestamp&#39;: {&#39;$t&#39;: &#39;2017-11-22T16:57:26Z&#39;},
+   &#39;timestamp&#39;: {&#39;$t&#39;: &#39;2017-11-23T02:45:12Z&#39;},
    &#39;version&#39;: {&#39;$t&#39;: &#39;0.1&#39;}}}}</pre>
 </div>
 
@@ -12146,8 +12156,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12158,7 +12167,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cats_df</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">breed_list</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -12173,7 +12182,11 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[21]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[6]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -12229,8 +12242,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12239,8 +12251,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12251,7 +12262,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pf</span><span class="o">.</span><span class="n">breed_list</span><span class="p">(</span><span class="s1">&#39;zebra&#39;</span><span class="p">)</span>
@@ -12265,7 +12276,11 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[16]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[7]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -12275,7 +12290,7 @@ div#notebook {
   &#39;@xsi:noNamespaceSchemaLocation&#39;: &#39;http://api.petfinder.com/schemas/0.9/petfinder.xsd&#39;,
   &#39;header&#39;: {&#39;status&#39;: {&#39;code&#39;: {&#39;$t&#39;: &#39;200&#39;},
     &#39;message&#39;: {&#39;$t&#39;: &#39;invalid arguments&#39;}},
-   &#39;timestamp&#39;: {&#39;$t&#39;: &#39;2017-11-21T19:06:51Z&#39;},
+   &#39;timestamp&#39;: {&#39;$t&#39;: &#39;2017-11-23T02:45:17Z&#39;},
    &#39;version&#39;: {&#39;$t&#39;: &#39;0.1&#39;}}}}</pre>
 </div>
 
@@ -12285,8 +12300,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12295,8 +12309,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12304,8 +12317,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12316,7 +12328,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pf</span><span class="o">.</span><span class="n">pet_getRandom</span><span class="p">()</span>
@@ -12330,7 +12342,11 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[17]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[8]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -12339,9 +12355,9 @@ div#notebook {
  &#39;petfinder&#39;: {&#39;@xmlns:xsi&#39;: &#39;http://www.w3.org/2001/XMLSchema-instance&#39;,
   &#39;@xsi:noNamespaceSchemaLocation&#39;: &#39;http://api.petfinder.com/schemas/0.9/petfinder.xsd&#39;,
   &#39;header&#39;: {&#39;status&#39;: {&#39;code&#39;: {&#39;$t&#39;: &#39;100&#39;}, &#39;message&#39;: {}},
-   &#39;timestamp&#39;: {&#39;$t&#39;: &#39;2017-11-21T19:06:54Z&#39;},
+   &#39;timestamp&#39;: {&#39;$t&#39;: &#39;2017-11-23T02:45:21Z&#39;},
    &#39;version&#39;: {&#39;$t&#39;: &#39;0.1&#39;}},
-  &#39;petIds&#39;: {&#39;id&#39;: {&#39;$t&#39;: &#39;39801731&#39;}}}}</pre>
+  &#39;petIds&#39;: {&#39;id&#39;: {&#39;$t&#39;: &#39;35781395&#39;}}}}</pre>
 </div>
 
 </div>
@@ -12350,8 +12366,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12362,7 +12377,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pf</span><span class="o">.</span><span class="n">pet_getRandom</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s1">&#39;full&#39;</span><span class="p">)</span>
@@ -12376,7 +12391,11 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[18]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[9]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -12385,105 +12404,46 @@ div#notebook {
  &#39;petfinder&#39;: {&#39;@xmlns:xsi&#39;: &#39;http://www.w3.org/2001/XMLSchema-instance&#39;,
   &#39;@xsi:noNamespaceSchemaLocation&#39;: &#39;http://api.petfinder.com/schemas/0.9/petfinder.xsd&#39;,
   &#39;header&#39;: {&#39;status&#39;: {&#39;code&#39;: {&#39;$t&#39;: &#39;100&#39;}, &#39;message&#39;: {}},
-   &#39;timestamp&#39;: {&#39;$t&#39;: &#39;2017-11-21T19:06:58Z&#39;},
+   &#39;timestamp&#39;: {&#39;$t&#39;: &#39;2017-11-23T02:45:24Z&#39;},
    &#39;version&#39;: {&#39;$t&#39;: &#39;0.1&#39;}},
   &#39;pet&#39;: {&#39;age&#39;: {&#39;$t&#39;: &#39;Adult&#39;},
    &#39;animal&#39;: {&#39;$t&#39;: &#39;Dog&#39;},
-   &#39;breeds&#39;: {&#39;breed&#39;: {&#39;$t&#39;: &#39;Chihuahua&#39;}},
+   &#39;breeds&#39;: {&#39;breed&#39;: [{&#39;$t&#39;: &#39;Chihuahua&#39;}, {&#39;$t&#39;: &#39;Terrier&#39;}]},
    &#39;contact&#39;: {&#39;address1&#39;: {},
     &#39;address2&#39;: {},
-    &#39;city&#39;: {&#39;$t&#39;: &#39;Parkland&#39;},
-    &#39;email&#39;: {&#39;$t&#39;: &#39;info@getalifepetrescue.com&#39;},
+    &#39;city&#39;: {&#39;$t&#39;: &#39;Brazil&#39;},
+    &#39;email&#39;: {&#39;$t&#39;: &#39;luckypupsrescue@gmail.com&#39;},
     &#39;fax&#39;: {},
-    &#39;phone&#39;: {&#39;$t&#39;: &#39;954-629-2445&#39;},
-    &#39;state&#39;: {&#39;$t&#39;: &#39;FL&#39;},
-    &#39;zip&#39;: {&#39;$t&#39;: &#39;33067&#39;}},
-   &#39;description&#39;: {&#39;$t&#39;: &#34;Shakira Long Haired Chihuahua is approximately 6-7-year-old, 6.5-pound bundle of joy. She so very much wants to be loved and she shows it with her head tilts as she tunes into your baby talk while she wags her tail. She is a sweet girl who arrived at us as a stray so the vet is figuring her age by her blood work, teeth, and her eyes. She is healthy and she has received a dental cleaning along with her other vetting. She enjoys being next to you and is good with other dogs so she would make a great addition to your doggy home. SHe is a wonderful companion. She is calm and sweet so she is the perfect package. \nHer adoption fee is $300 to go towards her vetting (vaccines, spay/neuter, heartworm/Ehrlichia/Lyme test, fecal test, pre-op blood work, dental cleaning, and microchip). If you are interested in adopting please fill out the adoption application} http://www.getalifepetrescue.com/galpr-info/adoption-application.html\n\nAdoption Procedure:\nFill out our Adoption Application\nMeet with the dog(s)Home check\nAdoption Contract\nAdoption Donation (Between $150-$400)\n\nMedical Care That We Give To Our Rescued Pets:\nComplete Physical Examination\nSpay or Neuter Surgery\nHeartworm/Ehrlichia/Lyme Tested\nFecal Exam\nVACCINES~ Bordatella, Distemper, Rabies, Parvo, Corona, Adenovirus Type-2  \nDewormed\nMicrochipped plus lifetime registration (not for cats)\nGrooming (as needed)\nDental Cleaning (if needed)\nStarted on Heartworm Preventative and Flea &amp; Tick Preventative\n\nWhat Makes A Qualified Adopter:\nApplicant must be 21 years or older Applicant&#39;s current pet should be up-to-date with appropriate vaccines Applicant&#39;s current pet must be altered, unless medical reasons do not permit All people in household need be present for home check Need Landlord or Home Owners Association&#39;s approval (if applicable) to have a pet  Applicant must be in the state of Florida preferable in Dade, Broward or Palm Beach Counties.&#34;},
-   &#39;id&#39;: {&#39;$t&#39;: &#39;39881634&#39;},
-   &#39;lastUpdate&#39;: {&#39;$t&#39;: &#39;2017-11-10T19:17:04Z&#39;},
-   &#39;media&#39;: {&#39;photos&#39;: {&#39;photo&#39;: [{&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39881634/1/?bust=1510340490&amp;width=60&amp;-pnt.jpg&#39;,
+    &#39;phone&#39;: {&#39;$t&#39;: &#39;(317) 443-2918&#39;},
+    &#39;state&#39;: {&#39;$t&#39;: &#39;IN&#39;},
+    &#39;zip&#39;: {&#39;$t&#39;: &#39;47834&#39;}},
+   &#39;description&#39;: {&#39;$t&#39;: &#39;Nacho is an older dog who came to us from another rescue. He is very much a lap dog! he loves to ride in cars and even on the lawn mower! He is housebroken, neutered, up to date on shots, and will be microchipped once adopted. Send us an email at luckypupsrescue@gmail.com for more info!&#39;},
+   &#39;id&#39;: {&#39;$t&#39;: &#39;39113649&#39;},
+   &#39;lastUpdate&#39;: {&#39;$t&#39;: &#39;2017-08-15T16:30:40Z&#39;},
+   &#39;media&#39;: {&#39;photos&#39;: {&#39;photo&#39;: [{&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39113649/1/?bust=1502814504&amp;width=60&amp;-pnt.jpg&#39;,
        &#39;@id&#39;: &#39;1&#39;,
        &#39;@size&#39;: &#39;pnt&#39;},
-      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39881634/1/?bust=1510340490&amp;width=95&amp;-fpm.jpg&#39;,
+      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39113649/1/?bust=1502814504&amp;width=95&amp;-fpm.jpg&#39;,
        &#39;@id&#39;: &#39;1&#39;,
        &#39;@size&#39;: &#39;fpm&#39;},
-      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39881634/1/?bust=1510340490&amp;width=500&amp;-x.jpg&#39;,
+      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39113649/1/?bust=1502814504&amp;width=500&amp;-x.jpg&#39;,
        &#39;@id&#39;: &#39;1&#39;,
        &#39;@size&#39;: &#39;x&#39;},
-      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39881634/1/?bust=1510340490&amp;width=300&amp;-pn.jpg&#39;,
+      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39113649/1/?bust=1502814504&amp;width=300&amp;-pn.jpg&#39;,
        &#39;@id&#39;: &#39;1&#39;,
        &#39;@size&#39;: &#39;pn&#39;},
-      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39881634/1/?bust=1510340490&amp;width=50&amp;-t.jpg&#39;,
+      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39113649/1/?bust=1502814504&amp;width=50&amp;-t.jpg&#39;,
        &#39;@id&#39;: &#39;1&#39;,
-       &#39;@size&#39;: &#39;t&#39;},
-      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39881634/2/?bust=1510340495&amp;width=60&amp;-pnt.jpg&#39;,
-       &#39;@id&#39;: &#39;2&#39;,
-       &#39;@size&#39;: &#39;pnt&#39;},
-      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39881634/2/?bust=1510340495&amp;width=95&amp;-fpm.jpg&#39;,
-       &#39;@id&#39;: &#39;2&#39;,
-       &#39;@size&#39;: &#39;fpm&#39;},
-      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39881634/2/?bust=1510340495&amp;width=500&amp;-x.jpg&#39;,
-       &#39;@id&#39;: &#39;2&#39;,
-       &#39;@size&#39;: &#39;x&#39;},
-      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39881634/2/?bust=1510340495&amp;width=300&amp;-pn.jpg&#39;,
-       &#39;@id&#39;: &#39;2&#39;,
-       &#39;@size&#39;: &#39;pn&#39;},
-      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39881634/2/?bust=1510340495&amp;width=50&amp;-t.jpg&#39;,
-       &#39;@id&#39;: &#39;2&#39;,
-       &#39;@size&#39;: &#39;t&#39;},
-      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39881634/3/?bust=1510340500&amp;width=60&amp;-pnt.jpg&#39;,
-       &#39;@id&#39;: &#39;3&#39;,
-       &#39;@size&#39;: &#39;pnt&#39;},
-      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39881634/3/?bust=1510340500&amp;width=95&amp;-fpm.jpg&#39;,
-       &#39;@id&#39;: &#39;3&#39;,
-       &#39;@size&#39;: &#39;fpm&#39;},
-      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39881634/3/?bust=1510340500&amp;width=500&amp;-x.jpg&#39;,
-       &#39;@id&#39;: &#39;3&#39;,
-       &#39;@size&#39;: &#39;x&#39;},
-      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39881634/3/?bust=1510340500&amp;width=300&amp;-pn.jpg&#39;,
-       &#39;@id&#39;: &#39;3&#39;,
-       &#39;@size&#39;: &#39;pn&#39;},
-      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39881634/3/?bust=1510340500&amp;width=50&amp;-t.jpg&#39;,
-       &#39;@id&#39;: &#39;3&#39;,
-       &#39;@size&#39;: &#39;t&#39;},
-      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39881634/4/?bust=1510340515&amp;width=60&amp;-pnt.jpg&#39;,
-       &#39;@id&#39;: &#39;4&#39;,
-       &#39;@size&#39;: &#39;pnt&#39;},
-      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39881634/4/?bust=1510340515&amp;width=95&amp;-fpm.jpg&#39;,
-       &#39;@id&#39;: &#39;4&#39;,
-       &#39;@size&#39;: &#39;fpm&#39;},
-      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39881634/4/?bust=1510340515&amp;width=500&amp;-x.jpg&#39;,
-       &#39;@id&#39;: &#39;4&#39;,
-       &#39;@size&#39;: &#39;x&#39;},
-      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39881634/4/?bust=1510340515&amp;width=300&amp;-pn.jpg&#39;,
-       &#39;@id&#39;: &#39;4&#39;,
-       &#39;@size&#39;: &#39;pn&#39;},
-      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39881634/4/?bust=1510340515&amp;width=50&amp;-t.jpg&#39;,
-       &#39;@id&#39;: &#39;4&#39;,
-       &#39;@size&#39;: &#39;t&#39;},
-      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39881634/5/?bust=1510340519&amp;width=60&amp;-pnt.jpg&#39;,
-       &#39;@id&#39;: &#39;5&#39;,
-       &#39;@size&#39;: &#39;pnt&#39;},
-      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39881634/5/?bust=1510340519&amp;width=95&amp;-fpm.jpg&#39;,
-       &#39;@id&#39;: &#39;5&#39;,
-       &#39;@size&#39;: &#39;fpm&#39;},
-      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39881634/5/?bust=1510340519&amp;width=500&amp;-x.jpg&#39;,
-       &#39;@id&#39;: &#39;5&#39;,
-       &#39;@size&#39;: &#39;x&#39;},
-      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39881634/5/?bust=1510340519&amp;width=300&amp;-pn.jpg&#39;,
-       &#39;@id&#39;: &#39;5&#39;,
-       &#39;@size&#39;: &#39;pn&#39;},
-      {&#39;$t&#39;: &#39;http://photos.petfinder.com/photos/pets/39881634/5/?bust=1510340519&amp;width=50&amp;-t.jpg&#39;,
-       &#39;@id&#39;: &#39;5&#39;,
        &#39;@size&#39;: &#39;t&#39;}]}},
-   &#39;mix&#39;: {&#39;$t&#39;: &#39;no&#39;},
-   &#39;name&#39;: {&#39;$t&#39;: &#39;Shakira&#39;},
+   &#39;mix&#39;: {&#39;$t&#39;: &#39;yes&#39;},
+   &#39;name&#39;: {&#39;$t&#39;: &#39;Nacho&#39;},
    &#39;options&#39;: {&#39;option&#39;: [{&#39;$t&#39;: &#39;hasShots&#39;},
+     {&#39;$t&#39;: &#39;noKids&#39;},
      {&#39;$t&#39;: &#39;altered&#39;},
      {&#39;$t&#39;: &#39;housetrained&#39;}]},
-   &#39;sex&#39;: {&#39;$t&#39;: &#39;F&#39;},
-   &#39;shelterId&#39;: {&#39;$t&#39;: &#39;FL597&#39;},
-   &#39;shelterPetId&#39;: {&#39;$t&#39;: &#39;shakira&#39;},
+   &#39;sex&#39;: {&#39;$t&#39;: &#39;M&#39;},
+   &#39;shelterId&#39;: {&#39;$t&#39;: &#39;IN501&#39;},
+   &#39;shelterPetId&#39;: {},
    &#39;size&#39;: {&#39;$t&#39;: &#39;S&#39;},
    &#39;status&#39;: {&#39;$t&#39;: &#39;A&#39;}}}}</pre>
 </div>
@@ -12494,8 +12454,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12506,7 +12465,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">random_pet_df</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">pet_getRandom</span><span class="p">(</span><span class="n">records</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -12519,7 +12478,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">random_pet_df</span>
@@ -12533,7 +12492,11 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[20]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[11]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -12580,44 +12543,44 @@ div#notebook {
   <tbody>
     <tr>
       <th>0</th>
-      <td>Adult</td>
-      <td>Dog</td>
-      <td>Boxer</td>
-      <td>Labrador Retriever</td>
+      <td>Senior</td>
+      <td>Cat</td>
+      <td>Domestic Short Hair</td>
       <td>NaN</td>
-      <td>PO Box 60935</td>
-      <td>Fort Myers</td>
-      <td>rescueanimalsinneed@gmail.com</td>
-      <td>407-414-2866</td>
-      <td>FL</td>
+      <td>Domestic Short Hair</td>
+      <td>4081 Columbia Avenue</td>
+      <td>Columbia</td>
+      <td>catmisonly2@yahoo.com</td>
+      <td>717-684-2285</td>
+      <td>PA</td>
       <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/367743...</td>
-      <td>F</td>
-      <td>FL1027</td>
       <td>NaN</td>
       <td>M</td>
+      <td>PA696</td>
+      <td>NaN</td>
+      <td>S</td>
       <td>A</td>
       <td>hasShots</td>
-      <td>noKids</td>
       <td>altered</td>
       <td>housetrained</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>0</th>
-      <td>Young</td>
+      <td>Adult</td>
       <td>Dog</td>
-      <td>Beagle</td>
+      <td>Chihuahua</td>
       <td>NaN</td>
-      <td>Beagle</td>
-      <td>P.O. Box 402</td>
-      <td>Liberty Center</td>
-      <td>heritagefarms08@gmail.com</td>
-      <td>419-591-6621</td>
-      <td>OH</td>
+      <td>Chihuahua</td>
+      <td>NaN</td>
+      <td>Romeoville</td>
+      <td>info@perfectpooches.org</td>
+      <td>NaN</td>
+      <td>IL</td>
       <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/391432...</td>
-      <td>M</td>
-      <td>OH743</td>
+      <td>http://photos.petfinder.com/photos/pets/397199...</td>
+      <td>F</td>
+      <td>IL753</td>
       <td>NaN</td>
       <td>S</td>
       <td>A</td>
@@ -12630,47 +12593,23 @@ div#notebook {
       <th>0</th>
       <td>Adult</td>
       <td>Cat</td>
-      <td>Domestic Short Hair</td>
+      <td>Domestic Short Hair (Gray &amp; White)</td>
       <td>NaN</td>
-      <td>Domestic Short Hair</td>
+      <td>Domestic Short Hair (Gray &amp; White)</td>
       <td>NaN</td>
-      <td>Kansas City</td>
-      <td>coquina2@aol.com</td>
-      <td>NaN</td>
-      <td>MO</td>
+      <td>Closter</td>
+      <td>clawsadopt@yahoo.com</td>
+      <td>(201) 768-0200</td>
+      <td>NJ</td>
       <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/314172...</td>
-      <td>M</td>
-      <td>MO608</td>
-      <td>NaN</td>
+      <td>http://photos.petfinder.com/photos/pets/386709...</td>
+      <td>F</td>
+      <td>NJ279</td>
+      <td>Marcia</td>
       <td>M</td>
       <td>A</td>
       <td>hasShots</td>
-      <td>noDogs</td>
       <td>altered</td>
-      <td>housetrained</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>Adult</td>
-      <td>Cat</td>
-      <td>Domestic Short Hair</td>
-      <td>NaN</td>
-      <td>Domestic Short Hair</td>
-      <td>185 N Industrial Drive</td>
-      <td>Erwin</td>
-      <td>unicoicountyanimalshelter@gmail.com</td>
-      <td>423-743-3071</td>
-      <td>TN</td>
-      <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/394589...</td>
-      <td>F</td>
-      <td>TN489</td>
-      <td>12046973</td>
-      <td>M</td>
-      <td>A</td>
-      <td>altered</td>
-      <td>housetrained</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
@@ -12678,29 +12617,53 @@ div#notebook {
       <th>0</th>
       <td>Young</td>
       <td>Dog</td>
-      <td>Rottweiler</td>
+      <td>Labrador Retriever</td>
+      <td>German Shepherd Dog</td>
       <td>NaN</td>
-      <td>Rottweiler</td>
-      <td>3550 Aumsville Hwy SE</td>
-      <td>Salem</td>
-      <td>DOG@co.marion.or.us</td>
-      <td>503-588-5233</td>
-      <td>OR</td>
+      <td>PO Box 421</td>
+      <td>Ben Wheeler</td>
+      <td>admin@vzchumanesociety.org</td>
+      <td>903-962-5700</td>
+      <td>TX</td>
       <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/399528...</td>
-      <td>F</td>
-      <td>OR177</td>
-      <td>17-1349</td>
+      <td>http://photos.petfinder.com/photos/pets/317327...</td>
+      <td>M</td>
+      <td>TX310</td>
+      <td>8366590</td>
       <td>L</td>
       <td>A</td>
+      <td>specialNeeds</td>
       <td>hasShots</td>
       <td>altered</td>
+      <td>housetrained</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Baby</td>
+      <td>Cat</td>
+      <td>Domestic Short Hair</td>
+      <td>NaN</td>
+      <td>Domestic Short Hair</td>
+      <td>P.O. Box 785</td>
+      <td>Newnan</td>
+      <td>nchs@nchsrescue.org</td>
+      <td>NaN</td>
+      <td>GA</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>M</td>
+      <td>GA207</td>
+      <td>U2017309</td>
+      <td>S</td>
+      <td>A</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 52 columns</p>
+<p>5 rows × 57 columns</p>
 </div>
 </div>
 
@@ -12710,8 +12673,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12720,8 +12682,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12729,8 +12690,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12741,7 +12701,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pet</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">pet_get</span><span class="p">(</span><span class="s1">&#39;26417898&#39;</span><span class="p">)</span>
@@ -12754,7 +12714,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pet</span>
@@ -12768,7 +12728,11 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[20]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[13]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -12777,7 +12741,7 @@ div#notebook {
  &#39;petfinder&#39;: {&#39;@xmlns:xsi&#39;: &#39;http://www.w3.org/2001/XMLSchema-instance&#39;,
   &#39;@xsi:noNamespaceSchemaLocation&#39;: &#39;http://api.petfinder.com/schemas/0.9/petfinder.xsd&#39;,
   &#39;header&#39;: {&#39;status&#39;: {&#39;code&#39;: {&#39;$t&#39;: &#39;100&#39;}, &#39;message&#39;: {}},
-   &#39;timestamp&#39;: {&#39;$t&#39;: &#39;2017-11-21T14:41:59Z&#39;},
+   &#39;timestamp&#39;: {&#39;$t&#39;: &#39;2017-11-23T02:45:46Z&#39;},
    &#39;version&#39;: {&#39;$t&#39;: &#39;0.1&#39;}},
   &#39;pet&#39;: {&#39;age&#39;: {&#39;$t&#39;: &#39;Young&#39;},
    &#39;animal&#39;: {&#39;$t&#39;: &#39;Dog&#39;},
@@ -12828,8 +12792,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12840,7 +12803,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pf</span><span class="o">.</span><span class="n">pet_get</span><span class="p">(</span><span class="s1">&#39;39801731&#39;</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -12854,7 +12817,11 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[21]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[14]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -12886,16 +12853,16 @@ div#notebook {
       <th>contact.zip</th>
       <th>description</th>
       <th>...</th>
-      <th>photos5</th>
-      <th>photos6</th>
-      <th>photos7</th>
-      <th>photos8</th>
-      <th>photos9</th>
-      <th>photos10</th>
-      <th>photos11</th>
-      <th>photos12</th>
-      <th>photos13</th>
-      <th>photos14</th>
+      <th>photos20</th>
+      <th>photos21</th>
+      <th>photos22</th>
+      <th>photos23</th>
+      <th>photos24</th>
+      <th>photos25</th>
+      <th>photos26</th>
+      <th>photos27</th>
+      <th>photos28</th>
+      <th>photos29</th>
     </tr>
   </thead>
   <tbody>
@@ -12925,7 +12892,7 @@ div#notebook {
     </tr>
   </tbody>
 </table>
-<p>1 rows × 39 columns</p>
+<p>1 rows × 54 columns</p>
 </div>
 </div>
 
@@ -12935,8 +12902,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12947,7 +12913,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">petids</span> <span class="o">=</span> <span class="n">random_pet_df</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="c1"># get the pet IDs from the previous call by turning the id column into a list</span>
@@ -12960,7 +12926,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pf</span><span class="o">.</span><span class="n">pets_get</span><span class="p">(</span><span class="n">petids</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -12974,7 +12940,11 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[27]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[16]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -13021,44 +12991,44 @@ div#notebook {
   <tbody>
     <tr>
       <th>0</th>
-      <td>Adult</td>
-      <td>Dog</td>
-      <td>Boxer</td>
-      <td>Labrador Retriever</td>
+      <td>Senior</td>
+      <td>Cat</td>
+      <td>Domestic Short Hair</td>
       <td>NaN</td>
-      <td>PO Box 60935</td>
-      <td>Fort Myers</td>
-      <td>rescueanimalsinneed@gmail.com</td>
-      <td>407-414-2866</td>
-      <td>FL</td>
+      <td>Domestic Short Hair</td>
+      <td>4081 Columbia Avenue</td>
+      <td>Columbia</td>
+      <td>catmisonly2@yahoo.com</td>
+      <td>717-684-2285</td>
+      <td>PA</td>
       <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/367743...</td>
-      <td>F</td>
-      <td>FL1027</td>
       <td>NaN</td>
       <td>M</td>
+      <td>PA696</td>
+      <td>NaN</td>
+      <td>S</td>
       <td>A</td>
       <td>hasShots</td>
-      <td>noKids</td>
       <td>altered</td>
       <td>housetrained</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>0</th>
-      <td>Young</td>
+      <td>Adult</td>
       <td>Dog</td>
-      <td>Beagle</td>
+      <td>Chihuahua</td>
       <td>NaN</td>
-      <td>Beagle</td>
-      <td>P.O. Box 402</td>
-      <td>Liberty Center</td>
-      <td>heritagefarms08@gmail.com</td>
-      <td>419-591-6621</td>
-      <td>OH</td>
+      <td>Chihuahua</td>
+      <td>NaN</td>
+      <td>Romeoville</td>
+      <td>info@perfectpooches.org</td>
+      <td>NaN</td>
+      <td>IL</td>
       <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/391432...</td>
-      <td>M</td>
-      <td>OH743</td>
+      <td>http://photos.petfinder.com/photos/pets/397199...</td>
+      <td>F</td>
+      <td>IL753</td>
       <td>NaN</td>
       <td>S</td>
       <td>A</td>
@@ -13071,47 +13041,23 @@ div#notebook {
       <th>0</th>
       <td>Adult</td>
       <td>Cat</td>
-      <td>Domestic Short Hair</td>
+      <td>Domestic Short Hair (Gray &amp; White)</td>
       <td>NaN</td>
-      <td>Domestic Short Hair</td>
+      <td>Domestic Short Hair (Gray &amp; White)</td>
       <td>NaN</td>
-      <td>Kansas City</td>
-      <td>coquina2@aol.com</td>
-      <td>NaN</td>
-      <td>MO</td>
+      <td>Closter</td>
+      <td>clawsadopt@yahoo.com</td>
+      <td>(201) 768-0200</td>
+      <td>NJ</td>
       <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/314172...</td>
-      <td>M</td>
-      <td>MO608</td>
-      <td>NaN</td>
+      <td>http://photos.petfinder.com/photos/pets/386709...</td>
+      <td>F</td>
+      <td>NJ279</td>
+      <td>Marcia</td>
       <td>M</td>
       <td>A</td>
       <td>hasShots</td>
-      <td>noDogs</td>
       <td>altered</td>
-      <td>housetrained</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>Adult</td>
-      <td>Cat</td>
-      <td>Domestic Short Hair</td>
-      <td>NaN</td>
-      <td>Domestic Short Hair</td>
-      <td>185 N Industrial Drive</td>
-      <td>Erwin</td>
-      <td>unicoicountyanimalshelter@gmail.com</td>
-      <td>423-743-3071</td>
-      <td>TN</td>
-      <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/394589...</td>
-      <td>F</td>
-      <td>TN489</td>
-      <td>12046973</td>
-      <td>M</td>
-      <td>A</td>
-      <td>altered</td>
-      <td>housetrained</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
@@ -13119,29 +13065,53 @@ div#notebook {
       <th>0</th>
       <td>Young</td>
       <td>Dog</td>
-      <td>Rottweiler</td>
+      <td>Labrador Retriever</td>
+      <td>German Shepherd Dog</td>
       <td>NaN</td>
-      <td>Rottweiler</td>
-      <td>3550 Aumsville Hwy SE</td>
-      <td>Salem</td>
-      <td>DOG@co.marion.or.us</td>
-      <td>503-588-5233</td>
-      <td>OR</td>
+      <td>PO Box 421</td>
+      <td>Ben Wheeler</td>
+      <td>admin@vzchumanesociety.org</td>
+      <td>903-962-5700</td>
+      <td>TX</td>
       <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/399528...</td>
-      <td>F</td>
-      <td>OR177</td>
-      <td>17-1349</td>
+      <td>http://photos.petfinder.com/photos/pets/317327...</td>
+      <td>M</td>
+      <td>TX310</td>
+      <td>8366590</td>
       <td>L</td>
       <td>A</td>
+      <td>specialNeeds</td>
       <td>hasShots</td>
       <td>altered</td>
+      <td>housetrained</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Baby</td>
+      <td>Cat</td>
+      <td>Domestic Short Hair</td>
+      <td>NaN</td>
+      <td>Domestic Short Hair</td>
+      <td>P.O. Box 785</td>
+      <td>Newnan</td>
+      <td>nchs@nchsrescue.org</td>
+      <td>NaN</td>
+      <td>GA</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>M</td>
+      <td>GA207</td>
+      <td>U2017309</td>
+      <td>S</td>
+      <td>A</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 52 columns</p>
+<p>5 rows × 57 columns</p>
 </div>
 </div>
 
@@ -13151,8 +13121,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13163,7 +13132,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pf</span><span class="o">.</span><span class="n">pet_get</span><span class="p">(</span><span class="n">petids</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -13177,7 +13146,11 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[28]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[17]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -13224,44 +13197,44 @@ div#notebook {
   <tbody>
     <tr>
       <th>0</th>
-      <td>Adult</td>
-      <td>Dog</td>
-      <td>Boxer</td>
-      <td>Labrador Retriever</td>
+      <td>Senior</td>
+      <td>Cat</td>
+      <td>Domestic Short Hair</td>
       <td>NaN</td>
-      <td>PO Box 60935</td>
-      <td>Fort Myers</td>
-      <td>rescueanimalsinneed@gmail.com</td>
-      <td>407-414-2866</td>
-      <td>FL</td>
+      <td>Domestic Short Hair</td>
+      <td>4081 Columbia Avenue</td>
+      <td>Columbia</td>
+      <td>catmisonly2@yahoo.com</td>
+      <td>717-684-2285</td>
+      <td>PA</td>
       <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/367743...</td>
-      <td>F</td>
-      <td>FL1027</td>
       <td>NaN</td>
       <td>M</td>
+      <td>PA696</td>
+      <td>NaN</td>
+      <td>S</td>
       <td>A</td>
       <td>hasShots</td>
-      <td>noKids</td>
       <td>altered</td>
       <td>housetrained</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>0</th>
-      <td>Young</td>
+      <td>Adult</td>
       <td>Dog</td>
-      <td>Beagle</td>
+      <td>Chihuahua</td>
       <td>NaN</td>
-      <td>Beagle</td>
-      <td>P.O. Box 402</td>
-      <td>Liberty Center</td>
-      <td>heritagefarms08@gmail.com</td>
-      <td>419-591-6621</td>
-      <td>OH</td>
+      <td>Chihuahua</td>
+      <td>NaN</td>
+      <td>Romeoville</td>
+      <td>info@perfectpooches.org</td>
+      <td>NaN</td>
+      <td>IL</td>
       <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/391432...</td>
-      <td>M</td>
-      <td>OH743</td>
+      <td>http://photos.petfinder.com/photos/pets/397199...</td>
+      <td>F</td>
+      <td>IL753</td>
       <td>NaN</td>
       <td>S</td>
       <td>A</td>
@@ -13274,47 +13247,23 @@ div#notebook {
       <th>0</th>
       <td>Adult</td>
       <td>Cat</td>
-      <td>Domestic Short Hair</td>
+      <td>Domestic Short Hair (Gray &amp; White)</td>
       <td>NaN</td>
-      <td>Domestic Short Hair</td>
+      <td>Domestic Short Hair (Gray &amp; White)</td>
       <td>NaN</td>
-      <td>Kansas City</td>
-      <td>coquina2@aol.com</td>
-      <td>NaN</td>
-      <td>MO</td>
+      <td>Closter</td>
+      <td>clawsadopt@yahoo.com</td>
+      <td>(201) 768-0200</td>
+      <td>NJ</td>
       <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/314172...</td>
-      <td>M</td>
-      <td>MO608</td>
-      <td>NaN</td>
+      <td>http://photos.petfinder.com/photos/pets/386709...</td>
+      <td>F</td>
+      <td>NJ279</td>
+      <td>Marcia</td>
       <td>M</td>
       <td>A</td>
       <td>hasShots</td>
-      <td>noDogs</td>
       <td>altered</td>
-      <td>housetrained</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>Adult</td>
-      <td>Cat</td>
-      <td>Domestic Short Hair</td>
-      <td>NaN</td>
-      <td>Domestic Short Hair</td>
-      <td>185 N Industrial Drive</td>
-      <td>Erwin</td>
-      <td>unicoicountyanimalshelter@gmail.com</td>
-      <td>423-743-3071</td>
-      <td>TN</td>
-      <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/394589...</td>
-      <td>F</td>
-      <td>TN489</td>
-      <td>12046973</td>
-      <td>M</td>
-      <td>A</td>
-      <td>altered</td>
-      <td>housetrained</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
@@ -13322,29 +13271,53 @@ div#notebook {
       <th>0</th>
       <td>Young</td>
       <td>Dog</td>
-      <td>Rottweiler</td>
+      <td>Labrador Retriever</td>
+      <td>German Shepherd Dog</td>
       <td>NaN</td>
-      <td>Rottweiler</td>
-      <td>3550 Aumsville Hwy SE</td>
-      <td>Salem</td>
-      <td>DOG@co.marion.or.us</td>
-      <td>503-588-5233</td>
-      <td>OR</td>
+      <td>PO Box 421</td>
+      <td>Ben Wheeler</td>
+      <td>admin@vzchumanesociety.org</td>
+      <td>903-962-5700</td>
+      <td>TX</td>
       <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/399528...</td>
-      <td>F</td>
-      <td>OR177</td>
-      <td>17-1349</td>
+      <td>http://photos.petfinder.com/photos/pets/317327...</td>
+      <td>M</td>
+      <td>TX310</td>
+      <td>8366590</td>
       <td>L</td>
       <td>A</td>
+      <td>specialNeeds</td>
       <td>hasShots</td>
       <td>altered</td>
+      <td>housetrained</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Baby</td>
+      <td>Cat</td>
+      <td>Domestic Short Hair</td>
+      <td>NaN</td>
+      <td>Domestic Short Hair</td>
+      <td>P.O. Box 785</td>
+      <td>Newnan</td>
+      <td>nchs@nchsrescue.org</td>
+      <td>NaN</td>
+      <td>GA</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>M</td>
+      <td>GA207</td>
+      <td>U2017309</td>
+      <td>S</td>
+      <td>A</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 52 columns</p>
+<p>5 rows × 57 columns</p>
 </div>
 </div>
 
@@ -13354,8 +13327,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13364,8 +13336,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13373,8 +13344,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13386,7 +13356,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cats</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">pet_find</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s1">&#39;WA&#39;</span><span class="p">,</span> <span class="n">animal</span><span class="o">=</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="n">sex</span><span class="o">=</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -13399,7 +13369,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cats</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -13413,7 +13383,11 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[19]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -13590,8 +13564,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13600,8 +13573,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13610,8 +13582,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13619,8 +13590,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13629,8 +13599,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13639,8 +13608,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13648,8 +13616,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13660,7 +13627,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">wa_shelters</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">shelter_find</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s1">&#39;WA&#39;</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -13673,7 +13640,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">wa_shelters</span>
@@ -13687,7 +13654,11 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[21]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -13884,8 +13855,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13894,8 +13864,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13903,8 +13872,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13915,7 +13883,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">shelter_list</span> <span class="o">=</span> <span class="n">wa_shelters</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
@@ -13928,7 +13896,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pf</span><span class="o">.</span><span class="n">shelter_get</span><span class="p">(</span><span class="n">shelter_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -13942,7 +13910,11 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[23]:</div>
+
+
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -13951,7 +13923,7 @@ div#notebook {
  &#39;petfinder&#39;: {&#39;@xmlns:xsi&#39;: &#39;http://www.w3.org/2001/XMLSchema-instance&#39;,
   &#39;@xsi:noNamespaceSchemaLocation&#39;: &#39;http://api.petfinder.com/schemas/0.9/petfinder.xsd&#39;,
   &#39;header&#39;: {&#39;status&#39;: {&#39;code&#39;: {&#39;$t&#39;: &#39;100&#39;}, &#39;message&#39;: {}},
-   &#39;timestamp&#39;: {&#39;$t&#39;: &#39;2017-11-22T16:00:53Z&#39;},
+   &#39;timestamp&#39;: {&#39;$t&#39;: &#39;2017-11-23T02:46:10Z&#39;},
    &#39;version&#39;: {&#39;$t&#39;: &#39;0.1&#39;}},
   &#39;shelter&#39;: {&#39;address1&#39;: {},
    &#39;address2&#39;: {},
@@ -13974,8 +13946,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13986,7 +13957,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pf</span><span class="o">.</span><span class="n">shelters_get</span><span class="p">(</span><span class="n">shelter_list</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -14000,7 +13971,11 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[16]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[24]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -14197,8 +14172,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14207,8 +14181,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14217,8 +14190,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14226,8 +14198,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14238,10 +14209,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pf</span><span class="o">.</span><span class="n">shelter_getPets</span><span class="p">(</span><span class="n">shelter_list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">return_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">shelter_pets</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">shelter_getPets</span><span class="p">(</span><span class="n">shelter_list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">return_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">shelter_pets</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># The default number of returned records is 25, so we only print the first 5 rows for brevity</span>
 </pre></div>
 
 </div>
@@ -14252,7 +14224,11 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[17]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[25]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -14275,8 +14251,6 @@ div#notebook {
       <th></th>
       <th>age</th>
       <th>animal</th>
-      <th>breeds.breed</th>
-      <th>breeds.breed</th>
       <th>contact.city</th>
       <th>contact.email</th>
       <th>contact.state</th>
@@ -14285,14 +14259,17 @@ div#notebook {
       <th>id</th>
       <th>lastUpdate</th>
       <th>media.photos.photo</th>
-      <th>mix</th>
-      <th>name</th>
-      <th>options.option</th>
-      <th>options.option</th>
-      <th>sex</th>
-      <th>shelterId</th>
-      <th>size</th>
-      <th>status</th>
+      <th>...</th>
+      <th>photos15</th>
+      <th>photos16</th>
+      <th>photos17</th>
+      <th>photos18</th>
+      <th>photos19</th>
+      <th>photos20</th>
+      <th>photos21</th>
+      <th>photos22</th>
+      <th>photos23</th>
+      <th>photos24</th>
     </tr>
   </thead>
   <tbody>
@@ -14300,8 +14277,6 @@ div#notebook {
       <th>0</th>
       <td>Adult</td>
       <td>Dog</td>
-      <td>[{'$t': 'Shepherd'}, {'$t': 'Labrador Retrieve...</td>
-      <td>NaN</td>
       <td>Auburn</td>
       <td>pugetsoundrescue@hotmail.com</td>
       <td>WA</td>
@@ -14310,21 +14285,22 @@ div#notebook {
       <td>32080691</td>
       <td>2017-09-01T23:26:37Z</td>
       <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>yes</td>
-      <td>Morena</td>
-      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}, {'$t':...</td>
+      <td>...</td>
       <td>NaN</td>
-      <td>F</td>
-      <td>WA149</td>
-      <td>M</td>
-      <td>A</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
-      <th>1</th>
+      <th>0</th>
       <td>Adult</td>
       <td>Dog</td>
-      <td>[{'$t': 'Pit Bull Terrier'}, {'$t': 'Beagle'}]</td>
-      <td>NaN</td>
       <td>Auburn</td>
       <td>pugetsoundrescue@hotmail.com</td>
       <td>WA</td>
@@ -14333,21 +14309,22 @@ div#notebook {
       <td>34906970</td>
       <td>2017-09-01T23:26:59Z</td>
       <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>yes</td>
-      <td>Monty</td>
-      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}, {'$t':...</td>
+      <td>...</td>
       <td>NaN</td>
-      <td>M</td>
-      <td>WA149</td>
-      <td>M</td>
-      <td>A</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
-      <th>2</th>
+      <th>0</th>
       <td>Adult</td>
       <td>Dog</td>
-      <td>NaN</td>
-      <td>Australian Cattle Dog / Blue Heeler</td>
       <td>Auburn</td>
       <td>pugetsoundrescue@hotmail.com</td>
       <td>WA</td>
@@ -14356,21 +14333,22 @@ div#notebook {
       <td>37760609</td>
       <td>2017-11-01T05:01:56Z</td>
       <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>yes</td>
-      <td>Hobart</td>
-      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}, {'$t':...</td>
+      <td>...</td>
       <td>NaN</td>
-      <td>M</td>
-      <td>WA149</td>
-      <td>M</td>
-      <td>A</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
     </tr>
     <tr>
-      <th>3</th>
+      <th>0</th>
       <td>Young</td>
       <td>Dog</td>
-      <td>[{'$t': 'Pit Bull Terrier'}, {'$t': 'Labrador ...</td>
-      <td>NaN</td>
       <td>Auburn</td>
       <td>pugetsoundrescue@hotmail.com</td>
       <td>WA</td>
@@ -14379,21 +14357,22 @@ div#notebook {
       <td>38602092</td>
       <td>2017-09-01T21:00:13Z</td>
       <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>yes</td>
-      <td>Daughtry</td>
-      <td>NaN</td>
-      <td>hasShots</td>
-      <td>M</td>
-      <td>WA149</td>
-      <td>M</td>
-      <td>A</td>
+      <td>...</td>
+      <td>http://photos.petfinder.com/photos/pets/386020...</td>
+      <td>http://photos.petfinder.com/photos/pets/386020...</td>
+      <td>http://photos.petfinder.com/photos/pets/386020...</td>
+      <td>http://photos.petfinder.com/photos/pets/386020...</td>
+      <td>http://photos.petfinder.com/photos/pets/386020...</td>
+      <td>http://photos.petfinder.com/photos/pets/386020...</td>
+      <td>http://photos.petfinder.com/photos/pets/386020...</td>
+      <td>http://photos.petfinder.com/photos/pets/386020...</td>
+      <td>http://photos.petfinder.com/photos/pets/386020...</td>
+      <td>http://photos.petfinder.com/photos/pets/386020...</td>
     </tr>
     <tr>
-      <th>4</th>
+      <th>0</th>
       <td>Adult</td>
       <td>Dog</td>
-      <td>NaN</td>
-      <td>German Shepherd Dog</td>
       <td>Auburn</td>
       <td>pugetsoundrescue@hotmail.com</td>
       <td>WA</td>
@@ -14402,477 +14381,21 @@ div#notebook {
       <td>38627371</td>
       <td>2017-11-20T13:54:50Z</td>
       <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>no</td>
-      <td>Poncho</td>
+      <td>...</td>
+      <td>http://photos.petfinder.com/photos/pets/386273...</td>
+      <td>http://photos.petfinder.com/photos/pets/386273...</td>
+      <td>http://photos.petfinder.com/photos/pets/386273...</td>
+      <td>http://photos.petfinder.com/photos/pets/386273...</td>
+      <td>http://photos.petfinder.com/photos/pets/386273...</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>M</td>
-      <td>WA149</td>
-      <td>L</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Adult</td>
-      <td>Dog</td>
-      <td>[{'$t': 'Husky'}, {'$t': 'Akita'}]</td>
-      <td>NaN</td>
-      <td>Auburn</td>
-      <td>pugetsoundrescue@hotmail.com</td>
-      <td>WA</td>
-      <td>98092</td>
-      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
-      <td>38899802</td>
-      <td>2017-09-01T20:55:28Z</td>
-      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>yes</td>
-      <td>Cinder</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>F</td>
-      <td>WA149</td>
-      <td>L</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Adult</td>
-      <td>Dog</td>
       <td>NaN</td>
-      <td>German Shepherd Dog</td>
-      <td>Auburn</td>
-      <td>pugetsoundrescue@hotmail.com</td>
-      <td>WA</td>
-      <td>98092</td>
-      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
-      <td>38900079</td>
-      <td>2017-11-09T20:11:02Z</td>
-      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>no</td>
-      <td>Hercules</td>
-      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}]</td>
-      <td>NaN</td>
-      <td>M</td>
-      <td>WA149</td>
-      <td>L</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Adult</td>
-      <td>Dog</td>
-      <td>[{'$t': 'American Staffordshire Terrier'}, {'$...</td>
-      <td>NaN</td>
-      <td>Auburn</td>
-      <td>pugetsoundrescue@hotmail.com</td>
-      <td>WA</td>
-      <td>98092</td>
-      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
-      <td>38900083</td>
-      <td>2017-09-01T20:51:06Z</td>
-      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>yes</td>
-      <td>Emily</td>
-      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}]</td>
-      <td>NaN</td>
-      <td>F</td>
-      <td>WA149</td>
-      <td>M</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Senior</td>
-      <td>Dog</td>
-      <td>NaN</td>
-      <td>Cattle Dog</td>
-      <td>Auburn</td>
-      <td>pugetsoundrescue@hotmail.com</td>
-      <td>WA</td>
-      <td>98092</td>
-      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
-      <td>38936726</td>
-      <td>2017-09-01T23:30:27Z</td>
-      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>yes</td>
-      <td>Rex</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>M</td>
-      <td>WA149</td>
-      <td>M</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Senior</td>
-      <td>Dog</td>
-      <td>NaN</td>
-      <td>Shepherd</td>
-      <td>Auburn</td>
-      <td>pugetsoundrescue@hotmail.com</td>
-      <td>WA</td>
-      <td>98092</td>
-      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
-      <td>39229879</td>
-      <td>2017-09-20T18:44:40Z</td>
-      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>yes</td>
-      <td>Fletch</td>
-      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}]</td>
-      <td>NaN</td>
-      <td>M</td>
-      <td>WA149</td>
-      <td>M</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>Young</td>
-      <td>Dog</td>
-      <td>NaN</td>
-      <td>German Shepherd Dog</td>
-      <td>Auburn</td>
-      <td>pugetsoundrescue@hotmail.com</td>
-      <td>WA</td>
-      <td>98092</td>
-      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
-      <td>39229884</td>
-      <td>2017-09-02T15:41:19Z</td>
-      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>no</td>
-      <td>Bear</td>
-      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}]</td>
-      <td>NaN</td>
-      <td>M</td>
-      <td>WA149</td>
-      <td>L</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>Adult</td>
-      <td>Dog</td>
-      <td>[{'$t': 'Shar Pei'}, {'$t': 'Labrador Retrieve...</td>
-      <td>NaN</td>
-      <td>Auburn</td>
-      <td>pugetsoundrescue@hotmail.com</td>
-      <td>WA</td>
-      <td>98092</td>
-      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
-      <td>39229885</td>
-      <td>2017-11-09T20:10:05Z</td>
-      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>yes</td>
-      <td>Beverly</td>
-      <td>NaN</td>
-      <td>hasShots</td>
-      <td>F</td>
-      <td>WA149</td>
-      <td>M</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>Senior</td>
-      <td>Dog</td>
-      <td>[{'$t': 'American Staffordshire Terrier'}, {'$...</td>
-      <td>NaN</td>
-      <td>Auburn</td>
-      <td>pugetsoundrescue@hotmail.com</td>
-      <td>WA</td>
-      <td>98092</td>
-      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
-      <td>39229895</td>
-      <td>2017-09-02T15:25:55Z</td>
-      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>yes</td>
-      <td>Tripp</td>
-      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}, {'$t':...</td>
-      <td>NaN</td>
-      <td>M</td>
-      <td>WA149</td>
-      <td>M</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>Adult</td>
-      <td>Dog</td>
-      <td>[{'$t': 'Siberian Husky'}, {'$t': 'Shetland Sh...</td>
-      <td>NaN</td>
-      <td>Auburn</td>
-      <td>pugetsoundrescue@hotmail.com</td>
-      <td>WA</td>
-      <td>98092</td>
-      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
-      <td>39414053</td>
-      <td>2017-09-24T14:45:48Z</td>
-      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>yes</td>
-      <td>Penny</td>
-      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}, {'$t':...</td>
-      <td>NaN</td>
-      <td>F</td>
-      <td>WA149</td>
-      <td>M</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>Young</td>
-      <td>Dog</td>
-      <td>[{'$t': 'Boxer'}, {'$t': 'American Staffordshi...</td>
-      <td>NaN</td>
-      <td>Auburn</td>
-      <td>pugetsoundrescue@hotmail.com</td>
-      <td>WA</td>
-      <td>98092</td>
-      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
-      <td>39414114</td>
-      <td>2017-09-24T14:44:59Z</td>
-      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>yes</td>
-      <td>Hope</td>
-      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}, {'$t':...</td>
-      <td>NaN</td>
-      <td>F</td>
-      <td>WA149</td>
-      <td>M</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>Adult</td>
-      <td>Dog</td>
-      <td>[{'$t': 'American Staffordshire Terrier'}, {'$...</td>
-      <td>NaN</td>
-      <td>Auburn</td>
-      <td>pugetsoundrescue@hotmail.com</td>
-      <td>WA</td>
-      <td>98092</td>
-      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
-      <td>39414121</td>
-      <td>2017-09-23T23:20:28Z</td>
-      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>yes</td>
-      <td>Chata</td>
-      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}, {'$t':...</td>
-      <td>NaN</td>
-      <td>F</td>
-      <td>WA149</td>
-      <td>L</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>Senior</td>
-      <td>Dog</td>
-      <td>NaN</td>
-      <td>German Shepherd Dog</td>
-      <td>Auburn</td>
-      <td>pugetsoundrescue@hotmail.com</td>
-      <td>WA</td>
-      <td>98092</td>
-      <td>We just took in Grady a few days ago.  Grady i...</td>
-      <td>39793927</td>
-      <td>2017-11-02T19:42:42Z</td>
-      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>yes</td>
-      <td>Grady</td>
-      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}]</td>
-      <td>NaN</td>
-      <td>M</td>
-      <td>WA149</td>
-      <td>L</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>Senior</td>
-      <td>Dog</td>
-      <td>[{'$t': 'German Shepherd Dog'}, {'$t': 'Husky'}]</td>
-      <td>NaN</td>
-      <td>Auburn</td>
-      <td>pugetsoundrescue@hotmail.com</td>
-      <td>WA</td>
-      <td>98092</td>
-      <td>Bella is approximately 8 years old we are gues...</td>
-      <td>39798015</td>
-      <td>2017-11-02T19:43:24Z</td>
-      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>yes</td>
-      <td>Bella</td>
-      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}, {'$t':...</td>
-      <td>NaN</td>
-      <td>F</td>
-      <td>WA149</td>
-      <td>L</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>Adult</td>
-      <td>Dog</td>
-      <td>NaN</td>
-      <td>Doberman Pinscher</td>
-      <td>Auburn</td>
-      <td>pugetsoundrescue@hotmail.com</td>
-      <td>WA</td>
-      <td>98092</td>
-      <td>Lancelot is a 2 year old purebred neutered mal...</td>
-      <td>39798114</td>
-      <td>2017-11-18T21:34:21Z</td>
-      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>no</td>
-      <td>Lancelot--ADOPTED!!</td>
-      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}]</td>
-      <td>NaN</td>
-      <td>M</td>
-      <td>WA149</td>
-      <td>L</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>Young</td>
-      <td>Cat</td>
-      <td>NaN</td>
-      <td>Domestic Short Hair (Gray &amp; White)</td>
-      <td>Auburn</td>
-      <td>pugetsoundrescue@hotmail.com</td>
-      <td>WA</td>
-      <td>98092</td>
-      <td>NaN</td>
-      <td>39898075</td>
-      <td>2017-11-13T16:50:44Z</td>
-      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>no</td>
-      <td>Momma kitty</td>
-      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}, {'$t':...</td>
-      <td>NaN</td>
-      <td>F</td>
-      <td>WA149</td>
-      <td>M</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>Baby</td>
-      <td>Cat</td>
-      <td>NaN</td>
-      <td>Domestic Medium Hair (Gray &amp; White)</td>
-      <td>Auburn</td>
-      <td>pugetsoundrescue@hotmail.com</td>
-      <td>WA</td>
-      <td>98092</td>
-      <td>NaN</td>
-      <td>39898092</td>
-      <td>2017-11-13T16:51:53Z</td>
-      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>no</td>
-      <td>Baby kittens!</td>
-      <td>[{'$t': 'hasShots'}, {'$t': 'housetrained'}]</td>
-      <td>NaN</td>
-      <td>M</td>
-      <td>WA149</td>
-      <td>M</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>Young</td>
-      <td>Dog</td>
-      <td>NaN</td>
-      <td>German Shepherd Dog</td>
-      <td>Auburn</td>
-      <td>pugetsoundrescue@hotmail.com</td>
-      <td>WA</td>
-      <td>98092</td>
-      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
-      <td>39898105</td>
-      <td>2017-11-16T14:03:18Z</td>
-      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>no</td>
-      <td>Duke</td>
-      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}]</td>
-      <td>NaN</td>
-      <td>M</td>
-      <td>WA149</td>
-      <td>L</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>Young</td>
-      <td>Dog</td>
-      <td>NaN</td>
-      <td>German Shepherd Dog</td>
-      <td>Auburn</td>
-      <td>pugetsoundrescue@hotmail.com</td>
-      <td>WA</td>
-      <td>98092</td>
-      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
-      <td>39898144</td>
-      <td>2017-11-16T14:02:30Z</td>
-      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>no</td>
-      <td>Wrigley</td>
-      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}]</td>
-      <td>NaN</td>
-      <td>M</td>
-      <td>WA149</td>
-      <td>L</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>Adult</td>
-      <td>Dog</td>
-      <td>[{'$t': 'Beagle'}, {'$t': 'Basset Hound'}]</td>
-      <td>NaN</td>
-      <td>Auburn</td>
-      <td>pugetsoundrescue@hotmail.com</td>
-      <td>WA</td>
-      <td>98092</td>
-      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
-      <td>39899592</td>
-      <td>2017-11-16T14:02:12Z</td>
-      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>yes</td>
-      <td>Beau</td>
-      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}, {'$t':...</td>
-      <td>NaN</td>
-      <td>M</td>
-      <td>WA149</td>
-      <td>M</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>Young</td>
-      <td>Dog</td>
-      <td>NaN</td>
-      <td>German Shepherd Dog</td>
-      <td>Auburn</td>
-      <td>pugetsoundrescue@hotmail.com</td>
-      <td>WA</td>
-      <td>98092</td>
-      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
-      <td>39899643</td>
-      <td>2017-11-16T14:01:56Z</td>
-      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>no</td>
-      <td>Brody</td>
-      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}]</td>
-      <td>NaN</td>
-      <td>M</td>
-      <td>WA149</td>
-      <td>L</td>
-      <td>A</td>
     </tr>
   </tbody>
 </table>
+<p>5 rows × 48 columns</p>
 </div>
 </div>
 
@@ -14882,8 +14405,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14892,8 +14414,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14901,8 +14422,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14914,7 +14434,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cats_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -14928,7 +14448,11 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[23]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[26]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -14984,8 +14508,7 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15009,10 +14532,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pf</span><span class="o">.</span><span class="n">shelter_listByBreed</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="n">aby</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">aby_shelters</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">shelter_listByBreed</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="n">aby</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">aby_shelters</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -15023,7 +14547,11 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[37]:</div>
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[28]:</div>
+
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -15134,306 +14662,6 @@ div#notebook {
       <td>AR</td>
       <td>72104</td>
     </tr>
-    <tr>
-      <th>5</th>
-      <td>2656 Hwy. 201 N</td>
-      <td>NaN</td>
-      <td>Mountain Home</td>
-      <td>US</td>
-      <td>hsnca@mtnhome.com</td>
-      <td>AR95</td>
-      <td>36.3383</td>
-      <td>-92.3742</td>
-      <td>Humane Society of North Central Arkansas</td>
-      <td>(870) 425-9221</td>
-      <td>AR</td>
-      <td>72653</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Phoenix</td>
-      <td>US</td>
-      <td>badkittyts@aol.com</td>
-      <td>AZ01</td>
-      <td>33.9158</td>
-      <td>-112.1353</td>
-      <td>Citizens For North Phoenix Strays</td>
-      <td>(602) 332-6615</td>
-      <td>AZ</td>
-      <td>85027</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>835 West Warner Road</td>
-      <td>NaN</td>
-      <td>Gilbert</td>
-      <td>US</td>
-      <td>azcatsmeow@gmail.com</td>
-      <td>AZ13</td>
-      <td>33.3557</td>
-      <td>-111.7917</td>
-      <td>We're The Cat's Meow Pet Rescue</td>
-      <td>480-278-9744</td>
-      <td>AZ</td>
-      <td>85233</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>P.O Box 50673</td>
-      <td>NaN</td>
-      <td>Phoenix</td>
-      <td>US</td>
-      <td>petfinder-inquiry@cactuscatsrescue.net</td>
-      <td>AZ258</td>
-      <td>33.3357</td>
-      <td>-111.9924</td>
-      <td>Cactus Cats Rescue, Inc.</td>
-      <td>(480) 814-8801</td>
-      <td>AZ</td>
-      <td>85044</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>P.O. Box 50594</td>
-      <td>NaN</td>
-      <td>Mesa</td>
-      <td>US</td>
-      <td>hadleyd@cox.net</td>
-      <td>AZ301</td>
-      <td>33.4007</td>
-      <td>-111.6539</td>
-      <td>Desert Paws Rescue</td>
-      <td>480-380-5214</td>
-      <td>AZ</td>
-      <td>85208</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Phoenix</td>
-      <td>US</td>
-      <td>vlintz@davisp.com</td>
-      <td>AZ324</td>
-      <td>33.4483</td>
-      <td>-112.0733</td>
-      <td>The Litter League (Rescue League)</td>
-      <td>NaN</td>
-      <td>AZ</td>
-      <td>85064</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>5278 East 21st Street</td>
-      <td>NaN</td>
-      <td>Tucson</td>
-      <td>US</td>
-      <td>adoptions@hermitagecatshelter.org</td>
-      <td>AZ70</td>
-      <td>32.2152</td>
-      <td>-110.8853</td>
-      <td>The Hermitage Cat Shelter</td>
-      <td>520-571-7839</td>
-      <td>AZ</td>
-      <td>85711</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Ahwatukee</td>
-      <td>US</td>
-      <td>ajbfcats@gmail.com</td>
-      <td>AZ88</td>
-      <td>33.3557</td>
-      <td>-111.7917</td>
-      <td>AJs Best Friends Persian &amp; Himalayan Rescue</td>
-      <td>NaN</td>
-      <td>AZ</td>
-      <td>85233</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>P.O. Box 494274</td>
-      <td>Redding, CA 96049-4274</td>
-      <td>Palo Cedro</td>
-      <td>US</td>
-      <td>acawl.inc@gmail.com</td>
-      <td>CA1004</td>
-      <td>40.5713</td>
-      <td>-122.2371</td>
-      <td>Another Chance Animal Welfare League Inc.</td>
-      <td>530-547-7387</td>
-      <td>CA</td>
-      <td>96073</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Santa Rosa</td>
-      <td>US</td>
-      <td>Asmcmvw@aol.com</td>
-      <td>CA1043</td>
-      <td>38.4434</td>
-      <td>-122.7511</td>
-      <td>Purrfect Pals</td>
-      <td>NaN</td>
-      <td>CA</td>
-      <td>95401</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Napa</td>
-      <td>US</td>
-      <td>wtfnapa@gmail.com</td>
-      <td>CA1328</td>
-      <td>38.3265</td>
-      <td>-122.3044</td>
-      <td>Whiskers, Tails and Ferals</td>
-      <td>(707) 258-2287</td>
-      <td>CA</td>
-      <td>94558</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>361 S. Raymond Avenue</td>
-      <td>NaN</td>
-      <td>Pasadena</td>
-      <td>US</td>
-      <td>NaN</td>
-      <td>CA15</td>
-      <td>34.1363</td>
-      <td>-118.1653</td>
-      <td>Pasadena Humane Society &amp; SPCA</td>
-      <td>626-792-7151</td>
-      <td>CA</td>
-      <td>91105</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>359 Nevada Street, Suite 101</td>
-      <td>NaN</td>
-      <td>Auburn</td>
-      <td>US</td>
-      <td>sahartford530@gmail.com</td>
-      <td>CA1505</td>
-      <td>38.8967</td>
-      <td>-121.0758</td>
-      <td>Friends Forever, A Cat Sanctuary</td>
-      <td>530-885-4228</td>
-      <td>CA</td>
-      <td>95604</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>P.O. Box 510</td>
-      <td>NaN</td>
-      <td>Davis</td>
-      <td>US</td>
-      <td>adopt@yolospca.org</td>
-      <td>CA161</td>
-      <td>38.545</td>
-      <td>-121.7394</td>
-      <td>Yolo County SPCA</td>
-      <td>NaN</td>
-      <td>CA</td>
-      <td>95617</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Buena Park</td>
-      <td>US</td>
-      <td>CaringFriendsCatRescueTustin@gmail.Com</td>
-      <td>CA1721</td>
-      <td>33.8763</td>
-      <td>-117.9903</td>
-      <td>Caring Friends Cat Rescue</td>
-      <td>NaN</td>
-      <td>CA</td>
-      <td>90621</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>420 McKinley St, Ste 111-147</td>
-      <td>NaN</td>
-      <td>Corona</td>
-      <td>US</td>
-      <td>purrfectfit2000-rescue@yahoo.com</td>
-      <td>CA1723</td>
-      <td>33.8781</td>
-      <td>-117.5814</td>
-      <td>Purrfect Fit Cat Rescue</td>
-      <td>951-817-9545</td>
-      <td>CA</td>
-      <td>92879</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Panorama City</td>
-      <td>US</td>
-      <td>gduncan13@gmail.com</td>
-      <td>CA1752</td>
-      <td>34.2242</td>
-      <td>-118.4433</td>
-      <td>HA! Inc.</td>
-      <td>NaN</td>
-      <td>CA</td>
-      <td>91402</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>5473 Overpass Rd</td>
-      <td>NaN</td>
-      <td>Santa Barbara</td>
-      <td>US</td>
-      <td>info@asapcats.org</td>
-      <td>CA267</td>
-      <td>34.4427</td>
-      <td>-119.8024</td>
-      <td>Animal Shelter Assistance Program (ASAP)</td>
-      <td>(805) 683-3368</td>
-      <td>CA</td>
-      <td>93111</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>P.O. Box 2011</td>
-      <td>NaN</td>
-      <td>Antioch</td>
-      <td>US</td>
-      <td>starshalodogs@yahoo.com</td>
-      <td>CA338</td>
-      <td>38.005</td>
-      <td>-121.8047</td>
-      <td>Homeless Animals' Lifeline Organization (H.A.L...</td>
-      <td>(925) 473-4642</td>
-      <td>CA</td>
-      <td>94531</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>3839 Bradshaw Road</td>
-      <td>NaN</td>
-      <td>Sacramento</td>
-      <td>US</td>
-      <td>CountyAnimalCare@saccounty.net</td>
-      <td>CA348</td>
-      <td>38.5655</td>
-      <td>-121.3283</td>
-      <td>Sacramento County Animal Care and Regulation</td>
-      <td>CountyAnimalCare@saccounty.net</td>
-      <td>CA</td>
-      <td>95827</td>
-    </tr>
   </tbody>
 </table>
 </div>
@@ -15448,4 +14676,8 @@ div#notebook {
     </div>
   </div>
 </body>
+
+ 
+
+
 </html>
