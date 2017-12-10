@@ -55,6 +55,9 @@ def _coerce_to_dataframe(x, method):
             raise ValueError('unknown API method')
 
     df.columns = [col.replace('.$t', '') for col in df.columns]
+    df.columns = [col.replace('contact.', '') for col in df.columns]
+
+    df = df[df.columns[~df.columns.str.contains('options')]]
 
     return df
 

@@ -5,6 +5,14 @@ Version History
 
 Changelog and version changes made with each release.
 
+Version 1.5.7
+-------------
+
+- The fix to returning a DataFrame when paging results is now implemented in this release. Apologies for the
+  oversight, the code change was not made prior to releasing the previous version.
+- The contact information returned with a DataFrame when :code:`return_df = True` now has the prefix 'contact.'
+  removed to make the results cleaner.
+
 Version 1.5.6
 -------------
 
