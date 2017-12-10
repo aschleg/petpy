@@ -277,7 +277,7 @@ def test_paging_results(top_level_keys):
 
     assert isinstance(response1, list)
 
-    assert len(response1) == len(response2) == 4
+    assert len(response1) == len(response2) == 3
 
     for i in response1:
         assert set(i.keys()).issubset(top_level_keys)
