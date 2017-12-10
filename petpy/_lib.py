@@ -1,3 +1,10 @@
+"""
+
+Internal methods for coercing returns from the Petfinder API.
+
+"""
+
+
 from pandas import DataFrame, concat
 from pandas.io.json import json_normalize
 from numpy import nan
@@ -158,6 +165,9 @@ def _query(url, args, pages=None, return_df=False, method=None):
             count = args['count']
         except KeyError:
             count = 25
+
+        if pages > 1:
+            pages = pages - 1
 
         for _ in range(0, pages):
 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Version History &mdash; petpy 1.5.4 documentation</title>
+  <title>Version History &mdash; petpy 1.5.6 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="petpy 1.5.4 documentation" href="index.html"/>
+    <link rel="top" title="petpy 1.5.6 documentation" href="index.html"/>
         <link rel="prev" title="API Reference" href="api.html"/> 
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.5.4
+                1.5.6
               </div>
             
           
@@ -92,6 +92,8 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Version History</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#version-1-5-6">Version 1.5.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-1-5-5">Version 1.5.5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#version-1-5-4">Version 1.5.4</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#version-1-5-0">Version 1.5.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#version-1-0-0">Version 1.0.0</a></li>
@@ -163,13 +165,29 @@
   <div class="section" id="version-history">
 <span id="versions"></span><h1>Version History<a class="headerlink" href="#version-history" title="Permalink to this headline">¶</a></h1>
 <p>Changelog and version changes made with each release.</p>
+<div class="section" id="version-1-5-6">
+<h2>Version 1.5.6<a class="headerlink" href="#version-1-5-6" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Paging results now returns the stated number of pages in the <code class="code docutils literal"><span class="pre">pages</span></code> parameter. Before, <code class="code docutils literal"><span class="pre">pages</span> <span class="pre">+</span> <span class="pre">1</span></code>
+results were returned.</li>
+<li>Returning pandas DataFrames with methods <code class="code docutils literal"><span class="pre">pet_find()</span></code> and <code class="code docutils literal"><span class="pre">shelter_find()</span></code> should no longer throw
+<code class="code docutils literal"><span class="pre">ValueError</span></code> (duplicate column name was causing error in concatenating list of results into a DataFrame).</li>
+</ul>
+</div>
+<div class="section" id="version-1-5-5">
+<h2>Version 1.5.5<a class="headerlink" href="#version-1-5-5" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="code docutils literal"><span class="pre">shelter_getPets()</span></code> method now returns a complete flattened pandas DataFrame when the parameter
+<code class="code docutils literal"><span class="pre">return_df</span> <span class="pre">=</span> <span class="pre">True</span></code>.</li>
+</ul>
+</div>
 <div class="section" id="version-1-5-4">
 <h2>Version 1.5.4<a class="headerlink" href="#version-1-5-4" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Slight fix to <code class="code docutils literal"><span class="pre">pet_getRandom()</span></code> method. Before, if the method parameter <code class="code docutils literal"><span class="pre">return_df</span> <span class="pre">=</span> <span class="pre">True</span></code>, but
-the parameter <code class="code docutils literal"><span class="pre">output</span></code> was not one of &#8216;basic&#8217; or &#8216;full&#8217;, the <code class="code docutils literal"><span class="pre">return_df</span></code> parameter was overridden
+the parameter <code class="code docutils literal"><span class="pre">output</span></code> was not one of ‘basic’ or ‘full’, the <code class="code docutils literal"><span class="pre">return_df</span></code> parameter was overridden
 and set as <code class="code docutils literal"><span class="pre">False</span></code>. Now, if <code class="code docutils literal"><span class="pre">return_df</span> <span class="pre">=</span> <span class="pre">True</span></code> and <code class="code docutils literal"><span class="pre">output</span></code> <code class="code docutils literal"><span class="pre">None</span></code>, then
-<code class="code docutils literal"><span class="pre">output</span></code> is set to &#8216;full&#8217; to return the most complete DataFrame.</li>
+<code class="code docutils literal"><span class="pre">output</span></code> is set to ‘full’ to return the most complete DataFrame.</li>
 <li>Added <code class="code docutils literal"><span class="pre">records</span></code> parameter to <code class="code docutils literal"><span class="pre">pet_getRandom()</span></code> to allow multiple random results to be returned in the
 same method call. Please note each record returned counts as one call made to the Petfinder API.</li>
 <li>Added API convenience methods <code class="code docutils literal"><span class="pre">pets_get()</span></code> and <code class="code docutils literal"><span class="pre">shelters_get()</span></code> for pulling multiple results given a
@@ -234,7 +252,7 @@ list or tuple of IDs. These methods are essentially wrappers of the API methods 
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.5.4',
+            VERSION:'1.5.6',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

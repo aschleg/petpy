@@ -1,3 +1,5 @@
+
+
 import pandas as pd
 from pandas.io.json import json_normalize
 from six.moves.urllib.parse import urljoin
@@ -124,7 +126,7 @@ class Petfinder(object):
         pages : int, optional
             The number of pages of results to return. For example, if :code:`pages=4` with the default
              :code:`count` parameter (25), 100 results would be returned. The paged results are returned
-             as a list.
+             as a list, but can be returned as a pandas DataFrame by setting :code:`return_df=True`.
         output : str, optional
             Sets the amount of information returned in each record. 'basic' returns a simple record while
             'full' returns a complete record with description. Defaults to 'basic'.

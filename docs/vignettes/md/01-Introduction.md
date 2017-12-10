@@ -194,7 +194,7 @@ cats
         {'$t': 'Turkish Van'},
         {'$t': 'Tuxedo'}]},
       'header': {'status': {'code': {'$t': '100'}, 'message': {}},
-       'timestamp': {'$t': '2017-11-23T02:45:12Z'},
+       'timestamp': {'$t': '2017-11-22T16:57:26Z'},
        'version': {'$t': '0.1'}}}}
 
 
@@ -276,7 +276,7 @@ pf.breed_list('zebra')
       '@xsi:noNamespaceSchemaLocation': 'http://api.petfinder.com/schemas/0.9/petfinder.xsd',
       'header': {'status': {'code': {'$t': '200'},
         'message': {'$t': 'invalid arguments'}},
-       'timestamp': {'$t': '2017-11-23T02:45:17Z'},
+       'timestamp': {'$t': '2017-11-21T19:06:51Z'},
        'version': {'$t': '0.1'}}}}
 
 
@@ -300,9 +300,9 @@ pf.pet_getRandom()
      'petfinder': {'@xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance',
       '@xsi:noNamespaceSchemaLocation': 'http://api.petfinder.com/schemas/0.9/petfinder.xsd',
       'header': {'status': {'code': {'$t': '100'}, 'message': {}},
-       'timestamp': {'$t': '2017-11-23T02:45:21Z'},
+       'timestamp': {'$t': '2017-11-21T19:06:54Z'},
        'version': {'$t': '0.1'}},
-      'petIds': {'id': {'$t': '35781395'}}}}
+      'petIds': {'id': {'$t': '39801731'}}}}
 
 
 
@@ -321,46 +321,105 @@ pf.pet_getRandom(output='full')
      'petfinder': {'@xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance',
       '@xsi:noNamespaceSchemaLocation': 'http://api.petfinder.com/schemas/0.9/petfinder.xsd',
       'header': {'status': {'code': {'$t': '100'}, 'message': {}},
-       'timestamp': {'$t': '2017-11-23T02:45:24Z'},
+       'timestamp': {'$t': '2017-11-21T19:06:58Z'},
        'version': {'$t': '0.1'}},
       'pet': {'age': {'$t': 'Adult'},
        'animal': {'$t': 'Dog'},
-       'breeds': {'breed': [{'$t': 'Chihuahua'}, {'$t': 'Terrier'}]},
+       'breeds': {'breed': {'$t': 'Chihuahua'}},
        'contact': {'address1': {},
         'address2': {},
-        'city': {'$t': 'Brazil'},
-        'email': {'$t': 'luckypupsrescue@gmail.com'},
+        'city': {'$t': 'Parkland'},
+        'email': {'$t': 'info@getalifepetrescue.com'},
         'fax': {},
-        'phone': {'$t': '(317) 443-2918'},
-        'state': {'$t': 'IN'},
-        'zip': {'$t': '47834'}},
-       'description': {'$t': 'Nacho is an older dog who came to us from another rescue. He is very much a lap dog! he loves to ride in cars and even on the lawn mower! He is housebroken, neutered, up to date on shots, and will be microchipped once adopted. Send us an email at luckypupsrescue@gmail.com for more info!'},
-       'id': {'$t': '39113649'},
-       'lastUpdate': {'$t': '2017-08-15T16:30:40Z'},
-       'media': {'photos': {'photo': [{'$t': 'http://photos.petfinder.com/photos/pets/39113649/1/?bust=1502814504&width=60&-pnt.jpg',
+        'phone': {'$t': '954-629-2445'},
+        'state': {'$t': 'FL'},
+        'zip': {'$t': '33067'}},
+       'description': {'$t': "Shakira Long Haired Chihuahua is approximately 6-7-year-old, 6.5-pound bundle of joy. She so very much wants to be loved and she shows it with her head tilts as she tunes into your baby talk while she wags her tail. She is a sweet girl who arrived at us as a stray so the vet is figuring her age by her blood work, teeth, and her eyes. She is healthy and she has received a dental cleaning along with her other vetting. She enjoys being next to you and is good with other dogs so she would make a great addition to your doggy home. SHe is a wonderful companion. She is calm and sweet so she is the perfect package. \nHer adoption fee is $300 to go towards her vetting (vaccines, spay/neuter, heartworm/Ehrlichia/Lyme test, fecal test, pre-op blood work, dental cleaning, and microchip). If you are interested in adopting please fill out the adoption application} http://www.getalifepetrescue.com/galpr-info/adoption-application.html\n\nAdoption Procedure:\nFill out our Adoption Application\nMeet with the dog(s)Home check\nAdoption Contract\nAdoption Donation (Between $150-$400)\n\nMedical Care That We Give To Our Rescued Pets:\nComplete Physical Examination\nSpay or Neuter Surgery\nHeartworm/Ehrlichia/Lyme Tested\nFecal Exam\nVACCINES~ Bordatella, Distemper, Rabies, Parvo, Corona, Adenovirus Type-2  \nDewormed\nMicrochipped plus lifetime registration (not for cats)\nGrooming (as needed)\nDental Cleaning (if needed)\nStarted on Heartworm Preventative and Flea & Tick Preventative\n\nWhat Makes A Qualified Adopter:\nApplicant must be 21 years or older Applicant's current pet should be up-to-date with appropriate vaccines Applicant's current pet must be altered, unless medical reasons do not permit All people in household need be present for home check Need Landlord or Home Owners Association's approval (if applicable) to have a pet  Applicant must be in the state of Florida preferable in Dade, Broward or Palm Beach Counties."},
+       'id': {'$t': '39881634'},
+       'lastUpdate': {'$t': '2017-11-10T19:17:04Z'},
+       'media': {'photos': {'photo': [{'$t': 'http://photos.petfinder.com/photos/pets/39881634/1/?bust=1510340490&width=60&-pnt.jpg',
            '@id': '1',
            '@size': 'pnt'},
-          {'$t': 'http://photos.petfinder.com/photos/pets/39113649/1/?bust=1502814504&width=95&-fpm.jpg',
+          {'$t': 'http://photos.petfinder.com/photos/pets/39881634/1/?bust=1510340490&width=95&-fpm.jpg',
            '@id': '1',
            '@size': 'fpm'},
-          {'$t': 'http://photos.petfinder.com/photos/pets/39113649/1/?bust=1502814504&width=500&-x.jpg',
+          {'$t': 'http://photos.petfinder.com/photos/pets/39881634/1/?bust=1510340490&width=500&-x.jpg',
            '@id': '1',
            '@size': 'x'},
-          {'$t': 'http://photos.petfinder.com/photos/pets/39113649/1/?bust=1502814504&width=300&-pn.jpg',
+          {'$t': 'http://photos.petfinder.com/photos/pets/39881634/1/?bust=1510340490&width=300&-pn.jpg',
            '@id': '1',
            '@size': 'pn'},
-          {'$t': 'http://photos.petfinder.com/photos/pets/39113649/1/?bust=1502814504&width=50&-t.jpg',
+          {'$t': 'http://photos.petfinder.com/photos/pets/39881634/1/?bust=1510340490&width=50&-t.jpg',
            '@id': '1',
+           '@size': 't'},
+          {'$t': 'http://photos.petfinder.com/photos/pets/39881634/2/?bust=1510340495&width=60&-pnt.jpg',
+           '@id': '2',
+           '@size': 'pnt'},
+          {'$t': 'http://photos.petfinder.com/photos/pets/39881634/2/?bust=1510340495&width=95&-fpm.jpg',
+           '@id': '2',
+           '@size': 'fpm'},
+          {'$t': 'http://photos.petfinder.com/photos/pets/39881634/2/?bust=1510340495&width=500&-x.jpg',
+           '@id': '2',
+           '@size': 'x'},
+          {'$t': 'http://photos.petfinder.com/photos/pets/39881634/2/?bust=1510340495&width=300&-pn.jpg',
+           '@id': '2',
+           '@size': 'pn'},
+          {'$t': 'http://photos.petfinder.com/photos/pets/39881634/2/?bust=1510340495&width=50&-t.jpg',
+           '@id': '2',
+           '@size': 't'},
+          {'$t': 'http://photos.petfinder.com/photos/pets/39881634/3/?bust=1510340500&width=60&-pnt.jpg',
+           '@id': '3',
+           '@size': 'pnt'},
+          {'$t': 'http://photos.petfinder.com/photos/pets/39881634/3/?bust=1510340500&width=95&-fpm.jpg',
+           '@id': '3',
+           '@size': 'fpm'},
+          {'$t': 'http://photos.petfinder.com/photos/pets/39881634/3/?bust=1510340500&width=500&-x.jpg',
+           '@id': '3',
+           '@size': 'x'},
+          {'$t': 'http://photos.petfinder.com/photos/pets/39881634/3/?bust=1510340500&width=300&-pn.jpg',
+           '@id': '3',
+           '@size': 'pn'},
+          {'$t': 'http://photos.petfinder.com/photos/pets/39881634/3/?bust=1510340500&width=50&-t.jpg',
+           '@id': '3',
+           '@size': 't'},
+          {'$t': 'http://photos.petfinder.com/photos/pets/39881634/4/?bust=1510340515&width=60&-pnt.jpg',
+           '@id': '4',
+           '@size': 'pnt'},
+          {'$t': 'http://photos.petfinder.com/photos/pets/39881634/4/?bust=1510340515&width=95&-fpm.jpg',
+           '@id': '4',
+           '@size': 'fpm'},
+          {'$t': 'http://photos.petfinder.com/photos/pets/39881634/4/?bust=1510340515&width=500&-x.jpg',
+           '@id': '4',
+           '@size': 'x'},
+          {'$t': 'http://photos.petfinder.com/photos/pets/39881634/4/?bust=1510340515&width=300&-pn.jpg',
+           '@id': '4',
+           '@size': 'pn'},
+          {'$t': 'http://photos.petfinder.com/photos/pets/39881634/4/?bust=1510340515&width=50&-t.jpg',
+           '@id': '4',
+           '@size': 't'},
+          {'$t': 'http://photos.petfinder.com/photos/pets/39881634/5/?bust=1510340519&width=60&-pnt.jpg',
+           '@id': '5',
+           '@size': 'pnt'},
+          {'$t': 'http://photos.petfinder.com/photos/pets/39881634/5/?bust=1510340519&width=95&-fpm.jpg',
+           '@id': '5',
+           '@size': 'fpm'},
+          {'$t': 'http://photos.petfinder.com/photos/pets/39881634/5/?bust=1510340519&width=500&-x.jpg',
+           '@id': '5',
+           '@size': 'x'},
+          {'$t': 'http://photos.petfinder.com/photos/pets/39881634/5/?bust=1510340519&width=300&-pn.jpg',
+           '@id': '5',
+           '@size': 'pn'},
+          {'$t': 'http://photos.petfinder.com/photos/pets/39881634/5/?bust=1510340519&width=50&-t.jpg',
+           '@id': '5',
            '@size': 't'}]}},
-       'mix': {'$t': 'yes'},
-       'name': {'$t': 'Nacho'},
+       'mix': {'$t': 'no'},
+       'name': {'$t': 'Shakira'},
        'options': {'option': [{'$t': 'hasShots'},
-         {'$t': 'noKids'},
          {'$t': 'altered'},
          {'$t': 'housetrained'}]},
-       'sex': {'$t': 'M'},
-       'shelterId': {'$t': 'IN501'},
-       'shelterPetId': {},
+       'sex': {'$t': 'F'},
+       'shelterId': {'$t': 'FL597'},
+       'shelterPetId': {'$t': 'shakira'},
        'size': {'$t': 'S'},
        'status': {'$t': 'A'}}}}
 
@@ -425,44 +484,44 @@ random_pet_df
   <tbody>
     <tr>
       <th>0</th>
-      <td>Senior</td>
-      <td>Cat</td>
-      <td>Domestic Short Hair</td>
-      <td>NaN</td>
-      <td>Domestic Short Hair</td>
-      <td>4081 Columbia Avenue</td>
-      <td>Columbia</td>
-      <td>catmisonly2@yahoo.com</td>
-      <td>717-684-2285</td>
-      <td>PA</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>M</td>
-      <td>PA696</td>
-      <td>NaN</td>
-      <td>S</td>
-      <td>A</td>
-      <td>hasShots</td>
-      <td>altered</td>
-      <td>housetrained</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>0</th>
       <td>Adult</td>
       <td>Dog</td>
-      <td>Chihuahua</td>
+      <td>Boxer</td>
+      <td>Labrador Retriever</td>
       <td>NaN</td>
-      <td>Chihuahua</td>
-      <td>NaN</td>
-      <td>Romeoville</td>
-      <td>info@perfectpooches.org</td>
-      <td>NaN</td>
-      <td>IL</td>
+      <td>PO Box 60935</td>
+      <td>Fort Myers</td>
+      <td>rescueanimalsinneed@gmail.com</td>
+      <td>407-414-2866</td>
+      <td>FL</td>
       <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/397199...</td>
+      <td>http://photos.petfinder.com/photos/pets/367743...</td>
       <td>F</td>
-      <td>IL753</td>
+      <td>FL1027</td>
+      <td>NaN</td>
+      <td>M</td>
+      <td>A</td>
+      <td>hasShots</td>
+      <td>noKids</td>
+      <td>altered</td>
+      <td>housetrained</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Young</td>
+      <td>Dog</td>
+      <td>Beagle</td>
+      <td>NaN</td>
+      <td>Beagle</td>
+      <td>P.O. Box 402</td>
+      <td>Liberty Center</td>
+      <td>heritagefarms08@gmail.com</td>
+      <td>419-591-6621</td>
+      <td>OH</td>
+      <td>...</td>
+      <td>http://photos.petfinder.com/photos/pets/391432...</td>
+      <td>M</td>
+      <td>OH743</td>
       <td>NaN</td>
       <td>S</td>
       <td>A</td>
@@ -475,23 +534,47 @@ random_pet_df
       <th>0</th>
       <td>Adult</td>
       <td>Cat</td>
-      <td>Domestic Short Hair (Gray &amp; White)</td>
+      <td>Domestic Short Hair</td>
       <td>NaN</td>
-      <td>Domestic Short Hair (Gray &amp; White)</td>
+      <td>Domestic Short Hair</td>
       <td>NaN</td>
-      <td>Closter</td>
-      <td>clawsadopt@yahoo.com</td>
-      <td>(201) 768-0200</td>
-      <td>NJ</td>
+      <td>Kansas City</td>
+      <td>coquina2@aol.com</td>
+      <td>NaN</td>
+      <td>MO</td>
       <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/386709...</td>
-      <td>F</td>
-      <td>NJ279</td>
-      <td>Marcia</td>
+      <td>http://photos.petfinder.com/photos/pets/314172...</td>
+      <td>M</td>
+      <td>MO608</td>
+      <td>NaN</td>
       <td>M</td>
       <td>A</td>
       <td>hasShots</td>
+      <td>noDogs</td>
       <td>altered</td>
+      <td>housetrained</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Adult</td>
+      <td>Cat</td>
+      <td>Domestic Short Hair</td>
+      <td>NaN</td>
+      <td>Domestic Short Hair</td>
+      <td>185 N Industrial Drive</td>
+      <td>Erwin</td>
+      <td>unicoicountyanimalshelter@gmail.com</td>
+      <td>423-743-3071</td>
+      <td>TN</td>
+      <td>...</td>
+      <td>http://photos.petfinder.com/photos/pets/394589...</td>
+      <td>F</td>
+      <td>TN489</td>
+      <td>12046973</td>
+      <td>M</td>
+      <td>A</td>
+      <td>altered</td>
+      <td>housetrained</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
@@ -499,53 +582,29 @@ random_pet_df
       <th>0</th>
       <td>Young</td>
       <td>Dog</td>
-      <td>Labrador Retriever</td>
-      <td>German Shepherd Dog</td>
+      <td>Rottweiler</td>
       <td>NaN</td>
-      <td>PO Box 421</td>
-      <td>Ben Wheeler</td>
-      <td>admin@vzchumanesociety.org</td>
-      <td>903-962-5700</td>
-      <td>TX</td>
+      <td>Rottweiler</td>
+      <td>3550 Aumsville Hwy SE</td>
+      <td>Salem</td>
+      <td>DOG@co.marion.or.us</td>
+      <td>503-588-5233</td>
+      <td>OR</td>
       <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/317327...</td>
-      <td>M</td>
-      <td>TX310</td>
-      <td>8366590</td>
+      <td>http://photos.petfinder.com/photos/pets/399528...</td>
+      <td>F</td>
+      <td>OR177</td>
+      <td>17-1349</td>
       <td>L</td>
       <td>A</td>
-      <td>specialNeeds</td>
       <td>hasShots</td>
       <td>altered</td>
-      <td>housetrained</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>Baby</td>
-      <td>Cat</td>
-      <td>Domestic Short Hair</td>
-      <td>NaN</td>
-      <td>Domestic Short Hair</td>
-      <td>P.O. Box 785</td>
-      <td>Newnan</td>
-      <td>nchs@nchsrescue.org</td>
-      <td>NaN</td>
-      <td>GA</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>M</td>
-      <td>GA207</td>
-      <td>U2017309</td>
-      <td>S</td>
-      <td>A</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 57 columns</p>
+<p>5 rows × 52 columns</p>
 </div>
 
 
@@ -574,7 +633,7 @@ pet
      'petfinder': {'@xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance',
       '@xsi:noNamespaceSchemaLocation': 'http://api.petfinder.com/schemas/0.9/petfinder.xsd',
       'header': {'status': {'code': {'$t': '100'}, 'message': {}},
-       'timestamp': {'$t': '2017-11-23T02:45:46Z'},
+       'timestamp': {'$t': '2017-11-21T14:41:59Z'},
        'version': {'$t': '0.1'}},
       'pet': {'age': {'$t': 'Young'},
        'animal': {'$t': 'Dog'},
@@ -659,16 +718,16 @@ pf.pet_get('39801731', return_df=True)
       <th>contact.zip</th>
       <th>description</th>
       <th>...</th>
-      <th>photos20</th>
-      <th>photos21</th>
-      <th>photos22</th>
-      <th>photos23</th>
-      <th>photos24</th>
-      <th>photos25</th>
-      <th>photos26</th>
-      <th>photos27</th>
-      <th>photos28</th>
-      <th>photos29</th>
+      <th>photos5</th>
+      <th>photos6</th>
+      <th>photos7</th>
+      <th>photos8</th>
+      <th>photos9</th>
+      <th>photos10</th>
+      <th>photos11</th>
+      <th>photos12</th>
+      <th>photos13</th>
+      <th>photos14</th>
     </tr>
   </thead>
   <tbody>
@@ -698,7 +757,7 @@ pf.pet_get('39801731', return_df=True)
     </tr>
   </tbody>
 </table>
-<p>1 rows × 54 columns</p>
+<p>1 rows × 39 columns</p>
 </div>
 
 
@@ -762,44 +821,44 @@ pf.pets_get(petids, return_df=True)
   <tbody>
     <tr>
       <th>0</th>
-      <td>Senior</td>
-      <td>Cat</td>
-      <td>Domestic Short Hair</td>
-      <td>NaN</td>
-      <td>Domestic Short Hair</td>
-      <td>4081 Columbia Avenue</td>
-      <td>Columbia</td>
-      <td>catmisonly2@yahoo.com</td>
-      <td>717-684-2285</td>
-      <td>PA</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>M</td>
-      <td>PA696</td>
-      <td>NaN</td>
-      <td>S</td>
-      <td>A</td>
-      <td>hasShots</td>
-      <td>altered</td>
-      <td>housetrained</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>0</th>
       <td>Adult</td>
       <td>Dog</td>
-      <td>Chihuahua</td>
+      <td>Boxer</td>
+      <td>Labrador Retriever</td>
       <td>NaN</td>
-      <td>Chihuahua</td>
-      <td>NaN</td>
-      <td>Romeoville</td>
-      <td>info@perfectpooches.org</td>
-      <td>NaN</td>
-      <td>IL</td>
+      <td>PO Box 60935</td>
+      <td>Fort Myers</td>
+      <td>rescueanimalsinneed@gmail.com</td>
+      <td>407-414-2866</td>
+      <td>FL</td>
       <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/397199...</td>
+      <td>http://photos.petfinder.com/photos/pets/367743...</td>
       <td>F</td>
-      <td>IL753</td>
+      <td>FL1027</td>
+      <td>NaN</td>
+      <td>M</td>
+      <td>A</td>
+      <td>hasShots</td>
+      <td>noKids</td>
+      <td>altered</td>
+      <td>housetrained</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Young</td>
+      <td>Dog</td>
+      <td>Beagle</td>
+      <td>NaN</td>
+      <td>Beagle</td>
+      <td>P.O. Box 402</td>
+      <td>Liberty Center</td>
+      <td>heritagefarms08@gmail.com</td>
+      <td>419-591-6621</td>
+      <td>OH</td>
+      <td>...</td>
+      <td>http://photos.petfinder.com/photos/pets/391432...</td>
+      <td>M</td>
+      <td>OH743</td>
       <td>NaN</td>
       <td>S</td>
       <td>A</td>
@@ -812,23 +871,47 @@ pf.pets_get(petids, return_df=True)
       <th>0</th>
       <td>Adult</td>
       <td>Cat</td>
-      <td>Domestic Short Hair (Gray &amp; White)</td>
+      <td>Domestic Short Hair</td>
       <td>NaN</td>
-      <td>Domestic Short Hair (Gray &amp; White)</td>
+      <td>Domestic Short Hair</td>
       <td>NaN</td>
-      <td>Closter</td>
-      <td>clawsadopt@yahoo.com</td>
-      <td>(201) 768-0200</td>
-      <td>NJ</td>
+      <td>Kansas City</td>
+      <td>coquina2@aol.com</td>
+      <td>NaN</td>
+      <td>MO</td>
       <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/386709...</td>
-      <td>F</td>
-      <td>NJ279</td>
-      <td>Marcia</td>
+      <td>http://photos.petfinder.com/photos/pets/314172...</td>
+      <td>M</td>
+      <td>MO608</td>
+      <td>NaN</td>
       <td>M</td>
       <td>A</td>
       <td>hasShots</td>
+      <td>noDogs</td>
       <td>altered</td>
+      <td>housetrained</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Adult</td>
+      <td>Cat</td>
+      <td>Domestic Short Hair</td>
+      <td>NaN</td>
+      <td>Domestic Short Hair</td>
+      <td>185 N Industrial Drive</td>
+      <td>Erwin</td>
+      <td>unicoicountyanimalshelter@gmail.com</td>
+      <td>423-743-3071</td>
+      <td>TN</td>
+      <td>...</td>
+      <td>http://photos.petfinder.com/photos/pets/394589...</td>
+      <td>F</td>
+      <td>TN489</td>
+      <td>12046973</td>
+      <td>M</td>
+      <td>A</td>
+      <td>altered</td>
+      <td>housetrained</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
@@ -836,53 +919,29 @@ pf.pets_get(petids, return_df=True)
       <th>0</th>
       <td>Young</td>
       <td>Dog</td>
-      <td>Labrador Retriever</td>
-      <td>German Shepherd Dog</td>
+      <td>Rottweiler</td>
       <td>NaN</td>
-      <td>PO Box 421</td>
-      <td>Ben Wheeler</td>
-      <td>admin@vzchumanesociety.org</td>
-      <td>903-962-5700</td>
-      <td>TX</td>
+      <td>Rottweiler</td>
+      <td>3550 Aumsville Hwy SE</td>
+      <td>Salem</td>
+      <td>DOG@co.marion.or.us</td>
+      <td>503-588-5233</td>
+      <td>OR</td>
       <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/317327...</td>
-      <td>M</td>
-      <td>TX310</td>
-      <td>8366590</td>
+      <td>http://photos.petfinder.com/photos/pets/399528...</td>
+      <td>F</td>
+      <td>OR177</td>
+      <td>17-1349</td>
       <td>L</td>
       <td>A</td>
-      <td>specialNeeds</td>
       <td>hasShots</td>
       <td>altered</td>
-      <td>housetrained</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>Baby</td>
-      <td>Cat</td>
-      <td>Domestic Short Hair</td>
-      <td>NaN</td>
-      <td>Domestic Short Hair</td>
-      <td>P.O. Box 785</td>
-      <td>Newnan</td>
-      <td>nchs@nchsrescue.org</td>
-      <td>NaN</td>
-      <td>GA</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>M</td>
-      <td>GA207</td>
-      <td>U2017309</td>
-      <td>S</td>
-      <td>A</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 57 columns</p>
+<p>5 rows × 52 columns</p>
 </div>
 
 
@@ -941,44 +1000,44 @@ pf.pet_get(petids, return_df=True)
   <tbody>
     <tr>
       <th>0</th>
-      <td>Senior</td>
-      <td>Cat</td>
-      <td>Domestic Short Hair</td>
-      <td>NaN</td>
-      <td>Domestic Short Hair</td>
-      <td>4081 Columbia Avenue</td>
-      <td>Columbia</td>
-      <td>catmisonly2@yahoo.com</td>
-      <td>717-684-2285</td>
-      <td>PA</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>M</td>
-      <td>PA696</td>
-      <td>NaN</td>
-      <td>S</td>
-      <td>A</td>
-      <td>hasShots</td>
-      <td>altered</td>
-      <td>housetrained</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>0</th>
       <td>Adult</td>
       <td>Dog</td>
-      <td>Chihuahua</td>
+      <td>Boxer</td>
+      <td>Labrador Retriever</td>
       <td>NaN</td>
-      <td>Chihuahua</td>
-      <td>NaN</td>
-      <td>Romeoville</td>
-      <td>info@perfectpooches.org</td>
-      <td>NaN</td>
-      <td>IL</td>
+      <td>PO Box 60935</td>
+      <td>Fort Myers</td>
+      <td>rescueanimalsinneed@gmail.com</td>
+      <td>407-414-2866</td>
+      <td>FL</td>
       <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/397199...</td>
+      <td>http://photos.petfinder.com/photos/pets/367743...</td>
       <td>F</td>
-      <td>IL753</td>
+      <td>FL1027</td>
+      <td>NaN</td>
+      <td>M</td>
+      <td>A</td>
+      <td>hasShots</td>
+      <td>noKids</td>
+      <td>altered</td>
+      <td>housetrained</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Young</td>
+      <td>Dog</td>
+      <td>Beagle</td>
+      <td>NaN</td>
+      <td>Beagle</td>
+      <td>P.O. Box 402</td>
+      <td>Liberty Center</td>
+      <td>heritagefarms08@gmail.com</td>
+      <td>419-591-6621</td>
+      <td>OH</td>
+      <td>...</td>
+      <td>http://photos.petfinder.com/photos/pets/391432...</td>
+      <td>M</td>
+      <td>OH743</td>
       <td>NaN</td>
       <td>S</td>
       <td>A</td>
@@ -991,23 +1050,47 @@ pf.pet_get(petids, return_df=True)
       <th>0</th>
       <td>Adult</td>
       <td>Cat</td>
-      <td>Domestic Short Hair (Gray &amp; White)</td>
+      <td>Domestic Short Hair</td>
       <td>NaN</td>
-      <td>Domestic Short Hair (Gray &amp; White)</td>
+      <td>Domestic Short Hair</td>
       <td>NaN</td>
-      <td>Closter</td>
-      <td>clawsadopt@yahoo.com</td>
-      <td>(201) 768-0200</td>
-      <td>NJ</td>
+      <td>Kansas City</td>
+      <td>coquina2@aol.com</td>
+      <td>NaN</td>
+      <td>MO</td>
       <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/386709...</td>
-      <td>F</td>
-      <td>NJ279</td>
-      <td>Marcia</td>
+      <td>http://photos.petfinder.com/photos/pets/314172...</td>
+      <td>M</td>
+      <td>MO608</td>
+      <td>NaN</td>
       <td>M</td>
       <td>A</td>
       <td>hasShots</td>
+      <td>noDogs</td>
       <td>altered</td>
+      <td>housetrained</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Adult</td>
+      <td>Cat</td>
+      <td>Domestic Short Hair</td>
+      <td>NaN</td>
+      <td>Domestic Short Hair</td>
+      <td>185 N Industrial Drive</td>
+      <td>Erwin</td>
+      <td>unicoicountyanimalshelter@gmail.com</td>
+      <td>423-743-3071</td>
+      <td>TN</td>
+      <td>...</td>
+      <td>http://photos.petfinder.com/photos/pets/394589...</td>
+      <td>F</td>
+      <td>TN489</td>
+      <td>12046973</td>
+      <td>M</td>
+      <td>A</td>
+      <td>altered</td>
+      <td>housetrained</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
@@ -1015,53 +1098,29 @@ pf.pet_get(petids, return_df=True)
       <th>0</th>
       <td>Young</td>
       <td>Dog</td>
-      <td>Labrador Retriever</td>
-      <td>German Shepherd Dog</td>
+      <td>Rottweiler</td>
       <td>NaN</td>
-      <td>PO Box 421</td>
-      <td>Ben Wheeler</td>
-      <td>admin@vzchumanesociety.org</td>
-      <td>903-962-5700</td>
-      <td>TX</td>
+      <td>Rottweiler</td>
+      <td>3550 Aumsville Hwy SE</td>
+      <td>Salem</td>
+      <td>DOG@co.marion.or.us</td>
+      <td>503-588-5233</td>
+      <td>OR</td>
       <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/317327...</td>
-      <td>M</td>
-      <td>TX310</td>
-      <td>8366590</td>
+      <td>http://photos.petfinder.com/photos/pets/399528...</td>
+      <td>F</td>
+      <td>OR177</td>
+      <td>17-1349</td>
       <td>L</td>
       <td>A</td>
-      <td>specialNeeds</td>
       <td>hasShots</td>
       <td>altered</td>
-      <td>housetrained</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>Baby</td>
-      <td>Cat</td>
-      <td>Domestic Short Hair</td>
-      <td>NaN</td>
-      <td>Domestic Short Hair</td>
-      <td>P.O. Box 785</td>
-      <td>Newnan</td>
-      <td>nchs@nchsrescue.org</td>
-      <td>NaN</td>
-      <td>GA</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>M</td>
-      <td>GA207</td>
-      <td>U2017309</td>
-      <td>S</td>
-      <td>A</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 57 columns</p>
+<p>5 rows × 52 columns</p>
 </div>
 
 
@@ -1496,7 +1555,7 @@ pf.shelter_get(shelter_list[0])
      'petfinder': {'@xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance',
       '@xsi:noNamespaceSchemaLocation': 'http://api.petfinder.com/schemas/0.9/petfinder.xsd',
       'header': {'status': {'code': {'$t': '100'}, 'message': {}},
-       'timestamp': {'$t': '2017-11-23T02:46:10Z'},
+       'timestamp': {'$t': '2017-11-22T16:00:53Z'},
        'version': {'$t': '0.1'}},
       'shelter': {'address1': {},
        'address2': {},
@@ -1723,8 +1782,7 @@ The `shelter.getPets()` method returns the pet records that belong to a particul
 
 
 ```python
-shelter_pets = pf.shelter_getPets(shelter_list[0], return_df=True)
-shelter_pets.head() # The default number of returned records is 25, so we only print the first 5 rows for brevity
+pf.shelter_getPets(shelter_list[0], return_df=True)
 ```
 
 
@@ -1750,6 +1808,8 @@ shelter_pets.head() # The default number of returned records is 25, so we only p
       <th></th>
       <th>age</th>
       <th>animal</th>
+      <th>breeds.breed</th>
+      <th>breeds.breed</th>
       <th>contact.city</th>
       <th>contact.email</th>
       <th>contact.state</th>
@@ -1758,17 +1818,14 @@ shelter_pets.head() # The default number of returned records is 25, so we only p
       <th>id</th>
       <th>lastUpdate</th>
       <th>media.photos.photo</th>
-      <th>...</th>
-      <th>photos15</th>
-      <th>photos16</th>
-      <th>photos17</th>
-      <th>photos18</th>
-      <th>photos19</th>
-      <th>photos20</th>
-      <th>photos21</th>
-      <th>photos22</th>
-      <th>photos23</th>
-      <th>photos24</th>
+      <th>mix</th>
+      <th>name</th>
+      <th>options.option</th>
+      <th>options.option</th>
+      <th>sex</th>
+      <th>shelterId</th>
+      <th>size</th>
+      <th>status</th>
     </tr>
   </thead>
   <tbody>
@@ -1776,6 +1833,8 @@ shelter_pets.head() # The default number of returned records is 25, so we only p
       <th>0</th>
       <td>Adult</td>
       <td>Dog</td>
+      <td>[{'$t': 'Shepherd'}, {'$t': 'Labrador Retrieve...</td>
+      <td>NaN</td>
       <td>Auburn</td>
       <td>pugetsoundrescue@hotmail.com</td>
       <td>WA</td>
@@ -1784,22 +1843,21 @@ shelter_pets.head() # The default number of returned records is 25, so we only p
       <td>32080691</td>
       <td>2017-09-01T23:26:37Z</td>
       <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>...</td>
+      <td>yes</td>
+      <td>Morena</td>
+      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}, {'$t':...</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>F</td>
+      <td>WA149</td>
+      <td>M</td>
+      <td>A</td>
     </tr>
     <tr>
-      <th>0</th>
+      <th>1</th>
       <td>Adult</td>
       <td>Dog</td>
+      <td>[{'$t': 'Pit Bull Terrier'}, {'$t': 'Beagle'}]</td>
+      <td>NaN</td>
       <td>Auburn</td>
       <td>pugetsoundrescue@hotmail.com</td>
       <td>WA</td>
@@ -1808,22 +1866,21 @@ shelter_pets.head() # The default number of returned records is 25, so we only p
       <td>34906970</td>
       <td>2017-09-01T23:26:59Z</td>
       <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>...</td>
+      <td>yes</td>
+      <td>Monty</td>
+      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}, {'$t':...</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>M</td>
+      <td>WA149</td>
+      <td>M</td>
+      <td>A</td>
     </tr>
     <tr>
-      <th>0</th>
+      <th>2</th>
       <td>Adult</td>
       <td>Dog</td>
+      <td>NaN</td>
+      <td>Australian Cattle Dog / Blue Heeler</td>
       <td>Auburn</td>
       <td>pugetsoundrescue@hotmail.com</td>
       <td>WA</td>
@@ -1832,22 +1889,21 @@ shelter_pets.head() # The default number of returned records is 25, so we only p
       <td>37760609</td>
       <td>2017-11-01T05:01:56Z</td>
       <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>...</td>
+      <td>yes</td>
+      <td>Hobart</td>
+      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}, {'$t':...</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>M</td>
+      <td>WA149</td>
+      <td>M</td>
+      <td>A</td>
     </tr>
     <tr>
-      <th>0</th>
+      <th>3</th>
       <td>Young</td>
       <td>Dog</td>
+      <td>[{'$t': 'Pit Bull Terrier'}, {'$t': 'Labrador ...</td>
+      <td>NaN</td>
       <td>Auburn</td>
       <td>pugetsoundrescue@hotmail.com</td>
       <td>WA</td>
@@ -1856,22 +1912,21 @@ shelter_pets.head() # The default number of returned records is 25, so we only p
       <td>38602092</td>
       <td>2017-09-01T21:00:13Z</td>
       <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/386020...</td>
-      <td>http://photos.petfinder.com/photos/pets/386020...</td>
-      <td>http://photos.petfinder.com/photos/pets/386020...</td>
-      <td>http://photos.petfinder.com/photos/pets/386020...</td>
-      <td>http://photos.petfinder.com/photos/pets/386020...</td>
-      <td>http://photos.petfinder.com/photos/pets/386020...</td>
-      <td>http://photos.petfinder.com/photos/pets/386020...</td>
-      <td>http://photos.petfinder.com/photos/pets/386020...</td>
-      <td>http://photos.petfinder.com/photos/pets/386020...</td>
-      <td>http://photos.petfinder.com/photos/pets/386020...</td>
+      <td>yes</td>
+      <td>Daughtry</td>
+      <td>NaN</td>
+      <td>hasShots</td>
+      <td>M</td>
+      <td>WA149</td>
+      <td>M</td>
+      <td>A</td>
     </tr>
     <tr>
-      <th>0</th>
+      <th>4</th>
       <td>Adult</td>
       <td>Dog</td>
+      <td>NaN</td>
+      <td>German Shepherd Dog</td>
       <td>Auburn</td>
       <td>pugetsoundrescue@hotmail.com</td>
       <td>WA</td>
@@ -1880,21 +1935,477 @@ shelter_pets.head() # The default number of returned records is 25, so we only p
       <td>38627371</td>
       <td>2017-11-20T13:54:50Z</td>
       <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
-      <td>...</td>
-      <td>http://photos.petfinder.com/photos/pets/386273...</td>
-      <td>http://photos.petfinder.com/photos/pets/386273...</td>
-      <td>http://photos.petfinder.com/photos/pets/386273...</td>
-      <td>http://photos.petfinder.com/photos/pets/386273...</td>
-      <td>http://photos.petfinder.com/photos/pets/386273...</td>
+      <td>no</td>
+      <td>Poncho</td>
       <td>NaN</td>
       <td>NaN</td>
+      <td>M</td>
+      <td>WA149</td>
+      <td>L</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Adult</td>
+      <td>Dog</td>
+      <td>[{'$t': 'Husky'}, {'$t': 'Akita'}]</td>
+      <td>NaN</td>
+      <td>Auburn</td>
+      <td>pugetsoundrescue@hotmail.com</td>
+      <td>WA</td>
+      <td>98092</td>
+      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
+      <td>38899802</td>
+      <td>2017-09-01T20:55:28Z</td>
+      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
+      <td>yes</td>
+      <td>Cinder</td>
       <td>NaN</td>
       <td>NaN</td>
+      <td>F</td>
+      <td>WA149</td>
+      <td>L</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Adult</td>
+      <td>Dog</td>
       <td>NaN</td>
+      <td>German Shepherd Dog</td>
+      <td>Auburn</td>
+      <td>pugetsoundrescue@hotmail.com</td>
+      <td>WA</td>
+      <td>98092</td>
+      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
+      <td>38900079</td>
+      <td>2017-11-09T20:11:02Z</td>
+      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
+      <td>no</td>
+      <td>Hercules</td>
+      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}]</td>
+      <td>NaN</td>
+      <td>M</td>
+      <td>WA149</td>
+      <td>L</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Adult</td>
+      <td>Dog</td>
+      <td>[{'$t': 'American Staffordshire Terrier'}, {'$...</td>
+      <td>NaN</td>
+      <td>Auburn</td>
+      <td>pugetsoundrescue@hotmail.com</td>
+      <td>WA</td>
+      <td>98092</td>
+      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
+      <td>38900083</td>
+      <td>2017-09-01T20:51:06Z</td>
+      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
+      <td>yes</td>
+      <td>Emily</td>
+      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}]</td>
+      <td>NaN</td>
+      <td>F</td>
+      <td>WA149</td>
+      <td>M</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Senior</td>
+      <td>Dog</td>
+      <td>NaN</td>
+      <td>Cattle Dog</td>
+      <td>Auburn</td>
+      <td>pugetsoundrescue@hotmail.com</td>
+      <td>WA</td>
+      <td>98092</td>
+      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
+      <td>38936726</td>
+      <td>2017-09-01T23:30:27Z</td>
+      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
+      <td>yes</td>
+      <td>Rex</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>M</td>
+      <td>WA149</td>
+      <td>M</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Senior</td>
+      <td>Dog</td>
+      <td>NaN</td>
+      <td>Shepherd</td>
+      <td>Auburn</td>
+      <td>pugetsoundrescue@hotmail.com</td>
+      <td>WA</td>
+      <td>98092</td>
+      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
+      <td>39229879</td>
+      <td>2017-09-20T18:44:40Z</td>
+      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
+      <td>yes</td>
+      <td>Fletch</td>
+      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}]</td>
+      <td>NaN</td>
+      <td>M</td>
+      <td>WA149</td>
+      <td>M</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Young</td>
+      <td>Dog</td>
+      <td>NaN</td>
+      <td>German Shepherd Dog</td>
+      <td>Auburn</td>
+      <td>pugetsoundrescue@hotmail.com</td>
+      <td>WA</td>
+      <td>98092</td>
+      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
+      <td>39229884</td>
+      <td>2017-09-02T15:41:19Z</td>
+      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
+      <td>no</td>
+      <td>Bear</td>
+      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}]</td>
+      <td>NaN</td>
+      <td>M</td>
+      <td>WA149</td>
+      <td>L</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Adult</td>
+      <td>Dog</td>
+      <td>[{'$t': 'Shar Pei'}, {'$t': 'Labrador Retrieve...</td>
+      <td>NaN</td>
+      <td>Auburn</td>
+      <td>pugetsoundrescue@hotmail.com</td>
+      <td>WA</td>
+      <td>98092</td>
+      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
+      <td>39229885</td>
+      <td>2017-11-09T20:10:05Z</td>
+      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
+      <td>yes</td>
+      <td>Beverly</td>
+      <td>NaN</td>
+      <td>hasShots</td>
+      <td>F</td>
+      <td>WA149</td>
+      <td>M</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Senior</td>
+      <td>Dog</td>
+      <td>[{'$t': 'American Staffordshire Terrier'}, {'$...</td>
+      <td>NaN</td>
+      <td>Auburn</td>
+      <td>pugetsoundrescue@hotmail.com</td>
+      <td>WA</td>
+      <td>98092</td>
+      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
+      <td>39229895</td>
+      <td>2017-09-02T15:25:55Z</td>
+      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
+      <td>yes</td>
+      <td>Tripp</td>
+      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}, {'$t':...</td>
+      <td>NaN</td>
+      <td>M</td>
+      <td>WA149</td>
+      <td>M</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Adult</td>
+      <td>Dog</td>
+      <td>[{'$t': 'Siberian Husky'}, {'$t': 'Shetland Sh...</td>
+      <td>NaN</td>
+      <td>Auburn</td>
+      <td>pugetsoundrescue@hotmail.com</td>
+      <td>WA</td>
+      <td>98092</td>
+      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
+      <td>39414053</td>
+      <td>2017-09-24T14:45:48Z</td>
+      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
+      <td>yes</td>
+      <td>Penny</td>
+      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}, {'$t':...</td>
+      <td>NaN</td>
+      <td>F</td>
+      <td>WA149</td>
+      <td>M</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Young</td>
+      <td>Dog</td>
+      <td>[{'$t': 'Boxer'}, {'$t': 'American Staffordshi...</td>
+      <td>NaN</td>
+      <td>Auburn</td>
+      <td>pugetsoundrescue@hotmail.com</td>
+      <td>WA</td>
+      <td>98092</td>
+      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
+      <td>39414114</td>
+      <td>2017-09-24T14:44:59Z</td>
+      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
+      <td>yes</td>
+      <td>Hope</td>
+      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}, {'$t':...</td>
+      <td>NaN</td>
+      <td>F</td>
+      <td>WA149</td>
+      <td>M</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Adult</td>
+      <td>Dog</td>
+      <td>[{'$t': 'American Staffordshire Terrier'}, {'$...</td>
+      <td>NaN</td>
+      <td>Auburn</td>
+      <td>pugetsoundrescue@hotmail.com</td>
+      <td>WA</td>
+      <td>98092</td>
+      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
+      <td>39414121</td>
+      <td>2017-09-23T23:20:28Z</td>
+      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
+      <td>yes</td>
+      <td>Chata</td>
+      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}, {'$t':...</td>
+      <td>NaN</td>
+      <td>F</td>
+      <td>WA149</td>
+      <td>L</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Senior</td>
+      <td>Dog</td>
+      <td>NaN</td>
+      <td>German Shepherd Dog</td>
+      <td>Auburn</td>
+      <td>pugetsoundrescue@hotmail.com</td>
+      <td>WA</td>
+      <td>98092</td>
+      <td>We just took in Grady a few days ago.  Grady i...</td>
+      <td>39793927</td>
+      <td>2017-11-02T19:42:42Z</td>
+      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
+      <td>yes</td>
+      <td>Grady</td>
+      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}]</td>
+      <td>NaN</td>
+      <td>M</td>
+      <td>WA149</td>
+      <td>L</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Senior</td>
+      <td>Dog</td>
+      <td>[{'$t': 'German Shepherd Dog'}, {'$t': 'Husky'}]</td>
+      <td>NaN</td>
+      <td>Auburn</td>
+      <td>pugetsoundrescue@hotmail.com</td>
+      <td>WA</td>
+      <td>98092</td>
+      <td>Bella is approximately 8 years old we are gues...</td>
+      <td>39798015</td>
+      <td>2017-11-02T19:43:24Z</td>
+      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
+      <td>yes</td>
+      <td>Bella</td>
+      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}, {'$t':...</td>
+      <td>NaN</td>
+      <td>F</td>
+      <td>WA149</td>
+      <td>L</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Adult</td>
+      <td>Dog</td>
+      <td>NaN</td>
+      <td>Doberman Pinscher</td>
+      <td>Auburn</td>
+      <td>pugetsoundrescue@hotmail.com</td>
+      <td>WA</td>
+      <td>98092</td>
+      <td>Lancelot is a 2 year old purebred neutered mal...</td>
+      <td>39798114</td>
+      <td>2017-11-18T21:34:21Z</td>
+      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
+      <td>no</td>
+      <td>Lancelot--ADOPTED!!</td>
+      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}]</td>
+      <td>NaN</td>
+      <td>M</td>
+      <td>WA149</td>
+      <td>L</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Young</td>
+      <td>Cat</td>
+      <td>NaN</td>
+      <td>Domestic Short Hair (Gray &amp; White)</td>
+      <td>Auburn</td>
+      <td>pugetsoundrescue@hotmail.com</td>
+      <td>WA</td>
+      <td>98092</td>
+      <td>NaN</td>
+      <td>39898075</td>
+      <td>2017-11-13T16:50:44Z</td>
+      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
+      <td>no</td>
+      <td>Momma kitty</td>
+      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}, {'$t':...</td>
+      <td>NaN</td>
+      <td>F</td>
+      <td>WA149</td>
+      <td>M</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Baby</td>
+      <td>Cat</td>
+      <td>NaN</td>
+      <td>Domestic Medium Hair (Gray &amp; White)</td>
+      <td>Auburn</td>
+      <td>pugetsoundrescue@hotmail.com</td>
+      <td>WA</td>
+      <td>98092</td>
+      <td>NaN</td>
+      <td>39898092</td>
+      <td>2017-11-13T16:51:53Z</td>
+      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
+      <td>no</td>
+      <td>Baby kittens!</td>
+      <td>[{'$t': 'hasShots'}, {'$t': 'housetrained'}]</td>
+      <td>NaN</td>
+      <td>M</td>
+      <td>WA149</td>
+      <td>M</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Young</td>
+      <td>Dog</td>
+      <td>NaN</td>
+      <td>German Shepherd Dog</td>
+      <td>Auburn</td>
+      <td>pugetsoundrescue@hotmail.com</td>
+      <td>WA</td>
+      <td>98092</td>
+      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
+      <td>39898105</td>
+      <td>2017-11-16T14:03:18Z</td>
+      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
+      <td>no</td>
+      <td>Duke</td>
+      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}]</td>
+      <td>NaN</td>
+      <td>M</td>
+      <td>WA149</td>
+      <td>L</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Young</td>
+      <td>Dog</td>
+      <td>NaN</td>
+      <td>German Shepherd Dog</td>
+      <td>Auburn</td>
+      <td>pugetsoundrescue@hotmail.com</td>
+      <td>WA</td>
+      <td>98092</td>
+      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
+      <td>39898144</td>
+      <td>2017-11-16T14:02:30Z</td>
+      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
+      <td>no</td>
+      <td>Wrigley</td>
+      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}]</td>
+      <td>NaN</td>
+      <td>M</td>
+      <td>WA149</td>
+      <td>L</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Adult</td>
+      <td>Dog</td>
+      <td>[{'$t': 'Beagle'}, {'$t': 'Basset Hound'}]</td>
+      <td>NaN</td>
+      <td>Auburn</td>
+      <td>pugetsoundrescue@hotmail.com</td>
+      <td>WA</td>
+      <td>98092</td>
+      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
+      <td>39899592</td>
+      <td>2017-11-16T14:02:12Z</td>
+      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
+      <td>yes</td>
+      <td>Beau</td>
+      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}, {'$t':...</td>
+      <td>NaN</td>
+      <td>M</td>
+      <td>WA149</td>
+      <td>M</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Young</td>
+      <td>Dog</td>
+      <td>NaN</td>
+      <td>German Shepherd Dog</td>
+      <td>Auburn</td>
+      <td>pugetsoundrescue@hotmail.com</td>
+      <td>WA</td>
+      <td>98092</td>
+      <td>ADOPTION DONATION: $350\n\nCONTACT US TODAY: P...</td>
+      <td>39899643</td>
+      <td>2017-11-16T14:01:56Z</td>
+      <td>[{'@size': 'pnt', '$t': 'http://photos.petfind...</td>
+      <td>no</td>
+      <td>Brody</td>
+      <td>[{'$t': 'hasShots'}, {'$t': 'altered'}]</td>
+      <td>NaN</td>
+      <td>M</td>
+      <td>WA149</td>
+      <td>L</td>
+      <td>A</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 48 columns</p>
 </div>
 
 
@@ -1903,7 +2414,7 @@ shelter_pets.head() # The default number of returned records is 25, so we only p
 
 ### Finding shelters that have records matching a particular animal breed
 
-The `shelter_listByBreeds()` method allows the user to find shelters that match pet records of a the input animal breed. This method is best used in conjunction with the `breed_list()` method to find the available animal breeds in the Petfinder database.
+The `shelter_listByBreeds()` method allows the user to find shelters that match pet records of the input animal breed. This method is best used in conjunction with the `breed_list()` method to find the available animal breeds in the Petfinder database.
 
 We already extracted the available cat breeds earlier in the introduction, which we can use to select a cat breed listed in the Petfinder database.
 
@@ -1972,8 +2483,7 @@ aby = cats_df['cat breeds'].tolist()[0]
 
 
 ```python
-aby_shelters = pf.shelter_listByBreed('cat', aby, return_df=True)
-aby_shelters.head()
+pf.shelter_listByBreed('cat', aby, return_df=True)
 ```
 
 
@@ -2086,6 +2596,306 @@ aby_shelters.head()
       <td>(501) 276-2385</td>
       <td>AR</td>
       <td>72104</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2656 Hwy. 201 N</td>
+      <td>NaN</td>
+      <td>Mountain Home</td>
+      <td>US</td>
+      <td>hsnca@mtnhome.com</td>
+      <td>AR95</td>
+      <td>36.3383</td>
+      <td>-92.3742</td>
+      <td>Humane Society of North Central Arkansas</td>
+      <td>(870) 425-9221</td>
+      <td>AR</td>
+      <td>72653</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Phoenix</td>
+      <td>US</td>
+      <td>badkittyts@aol.com</td>
+      <td>AZ01</td>
+      <td>33.9158</td>
+      <td>-112.1353</td>
+      <td>Citizens For North Phoenix Strays</td>
+      <td>(602) 332-6615</td>
+      <td>AZ</td>
+      <td>85027</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>835 West Warner Road</td>
+      <td>NaN</td>
+      <td>Gilbert</td>
+      <td>US</td>
+      <td>azcatsmeow@gmail.com</td>
+      <td>AZ13</td>
+      <td>33.3557</td>
+      <td>-111.7917</td>
+      <td>We're The Cat's Meow Pet Rescue</td>
+      <td>480-278-9744</td>
+      <td>AZ</td>
+      <td>85233</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>P.O Box 50673</td>
+      <td>NaN</td>
+      <td>Phoenix</td>
+      <td>US</td>
+      <td>petfinder-inquiry@cactuscatsrescue.net</td>
+      <td>AZ258</td>
+      <td>33.3357</td>
+      <td>-111.9924</td>
+      <td>Cactus Cats Rescue, Inc.</td>
+      <td>(480) 814-8801</td>
+      <td>AZ</td>
+      <td>85044</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>P.O. Box 50594</td>
+      <td>NaN</td>
+      <td>Mesa</td>
+      <td>US</td>
+      <td>hadleyd@cox.net</td>
+      <td>AZ301</td>
+      <td>33.4007</td>
+      <td>-111.6539</td>
+      <td>Desert Paws Rescue</td>
+      <td>480-380-5214</td>
+      <td>AZ</td>
+      <td>85208</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Phoenix</td>
+      <td>US</td>
+      <td>vlintz@davisp.com</td>
+      <td>AZ324</td>
+      <td>33.4483</td>
+      <td>-112.0733</td>
+      <td>The Litter League (Rescue League)</td>
+      <td>NaN</td>
+      <td>AZ</td>
+      <td>85064</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>5278 East 21st Street</td>
+      <td>NaN</td>
+      <td>Tucson</td>
+      <td>US</td>
+      <td>adoptions@hermitagecatshelter.org</td>
+      <td>AZ70</td>
+      <td>32.2152</td>
+      <td>-110.8853</td>
+      <td>The Hermitage Cat Shelter</td>
+      <td>520-571-7839</td>
+      <td>AZ</td>
+      <td>85711</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Ahwatukee</td>
+      <td>US</td>
+      <td>ajbfcats@gmail.com</td>
+      <td>AZ88</td>
+      <td>33.3557</td>
+      <td>-111.7917</td>
+      <td>AJs Best Friends Persian &amp; Himalayan Rescue</td>
+      <td>NaN</td>
+      <td>AZ</td>
+      <td>85233</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>P.O. Box 494274</td>
+      <td>Redding, CA 96049-4274</td>
+      <td>Palo Cedro</td>
+      <td>US</td>
+      <td>acawl.inc@gmail.com</td>
+      <td>CA1004</td>
+      <td>40.5713</td>
+      <td>-122.2371</td>
+      <td>Another Chance Animal Welfare League Inc.</td>
+      <td>530-547-7387</td>
+      <td>CA</td>
+      <td>96073</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Santa Rosa</td>
+      <td>US</td>
+      <td>Asmcmvw@aol.com</td>
+      <td>CA1043</td>
+      <td>38.4434</td>
+      <td>-122.7511</td>
+      <td>Purrfect Pals</td>
+      <td>NaN</td>
+      <td>CA</td>
+      <td>95401</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Napa</td>
+      <td>US</td>
+      <td>wtfnapa@gmail.com</td>
+      <td>CA1328</td>
+      <td>38.3265</td>
+      <td>-122.3044</td>
+      <td>Whiskers, Tails and Ferals</td>
+      <td>(707) 258-2287</td>
+      <td>CA</td>
+      <td>94558</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>361 S. Raymond Avenue</td>
+      <td>NaN</td>
+      <td>Pasadena</td>
+      <td>US</td>
+      <td>NaN</td>
+      <td>CA15</td>
+      <td>34.1363</td>
+      <td>-118.1653</td>
+      <td>Pasadena Humane Society &amp; SPCA</td>
+      <td>626-792-7151</td>
+      <td>CA</td>
+      <td>91105</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>359 Nevada Street, Suite 101</td>
+      <td>NaN</td>
+      <td>Auburn</td>
+      <td>US</td>
+      <td>sahartford530@gmail.com</td>
+      <td>CA1505</td>
+      <td>38.8967</td>
+      <td>-121.0758</td>
+      <td>Friends Forever, A Cat Sanctuary</td>
+      <td>530-885-4228</td>
+      <td>CA</td>
+      <td>95604</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>P.O. Box 510</td>
+      <td>NaN</td>
+      <td>Davis</td>
+      <td>US</td>
+      <td>adopt@yolospca.org</td>
+      <td>CA161</td>
+      <td>38.545</td>
+      <td>-121.7394</td>
+      <td>Yolo County SPCA</td>
+      <td>NaN</td>
+      <td>CA</td>
+      <td>95617</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Buena Park</td>
+      <td>US</td>
+      <td>CaringFriendsCatRescueTustin@gmail.Com</td>
+      <td>CA1721</td>
+      <td>33.8763</td>
+      <td>-117.9903</td>
+      <td>Caring Friends Cat Rescue</td>
+      <td>NaN</td>
+      <td>CA</td>
+      <td>90621</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>420 McKinley St, Ste 111-147</td>
+      <td>NaN</td>
+      <td>Corona</td>
+      <td>US</td>
+      <td>purrfectfit2000-rescue@yahoo.com</td>
+      <td>CA1723</td>
+      <td>33.8781</td>
+      <td>-117.5814</td>
+      <td>Purrfect Fit Cat Rescue</td>
+      <td>951-817-9545</td>
+      <td>CA</td>
+      <td>92879</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Panorama City</td>
+      <td>US</td>
+      <td>gduncan13@gmail.com</td>
+      <td>CA1752</td>
+      <td>34.2242</td>
+      <td>-118.4433</td>
+      <td>HA! Inc.</td>
+      <td>NaN</td>
+      <td>CA</td>
+      <td>91402</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>5473 Overpass Rd</td>
+      <td>NaN</td>
+      <td>Santa Barbara</td>
+      <td>US</td>
+      <td>info@asapcats.org</td>
+      <td>CA267</td>
+      <td>34.4427</td>
+      <td>-119.8024</td>
+      <td>Animal Shelter Assistance Program (ASAP)</td>
+      <td>(805) 683-3368</td>
+      <td>CA</td>
+      <td>93111</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>P.O. Box 2011</td>
+      <td>NaN</td>
+      <td>Antioch</td>
+      <td>US</td>
+      <td>starshalodogs@yahoo.com</td>
+      <td>CA338</td>
+      <td>38.005</td>
+      <td>-121.8047</td>
+      <td>Homeless Animals' Lifeline Organization (H.A.L...</td>
+      <td>(925) 473-4642</td>
+      <td>CA</td>
+      <td>94531</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>3839 Bradshaw Road</td>
+      <td>NaN</td>
+      <td>Sacramento</td>
+      <td>US</td>
+      <td>CountyAnimalCare@saccounty.net</td>
+      <td>CA348</td>
+      <td>38.5655</td>
+      <td>-121.3283</td>
+      <td>Sacramento County Animal Care and Regulation</td>
+      <td>CountyAnimalCare@saccounty.net</td>
+      <td>CA</td>
+      <td>95827</td>
     </tr>
   </tbody>
 </table>
