@@ -5,6 +5,12 @@ Version History
 
 Changelog and version changes made with each release.
 
+Version 1.5.8
+-------------
+
+- Paging results that exceed Petfinder's limit of 2,000 records returned per search with :code:`return_df = True`
+  will now properly exit the loop and return the results as a DataFrame.
+
 Version 1.5.7
 -------------
 
