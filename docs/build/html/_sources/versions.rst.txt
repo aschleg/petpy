@@ -5,7 +5,7 @@ Version History
 
 Changelog and version changes made with each release.
 
-Version 1.5.8
+Version 1.5.9
 -------------
 
 - Paging results that exceed Petfinder's limit of 2,000 records returned per search with :code:`return_df = True`
