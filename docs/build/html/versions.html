@@ -92,6 +92,7 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Version History</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#version-1-5-91">Version 1.5.91</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#version-1-5-9">Version 1.5.9</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#version-1-5-7">Version 1.5.7</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#version-1-5-6">Version 1.5.6</a></li>
@@ -167,6 +168,15 @@
   <div class="section" id="version-history">
 <span id="versions"></span><h1>Version History<a class="headerlink" href="#version-history" title="Permalink to this headline">¶</a></h1>
 <p>Changelog and version changes made with each release.</p>
+<div class="section" id="version-1-5-91">
+<h2>Version 1.5.91<a class="headerlink" href="#version-1-5-91" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Paged results will now reach Petfinder’s 2,000 record per search limit. Before, if the next paged result would
+equal or exceed 2,000 results the call would end and the results would be returned. For example, if the parameters
+<code class="code docutils literal"><span class="pre">pages</span></code> is 10 and <code class="code docutils literal"><span class="pre">count</span></code> is 200, 2,000 records will now be returned, whereas previously 1,800 would
+be returned.</li>
+</ul>
+</div>
 <div class="section" id="version-1-5-9">
 <h2>Version 1.5.9<a class="headerlink" href="#version-1-5-9" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">

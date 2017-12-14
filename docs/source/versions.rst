@@ -5,6 +5,14 @@ Version History
 
 Changelog and version changes made with each release.
 
+Version 1.5.91
+--------------
+
+- Paged results will now reach Petfinder's 2,000 record per search limit. Before, if the next paged result would
+  equal or exceed 2,000 results the call would end and the results would be returned. For example, if the parameters
+  :code:`pages` is 10 and :code:`count` is 200, 2,000 records will now be returned, whereas previously 1,800 would
+  be returned.
+
 Version 1.5.9
 -------------
 
