@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Version History &mdash; petpy 1.5.9 documentation</title>
+  <title>Version History &mdash; petpy 1.5.91 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="petpy 1.5.9 documentation" href="index.html"/>
+    <link rel="top" title="petpy 1.5.91 documentation" href="index.html"/>
         <link rel="prev" title="API Reference" href="api.html"/> 
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.5.9
+                1.5.91
               </div>
             
           
@@ -170,7 +170,7 @@
 <div class="section" id="version-1-5-9">
 <h2>Version 1.5.9<a class="headerlink" href="#version-1-5-9" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Paging results that exceed Petfinder&#8217;s limit of 2,000 records returned per search with <code class="code docutils literal"><span class="pre">return_df</span> <span class="pre">=</span> <span class="pre">True</span></code>
+<li>Paging results that exceed Petfinder’s limit of 2,000 records returned per search with <code class="code docutils literal"><span class="pre">return_df</span> <span class="pre">=</span> <span class="pre">True</span></code>
 will now properly exit the loop and return the results as a DataFrame.</li>
 </ul>
 </div>
@@ -179,7 +179,7 @@ will now properly exit the loop and return the results as a DataFrame.</li>
 <ul class="simple">
 <li>The fix to returning a DataFrame when paging results is now implemented in this release. Apologies for the
 oversight, the code change was not made prior to releasing the previous version.</li>
-<li>The contact information returned with a DataFrame when <code class="code docutils literal"><span class="pre">return_df</span> <span class="pre">=</span> <span class="pre">True</span></code> now has the prefix &#8216;contact.&#8217;
+<li>The contact information returned with a DataFrame when <code class="code docutils literal"><span class="pre">return_df</span> <span class="pre">=</span> <span class="pre">True</span></code> now has the prefix ‘contact.’
 removed to make the results cleaner.</li>
 </ul>
 </div>
@@ -203,9 +203,9 @@ results were returned.</li>
 <h2>Version 1.5.4<a class="headerlink" href="#version-1-5-4" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Slight fix to <code class="code docutils literal"><span class="pre">pet_getRandom()</span></code> method. Before, if the method parameter <code class="code docutils literal"><span class="pre">return_df</span> <span class="pre">=</span> <span class="pre">True</span></code>, but
-the parameter <code class="code docutils literal"><span class="pre">output</span></code> was not one of &#8216;basic&#8217; or &#8216;full&#8217;, the <code class="code docutils literal"><span class="pre">return_df</span></code> parameter was overridden
+the parameter <code class="code docutils literal"><span class="pre">output</span></code> was not one of ‘basic’ or ‘full’, the <code class="code docutils literal"><span class="pre">return_df</span></code> parameter was overridden
 and set as <code class="code docutils literal"><span class="pre">False</span></code>. Now, if <code class="code docutils literal"><span class="pre">return_df</span> <span class="pre">=</span> <span class="pre">True</span></code> and <code class="code docutils literal"><span class="pre">output</span></code> <code class="code docutils literal"><span class="pre">None</span></code>, then
-<code class="code docutils literal"><span class="pre">output</span></code> is set to &#8216;full&#8217; to return the most complete DataFrame.</li>
+<code class="code docutils literal"><span class="pre">output</span></code> is set to ‘full’ to return the most complete DataFrame.</li>
 <li>Added <code class="code docutils literal"><span class="pre">records</span></code> parameter to <code class="code docutils literal"><span class="pre">pet_getRandom()</span></code> to allow multiple random results to be returned in the
 same method call. Please note each record returned counts as one call made to the Petfinder API.</li>
 <li>Added API convenience methods <code class="code docutils literal"><span class="pre">pets_get()</span></code> and <code class="code docutils literal"><span class="pre">shelters_get()</span></code> for pulling multiple results given a
@@ -270,7 +270,7 @@ list or tuple of IDs. These methods are essentially wrappers of the API methods 
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.5.9',
+            VERSION:'1.5.91',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

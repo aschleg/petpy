@@ -190,7 +190,7 @@ def _query(url, args, pages=None, return_df=False, method=None):
                 result.append(r.text)
                 lastoffset = ET.fromstring(r.text.encode('utf-8'))[1].text
 
-            if int(lastoffset) + count >= 2000:
+            if int(lastoffset) + count > 2000:
                 print('Next result set would exceed maximum 2,000 records per search, '
                       'returning results up to page ' + str(p - 1))
                 break
