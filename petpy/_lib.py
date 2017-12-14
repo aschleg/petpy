@@ -42,6 +42,7 @@ def _coerce_to_dataframe(x, method):
         try:
             del df['breeds.breed']
             del df['breeds.breed.$t']
+            del df['media.photos.photo']
         except KeyError:
             pass
 
@@ -172,7 +173,7 @@ def _query(url, args, pages=None, return_df=False, method=None):
         if pages > 1:
             pages = pages - 1
 
-        for _ in range(0, pages):
+        for p in range(0, pages):
 
             args.update(offset=lastoffset)
             r = requests.get(url, args)
@@ -191,9 +192,8 @@ def _query(url, args, pages=None, return_df=False, method=None):
 
             if int(lastoffset) + count >= 2000:
                 print('Next result set would exceed maximum 2,000 records per search, '
-                      'returning results up to page ' + str(pages - 1))
-
-                return result
+                      'returning results up to page ' + str(p - 1))
+                break
 
         if return_df == True:
             result = concat(result)
