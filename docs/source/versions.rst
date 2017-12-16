@@ -5,6 +5,13 @@ Version History
 
 Changelog and version changes made with each release.
 
+Version 1.5.92
+--------------
+
+- The paged results should now cap at Petfinder's 2,000 search limit consistently.
+- The methods :code:`shelter_get()` and :code:`shelters_get()` now handle shelters that have opted-out of having
+  their information available in the Petfinder API.
+
 Version 1.5.91
 --------------
 

@@ -51,7 +51,12 @@ def _coerce_to_dataframe(x, method):
         if method == 'shelter.find' or method == 'shelter.listByBreed':
             df = json_normalize(x['petfinder']['shelters']['shelter'])
         elif method == 'shelter.get':
-            df = json_normalize(x['petfinder']['shelter'])
+            try:
+                df = json_normalize(x['petfinder']['shelter'])
+
+            except (KeyError, ValueError):
+                df = DataFrame({'shelterId': 'shelter opt-out'}, index=[0])
+
         else:
             raise ValueError('unknown API method')
 
@@ -165,11 +170,6 @@ def _query(url, args, pages=None, return_df=False, method=None):
         else:
             lastoffset = ET.fromstring(r.encode('utf-8'))[1].text
 
-        try:
-            count = args['count']
-        except KeyError:
-            count = 25
-
         if pages > 1:
             pages = pages - 1
 
@@ -184,16 +184,24 @@ def _query(url, args, pages=None, return_df=False, method=None):
                 else:
                     result.append(r.json())
 
-                lastoffset = r.json()['petfinder']['lastOffset']['$t']
+                try:
+                    lastoffset = r.json()['petfinder']['lastOffset']['$t']
+                except (KeyError, ValueError):
+                    if return_df == True:
+                        result = concat(result)
+
+                    return result
 
             else:
                 result.append(r.text)
-                lastoffset = ET.fromstring(r.text.encode('utf-8'))[1].text
 
-            if int(lastoffset) + count > 2000:
-                print('Next result set would exceed maximum 2,000 records per search, '
-                      'returning results up to page ' + str(p - 1))
-                break
+                try:
+                    lastoffset = ET.fromstring(r.text.encode('utf-8'))[1].text
+                except (KeyError, ValueError):
+                    if return_df == True:
+                        result = concat(result)
+
+                    return result
 
         if return_df == True:
             result = concat(result)
