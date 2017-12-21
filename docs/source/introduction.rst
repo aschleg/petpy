@@ -50,7 +50,7 @@ If not already installed, install ``petpy`` using ``pip``:
 
 Then, import the package.
 
-.. code:: ipython3
+..code-block:: python
 
     import petpy
 
@@ -66,13 +66,13 @@ using the ``os`` library. Storing your keys received from APIs and other
 sensitive information in a secure file or as an environment variable is
 considered best practice to avoid any potential malicious activity.
 
-.. code:: ipython3
+..code-block:: python
 
     import os
-    
+
     key = os.getenv('PETFINDER_KEY')
 
-.. code:: ipython3
+..code-block:: python
 
     pf = petpy.Petfinder(key)
 
@@ -108,14 +108,14 @@ Pulling the list of animal breeds from the Petfinder database is
 straightforward with ``petpy``. Let's say we are interested in finding
 the available breeds of cats:
 
-.. code:: ipython3
+..code-block:: python
 
     cats = pf.breed_list('cat')
 
 The default return format is JSON, but can be changed to XML by setting
 the default parameter ``outputformat`` to 'xml'.
 
-.. code:: ipython3
+..code-block:: python
 
     cats
 
@@ -241,7 +241,7 @@ the default parameter ``outputformat`` to 'xml'.
 The ``return_df`` parameter can also be set to True to coerce the
 results into a pandas DataFrame.
 
-.. code:: ipython3
+..code-block:: python
 
     cats_df = pf.breed_list('cat', return_df=True)
     cats_df.head()
@@ -256,11 +256,11 @@ results into a pandas DataFrame.
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -309,7 +309,7 @@ search are ['barnyard', 'bird', 'cat', 'dog', 'horse', 'reptile',
 database will return a JSON object with a message stating 'invalid
 arguments'.
 
-.. code:: ipython3
+..code-block:: python
 
     pf.breed_list('zebra')
 
@@ -339,7 +339,7 @@ Petfinder ``pet.getRandom`` method. The potential results can be
 filtered to a subset by the method parameters, otherwise the method can
 be called simply as:
 
-.. code:: ipython3
+..code-block:: python
 
     pf.pet_getRandom()
 
@@ -365,7 +365,7 @@ record, we can set the parameter ``output`` to ``basic`` (name, age,
 animal, breed, shelterID) or ``full`` (complete record with
 description).
 
-.. code:: ipython3
+..code-block:: python
 
     pf.pet_getRandom(output='full')
 
@@ -487,11 +487,11 @@ We can also pull a specified number of pet records from the API by
 setting the ``records`` parameter and return the collected results as a
 pandas DataFrame by setting ``return_df`` to ``True``.
 
-.. code:: ipython3
+..code-block:: python
 
     random_pet_df = pf.pet_getRandom(records=5, return_df=True)
 
-.. code:: ipython3
+..code-block:: python
 
     random_pet_df
 
@@ -505,11 +505,11 @@ pandas DataFrame by setting ``return_df`` to ``True``.
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -678,11 +678,11 @@ The ``pet_get`` method can be used to extract a full record from the
 Petfinder database. We use the pet ID retrieved from the previous call
 to ``pet_getRandom`` to illustrate.
 
-.. code:: ipython3
+..code-block:: python
 
     pet = pf.pet_get('26417898')
 
-.. code:: ipython3
+..code-block:: python
 
     pet
 
@@ -744,7 +744,7 @@ to ``pet_getRandom`` to illustrate.
 
 The record can also be returned as a ``DataFrame``.
 
-.. code:: ipython3
+..code-block:: python
 
     pf.pet_get('39801731', return_df=True)
 
@@ -758,11 +758,11 @@ The record can also be returned as a ``DataFrame``.
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -829,11 +829,11 @@ The record can also be returned as a ``DataFrame``.
 The ``pets_get()`` method accepts a list or tuple and returns the
 records associated with each pet ID in the passed variable.
 
-.. code:: ipython3
+..code-block:: python
 
     petids = random_pet_df['id'].tolist() # get the pet IDs from the previous call by turning the id column into a list
 
-.. code:: ipython3
+..code-block:: python
 
     pf.pets_get(petids, return_df=True)
 
@@ -847,11 +847,11 @@ records associated with each pet ID in the passed variable.
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -1015,7 +1015,7 @@ The ``pets_get()`` method is essentially a convenience wrapper of
 ``pet_get()``. The same results can be obtained by passing the variable
 to ``pet_get()``.
 
-.. code:: ipython3
+..code-block:: python
 
     pf.pet_get(petids, return_df=True)
 
@@ -1029,11 +1029,11 @@ to ``pet_get()``.
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -1207,11 +1207,11 @@ For example, let's say we are interested in finding female cats in
 Washington state and we want the results returned in a tidy pandas
 DataFrame.
 
-.. code:: ipython3
+..code-block:: python
 
     cats = pf.pet_find(location='WA', animal='cat', sex='F', return_df=True)
 
-.. code:: ipython3
+..code-block:: python
 
     cats.head()
 
@@ -1225,11 +1225,11 @@ DataFrame.
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -1415,11 +1415,11 @@ matching the input search criteria. Let's say we want to find 10
 shelters listed in the Petfinder database located in Washington State as
 a pandas DataFrame.
 
-.. code:: ipython3
+..code-block:: python
 
     wa_shelters = pf.shelter_find(location='WA', count=10, return_df=True)
 
-.. code:: ipython3
+..code-block:: python
 
     wa_shelters
 
@@ -1433,11 +1433,11 @@ a pandas DataFrame.
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -1628,11 +1628,11 @@ found using the ``shelter_find()`` method used earlier. For example,
 let's use the method to return the record matching the first shelter ID
 in the result set obtained in the previous example.
 
-.. code:: ipython3
+..code-block:: python
 
     shelter_list = wa_shelters['id'].tolist()
 
-.. code:: ipython3
+..code-block:: python
 
     pf.shelter_get(shelter_list[0])
 
@@ -1668,7 +1668,7 @@ The ``shelter_get()`` method can also accept a list or tuple of shelter
 IDs. Internally, this calls a convenience wrapper method
 ``shelters_get()``.
 
-.. code:: ipython3
+..code-block:: python
 
     pf.shelters_get(shelter_list, return_df=True)
 
@@ -1682,11 +1682,11 @@ IDs. Internally, this calls a convenience wrapper method
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -1878,7 +1878,7 @@ The ``shelter.getPets()`` method returns the pet records that belong to
 a particular shelter ID. For example, let's say we want to return the
 pet records from the first shelter in our list as a DataFrame.
 
-.. code:: ipython3
+..code-block:: python
 
     pf.shelter_getPets(shelter_list[0], return_df=True)
 
@@ -1892,11 +1892,11 @@ pet records from the first shelter in our list as a DataFrame.
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -2523,7 +2523,7 @@ We already extracted the available cat breeds earlier in the
 introduction, which we can use to select a cat breed listed in the
 Petfinder database.
 
-.. code:: ipython3
+..code-block:: python
 
     cats_df.head()
 
@@ -2537,11 +2537,11 @@ Petfinder database.
         .dataframe tbody tr th:only-of-type {
             vertical-align: middle;
         }
-    
+
         .dataframe tbody tr th {
             vertical-align: top;
         }
-    
+
         .dataframe thead th {
             text-align: right;
         }
@@ -2584,11 +2584,11 @@ The Abyssinian is a beautiful breed of cat, let's find some shelters
 that have pet records matching an Abyssinian breed and return it as a
 DataFrame.
 
-.. code:: ipython3
+..code-block:: python
 
     aby = cats_df['cat breeds'].tolist()[0]
 
-.. code:: ipython3
+..code-block:: python
 
     pf.shelter_listByBreed('cat', aby, return_df=True)
 
@@ -3008,5 +3008,3 @@ DataFrame.
       </tbody>
     </table>
     </div>
-
-
