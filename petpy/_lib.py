@@ -173,7 +173,7 @@ def _query(url, args, pages=None, return_df=False, method=None):
         if pages > 1:
             pages = pages - 1
 
-        for p in range(0, pages):
+        for _ in range(0, pages):
 
             args.update(offset=lastoffset)
             r = requests.get(url, args)

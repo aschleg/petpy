@@ -40,3 +40,11 @@ Contents
 
    api.rst
    versions.rst
+
+Tutorials and Examples
+======================
+
+.. toctree::
+   :maxdepth: 1
+
+   introduction.rst
