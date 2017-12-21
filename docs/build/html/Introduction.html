@@ -223,9 +223,9 @@ animal breed</a></li>
 <p>If not already installed, install <code class="docutils literal"><span class="pre">petpy</span></code> using <code class="docutils literal"><span class="pre">pip</span></code>:</p>
 <p><code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">petpy</span></code></p>
 <p>Then, import the package.</p>
-<p>..code-block:: python</p>
-<blockquote>
-<div>import petpy</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">petpy</span>
+</pre></div>
+</div>
 <p>The Petfinder API requires an API key to authenticate access. To receive
 an API key, register with Petfinder on their developer page:
 <a class="reference external" href="https://www.petfinder.com/developers/api-key">https://www.petfinder.com/developers/api-key</a></p>
@@ -235,14 +235,14 @@ an API key, register with Petfinder on their developer page:
 using the <code class="docutils literal"><span class="pre">os</span></code> library. Storing your keys received from APIs and other
 sensitive information in a secure file or as an environment variable is
 considered best practice to avoid any potential malicious activity.</p>
-<p>..code-block:: python</p>
-<blockquote>
-<div><p>import os</p>
-<p>key = os.getenv(‘PETFINDER_KEY’)</p>
-</div></blockquote>
-<p>..code-block:: python</p>
-<blockquote>
-<div>pf = petpy.Petfinder(key)</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;PETFINDER_KEY&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pf</span> <span class="o">=</span> <span class="n">petpy</span><span class="o">.</span><span class="n">Petfinder</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>The <code class="docutils literal"><span class="pre">pf</span></code> variable is the initialized Petfinder class with our given
 API key. We can now use this instance to interact with and extract data
 from the Petfinder API.</p>
@@ -265,14 +265,14 @@ found in the later chapters of this introduction.</p>
 <p>Pulling the list of animal breeds from the Petfinder database is
 straightforward with <code class="docutils literal"><span class="pre">petpy</span></code>. Let’s say we are interested in finding
 the available breeds of cats:</p>
-<p>..code-block:: python</p>
-<blockquote>
-<div>cats = pf.breed_list(‘cat’)</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">cats</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">breed_list</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>The default return format is JSON, but can be changed to XML by setting
 the default parameter <code class="docutils literal"><span class="pre">outputformat</span></code> to ‘xml’.</p>
-<p>..code-block:: python</p>
-<blockquote>
-<div>cats</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">cats</span>
+</pre></div>
+</div>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;@encoding&#39;</span><span class="p">:</span> <span class="s1">&#39;iso-8859-1&#39;</span><span class="p">,</span>
  <span class="s1">&#39;@version&#39;</span><span class="p">:</span> <span class="s1">&#39;1.0&#39;</span><span class="p">,</span>
  <span class="s1">&#39;petfinder&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;@xmlns:xsi&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.w3.org/2001/XMLSchema-instance&#39;</span><span class="p">,</span>
@@ -388,10 +388,10 @@ the default parameter <code class="docutils literal"><span class="pre">outputfor
 </div>
 <p>The <code class="docutils literal"><span class="pre">return_df</span></code> parameter can also be set to True to coerce the
 results into a pandas DataFrame.</p>
-<p>..code-block:: python</p>
-<blockquote>
-<div>cats_df = pf.breed_list(‘cat’, return_df=True)
-cats_df.head()</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">cats_df</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">breed_list</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">cats_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -444,9 +444,9 @@ search are [‘barnyard’, ‘bird’, ‘cat’, ‘dog’, ‘horse’, ‘re
 ‘smallfurry’]. Searching for an animal not available in the Petfinder
 database will return a JSON object with a message stating ‘invalid
 arguments’.</p>
-<p>..code-block:: python</p>
-<blockquote>
-<div>pf.breed_list(‘zebra’)</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pf</span><span class="o">.</span><span class="n">breed_list</span><span class="p">(</span><span class="s1">&#39;zebra&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;@encoding&#39;</span><span class="p">:</span> <span class="s1">&#39;iso-8859-1&#39;</span><span class="p">,</span>
  <span class="s1">&#39;@version&#39;</span><span class="p">:</span> <span class="s1">&#39;1.0&#39;</span><span class="p">,</span>
  <span class="s1">&#39;petfinder&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;@xmlns:xsi&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.w3.org/2001/XMLSchema-instance&#39;</span><span class="p">,</span>
@@ -464,9 +464,9 @@ arguments’.</p>
 Petfinder <code class="docutils literal"><span class="pre">pet.getRandom</span></code> method. The potential results can be
 filtered to a subset by the method parameters, otherwise the method can
 be called simply as:</p>
-<p>..code-block:: python</p>
-<blockquote>
-<div>pf.pet_getRandom()</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pf</span><span class="o">.</span><span class="n">pet_getRandom</span><span class="p">()</span>
+</pre></div>
+</div>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;@encoding&#39;</span><span class="p">:</span> <span class="s1">&#39;iso-8859-1&#39;</span><span class="p">,</span>
  <span class="s1">&#39;@version&#39;</span><span class="p">:</span> <span class="s1">&#39;1.0&#39;</span><span class="p">,</span>
  <span class="s1">&#39;petfinder&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;@xmlns:xsi&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.w3.org/2001/XMLSchema-instance&#39;</span><span class="p">,</span>
@@ -482,9 +482,9 @@ call’s JSON metadata. If we wish to return a more complete random pet
 record, we can set the parameter <code class="docutils literal"><span class="pre">output</span></code> to <code class="docutils literal"><span class="pre">basic</span></code> (name, age,
 animal, breed, shelterID) or <code class="docutils literal"><span class="pre">full</span></code> (complete record with
 description).</p>
-<p>..code-block:: python</p>
-<blockquote>
-<div>pf.pet_getRandom(output=’full’)</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pf</span><span class="o">.</span><span class="n">pet_getRandom</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s1">&#39;full&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 <pre class="literal-block">
 <a class="reference external" href="mailto:{'&#37;&#52;&#48;encoding">{'<span>&#64;</span>encoding</a>': 'iso-8859-1',
  <a class="reference external" href="mailto:'&#37;&#52;&#48;version">'<span>&#64;</span>version</a>': '1.0',
@@ -596,12 +596,12 @@ description).</p>
 <p>We can also pull a specified number of pet records from the API by
 setting the <code class="docutils literal"><span class="pre">records</span></code> parameter and return the collected results as a
 pandas DataFrame by setting <code class="docutils literal"><span class="pre">return_df</span></code> to <code class="docutils literal"><span class="pre">True</span></code>.</p>
-<p>..code-block:: python</p>
-<blockquote>
-<div>random_pet_df = pf.pet_getRandom(records=5, return_df=True)</div></blockquote>
-<p>..code-block:: python</p>
-<blockquote>
-<div>random_pet_df</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">random_pet_df</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">pet_getRandom</span><span class="p">(</span><span class="n">records</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">random_pet_df</span>
+</pre></div>
+</div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -773,12 +773,12 @@ pandas DataFrame by setting <code class="docutils literal"><span class="pre">ret
 <p>The <code class="docutils literal"><span class="pre">pet_get</span></code> method can be used to extract a full record from the
 Petfinder database. We use the pet ID retrieved from the previous call
 to <code class="docutils literal"><span class="pre">pet_getRandom</span></code> to illustrate.</p>
-<p>..code-block:: python</p>
-<blockquote>
-<div>pet = pf.pet_get(‘26417898’)</div></blockquote>
-<p>..code-block:: python</p>
-<blockquote>
-<div>pet</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pet</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">pet_get</span><span class="p">(</span><span class="s1">&#39;26417898&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pet</span>
+</pre></div>
+</div>
 <pre class="literal-block">
 <a class="reference external" href="mailto:{'&#37;&#52;&#48;encoding">{'<span>&#64;</span>encoding</a>': 'iso-8859-1',
  <a class="reference external" href="mailto:'&#37;&#52;&#48;version">'<span>&#64;</span>version</a>': '1.0',
@@ -830,9 +830,9 @@ to <code class="docutils literal"><span class="pre">pet_getRandom</span></code> 
    'status': {'$t': 'A'}}}}
 </pre>
 <p>The record can also be returned as a <code class="docutils literal"><span class="pre">DataFrame</span></code>.</p>
-<p>..code-block:: python</p>
-<blockquote>
-<div>pf.pet_get(‘39801731’, return_df=True)</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pf</span><span class="o">.</span><span class="n">pet_get</span><span class="p">(</span><span class="s1">&#39;39801731&#39;</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -904,12 +904,12 @@ to <code class="docutils literal"><span class="pre">pet_getRandom</span></code> 
 <p>1 rows × 39 columns</p>
 </div><p>The <code class="docutils literal"><span class="pre">pets_get()</span></code> method accepts a list or tuple and returns the
 records associated with each pet ID in the passed variable.</p>
-<p>..code-block:: python</p>
-<blockquote>
-<div>petids = random_pet_df[‘id’].tolist() # get the pet IDs from the previous call by turning the id column into a list</div></blockquote>
-<p>..code-block:: python</p>
-<blockquote>
-<div>pf.pets_get(petids, return_df=True)</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">petids</span> <span class="o">=</span> <span class="n">random_pet_df</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="c1"># get the pet IDs from the previous call by turning the id column into a list</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pf</span><span class="o">.</span><span class="n">pets_get</span><span class="p">(</span><span class="n">petids</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1078,9 +1078,9 @@ records associated with each pet ID in the passed variable.</p>
 </div><p>The <code class="docutils literal"><span class="pre">pets_get()</span></code> method is essentially a convenience wrapper of
 <code class="docutils literal"><span class="pre">pet_get()</span></code>. The same results can be obtained by passing the variable
 to <code class="docutils literal"><span class="pre">pet_get()</span></code>.</p>
-<p>..code-block:: python</p>
-<blockquote>
-<div>pf.pet_get(petids, return_df=True)</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pf</span><span class="o">.</span><span class="n">pet_get</span><span class="p">(</span><span class="n">petids</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1256,12 +1256,12 @@ documentation</a>.</p>
 <p>For example, let’s say we are interested in finding female cats in
 Washington state and we want the results returned in a tidy pandas
 DataFrame.</p>
-<p>..code-block:: python</p>
-<blockquote>
-<div>cats = pf.pet_find(location=’WA’, animal=’cat’, sex=’F’, return_df=True)</div></blockquote>
-<p>..code-block:: python</p>
-<blockquote>
-<div>cats.head()</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">cats</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">pet_find</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s1">&#39;WA&#39;</span><span class="p">,</span> <span class="n">animal</span><span class="o">=</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="n">sex</span><span class="o">=</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">cats</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1446,12 +1446,12 @@ Petfinder’s database.</p>
 matching the input search criteria. Let’s say we want to find 10
 shelters listed in the Petfinder database located in Washington State as
 a pandas DataFrame.</p>
-<p>..code-block:: python</p>
-<blockquote>
-<div>wa_shelters = pf.shelter_find(location=’WA’, count=10, return_df=True)</div></blockquote>
-<p>..code-block:: python</p>
-<blockquote>
-<div>wa_shelters</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">wa_shelters</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">shelter_find</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s1">&#39;WA&#39;</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">wa_shelters</span>
+</pre></div>
+</div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1645,12 +1645,12 @@ Petfinder database matching the given shelter ID. Shelter IDs can be
 found using the <code class="docutils literal"><span class="pre">shelter_find()</span></code> method used earlier. For example,
 let’s use the method to return the record matching the first shelter ID
 in the result set obtained in the previous example.</p>
-<p>..code-block:: python</p>
-<blockquote>
-<div>shelter_list = wa_shelters[‘id’].tolist()</div></blockquote>
-<p>..code-block:: python</p>
-<blockquote>
-<div>pf.shelter_get(shelter_list[0])</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">shelter_list</span> <span class="o">=</span> <span class="n">wa_shelters</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pf</span><span class="o">.</span><span class="n">shelter_get</span><span class="p">(</span><span class="n">shelter_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;@encoding&#39;</span><span class="p">:</span> <span class="s1">&#39;iso-8859-1&#39;</span><span class="p">,</span>
  <span class="s1">&#39;@version&#39;</span><span class="p">:</span> <span class="s1">&#39;1.0&#39;</span><span class="p">,</span>
  <span class="s1">&#39;petfinder&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;@xmlns:xsi&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.w3.org/2001/XMLSchema-instance&#39;</span><span class="p">,</span>
@@ -1676,9 +1676,9 @@ in the result set obtained in the previous example.</p>
 <p>The <code class="docutils literal"><span class="pre">shelter_get()</span></code> method can also accept a list or tuple of shelter
 IDs. Internally, this calls a convenience wrapper method
 <code class="docutils literal"><span class="pre">shelters_get()</span></code>.</p>
-<p>..code-block:: python</p>
-<blockquote>
-<div>pf.shelters_get(shelter_list, return_df=True)</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pf</span><span class="o">.</span><span class="n">shelters_get</span><span class="p">(</span><span class="n">shelter_list</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1872,9 +1872,9 @@ IDs. Internally, this calls a convenience wrapper method
 <p>The <code class="docutils literal"><span class="pre">shelter.getPets()</span></code> method returns the pet records that belong to
 a particular shelter ID. For example, let’s say we want to return the
 pet records from the first shelter in our list as a DataFrame.</p>
-<p>..code-block:: python</p>
-<blockquote>
-<div>pf.shelter_getPets(shelter_list[0], return_df=True)</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pf</span><span class="o">.</span><span class="n">shelter_getPets</span><span class="p">(</span><span class="n">shelter_list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">return_df</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2503,9 +2503,9 @@ available animal breeds in the Petfinder database.</p>
 <p>We already extracted the available cat breeds earlier in the
 introduction, which we can use to select a cat breed listed in the
 Petfinder database.</p>
-<p>..code-block:: python</p>
-<blockquote>
-<div>cats_df.head()</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">cats_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2553,12 +2553,12 @@ Petfinder database.</p>
 </div><p>The Abyssinian is a beautiful breed of cat, let’s find some shelters
 that have pet records matching an Abyssinian breed and return it as a
 DataFrame.</p>
-<p>..code-block:: python</p>
-<blockquote>
-<div>aby = cats_df[‘cat breeds’].tolist()[0]</div></blockquote>
-<p>..code-block:: python</p>
-<blockquote>
-<div>pf.shelter_listByBreed(‘cat’, aby, return_df=True)</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">aby</span> <span class="o">=</span> <span class="n">cats_df</span><span class="p">[</span><span class="s1">&#39;cat breeds&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pf</span><span class="o">.</span><span class="n">shelter_listByBreed</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="n">aby</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
