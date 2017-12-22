@@ -92,7 +92,7 @@ class Petfinder(object):
             r.rename(columns={'$t': animal + ' breeds'}, inplace=True)
         else:
             args = _parameters(key=self.key, animal=animal, outputformat=outputformat)
-            r = _query(url, args, method=method, return_df=return_df)
+            r = _query(url, args, return_df=return_df, method=method)
 
         return r
 
@@ -158,7 +158,7 @@ class Petfinder(object):
         if return_df == True and outputformat != 'json':
             args.update(format='json')
 
-        r = _query(url, args, pages=pages, return_df=return_df, method=method)
+        r = _query(url, args, pages=pages, return_df=return_df, method=method, count=count)
 
         return r
 
@@ -368,7 +368,7 @@ class Petfinder(object):
         if return_df == True and outputformat != 'json':
             args.update(format='json')
 
-        return _query(url, args, pages=pages, return_df=return_df, method=method)
+        return _query(url, args, pages=pages, return_df=return_df, method=method, count=count)
 
     def shelter_get(self, shelterId, return_df=False, outputformat='json'):
         r"""
@@ -509,7 +509,7 @@ class Petfinder(object):
         if return_df == True and outputformat != 'json':
             args.update(format='json')
 
-        return _query(url, args, pages=pages, return_df=return_df, method=method)
+        return _query(url, args, pages=pages, return_df=return_df, method=method, count=count)
 
 
     def shelter_listByBreed(self, animal, breed, offset=None, count=None, pages=None,
@@ -561,4 +561,4 @@ class Petfinder(object):
         if return_df == True and outputformat != 'json':
             args.update(format='json')
 
-        return _query(url, args, pages=pages, return_df=return_df, method=method)
+        return _query(url, args, pages=pages, return_df=return_df, method=method, count=count)

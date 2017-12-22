@@ -5,6 +5,13 @@ Version History
 
 Changelog and version changes made with each release.
 
+Version 1.5.995
+---------------
+
+- Calls that return JSON results when using the :code:`pet_find()` method when :code:`return_df=True` are now
+  properly handled and an empty pandas DataFrame is returned. This result can happen when searching for a
+  particular breed of animal that is currently not available in the Petfinder database.
+
 Version 1.5.92
 --------------
 

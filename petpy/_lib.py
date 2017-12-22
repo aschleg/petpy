@@ -22,16 +22,19 @@ def _coerce_to_dataframe(x, method):
             res, breed_df, opt_df, media_df = _pet_find_get_coerce(x['petfinder']['pet'])
 
         elif method == 'pet.find' or method == 'shelter.getPets':
-
             res = media_df = opt_df = breed_df = DataFrame()
 
-            for i in x['petfinder']['pets']['pet']:
-                pet, breed, opt, media = _pet_find_get_coerce(i)
+            if x['petfinder']['pets'] == {}:
+                return DataFrame()
 
-                res = res.append(pet)
-                breed_df = breed_df.append(breed)
-                opt_df = opt_df.append(opt)
-                media_df = media_df.append(media)
+            else:
+                for i in x['petfinder']['pets']['pet']:
+                    pet, breed, opt, media = _pet_find_get_coerce(i)
+
+                    res = res.append(pet)
+                    breed_df = breed_df.append(breed)
+                    opt_df = opt_df.append(opt)
+                    media_df = media_df.append(media)
 
         breed_df.columns = ['breed' + str(col) for col in breed_df.columns]
         opt_df.columns = ['status' + str(col) for col in opt_df.columns]
@@ -42,6 +45,7 @@ def _coerce_to_dataframe(x, method):
         try:
             del df['breeds.breed']
             del df['breeds.breed.$t']
+            del df['breeds.breed']
             del df['media.photos.photo']
         except KeyError:
             pass
@@ -71,18 +75,19 @@ def _coerce_to_dataframe(x, method):
 def _pet_find_get_coerce(x):
     res = media_df = opt_df = breed_df = DataFrame()
 
-    breed = DataFrame(json_normalize(x['breeds']['breed'])['$t'].to_dict(), index=[0])
+    try:
+        breed = DataFrame(json_normalize(x['breeds']['breed'])['$t'].to_dict(), index=[0])
+    except (KeyError, TypeError):
+        breed = DataFrame([nan], columns=[0])
 
     try:
         media = DataFrame(json_normalize(x['media']['photos']['photo'])['$t'].to_dict(), index=[0])
-
-    except KeyError:
+    except (KeyError, TypeError):
         media = DataFrame([nan], columns=[0])
 
     try:
         options = DataFrame(json_normalize(x['options']['option'])['$t'].to_dict(), index=[0])
-
-    except KeyError:
+    except (KeyError, TypeError):
         options = DataFrame([nan], columns=[0])
 
     breed_df = breed_df.append(breed)
@@ -134,7 +139,7 @@ def _parameters(key,
     return args
 
 
-def _query(url, args, pages=None, return_df=False, method=None):
+def _query(url, args, pages=None, return_df=False, method=None, count=None):
 
     if return_df == True:
         args.update(format='json')
@@ -165,10 +170,14 @@ def _query(url, args, pages=None, return_df=False, method=None):
         else:
             result = [r]
 
-        if outputformat is 'json':
-            lastoffset = r['petfinder']['lastOffset']['$t']
-        else:
-            lastoffset = ET.fromstring(r.encode('utf-8'))[1].text
+        try:
+            if outputformat is 'json':
+                lastoffset = r['petfinder']['lastOffset']['$t']
+            else:
+                lastoffset = ET.fromstring(r.encode('utf-8'))[1].text
+
+        except KeyError:
+            return result[0]
 
         if pages > 1:
             pages = pages - 1
@@ -186,6 +195,10 @@ def _query(url, args, pages=None, return_df=False, method=None):
 
                 try:
                     lastoffset = r.json()['petfinder']['lastOffset']['$t']
+
+                    if int(lastoffset) == 1 and count != 1:
+                        return result[0]
+
                 except (KeyError, ValueError):
                     if return_df == True:
                         result = concat(result)

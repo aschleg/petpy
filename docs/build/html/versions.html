@@ -36,6 +36,7 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="petpy 1.5.92 documentation" href="index.html"/>
+        <link rel="next" title="Introduction to petpy" href="introduction.html"/>
         <link rel="prev" title="API Reference" href="api.html"/> 
 
   
@@ -92,6 +93,7 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Version History</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#version-1-5-995">Version 1.5.995</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#version-1-5-92">Version 1.5.92</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#version-1-5-91">Version 1.5.91</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#version-1-5-9">Version 1.5.9</a></li>
@@ -103,6 +105,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#version-1-0-0">Version 1.0.0</a></li>
 </ul>
 </li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to petpy</a></li>
 </ul>
 
             
@@ -169,6 +174,14 @@
   <div class="section" id="version-history">
 <span id="versions"></span><h1>Version History<a class="headerlink" href="#version-history" title="Permalink to this headline">¶</a></h1>
 <p>Changelog and version changes made with each release.</p>
+<div class="section" id="version-1-5-995">
+<h2>Version 1.5.995<a class="headerlink" href="#version-1-5-995" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Calls that return JSON results when using the <code class="code docutils literal"><span class="pre">pet_find()</span></code> method when <code class="code docutils literal"><span class="pre">return_df=True</span></code> are now
+properly handled and an empty pandas DataFrame is returned. This result can happen when searching for a
+particular breed of animal that is currently not available in the Petfinder database.</li>
+</ul>
+</div>
 <div class="section" id="version-1-5-92">
 <h2>Version 1.5.92<a class="headerlink" href="#version-1-5-92" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -256,6 +269,8 @@ list or tuple of IDs. These methods are essentially wrappers of the API methods 
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="introduction.html" class="btn btn-neutral float-right" title="Introduction to petpy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="api.html" class="btn btn-neutral" title="API Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
