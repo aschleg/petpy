@@ -52,7 +52,7 @@ API methods documentation can also be found [here](https://www.petfinder.com/dev
 
 A series of IPython notebooks that introduce and explore the `petpy` library.
 
-* [01 - Introduction](docs/vignettes/build/01-Introduction.html)
+* [01 - Introduction](https://nbviewer.jupyter.org/github/aschleg/petpy/blob/master/docs/vignettes/build/01-Introduction.html)
 * [02 - Download 45,000 Cat Images in 6.5 Minutes with petpy and multiprocessing](docs/vignettes/build/02-Download_Cat_Images.html)
 
 ## Installation
