@@ -1,6 +1,5 @@
 $ cat .gitignore
 
-.cache/
 dist/
 Untitled.ipynb
 *.ipynb_checkpoints
@@ -8,3 +7,6 @@ Untitled.ipynb
 .idea
 petpy.egg*
 /build
+docs/vignettes/source/drafts
+docs/vignettes/source/db
+docs/vignettes/source/pkl

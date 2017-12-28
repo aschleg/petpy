@@ -44,7 +44,3 @@ Contents
 Tutorials and Examples
 ======================
 
-.. toctree::
-   :maxdepth: 1
-
-   introduction.rst
