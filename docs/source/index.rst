@@ -44,3 +44,7 @@ Contents
 Tutorials and Examples
 ======================
 
+The following are links to static Jupyter Notebooks that introduce the petpy package and some examples of its usage.
+
+- `Introduction to petpy <https://nbviewer.jupyter.org/github/aschleg/petpy/blob/master/docs/vignettes/build/01-Introduction.html>`_
+- `Download 45,000 Cat Images in 6.5 Minutes with petpy and multiprocessing <https://nbviewer.jupyter.org/github/aschleg/petpy/blob/master/docs/vignettes/build/02-Download_Cat_Images.html>`_
