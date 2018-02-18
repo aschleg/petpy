@@ -15,22 +15,23 @@ data from the Petfinder database is straightforward.
 ~~~
 import petpy
 
-pf = petpy.Petfinder(key)
+pf = petpy.Petfinder(key) # create connection to Petfinder API
 
-cats = pf.breed_list('cat')
+cats = pf.breed_list('cat') # return all the listed cats breeds on the Petfinder website in JSON format
 
-pf.pet_getRandom()
+# The following returns the first 1,000 cat records in Washington in the Petfinder database as a pandas DataFrame.
+cats_wa = pf.pet_find(location='WA', animal='cat', count=1000, return_df=True)
+
+pf.pet_getRandom() # return a random pet record
 ~~~
-
-The above simple example creates an authenticated connection to the Petfinder API and then uses that connection to
-pull the entire list of cat breeds listed in the Petfinder database. The next line returns a randomly selected
-pet record.
 
 ## Available Methods
 
 Below is a summary table of the available methods in the petpy library and the accompanying Petfinder API method, as
 well as a brief description. Please see the petpy documentation for more information on each method. The Petfinder
-API methods documentation can also be found [here](https://www.petfinder.com/developers/api-docs#methods).
+API methods documentation can also be found [here](https://www.petfinder.com/developers/api-docs#methods). All 
+functions have a `return_df` parameter that when set to `True`, returns a pandas DataFrame of the results to facilitate 
+more efficient data analysis.
 
 | Method                | Petfinder API Method | Description                                                                                        |
 |-----------------------|----------------------|----------------------------------------------------------------------------------------------------|
