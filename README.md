@@ -51,7 +51,8 @@ more efficient data analysis.
 
 ## Vignettes
 
-A series of IPython notebooks that introduce and explore the `petpy` library.
+A series of IPython notebooks that introduce and explore some of the functionality and possible uses of the 
+`petpy` library.
 
 * [01 - Introduction](https://nbviewer.jupyter.org/github/aschleg/petpy/blob/master/docs/vignettes/build/01-Introduction.html)
 * [02 - Download 45,000 Cat Images in 6.5 Minutes with petpy and multiprocessing](https://nbviewer.jupyter.org/github/aschleg/petpy/blob/master/docs/vignettes/build/02-Download_Cat_Images.html)
@@ -66,7 +67,10 @@ pip install petpy
 
 ## Requirements
 
-Python 2.7 or Python >= 3.3
+* Python 2.7 or Python >= 3.3
+* [requests](http://docs.python-requests.org/en/master/) >= 2.18.4
+* Although not strictly required for installation, the [pandas](https://pandas.pydata.org/) library is needed for 
+returning the results as a DataFrame.
 
 ## License
 
