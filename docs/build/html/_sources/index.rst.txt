@@ -44,7 +44,9 @@ Contents
 Tutorials and Examples
 ======================
 
-The following are links to static Jupyter Notebooks that introduce the petpy package and some examples of its usage.
+The following are Jupyter Notebooks (launched in Github) that introduce the petpy package and some examples of
+its usage. The notebooks can also be launched in an `interactive environment <https://hub.mybinder.org/user/aschleg-petpy-a4s6thuc/tree/notebooks>`_
+with `binder <https://mybinder.org/>`_
 
-- `Introduction to petpy <https://nbviewer.jupyter.org/github/aschleg/petpy/blob/master/docs/vignettes/build/01-Introduction.html>`_
-- `Download 45,000 Cat Images in 6.5 Minutes with petpy and multiprocessing <https://nbviewer.jupyter.org/github/aschleg/petpy/blob/master/docs/vignettes/build/02-Download_Cat_Images.html>`_
+- `Introduction to petpy <https://github.com/aschleg/petpy/blob/master/notebooks/01-Introduction%20to%20petpy.ipynb>`_
+- `Download 45,000 Cat Images in 6.5 Minutes with petpy and multiprocessing <https://github.com/aschleg/petpy/blob/master/notebooks/02-Download%2045%2C000%20Adoptable%20Cat%20Images%20with%20petpy%20and%20multiprocessing.ipynb>`_

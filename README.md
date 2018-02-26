@@ -53,7 +53,11 @@ more efficient data analysis.
 ## Vignettes and Introduction to petpy
 
 A series of IPython notebooks that introduce and explore some of the functionality and possible uses of the 
-`petpy` library.
+`petpy` library. The notebooks can also be launched interactively with [binder](https://mybinder.org/) in the 
+[notebooks subdirectory](https://github.com/aschleg/petpy/tree/master/notebooks).
+
+* [01 -Introduction to petpy](https://github.com/aschleg/petpy/blob/master/notebooks/01-Introduction%20to%20petpy.ipynb)
+* [02 - Download 45,000 Adoptable Cat Images using petpy and multiprocessing](https://github.com/aschleg/petpy/blob/master/notebooks/02-Download%2045%2C000%20Adoptable%20Cat%20Images%20with%20petpy%20and%20multiprocessing.ipynb)
 
 ## Installation
 
