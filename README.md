@@ -52,7 +52,7 @@ more efficient data analysis.
 
 ## Vignettes and Introduction to petpy
 
-[![Binder](https://mybinder.org/badge.svg)](https://hub.mybinder.org/user/aschleg-petpy-a4s6thuc/tree/docs/notebooks)
+[![Binder](https://mybinder.org/badge.svg)](https://hub.mybinder.org/user/aschleg-petpy-klvuc0pp/tree/docs/notebooks)
 
 A series of IPython notebooks that introduce and explore some of the functionality and possible uses of the 
 `petpy` library. The notebooks can also be launched interactively with [binder](https://mybinder.org/) by clicking the 

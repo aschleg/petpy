@@ -45,7 +45,7 @@ Tutorials and Examples
 ======================
 
 The following are Jupyter Notebooks (launched in Github) that introduce the petpy package and some examples of
-its usage. The notebooks can also be launched in an `interactive environment <https://hub.mybinder.org/user/aschleg-petpy-a4s6thuc/tree/notebooks>`_
+its usage. The notebooks can also be launched in an `interactive environment <https://hub.mybinder.org/user/aschleg-petpy-klvuc0pp/tree/docs/notebooks>`_
 with `binder <https://mybinder.org/>`_
 
 - `Introduction to petpy <https://github.com/aschleg/petpy/blob/master/docs/notebooks/01-Introduction%20to%20petpy.ipynb>`_
