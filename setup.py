@@ -10,9 +10,9 @@ setup(
     url='https://github.com/aschleg/petpy',
     description='Wrapper for the Petfinder API',
     license='MIT',
-    packages=find_packages(exclude=['build', 'docs', 'tests*']),
+    packages=find_packages(exclude=['build', 'docs', 'notebooks', 'tests*']),
     long_description=open('README.md').read(),
-    install_requires=['requests>=2.18.4', 'pandas>=0.18.0'],
+    install_requires=['requests>=2.18.4'],
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Environment :: Console',
