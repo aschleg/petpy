@@ -34,16 +34,16 @@ API methods documentation can also be found [here](https://www.petfinder.com/dev
 functions have a `return_df` parameter that when set to `True`, returns a pandas DataFrame of the results to facilitate 
 more efficient data analysis.
 
-| Method                | Petfinder API Method | Description                                                                                        |
-|-----------------------|----------------------|----------------------------------------------------------------------------------------------------|
-| breed_list()          | breed.list           | Returns the available breeds for the selected animal.                                              |
-| pet_find()            | pet.find             | Returns a collection of pet records matching input parameters.                                     |
-| pet_get()             | pet.get              | Returns a single record for a pet.                                                                 |
-| pet_getRandom()       | pet.getRandom        | Returns a randomly selected pet record. The possible result can be filtered with input parameters. |
-| shelter_find()        | shelter.find         | Returns a collection of shelter records matching input parameters.                                 |
-| shelter_get()         | shelter.get          | Returns a single shelter record.                                                                   |
-| shelter_getPets()     | shelter.getPets      | Returns a collection of pet records for an individual shelter.                                     |
-| shelter_listByBreed() | shelter.listByBreed  | Returns a list of shelter IDs listing animals matching the input animal breed.                     |
+| Method                  | Petfinder API Method | Description                                                                                        |
+|-------------------------|----------------------|----------------------------------------------------------------------------------------------------|
+| breed_list()            | breed.list           | Returns the available breeds for the selected animal.                                              |
+| pet_find()              | pet.find             | Returns a collection of pet records matching input parameters.                                     |
+| pet_get()               | pet.get              | Returns a single record for a pet.                                                                 |
+| pet_get_random()        | pet.getRandom        | Returns a randomly selected pet record. The possible result can be filtered with input parameters. |
+| shelter_find()          | shelter.find         | Returns a collection of shelter records matching input parameters.                                 |
+| shelter_get()           | shelter.get          | Returns a single shelter record.                                                                   |
+| shelter_get_pets()      | shelter.getPets      | Returns a collection of pet records for an individual shelter.                                     |
+| shelter_list_by_breed() | shelter.listByBreed  | Returns a list of shelter IDs listing animals matching the input animal breed.                     |
 
 ## Documentation
 

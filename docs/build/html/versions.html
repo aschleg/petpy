@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Version History &mdash; petpy 1.6 documentation</title>
+  <title>Version History &mdash; petpy 1.6.1 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="petpy 1.6 documentation" href="index.html"/>
+    <link rel="top" title="petpy 1.6.1 documentation" href="index.html"/>
         <link rel="prev" title="API Reference" href="api.html"/> 
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.6
+                1.6.1
               </div>
             
           
@@ -92,6 +92,8 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Version History</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#verison-1-7-0">Verison 1.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-1-6-0">Version 1.6.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#version-1-5-995">Version 1.5.995</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#version-1-5-92">Version 1.5.92</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#version-1-5-91">Version 1.5.91</a></li>
@@ -170,6 +172,82 @@
   <div class="section" id="version-history">
 <span id="versions"></span><h1>Version History<a class="headerlink" href="#version-history" title="Permalink to this headline">¶</a></h1>
 <p>Changelog and version changes made with each release.</p>
+<div class="section" id="verison-1-7-0">
+<h2>Verison 1.7.0<a class="headerlink" href="#verison-1-7-0" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Refactoring of library to clean up code files.</p>
+</li>
+<li><p class="first">Many changes to simplify expressions and internal code within methods.</p>
+</li>
+<li><p class="first">The Petfinder class method names and parameters have been renamed to be PEP8 compatible. I apologize as this
+will cause backward compatibility issues upon updating for anyone using previous versions. The original
+intention of the naming was to reflect the Petfinder API&#8217;s method names as closely as possible, but after
+further consideration and given the relative short life of the library, I think the change is necessary for the
+future growth and maturity of the package.</p>
+<blockquote>
+<div><ul class="simple">
+<li>How the methods interact with the Petfinder API is unchanged, thus there is no immediate need to update your
+version of petpy if it will break any current code.</li>
+<li>The Github repo README has been updated with the new API methods.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Below is a table detailing the changed method names:</p>
+</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%" />
+<col width="52%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Previous Method Name</th>
+<th class="head">New Method Name</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>pet_getRandom()</td>
+<td>pet_get_random()</td>
+</tr>
+<tr class="row-odd"><td>shelter_getPets()</td>
+<td>shelter_get_pets()</td>
+</tr>
+<tr class="row-even"><td>shelter_listByBreed()</td>
+<td>shelter_list_by_breed()</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>The following lists the method parameter names that have changed with the release:</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="56%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Previous Parameter Name</th>
+<th class="head">New Parameter Name</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>petId</td>
+<td>pet_id</td>
+</tr>
+<tr class="row-odd"><td>shelterId</td>
+<td>shelter_id</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="version-1-6-0">
+<h2>Version 1.6.0<a class="headerlink" href="#version-1-6-0" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>This release removes pandas as an installation requirement for the package. Although pandas is
+required to convert the API results into a DataFrame, this is optional and not necessary to the
+building or use of the package itself.</li>
+</ul>
+</div>
 <div class="section" id="version-1-5-995">
 <h2>Version 1.5.995<a class="headerlink" href="#version-1-5-995" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -298,7 +376,7 @@ list or tuple of IDs. These methods are essentially wrappers of the API methods 
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.6',
+            VERSION:'1.6.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

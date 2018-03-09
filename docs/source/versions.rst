@@ -5,6 +5,45 @@ Version History
 
 Changelog and version changes made with each release.
 
+Verison 1.7.0
+-------------
+
+- Refactoring of library to clean up code files.
+- Many changes to simplify expressions and internal code within methods.
+- The Petfinder class method names and parameters have been renamed to be PEP8 compatible. I apologize as this
+  will cause backward compatibility issues upon updating for anyone using previous versions. The original
+  intention of the naming was to reflect the Petfinder API's method names as closely as possible, but after
+  further consideration and given the relative short life of the library, I think the change is necessary for the
+  future growth and maturity of the package.
+    - How the methods interact with the Petfinder API is unchanged, thus there is no immediate need to update your
+      version of petpy if it will break any current code.
+    - The Github repo README has been updated with the new API methods.
+- Below is a table detailing the changed method names:
+
+=====================   =======================
+Previous Method Name    New Method Name
+=====================   =======================
+pet_getRandom()         pet_get_random()
+shelter_getPets()       shelter_get_pets()
+shelter_listByBreed()   shelter_list_by_breed()
+=====================   =======================
+
+- The following lists the method parameter names that have changed with the release:
+
+=======================  ==================
+Previous Parameter Name  New Parameter Name
+=======================  ==================
+petId                    pet_id
+shelterId                shelter_id
+=======================  ==================
+
+Version 1.6.0
+-------------
+
+- This release removes pandas as an installation requirement for the package. Although pandas is
+  required to convert the API results into a DataFrame, this is optional and not necessary to the
+  building or use of the package itself.
+
 Version 1.5.995
 ---------------
 
