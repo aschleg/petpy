@@ -2,6 +2,7 @@ import os
 import xml.etree.ElementTree as ET
 import pytest
 import vcr
+import pandas as pd
 from pandas import DataFrame
 from six import string_types
 
