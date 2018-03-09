@@ -5,8 +5,7 @@ import vcr
 from pandas import DataFrame
 from six import string_types
 
-from petpy.api import Petfinder
-
+from petpy import Petfinder
 
 tape = vcr.VCR(
     cassette_library_dir='tests/cassettes',
@@ -97,13 +96,13 @@ def test_pet_find(top_level_keys, petfinder_keys):
 @vcr.use_cassette('tests/cassettes/pet_getRandom.yml', filter_query_parameters=['key'])
 def test_pet_getRandom(top_level_keys, petfinder_keys):
 
-    response1 = pf.pet_getRandom()
-    response2 = pf.pet_getRandom(outputformat='xml')
-    response3 = pf.pet_getRandom(return_df=True)
+    response1 = pf.pet_get_random()
+    response2 = pf.pet_get_random(outputformat='xml')
+    response3 = pf.pet_get_random(return_df=True)
 
     records = 5
-    response4 = pf.pet_getRandom(records=records)
-    response5 = pf.pet_getRandom(records=records, return_df=True)
+    response4 = pf.pet_get_random(records=records)
+    response5 = pf.pet_get_random(records=records, return_df=True)
 
     r = ET.fromstring(response2.encode('utf-8'))
 
@@ -128,7 +127,7 @@ def test_pet_getRandom(top_level_keys, petfinder_keys):
 def test_pet_get(top_level_keys, petfinder_pet_get_keys):
     # Call pet_getRandom to get a valid petId to ensure test is run
     petids = []
-    ids = pf.pet_getRandom(records=5)
+    ids = pf.pet_get_random(records=5)
 
     for i in ids:
         petids.append(i['petfinder']['petIds']['id']['$t'])
@@ -187,7 +186,7 @@ def test_shelter_get(top_level_keys, petfinder_shelter_get_keys):
 
     response1 = pf.shelter_get(shelterid)
     response2 = pf.shelter_get(shelterid, outputformat='xml')
-    response3 = pf.shelter_get(shelterid, outputformat='xml', return_df=True)
+    response3 = pf.shelter_get(shelterid, return_df=True, outputformat='xml')
 
     response4 = pf.shelters_get(shelterid)
 
@@ -227,13 +226,13 @@ def test_shelters_get(top_level_keys, petfinder_shelter_get_keys):
     assert isinstance(response4, dict)
 
 
-@vcr.use_cassette('tests/cassettes/shelter_getPets.yml', filter_query_parameters=['key'])
+@vcr.use_cassette('tests/cassettes/shelter_get_pets.yml', filter_query_parameters=['key'])
 def test_shelter_getPets(top_level_keys, petfinder_keys):
     shelterid = pf.shelter_find('98133', count=1)['petfinder']['shelters']['shelter']['id']['$t']
 
-    response1 = pf.shelter_getPets(shelterid, count=1)
-    response2 = pf.shelter_getPets(shelterid, count=1, outputformat='xml')
-    response3 = pf.shelter_getPets(shelterid, outputformat='xml', return_df=True)
+    response1 = pf.shelter_get_pets(shelterid, count=1)
+    response2 = pf.shelter_get_pets(shelterid, count=1, outputformat='xml')
+    response3 = pf.shelter_get_pets(shelterid, outputformat='xml', return_df=True)
 
     r = ET.fromstring(response2.encode('utf-8'))
 
@@ -249,12 +248,12 @@ def test_shelter_getPets(top_level_keys, petfinder_keys):
     assert r[2].tag == 'pets'
 
 
-@vcr.use_cassette('tests/cassettes/shelter_listByBreed.yml', filter_query_parameters=['key'])
+@vcr.use_cassette('tests/cassettes/shelter_list_by_breed.yml', filter_query_parameters=['key'])
 def test_shelter_listByBreed(top_level_keys, petfinder_keys):
 
-    response1 = pf.shelter_listByBreed('cat', 'American Shorthair', count=1)
-    response2 = pf.shelter_listByBreed('cat', 'American Shorthair', count=1, outputformat='xml')
-    response3 = pf.shelter_listByBreed('cat', 'American Shorthair', outputformat='xml', return_df=True)
+    response1 = pf.shelter_list_by_breed('cat', 'American Shorthair', count=1)
+    response2 = pf.shelter_list_by_breed('cat', 'American Shorthair', count=1, outputformat='xml')
+    response3 = pf.shelter_list_by_breed('cat', 'American Shorthair', outputformat='xml', return_df=True)
 
     r = ET.fromstring(response2.encode('utf-8'))
 
