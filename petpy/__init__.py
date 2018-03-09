@@ -311,7 +311,7 @@ class Petfinder(object):
                 results.append(_query(url, args, return_df=return_df, method=method))
 
             if return_df:
-                results = pd.concat(results)
+                results = concat(results)
 
             return results
 
