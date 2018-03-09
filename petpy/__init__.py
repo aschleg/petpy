@@ -8,8 +8,6 @@ from numpy import nan
 from pandas import DataFrame, concat
 from pandas.io.json import json_normalize
 
-from petpy.api import Petfinder
-
 
 def _coerce_to_dataframe(x, method):
 
@@ -232,3 +230,6 @@ def _return_multiple_get_calls(call_id, url, args, return_df, method):
         return concat(responses, axis=0)
 
     return responses
+
+
+from petpy.api import Petfinder
