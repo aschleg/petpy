@@ -605,7 +605,12 @@ def _coerce_to_dataframe(x, method):
     else:
 
         if method == 'shelter.find' or method == 'shelter.listByBreed':
-            df = json_normalize(x['petfinder']['shelters']['shelter'])
+            try:
+                df = json_normalize(x['petfinder']['shelters']['shelter'])
+            except (KeyError, ValueError):
+                print('No shelters matching criteria found')
+                raise
+
         elif method == 'shelter.get':
             try:
                 df = json_normalize(x['petfinder']['shelter'])

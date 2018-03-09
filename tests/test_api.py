@@ -254,7 +254,7 @@ def test_shelter_listByBreed(top_level_keys, petfinder_keys):
 
     response1 = pf.shelter_list_by_breed('cat', 'American Shorthair', count=1)
     response2 = pf.shelter_list_by_breed('cat', 'American Shorthair', count=1, outputformat='xml')
-    response3 = pf.shelter_list_by_breed('cat', 'American Shorthair', outputformat='xml', return_df=True)
+    response3 = pf.shelter_list_by_breed('cat', 'American Shorthair', outputformat='json')
 
     r = ET.fromstring(response2.encode('utf-8'))
 
