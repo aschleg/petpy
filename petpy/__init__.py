@@ -8,8 +8,6 @@ from numpy import nan
 from pandas import DataFrame, concat
 from pandas.io.json import json_normalize
 
-from petpy.api import Petfinder
-
 
 def _coerce_to_dataframe(x, method):
 
