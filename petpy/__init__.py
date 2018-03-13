@@ -580,13 +580,19 @@ def _coerce_to_dataframe(x, method):
                 return DataFrame()
 
             else:
-                for i in x['petfinder']['pets']['pet']:
-                    pet, breed, opt, media = _pet_find_get_coerce(i)
 
-                    res = res.append(pet)
-                    breed_df = breed_df.append(breed)
-                    opt_df = opt_df.append(opt)
-                    media_df = media_df.append(media)
+                if isinstance(x['petfinder']['pets']['pet'], list):
+
+                    for i in x['petfinder']['pets']['pet']:
+                        pet, breed, opt, media = _pet_find_get_coerce(i)
+
+                        res = res.append(pet)
+                        breed_df = breed_df.append(breed)
+                        opt_df = opt_df.append(opt)
+                        media_df = media_df.append(media)
+
+                else:
+                    res, breed_df, opt_df, media_df = _pet_find_get_coerce(x['petfinder']['pets']['pet'])
 
         breed_df.columns = ['breed' + str(col) for col in breed_df.columns]
         opt_df.columns = ['status' + str(col) for col in opt_df.columns]
