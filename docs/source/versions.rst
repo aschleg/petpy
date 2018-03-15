@@ -9,6 +9,8 @@ Verison 1.7.0
 -------------
 
 - Refactoring of library to clean up code files.
+- Fixed a bug with the :code:`shelter_get_pets()` method that caused an error to be thrown when there is only
+  one pet record and the parameter :code:`return_df = True`.
 - Many changes to simplify expressions and internal code within methods.
 - The Petfinder class method names and parameters have been renamed to be PEP8 compatible. I apologize as this
   will cause backward compatibility issues upon updating for anyone using previous versions. The original
