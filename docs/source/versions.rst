@@ -17,9 +17,9 @@ Verison 1.7.0
   intention of the naming was to reflect the Petfinder API's method names as closely as possible, but after
   further consideration and given the relative short life of the library, I think the change is necessary for the
   future growth and maturity of the package.
-    - How the methods interact with the Petfinder API is unchanged, thus there is no immediate need to update your
-      version of petpy if it will break any current code.
-    - The Github repo README has been updated with the new API methods.
+- How the methods interact with the Petfinder API is unchanged, thus there is no immediate need to update your
+  version of petpy if it will break any current code.
+- The Github repo README has been updated with the new API methods.
 - Below is a table detailing the changed method names:
 
 =====================   =======================
