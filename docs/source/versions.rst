@@ -5,6 +5,12 @@ Version History
 
 Changelog and version changes made with each release.
 
+Version 1.7.1
+-------------
+
+- Fix to the :code:`shelter_get()` method for handling empty responses when no shelters returned for when
+  the parameter :code:`return_df = True`.
+
 Verison 1.7.0
 -------------
 

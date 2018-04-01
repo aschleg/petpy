@@ -614,8 +614,7 @@ def _coerce_to_dataframe(x, method):
             try:
                 df = json_normalize(x['petfinder']['shelters']['shelter'])
             except (KeyError, ValueError):
-                print('No shelters matching criteria found')
-                raise
+                df = _empty_shelter_df()
 
         elif method == 'shelter.get':
             try:
@@ -782,3 +781,8 @@ def _return_multiple_get_calls(call_id, url, args, return_df, method):
         return concat(responses, axis=0)
 
     return responses
+
+
+def _empty_shelter_df():
+    return DataFrame(columns=['address1', 'address2', 'city', 'country', 'email', 'id', 'latitude',
+                                 'longitude', 'name', 'phone', 'state', 'zip'])
