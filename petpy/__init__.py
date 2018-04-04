@@ -576,7 +576,10 @@ def _coerce_to_dataframe(x, method):
         elif method == 'pet.find' or method == 'shelter.getPets':
             res = media_df = opt_df = breed_df = DataFrame()
 
-            if x['petfinder']['pets'] == {}:
+            try:
+                if x['petfinder']['pets'] == {}:
+                    return DataFrame()
+            except KeyError:
                 return DataFrame()
 
             else:

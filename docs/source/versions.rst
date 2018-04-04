@@ -10,6 +10,8 @@ Version 1.7.1
 
 - Fix to the :code:`shelter_get()` method for handling empty responses when no shelters returned for when
   the parameter :code:`return_df = True`.
+- Fix to getting pets available at a shelter with :code:`shelter_get_pets()` when the parameter
+  :code:`return_df = True` when the given shelter does not return any available animals.
 
 Verison 1.7.0
 -------------
