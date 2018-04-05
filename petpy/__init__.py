@@ -702,7 +702,7 @@ def _query(url, args, pages=None, return_df=False, method=None, count=None):
     r = requests.get(url, args)
 
     # Check that call hasn't exceeded API daily limit
-    if r.text.find('<code>202</code>') == -1:
+    if r.text.find('exceeded daily request limit') != -1:
         raise HTTPError('Daily API Limit exceeded')
 
     if outputformat is 'json':
