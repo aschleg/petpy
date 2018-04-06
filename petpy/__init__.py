@@ -703,21 +703,21 @@ def _query(url, args, pages=None, return_df=False, method=None, count=None):
 
     # Check that call hasn't exceeded API daily limit
 
-    if outputformat is 'json':
-        r = r.json()
-    else:
-        r = r.text
+    # if outputformat is 'json':
+    #     r = r.json()
+    # else:
+    #     r = r.text
 
-    # try:
-    #     if outputformat is 'json':
-    #         r = r.json()
-    #     else:
-    #         r = r.text
-    #
-    # except error.HTTPError, err:
-    #     if err.code == 202 or r.text.find('exceeded daily request limit') != -1:
-    #         err.msg = 'Daily API limit exceeded'
-    #     raise
+    try:
+        if outputformat is 'json':
+            r = r.json()
+        else:
+            r = r.text
+
+    except error.HTTPError, err:
+        if err.code == 202 or r.text.find('exceeded daily request limit') != -1:
+            err.msg = 'Daily API limit exceeded'
+        raise
 
     if pages is None:
 

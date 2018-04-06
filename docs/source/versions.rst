@@ -5,6 +5,14 @@ Version History
 
 Changelog and version changes made with each release.
 
+Version 1.7.2
+-------------
+
+- There is now a proper message when the daily API call limit is exceeded. Prior to the change, methods would
+  return a :code:`JSONDecodeError`.
+- The Python 2 to 3 compatibility package :code:`six`, has been added as a requirement for package installation.
+  The :code:`six` library is lightweight and ensures the :code:`petpy` package works properly for Python 2 and 3.
+
 Version 1.7.1
 -------------
 
