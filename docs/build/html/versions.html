@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Version History &mdash; petpy 1.7.1 documentation</title>
+  <title>Version History &mdash; petpy 1.7.2 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="petpy 1.7.1 documentation" href="index.html"/>
+    <link rel="top" title="petpy 1.7.2 documentation" href="index.html"/>
         <link rel="prev" title="API Reference" href="api.html"/> 
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                1.7.1
+                1.7.2
               </div>
             
           
@@ -92,6 +92,7 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Version History</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#version-1-7-2">Version 1.7.2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#version-1-7-1">Version 1.7.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#verison-1-7-0">Verison 1.7.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#version-1-6-0">Version 1.6.0</a></li>
@@ -173,6 +174,15 @@
   <div class="section" id="version-history">
 <span id="versions"></span><h1>Version History<a class="headerlink" href="#version-history" title="Permalink to this headline">¶</a></h1>
 <p>Changelog and version changes made with each release.</p>
+<div class="section" id="version-1-7-2">
+<h2>Version 1.7.2<a class="headerlink" href="#version-1-7-2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>There is now a proper message when the daily API call limit is exceeded. Prior to the change, methods would
+return a <code class="code docutils literal"><span class="pre">JSONDecodeError</span></code>.</li>
+<li>The Python 2 to 3 compatibility package <code class="code docutils literal"><span class="pre">six</span></code>, has been added as a requirement for package installation.
+The <code class="code docutils literal"><span class="pre">six</span></code> library is lightweight and ensures the <code class="code docutils literal"><span class="pre">petpy</span></code> package works properly for Python 2 and 3.</li>
+</ul>
+</div>
 <div class="section" id="version-1-7-1">
 <h2>Version 1.7.1<a class="headerlink" href="#version-1-7-1" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -380,7 +390,7 @@ list or tuple of IDs. These methods are essentially wrappers of the API methods 
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.7.1',
+            VERSION:'1.7.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

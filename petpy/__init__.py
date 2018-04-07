@@ -9,7 +9,6 @@ from numpy import nan
 from pandas import DataFrame, concat
 from pandas.io.json import json_normalize
 from six.moves.urllib.parse import urljoin
-from six.moves.urllib import error
 from six import string_types
 
 
@@ -710,17 +709,6 @@ def _query(url, args, pages=None, return_df=False, method=None, count=None):
         r = r.json()
     else:
         r = r.text
-
-    # try:
-    #     if outputformat is 'json':
-    #         r = r.json()
-    #     else:
-    #         r = r.text
-    #
-    # except error.HTTPError, err:
-    #     if err.code == 202 or r.text.find('exceeded daily request limit') != -1:
-    #         err.msg = 'Daily API limit exceeded'
-    #     raise
 
     if pages is None:
 
