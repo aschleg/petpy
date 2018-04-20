@@ -92,7 +92,7 @@
             
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#petfinder-petfinder-api-wrapper"><code class="docutils literal"><span class="pre">Petfinder</span></code> – Petfinder API Wrapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#petfinder-petfinder-api-wrapper"><code class="docutils literal notranslate"><span class="pre">Petfinder</span></code> – Petfinder API Wrapper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pet-methods">Pet Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#shelter-methods">Shelter Methods</a></li>
 </ul>
@@ -164,7 +164,7 @@
   <span class="target" id="api-parameters"><span id="api"></span></span><div class="section" id="api-reference">
 <h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="petfinder-petfinder-api-wrapper">
-<h2><code class="xref py py-mod docutils literal"><span class="pre">Petfinder</span></code> – Petfinder API Wrapper<a class="headerlink" href="#petfinder-petfinder-api-wrapper" title="Permalink to this headline">¶</a></h2>
+<h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">Petfinder</span></code> – Petfinder API Wrapper<a class="headerlink" href="#petfinder-petfinder-api-wrapper" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="petpy.api.Petfinder">
 <em class="property">class </em><code class="descclassname">petpy.api.</code><code class="descname">Petfinder</code><span class="sig-paren">(</span><span class="optional">[</span><em>key</em><span class="optional">]</span><span class="optional">[</span>, <em>secret=None</em><span class="optional">]</span><span class="optional">[</span>, <em>host='http://api.petfinder.com/'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder" title="Permalink to this definition">¶</a></dt>
@@ -190,9 +190,9 @@ for the selected animal.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json, str. or pandas DataFrame If the parameter <code class="code docutils literal"><span class="pre">outputformat</span></code> is ‘json’,
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json, str. or pandas DataFrame If the parameter <code class="code docutils literal notranslate"><span class="pre">outputformat</span></code> is ‘json’,
 the result is formatted as a JSON object. Otherwise, the return object is a text
-representation of an XML object. If <code class="code docutils literal"><span class="pre">return_df</span></code> is <code class="code docutils literal"><span class="pre">True</span></code>, <code class="code docutils literal"><span class="pre">outputformat</span></code>
+representation of an XML object. If <code class="code docutils literal notranslate"><span class="pre">return_df</span></code> is <code class="code docutils literal notranslate"><span class="pre">True</span></code>, <code class="code docutils literal notranslate"><span class="pre">outputformat</span></code>
 is overridden and the results are converted to a pandas DataFrame. Please note there may
 be some loss of data when the conversion is made; however, this loss is primarily confined
 to the call encoding and timestamp information and metadata of the associated media (photos)
@@ -218,9 +218,9 @@ with a record.</p>
 <li><strong>size</strong> – Specifies the size of the animal/breed to search. Must be one of ‘S’ (small), ‘M’ (medium), ‘L’ (large), ‘XL’ (extra-large).</li>
 <li><strong>sex</strong> – Filters the search to the desired gender of the animal. Must be one of ‘M’ (male) or ‘F’ (female).</li>
 <li><strong>age</strong> – Returns animals with specified age. Must be one of ‘Baby’, ‘Young’, ‘Adult’, ‘Senior’.</li>
-<li><strong>offset</strong> – Can be set to the value of <code class="code docutils literal"><span class="pre">lastOffset</span></code> returned from the previous call to retrieve the next set of results. The <code class="code docutils literal"><span class="pre">pages</span></code> parameter can also be used to pull a desired number of paged results.</li>
+<li><strong>offset</strong> – Can be set to the value of <code class="code docutils literal notranslate"><span class="pre">lastOffset</span></code> returned from the previous call to retrieve the next set of results. The <code class="code docutils literal notranslate"><span class="pre">pages</span></code> parameter can also be used to pull a desired number of paged results.</li>
 <li><strong>count</strong> – The number of records to return. Default is 25.</li>
-<li><strong>pages</strong> – The number of pages of results to return. For example, if <code class="code docutils literal"><span class="pre">pages=4</span></code> with the default <code class="code docutils literal"><span class="pre">count</span></code> parameter (25), 100 results would be returned. The paged results are returned as a list.</li>
+<li><strong>pages</strong> – The number of pages of results to return. For example, if <code class="code docutils literal notranslate"><span class="pre">pages=4</span></code> with the default <code class="code docutils literal notranslate"><span class="pre">count</span></code> parameter (25), 100 results would be returned. The paged results are returned as a list.</li>
 <li><strong>output</strong> – Sets the amount of information returned in each record. ‘basic’ returns a simple record while ‘full’ returns a complete record with description. Defaults to ‘basic’.</li>
 <li><strong>outputformat</strong> – Output type of results. Must be one of ‘json’ (default) or ‘xml’.</li>
 <li><strong>return_df</strong> – If True, coerces results returned from the Petfinder API into a pandas DataFrame.</li>
@@ -228,10 +228,10 @@ with a record.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json, list of json, str, list of str or pandas DataFrame. Pet records matching the desired search parameters.
-If the parameter <code class="code docutils literal"><span class="pre">outputformat</span></code> is ‘json’, the result is formatted as a JSON object.
-Otherwise, the return object is a text representation of an XML object. If the <code class="code docutils literal"><span class="pre">pages</span></code>
-parameter is set, the paged results are returned as a list. If <code class="code docutils literal"><span class="pre">return_df</span></code> is <code class="code docutils literal"><span class="pre">True</span></code>,
-<code class="code docutils literal"><span class="pre">outputformat</span></code> is overridden and the results are converted to a pandas DataFrame. Please
+If the parameter <code class="code docutils literal notranslate"><span class="pre">outputformat</span></code> is ‘json’, the result is formatted as a JSON object.
+Otherwise, the return object is a text representation of an XML object. If the <code class="code docutils literal notranslate"><span class="pre">pages</span></code>
+parameter is set, the paged results are returned as a list. If <code class="code docutils literal notranslate"><span class="pre">return_df</span></code> is <code class="code docutils literal notranslate"><span class="pre">True</span></code>,
+<code class="code docutils literal notranslate"><span class="pre">outputformat</span></code> is overridden and the results are converted to a pandas DataFrame. Please
 note there may be some loss of data when the conversion is made; however, this loss is primarily
 confined to the call encoding and timestamp information and metadata of the associated media (photos)
 with a record.</p>
@@ -256,9 +256,9 @@ with a record.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json, str or pandas DataFrame. If the parameter <code class="code docutils literal"><span class="pre">outputformat</span></code> is ‘json’,
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json, str or pandas DataFrame. If the parameter <code class="code docutils literal notranslate"><span class="pre">outputformat</span></code> is ‘json’,
 the result is formatted as a JSON object. Otherwise, the return object is a text
-representation of an XML object. If <code class="code docutils literal"><span class="pre">return_df</span></code> is <code class="code docutils literal"><span class="pre">True</span></code>, <code class="code docutils literal"><span class="pre">outputformat</span></code>
+representation of an XML object. If <code class="code docutils literal notranslate"><span class="pre">return_df</span></code> is <code class="code docutils literal notranslate"><span class="pre">True</span></code>, <code class="code docutils literal notranslate"><span class="pre">outputformat</span></code>
 is overridden and the results are converted to a pandas DataFrame. Please note there may
 be some loss of data when the conversion is made; however, this loss is primarily confined
 to the call encoding and timestamp information and metadata of the associated media (photos)
@@ -272,7 +272,7 @@ with a record.</p>
 <dl class="method">
 <dt id="petpy.api.Petfinder.pets_get">
 <code class="descclassname">Petfinder.</code><code class="descname">pets_get</code><span class="sig-paren">(</span><span class="optional">[</span><em>petId</em><span class="optional">]</span><span class="optional">[</span>, <em>outputformat='json'</em><span class="optional">]</span><span class="optional">[</span>, <em>return_df=False</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder.pets_get" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convenience wrapper of <code class="code docutils literal"><span class="pre">pet_get</span></code> for returning multiple pet records given a list or tuple of pet IDs.</p>
+<dd><p>Convenience wrapper of <code class="code docutils literal notranslate"><span class="pre">pet_get</span></code> for returning multiple pet records given a list or tuple of pet IDs.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -285,9 +285,9 @@ with a record.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list or pandas DataFrame. Matching record corresponding to input pet ID. If the parameter
-<code class="code docutils literal"><span class="pre">outputformat</span></code> is ‘json’, the result is formatted as a JSON object. Otherwise,
-the return object is a text representation of an XML object. If <code class="code docutils literal"><span class="pre">return_df</span></code>
-is <code class="code docutils literal"><span class="pre">True</span></code>, <code class="code docutils literal"><span class="pre">outputformat</span></code> is overridden and the results are converted to a
+<code class="code docutils literal notranslate"><span class="pre">outputformat</span></code> is ‘json’, the result is formatted as a JSON object. Otherwise,
+the return object is a text representation of an XML object. If <code class="code docutils literal notranslate"><span class="pre">return_df</span></code>
+is <code class="code docutils literal notranslate"><span class="pre">True</span></code>, <code class="code docutils literal notranslate"><span class="pre">outputformat</span></code> is overridden and the results are converted to a
 pandas DataFrame. Please note there may be some loss of data when the conversion is made;
 however, this loss is primarily confined to the call encoding and timestamp information and
 metadata of the associated media (photos) with a record.</p>
@@ -314,16 +314,16 @@ Wrapper for ‘pet.getRandom’ method in the Petfinder API.</p>
 <li><strong>location</strong> – ZIP/postal code, state, or city and state to perform the search.</li>
 <li><strong>shelterId</strong> – Filter results to a specific shelter.</li>
 <li><strong>output</strong> – Sets the amount of information returned in each record. ‘basic’ returns a simple record while ‘full’ returns a complete record with description. Defaults to ‘basic’.</li>
-<li><strong>records</strong> – Returns <code class="code docutils literal"><span class="pre">records</span></code> random results. Each returned record is counted as one call to the Petfinder API.</li>
+<li><strong>records</strong> – Returns <code class="code docutils literal notranslate"><span class="pre">records</span></code> random results. Each returned record is counted as one call to the Petfinder API.</li>
 <li><strong>outputformat</strong> – Output type of results. Must be one of ‘json’ (default) or ‘xml’.</li>
 <li><strong>return_df</strong> – If True, coerces results returned from the Petfinder API into a pandas DataFrame.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json, str or pandas DataFrame. If the parameter <code class="code docutils literal"><span class="pre">outputformat</span></code> is ‘json’,
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json, str or pandas DataFrame. If the parameter <code class="code docutils literal notranslate"><span class="pre">outputformat</span></code> is ‘json’,
 the result is formatted as a JSON object. Otherwise, the return object is a text
-representation of an XML object. If <code class="code docutils literal"><span class="pre">records</span></code> is specified, a list of the results
-is returned. If <code class="code docutils literal"><span class="pre">return_df</span></code> is <code class="code docutils literal"><span class="pre">True</span></code>, <code class="code docutils literal"><span class="pre">outputformat</span></code> is overridden and
+representation of an XML object. If <code class="code docutils literal notranslate"><span class="pre">records</span></code> is specified, a list of the results
+is returned. If <code class="code docutils literal notranslate"><span class="pre">return_df</span></code> is <code class="code docutils literal notranslate"><span class="pre">True</span></code>, <code class="code docutils literal notranslate"><span class="pre">outputformat</span></code> is overridden and
 the results are converted to a pandas DataFrame. Please note there may be some loss of data
 when the conversion is made; however, this loss is primarily confined to the call encoding
 and timestamp information and metadata of the associated media (photos) with a record.</p>
@@ -348,19 +348,19 @@ in the Petfinder API.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>location</strong> – ZIP/postal code, state, or city and state to perform the search.</li>
 <li><strong>name</strong> – Full or partial shelter name</li>
-<li><strong>offset</strong> – Can be set to the value of <code class="code docutils literal"><span class="pre">lastOffset</span></code> returned from the previous call to retrieve the next set of results. The <code class="code docutils literal"><span class="pre">pages</span></code> parameter can also be used to pull a desired number of paged results.</li>
+<li><strong>offset</strong> – Can be set to the value of <code class="code docutils literal notranslate"><span class="pre">lastOffset</span></code> returned from the previous call to retrieve the next set of results. The <code class="code docutils literal notranslate"><span class="pre">pages</span></code> parameter can also be used to pull a desired number of paged results.</li>
 <li><strong>count</strong> – The number of records to return. Default is 25.</li>
-<li><strong>pages</strong> – The number of pages of results to return. For example, if <code class="code docutils literal"><span class="pre">pages=4</span></code> with the default <code class="code docutils literal"><span class="pre">count</span></code> parameter (25), 100 results would be returned. The paged results are returned as a list.</li>
+<li><strong>pages</strong> – The number of pages of results to return. For example, if <code class="code docutils literal notranslate"><span class="pre">pages=4</span></code> with the default <code class="code docutils literal notranslate"><span class="pre">count</span></code> parameter (25), 100 results would be returned. The paged results are returned as a list.</li>
 <li><strong>outputformat</strong> – Output type of results. Must be one of ‘json’ (default) or ‘xml’.</li>
 <li><strong>return_df</strong> – If True, coerces results returned from the Petfinder API into a pandas DataFrame.</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json, list of json, str, list of str or pandas DataFrame. Shelters matching specified input parameters.
-If the parameter <code class="code docutils literal"><span class="pre">outputformat</span></code> is ‘json’, the result is formatted as a JSON
+If the parameter <code class="code docutils literal notranslate"><span class="pre">outputformat</span></code> is ‘json’, the result is formatted as a JSON
 object. Otherwise, the return object is a text representation of an XML object. If
-the <code class="code docutils literal"><span class="pre">pages</span></code> parameter is set, the paged results are returned as a list. If <code class="code docutils literal"><span class="pre">return_df</span></code>
-is <code class="code docutils literal"><span class="pre">True</span></code>, <code class="code docutils literal"><span class="pre">outputformat</span></code> is overridden and the results are converted to a pandas
+the <code class="code docutils literal notranslate"><span class="pre">pages</span></code> parameter is set, the paged results are returned as a list. If <code class="code docutils literal notranslate"><span class="pre">return_df</span></code>
+is <code class="code docutils literal notranslate"><span class="pre">True</span></code>, <code class="code docutils literal notranslate"><span class="pre">outputformat</span></code> is overridden and the results are converted to a pandas
 DataFrame. Please note there may be some loss of data when the conversion is made; however,
 this loss is primarily confined to the call encoding and timestamp information and metadata
 of the associated media (photos) with a record.</p>
@@ -385,9 +385,9 @@ of the associated media (photos) with a record.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json, str or pandas DataFrame. If the parameter <code class="code docutils literal"><span class="pre">outputformat</span></code> is ‘json’,
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json, str or pandas DataFrame. If the parameter <code class="code docutils literal notranslate"><span class="pre">outputformat</span></code> is ‘json’,
 the result is formatted as a JSON object. Otherwise, the return object is a text
-representation of an XML object. If <code class="code docutils literal"><span class="pre">return_df</span></code> is <code class="code docutils literal"><span class="pre">True</span></code>, <code class="code docutils literal"><span class="pre">outputformat</span></code>
+representation of an XML object. If <code class="code docutils literal notranslate"><span class="pre">return_df</span></code> is <code class="code docutils literal notranslate"><span class="pre">True</span></code>, <code class="code docutils literal notranslate"><span class="pre">outputformat</span></code>
 is overridden and the results are converted to a pandas DataFrame. Please note there may
 be some loss of data when the conversion is made; however, this loss is primarily confined
 to the call encoding and timestamp information and metadata of the associated media (photos)
@@ -401,7 +401,7 @@ with a record.</p>
 <dl class="method">
 <dt id="petpy.api.Petfinder.shelters_get">
 <code class="descclassname">Petfinder.</code><code class="descname">shelters_get</code><span class="sig-paren">(</span><span class="optional">[</span><em>shelterId</em><span class="optional">]</span><span class="optional">[</span>, <em>outputformat='json'</em><span class="optional">]</span><span class="optional">[</span>, <em>return_df=False</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder.shelters_get" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns multiple shelter records given a list or tuple of shelter IDs. Convenience wrapper function of <code class="code docutils literal"><span class="pre">shelter_get()</span></code>.</p>
+<dd><p>Returns multiple shelter records given a list or tuple of shelter IDs. Convenience wrapper function of <code class="code docutils literal notranslate"><span class="pre">shelter_get()</span></code>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -414,9 +414,9 @@ with a record.</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list or pandas DataFrame. Shelter record of input shelter ID. If the parameter
-<code class="code docutils literal"><span class="pre">outputformat</span></code> is ‘json’, the result is formatted as a JSON object. Otherwise,
-the return object is a text representation of an XML object. If <code class="code docutils literal"><span class="pre">return_df</span></code> is
-<code class="code docutils literal"><span class="pre">True</span></code>, <code class="code docutils literal"><span class="pre">outputformat</span></code> is overridden and the results are converted to a
+<code class="code docutils literal notranslate"><span class="pre">outputformat</span></code> is ‘json’, the result is formatted as a JSON object. Otherwise,
+the return object is a text representation of an XML object. If <code class="code docutils literal notranslate"><span class="pre">return_df</span></code> is
+<code class="code docutils literal notranslate"><span class="pre">True</span></code>, <code class="code docutils literal notranslate"><span class="pre">outputformat</span></code> is overridden and the results are converted to a
 pandas DataFrame. Please note there may be some loss of data when the conversion is made;
 however, this loss is primarily confined to the call encoding and timestamp information
 and metadata of the associated media (photos) with a record.</p>
@@ -438,9 +438,9 @@ in the Petfinder API.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>shelterId</strong> – Filter results to a specific shelter.</li>
 <li><strong>status</strong> – Filters search by pet’s status. Must be one of ‘A’ (adoptable, default), ‘H’ (hold), ‘P’ (pending), ‘X’ (adopted/removed).</li>
-<li><strong>offset</strong> – Can be set to the value of <code class="code docutils literal"><span class="pre">lastOffset</span></code> returned from the previous call to retrieve the next set of results. The <code class="code docutils literal"><span class="pre">pages</span></code> parameter can also be used to pull a desired number of paged results.</li>
+<li><strong>offset</strong> – Can be set to the value of <code class="code docutils literal notranslate"><span class="pre">lastOffset</span></code> returned from the previous call to retrieve the next set of results. The <code class="code docutils literal notranslate"><span class="pre">pages</span></code> parameter can also be used to pull a desired number of paged results.</li>
 <li><strong>count</strong> – The number of records to return. Default is 25.</li>
-<li><strong>pages</strong> – The number of pages of results to return. For example, if <code class="code docutils literal"><span class="pre">pages=4</span></code> with the default <code class="code docutils literal"><span class="pre">count</span></code> parameter (25), 100 results would be returned. The paged results are returned as a list.</li>
+<li><strong>pages</strong> – The number of pages of results to return. For example, if <code class="code docutils literal notranslate"><span class="pre">pages=4</span></code> with the default <code class="code docutils literal notranslate"><span class="pre">count</span></code> parameter (25), 100 results would be returned. The paged results are returned as a list.</li>
 <li><strong>output</strong> – Sets the amount of information returned in each record. ‘basic’ returns a simple record while ‘full’ returns a complete record with description. Defaults to ‘basic’.</li>
 <li><strong>outputformat</strong> – Output type of results. Must be one of ‘json’ (default) or ‘xml’.</li>
 <li><strong>return_df</strong> – If True, coerces results returned from the Petfinder API into a pandas DataFrame.</li>
@@ -449,9 +449,9 @@ in the Petfinder API.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json, list of json, str, list of str or pandas DataFrame.
 Pet records of given shelter matching optional input parameters. If the parameter
-<code class="code docutils literal"><span class="pre">outputformat</span></code> is ‘json’, the result is formatted as a JSON object. Otherwise, the return
-object is a text representation of an XML object. If the <code class="code docutils literal"><span class="pre">pages</span></code> parameter is set, the
-paged results are returned as a list. If <code class="code docutils literal"><span class="pre">return_df</span></code> is <code class="code docutils literal"><span class="pre">True</span></code>, <code class="code docutils literal"><span class="pre">outputformat</span></code>
+<code class="code docutils literal notranslate"><span class="pre">outputformat</span></code> is ‘json’, the result is formatted as a JSON object. Otherwise, the return
+object is a text representation of an XML object. If the <code class="code docutils literal notranslate"><span class="pre">pages</span></code> parameter is set, the
+paged results are returned as a list. If <code class="code docutils literal notranslate"><span class="pre">return_df</span></code> is <code class="code docutils literal notranslate"><span class="pre">True</span></code>, <code class="code docutils literal notranslate"><span class="pre">outputformat</span></code>
 is overridden and the results are converted to a pandas DataFrame. Please note there may
 be some loss of data when the conversion is made; however, this loss is primarily confined
 to the call encoding and timestamp information and metadata of the associated media (photos)
@@ -474,19 +474,19 @@ with a record.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>animal</strong> – Return breeds of animal. Must be one of ‘barnyard’, ‘bird’, ‘cat’, ‘dog’, ‘horse’, ‘reptile’, or ‘smallfurry’.</li>
 <li><strong>breed</strong> – Specifies the breed of the animal to search.</li>
-<li><strong>offset</strong> – Can be set to the value of <code class="code docutils literal"><span class="pre">lastOffset</span></code> returned from the previous call to retrieve the next set of results. The <code class="code docutils literal"><span class="pre">pages</span></code> parameter can also be used to pull a desired number of paged results.</li>
+<li><strong>offset</strong> – Can be set to the value of <code class="code docutils literal notranslate"><span class="pre">lastOffset</span></code> returned from the previous call to retrieve the next set of results. The <code class="code docutils literal notranslate"><span class="pre">pages</span></code> parameter can also be used to pull a desired number of paged results.</li>
 <li><strong>count</strong> – The number of records to return. Default is 25.</li>
-<li><strong>pages</strong> – The number of pages of results to return. For example, if <code class="code docutils literal"><span class="pre">pages=4</span></code> with the default <code class="code docutils literal"><span class="pre">count</span></code> parameter (25), 100 results would be returned. The paged results are returned as a list.</li>
+<li><strong>pages</strong> – The number of pages of results to return. For example, if <code class="code docutils literal notranslate"><span class="pre">pages=4</span></code> with the default <code class="code docutils literal notranslate"><span class="pre">count</span></code> parameter (25), 100 results would be returned. The paged results are returned as a list.</li>
 <li><strong>outputformat</strong> – Output type of results. Must be one of ‘json’ (default) or ‘xml’.</li>
 <li><strong>return_df</strong> – If True, coerces results returned from the Petfinder API into a pandas DataFrame.</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">json, list of json, str or list of str. Shelter IDs listing animals matching the input
-animal breed. If the parameter <code class="code docutils literal"><span class="pre">outputformat</span></code> is ‘json’, the result is formatted
+animal breed. If the parameter <code class="code docutils literal notranslate"><span class="pre">outputformat</span></code> is ‘json’, the result is formatted
 as a JSON object. Otherwise, the return object is a text representation of an XML object.
-If the <code class="code docutils literal"><span class="pre">pages</span></code> parameter is set, the paged results are returned as a list. If <code class="code docutils literal"><span class="pre">return_df</span></code>
-is <code class="code docutils literal"><span class="pre">True</span></code>, <code class="code docutils literal"><span class="pre">outputformat</span></code> is overridden and the results are converted to a pandas
+If the <code class="code docutils literal notranslate"><span class="pre">pages</span></code> parameter is set, the paged results are returned as a list. If <code class="code docutils literal notranslate"><span class="pre">return_df</span></code>
+is <code class="code docutils literal notranslate"><span class="pre">True</span></code>, <code class="code docutils literal notranslate"><span class="pre">outputformat</span></code> is overridden and the results are converted to a pandas
 DataFrame. Please note there may be some loss of data when the conversion is made; however,
 this loss is primarily confined to the call encoding and timestamp information and metadata
 of the associated media (photos) with a record.</p>

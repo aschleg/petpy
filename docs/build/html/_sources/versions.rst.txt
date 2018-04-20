@@ -12,6 +12,9 @@ Version 1.7.2
   return a :code:`JSONDecodeError`.
 - The Python 2 to 3 compatibility package :code:`six`, has been added as a requirement for package installation.
   The :code:`six` library is lightweight and ensures the :code:`petpy` package works properly for Python 2 and 3.
+- Numpy is no longer required for installing the package. Numpy's :code:`nan` was originally used to denoted shelters
+  animals that were not found in the Petfinder database. The value returned when a shelter or animal is not found
+  is now 'na'.
 
 Version 1.7.1
 -------------
