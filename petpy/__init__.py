@@ -5,7 +5,6 @@ Petpy Petfinder API library
 from xml.etree import ElementTree as ET
 
 import requests
-from numpy import nan
 from pandas import DataFrame, concat
 from pandas.io.json import json_normalize
 from six.moves.urllib.parse import urljoin
@@ -643,17 +642,17 @@ def _pet_find_get_coerce(x):
     try:
         breed = DataFrame(json_normalize(x['breeds']['breed'])['$t'].to_dict(), index=[0])
     except (KeyError, TypeError):
-        breed = DataFrame([nan], columns=[0])
+        breed = DataFrame(['na'], columns=[0])
 
     try:
         media = DataFrame(json_normalize(x['media']['photos']['photo'])['$t'].to_dict(), index=[0])
     except (KeyError, TypeError):
-        media = DataFrame([nan], columns=[0])
+        media = DataFrame(['na'], columns=[0])
 
     try:
         options = DataFrame(json_normalize(x['options']['option'])['$t'].to_dict(), index=[0])
     except (KeyError, TypeError):
-        options = DataFrame([nan], columns=[0])
+        options = DataFrame(['na'], columns=[0])
 
     breed_df = breed_df.append(breed)
     opt_df = opt_df.append(options)
