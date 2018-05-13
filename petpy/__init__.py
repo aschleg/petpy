@@ -7,7 +7,6 @@ from pandas.io.json import json_normalize
 from six.moves.urllib.parse import urljoin
 from six import string_types
 
-from petpy import _parameters, _query, _return_multiple_get_calls
 from petpy._lib import _parameters, _query, _return_multiple_get_calls
 
 
