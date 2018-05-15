@@ -6,7 +6,7 @@ import pandas as pd
 from pandas import DataFrame
 from six import string_types
 
-from petpy import Petfinder
+from petpy.api import Petfinder
 
 tape = vcr.VCR(
     cassette_library_dir='tests/cassettes',

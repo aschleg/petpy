@@ -1,6 +1,7 @@
 $ cat .gitignore
 
 dist/
+data/
 Untitled.ipynb
 *.ipynb_checkpoints
 *.pyc

@@ -1,3 +1,5 @@
+# encoding=utf-8
+
 from xml.etree import ElementTree as ET
 
 import requests
@@ -5,14 +7,14 @@ from pandas import DataFrame, concat
 from pandas.io.json import json_normalize
 
 
-def _coerce_to_dataframe(x, method):
+def coerce_to_dataframe(x, method):
 
     if 'pet' in method or 'Pet' in method:
 
         res = media_df = opt_df = breed_df = DataFrame()
 
         if method == 'pet.get' or method == 'pet.getRandom':
-            res, breed_df, opt_df, media_df = _pet_find_get_coerce(x['petfinder']['pet'])
+            res, breed_df, opt_df, media_df = pet_find_get_coerce(x['petfinder']['pet'])
 
         elif method == 'pet.find' or method == 'shelter.getPets':
             res = media_df = opt_df = breed_df = DataFrame()
@@ -28,7 +30,7 @@ def _coerce_to_dataframe(x, method):
                 if isinstance(x['petfinder']['pets']['pet'], list):
 
                     for i in x['petfinder']['pets']['pet']:
-                        pet, breed, opt, media = _pet_find_get_coerce(i)
+                        pet, breed, opt, media = pet_find_get_coerce(i)
 
                         res = res.append(pet)
                         breed_df = breed_df.append(breed)
@@ -36,7 +38,7 @@ def _coerce_to_dataframe(x, method):
                         media_df = media_df.append(media)
 
                 else:
-                    res, breed_df, opt_df, media_df = _pet_find_get_coerce(x['petfinder']['pets']['pet'])
+                    res, breed_df, opt_df, media_df = pet_find_get_coerce(x['petfinder']['pets']['pet'])
 
         breed_df.columns = ['breed' + str(col) for col in breed_df.columns]
         opt_df.columns = ['status' + str(col) for col in opt_df.columns]
@@ -58,7 +60,7 @@ def _coerce_to_dataframe(x, method):
             try:
                 df = json_normalize(x['petfinder']['shelters']['shelter'])
             except (KeyError, ValueError):
-                df = _empty_shelter_df()
+                df = empty_shelter_df()
 
         elif method == 'shelter.get':
             try:
@@ -78,7 +80,7 @@ def _coerce_to_dataframe(x, method):
     return df
 
 
-def _pet_find_get_coerce(x):
+def pet_find_get_coerce(x):
     res = media_df = opt_df = breed_df = DataFrame()
 
     try:
@@ -104,8 +106,8 @@ def _pet_find_get_coerce(x):
     return res, breed_df, opt_df, media_df
 
 
-def _parameters(key, animal=None, breed=None, size=None, sex=None, location=None, name=None, age=None, pet_id=None,
-                shelter_id=None, status=None, output=None, outputformat='json', offset=None, count=None, id=None):
+def parameters(key, animal=None, breed=None, size=None, sex=None, location=None, name=None, age=None, pet_id=None,
+               shelter_id=None, status=None, output=None, outputformat='json', offset=None, count=None, id=None):
 
     args = {
         'key': key,
@@ -131,7 +133,7 @@ def _parameters(key, animal=None, breed=None, size=None, sex=None, location=None
     return args
 
 
-def _query(url, args, pages=None, return_df=False, method=None, count=None):
+def query(url, args, pages=None, return_df=False, method=None, count=None):
 
     if return_df:
         args.update(format='json')
@@ -156,14 +158,14 @@ def _query(url, args, pages=None, return_df=False, method=None, count=None):
         if return_df is False:
             return r
         else:
-            r = _coerce_to_dataframe(r, method)
+            r = coerce_to_dataframe(r, method)
 
             return r
 
     else:
 
         if return_df:
-            result = [_coerce_to_dataframe(r, method)]
+            result = [coerce_to_dataframe(r, method)]
         else:
             result = [r]
 
@@ -186,7 +188,7 @@ def _query(url, args, pages=None, return_df=False, method=None, count=None):
 
             if outputformat is 'json':
                 if return_df:
-                    result.append(_coerce_to_dataframe(r.json(), method))
+                    result.append(coerce_to_dataframe(r.json(), method))
                 else:
                     result.append(r.json())
 
@@ -219,12 +221,12 @@ def _query(url, args, pages=None, return_df=False, method=None, count=None):
         return result
 
 
-def _return_multiple_get_calls(call_id, url, args, return_df, method):
+def return_multiple_get_calls(call_id, url, args, return_df, method):
     responses = []
 
     for i in call_id:
         args.update(id=i)
-        responses.append(_query(url, args, return_df=return_df, method=method))
+        responses.append(query(url, args, return_df=return_df, method=method))
 
     if return_df:
         return concat(responses, axis=0)
@@ -232,6 +234,6 @@ def _return_multiple_get_calls(call_id, url, args, return_df, method):
     return responses
 
 
-def _empty_shelter_df():
+def empty_shelter_df():
     return DataFrame(columns=['address1', 'address2', 'city', 'country', 'email', 'id', 'latitude',
                                  'longitude', 'name', 'phone', 'state', 'zip'])
