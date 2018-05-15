@@ -4,7 +4,7 @@ from urllib.parse import urljoin
 
 from pandas import concat
 from pandas.io.json import json_normalize
-from six.__init__ import string_types
+from six import string_types
 
 from petpy.lib import parameters, query, return_multiple_get_calls
 
