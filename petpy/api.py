@@ -1,10 +1,10 @@
 # encoding=utf-8
 
-from urllib.parse import urljoin
 
 from pandas import concat
 from pandas.io.json import json_normalize
 from six import string_types
+from six.moves.urllib.parse import urljoin
 
 from petpy.lib import parameters, query, return_multiple_get_calls
 
