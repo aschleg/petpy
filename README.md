@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/aschleg/petpy.svg?branch=master)](https://travis-ci.org/aschleg/petpy)
 [![Build status](https://ci.appveyor.com/api/projects/status/xjxufxt7obd84ygr?svg=true)](https://ci.appveyor.com/project/aschleg/petpy)
 [![Coverage Status](https://coveralls.io/repos/github/aschleg/petpy/badge.svg?branch=master)](https://coveralls.io/github/aschleg/petpy?branch=master)
-![https://pypi.org/project/petpy/](https://img.shields.io/badge/pypi%20version-1.7.2-blue.svg)
+![https://pypi.org/project/petpy/](https://img.shields.io/badge/pypi%20version-1.8.0-blue.svg)
 ![https://pypi.org/project/petpy/](https://img.shields.io/badge/python-2.7%2C%203.3%2C%203.4%2C%203.5%2C%203.6-blue.svg)
 
 :cat2: :dog2: :rooster: :rabbit2: :racehorse:
@@ -110,12 +110,7 @@ more efficient data analysis.
 | shelter_get_pets()      | shelter.getPets      | Returns a collection of pet records for an individual shelter.                                     |
 | shelter_list_by_breed() | shelter.listByBreed  | Returns a list of shelter IDs listing animals matching the input animal breed.                     |
 
-## Documentation
-
-* [Petpy documentation](http://petpy.readthedocs.io/en/latest/)
-* [Petfinder API documentation](https://www.petfinder.com/developers/api-docs)
-
-## Vignettes and Introduction to petpy
+## Introduction and Example Uses of `petpy`
 
 [![Binder](https://mybinder.org/badge.svg)](https://hub.mybinder.org/user/aschleg-petpy-klvuc0pp/tree/docs/notebooks)
 
@@ -125,6 +120,11 @@ A series of IPython notebooks that introduce and explore some of the functionali
 
 * [01 -Introduction to petpy](https://github.com/aschleg/petpy/blob/master/notebooks/01-Introduction%20to%20petpy.ipynb)
 * [02 - Download 45,000 Adoptable Cat Images using petpy and multiprocessing](https://github.com/aschleg/petpy/blob/master/notebooks/02-Download%2045%2C000%20Adoptable%20Cat%20Images%20with%20petpy%20and%20multiprocessing.ipynb)
+
+## Documentation
+
+* [Petpy documentation](http://petpy.readthedocs.io/en/latest/)
+* [Petfinder API documentation](https://www.petfinder.com/developers/api-docs)
 
 ## Requirements
 

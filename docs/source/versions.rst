@@ -5,6 +5,13 @@ Version History
 
 Changelog and version changes made with each release.
 
+Version 1.8.0
+-------------
+
+- General refactoring of the :code:`petpy` library to remove unneeded methods from being exposed when importing the
+  library. The best way to import and begin using :code:`petpy` is :code:`from petpy import Petfinder` or, less
+  optimally, :code:`import petpy`, then calling the :code:`Petfinder` class by :code:`petpy.Petfinder`.
+
 Version 1.7.2
 -------------
 
@@ -24,7 +31,7 @@ Version 1.7.1
 - Fix to getting pets available at a shelter with :code:`shelter_get_pets()` when the parameter
   :code:`return_df = True` when the given shelter does not return any available animals.
 
-Verison 1.7.0
+Version 1.7.0
 -------------
 
 - Refactoring of library to clean up code files.
