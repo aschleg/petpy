@@ -124,6 +124,7 @@ A series of IPython notebooks that introduce and explore some of the functionali
 ## Documentation
 
 * [Petpy documentation](http://petpy.readthedocs.io/en/latest/)
+* [Petpy changelog](https://github.com/aschleg/petpy/blob/master/CHANGELOG.md)
 * [Petfinder API documentation](https://www.petfinder.com/developers/api-docs)
 
 ## Requirements

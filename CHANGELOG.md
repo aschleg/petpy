@@ -37,22 +37,18 @@
 - The Github repo README has been updated with the new API methods.
 - Below is a table detailing the changed method names:
 
-=====================   =======================
-Previous Method Name    New Method Name
-=====================   =======================
-pet_getRandom()         pet_get_random()
-shelter_getPets()       shelter_get_pets()
-shelter_listByBreed()   shelter_list_by_breed()
-=====================   =======================
+| Previous Method Name | New Method Name |
+| -------------------------- | ---------------------- |
+| pet_getRandom()           | pet_get_random()     |
+| shelter_getPets()            | shelter_get_pets()      |
+| shelter_listByBreed()      | shelter_list_by_breed() |
 
 - The following lists the method parameter names that have changed with the release:
 
-=======================  ==================
-Previous Parameter Name  New Parameter Name
-=======================  ==================
-petId                    pet_id
-shelterId                shelter_id
-=======================  ==================
+| Previous Parameter Name | New Parameter Name |
+| ---------------------------- | ------------------------- |
+| petId                                 | pet_id                            |
+| shelterId                           | shelter_id                       |
 
 ## Version 1.6.0
 

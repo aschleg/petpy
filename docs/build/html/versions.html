@@ -180,12 +180,12 @@ optimally, <code class="code docutils literal notranslate"><span class="pre">imp
 <div class="section" id="version-1-7-2">
 <h2>Version 1.7.2<a class="headerlink" href="#version-1-7-2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>There is now a proper message when the daily API call limit is exceeded. Prior to the change, methods would
-return a <code class="code docutils literal notranslate"><span class="pre">JSONDecodeError</span></code>.</li>
+<li>There is now a proper message when the daily API call limit is exceeded. Before the change, methods would return a
+<code class="code docutils literal notranslate"><span class="pre">JSONDecodeError</span></code>.</li>
 <li>The Python 2 to 3 compatibility package <code class="code docutils literal notranslate"><span class="pre">six</span></code>, has been added as a requirement for package installation.
 The <code class="code docutils literal notranslate"><span class="pre">six</span></code> library is lightweight and ensures the <code class="code docutils literal notranslate"><span class="pre">petpy</span></code> package works properly for Python 2 and 3.</li>
-<li>Numpy is no longer required for installing the package. Numpy’s <code class="code docutils literal notranslate"><span class="pre">nan</span></code> was originally used to denoted shelters
-animals that were not found in the Petfinder database. The value returned when a shelter or animal is not found
+<li>Numpy is no longer required for installing the package. Numpy’s <code class="code docutils literal notranslate"><span class="pre">nan</span></code> was initially used to denoted shelters
+and animals that were not found in the Petfinder database. The value returned when a shelter or animal is not found
 is now ‘na’.</li>
 </ul>
 </div>
@@ -201,16 +201,16 @@ the parameter <code class="code docutils literal notranslate"><span class="pre">
 <div class="section" id="version-1-7-0">
 <h2>Version 1.7.0<a class="headerlink" href="#version-1-7-0" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Refactoring of library to clean up code files.</li>
+<li>Refactoring of the library to clean up code files.</li>
 <li>Fixed a bug with the <code class="code docutils literal notranslate"><span class="pre">shelter_get_pets()</span></code> method that caused an error to be thrown when there is only
 one pet record and the parameter <code class="code docutils literal notranslate"><span class="pre">return_df</span> <span class="pre">=</span> <span class="pre">True</span></code>.</li>
 <li>Many changes to simplify expressions and internal code within methods.</li>
-<li>The Petfinder class method names and parameters have been renamed to be PEP8 compatible. I apologize as this
-will cause backward compatibility issues upon updating for anyone using previous versions. The original
-intention of the naming was to reflect the Petfinder API’s method names as closely as possible, but after
-further consideration and given the relative short life of the library, I think the change is necessary for the
-future growth and maturity of the package.</li>
-<li>How the methods interact with the Petfinder API is unchanged, thus there is no immediate need to update your
+<li>The Petfinder class method names and parameters have been renamed to be PEP8 compatible. I apologize as this will
+cause backward compatibility issues upon updating for anyone using previous versions. The original intention of the
+naming was to reflect the Petfinder API’s method names as closely as possible, but after further consideration and
+given the relatively short life of the library, I think the change is necessary for the future growth and maturity
+of the package.</li>
+<li>How the methods interact with the Petfinder API is unchanged. Thus there is no immediate need to update your
 version of petpy if it will break any current code.</li>
 <li>The Github repo README has been updated with the new API methods.</li>
 <li>Below is a table detailing the changed method names:</li>
@@ -272,8 +272,8 @@ building or use of the package itself.</li>
 <h2>Version 1.5.995<a class="headerlink" href="#version-1-5-995" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Calls that return JSON results when using the <code class="code docutils literal notranslate"><span class="pre">pet_find()</span></code> method when <code class="code docutils literal notranslate"><span class="pre">return_df=True</span></code> are now
-properly handled and an empty pandas DataFrame is returned. This result can happen when searching for a
-particular breed of animal that is currently not available in the Petfinder database.</li>
+adequately handled and an empty pandas DataFrame is returned. This result can happen when searching for a particular
+breed of animal that is currently not available in the Petfinder database.</li>
 </ul>
 </div>
 <div class="section" id="version-1-5-92">
@@ -287,8 +287,8 @@ their information available in the Petfinder API.</li>
 <div class="section" id="version-1-5-91">
 <h2>Version 1.5.91<a class="headerlink" href="#version-1-5-91" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Paged results will now reach Petfinder’s 2,000 record per search limit. Before, if the next paged result would
-equal or exceed 2,000 results the call would end and the results would be returned. For example, if the parameters
+<li>Paged results will now reach Petfinder’s 2,000 records per search limit. Before, if the next paged result would
+equal or exceed 2,000 results the call would end, and the results would be returned. For example, if the parameters
 <code class="code docutils literal notranslate"><span class="pre">pages</span></code> is 10 and <code class="code docutils literal notranslate"><span class="pre">count</span></code> is 200, 2,000 records will now be returned, whereas previously 1,800 would
 be returned.</li>
 </ul>
@@ -297,14 +297,14 @@ be returned.</li>
 <h2>Version 1.5.9<a class="headerlink" href="#version-1-5-9" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Paging results that exceed Petfinder’s limit of 2,000 records returned per search with <code class="code docutils literal notranslate"><span class="pre">return_df</span> <span class="pre">=</span> <span class="pre">True</span></code>
-will now properly exit the loop and return the results as a DataFrame.</li>
+will now correctly exit the loop and return the results as a DataFrame.</li>
 </ul>
 </div>
 <div class="section" id="version-1-5-7">
 <h2>Version 1.5.7<a class="headerlink" href="#version-1-5-7" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>The fix to returning a DataFrame when paging results is now implemented in this release. Apologies for the
-oversight, the code change was not made prior to releasing the previous version.</li>
+oversight, the code change was not made before releasing the previous version.</li>
 <li>The contact information returned with a DataFrame when <code class="code docutils literal notranslate"><span class="pre">return_df</span> <span class="pre">=</span> <span class="pre">True</span></code> now has the prefix ‘contact.’
 removed to make the results cleaner.</li>
 </ul>
@@ -315,7 +315,7 @@ removed to make the results cleaner.</li>
 <li>Paging results now returns the stated number of pages in the <code class="code docutils literal notranslate"><span class="pre">pages</span></code> parameter. Before, <code class="code docutils literal notranslate"><span class="pre">pages</span> <span class="pre">+</span> <span class="pre">1</span></code>
 results were returned.</li>
 <li>Returning pandas DataFrames with methods <code class="code docutils literal notranslate"><span class="pre">pet_find()</span></code> and <code class="code docutils literal notranslate"><span class="pre">shelter_find()</span></code> should no longer throw
-<code class="code docutils literal notranslate"><span class="pre">ValueError</span></code> (duplicate column name was causing error in concatenating list of results into a DataFrame).</li>
+<code class="code docutils literal notranslate"><span class="pre">ValueError</span></code> (duplicate column name was causing an error in concatenating the list of results into a DataFrame).</li>
 </ul>
 </div>
 <div class="section" id="version-1-5-5">
@@ -337,7 +337,7 @@ same method call. Please note each record returned counts as one call made to th
 <li>Added API convenience methods <code class="code docutils literal notranslate"><span class="pre">pets_get()</span></code> and <code class="code docutils literal notranslate"><span class="pre">shelters_get()</span></code> for pulling multiple results given a
 list or tuple of IDs. These methods are essentially wrappers of the API methods <code class="code docutils literal notranslate"><span class="pre">pet_get()</span></code> and
 <code class="code docutils literal notranslate"><span class="pre">shelter_get()</span></code>.</li>
-<li>More code cleanup, formatting and simplification.</li>
+<li>More code cleanup, formatting, and simplification.</li>
 </ul>
 </div>
 <div class="section" id="version-1-5-0">

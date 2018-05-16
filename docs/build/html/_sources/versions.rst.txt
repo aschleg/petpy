@@ -15,12 +15,12 @@ Version 1.8.0
 Version 1.7.2
 -------------
 
-- There is now a proper message when the daily API call limit is exceeded. Prior to the change, methods would
-  return a :code:`JSONDecodeError`.
+- There is now a proper message when the daily API call limit is exceeded. Before the change, methods would return a
+  :code:`JSONDecodeError`.
 - The Python 2 to 3 compatibility package :code:`six`, has been added as a requirement for package installation.
   The :code:`six` library is lightweight and ensures the :code:`petpy` package works properly for Python 2 and 3.
-- Numpy is no longer required for installing the package. Numpy's :code:`nan` was originally used to denoted shelters
-  animals that were not found in the Petfinder database. The value returned when a shelter or animal is not found
+- Numpy is no longer required for installing the package. Numpy's :code:`nan` was initially used to denoted shelters
+  and animals that were not found in the Petfinder database. The value returned when a shelter or animal is not found
   is now 'na'.
 
 Version 1.7.1
@@ -34,16 +34,16 @@ Version 1.7.1
 Version 1.7.0
 -------------
 
-- Refactoring of library to clean up code files.
+- Refactoring of the library to clean up code files.
 - Fixed a bug with the :code:`shelter_get_pets()` method that caused an error to be thrown when there is only
   one pet record and the parameter :code:`return_df = True`.
 - Many changes to simplify expressions and internal code within methods.
-- The Petfinder class method names and parameters have been renamed to be PEP8 compatible. I apologize as this
-  will cause backward compatibility issues upon updating for anyone using previous versions. The original
-  intention of the naming was to reflect the Petfinder API's method names as closely as possible, but after
-  further consideration and given the relative short life of the library, I think the change is necessary for the
-  future growth and maturity of the package.
-- How the methods interact with the Petfinder API is unchanged, thus there is no immediate need to update your
+- The Petfinder class method names and parameters have been renamed to be PEP8 compatible. I apologize as this will
+  cause backward compatibility issues upon updating for anyone using previous versions. The original intention of the
+  naming was to reflect the Petfinder API's method names as closely as possible, but after further consideration and
+  given the relatively short life of the library, I think the change is necessary for the future growth and maturity
+  of the package.
+- How the methods interact with the Petfinder API is unchanged. Thus there is no immediate need to update your
   version of petpy if it will break any current code.
 - The Github repo README has been updated with the new API methods.
 - Below is a table detailing the changed method names:
@@ -76,8 +76,8 @@ Version 1.5.995
 ---------------
 
 - Calls that return JSON results when using the :code:`pet_find()` method when :code:`return_df=True` are now
-  properly handled and an empty pandas DataFrame is returned. This result can happen when searching for a
-  particular breed of animal that is currently not available in the Petfinder database.
+  adequately handled and an empty pandas DataFrame is returned. This result can happen when searching for a particular
+  breed of animal that is currently not available in the Petfinder database.
 
 Version 1.5.92
 --------------
@@ -89,8 +89,8 @@ Version 1.5.92
 Version 1.5.91
 --------------
 
-- Paged results will now reach Petfinder's 2,000 record per search limit. Before, if the next paged result would
-  equal or exceed 2,000 results the call would end and the results would be returned. For example, if the parameters
+- Paged results will now reach Petfinder's 2,000 records per search limit. Before, if the next paged result would
+  equal or exceed 2,000 results the call would end, and the results would be returned. For example, if the parameters
   :code:`pages` is 10 and :code:`count` is 200, 2,000 records will now be returned, whereas previously 1,800 would
   be returned.
 
@@ -98,13 +98,13 @@ Version 1.5.9
 -------------
 
 - Paging results that exceed Petfinder's limit of 2,000 records returned per search with :code:`return_df = True`
-  will now properly exit the loop and return the results as a DataFrame.
+  will now correctly exit the loop and return the results as a DataFrame.
 
 Version 1.5.7
 -------------
 
 - The fix to returning a DataFrame when paging results is now implemented in this release. Apologies for the
-  oversight, the code change was not made prior to releasing the previous version.
+  oversight, the code change was not made before releasing the previous version.
 - The contact information returned with a DataFrame when :code:`return_df = True` now has the prefix 'contact.'
   removed to make the results cleaner.
 
@@ -114,7 +114,7 @@ Version 1.5.6
 - Paging results now returns the stated number of pages in the :code:`pages` parameter. Before, :code:`pages + 1`
   results were returned.
 - Returning pandas DataFrames with methods :code:`pet_find()` and :code:`shelter_find()` should no longer throw
-  :code:`ValueError` (duplicate column name was causing error in concatenating list of results into a DataFrame).
+  :code:`ValueError` (duplicate column name was causing an error in concatenating the list of results into a DataFrame).
 
 Version 1.5.5
 -------------
@@ -134,7 +134,7 @@ Version 1.5.4
 - Added API convenience methods :code:`pets_get()` and :code:`shelters_get()` for pulling multiple results given a
   list or tuple of IDs. These methods are essentially wrappers of the API methods :code:`pet_get()` and
   :code:`shelter_get()`.
-- More code cleanup, formatting and simplification.
+- More code cleanup, formatting, and simplification.
 
 Version 1.5.0
 -------------
