@@ -5,7 +5,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/xjxufxt7obd84ygr?svg=true)](https://ci.appveyor.com/project/aschleg/petpy)
 [![Coverage Status](https://coveralls.io/repos/github/aschleg/petpy/badge.svg?branch=master)](https://coveralls.io/github/aschleg/petpy?branch=master)
 ![https://pypi.org/project/petpy/](https://img.shields.io/badge/pypi%20version-1.8.0-blue.svg)
-![https://pypi.org/project/petpy/](https://img.shields.io/badge/python-2.7%2C%203.3%2C%203.4%2C%203.5%2C%203.6-blue.svg)
+![https://pypi.org/project/petpy/](https://img.shields.io/badge/python-2.7%2C%203.4%2C%203.5%2C%203.6-blue.svg)
 
 :cat2: :dog2: :rooster: :rabbit2: :racehorse:
 
@@ -129,7 +129,7 @@ A series of IPython notebooks that introduce and explore some of the functionali
 
 ## Requirements
 
-* Python 2.7 or Python >= 3.3
+* Python 2.7 or Python >= 3.4
 * [requests](http://docs.python-requests.org/en/master/) >= 2.18.4
 * Although not strictly required for installation or use, the [pandas](https://pandas.pydata.org/) library is needed 
 for returning the results as a DataFrame.
