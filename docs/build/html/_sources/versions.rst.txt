@@ -5,6 +5,12 @@ Version History
 
 Changelog and version changes made with each release.
 
+Version 1.8.1
+-------------
+
+- Remove Python 3.3 support. Although :code:`petpy` should work fine for those still using Python 3.3, testing for 3.3
+  has been discontinued.
+
 Version 1.8.0
 -------------
 
