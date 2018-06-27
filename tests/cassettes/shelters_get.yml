@@ -11,24 +11,27 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA9WVXWvbMBSG/4oQu9ig/pA/Y18lFHrTrivNxsbGLjRbsUVtyUhyPhb633fkeEm3
-        BFbaUthNEo5eveecJz4+WzxlopAlFxXOMdfSmUzizCH4DE+XTGkuBcSJ60OgY2bBRckUzrd4um4b
-        ofO15nBeG9PlnrdardxV6EpVeYHvE+/L+6t5UbOWOlxoQ0XBwKWh2nxYLDQz1uYNfOIY359hXbPG
-        QEYbHX/j/NsWF7IXRm324k9zq26kqLjpS7aPOyQI3CCZBPZY0PZwctNXzKA5+JTolumiZ1bS1VJY
-        jU1tqDnIP8/sMS1LxbQOdgrogTd7RWcNtfVTg920lsYK3EK29m7BzaHeWf+jV8KGf/JuH80mfjZU
-        uqDrXYqGmj8bilI3JBmxIl4+qI5E2YMCib19f/YSnC5kVW3QuWLsDp3T5eZlYC2sa2FNC/AcgW1o
-        LeXr4Ari6Pm40jQ+wnXLKpgO2qCZ4C18zZla8oJpJBfoEuYJndsUG+SgC6nhaQamiqEbJStF24dQ
-        d3aBnzhBljhpOEnxEzjTUnaGwoxO7yD50N7GreTyiPAlE+YE3/ARfNMoPcE3+Ivv2A9JSIySyNRo
-        tmQI8L4q9mPAb4HwO/Q/Ik7CRxF2n4A4jLMTL0xaSD1OP7pmZiXV3XNfmdbyn8N/y8pWivIEuvgR
-        6EJyPP2Jfzz93yFQMzouMsNbBt20h3SBTyaOncbkI4nyOM6j5Ovvx6Uf9hPc0LQaUcD2PNRBfN/+
-        C3i/O8e475IhPoWFmQt5Dbg1MGG7/XglC2hoWLXjKqUdd/f71rLy9KDUnu9m3uFkrYHW/S+rOHR1
-        xgcAAA==
+        H4sIAAAAAAAAA9WVXWvbMBSG/4oQu9ig/pAd27GvEgK9adeVZmNjYxeardiitmQkOR8L/e87cryk
+        WwILbSnsJglHr95zzhMfny2eMJHLgosSZ5hr6YzHUeoQfIEnS6Y0lwLixPUh0DKz4KJgCmdbPFk3
+        tdDZWnM4r4xpM89brVbuKnSlKr3A94n35f31PK9YQx0utKEiZ+BSU20+LBaaGWvzBj5xhB8usK5Y
+        bSCjjQ6/cfZti3PZCaM2e/GnuVXXUpTcdAXbxx0SBG4QjwN7LGhzOLntSmbQHHwKdMd03jEraSsp
+        rMamNtQc5J+n9pgWhWJaBzsF9MDrvaK1htr6qd5uUkljBW4uG3s35+ZQ77T70Slhwz95u4+mYz/t
+        K13Q9S5FTc2fDY0SNyQpsSJePKqOjNJHBRJ7++HiJThdyrLcoJli7B7N6HLzMrAW1jW3pjl4DsA2
+        tJLydXAF0ej5uJIkOsJ1x0qYDlqjqeANfM2ZWvKcaSQX6ArmCc1sig1y0KXU8DQDU8XQrZKlos1j
+        qDu7wI+dII2dJBwn+AmcaSFbQ2FGJ/eQvG9v45ZyeUT4iglzgm94Bt9klJzgG/zFd+iHxCRC8chU
+        aLpkCPC+KvZjwG+B8Dv0PyKOw7MIu09AHEbpiRcmzaUeph/dMLOS6v65r0xr+c/hv2NFI0VxAl10
+        BrqQHE9/7B9P/3cIVIwOi8zwhkE3zSFd4JOxY6cx+UiCLAwzP/76+3Hp+v0ENzQtBxSwPQ91EN+3
+        /wLe784h7rukj09gYWZC3gBuDUzYbj9eyxwa6lftsEppy939vrWsPN0rtee7qXc4WWug9fALF26E
+        8sYHAAA=
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
       Content-Type: [application/json]
-      Date: ['Tue, 26 Jun 2018 14:55:46 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:06 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -43,20 +46,23 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA1VSwW6DMAz9lSrasYSEUgac6L2bpnXTpt2yJIVIkCASBlu1f59DEXQ35/n5+dnO
-        BRVScyOULlGOlDVBmu6zgKItKr5kZ5XRgFNMAGilOystZIfyCyrGptY2H62CfOVcm4fhMAx42GHT
-        lWFECA3fH44nXsmGBUpbxzSXoGIrWburBje9dt23D+8cyLye0O8W1UaXyvVCLnhAowhHSRr5tGbN
-        mnnqS+k2J9ARm2dpeS89pa2M9hwIoa1b6W8Hn2ZCdNLa6MoAe6peGK0XtF6vm+SKyjhPwNw0vpYr
-        t/o99J99pz38o9oFzVKSTU7PbLy2qJn7P1B8j3c0o56kxI07Gmc3Bqmvhmcl2bx0pxoJEzVrs4jQ
-        NCBJECUvNM73+zxOPtA8d289DSosK+d1wKVXF5QQ5PWXO884wXTCCzhurs0jLNy2jMvrLY+GwzjT
-        t5jPzlqFl7/hFxXaiWlDgrNwzYxWgO4fk6qK/nICAAA=
+        H4sIAAAAAAAAA1VSwW6DMAz9lSrasYQkdC1wovdumtZNm3bLQgqRIEEkDLZq/z4HEHQ35/n5+dnO
+        FWVSC5MrXaAUKWuCOL5PAoq2KPuSrVVGA04xAaCR7qJ0LluUXlE21JW26WAV5EvnmjQM+77HfYRN
+        W4SMEBq+P5zOopQ1D5S2jmshQcWWsnKThjCddu23D+8cyLye0e8WVUYXynW5XPCAMobZPmY+rXm9
+        Zp66QrrNGXTyzbO0opOe0pRGew6E0Nat9LejT/M8b6W1bGKAPVUtjMYLWq/XjnJZaZwnYGFqXyuU
+        W/0eu8+u1R7+Uc2CJjFJRqcXPkwtKu7+D7Q74Igm1JNUfuOO7pIbg9RXw7OUfF66U7WEieq1GSM0
+        Dsg+YIcXytIoSsn+A81zd9bToMLyYl4HXHp1QQlBXn+584wTTEc8g+Om2jzCwm3DhZxueTICxhm/
+        xXx23ii8/A2/qNCOTBsSnIRrZrA56P4BL/x6eXICAAA=
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
       Content-Length: ['374']
       Content-Type: [application/json]
-      Date: ['Tue, 26 Jun 2018 14:55:46 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:06 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -71,20 +77,23 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA1VSwW6DMAz9lSrasYQkbRlwoqq0U7fDumnTbllIIRokiISWbtq/z6EIupvz/Pz8
-        bOcHZVILkytdoBQpa4I43iQBRUuUnWRrldGAU0wAaKQ7Kp3LFqU/KOvrStu0twrypXNNGobn8xmf
-        V9i0RcgIoeH74/4gSlnzQGnruBYSVGwpK3fVEKbTrr348M6BzOsB/S5RZXShXJfLCQ8oY5hFMfNp
-        zes582CK4rLYtVJ+LXb8dFk8Sys66XlNabQnQgi93VzztvVpnuettJZdGeBRVRPj6FWFFxWg2Q6S
-        2YWXxmBhal8tlJttb7vPrtUe/lbNhCYxSQbDR95fm1Tc/Z9rfY9XNKGepPIbf2yzvrFIfTU8S8nH
-        3TtVS5ipnpsxQuOARAGLXug63WzSdfSBxsk762lQYXkxLgQOPrughCCvP517xAmmA57BjVNtnmDv
-        tuFCXk+6NwLGGX7HeH3eKDx9Eb+o0A5MGxKchHOmtzno/gGGiWNheQIAAA==
+        H4sIAAAAAAAAA1VSy26DMBD8lcjqMRjb5AGciCL1lPbQtGrVm2scsAo2wiaPRv33rgmC9LaenZ2d
+        3fUVZVILkytdoBQpa4I4XiYBRXOUHWVrldGAU0wAaKQ7KJ3LFqVXlJ3rStv0bBXkS+eaNAxPpxM+
+        Rdi0RcgIoeHH024vSlnzQGnruBYSVGwpK3fTEKbTrr348MGBzNse/c5RZXShXJfLEQ8oY5itYubT
+        mtdT5tEUxWW2baX8nm358TJ7kVZ00vOa0mhPhBB6u6nmfePTPM9baS27McCjqkbGwasKLypAs+0l
+        swsvjcHC1L5aKDfZ3nRfXas9/KOaEU1ikvSGD/x8a1Jx93+uxRpHNKGepPI7f2y5uLNIfTU8S8mH
+        3TtVS5ipnpoxQuOArAK2fqUsjaKUrD7RMHlnPQ0qLC+GhcDBJxeUEOT1x3MPOMG0xzO4carNM+zd
+        NlzI20l3RsA4/e8Yrs8bhccv4hcV2p5pQ4KTcMqcbQ66fzrfk+Z5AgAA
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
-      Content-Length: ['385']
+      Content-Length: ['384']
       Content-Type: [application/json]
-      Date: ['Tue, 26 Jun 2018 14:55:46 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:06 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -99,20 +108,24 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA1VSy46cMBD8FcvKcTHYw2s4MVopl91EUSbRRrlZ0ANWwEa255VV/j1tZgKTE6a6
-        XV3Vrndag25Mq3RHK6qcicoy20acPtH6BNYpoxHnLEFgAn9QugVLq3daX8ZBu+riFNZ776cqjs/n
-        MztvmLFdLJKExz8+ve6bHkYZKe281A0gi+th8DeOxhy1t9dw/OCR5vue/nmig9Gd8scWFjziQjBR
-        FFkoazmula/QoUI5kJ1WI372YE+qAUfMgbygJ/IcRlxJRD4ah1PJs7RAvljTWTkGtqk3eqUTSR6J
-        bR4Vm7IIVRTt1+rbLmCybS04JxDGPzSnhqVDtmbyEvdU/8Lhs70r68wp3GuUX52+gPYB/K2mBduW
-        yUYE8CAvN/JB+v8XkRZsU6SzNNU+6BKZeJDGVz885xnJU9+T3QkIrhe7epD3N/RqBLQ4Tg8L4GUU
-        lpB/42mVZVVa/Py3iKMLbXjDyQ5uAjE4qzieJDP/Eps7njA+4zVmpdLmM76fm2QDt2i8mgZdzim7
-        p0hOii1RY40ZYzd3ujhh23itXFyLvH8BOv3EjcECAAA=
+        H4sIAAAAAAAAA1VSTY+bMBD9KxbqcTG2SYBwIlqpl/1Q1bTaVW8WTMAq2Mh2vrrqf++YZCE9Yd6M
+        37w3fh9RBbo2jdJtVEbKmbgo1puYRw9RdQTrlNGIc8oQGMHvlW7ARuVHVJ2HXrvy7BTWO+/HMklO
+        pxM9pdTYNhGM8eT95XlXdzDIWGnnpa4BWVwHvb9y1Oagvb2E4xePND930d+HqDe6Vf7QwIzHXAgq
+        8nwdyloOS+U7tKhQ9mSr1YCfHdijqsERsydP6Ik8hhEXEpOvxuFU8igtkG/WtFYOgW3sjF7oBMti
+        scniPC3yUEXRfqm+bQMmm8aCcwJh/ENzqp87ZGNGL3FP1W8cPtm70NYcw71a+cXpE2gfwD9qnLFN
+        wVIRwL08X8l76f9fxCqnab6apKnmTpdYiztpfPHDM74m2cp3ZHsEguvFrg7k7Q29GgAtDuPdAngR
+        hyXkP7go07Rk2a/PRRxcaMMbTrZwFYjBWcRxxib+OTY3nFE+4RVmpdTmFd/PjbKGazSeTY0up5Td
+        UiRHReeo0doMiZs6XcLoJlkqZ9cg7z9mkGDpwQIAAA==
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
+      Content-Length: ['430']
       Content-Type: [application/json]
-      Date: ['Tue, 26 Jun 2018 14:55:47 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:06 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -127,21 +140,24 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA1VSTW+cMBT8K8jqIZWCsc3ncmLVYz4O3VaJerPgLVgBG2HvV6P89z6zG0hPwMx7
-        4xkz76QCXZtG6ZaURFkTFkW6CTm5J9URJquMRpxThsAIbq90AxMp30l1Hnpty7NVyHfOjWUUnU4n
-        eoqpmdpIMMaj16fHXd3BIEOlrZO6BlSxHfTuqlGbg3bTxb9+cyjze0c+7klvdKvcoYEFD7kQVOR5
-        6mkth5X5CS06lH2w1WrAxw6mo6rBBmYfPGCm4Ic/4uL3xs7odfFOsOx7IDZZmMdF7nk06Fb+Zesx
-        2TQTWCsQxi8MovplQjZmdBLvpHrDg+YoF9qao9+rlVtTPYB2HvyrxgXbFCwWHtzL81W8l+7/0ElO
-        4zyZranmi68s/uKML4TgGU+DLHFdsD1CsKPkA8c6kLf/5dQAGHFYPQjGi5Bloch+8aRM0zLJ/3xe
-        xMH6MdywsoWrQSzJao4zNusvFbnhjPIZr7AXpTbP+K/sKGu41uDR1JhybtStMXJUdKkVrc0Q2XnS
-        RoxuopU52wZ1/wFOXk2wrQIAAA==
+        H4sIAAAAAAAAA1VSTW+cMBT8K8jqIZWCsc0usJxY9ZiPQ7dVot4s8xasgI2w96tR/nuf2Q2kJ2Dm
+        vfGMmXdSgVG21qYhJdHOxkWx3sSc3JPqCKPT1iDOKUNgAL/XpoaRlO+kOvedceXZaeRb74cySU6n
+        Ez2l1I5NIhjjyevT40610MtYG+elUYAqroXOXzWUPRg/XsLrN48yv3fk45501jTaH2qY8ZgLQUWe
+        rwNtZL8wP6FBh7KLtkb3+NjBeNQKXGT30QNmin6EIy5hb2itWRbvBMu+R2KTxXla5IFHg37hX7YB
+        k3U9gnMCYfzCILqbJ2RtBy/xTqo3PGiKcqGNPYY9pf2S6gGMD+BfPczYpmCpCOBenq/infT/h17l
+        NM1XkzVdf/GVpV+c8ZkQPOPrKFv5NtoeIdpR8oFjLcjb//K6B4zYLx4E40XMsljkv7go07Rk+Z/P
+        izi4MIYbTjZwNYglWcxxxib9uSI3nFE+4RX2ojT2Gf+VG6SCaw0ercKUU6NujZGDpnOtqLJ94qZJ
+        lzC6SRbm7GrU/QfyCL03rQIAAA==
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
       Content-Length: ['418']
       Content-Type: [application/json]
-      Date: ['Tue, 26 Jun 2018 14:55:47 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:07 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -156,20 +172,23 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA1VSy26DMBD8lcjqMRibRx6c6D2NqqRVq94s44BVsBE2hTTKv3cNCNKbPTs7np31
-        DaVCcZ1JlaMESaO93S7eexStUfojGiO1ApxiAkAt7EWqTDQouaG0r0plkt5IqBfW1onvd12HuxDr
-        JvcDQqj/+XI480JUzJPKWKa4ABVTiNKOGly3yjZXd3yyIPN+Rvc1KrXKpW0zMeMeDQIcxvvAlRWr
-        lsor49qsTsLwVqyOwna6+XakutDKseAID9ul4ePZlVmWNcKYYGSAQVnOjNpJNoNiemWF1pjryjVx
-        aRerJ5FVWmUO/5X1DO93JB5cXlg/ipfM/h8m2uIwpNSRZPbga0OiB2vUdcO1EGwK3MpKwCzV8lhA
-        6M4jGy/YvNEoieMk2n6haeLWOBp0GJZPQcCWFxeUEOT05x1POMF0wFNYbKL0EcI2kIgY93jQHMYZ
-        vsS0clZLPP8Ll5RvBqbxCd77S6U3kNX9D0v5crtuAgAA
+        H4sIAAAAAAAAA1VSy26DMBD8lcjqMRgb8gBO9J5GVdKqVW+WccAq2AibQhrl37sGBOnNnp0dz876
+        hlKhuM6kylGCpNFeFG1jj6I1Sn9EY6RWgFNMAKiFvUiViQYlN5T2ValM0hsJ9cLaOvH9rutwF2Ld
+        5H5ACPU/Xw5nXoiKeVIZyxQXoGIKUdpRg+tW2ebqjk8WZN7P6L5GpVa5tG0mZtyjQYDDbRy4smLV
+        UnllXJvVSRjeitVR2E43345UF1o5FhzhYbs0fDy7MsuyRhgTjAwwKMuZUTvJZlBMr6zQGnNduSYu
+        7WL1JLJKq8zhv7Ke4Tgi28HlhfWjeMns/2E2exyGlDqSzB587cjmwRp13XAtBJsCt7ISMEu1PBYQ
+        Gnlk5wX7NxokYZiQ/ReaJm6No0GHYfkUBGx5cUEJQU5/3vGEE0wHPIXFJkofIWwDiYhxjwfNYZzh
+        S0wrZ7XE879wSflmYBqf4NhfKr2BrO5/96+CPG4CAAA=
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
-      Content-Length: ['375']
+      Content-Length: ['374']
       Content-Type: [application/json]
-      Date: ['Tue, 26 Jun 2018 14:55:47 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:07 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -184,20 +203,23 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA1VSwW6DMAz9lSnasYSE0hY40Xs3TeumTbtlSQqRIEEkDLZq/z4HEHQ35/n5+dnO
-        FeVScyOULlCGlDVBkuzSgKINyr9ka5XRgFNMAGikuygtZIuyK8qHutI2G6yCfOlck4Vh3/e432LT
-        FmFECA3fH05nXsqaBUpbxzSXoGJLWblJg5tOu/bbh/cOZF7P6HeDKqML5TohFzygUYSjfRL5tGb1
-        mnnqCunuzqAj7p6l5Z30lKY02nMghLZupb8dfZoJ0Upro4kB9lS1MBovaL1eO8rlpXGegLmpfS1X
-        bvV77D67Vnv4RzULmiYkHZ1e2DC1qJj7P1B8wFuaUk9S4sYdjdMbg9RXw7OUbF66U7WEieq1WURo
-        EpB9EO1faJztdll8+EDz3J31NKiwrJjXAZdeXVBCkNdf7jzjBNMRz+G4mTaPsHDbMC6nW54Mh3HG
-        bzGfnTUKL3/DLyq0I9OGBKfhmhmsAN0/c5HeHXICAAA=
+        H4sIAAAAAAAAA1VSwW6DMAz9lSrasYQkdC1wovdumtZNm3bLQgqRIEEkDLZq/z4HEHQ35/n5+dnO
+        FWVSC5MrXaAUKWuCOL5PAoq2KPuSrVVGA04xAaCR7qJ0LluUXlE21JW26WAV5EvnmjQM+77HfYRN
+        W4SMEBq+P5zOopQ1D5S2jmshQcWWsnKThjCddu23D+8cyLye0e8WVUYXynW5XPCAMobZPmY+rXm9
+        Zp66QrrNGXTyzbO0opOe0pRGew6E0Nat9LejT/M8b6W1bGKAPVUtjMYLWq/XjnJZaZwnYGFqXyuU
+        W/0eu8+u1R7+Uc2CJjFJRqcXPkwtKu7+D7Q74Igm1JNUfuOO7pIbg9RXw7OUfF66U7WEieq1GSM0
+        Dsg+YIcXytIoSsnhA81zd9bToMLyYl4HXHp1QQlBXn+584wTTEc8g+Om2jzCwm3DhZxueTICxhm/
+        xXx23ii8/A2/qNCOTBsSnIRrZrA56P4Bz8cumnICAAA=
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
       Content-Length: ['374']
       Content-Type: [application/json]
-      Date: ['Tue, 26 Jun 2018 14:55:47 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:07 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -212,20 +234,23 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA1VSTW+DMAz9K1W0YwlJWlrgRFVpp26HddOm3bKQQjRIEAn9WLX/Poci6G7O8/Pz
-        s50ryqQWJle6QClS1gRxHCUBRXOUHWVrldGAU0wAaKQ7KJ3LFqVXlJ3rStv0bBXkS+eaNAxPpxM+
-        LbBpi5ARQsOPp91elLLmgdLWcS0kqNhSVu6mIUynXXvx4YMDmbc9+p2jyuhCuS6XIx5QxjBbxcyn
-        Na+nzKMpists20r5Pdvy42X2Iq3opOc1pdGeCCH0dlPN+8aneZ630lp2Y4BHVY2Mg1cVXlSAZttL
-        ZhdeGoOFqX21UG6yvem+ulZ7+Ec1I5rEJOkNH/j51qTi7v9cyzVe0IR6ksrv/LFoeWeR+mp4lpIP
-        u3eqljBTPTVjhMYBWQVs9UqXaRSly/UnGibvrKdBheXFsBA4+OSCEoK8/njuASeY9ngGN061eYa9
-        24YLeTvpzggYp/8dw/V5o/D4RfyiQtszbUhwEk6Zs81B9w9msjeCeQIAAA==
+        H4sIAAAAAAAAA1VSy26DMBD8lcjqMRjb5AGciCL1lPbQtGrVm2scsAo2wiaPRv33rgmC9LaenZ2d
+        3fUVZVILkytdoBQpa4I4XiYBRXOUHWVrldGAU0wAaKQ7KJ3LFqVXlJ3rStv0bBXkS+eaNAxPpxM+
+        Rdi0RcgIoeHH024vSlnzQGnruBYSVGwpK3fTEKbTrr348MGBzNse/c5RZXShXJfLEQ8oY5itYubT
+        mtdT5tEUxWW2baX8nm358TJ7kVZ00vOa0mhPhBB6u6nmfePTPM9baS27McCjqkbGwasKLypAs+0l
+        swsvjcHC1L5aKDfZ3nRfXas9/KOaEU1ikvSGD/x8a1Jx93+uxRpHNKGepPI7f2y5uLNIfTU8S8mH
+        3TtVS5ipnpoxQuOArAK2fqUsjaKUrD/RMHlnPQ0qLC+GhcDBJxeUEOT1x3MPOMG0xzO4carNM+zd
+        NlzI20l3RsA4/e8Yrs8bhccv4hcV2p5pQ4KTcMqcbQ66f9rkxwV5AgAA
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
-      Content-Length: ['385']
+      Content-Length: ['384']
       Content-Type: [application/json]
-      Date: ['Tue, 26 Jun 2018 14:55:47 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:07 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -240,21 +265,24 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA1VSy46cMBD8FcvKcTHYw2s4MVopl91EUSbRRrlZ0ANWwEa255VV/j1tZgKTE6a6
-        XV3Vrndag25Mq3RHK6qcicoy20acPtH6BNYpoxHnLEFgAn9QugVLq3daX8ZBu+riFNZ776cqjs/n
-        MztvmLFdLJKExz8+ve6bHkYZKe281A0gi+th8DeOxhy1t9dw/OCR5vue/nmig9Gd8scWFjziQjBR
-        FFkoazmula/QoUI5kJ1WI372YE+qAUfMgbygJ/IcRlxJRD4ah1PJs7RAvljTWTkGtqk3eqUTSR6J
-        bR4Vm7IIVRTt1+rbLmCybS04JxDGPzSnhqVDtmbyEvdU/8Lhs70r68wp3GuUX52+gPYB/K2mBduW
-        yUYE8CAvN/JB+v8XkRZsU6SzNNU+6BKZeJDGVz885xnJU9+T3QkIrhe7epD3N/RqBLQ4Tg8L4GUU
-        lpB/42mVZVVa/vy3iKMLbXjDyQ5uAjE4qzieJDP/Eps7njA+4zVmpdLmM76fm2QDt2i8mgZdzim7
-        p0hOii1RY40ZYzd3ujhh23itXFyLvH8BXZKeP8ECAAA=
+        H4sIAAAAAAAAA1VSXY+bMBD8K5bVx8PYJgmEJ6KT+nLXqmpaXdU3CzZgFWxkO1899b93TVJInzCz
+        69mZ9bzTCkxtG21aWlLtbVIU620i6BOtTuC8tgZxwTgCI4SDNg04Wr7T6jL0xpcXr7HehTCWaXo+
+        n9k5Y9a1qeRcpD8+ve7rDgaVaOODMjUgi++gDzeO2h5NcNd4/BCQ5vue/nmivTWtDscGZjwRUjKZ
+        5+tYNmpYKl+hRYWqJzujB/zswZ10DZ7YA3lBT+Q5jriShHy0HqeSZ+WAfHG2dWqIbGNnzUIn+SaR
+        202SZ0Ueqyg6LNW3XcRU0zjwXiKMf2hO93OHauwYFO6p+oXDJ3tX1tpTvFfrsDh9ARMi+FuPM7Yt
+        eCYjeFCXG3mvwv+LWOUsy1eTNN086JJr+SBNLH7ERqzJZhU6sjsBwfViVwfq/oZBD4AWh/FhAaJI
+        4hLyb0KWWVby/Oe/RRx9bMMbXrVwE4jBWcQJzif+OTZ3nDMx4RVmpTT2M76fH1UNt2i82hpdTim7
+        p0iNms1RY7UdUj91+pSzbbpULr5B3r+GqzQKwQIAAA==
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
-      Content-Length: ['431']
+      Content-Length: ['430']
       Content-Type: [application/json]
-      Date: ['Tue, 26 Jun 2018 14:55:48 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:07 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -269,21 +297,24 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA1VSTW+cMBT8K8jqIZWCsc3ncmLVYz4O3VaJerPgLVgBG2HvV6P89z6zG0hPwMx7
-        4xkz76QCXZtG6ZaURFkTFkW6CTm5J9URJquMRpxThsAIbq90AxMp30l1Hnpty7NVyHfOjWUUnU4n
-        eoqpmdpIMMaj16fHXd3BIEOlrZO6BlSxHfTuqlGbg3bTxb9+cyjze0c+7klvdKvcoYEFD7kQVOR5
-        6mkth5X5CS06lH2w1WrAxw6mo6rBBmYfPGCm4Ic/4uL3xs7odfFOsOx7IDZZmMdF7nk06Fb+Zesx
-        2TQTWCsQxi8MovplQjZmdBLvpHrDg+YoF9qao9+rlVtTPYB2HvyrxgXbFCwWHtzL81W8l+7/0ElO
-        4zyZranmi68s/uKML4TgGU+DLHFdsD1CsKPkA8c6kLf/5dQAGHFYPQjGi5Bloch+8aRM0zIp/nxe
-        xMH6MdywsoWrQSzJao4zNusvFbnhjPIZr7AXpTbP+K/sKGu41uDR1JhybtStMXJUdKkVrc0Q2XnS
-        RoxuopU52wZ1/wEpMRcCrQIAAA==
+        H4sIAAAAAAAAA1VSTW+cMBT8K8jqIZWCsc0usJxY9ZiPQ7dVot4s8xasgI2w96tR/nuf2Q2kJ2Dm
+        vfGMmXdSgVG21qYhJdHOxkWx3sSc3JPqCKPT1iDOKUNgAL/XpoaRlO+kOvedceXZaeRb74cySU6n
+        Ez2l1I5NIhjjyevT40610MtYG+elUYAqroXOXzWUPRg/XsLrN48yv3fk45501jTaH2qY8ZgLQUWe
+        rwNtZL8wP6FBh7KLtkb3+NjBeNQKXGT30QNmin6EIy5hb2itWRbvBMu+R2KTxXla5IFHg37hX7YB
+        k3U9gnMCYfzCILqbJ2RtBy/xTqo3PGiKcqGNPYY9pf2S6gGMD+BfPczYpmCpCOBenq/infT/h17l
+        NM1XkzVdf/GVpV+c8ZkQPOPrKFv5NtoeIdpR8oFjLcjb//K6B4zYLx4E40XMsljkv7go07Rk+Z/P
+        izi4MIYbTjZwNYglWcxxxib9uSI3nFE+4RX2ojT2Gf+VG6SCaw0ercKUU6NujZGDpnOtqLJ94qZJ
+        lzC6SRbm7GrU/QfyCL03rQIAAA==
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
       Content-Length: ['418']
       Content-Type: [application/json]
-      Date: ['Tue, 26 Jun 2018 14:55:48 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:08 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -298,20 +329,23 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA1VSy26DMBD8lcrqMRibRwqc6D2NqqRVq94s44BVsBE2hTTKv3dNEKQ3e3Z2PDvr
-        C8qF4rqQqkQZkkZ7SRKnHkUblP+IzkitAKeYANAKe5KqEB3KLigfm1qZbDQS6pW1beb7wzDgIcS6
-        K/2AEOp/vuyOvBIN86QylikuQMVUorY3Da57ZbuzOz5akHk/ousG1VqV0vaFWHCPBgEO4zRwZcWa
-        tfLKuDYPB2F4Lx72wg66+3akttLKseAID9u14ePZlVlRdMKY4MYAg7JeGK2T7CbF/MwqrTHXjWvi
-        0q5WD6JotCoc/ivbBU4TEk8uT2y8idfM/h8mesJhSKkjyeLO15ZEd9ao64ZrJdgcuJWNgFma9bGA
-        0MQjWy/YvtEoi+MsSr7QPHFvHA06DCvnIGDLqwtKCHL6y45nnGA64TksNlN6D2EbSETc9rjTHMaZ
-        vsS8ctZKvPwLl5RvJqbxCU79tTIayOr6ByyWKAluAgAA
+        H4sIAAAAAAAAA1VSy26DMBD8lcjqMRgb8gBO9J5GVdKqVW+WccAq2AibQhrl37sGBOnNnp0dz876
+        hlKhuM6kylGCpNFeFG1jj6I1Sn9EY6RWgFNMAKiFvUiViQYlN5T2ValM0hsJ9cLaOvH9rutwF2Ld
+        5H5ACPU/Xw5nXoiKeVIZyxQXoGIKUdpRg+tW2ebqjk8WZN7P6L5GpVa5tG0mZtyjQYDDbRy4smLV
+        UnllXJvVSRjeitVR2E43345UF1o5FhzhYbs0fDy7MsuyRhgTjAwwKMuZUTvJZlBMr6zQGnNduSYu
+        7WL1JLJKq8zhv7Ke4Tgi28HlhfWjeMns/2E2exyGlDqSzB587cjmwRp13XAtBJsCt7ISMEu1PBYQ
+        Gnlk5wX7NxokYZiQ6AtNE7fG0aDDsHwKAra8uKCEIKc/73jCCaYDnsJiE6WPELaBRMS4x4PmMM7w
+        JaaVs1ri+V+4pHwzMI1PcOwvld5AVvc/kMDYjm4CAAA=
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
-      Content-Length: ['375']
+      Content-Length: ['374']
       Content-Type: [application/json]
-      Date: ['Tue, 26 Jun 2018 14:55:48 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:08 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -326,21 +360,24 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA0VRTY/bIBS851cg380Db5LaFmG7921VNa226o3arI0Ug2Vwk+2v7wM7zm3mzcC8
-        D/F8Gy7kr568cfaUccoyom3jWmO7U2a8y8vyUOU8e5a7nRh1eDe21RPBV9bXN29OWR/CWANcr1d6
-        faJu6qBgjMOvL6/npteDyo31QdlGZwT9tXVf1aD9qBq96K+uUSGlrz+p0dAtiTZuAJ+MHhit4KHc
-        fJvJHRG9VkgREbEOIhnlAu4kCsFgZlDDKAvGy5wd8+L4g+/rw6Hel78FPPToRhRmHyERuAstOWMC
-        Eko19HrVaQLJDZtdwNaL8L2+hLUt08q3F76vBCCKBYsrkN/mTgdydrNtyXftm1kLSEJ0qLadMIWv
-        GSstVtqY8CFf5j/zZLGvSO5ta0xaOlr++WdGWZWsKgREmB5jYpg+5M9znGnBsX7BM4QZZ9x/ok+8
-        wg1ulSQ72y0s50VBi2OJfz6K0TL2zt638q5uK8LTmYsc47Q+DjulWT/3LkQhHljA4okb3PYmHqeW
-        u//M8QFQqAIAAA==
+        H4sIAAAAAAAAA0VRy26rMBTc5yss9viVPgA5brtvr6qbVq26c8EBS8FG2Nyk/fp7bAjZzZwZe85D
+        PJz7I/qnR2+c3WUM0wxpW7vG2HaXGe/yorgtc5Y9yM1GDDocjG30iOCV9dXZm13WhTBUhJxOJ3za
+        Yje2hFPKyOfL877udK9yY31QttYZAn9l3R/Vaz+oWs/6s6tVSOnLT2oweE3CteuJT0ZPKC7JVTn7
+        JpMbJDqtgAJCYhlEUswEuZAoBAOZQfWD5JQVOb3L+f0b49V2W9HiS5CrHt2AwuQjRAJ2oSWjVJCE
+        Ug28XrUakeQmq12QtRfhO30MS1umkR9P7KYUBFAsWFiBfJ1aHdDeTbZBf7WvJy1IEqJDNc0IKWzJ
+        WChfaG3Cj3yavqfRQl+RXNrWkDR3NP/zawZZFrTkgkSYHkNiGH/k+z7ONONYP8IZwgQz3tzjLSth
+        g2slyc62M8sZ55jfFfDntRgtQ+fsZSsHdV4QnM4c5RCn9XHYMc362LkQhXhgQWZP3OC6N3E9tdz8
+        B+6WigGoAgAA
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
-      Content-Length: ['409']
+      Content-Length: ['408']
       Content-Type: [text/xml; charset=iso-8859-1]
-      Date: ['Tue, 26 Jun 2018 14:55:48 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:08 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -355,21 +392,24 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA0VRwW7jIBC95yuQ7zbgJlnbIrRVpZ7aHrZb7WpvLCY2agyWwU3cr98BO87tzbwH
-        b94Mu790J/SlBqetOSQ0IwlSRtpam+aQaGfTotiVKU3u+WbDeuWP2tRqQPDKuOri9CFpve8rjM/n
-        c3a+y+zQ4JwQiv+8vrzLVnUi1cZ5YaRKEOgrY99Ep1wvpJr5FyuFj+7LT6LX2eqUSdthF4UOk6zE
-        N+bi6oRvEGuVgBIQYksQTjLK8LUIhNfg6UXX85zQIiX7NN//ottqt6u25V+Gb3xQA/KjCxAx2IXi
-        lBCGI4o90DrRKISjGq9yhtdZmGvVyS9j6Zr/fsx3W4YBhYaBFfBn2zQTehqU+kRP4mtCP5WTo2I4
-        skEm6noAK7oYLWW+lFL7iT+O/8bBwHChuM6uwG4ea/7nW/e8LEiZMxxgfGxH44eJf7yHYDMO/RPc
-        wo8QdPsju6MlrHHtRNqaZq5SmudZvi/gz1szSPrWmutqjuKyILifPvFjiCxDYgmBh5j3YRKtteHO
-        DM+qsMh1fex2cb75D7d7OA2vAgAA
+        H4sIAAAAAAAAA0VRy27bMBC8+ysI3SU+nIck0EyDAD2lPTQtWvTGULRExCIFkYqtfn2XlCzfZneG
+        nJ1d/nTpT+hTj944e8hoQTKkrXKNse0hM97lZXlf5TR7ErsdH3Q4GtvoEcEr6+uLN4esC2GoMT6f
+        z8V5X7ixxYwQiv98e31Tne5lbqwP0iqdIdDX1n2XvfaDVHrhX52SIbmvP8nBFJtToVyPfRJ6TIoK
+        35iLbzKxQ7zTEkpAiK9BBCkox9ciEsGAZ5D9IBihZU4ecvb4k7J6v69J+ZfjGx/VgMLkI0QcdqEF
+        JYTjhFIPtF62GuGkxpuc420W7jt9CutYphG/n9n9HceAYsPCCsRX17Yzehm1/kAv8nNGP7RXk+Y4
+        sVEmm2YEK7oarSVbS2XCLJ6n92m0MFwsrrNrsFvGWv75ZwZRlaRiHEeYHrvJhnEWv95isAXH/glu
+        ESYIevdY7GkFa9w6iXa2XaqcMlawhxL+vDWjZOicva7mKC8rgvuZkzjGyComVhB4THm/zLJzLt6Z
+        40UVF7mtj98uLnb/AQ5TpC2vAgAA
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
       Content-Length: ['420']
       Content-Type: [text/xml; charset=iso-8859-1]
-      Date: ['Tue, 26 Jun 2018 14:55:49 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:08 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -384,22 +424,25 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA01STY+bMBC951dY3MHY4SMgx9topV52W1XNVrvqzQIHrIKNsPPVX98xsKQnP897
-        nnkzY/Z06zt0kaNVRu8DEsUBkroytdLNPlDWhLtdWoQkeOKbDRukOyldyxHBK23Lm1X7oHVuKDG+
-        Xq/RdRuZscE0jgn++PZ6rFrZi1Bp64SuZIBAX2rzXfTSDqKSM/9qKuGm6ksmMahorRRVpsd2Eloc
-        RwV+MDdbB3yDWCsFXAEhtjTC44gw/HnxhFNQ04l+4DQmuzDOQpq9kaRM0zIpfjP84L0akDtbDxGD
-        WUhO4pjhCU0x0FrRSIQnNV7lDK9emG1l5xZbqubvB5pShgH5gIYR8J+yAXuiQwetejiOcryoSlpk
-        TugF5o+ezVm7OwrRV2MhFXoWo0Q/RtOMomd4yuGTiboewRDhlGQkRVniWnS4SHRkeKX+09HFdqXc
-        nb9I7aAzDz8bl+B17mlO/1cNvNjFW3Dv4fTUGxvv/NfRT2XGPt7BIt0ZppTk0TZPcobXyEQb3cy3
-        kFAa0TxPQbEGvWRojZawI9hPkYX5dgc55phnT+K2mIfvoDouajM4AT/iyx+Y1+TkHjXmwvDM+42s
-        e2CPr8M3/wAepjQK+AIAAA==
+        H4sIAAAAAAAAA01STY+bMBC951dY3MEfJIEgx9topV52W1XNVrvqzQIHrIKNsPPVX98xsKQnP897
+        nnkzY/5061p0UYPT1uwjmpAIKVPaSpt6H2ln4zzf7GIaPYnVivfKn7Sp1IDglXHFzel91HjfFxhf
+        r9fkmiZ2qDEjhOKPb6/HslGdjLVxXppSRQj0hbHfZadcL0s18a+2lH6sPmeSvU6WSklpO+xGocMk
+        2eEHc3NVJFaIN0rCFRDicyOCJJTjz0sgvIaaXna9YITmMdnGLHujrEjTguS/OX7wQQ3In12AiMMs
+        lKCEcDyiMQZaJ2uF8KjGi5zjxQt3jWr9bEtX4v3ANoxjQCFgYATip6rBnmzRwegOjqMaLrpUDtkT
+        eoH5o2d7Nv6OYvTVOkiFnuWg0I/B1oPsOB5zhGSyqgYwRAWjW7pB27Vv0OGi0JHjhfpPx2bbpfZ3
+        8aKMh84C/Gxcgdeppyn9X92LXU5ScB/g+DQYG+7i1zFMZcIh3sIi/RmmtM6SNFtnHC+Rkbamnm4x
+        ZSxhWbYBxRIMkr6xRsGOYD+7bZylOeSYYoE9ydtsHr6DboWsbO8l/Igvf2Beo5N7UtsLxxMfNrLs
+        gT++jlj9A3j/ztf4AgAA
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
-      Content-Length: ['472']
+      Content-Length: ['471']
       Content-Type: [text/xml; charset=iso-8859-1]
-      Date: ['Tue, 26 Jun 2018 14:55:49 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:08 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -414,22 +457,23 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA01Sy5KbMBC8+ytUnJIDetkGTMnauHLcTQ5xUknlpgIZVAGJQvIrX58ReHFO9Ey3
-        ND0txMut79BFj944u08YpgnStnK1sc0+Md6lRbHdpSx5kauVGHQ4GVvrEcEp68ubN/ukDWEoCble
-        r/i6xm5sCKeUkV9f3o5Vq3uVGuuDspVOEOhL676qXvtBVXrm31ylwjT9cZMaDF4m4cr1xE9CTyje
-        kSdz83UiV0i0WkEJCInHIpJiJsh7EYlgYGZQ/SA5ZUVKs5Rn39mm3G7Lze63IE8+qgGFs48QCchC
-        S0apIBOaeqD1qtGITGqyyAVZvAjf6i48bJla/jxka0EAxNpCAvKbbsCd6tDBmh4+Rz1eTKU9cif0
-        CvGjz+5sw12QSR2PqboeYTKTnGVsi7JNaNHhotERC7Jw/wn5w2Blwl2+ahtghwjfV9TganY/3//X
-        DHJX0DUXJMLpaPQw3uWPY9x/xrHfwZOFM+SxyfE63+SCLJ2JdraZq5Rxjnmeb0GxNKNkaJ3V8gOn
-        2UfEd1marwu4Ze5G/qRuD/vw9KaTqnZDUPD6n/5AOJOXO27cRZCZj+kvmYvnbyJX/wByYnSq5AIA
-        AA==
+        H4sIAAAAAAAAA01Sy5KbMBC8+ytUnJIDemEDdsnauHLcTQ5xUknlpgIZVDESheRXvj4jYHFO9Ey3
+        ND0txMu9O6OrHrxxdp8wTBOkbeVqY5t9YrxLy3KzTVnyIlcr0etwMrbWA4JT1u/u3uyTNoR+R8jt
+        dsO3DLuhIZxSRn59eTtWre5UaqwPylY6QaDfWfdVddr3qtIT/+YqFcbp802qN3iZhCvXET8KPaF4
+        S57M3deJXCHRagUlICTmRSTFTJD3IhLBwMygul5yysqU5ikvvjO+y7IdLX8L8uSjGlC4+AiRgCy0
+        ZJQKMqKxB1qvGo3IqCaLXJDFi/CtPofZlqnlz0OeCQIg1hYSkN90A+7UGR2s6eBz1MPVVNojd0Kv
+        ED/67C42PAQZ1fGYqusBJjPJWc42KF+HFh2uGh2xIAv3n5DPBisTHvJV2wA7RPi+ogZXk/vp/r+m
+        l9uSZlyQCMej0cPwkD+Ocf8Jx/4ZnixcII91gbNiXQiydEba2WaqUsY55kWxAcXSjJK+dVbLD5zm
+        HxHf5mmRlXDL1I38Sd1n+/D05ixV7fqg4PU//YFwRi8P3LirIBMf018yF8/fRK7+Aaj4UyXkAgAA
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
-      Content-Length: ['457']
       Content-Type: [text/xml; charset=iso-8859-1]
-      Date: ['Tue, 26 Jun 2018 14:55:49 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:08 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -444,21 +488,24 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA0VRyY7jIBS85yuQ72Zx4kxsEbr7nolGvahbc0OYjtHEYBkyTubr54Ed51b1qqDe
-        wp+u3Rn91YM3zu4zhmmGtFWuMfa0z4x3+W5XVjnLnsRqxXsdvo1t9IDglfX11Zt91obQ14SM44jH
-        NXbDiRSUMvL18/CmWt3J3FgfpFU6Q+CvrTvKTvteKj3pB6dkSOnzT7I3eEnCynXEJ6MnFFfkoVx9
-        k4kV4q2WQAEhPg8iKGac3EkUgoHMILteFJTtcrrNi+0729RlWW+q35w89OgGFC4+QsRhF1owSjlJ
-        KNXA6+VJI5LcZLFzsvTCfavPYW7LNOLzZUs3nACKBQsrEL+kch69aq8uGh11GN3wh5MkRY9smgFy
-        2Jwy02KmyoSbeNVN52wDrUV271xD2NTU9NE/04tqR8uCkwjTa3exYbiJj7c41oRj/QyXCBcYc/MD
-        r9cMlrhUkuzsaWI5Kwq8Liv481GMlr519r6Yb3mdEVzPnEUfBx7SvM832ToXj8vJJMbtLTvjjzOL
-        1X85QSl/pAIAAA==
+        H4sIAAAAAAAAA0VRyU7DMBS89yus3OMlodBEroE7IMQiEDfLMY1FY0exS1q+nmcnTW8zb8aet/Db
+        Y7dHv3rwxtltxjDNkLbKNcbutpnxLt9s1lXOsluxWvFeh29jGz0geGV9ffRmm7Uh9DUh4zjiscRu
+        2JGCUkY+Hx9eVas7mRvrg7RKZwj8tXVPstO+l0pP+oNTMqT0+SfZG7wkYeU64pPRE4orclGOvsnE
+        CvFWS6CAEJ8HERQzTs4kCsFAZpBdLwrKNjm9zoubN1bUZVnT6ouTix7dgMLBR4g47EILRiknCaUa
+        eL3caUSSmyx2TpZeuG/1PsxtmUZ83F/TK04AxYKFFYhnqZxHL9qrg0ZPOoxu+OEkSdEjm2aAHDan
+        zLSYqTLhJF500znbQGuRnTvXEDY1NX30Z3pRbei64CTC9NodbBhO4v01jjXhWN/DJcIBxry6wWXJ
+        YIlLJcnO7iaWs6LA5bqCPy/FaOlbZ8+L+ZbHGcH1zF70ceAhzXt3kq1z8bicTGLc3rIzfjmzWP0D
+        sQ9KH6QCAAA=
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
-      Content-Length: ['409']
+      Content-Length: ['407']
       Content-Type: [text/xml; charset=iso-8859-1]
-      Date: ['Tue, 26 Jun 2018 14:55:49 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:09 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -473,20 +520,23 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA1VSwW6DMAz9lSrasYSElg440Xs3TeumTbtlSQqRIEEkDLZq/z4HEHQ35/n5+dnO
-        FeVScyOULlCGlDVBksRpQNEW5V+ytcpowCkmADTSXZQWskXZFeVDXWmbDVZBvnSuycKw73vc77Bp
-        izAihIbvD6czL2XNAqWtY5pLULGlrNykwU2nXfvtwzsHMq9n9LtFldGFcp2QCx7QKMLRIYl8WrN6
-        zTx1hXSbM+iIzbO0vJOe0pRGew6E0Nat9LejTzMhWmltNDHAnqoWRuMFrddrR7m8NM4TMDe1r+XK
-        rX6P3WfXag//qGZB04Sko9MLG6YWFXP/B9rf4x1NqScpceOO7tMbg9RXw7OUbF66U7WEieq1WURo
-        EpBDEB1e6D6L4ywmH2ieu7OeBhWWFfM64NKrC0oI8vrLnWecYDriORw30+YRFm4bxuV0y5PhMM74
-        Leazs0bh5W/4RYV2ZNqQ4DRcM4MVoPsHU44IeHICAAA=
+        H4sIAAAAAAAAA1VSwW6DMAz9lSrasYQkdC1wovdumtZNm3bLQgqRIEEkDLZq/z4HEHQ35/n5+dnO
+        FWVSC5MrXaAUKWuCOL5PAoq2KPuSrVVGA04xAaCR7qJ0LluUXlE21JW26WAV5EvnmjQM+77HfYRN
+        W4SMEBq+P5zOopQ1D5S2jmshQcWWsnKThjCddu23D+8cyLye0e8WVUYXynW5XPCAMobZPmY+rXm9
+        Zp66QrrNGXTyzbO0opOe0pRGew6E0Nat9LejT/M8b6W1bGKAPVUtjMYLWq/XjnJZaZwnYGFqXyuU
+        W/0eu8+u1R7+Uc2CJjFJRqcXPkwtKu7+D7Q74Igm1JNUfuOO7pIbg9RXw7OUfF66U7WEieq1GSM0
+        Dsg+YIcXytIoSknygea5O+tpUGF5Ma8DLr26oIQgr7/cecYJpiOewXFTbR5h4bbhQk63PBkB44zf
+        Yj47bxRe/oZfVGhHpg0JTsI1M9gcdP8ASJMgy3ICAAA=
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
       Content-Length: ['374']
       Content-Type: [application/json]
-      Date: ['Tue, 26 Jun 2018 14:55:50 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:09 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 version: 1

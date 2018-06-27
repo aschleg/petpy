@@ -11,44 +11,21 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA0WQS2vDMBCE/4voMXr5kTg6+VpIemkPpTchb21B9cBSakPIf+/GNu5FiNmZT5q9
-        kxa8CZ31PVHEpkCbpj5TSQ6k/YUx2eBRl0ygECF/W9/BSNSdtLP78UnNyeJ8yDkqzqdpYlPJwtjz
-        QgjJP6+XdzOA09T6lLU3sFJeu/RE2O55vmQEVLIqT2V1Io/HgQygt0eydYBBF3djIWRDxZEWxw9Z
-        qbpRZf1FMIOufFuomEi6B7yijM1gz0ohFv7ea9MFk4veYhnlw5tGRNQG1r9fgtF5XcNWU0fL9l0w
-        ExxPizNxwc78fzKnDrl/0urMtWIBAAA=
-    headers:
-      Connection: [keep-alive]
-      Content-Encoding: [gzip]
-      Content-Length: ['251']
-      Content-Type: [application/json]
-      Date: ['Tue, 26 Jun 2018 14:58:35 GMT']
-      Vary: [Accept-Encoding]
-      X-Frame-Options: [SAMEORIGIN]
-    status: {code: 200, message: OK}
-- request:
-    body: null
-    headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      User-Agent: [python-requests/2.18.4]
-    method: GET
-    uri: http://api.petfinder.com/pet.getRandom?format=json
-  response:
-    body:
-      string: !!binary |
-        H4sIAAAAAAAAA0WQS2vDMBCE/4voMXo5cWrr5Gsh7aU9lN6EtLUF0QNLrQ0h/70b27gXIWZnPmn2
-        RjoIJloXeqKIy5E2Td1SSQ6k+4UxuxhQl0ygkKB8u2BhJOpGutlfQ1ZzdjgfSkmK82ma2HRkcex5
-        JYTkn6+XdzOA19SFXHQwsFJebH4gnH2cTwUBJ9nI51YKcr8fyAB6e6Q4Dxj0aTdWQjZUnGl1/pAn
-        VTfqWH8RzKCr/CxUTGTdA15RxmawZ6VY+XuvTRdMLnqHZVSIbxoRSRtY/36JRpd1DVtNnRzbd8FM
-        9DwvzswFa/n/ZM4WuX9GKTP3YgEAAA==
+        H4sIAAAAAAAAA0WQO0/EMBCE/4tFeX4mcImrtEgHDRSIznKWxBJ+KDYk0un+O3tJFBrLmp357Nkr
+        6SDY2LswEE1cjrRpHlsqyYl0vzBlFwPqkgkUEpQvF3qYiL6SbvHfIeslO5yPpSTN+TzPbK5YnAau
+        hJD84+XyZkfwhrqQiwkWNspzn+8I19/Ph4KAWsrqXLc1ud1OZASzP1KcBwz6dBiVkA0VT1Sd36XS
+        VaWF+iSYQVf5WamYyGYAvKKMzeDISiFW/tFr1wWTq95hGR3iq0FEMha2v1+iNWVbw17TJMeOXTAb
+        Pc+rM3PBWv4/WXKP3D8tZw/6YgEAAA==
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
       Content-Length: ['250']
       Content-Type: [application/json]
-      Date: ['Tue, 26 Jun 2018 14:58:35 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:02 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -63,18 +40,21 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA0WQS2+DMBCE/4vVY/wiJYBPXCslvbSHqjfLbMFS/RB2ClKU/94NIHKxrNmZz569
-        kRa8CZ31PVHEpkDrumyoJAfS/sGYbPCoSyZQiJB/rO9gJOpG2tn9+qTmZHE+5BwV59M0senIwtjz
-        QgjJvy7nDzOA09T6lLU3sFLeuvRA2O5xvmQEFFXVVE1ZkPv9QAbQ2yPZOsCgi0+jkDUVJ1qcPuWr
-        Kmt1LL8JZtCVrwsVE0n3gFeUsRnsWSnEwt97bbpgctFbLKN8eNeIiNrA+vdzMDqva9hq6mjZvgtm
-        guNpcSYuWMOfkzl1yP0HU7RWaWIBAAA=
+        H4sIAAAAAAAAA0WQQU/EIBCF/wvxuMBAXbfLqVeT1YsejDdCx5bEAilom2z2vzvbNvVCyJv3Pnhz
+        ZQ0GF1sfOmaYz5HX9fHMFTuw5hfH7GMgXQkgIWH58qHFkZkra+bhO2QzZ0/zvpRkpJymSUyViGMn
+        NYCSHy+XN9fjYLkPudjgcKU8t/mO8O39fCgEeATQJ3UEdrsdWI92e6T4ASk4pN2oQdUcnrg+vStt
+        qsqA/mSUIVf5WaiUyLZDupJMzXDPKlj5e69NB6EWvaEyJsRXS4hkHa5/v0Rny7qGraZNXuy7EC4O
+        Mi/OLEGc5f9kzi1x/wCG8tNMYgEAAA==
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
-      Content-Length: ['251']
+      Content-Length: ['250']
       Content-Type: [application/json]
-      Date: ['Tue, 26 Jun 2018 14:58:35 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:02 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -89,18 +69,21 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA0WQzW6EIBSF34V0OfLjqEVWbptMu2kXTXcEbpVkBCK0mkzm3XtHjd0Qcu45H5x7
-        Ix14E6zzPVHEpVBIWbeFICfS/cKUXPCoC8pRiJC/nbcwEXUj3TJefVJLcjgfco6KsXme6XymYepZ
-        yblgn6+XdzPAqAvnU9bewEZ5semBcPZxPmUEVKJun0tZkfv9RAbQ+yPZjYDBMR7GkgtZ8KYomw9R
-        qVqqc/NFMIOu/LNSMZF0D3hFGZvBkRWcr/yj165zKla9wzLKhzeNiKgNbH+/BKPztoa9po6OHrug
-        Jowsrc7EOG3Z/2RJFrl/2NA4P2IBAAA=
+        H4sIAAAAAAAAA0WQS0/DMBCE/4vFsX6GgutTrkiFCxwQN8tZEkv4odiQSFX/O9skSi+WNTvz2bMX
+        0kJ0qfOxJ4b4kqjWxxOV5EDaPxiLTxF1yQQKGeq3jx2MxFxIO4efWMxcPM6HWrPhfJomNjUsjT1X
+        Qkj++Xp+dwMES30s1UYHK+WlKzeE727nQ0WAemz0UWtFrtcDGcBuj1QfAIMh341CaiqeqHr+kMo0
+        jRHqi2AGXfV3oWKi2B7wijI2gz0rhVj4e69NF0wueotlTExvFhHZOlj/fk7O1nUNW02bPdt3wVwK
+        vCzOwgU78ftkLh1y/wHCsacBYgEAAA==
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
-      Content-Length: ['251']
+      Content-Length: ['250']
       Content-Type: [application/json]
-      Date: ['Tue, 26 Jun 2018 14:58:36 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:02 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -115,18 +98,21 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA0WQzW7DIBCE3wX1GPNjOy7h5GulpJf2UPWGYGsjxYAMjS1FefdubMu9IDQ788Hs
-        nbTgTbDOd0QRl0Ih5fFUCHIg7Q3G5IJHXVCOQoT847yFkag7aefh6pOak8N5n3NUjE3TRKeKhrFj
-        JeeCfV3OH6aHQRfOp6y9gZXyZtMT4ezzfMkIqGRd1q8NJ4/HgfSgt0eyGwCDQ9yNJRey4E1RNp+i
-        VkepquabYAZd+XehYiLpDvCKMjaDPSv4yt97bTqnYtFbLKN8eNeIiNrA+vdzMDqva9hq6ujovgtq
-        wsDS4kyM0xP7n8zJIvcPhCZau2IBAAA=
+        H4sIAAAAAAAAA0WQQW/DIAyF/wvasQFDtjbllOukbpftMO2GwEuQBkSBLZGq/ve5SZRdEHr2++zn
+        K2sx2uR87JhmPqeqaZ7OlWQH1v7imH2KpEsOJAxYvnx0ODJ9Ze0cvmPWc/ZU70sZtBDTNPGp5mns
+        hAKQ4uPl8mZ7DKbyMRcTLa6UZ5fvCO/u70MhwCMcTzUoyW63A+vRbEOKD0jGMOyNCmRTwbFSp3ep
+        dF1rUJ+MPNRVfhYqObLpkL4kUzLcvRJg4e+5Nh34OrelMDqmV0OIwVhcd78ka8p6hi2mGTzfb8Ft
+        CiIvnVkAP4v/ypwdcf8Acxhh4WIBAAA=
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
       Content-Length: ['251']
       Content-Type: [application/json]
-      Date: ['Tue, 26 Jun 2018 14:58:36 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:02 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -137,37 +123,25 @@ interactions:
       Connection: [keep-alive]
       User-Agent: [python-requests/2.18.4]
     method: GET
-    uri: http://api.petfinder.com/pet.get?format=json&id=41437347
+    uri: http://api.petfinder.com/pet.getRandom?format=json
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA7VW227bOBD9lYmwSF9sWfItiYGiSRAU20VSBNsU2e1iH2hpZLGRSIKkIqtB/70z
-        lG2lXSBP2Yc45MxwzpkLh3qKzlFlOpdqE60i6fT49HRxNk6jUXT+iNZJrUiexgkJDPpCqhxttHri
-        Df/TxpOJG5a8+o1Ukag8Wsyj799HkfPCN+6guohIlmnlRRacmFIrPGgXy3S8PF2OZ8vlLNodHrTv
-        r1km8tyic1MS0w5rIasBON+ROje42XQiF7WLtd0EUOm7g+E9Og+3oqrhEkVWsv6bNAf1bDZPzlhY
-        iG2Ps0NNB5M0SeCjtr6EG1lJL2wHd5bJcNRiM9D+WzcqMHDy2yANsdSYS7FLg9fusIpW/zxF5719
-        ZJSnCoRDpfdmNZn01vGhKHGm651wQkI3mafz2clsfjJJJ+/WjfNv08V0nk5PzpbpcStzX75dJsdj
-        chx/NRuut8y51ERpgC1M/fqwZ4vjMTl+AXb7+qCLhILdvoBp1OuDzpKQ4RdQ/4eqLgjzPzX9lxuS
-        N7vO27sJLVki39Vb9B8Gg4uE2n+6CAZri5iHxgyr0JjB6FZ6uGyqCu7QWkmDgUMLmhu5xRwugzmB
-        jyIl6qHvP919vgrIuD3IbliQo8us/HmQ3GtdjKCl3yP48KYGpwG3dJHJf6ebNxbBl1I90AQDsdaN
-        h34A8BYUtlA0dow0y6AQtaw6qLFeoz2C32k8geA/KMiMnWwc/RMeatEBJcUwALSSrjctLKzlBnLM
-        JE/FGN5L6/wIck2nvlIloBXKg9ewRiiFMR0IlZNrrKDSj5jHcC0fmZZUTuYYtGvseRphPeiC0HFP
-        UzqwKCpe1YZGzM5542K4IIcH8x1vZqoo2yAclE0tlGNrmp3dMzIlOfRlNyIvPe9wwmsdwz1SaAbJ
-        SKvgrNB277uSDwiP6OGRQvduBKrxVlKRyE2hdT6CrEKhKAHURiMqUCZFFQBNRfhe1thn0aA2VR+5
-        Ju4WuKVH4GlkKk5EVgnnkCW6o99gV0BGuXc44qAd7zmbQSe8R8W9cgR/4qapBJVI+JIJ0gwmt7J2
-        wXBjta4ZIBS1CamptH4YKhTKi1zPtpREsabXqaTcFxTYPnXWt9rWYCx1U4B97q7PdJ/fGK5kaE54
-        ULrtW6pPLnOgc4zGA6DvAb4kuz7KKIuVpPAaw06nCXSE697BH9xgoc/3dW81z4eioe6SBW2R81QR
-        UUHHvd4gJ/goPDByuGUdumdX/tl9f39NM4RVVAL/2eTP39xpkp6Ok/k4PbtLlqvpdDVLvoRXWMla
-        DA/vld6Ed+98W1fKrbZODnOtbdu4nfEzPJkmSTr56+b6U1bSwz2m20C9nSFNK0rf7uuCW4bEtfmF
-        w3I8Xd6l89XidDVbfol++rSgE65/csPXRT7wp1c6EDt80OzkSZzuCDu5UvojjShnRIY9s2udiX4Q
-        7YMQRv4ymV2wdJMkPpsMmq3jz54fPXThnFsJAAA=
+        H4sIAAAAAAAAA0WQQW+EIBCF/wvpcYEBa3U5eW2y7aU9NL0RnCpJBSO0mmz2v3dWjb0Q8ua9D95c
+        WYPBxdaHjhnmU+R1XZ65YifW/OKUfAykKwEkjJi/fGhxYubKmmX4DsksydO8z3k0Us7zLOZCxKmT
+        GkDJj5fLm+txsNyHlG1wuFGe23RH+PZ+PmQCPEJV6rICdrudWI92fyT7ASk4jIdRg6o5PHFdvStt
+        isKA/mSUIVf+WamUSLZDupJMzfDIKtj4R69dB6FWvaEyJsRXS4jROtz+fonO5m0Ne007enHsQrg4
+        yLQ6kwRxlv+TJbXE/QMFnqnYYgEAAA==
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
-      Content-Length: ['1112']
+      Content-Length: ['250']
       Content-Type: [application/json]
-      Date: ['Tue, 26 Jun 2018 14:58:36 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:02 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -178,39 +152,93 @@ interactions:
       Connection: [keep-alive]
       User-Agent: [python-requests/2.18.4]
     method: GET
-    uri: http://api.petfinder.com/pet.get?format=xml&id=41437347
+    uri: http://api.petfinder.com/pet.get?format=json&id=41137494
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA61W3W/jNgx/71/B5mH3ksR2vtpmrrveisNuaA/FroduO9yDYtOxrrZkSHKT3F8/
-        UnLSYMOAPvQhDkVS5I8fopRebZsantFYqdXlIBnHA0CV60Kq9eVAWj06P59fjJLBVXZykrboSqkK
-        NEC7lF1urbwcVM61yyjabDbjzXSszTqaxHES/Xl3+zmvsBEjqawTKscBkP5S6U+iQduKHIP8VufC
-        ee+9JdHK8cHTONdNZL2ijeLxRfQi2dpikJ1AWqGgJVGQ9oFk8ThJo/2CBU6STyeaNpvEyfkoXowm
-        i4dktpyfL6eLv9PoRc7aRLnOMgkp5QKzJI7TyFOeR7pWrBEirx0d1NPogIVz5aWyyGbJbHo2nZ2l
-        ES28/Qprh+ZjkX24nZxdkIUD40h8j44Y1/F0Fk/mZwelwGY9RYnMPj98uUkjTzJPKNmIOrvR6zTq
-        aWavDGLRR+Tp7F46eN/VNTygMRJNGgX+kcqd3GIB75k+kvakN5Y2cpvt0KYRE97/GrO/dKfY/TpA
-        srjN7gg+Bg0rf2B2S2v+Z4Zuufw9uLDIBEfKbvu193ukmBZocyODMD39+uvN9cP110etyyFs6HsK
-        H981YDXgNpeOotjp7p1BcJVUT9TbIFa6cyAKtslLULiBsjMjpLaBUjSy3kGDzQrNKfxGWEDwD0pS
-        YyNrS3/CQSN2QHVp2QFspKuYMLCSaygwl9yAY/ggjXVDKDTt+t5ZBxuhHDgNK4RKtO0OhCrINNZQ
-        62csxnArnxkWHR1ZoJeuMOBshXGgS/KOe5jSgkFRM9W02rjeeGfHcE0GD+o9bkaqqIIgLFRdI5Rl
-        bWri3REYauTaVbshWQm4/Q6n9RgekUJrkZS08sZKbfa2a/mENE4cPFPozg5Bdc5IqhKZKbUuhpDX
-        KBQlgOo7pALlUtTeYVuTfz6GIYst6rYOkWvCbojB5pwRUnEi8lpYi8zRO/p6vRJyyr3FIQdtec3Z
-        9DLhHCpullP4A9ddLahEwlUMUMiazMrGesW10bphB76onU9NrfXTS4V8eZHruakkQWy0chXlvqTA
-        9qkzbqNNA62hbvJuj82FTIf8juFG+uaEJ6U3oaVCchkD7WNvfFJCD/DB6/sopyzWksLrWjY6iWFH
-        fu0V/M4N5vt8X/eN5nlZdtRdsqQlcp5qAipou9Nr5ASffvuWpdHxseJjRll2X9qCqtUPztkouXiI
-        F8vJZDmNaXAeKRxNzuujocjjspAiHO+20k6Ho94vQBZ07wx8kJeDVrlB1t8DQfdfV0Fg8i1go/1c
-        jZLoakVRXybzySyhgbpIfqJR/vNGFq66XMR+MSLT4+8tzSVv4v8hlG3z1hAu5gECmX4VhO1bA5jH
-        fRK2r/LfqrcGMI0PVXgVgjfvgnnv/z890NOhU6NDq9K9r5zIXdARRWHozk+yKb0E4BPN2AruZC2d
-        MDt4oJlU03W31zneMQlvBDIn3S57pLEB96Ju4D2KvKInBXO9nI8L0nMgHJz+nfFDttmUrn96ITC5
-        P0EKs/kiGS3OF6PpYjH1Eah+Sym2e5f0ZJJ1Fq44ujZ/aXG93olCNJZfaWkU5D7sl2DTyD9c0pd3
-        VnbyD1cAwW4lCgAA
+        H4sIAAAAAAAAA7VXbW/bNhD+KwdhCLbClvViJ7aBYnETpzXgOkHsJluHfWAkyuJCkapIxXaL/Pcd
+        KcXyjMQfNu+TpOPdPffyiDz+cM6piGTMxNIZOkzJdr/fG7R9p+WcP9FCMSlQ7rseCnKqEyZiWjjD
+        H+bDPGSuUUU1r87wjx/OT7jmqJxGjPAZpbFynlu1lHBNCxo3gpSoeSr1jkoqS0V1QZjY1RPyUi7V
+        7vcFMVZ/PrccpYkubRB2aYRaTiSFJpENMk+loNvVn8/Oer9APwzbQegPnNq8WZ/dGRmJ44IqFaAY
+        v2hGGN9qaJJKigU43+CLdCOZWUCmN1uViYg4xg93jHOypGb9O8u3y/1Bt+cZYULWFUKN529Vbtxr
+        Fz7INfTC067zbFSWTZCjuOTaxs6+N9LPRpLRmJE6bS3V9s125rzSd3KhsaNVubXOh51Ope1um2zS
+        qoUdFKpO1/fDs+6g2/E7vz6USr/3e0E38MJB/+xkxWKdvj/1Ttro2P0rXxr+sNhQx3bsBTbJs+PD
+        DnonbXR8AHZ9fNCeh8muD2Dm4vigoWcrfAD1f+hqDzEP9fS/UCnYBx0coFJwNCq9CfsalYIjUelN
+        0FeoFByLSm+Cvkal4EhUOpDpPpX2E/33oOEe6MA/QKXwaFR6E/Y1KoVHotKboK9QKTwWld4EfY1K
+        4ZGodCDTfSqFZhbA88981Ofhixt7UKbUjB43VE8aBb8fnNnVh8KOKSi3b80pzDR8KDmHBS0KhqOP
+        QRAka87cOdPE+qfrrezKCGKqooLVQ1G9AO/evYOL6y+3i/H8d5hO5ovJ7KMV3kzHo/kYLkbTKVzf
+        wrj9eTSZwuLTGG7Gt/PrmVUeX7pweQ2z6wU6mS1GFwu4H91ewWgO92P4NLob4xpcoftP41uYzK5w
+        hDDxQYQRg5ZQKkgKmYFOKVxSToSEui6oiLKUxPBAqUCp1EBEDJwmGhJZQExJXCmtiAIcmYonHBqt
+        TkoLNCDaTnZosbR+cIYDEhVSKasQpVRpyMijscKqxixJWIRTjImLPiHmivBHF+6rKIyJ8USyvDTj
+        2S62BC634EsqNKctmFgz9IX55Mb8JSNVZbRiOrX5Yy5+HzIcD1PVsi6YwIIQDIRhlVRttJICCDZe
+        lgV6I4VWlUOmULwiG8yK5PnGOsg52SQlrzCemGJaFuhbVerLgqJzC4KuzXDbAk0eqa2LojxBDFuF
+        pbQqWjJO9RbtW8lo3Qv5hEaoqES5XHLqwkcp4wrVhJpTmZtSMBw+SzPSwyOLMewRJASHYaVZBPin
+        5UQgJ11Y2BgS48IWcVNxI0WoLTjyXzMKGVu34IGT6LFGg1XKNDWi7wio2Bo2WCMFksdVTbEc6PCJ
+        atu6EUZnqiHMX2ZLCA/obEOKOnwlTelLYW0JOhSYHyZUKClaGHSJiQF2LiEZQ7+mzQTzM4Uz9i7M
+        JEhtSGP2D9tk/GhhZyhRWKiL6jYAFyjd8KFhIz7PU4TlOHZjVwRWqlSunaBZ8ytvqNrZPXa2jtld
+        18xBDse6fsnj3RtE4Pn9the2vcHCOx12vWEYfLV3CsEy0lwj8D5jt5PzdcaFGq4Va3bI1WrlrkJX
+        FstO4Hl+57fP0znGnJE2E/jviYjivoe0rG9jhrkozvK9GE7bwdnCD4ZhOPTCr84/rkpooaorhb0t
+        xU38vufZwLYXwFruuX4dsGJDIWe4qaicRLSKbCojUm12L0mQnO3t8cpqqo7nDjrNylrhPe/5bzoF
+        tyKLDgAA
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
-      Content-Length: ['1209']
+      Content-Length: ['1317']
+      Content-Type: [application/json]
+      Date: ['Wed, 27 Jun 2018 12:33:03 GMT']
+      Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
+      X-Frame-Options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.18.4]
+    method: GET
+    uri: http://api.petfinder.com/pet.get?format=xml&id=41137494
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['1414']
       Content-Type: [text/xml; charset=iso-8859-1]
-      Date: ['Tue, 26 Jun 2018 14:58:36 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:03 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -221,37 +249,44 @@ interactions:
       Connection: [keep-alive]
       User-Agent: [python-requests/2.18.4]
     method: GET
-    uri: http://api.petfinder.com/pet.get?format=json&id=41437347
+    uri: http://api.petfinder.com/pet.get?format=json&id=41137494
   response:
     body:
       string: !!binary |
-        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
+        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
+        tyKLDgAA
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
-      Content-Length: ['1113']
+      Content-Length: ['1317']
       Content-Type: [application/json]
-      Date: ['Tue, 26 Jun 2018 14:58:37 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:03 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -262,37 +297,43 @@ interactions:
       Connection: [keep-alive]
       User-Agent: [python-requests/2.18.4]
     method: GET
-    uri: http://api.petfinder.com/pet.get?format=json&id=41437347&outputformat=json
+    uri: http://api.petfinder.com/pet.get?format=json&id=41137494&outputformat=json
   response:
     body:
       string: !!binary |
-        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
+        H4sIAAAAAAAAA7VXbW/bNhD+KwdhCLbClvViJ7aBYnETpzXgOkHsJluHfWAkyuJCkapIxXaL/Pcd
+        KcXyjMQfNu+TpOPdPffyiDz+cM6piGTMxNIZOkzJdr/fG7R9p+WcP9FCMSlQ7rseCnKqEyZiWjjD
+        H+bDPGSuUUU1r87wjx/OT7jmqJxGjPAZpbFynlu1lHBNCxo3gpSoeSr1jkoqS0V1QZjY1RPyUi7V
+        7vcFMVZ/PrccpYkubRB2aYRaTiSFJpENMk+loNvVn8/Oer9APwzbQegPnNq8WZ/dGRmJ44IqFaAY
+        v2hGGN9qaJJKigU43+CLdCOZWUCmN1uViYg4xg93jHOypGb9O8u3y/1Bt+cZYULWFUKN529Vbtxr
+        Fz7INfTC067zbFSWTZCjuOTaxs6+N9LPRpLRmJE6bS3V9s125rzSd3KhsaNVubXOh51Ope1um2zS
+        qoUdFKpO1/fDs+6g2/E7vz6USr/3e0E38MJB/+xkxWKdvj/1Ttro2P0rXxr+sNhQx3bsBTbJs+PD
+        DnonbXR8AHZ9fNCeh8muD2Dm4vigoWcrfAD1f+hqDzEP9fS/UCnYBx0coFJwNCq9CfsalYIjUelN
+        0FeoFByLSm+Cvkal4EhUOpDpPpX2E/33oOEe6MA/QKXwaFR6E/Y1KoVHotKboK9QKTwWld4EfY1K
+        4ZGodCDTfSqFZhbA88981Ofhixt7UKbUjB43VE8aBb8fnNnVh8KOKSi3b80pzDR8KDmHBS0KhqOP
+        QRAka87cOdPE+qfrrezKCGKqooLVQ1G9AO/evYOL6y+3i/H8d5hO5ovJ7KMV3kzHo/kYLkbTKVzf
+        wrj9eTSZwuLTGG7Gt/PrmVUeX7pweQ2z6wU6mS1GFwu4H91ewWgO92P4NLob4xpcoftP41uYzK5w
+        hDDxQYQRg5ZQKkgKmYFOKVxSToSEui6oiLKUxPBAqUCp1EBEDJwmGhJZQExJXCmtiAIcmYonHBqt
+        TkoLNCDaTnZosbR+cIYDEhVSKasQpVRpyMijscKqxixJWIRTjImLPiHmivBHF+6rKIyJ8USyvDTj
+        2S62BC634EsqNKctmFgz9IX55Mb8JSNVZbRiOrX5Yy5+HzIcD1PVsi6YwIIQDIRhlVRttJICCDZe
+        lgV6I4VWlUOmULwiG8yK5PnGOsg52SQlrzCemGJaFuhbVerLgqJzC4KuzXDbAk0eqa2LojxBDFuF
+        pbQqWjJO9RbtW8lo3Qv5hEaoqES5XHLqwkcp4wrVhJpTmZtSMBw+SzPSwyOLMewRJASHYaVZBPin
+        5UQgJ11Y2BgS48IWcVNxI0WoLTjyXzMKGVu34IGT6LFGg1XKNDWi7wio2Bo2WCMFksdVTbEc6PCJ
+        atu6EUZnqiHMX2ZLCA/obEOKOnwlTelLYW0JOhSYHyZUKClaGHSJiQF2LiEZQ7+mzQTzM4Uz9i7M
+        JEhtSGP2D9tk/GhhZyhRWKiL6jYAFyjd8KFhIz7PU4TlOHZjVwRWqlSunaBZ8ytvqNrZPXa2jtld
+        18xBDse6fsnj3RtE4Pn9the2vcHCOx12vWEYfLV3CsEy0lwj8D5jt5PzdcaFGq4Va3bI1WrlrkJX
+        FstO4Hl+57fP0znGnJE2E/jviYjivoe0rG9jhrkozvK9GE7bwdnCD4ZhOPTCr84/rkpooaorhb0t
+        xU38vufZwLYXwFruuX4dsGJDIWe4qaicRLSKbCojUm12L0mQnO3t8cpqqo7nDjrNylrhPe/5bzoF
+        tyKLDgAA
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
-      Content-Length: ['1113']
       Content-Type: [application/json]
-      Date: ['Tue, 26 Jun 2018 14:58:37 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:03 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -303,35 +344,39 @@ interactions:
       Connection: [keep-alive]
       User-Agent: [python-requests/2.18.4]
     method: GET
-    uri: http://api.petfinder.com/pet.get?format=json&id=41817910&outputformat=json
+    uri: http://api.petfinder.com/pet.get?format=json&id=40027150&outputformat=json
   response:
     body:
       string: !!binary |
-        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
+        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
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
-      Content-Length: ['1010']
+      Content-Length: ['1061']
       Content-Type: [application/json]
-      Date: ['Tue, 26 Jun 2018 14:58:37 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:03 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -342,32 +387,34 @@ interactions:
       Connection: [keep-alive]
       User-Agent: [python-requests/2.18.4]
     method: GET
-    uri: http://api.petfinder.com/pet.get?format=json&id=27797952&outputformat=json
+    uri: http://api.petfinder.com/pet.get?format=json&id=24385882&outputformat=json
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA7VVW2/TMBT+K0cWGi/LraVrGwlREEJCGghtIBCIByc+TcwSO4rdpd20/86xkyYF
-        pD0NKW3i79yvvmcbVLkWUhUsZdLoYLVarIOEnbPNLbZGakV4EsYENGi3UglsWXrvDu6lG0ssZvpk
-        6Y979oxojFcWWxTs4XwASm6uS20Ne/j5cM6M5XbnBT3xNfGxXCvLc6+4KbXCkYo1lxVoVR2ADbIT
-        8dLLciFaNGZGMJ28wMhBhHyHYU0PwZvC/Ye5rr1NaQ8j41de3VB8BN/JZkSX8XK1cOCW73v1g7HE
-        ndyxmLx5LXaV9U7Kuwn94JAaheRDcFab8cvnbNPzs0ZZynWfMGubNIp67nBMv/N8ACMCTTRbLtfL
-        9WIWJdGrbGfsy2S+mlMZZ6v5WSeFLV9exGcBKQ5/NYWrrBSuqL4yR7Pbpn56s+vFWUCKHzG7f3qj
-        i5iC3T9is1FPb3Qe+ww/YvU/VHVBNv+p6U/XkO4wdN5RjW/JEt1QfkL7XvSNnLWIwnei/5qm95Jn
-        LRe6hSu0rcRbPxUD7arUAo3kCq6kKDDj+U0/04rXJ2NJE/tG9qOA+xF+5wASz1s5LIw/+UEa4LCl
-        Aa4QyItotAG13EOmWwU80zsLSTSLkyQEuC7RSZmGH1AAVwJ2DVgNgrYELQ0wbusMfAWlFnilVQFF
-        i9xCJ20J2pbYgtCFOYeMVNOqAuWChgyR7LV6R1pzTrJGQ4fEqp5buFG6g5J+lFjo9K4SROg1ksI6
-        PHrGIaPATHkAMriVrbFOjRNSLv1EL3WNXtAFlpeyov2iyGU4ZqXXXulbPHJTgDmvKnCe6075BSOn
-        PB/QnJT8vThZl7Pl2pEqbuyXRpyuUkroPEiSIF5+niWpe+bf/XJVkuoxsr3VBXNtttnXlTLp3sip
-        r7uuC7t5qNuCyhMn0bcPl9c5JYMHUtHeVjlSt5bIh3vEyhoJrptTH1ZBfBHMLj4nL9LFKp0vv7M/
-        LgySMP3K9XeGmPxP4tg7Nl5dAx6HyeCwkanSH6lPqVty7D271FTZ/qYbguCN/Gsyjec0URyuo4my
-        N3S/PfwGPhf2I0UHAAA=
+        H4sIAAAAAAAAA7VWUW/TMBD+K1GE9rQkTtJ0aaSJIvEAYiCkDYFAPHixm5gltrEd2jLtv3N2sqaq
+        2j5AeIp9d7nvzvdJ9z36S8pLQRiv/MJnWgR5ni2C2L/0l7+o0kxwsMchAoOkZsU4ocovHu3FfoQ0
+        EKLHo198e/RfgM/HjaGKEv/pcjDUWN/Wwug9i+g0NQozbuO+P1362mDTuXQu4BXE+qXgBpcOTtaC
+        UzgMkXQMfGcjMSGKap30EbTFrNlFyE5qcJYdxQ9LLJqwFK3Lzsx2TMPLWihcUev5zeTOsVhk6Moa
+        V3jTZx+wYnuz12qvGNI1xgZr9nu03lpLSwnDQydG6N3JPduyj/clN/Dc/QsZI4so6qPD3QRs8YMx
+        AqOOklmaZ3meRHH08r7T5jpOs3SeJXk2u1gzYurrOboIIHH4Q1Z2uIzYubpRPMOuZDs97CK7CCDx
+        GdjN9KAZgmY3ZzAlnx40Re6Fz6D+h6lmgHlupv9CpWQERXF+laPFGSolk1HpJOwxKiUTUekk6BEq
+        JVNR6SToMSolE1HpTKeHVDps9O9B0wPQ2fwMldLJqHQS9hiV0omodBL0CJXSqah0EvQYldKJqHSm
+        00MqpXa9w/6zl2EfPqdxi7KmVi18pOYt6dfrvaKUuP3oTqOs+FwzacXHTkTcUaUYiBKnHzhux437
+        mhnYrDY93eyM762BgBBQbBAs+9Ee0x72EtTcew1WFVWebnHTeERUofeGWvcK0Dhpth7mxJMN3q66
+        xp3XomuI1+IHCikqRbHx4Okk5oDifiaCQvbSeD87ph4ggRId/KdBAXGA0p4WHodmPajjnno1JG3g
+        hqVUQioGeqfZhk5FsLGfLdV7L/iW7EmibG49DdbmkyT7ailBcRLEKIhnd2hWoEWRLb46/cQZdDu+
+        iKh8O7Tlpm24LjaajSxZr9fhOg2FqqIEoTj68v7mtqxBcgWMgzTjJYXZ1xQPctGwloK5lfs15AGa
+        B8nVXZwUaVqgmathVIDwh+5llROBZKw/RsgVtlOogx2F8VCwZgUXH4AMWuKS9pXdiBL3E39uAkt2
+        wHPtInWEwkU0ejYa5OnTH17D6/AsCwAA
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
-      Content-Length: ['812']
       Content-Type: [application/json]
-      Date: ['Tue, 26 Jun 2018 14:58:37 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:04 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -378,37 +425,42 @@ interactions:
       Connection: [keep-alive]
       User-Agent: [python-requests/2.18.4]
     method: GET
-    uri: http://api.petfinder.com/pet.get?format=json&id=41597284&outputformat=json
+    uri: http://api.petfinder.com/pet.get?format=json&id=40673021&outputformat=json
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA7VXWW/jNhD+KwOhCFrAknVYvoBFs0VPILtdJCnabtEHWhpL3EgkQVKxnWD/e4e0
-        I2cN2w+t+2JLc31zfDTHz8E1ikKWXFTBPOBGhtNpPguTYBBcP6I2XAqSJ1FMAoV2yUWJOpg/uxf3
-        JZUlE0OPnweBscx27jn4ipTB24BkhRSWFd5W1VJgrx1NZuE4G4fZJM4Agp37Xv/21slYWWo0Ju3F
-        H6JfI/hOrmE0GTsDbBlvtvAFt5ve7lZWlL6zeOKql07SST5xwiVbb512AMk+r3gCP0TwvtMG9QZu
-        ywi+/rlrmUC4kwVH62XfBJ+dc7XP90/ZUQ9dGfxpL71xkhZLznYdsNL0T8H8r+fgemsfKGGpx96p
-        tlbNh8OtddS3PSpkuxMOSWiGoySfTdLpaJgMv110xr5J8jSfJZM8ya5WvLT1m3F8FVLg6JOq3ER5
-        6YZJKe1hl6q9POwsvwop8BnY9eVB85iKXZ/BVOLyoFnsO3wG9X+Yak6Y52b6X6iUHoCO8jNUSi9G
-        pZOwx6iUXohKJ0GPUCm9FJVOgh6jUnohKp2p9JBKh4X+e9DsS9Dx2V+l7GJUOgl7jErZhah0EvQI
-        lbJLUekk6DEqZRei0plKD6lEkH+7a9K9vNyuuzD+oqyxsag/oP1lb5CPY3+vLzRi6a9K/9Tr6eqn
-        BcRFFazd37M/bbQEeHE2uO4175ygRFNo7neVXvGj5ijKZgMJbJDpUDYl+DDcAIOaidLIFgfAbN2g
-        5QVryLbiS4slFExwWghWtQSNXoHik9yQpibvBdMPoNwHKx9R2E6TKbc1mJY3SNFFSfa27gxnpo0A
-        7hBb2sAojDOTnQVcLqW2A6gRFGp6ph0CXD7AWvZEttAgU2YAhtYf92prLbuqpm8y4XqL514qStCi
-        sSCXgMxgBL/XlAVY9uD8GFB/2QMstWy9/bITg20fFOsMoQpcW7CSLC1NYkAFG+s8PYIrV7GVAS5c
-        06QLXDNL7SthgShAaXzksjOuReuCPTLXvsWGegCdeBByJaCUVQT3BN1I+QBS+KBLVmxLx8KSL28a
-        Ip323k5dyErwJyYos9rVbYEZ1yw3DWJ4uc3C1eNJXGmmatTQcmdqOt1y40bbLJBbyr2QWnugwS59
-        GhgFdP67UVPqtF5C0TVKcxv1TME18wmunBsDT08nN51S0rWPOrfAyK+BfM9KIV+dgFf0f3ubx07T
-        MGN/U+XrhTiNk2kY52ES38fpPI7nafLRr8iCt6zpzb6XlT8e1+u2EWa+Nnx/ylerVbTKIqmrYRrH
-        yfCPdzd3RU0rdMgFbd+iQDq7NbLdjm95S7NmrTrIYRym4/tkNM+n82z6Mfhi8ycPs12L/fJf7vNP
-        4tgn1v+t2MnjKNklbPhcyPd0rI2i6W8zu5EF2x7blyKY4ge/U8ZbmmEczYZ7zdqUFPcftIugD+EM
-        AAA=
+        H4sIAAAAAAAAA7VX247bNhD9FUYIkhdfdLH34iLoBulDAmyKotkCRZo+0OJYYlYiVZJa2Qn67z2k
+        HHvj2gaSqk8Wh8M5Z4ZH8szn6IZUroVURbSIpNXjq6v59TiJRtHNAxkrtYI9mcQwNORWUgky0eKz
+        X/gf3Ti4WDz+PYqs4671z9FTbEYvI9hyrRzPg29TakW73XlyOb6YZeMsnSfR9vB+9+0bb+NCGLI2
+        7cNTzWW1j27ymnR3U3jrJNd1QJNus/O45cjKLltT+K1PstntzK6uZlfeuOLrPvYWKfErvyz2VF6K
+        tnKBofy0t956S01C8m1qTtvdU7T443N00/tHjXIoXjhUOtcsptPee7Krp2e/NU5htNNZfHGZxWky
+        TaY/LlvrXiTzNJ1dJvP59bNOCle+uIifjRF48rEp/FVJ4W8JlPawq6YeHvZ6/myMwGdg18ODzmMk
+        uz6D2ajhQbM4VPgM6v9wq3NgnrvT/yKl9FuklA4mpZOwx6SUDiSlk6BHpJQOJaWToMeklA4kpTOZ
+        HkrpMNHvB82+RUrZYFI6CXtMStlAUjoJekRK2VBSOgl6TErZQFI6k+mhlA4T/X7Q2QEoFHRaSrPB
+        pHQS9piUZgNJ6SToESnNhpLSSdBjUpoNJKUzmR5KCZB/+o7LL750Z9swoecqqXJkfiH3RvSd2tIQ
+        idBqhafQaoVjP+marJM5e1dq49hrLk1IJ2ze8eVy46FGkeL1ozZO8tA4Wlrve09vEGRzI0N3+5Uz
+        k5ZxtpQF2+hWFaxoNxP2mljHLRNt3ZBgerViUjFXEsvh48zmh7Doq8buFXWs7E+sjCQlqg1bto6V
+        XDCnWafNPROykgUphy2YCnSyjJRuccSScxVQpMJGCTa6KJkzKDdAuGM9aiXYkhARwUmMYKmXmjnU
+        x69gZUuj26J0CGOlIPbRn0f0DrzI4KR0rJOuDMSX0uEOQJboE1pqxEGeBr0+WuYnH9QH9XVhbEfk
+        WNUWI/bOyapiSjv2VysdMYsjrAs0AVbypiEVcgmZVHJFI5+A0ORX94SIVq8ccgHtpkJBNigvW2m9
+        TQMLZGsssaY1BvxLUvD2LCFJZPuE7QiW/6oeFBNAGUadDRKvqnCXBcTMeKURJNSA/PZSi82I2VJ3
+        PrjSjBeFHxkgkHCo0g8gzYGpvGi2RW5tCfcR21WosrpHszWHSr0XSpPf+4s2uGZwg4dceXk9R7FA
+        FPfh7y1oinhehiswOIO7N9AGZO+r9jxcOWcFisPyUssckoODV8XEF+FVP4qxl7++Ak/GDwcoON2h
+        +Fz0Qx1bEXnKT+dxoClVXrV4LZiiFpweiwrPqD4SZw88z5EECAkaQ8m1d/SnVxVx1hiUEiScfKBJ
+        GKDk/rXbkH30xr8Rj2bBbOb/caKKW/dbIx7PiWmcXI3jZJzM7+KLRXa5yLL3YXJUsub7YfEVxwQH
+        8826rpRdrK3cf9a6rpt02USbYprGcTL9/e3tu7zEsDnGu+G4ygkfq5L4dvB10n9meN0ccLgYp5d3
+        SQoCi3j2PvpqHMYJ24+UYSIWe/5JHAdiu1l7a48nyZawlQulf/aX3PCcema3Ouf9l+lLEryRBx9m
+        GzztNJ5cT/c7aysQ9x9NYlPv9g8AAA==
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
-      Content-Length: ['1085']
+      Content-Length: ['1219']
       Content-Type: [application/json]
-      Date: ['Tue, 26 Jun 2018 14:58:38 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:04 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -419,48 +471,35 @@ interactions:
       Connection: [keep-alive]
       User-Agent: [python-requests/2.18.4]
     method: GET
-    uri: http://api.petfinder.com/pet.get?format=json&id=38424760&outputformat=json
+    uri: http://api.petfinder.com/pet.get?format=json&id=40752570&outputformat=json
   response:
     body:
       string: !!binary |
-        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
+        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
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
-      Content-Length: ['1748']
+      Content-Length: ['855']
       Content-Type: [application/json]
-      Date: ['Tue, 26 Jun 2018 14:58:38 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:04 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 - request:
@@ -471,37 +510,44 @@ interactions:
       Connection: [keep-alive]
       User-Agent: [python-requests/2.18.4]
     method: GET
-    uri: http://api.petfinder.com/pet.get?format=json&id=41437347
+    uri: http://api.petfinder.com/pet.get?format=json&id=41137494
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA7VW227bOBD9lYmwSF8sWfIttoGiSRAU20VSBNsU2e1iH2hpJLGRSIKkIqtB/71D
-        SrbSLpCn7EMccmY458yFQz0F5yhSmXFRBNuAGxmu18tNmAST4PwRteFSkDyJYhIotDkXGepg++Q2
-        7p9UlkzMuHSr30gVsMqixiz4/n0SGMtsY46qi4BkqRSWpd6JKqXAo3a5SsLVehXOV6t5MBwete+v
-        nYxlmUZjZiSmHdaMVyNwNpA6V1gUHctYbSKpCw/KbXc0vEdj4ZZVNVwiS0un/8bVUT2fL+KNE+Zs
-        3+MMqMloksQxfJTalnDDK26Z7uBOOzIualaMtP+WjfAMDP82Sn0sNWacDWmw0hxXwfafp+C8tw+U
-        sFQBf6i0Vm2n0946OhYlSmU9CKckNNNFspifzRdn02T6btcY+zZZzhbJ7GyzSk5bntny7So+Dclx
-        9FUVrt48c6UmSiNsrurXh90sT0Ny/ALs/vVBlzEFu38BU4nXB53HPsMvoP4PVV0S5n9q+q9rSLcZ
-        Ou/gxrdkie6u3qL9MBpcxNT+s6U32GnEzDemX/nG9Ea33MJlU1Vwh1pzGgwuNK+54XvM4NKbE/gk
-        EKwe+/7T3ecrj4z7o+zGCTI0qeY/D5J7KfMJtPR7Ah/e1GAk4J4uMvnvZPNGI9iSiweaYMB2srHQ
-        DwC3BYEt5I0OkWYZ5KzmVQc11jvUJ/A7jSdg7g9yMnNOCkP/mIWadUBJUQ4AWk7XmxYadryADFPu
-        pmIE77k2dgKZpFNfqRLQMmHBStghlEypDpjIyDVWUMlHzCK45o+OFheGZ+i1O+x5KqYtyJzQ8UCT
-        G9DIKreqFY2YwXljIrggh0fzgbdjKijbwAyUTc2EcdY0O7tnZEpyaMtuQl563v6ElTKCe6TQFJKR
-        FN5ZLvXBd8UfEB7RwiOFbs0ERGM1pyKRm1zKbAJphUxQAqiNJlSglLPKA6qK8C2vsc+iQqmqPnJJ
-        3DW4lp6ApZEpXCLSihmDTiI7+vV2OaSUe4MTF7Rxe5dNr2PWonC9cgJ/YtFUjErEbOkI0gwmt7w2
-        3rDQUtYOwBe18amppHwYK+TLi66ebcmJYk2vU0m5zymwQ+q0baWuQWnqJg/73F2f6T6/EVxx35zw
-        IGTbt1SfXMeBzjk0NwD6HnCXZOijlLJYcQqvUc7pLIaOcM07+MM1mO/zQ91b6eZD3lB38Zy26PJU
-        EVFGx60s0CX4xD8wfLxlHZpnV/7ZfX9/TTPEqagE9rPKnr+5szhZh/EiTDZ38Wo7m23n8Rf/Cgte
-        s/HhvZKFf/fO93UlzHZv+DjX2raN2rl7hqezOE6mf91cf0pLerhDug3U2ynStKL0DV8XrmVIXKtf
-        OKzC2eouWWyX6+18/SX46dOCTpj+yfVfF9nIn15pT+z4QTPI4ygZCBu+FfIjjSijWIo9s2uZsn4Q
-        HYJgiv8ymY23NNM42kxHzd64z54fuiDvzVsJAAA=
+        H4sIAAAAAAAAA7VXbW/bNhD+KwdhCLbClvViJ7aBYnETpzXgOkHsJluHfWAkyuJCkapIxXaL/Pcd
+        KcXyjMQfNu+TpOPdPffyiDz+cM6piGTMxNIZOkzJdr/fG7R9p+WcP9FCMSlQ7rseCnKqEyZiWjjD
+        H+bDPGSuUUU1r87wjx/OT7jmqJxGjPAZpbFynlu1lHBNCxo3gpSoeSr1jkoqS0V1QZjY1RPyUi7V
+        7vcFMVZ/PrccpYkubRB2aYRaTiSFJpENMk+loNvVn8/Oer9APwzbQegPnNq8WZ/dGRmJ44IqFaAY
+        v2hGGN9qaJJKigU43+CLdCOZWUCmN1uViYg4xg93jHOypGb9O8u3y/1Bt+cZYULWFUKN529Vbtxr
+        Fz7INfTC067zbFSWTZCjuOTaxs6+N9LPRpLRmJE6bS3V9s125rzSd3KhsaNVubXOh51Ope1um2zS
+        qoUdFKpO1/fDs+6g2/E7vz6USr/3e0E38MJB/+xkxWKdvj/1Ttro2P0rXxr+sNhQx3bsBTbJs+PD
+        DnonbXR8AHZ9fNCeh8muD2Dm4vigoWcrfAD1f+hqDzEP9fS/UCnYBx0coFJwNCq9CfsalYIjUelN
+        0FeoFByLSm+Cvkal4EhUOpDpPpX2E/33oOEe6MA/QKXwaFR6E/Y1KoVHotKboK9QKTwWld4EfY1K
+        4ZGodCDTfSqFZhbA88981Ofhixt7UKbUjB43VE8aBb8fnNnVh8KOKSi3b80pzDR8KDmHBS0KhqOP
+        QRAka87cOdPE+qfrrezKCGKqooLVQ1G9AO/evYOL6y+3i/H8d5hO5ovJ7KMV3kzHo/kYLkbTKVzf
+        wrj9eTSZwuLTGG7Gt/PrmVUeX7pweQ2z6wU6mS1GFwu4H91ewWgO92P4NLob4xpcoftP41uYzK5w
+        hDDxQYQRg5ZQKkgKmYFOKVxSToSEui6oiLKUxPBAqUCp1EBEDJwmGhJZQExJXCmtiAIcmYonHBqt
+        TkoLNCDaTnZosbR+cIYDEhVSKasQpVRpyMijscKqxixJWIRTjImLPiHmivBHF+6rKIyJ8USyvDTj
+        2S62BC634EsqNKctmFgz9IX55Mb8JSNVZbRiOrX5Yy5+HzIcD1PVsi6YwIIQDIRhlVRttJICCDZe
+        lgV6I4VWlUOmULwiG8yK5PnGOsg52SQlrzCemGJaFuhbVerLgqJzC4KuzXDbAk0eqa2LojxBDFuF
+        pbQqWjJO9RbtW8lo3Qv5hEaoqES5XHLqwkcp4wrVhJpTmZtSMBw+SzPSwyOLMewRJASHYaVZBPin
+        5UQgJ11Y2BgS48IWcVNxI0WoLTjyXzMKGVu34IGT6LFGg1XKNDWi7wio2Bo2WCMFksdVTbEc6PCJ
+        atu6EUZnqiHMX2ZLCA/obEOKOnwlTelLYW0JOhSYHyZUKClaGHSJiQF2LiEZQ7+mzQTzM4Uz9i7M
+        JEhtSGP2D9tk/GhhZyhRWKiL6jYAFyjd8KFhIz7PU4TlOHZjVwRWqlSunaBZ8ytvqNrZPXa2jtld
+        18xBDse6fsnj3RtE4Pn9the2vcHCOx12vWEYfLV3CsEy0lwj8D5jt5PzdcaFGq4Va3bI1WrlrkJX
+        FstO4Hl+57fP0znGnJE2E/jviYjivoe0rG9jhrkozvK9GE7bwdnCD4ZhOPS6X51/XJXQQlVXCntb
+        ipv4fc+zgW0vgLXcc/06YMWGQs5wU1E5iWgV2VRGpNrsXpIgOdvb45XVVB3PHXSalbXCe97z31ms
+        iOeLDgAA
     headers:
       Connection: [keep-alive]
       Content-Encoding: [gzip]
-      Content-Length: ['1112']
+      Content-Length: ['1317']
       Content-Type: [application/json]
-      Date: ['Tue, 26 Jun 2018 14:58:38 GMT']
+      Date: ['Wed, 27 Jun 2018 12:33:04 GMT']
       Vary: [Accept-Encoding]
+      Via: [1.1 bvrt3-notify05.beaverton.or.bverton.comcast.net (squid/3.5.23)]
+      X-Cache: [MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net]
+      X-Cache-Lookup: ['MISS from bvrt3-notify05.beaverton.or.bverton.comcast.net:3850']
       X-Frame-Options: [SAMEORIGIN]
     status: {code: 200, message: OK}
 version: 1
