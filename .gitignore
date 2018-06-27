@@ -6,6 +6,7 @@ Untitled.ipynb
 *.ipynb_checkpoints
 *.pyc
 .idea
+.cache
 petpy.egg*
 /build
 docs/vignettes/source/drafts

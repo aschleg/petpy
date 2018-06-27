@@ -134,6 +134,30 @@ def parameters(key, animal=None, breed=None, size=None, sex=None, location=None,
 
 
 def query(url, args, pages=None, return_df=False, method=None, count=None):
+    # Check value of count parameter to make sure it is not above 1000
+    if count is not None:
+
+        if not isinstance(count, int):
+            try:
+                count = int(count)
+            except (TypeError, ValueError):
+                raise ValueError('count parameter must be an integer or coercible to an integer.')
+
+        if count > 1000:
+            raise ValueError('count parameter cannot exceed 1,000. Please try using a combination of the pages and '
+                             'count parameter to extract more than 1,000 records for a single call.')
+
+    if pages is not None:
+
+        if not isinstance(pages, int):
+            try:
+                pages = int(pages)
+            except (TypeError, ValueError):
+                raise ValueError('pages parameter must be an integer or coercible to an integer.')
+
+        if count is not None:
+            if pages * count > 2000:
+                raise ValueError('A single API call cannot exceed more than 2,000 records.')
 
     if return_df:
         args.update(format='json')

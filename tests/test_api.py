@@ -248,6 +248,9 @@ def test_shelter_getPets(top_level_keys, petfinder_keys):
     assert r[1].tag == 'lastOffset'
     assert r[2].tag == 'pets'
 
+    response4 = pf.shelter_get_pets(shelterid, count='1')
+    assert isinstance(response4, dict)
+
 
 @vcr.use_cassette('tests/cassettes/shelter_list_by_breed.yml', filter_query_parameters=['key'])
 def test_shelter_listByBreed(top_level_keys, petfinder_keys):
@@ -286,3 +289,19 @@ def test_paging_results(top_level_keys):
         r = ET.fromstring(j.encode('utf-8'))
         assert r[0].tag == 'header'
         assert r[1].tag == 'lastOffset'
+
+    response3 = pf.pet_find(location='98133', pages='3')
+    assert isinstance(response3, list)
+
+
+def test_parameter_checks():
+
+    with pytest.raises(ValueError):
+        pf.pet_find(location='98133', count=2000)
+    with pytest.raises(ValueError):
+        pf.pet_find(location='98133', pages=5, count=1000)
+
+    with pytest.raises(ValueError):
+        pf.pet_find(location='98133', count='aks')
+    with pytest.raises(ValueError):
+        pf.pet_find(location='98133', pages='aks')

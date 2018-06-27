@@ -8,6 +8,11 @@ Changelog and version changes made with each release.
 Version 1.8.1
 -------------
 
+- Implement check to make sure :code:`count` parameter is not larger than 1,000 records (per the Petfinder API
+  limits). If :code:`count` exceeds 1,000 a :code:`ValueError` is raised.
+- Add check for ensuring the number of total records to return does not exceed 2,000 when paging results with
+  the :code:`pages` and :code:`count` parameters. If the desired amount of records is higher than 2,000, a
+  :code:`ValueError` is raised.
 - Remove Python 3.3 support. Although :code:`petpy` should work fine for those still using Python 3.3, testing for 3.3
   has been discontinued.
 

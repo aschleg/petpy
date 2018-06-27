@@ -15,6 +15,8 @@ class Petfinder(object):
 
     Attributes
     ----------
+    host : str
+        The base URL of the Petfinder API.
     key : str
         The API key.
     secret: str, optional

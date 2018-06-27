@@ -1,0 +1,80 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.18.4]
+    method: GET
+    uri: http://api.petfinder.com/shelter.listByBreed?animal=cat&breed=American+Shorthair&count=1&format=json
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA0WPzU7DMBCE32XFsf4LpEp9ygMULnBA3CxnSSzVdpQ1JFLVd2fbROG4szOfZq7Q
+        YvK5C6kHC4GyaJr6JAwcoP3FiUJOrBupWRixfIfU4QT2Cu0SL4nsQoH/QymjVWqeZzk/yzz1qtLa
+        qM/X87sfMDoREhWXPDKFBrwUJjPkdoAB3QYsISKb4ng/ngpTK20aoY+iOn6YF1vXtq6+gDPsKj/3
+        PHCCXI8rilfgnjVaw43FfcOma2keesvFbcpvjhGj87j2PGfvyjp5m+TGIPfd0ueo6OEkpeVJ/X8W
+        6pj7B9N8aGpOAQAA
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['240']
+      Content-Type: [application/json]
+      Date: ['Tue, 26 Jun 2018 14:55:52 GMT']
+      Vary: [Accept-Encoding]
+      X-Frame-Options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.18.4]
+    method: GET
+    uri: http://api.petfinder.com/shelter.listByBreed?animal=cat&breed=American+Shorthair&count=1&format=xml
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA0WQwXKEIBBE734FxV0GTNxyLWR/YJNLckjlRiGrVK1gOST6+UGzq7ce+kH3IC/L
+        cCe/dkIXfEMF45RYb0LrfNdQhyGvqvKcC3pRWSZHG2/Ot3Yi6ZbHekHX0D7GsQaY55nNLyxMHRSc
+        C/h6u36Y3g46dx6j9sZSkvjah3c9WBy1sf/+NRgdt/THS3p0bE9iJgyAG4jA2RkOZ8GWqozI3uo0
+        JkXkYxHFmZDwHFYjupQZ9TCqgosq56e8OH2K17os67L4lnD4K51U/MFVEpn+wirBuYRNbWeJRd1Z
+        AhsNOy5h7yKxt/eYGqjkP2Umj/oq+wOrA1CBfAEAAA==
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['259']
+      Content-Type: [text/xml; charset=iso-8859-1]
+      Date: ['Tue, 26 Jun 2018 14:55:52 GMT']
+      Vary: [Accept-Encoding]
+      X-Frame-Options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.18.4]
+    method: GET
+    uri: http://api.petfinder.com/shelter.listByBreed?animal=cat&breed=American+Shorthair&format=json
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA0WPzW7CMBCE32XVI/4LDQo+5QGgl3KoerOcbWIJ/yh2m0iId2chUXrc2ZlPMzdo
+        MdjYudCDBpcja5r6yBTsoP3DMbsYSFdckpCw/LjQ4Qj6Bu3sryHrOTv6D6UkLcQ0TXza8zj2opJS
+        ia/z6dMO6A1zIRcTLBIlD3gtRCbIfQcDmhVYnEcy+fQ83gpRK6kaJg+sOlzUu65rXe+/gTLkKr/P
+        PFAimx4XFK3ALaukhDuJ24ZVl1y99JaK6xA/DCGSsbj0PEVryjJ5nWSS49tubqMX+eXMQvKj+P/M
+        uSPuAzNHPIlOAQAA
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Length: ['240']
+      Content-Type: [application/json]
+      Date: ['Tue, 26 Jun 2018 14:55:53 GMT']
+      Vary: [Accept-Encoding]
+      X-Frame-Options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+version: 1
