@@ -1,4 +1,19 @@
 
+## Version 1.8.2
+
+- Add `pandas` back as an installation requirement as it is included in top-level imports. `pandas` is 
+  still not necessary to use the primary functionality of `petpy`.
+
+## Version 1.8.1
+
+- Implement check to make sure `count` parameter is not larger than 1,000 records (per the Petfinder API
+  limits). If `count` exceeds 1,000 a `ValueError` is raised.
+- Add check for ensuring the number of total records to return does not exceed 2,000 when paging results with
+  the `pages` and `count` parameters. If the desired amount of records is higher than 2,000, a
+  `ValueError` is raised.
+- Remove Python 3.3 support. Although `petpy` should work fine for those still using Python 3.3, testing for 3.3
+  has been discontinued.
+
 ## Version 1.8.0
 
 - General refactoring of the `petpy` library to remove unneeded methods from being exposed when importing the 

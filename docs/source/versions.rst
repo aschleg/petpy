@@ -5,6 +5,12 @@ Version History
 
 Changelog and version changes made with each release.
 
+Version 1.8.2
+-------------
+
+- Add :code:`pandas` back as an installation requirement as it is included in top-level imports. :code:`pandas` is
+  still not necessary to use the primary functionality of :code:`petpy`.
+
 Version 1.8.1
 -------------
 
