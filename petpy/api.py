@@ -42,7 +42,7 @@ class Petfinder(object):
         Returns shelterIDs listing animals of the specified :code:`breed`
 
     """
-    def __init__(self, key, secret=None):
+    def __init__(self, key, secret=None, host='http://api.petfinder.com/'):
         r"""
 
         Parameters
@@ -56,7 +56,7 @@ class Petfinder(object):
         """
         self.key = key
         self.secret = secret
-        self.host = 'http://api.petfinder.com/'
+        self.host = host
 
     def breed_list(self, animal, outputformat='json', return_df=False):
         r"""
