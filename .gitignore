@@ -2,8 +2,7 @@ $ cat .gitignore
 
 dist/
 data/
-Untitled.ipynb
-*.ipynb_checkpoints
+venv/
 *.pyc
 .idea
 .cache
