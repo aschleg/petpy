@@ -3,10 +3,12 @@
 
 from pandas import concat
 from pandas.io.json import json_normalize
-from six import string_types
-from six.moves.urllib.parse import urljoin
+import requests
+from urllib.parse import urljoin
 
 from petpy.lib import parameters, query, return_multiple_get_calls
+
+available_types = ('dog', 'cat', 'rabbit', 'small-furry', 'horse', 'bird', 'scales-fins-other', 'barnyard')
 
 
 class Petfinder(object):
@@ -19,7 +21,7 @@ class Petfinder(object):
         The base URL of the Petfinder API.
     key : str
         The API key.
-    secret: str, optional
+    secret: str
         The secret key.
 
     Methods
@@ -42,21 +44,170 @@ class Petfinder(object):
         Returns shelterIDs listing animals of the specified :code:`breed`
 
     """
-    def __init__(self, key, secret=None):
+    def __init__(self, key, secret):
         r"""
 
         Parameters
         ----------
         key : str
             API key given after `registering on the PetFinder site <https://www.petfinder.com/developers/api-key>`_
-        secret : str, optional
-            Secret API key given in addition to general API key. Only needed for requests that require
-            authentication.
+        secret : str
+            Secret API key given in addition to general API key. The secret key is required as of V2 of
+            the PetFinder API and is obtained from the Petfinder website at the same time as the access key.
 
         """
         self.key = key
         self.secret = secret
-        self.host = 'http://api.petfinder.com/'
+        self.host = 'http://api.petfinder.com/v2/'
+        self.auth = self._authenticate()
+
+    def _authenticate(self):
+        endpoint = 'oauth2/token'
+
+        url = urljoin(self.host, endpoint)
+
+        data = {
+            'grant_type': 'client_credentials',
+            'client_id': self.key,
+            'client_secret': self.secret
+        }
+
+        r = requests.post(url, data=data)
+
+        if r.status_code != 200:
+            raise requests.exceptions.HTTPError(r.reason)
+
+        if r.json()['token_type'] == 'Bearer':
+            return r.json()['access_token']
+
+        else:
+            raise requests.exceptions.HTTPError('could not authenticate to the PetFinder API')
+
+    def get_animal_types(self, types=None, return_df=False):
+        r"""
+
+        Parameters
+        ----------
+        types : str, list or tuple, optional
+            Specifies the animal type or types to return. Can be a string representing a single animal type, or a
+            tuple or list of animal types if more than one type is desired. If not specified, all animal types are
+            returned.
+        return_df : boolean, default=False
+            If True, coerces results returned from the Petfinder API into a pandas DataFrame.
+
+        Returns
+        -------
+        json or pandas DataFrame
+
+        """
+
+        if types is None:
+            url = urljoin(self.host, 'types')
+
+            r = requests.get(url, headers={
+                'Authorization': 'Bearer ' + self.auth,
+            })
+
+            result = r.json()
+
+        elif isinstance(types, str):
+            if str.lower(types) not in available_types:
+                raise ValueError('type must be one of "dog", "cat", "rabbit", "small-furry", "horse", '
+                                 '"bird", "scales-fins-others", "barnyard"')
+            else:
+                url = urljoin(self.host, 'types/{type}'.format(type=types))
+
+                r = requests.get(url, headers={
+                    'Authorization': 'Bearer ' + self.auth,
+                })
+
+                result = r.json()
+
+        elif isinstance(types, (tuple, list)):
+            types_check = list(set(types).difference(available_types))
+
+            if len(types_check) >= 1:
+                unknown_types = ', '.join(types_check)
+
+                raise ValueError('animal types {types} not available. Must be one of "dog", "cat", "rabbit", '
+                                 '"small-furry", "horse", "bird", "scales-fins-others", "barnyard"'
+                                 .format(types=unknown_types))
+
+            else:
+                types_collection = []
+
+                for type in types:
+                    url = urljoin(self.host, 'types/{type}'.format(type=type))
+
+                    r = requests.get(url, headers={
+                        'Authorization': 'Bearer ' + self.auth,
+                    })
+
+                    types_collection.append(r.json()['type'])
+
+            result = {'types': types_collection}
+
+        else:
+            raise TypeError('types parameter must be either None, str, list or tuple')
+
+        return result
+
+    def breeds(self, types=None, return_df=False):
+        r"""
+
+        Parameters
+        ----------
+        types :  str, list or tuple, optional
+
+        Returns
+        -------
+        json or pandas DataFrame
+
+        """
+        if types is None or isinstance(types, (list, tuple)):
+            if types is None:
+                types = available_types
+
+            else:
+                types_check = list(set(types).difference(available_types))
+
+                if len(types_check) >= 1:
+                    unknown_types = ', '.join(types_check)
+
+                    raise ValueError('animal types {types} not available. Must be one of "dog", "cat", "rabbit", '
+                                     '"small-furry", "horse", "bird", "scales-fins-others", "barnyard"'
+                                     .format(types=unknown_types))
+
+            breeds = []
+
+            for t in types:
+                url = urljoin(self.host, 'types/{type}/breeds'.format(type=t))
+
+                r = requests.get(url, headers={
+                    'Authorization': 'Bearer ' + self.auth,
+                })
+
+                breeds.append({t: r.json()})
+
+            result = {'breeds': breeds}
+
+        elif isinstance(types, str):
+            if str.lower(types) not in available_types:
+                raise ValueError('type must be one of "dog", "cat", "rabbit", "small-furry", "horse", '
+                                 '"bird", "scales-fins-others", "barnyard"')
+
+            url = urljoin(self.host, 'types/{type}/breeds'.format(type=types))
+
+            r = requests.get(url, headers={
+                'Authorization': 'Bearer ' + self.auth,
+            })
+
+            result = r.json()
+
+        else:
+            raise TypeError('types parameter must be either None, str, list or tuple')
+
+        return result
 
     def breed_list(self, animal, outputformat='json', return_df=False):
         r"""

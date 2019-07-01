@@ -4,7 +4,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='petpy',
-    version='1.8.2',
+    version='2.0.0',
     author='Aaron Schlegel',
     author_email='aaron@aaronschlegel.com',
     url='https://github.com/aschleg/petpy',
@@ -14,7 +14,7 @@ setup(
                                     'docs', 'notebooks', 'tests*']),
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    install_requires=['pandas>=0.22.0', 'requests>=2.18.4', 'six>=1.11.0'],
+    install_requires=['pandas>=0.22.0', 'requests>=2.18.4'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Console',

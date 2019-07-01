@@ -1,3 +1,25 @@
+# Version 2.0.0
+
+New major release coninciding with the release of [v2.0 of the Petfinder API](https://www.petfinder.com/developers/)! 
+The legacy version of the Petfinder API, v1.0, will be retired in January 2020, therefore, the `petpy` library has 
+been updated almost from the ground up to be compatible as possible with the new version of the Petfinder API! The 
+new version of the Petfinder API is a huge improvement over the legacy version, with many changes and additions to 
+the design of the API itself. As such, several methods from earlier releases of `petpy` that wrapped these endpoints 
+will be deprecated over the next few releases.
+
+Below is a summary of all the changes made in the release of `petpy 2.0`. 
+  
+- Changes Made
+    - `petpy` now supports the latest release of Python 3.7
+    - Added method `get_animal_types` for getting animal types (or type) available from the Petfinder API. The release 
+      of v2.0 of the Petfinder API added several endpoints for accessing animal types in the Petfinder database. 
+      More information on the animal type endpoints in the Petfinder API can be found in its documentation:
+        - [Get Animal Types](https://www.petfinder.com/developers/v2/docs/#get-animal-types)
+        - [Get Single Animal Type](https://www.petfinder.com/developers/v2/docs/#get-a-single-animal-type)
+    - New method for getting available animal breeds from the Petfinder database, `breeds` has been added. This new 
+      method depreciates `breed_list` which was based on the Petfinder API v1.0. The API endpoint documentation is 
+      available on the Petfinder API documentation page.
+        - [Get Animal Breeds](https://www.petfinder.com/developers/v2/docs/#get-animal-breeds)
 
 ## Version 1.8.2
 
@@ -130,6 +152,6 @@
 - Formatting and code cleanup.
 - Updated docstrings
 
-## Version 1.0.0
+# Version 1.0.0
 
 First major release.
