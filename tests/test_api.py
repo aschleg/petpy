@@ -94,36 +94,6 @@ def test_pet_find(top_level_keys, petfinder_keys):
     assert r[2][0].tag == 'pet'
 
 
-@vcr.use_cassette('tests/cassettes/pet_getRandom.yml', filter_query_parameters=['key'])
-def test_pet_getRandom(top_level_keys, petfinder_keys):
-
-    response1 = pf.pet_get_random()
-    response2 = pf.pet_get_random(outputformat='xml')
-    response3 = pf.pet_get_random(return_df=True)
-
-    records = 5
-    response4 = pf.pet_get_random(records=records)
-    response5 = pf.pet_get_random(records=records, return_df=True)
-
-    r = ET.fromstring(response2.encode('utf-8'))
-
-    assert isinstance(response1, dict)
-    assert isinstance(response2, string_types)
-    assert isinstance(response3, DataFrame)
-
-    assert isinstance(response4, list)
-    assert len(response4) == records
-
-    assert isinstance(response5, DataFrame)
-
-    assert set(response1.keys()).issubset(top_level_keys)
-    assert set(response1['petfinder'].keys()).issubset(petfinder_keys)
-
-    assert r[0].tag == 'header'
-    assert r[1].tag == 'petIds'
-    assert r[1][0].tag == 'id'
-
-
 @vcr.use_cassette('tests/cassettes/pet_get.yml', filter_query_parameters=['key'])
 def test_pet_get(top_level_keys, petfinder_pet_get_keys):
     # Call pet_getRandom to get a valid petId to ensure test is run
