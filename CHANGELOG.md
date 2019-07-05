@@ -20,7 +20,13 @@ Below is a summary of all the changes made in the release of `petpy 2.0`.
       method depreciates `breed_list` which was based on the Petfinder API v1.0. The API endpoint documentation is 
       available on the Petfinder API documentation page.
         - [Get Animal Breeds](https://www.petfinder.com/developers/v2/docs/#get-animal-breeds)
-    - Removed method `pet_get_random` as it is no longer a valid endpoint in v2.0 of the PetFinder API.
+    - The following methods have been removed as they are no longer valid endpoints with the release of v2.0 of the 
+      PetFinder API. 
+        - `pet_get_random()`
+        - `shelter_list_by_breed()`
+        - `shelter_get_pets()`
+    - General refactoring and code clean-up.
+    
 
 ## Version 1.8.2
 

@@ -5,12 +5,12 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/xjxufxt7obd84ygr?svg=true)](https://ci.appveyor.com/project/aschleg/petpy)
 [![Coverage Status](https://coveralls.io/repos/github/aschleg/petpy/badge.svg?branch=master)](https://coveralls.io/github/aschleg/petpy?branch=master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ac2a4c228a9e425ba11af69f7a5c9e51)](https://www.codacy.com/app/aschleg/petpy?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=aschleg/petpy&amp;utm_campaign=Badge_Grade)
-![https://pypi.org/project/petpy/](https://img.shields.io/badge/pypi%20version-1.8.0-blue.svg)
-![https://pypi.org/project/petpy/](https://img.shields.io/badge/python-2.7%2C%203.4%2C%203.5%2C%203.6-blue.svg)
+![https://pypi.org/project/petpy/](https://img.shields.io/badge/pypi%20version-1.8.2-blue.svg)
+![https://pypi.org/project/petpy/](https://img.shields.io/badge/python-3.4%2C%203.5%2C%203.6%2C%203.7-blue.svg)
 
 :cat2: :dog2: :rooster: :rabbit2: :racehorse:
 
-Petpy is an easy-to-use and convenient Python wrapper for the [Petfinder API](https://www.petfinder.com/developers/api-docs).
+Petpy is an easy-to-use and convenient Python wrapper for the [Petfinder API](https://www.petfinder.com/developers/v2/docs/).
 
 ## Installation
 
@@ -105,11 +105,8 @@ more efficient data analysis.
 | breed_list()            | breed.list           | Returns the available breeds for the selected animal.                                              |
 | pet_find()              | pet.find             | Returns a collection of pet records matching input parameters.                                     |
 | pet_get()               | pet.get              | Returns a single record for a pet.                                                                 |
-| pet_get_random()        | pet.getRandom        | Returns a randomly selected pet record. The possible result can be filtered with input parameters. |
 | shelter_find()          | shelter.find         | Returns a collection of shelter records matching input parameters.                                 |
 | shelter_get()           | shelter.get          | Returns a single shelter record.                                                                   |
-| shelter_get_pets()      | shelter.getPets      | Returns a collection of pet records for an individual shelter.                                     |
-| shelter_list_by_breed() | shelter.listByBreed  | Returns a list of shelter IDs listing animals matching the input animal breed.                     |
 
 ## Introduction and Example Uses of `petpy`
 
@@ -126,13 +123,13 @@ A series of IPython notebooks that introduce and explore some of the functionali
 
 * [Petpy documentation](http://petpy.readthedocs.io/en/latest/)
 * [Petpy changelog](https://github.com/aschleg/petpy/blob/master/CHANGELOG.md)
-* [Petfinder API documentation](https://www.petfinder.com/developers/api-docs)
+* [Petfinder API v2.0 documentation](https://www.petfinder.com/developers/v2/docs/)
 
 ## Requirements
 
-* Python 2.7 or Python >= 3.4
+* Python >= 3.4
 * [requests](http://docs.python-requests.org/en/master/) >= 2.18.4
-* Although not strictly required for installation or use, the [pandas](https://pandas.pydata.org/) library is needed 
+* Although not strictly required to use `petpy`, the [pandas](https://pandas.pydata.org/) library is needed 
 for returning the results as a DataFrame.
 
 ## License

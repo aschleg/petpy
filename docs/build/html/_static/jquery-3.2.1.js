@@ -6434,7 +6434,7 @@ jQuery.extend( {
 			style = elem.style;
 
 		// Make sure that we're working with the right name. We don't
-		// want to query the value if it is a CSS custom property
+		// want to _query the value if it is a CSS custom property
 		// since they are user-defined.
 		if ( !isCustomProp ) {
 			name = finalPropName( origName );
@@ -8419,7 +8419,7 @@ function buildParams( prefix, obj, traditional, add ) {
 }
 
 // Serialize an array of form elements or a set of
-// key/values into a query string
+// key/values into a _query string
 jQuery.param = function( a, traditional ) {
 	var prefix,
 		s = [],

@@ -1394,7 +1394,7 @@ setting the ``count`` parameter. For large queries, it is recommended to
 set the ``pages`` parameter with a smaller ``count`` value. For example,
 if we wanted to return 1000 results, we could set the ``pages``
 parameter to 10 and the ``count`` parameter to 100. Please note the
-Petfinder API places a hard cap of 2,000 results returned per query.
+Petfinder API places a hard cap of 2,000 results returned per _query.
 
 
 

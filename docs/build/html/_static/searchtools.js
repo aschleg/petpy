@@ -208,7 +208,7 @@ var Scorer = {
   },
   */
 
-  // query matches the full name of an object
+  // _query matches the full name of an object
   objNameMatch: 11,
   // or matches in the last dotted part of the object name
   objPartialMatch: 6,
@@ -219,9 +219,9 @@ var Scorer = {
   //  Used when the priority is not in the mapping.
   objPrioDefault: 0,
 
-  // query found in title
+  // _query found in title
   title: 15,
-  // query found in terms
+  // _query found in terms
   term: 5
 };
 
@@ -570,7 +570,7 @@ var Search = {
         if (!resultCount)
           Search.status.text(_('Your search did not match any documents. Please make sure that all words are spelled correctly and that you\'ve selected enough categories.'));
         else
-            Search.status.text(_('Search finished, found %s page(s) matching the search query.').replace('%s', resultCount));
+            Search.status.text(_('Search finished, found %s page(s) matching the search _query.').replace('%s', resultCount));
         Search.status.fadeIn(500);
       }
     }
