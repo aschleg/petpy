@@ -107,7 +107,7 @@ class Petfinder(object):
 
         Returns
         -------
-        json or pandas DataFrame
+        dict or pandas DataFrame
 
         Examples
         --------
@@ -199,7 +199,7 @@ class Petfinder(object):
 
         Returns
         -------
-        json or pandas DataFrame
+        dict or pandas DataFrame
 
         Examples
         --------
@@ -293,15 +293,15 @@ class Petfinder(object):
 
         return result
 
-    def animals(self, animal_id=None, type=None, breed=None, size=None, gender=None,
-                age=None, color=None, coat=None, status=None, name=None,
-                organization=None, location=None, distance=None, sort=None, results=20, return_df=False):
+    def animals(self, animal_id=None, animal_type=None, breed=None, size=None, gender=None,
+                age=None, color=None, coat=None, status=None, name=None, organization_id=None,
+                location=None, distance=None, sort=None, pages=None, results_per_page=20, return_df=False):
         r"""
 
         Parameters
         ----------
         animal_id : optional
-        type : optional
+        animal_type : optional
         breed: optional
         size: optional
         gender : optional
@@ -310,26 +310,142 @@ class Petfinder(object):
         coat : optional
         status : optional
         name : optional
-        organization : optional
+        organization_id : optional
         location : optional
         distance : optional
         sort : optional
-        results : default 20
+        pages : int, default None
+        results_per_page : int, default 20
         return_df : boolean, default False
-
 
         Raises
         ------
+        TypeError
 
         Returns
         -------
         dict or pandas DataFrame
 
         """
-        pass
+        max_page_warning = False
+
+        if animal_id is not None:
+
+            url = urljoin(self.host, 'animals/{id}')
+
+            if isinstance(animal_id, (tuple, list)):
+
+                animals = []
+
+                for ani_id in animal_id:
+                    r = requests.get(url.format(id=ani_id),
+                                     headers={
+                                         'Authorization': 'Bearer ' + self.auth
+                                     })
+
+                    animals.append(r.json()['animal'])
+
+            else:
+                r = requests.get(url.format(id=animal_id),
+                                 headers={
+                                     'Authorization': 'Bearer ' + self.auth
+                                 })
+
+                animals = r.json()['animal']
+
+        else:
+
+            url = urljoin(self.host, 'animals/')
+
+            params = _parameters(animal_type=animal_type, breed=breed, size=size, gender=gender,
+                                 age=age, color=color, coat=coat, status=status, name=name,
+                                 organization_id=organization_id, location=location, distance=distance,
+                                 sort=sort, results_per_page=results_per_page)
+
+            if pages is None:
+                r = requests.get(url,
+                                 headers={
+                                     'Authorization': 'Bearer ' + self.auth
+                                 },
+                                 params=params)
+
+                animals = r.json()['animals']
+
+            elif pages is not None:
+                pages += 1
+                params['page'] = 1
+
+                r = requests.get(url,
+                                 headers={
+                                     'Authorization': 'Bearer ' + self.auth
+                                 },
+                                 params=params)
+
+                animals = r.json()['animals']
+
+                max_pages = r.json()['pagination']['total_pages']
+
+                if pages > int(max_pages):
+                    pages = max_pages
+                    max_page_warning = True
+
+                for page in range(2, pages):
+
+                    params['page'] = page
+
+                    r = requests.get(url,
+                                     headers={
+                                         'Authorization': 'Bearer ' + self.auth
+                                     },
+                                     params=params)
+
+                    for i in r.json()['animals']:
+                        animals.append(i)
+
+            elif results_per_page is None:
+
+                params['results'] = 100
+
+                r = requests.get(url,
+                                 headers={
+                                     'Authorization': 'Bearer ' + self.auth
+                                 },
+                                 params=params)
+
+                pagination = r.json()['pagination']['total_pages']
+
+                animals = r.json()['animals']
+
+                for p in range(2, pagination):
+                    params['page'] = p
+
+                    r = requests.get(url,
+                                     headers={
+                                         'Authorization': 'Bearer ' + self.auth
+                                     },
+                                     params=params)
+
+                    for i in r.json()['animals']:
+                        animals.append(i)
+
+            else:
+                raise TypeError('parameter results must be an integer or None.')
+
+        animals = {
+            'animals': animals
+        }
+
+        if return_df:
+            animals = json_normalize(animals['animals'])
+
+        if max_page_warning:
+            print('pages parameter exceeded maximum number of available pages available from the Petfinder API. As '
+                  'a result, the maximum number of pages {max_page} was returned'.format(max_page=max_pages))
+
+        return animals
 
     def organizations(self, organization_id=None, name=None, location=None, distance=None, state=None,
-                     country=None, query=None, sort=None, results_per_page=20, pages=None, return_df=False):
+                      country=None, query=None, sort=None, results_per_page=20, pages=None, return_df=False):
         r"""
 
         Parameters
@@ -342,7 +458,7 @@ class Petfinder(object):
         country : optional
         query : optional
         sort : optional
-        pages : default 1
+        pages : int, default None
         results_per_page : int, default 20
         return_df : boolean, default False
 
@@ -372,7 +488,7 @@ class Petfinder(object):
                                          'Authorization': 'Bearer ' + self.auth
                                      })
 
-                    organizations.append(r.json())
+                    organizations.append(r.json()['organization'])
 
             else:
                 r = requests.get(url.format(id=organization_id),
@@ -380,7 +496,7 @@ class Petfinder(object):
                                      'Authorization': 'Bearer ' + self.auth
                                  })
 
-                organizations = r.json()
+                organizations = r.json()['organization']
 
         else:
 
@@ -401,6 +517,7 @@ class Petfinder(object):
                 organizations = r.json()['organizations']
                 
             elif pages is not None:
+                pages += 1
                 params['page'] = 1
 
                 r = requests.get(url,
@@ -459,8 +576,12 @@ class Petfinder(object):
             else:
                 raise TypeError('parameter results must be an integer or None.')
 
+        organizations = {
+            'organization': organizations
+        }
+
         if return_df:
-            organizations = DataFrame(organizations)
+            organizations = json_normalize(organizations['organization'])
 
         if max_page_warning:
             print('pages parameter exceeded maximum number of available pages available from the Petfinder API. As '
@@ -469,16 +590,19 @@ class Petfinder(object):
         return organizations
 
 
-def _parameters(animal=None, breed=None, size=None, sex=None, location=None, distance=None, state=None,
-                country=None, query=None, sort=None, name=None, age=None, animal_id=None, organization_id=None,
-                status=None, results_per_page=None, page=None):
+def _parameters(animal=None, breed=None, size=None, gender=None, color=None, coat=None, animal_type=None,
+                location=None, distance=None, state=None, country=None, query=None, sort=None, name=None,
+                age=None, animal_id=None, organization_id=None, status=None, results_per_page=None, page=None):
 
     args = {
         'animal': animal,
         'breed': breed,
         'size': size,
-        'sex': sex,
+        'gender': gender,
         'age': age,
+        'color': color,
+        'coat': coat,
+        'animal_type': animal_type,
         'location': location,
         'distance': distance,
         'state': state,
