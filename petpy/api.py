@@ -1,8 +1,7 @@
 # encoding=utf-8
 
 
-import pandas as pd
-from pandas import concat, DataFrame
+from pandas import DataFrame
 from pandas.io.json import json_normalize
 import requests
 from urllib.parse import urljoin
@@ -25,20 +24,6 @@ class Petfinder(object):
     -------
     animal_types(types, return_df=False)
         Returns data on an animal type, or types available from the PetFinder API.
-    breed_list(animal, outputformat='json')
-        Returns the breeds of :code:`animal`
-    pet_find(location=None, animal=None, breed=None, size=None, sex=None, age=None, offset=None, count=None, output=None, outputformat='json')
-        Returns a collection of pet records matching input parameters.
-    pet_get(petId, outputformat='json')
-        Returns a single pet record for the given :code:`petId`
-    shelter_find(location, name=None, offset=None, count=None, outputformat='json')
-        Gets a collection of shelter records matching input parameters.
-    shelter_get(shelterId, outputformat='json')
-        Gets the record for the given :code:`shelterID`
-    shelter_get_pets(shelterId, status=None, offset=None, count=None, output=None, outputformat='json')
-        Outputs a collection of pet IDs or records for the shelter specified by :code:`shelterID`
-    shelter_list_by_breed(animal, breed, offset=None, count=None, outputformat='json')
-        Returns shelterIDs listing animals of the specified :code:`breed`
 
     """
     def __init__(self, key, secret):
@@ -268,7 +253,7 @@ class Petfinder(object):
         if return_df:
             raw_results = True
 
-            df_results = pd.DataFrame()
+            df_results = DataFrame()
 
             if isinstance(types, (tuple, list)):
 
@@ -310,8 +295,7 @@ class Petfinder(object):
 
     def animals(self, animal_id=None, type=None, breed=None, size=None, gender=None,
                 age=None, color=None, coat=None, status=None, name=None,
-                organization=None, location=None, distance=None, sort=None, page=1,
-                limit=20, return_df=False):
+                organization=None, location=None, distance=None, sort=None, results=20, return_df=False):
         r"""
 
         Parameters
@@ -330,8 +314,7 @@ class Petfinder(object):
         location : optional
         distance : optional
         sort : optional
-        page : default 1
-        limit : default 20
+        results : default 20
         return_df : boolean, default False
 
 
@@ -340,13 +323,13 @@ class Petfinder(object):
 
         Returns
         -------
-
+        dict or pandas DataFrame
 
         """
         pass
 
     def organizations(self, organization_id=None, name=None, location=None, distance=None, state=None,
-                     country=None, query=None, sort=None, result_count=20, return_df=False):
+                     country=None, query=None, sort=None, results_per_page=20, pages=None, return_df=False):
         r"""
 
         Parameters
@@ -359,17 +342,22 @@ class Petfinder(object):
         country : optional
         query : optional
         sort : optional
-        page : default 1
+        pages : default 1
         results_per_page : int, default 20
         return_df : boolean, default False
 
         Raises
         ------
+        TypeError
+
 
         Returns
         -------
+        dict or pandas DataFrame
 
         """
+        max_page_warning = False
+
         if organization_id is not None:
 
             url = urljoin(self.host, 'organizations/{id}')
@@ -395,26 +383,95 @@ class Petfinder(object):
                 organizations = r.json()
 
         else:
+
             url = urljoin(self.host, 'organizations/')
 
             params = _parameters(name=name, location=location, distance=distance,
                                  state=state, country=country, query=query, sort=sort,
-                                 results_per_page=results_per_page, page=page)
+                                 results_per_page=results_per_page)
 
-            r = requests.get(url,
-                             headers={
-                                 'Authorization': 'Bearer ' + self.auth
-                             },
-                             params=params)
+            if pages is None:
 
-            organizations = r.json()
+                r = requests.get(url,
+                                 headers={
+                                     'Authorization': 'Bearer ' + self.auth
+                                 },
+                                 params=params)
+                
+                organizations = r.json()['organizations']
+                
+            elif pages is not None:
+                params['page'] = 1
+
+                r = requests.get(url,
+                                 headers={
+                                     'Authorization': 'Bearer ' + self.auth
+                                 },
+                                 params=params)
+
+                organizations = r.json()['organizations']
+
+                max_pages = r.json()['pagination']['total_pages']
+
+                if pages > int(max_pages):
+                    pages = max_pages
+                    max_page_warning = True
+
+                for page in range(2, pages):
+
+                    params['page'] = page
+
+                    r = requests.get(url,
+                                     headers={
+                                         'Authorization': 'Bearer ' + self.auth
+                                     },
+                                     params=params)
+
+                    for i in r.json()['organizations']:
+                        organizations.append(i)
+
+            elif results_per_page is None:
+
+                params['results'] = 100
+
+                r = requests.get(url,
+                                 headers={
+                                     'Authorization': 'Bearer ' + self.auth
+                                 },
+                                 params=params)
+
+                pagination = r.json()['pagination']['total_pages']
+
+                organizations = r.json()['organizations']
+
+                for p in range(2, pagination):
+                    params['page'] = p
+
+                    r = requests.get(url,
+                                     headers={
+                                         'Authorization': 'Bearer ' + self.auth
+                                     },
+                                     params=params)
+
+                    for i in r.json()['organizations']:
+                        organizations.append(i)
+
+            else:
+                raise TypeError('parameter results must be an integer or None.')
+
+        if return_df:
+            organizations = DataFrame(organizations)
+
+        if max_page_warning:
+            print('pages parameter exceeded maximum number of available pages available from the Petfinder API. As '
+                  'a result, the maximum number of pages {max_page} was returned'.format(max_page=max_pages))
 
         return organizations
 
 
 def _parameters(animal=None, breed=None, size=None, sex=None, location=None, distance=None, state=None,
                 country=None, query=None, sort=None, name=None, age=None, animal_id=None, organization_id=None,
-                status=None, page=None, results_per_page=None):
+                status=None, results_per_page=None, page=None):
 
     args = {
         'animal': animal,
@@ -432,239 +489,10 @@ def _parameters(animal=None, breed=None, size=None, sex=None, location=None, dis
         'animal_id': animal_id,
         'organization_id': organization_id,
         'status': status,
-        'page': page,
-        'limit': results_per_page
+        'limit': results_per_page,
+        'page': page
     }
 
     args = {key: val for key, val in args.items() if val is not None}
 
     return args
-
-
-def _coerce_to_dataframe(x, method):
-
-    if 'pet' in method or 'Pet' in method:
-
-        res = media_df = opt_df = breed_df = DataFrame()
-
-        if method == 'pet.get' or method == 'pet.getRandom':
-            res, breed_df, opt_df, media_df = _pet_find_get_coerce(x['petfinder']['pet'])
-
-        elif method == 'pet.find' or method == 'shelter.getPets':
-            res = media_df = opt_df = breed_df = DataFrame()
-
-            try:
-                if x['petfinder']['pets'] == {}:
-                    return DataFrame()
-            except KeyError:
-                return DataFrame()
-
-            else:
-
-                if isinstance(x['petfinder']['pets']['pet'], list):
-
-                    for i in x['petfinder']['pets']['pet']:
-                        pet, breed, opt, media = _pet_find_get_coerce(i)
-
-                        res = res.append(pet)
-                        breed_df = breed_df.append(breed)
-                        opt_df = opt_df.append(opt)
-                        media_df = media_df.append(media)
-
-                else:
-                    res, breed_df, opt_df, media_df = _pet_find_get_coerce(x['petfinder']['pets']['pet'])
-
-        breed_df.columns = ['breed' + str(col) for col in breed_df.columns]
-        opt_df.columns = ['status' + str(col) for col in opt_df.columns]
-        media_df.columns = ['photos' + str(col) for col in media_df.columns]
-
-        df = concat([res, breed_df, opt_df, media_df], axis=1)
-
-        try:
-            del df['breeds.breed']
-            del df['breeds.breed.$t']
-            del df['breeds.breed']
-            del df['media.photos.photo']
-        except KeyError:
-            pass
-
-    else:
-
-        if method == 'shelter.find' or method == 'shelter.listByBreed':
-            try:
-                df = json_normalize(x['petfinder']['shelters']['shelter'])
-            except (KeyError, ValueError):
-                df = _empty_shelter_df()
-
-        elif method == 'shelter.get':
-            try:
-                df = json_normalize(x['petfinder']['shelter'])
-
-            except (KeyError, ValueError):
-                df = DataFrame({'shelterId': 'shelter opt-out'}, index=[0])
-
-        else:
-            raise ValueError('unknown API method')
-
-    df.columns = [col.replace('.$t', '') for col in df.columns]
-    df.columns = [col.replace('contact.', '') for col in df.columns]
-
-    df = df[df.columns[~df.columns.str.contains('options')]]
-
-    return df
-
-
-def _pet_find_get_coerce(x):
-    res = media_df = opt_df = breed_df = DataFrame()
-
-    try:
-        breed = DataFrame(json_normalize(x['breeds']['breed'])['$t'].to_dict(), index=[0])
-    except (KeyError, TypeError):
-        breed = DataFrame(['na'], columns=[0])
-
-    try:
-        media = DataFrame(json_normalize(x['media']['photos']['photo'])['$t'].to_dict(), index=[0])
-    except (KeyError, TypeError):
-        media = DataFrame(['na'], columns=[0])
-
-    try:
-        options = DataFrame(json_normalize(x['options']['option'])['$t'].to_dict(), index=[0])
-    except (KeyError, TypeError):
-        options = DataFrame(['na'], columns=[0])
-
-    breed_df = breed_df.append(breed)
-    opt_df = opt_df.append(options)
-    media_df = media_df.append(media)
-    res = res.append(json_normalize(x))
-
-    return res, breed_df, opt_df, media_df
-
-
-def _return_multiple_get_calls(call_id, url, args, return_df, method):
-    responses = []
-
-    for i in call_id:
-        args.update(id=i)
-        responses.append(_query(url, args, return_df=return_df, method=method))
-
-    if return_df:
-        return concat(responses, axis=0)
-
-    return responses
-
-
-def _empty_shelter_df():
-    return DataFrame(columns=['address1', 'address2', 'city', 'country', 'email', 'id', 'latitude',
-                                 'longitude', 'name', 'phone', 'state', 'zip'])
-
-
-def _query(url, args, pages=None, return_df=False, method=None, count=None):
-    # Check value of count parameter to make sure it is not above 1000
-    if count is not None:
-
-        if not isinstance(count, int):
-            try:
-                count = int(count)
-            except (TypeError, ValueError):
-                raise ValueError('count parameter must be an integer or coercible to an integer.')
-
-        if count > 1000:
-            raise ValueError('count parameter cannot exceed 1,000. Please try using a combination of the pages and '
-                             'count parameter to extract more than 1,000 records for a single call.')
-
-    if pages is not None:
-
-        if not isinstance(pages, int):
-            try:
-                pages = int(pages)
-            except (TypeError, ValueError):
-                raise ValueError('pages parameter must be an integer or coercible to an integer.')
-
-        if count is not None:
-            if pages * count > 2000:
-                raise ValueError('A single API call cannot exceed more than 2,000 records.')
-
-    if return_df:
-        args.update(format='json')
-        outputformat = 'json'
-    else:
-        outputformat = args['format']
-
-    r = requests.get(url, args)
-
-    # Check that call hasn't exceeded API daily limit
-
-    if r.text.find('exceeded daily request limit') != -1 or r.status_code == 202:
-        raise ValueError('Daily API limit exceeded')
-
-    if outputformat is 'json':
-        r = r.json()
-    else:
-        r = r.text
-
-    if pages is None:
-
-        if return_df is False:
-            return r
-        else:
-            r = _coerce_to_dataframe(r, method)
-
-            return r
-
-    else:
-
-        if return_df:
-            result = [_coerce_to_dataframe(r, method)]
-        else:
-            result = [r]
-
-        try:
-            if outputformat is 'json':
-                lastoffset = r['petfinder']['lastOffset']['$t']
-            else:
-                lastoffset = ET.fromstring(r.encode('utf-8'))[1].text
-
-        except KeyError:
-            return result[0]
-
-        if pages > 1:
-            pages = pages - 1
-
-        for _ in range(0, pages):
-
-            args.update(offset=lastoffset)
-            r = requests.get(url, args)
-
-            if outputformat is 'json':
-                if return_df:
-                    result.append(_coerce_to_dataframe(r.json(), method))
-                else:
-                    result.append(r.json())
-
-                try:
-                    lastoffset = r.json()['petfinder']['lastOffset']['$t']
-
-                    if int(lastoffset) == 1 and count != 1:
-                        return result[0]
-
-                except (KeyError, ValueError):
-                    if return_df:
-                        result = concat(result)
-
-                    return result
-
-            else:
-                result.append(r.text)
-
-                try:
-                    lastoffset = ET.fromstring(r.text.encode('utf-8'))[1].text
-                except (KeyError, ValueError):
-                    if return_df:
-                        result = concat(result)
-
-                    return result
-
-        if return_df:
-            result = concat(result)
-
-        return result
