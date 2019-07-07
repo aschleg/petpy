@@ -1,0 +1,2476 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: http://api.petfinder.com/v2/types/dog/breeds
+  response:
+    body:
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '183'
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 07 Jul 2019 08:03:07 GMT
+      Location:
+      - https://api.petfinder.com/v2/types/dog/breeds
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 840717da68adc4ace0e2050590aef6c5.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - gOJ0yulvWLlR-dhqm9gWkUMX7CQ1-VypIgMqYmnkhUXXmoWAFSrChw==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Redirect from cloudfront
+    status:
+      code: 301
+      message: Moved Permanently
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/dog/breeds
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Cache-Control:
+      - max-age=86400, public
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '2034'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 07 Jul 2019 08:03:08 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 9bb9e176e1eb7840931dbe73ecc961f7.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - r8eTXUKXWer9NzarKB04KRyq1J80HFVAdaVZbWppoId5w8mMZaa_Fw==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Miss from cloudfront
+      x-amz-apigw-id:
+      - cccRZFmbIAMF8sQ=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Content-Length:
+      - '2034'
+      x-amzn-Remapped-Date:
+      - Sun, 07 Jul 2019 08:03:08 GMT
+      x-amzn-RequestId:
+      - a80937fe-a08d-11e9-bdf8-37fb94128be2
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: http://api.petfinder.com/v2/types/cat/breeds
+  response:
+    body:
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '183'
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 07 Jul 2019 08:03:08 GMT
+      Location:
+      - https://api.petfinder.com/v2/types/cat/breeds
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 4b41f5d4002cf5daabe6e170bd619abc.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - k3Uia9wBpGNHif1FacGTjQmfBIEhhavMUk4cqAtbRd21cnoRFz7TsA==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Redirect from cloudfront
+    status:
+      code: 301
+      message: Moved Permanently
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/cat/breeds
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA62XT2vbQBDFv4rQOcXQY26xkxDSuA2RaCl1KSNpIg1e7Yj941gEf/euTJqcq6eT
+        Ye35WZqZ92b2Na8cc+Pzy1+vuaWe88v8qhq9Fytk84v8jxG7T1+/5mEcePrsHD+nX+1Wh8+71XTo
+        d6uaQn46nS4+GD07qclma60CiVmAtIluCUzRqQsdiVuA9UMcg6hhMNwxNVkh6cTzfNSaUhxGYNsS
+        kOO1uB5pmrX2FY1AvJMgvluixOvowGokgBhD8wmbVM9akXhLTRJxdpcyYdh7ANWRC47jEUJEL0BC
+        N53YugNTqs5ODfLEyJuMfVL//PhrPqjFHuFaTAycoR3yhimTWlQ8+44NoP5rTYoJUmcPattz0y3A
+        2nIjsV+KdjYGEHbTjkOYZLWlCFCO+v5AmFPdHIOjT6WyT/0Qst0qu+NebPtCY/aoZmyoDiNQ1js6
+        JCMB4qUnQyMyF+5poGmy4cvE/fQykK9/UZeOZoc/0CO7fn78ltKMzzaqQDq3ZAHv2cZkw3sB/v8r
+        V2yibQGCuhduJxHeqkvSnjp/Pu1bLTUU74RtILOE8b2zlrCqd1hJVQXsVallPXQbeJSjcKXVfMIT
+        tdTH52ek7xKjUWTCPUU/5SFbmwg4SFFrOK+pt2oaAMNmL26PLRLwpaOQKt2FkN4oxBwYaPIizToa
+        ogNGVGH1xXeKpEHTkBMgfuhGezwP77dlHbM0UPCltEhJSrV78CqadtIKuS0stNOW0e0nqV7ZVpEO
+        +8f5jiiljEdugHX/pya72HRaq6Hw37n9ffoLp6OEciwSAAA=
+    headers:
+      Cache-Control:
+      - max-age=86400, public
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '605'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 07 Jul 2019 08:03:09 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 58b224f0fcba4846d5699ecad6c6829f.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - J4EVnnhKLNnxbxAJJxuC82pWXuYY2SYI3Wi5sG9AFXIVNfeIZqZT6Q==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Miss from cloudfront
+      x-amz-apigw-id:
+      - cccRhFwyIAMFyLQ=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Content-Length:
+      - '605'
+      x-amzn-Remapped-Date:
+      - Sun, 07 Jul 2019 08:03:09 GMT
+      x-amzn-RequestId:
+      - a8826010-a08d-11e9-8b59-5b9dbd45fef4
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: http://api.petfinder.com/v2/types/rabbit/breeds
+  response:
+    body:
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '183'
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 07 Jul 2019 08:03:09 GMT
+      Location:
+      - https://api.petfinder.com/v2/types/rabbit/breeds
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 72ab9d86bb504f153766d6e4b4cb7029.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - zdNreSRtsA72bajwaQZuV9SBs5IVeyAUzWo_BY3sS5iEDoI_4jyYfw==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Redirect from cloudfront
+    status:
+      code: 301
+      message: Moved Permanently
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/rabbit/breeds
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA62WQWvbQBCF/8qy54BDLoXc4iSqKUkIdiHQuJSxNNYOWc2645VTxfi/Z+U2p9z6
+        fNKiXT6enuY9ae9Xxtxs/eXz3it17C/9VccmNak/87+i6EvZ3Ps8bHi8BuN1ObOc7C6Wk/Hmdjkx
+        Wq0k+8PhcPYJ4qr+7W1wd2lzGtyCVpExlLbJyM3/biGkKcdWiqYZGSZpyjs2xgyfmmRSFXKPnCWD
+        gnrV4RQWXVOUdbIiC3u660Ddhlpld7Psz88vvlxZywpqC1y/FN8b97XIQ1midZAYCcOIllUCvTLu
+        TunTTZ/rgBFeydY4wd2WoDUQ51bbKNsA99EHZ7FJmLlV5G4E4SNYxWTSkHsKaPqr0kU17lGpxci/
+        e8GmeUY7UixVM+ko0gBW0CyVdGuD25IyODPf2LY8uKeU4gCB7iRSDRKSBiYslMXRE0T7XlTgl3OE
+        zPkPBHngHNiOw4I33wO/uh9MIw3iPFJMnWjCIGlsPQiBmjsvX1oe3WCDOAvKYDMtJO5QEUeEqxLm
+        yT/MPVkG/yK//1dJ/jy8AzwiFXZIDAAA
+    headers:
+      Cache-Control:
+      - max-age=86400, public
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '423'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 07 Jul 2019 08:03:09 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 8ddadd1ab84a7f1bef108d6a72eccf06.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - WQgNXUXm2GyeAYRwbGsNVo5dj4Jbwl3j7itlNCcZITzvnionj-alhg==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Miss from cloudfront
+      x-amz-apigw-id:
+      - cccRnFUyoAMF5dg=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Content-Length:
+      - '423'
+      x-amzn-Remapped-Date:
+      - Sun, 07 Jul 2019 08:03:09 GMT
+      x-amzn-RequestId:
+      - a8d64c06-a08d-11e9-a559-53adc0983ffa
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: http://api.petfinder.com/v2/types/small-furry/breeds
+  response:
+    body:
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '183'
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 07 Jul 2019 08:03:09 GMT
+      Location:
+      - https://api.petfinder.com/v2/types/small-furry/breeds
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 4c4ed81695980f3c6829b9fd229bd0f8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - Jmh_Z2nFajnlZDKxmM7sFdKQ8J1jZJd3EC0xXBDJBdTA_2JAiBEigg==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Redirect from cloudfront
+    status:
+      code: 301
+      message: Moved Permanently
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/small-furry/breeds
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA63SzUrEMBQF4FcpWc9QcDk7cXC6EcrUnRVJzWlzaZrKTTJaSt/dzsYHMHcVSMLH
+        /Tmr6hgwQZ3eVuX1BHVSj90SAnnSXh3UhyM/7s+rissX7qdl9Puvtrw9tOX9MrRlmLRzxz4xL2rb
+        tsOf9WTJf1pyTudbZwxJQPnW3BeVnkIE53PPYEbMdy7gjpyAk8hDFzUN+ZbYkCqYAXYWKOllTgH5
+        TA1ON5GA16yJCcVZorurFkjSFT/5SGNnjsdq7w1GQCM37jNqy6KxcJEENtiMyY8CTBo0FxdHRiLn
+        rzBm+S/zvv0C40vRSI0FAAA=
+    headers:
+      Cache-Control:
+      - max-age=86400, public
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '245'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 07 Jul 2019 08:03:10 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 08df71188a92655a7dcd1bb872797741.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - w0hQ4kV7Q5iipVOYC3T3FOm6W96tw4t7G0UxgZ9Whsl6vjoo4nZDJQ==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Miss from cloudfront
+      x-amz-apigw-id:
+      - cccRrH1zIAMFW3g=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Content-Length:
+      - '245'
+      x-amzn-Remapped-Date:
+      - Sun, 07 Jul 2019 08:03:10 GMT
+      x-amzn-RequestId:
+      - a9213764-a08d-11e9-9f94-13102c654c08
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: http://api.petfinder.com/v2/types/horse/breeds
+  response:
+    body:
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '183'
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 07 Jul 2019 08:03:10 GMT
+      Location:
+      - https://api.petfinder.com/v2/types/horse/breeds
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 72ab9d86bb504f153766d6e4b4cb7029.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - iZrCSLgFzEUyYcPOWUaaCzJoS6rO0tlhKyeRiBsfVD-ZksdvbMm1eQ==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Redirect from cloudfront
+    status:
+      code: 301
+      message: Moved Permanently
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/horse/breeds
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6WWwWrDMAyGX8X4XAjs2FvX0XWwQLcWeljGUGMlMXGsINtlacm7z9ll9+lkkO0P
+        +Zf123d9YUQT9Prjrj0MqNd6M47giALolf5y1vd59q7jNOIydoxNXlQV14eqWIKhKjrigHqe59Uf
+        hOFiwUsQj+haIWLrJoPBgEMRhbzHAVgkyDaxm9T+d0KAeSLf4yQiMDRRAtixxSAszDPYiEZEYDAi
+        JffQ5K0tsgTyUqMDb2wtr+yrHe3tJpO1tN5CTIzydEobAiW2akffkSlGmVAlcSs8W5J1cZlCBN9K
+        EAewPqqqUIc8kozkaLBeyAikdlIIct0hk6g0GZKu2RHUkpIIRF7kbct+RY2KHarNgGxrCBLeWwLO
+        F7+TNtM71f2kSko+5iskb84jGOMwP90iCz12GBf3UlLZj7mxDLCRJnTC/NCGgKjO4HqZ4ZxyjFLb
+        SXM6Aw+X/B36B+Rz/gF3M+yXXwkAAA==
+    headers:
+      Cache-Control:
+      - max-age=86400, public
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '364'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 07 Jul 2019 08:03:10 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 a05ea837e59d59ca7a5e1b08b2929cf2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - OWa499HQ-vrnnFPF6KIjMdYDYp1gsbczNyLuBS8bbannen-axiwoTg==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Miss from cloudfront
+      x-amz-apigw-id:
+      - cccRxG6PIAMFZNg=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Content-Length:
+      - '364'
+      x-amzn-Remapped-Date:
+      - Sun, 07 Jul 2019 08:03:10 GMT
+      x-amzn-RequestId:
+      - a97b8d33-a08d-11e9-a015-13895066c21b
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: http://api.petfinder.com/v2/types/bird/breeds
+  response:
+    body:
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '183'
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 07 Jul 2019 08:03:10 GMT
+      Location:
+      - https://api.petfinder.com/v2/types/bird/breeds
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 078ca3a7cfdee29c8e3514176205c50a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 8uSxynPALt87ZttDpV4bo_rEyUEueLhJV5_EIPA9XEChCMzFQuZ8hQ==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Redirect from cloudfront
+    status:
+      code: 301
+      message: Moved Permanently
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/bird/breeds
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA62WzU7DMBCEXyXyCaSiSBx7g1J6ANRAuRGEtu42WTm1i39alSrvjlOBuHc42bI8
+        n6Kd0ThHtfTMq6DGb0dlacNqrG7WXjTZYub5oEbqoxNr8oWjioctD2vreZ3v1eXuui6Hw1CXS/Er
+        1ff96A+zoS9nAcCtd9E17CUgkLRqhIu6LIZdhjXkIVyMzl49J5IOwExIPhNDAEsecWfSijaM2DNx
+        2lAUhuZwYjgHIWzyyCjv3A6SJ20A+VR3rGNCIj7dJEB9L1a3gH7mXEDmN0timYp7t0eC9ECGvBgB
+        EI/OH4aeyKsY5gihdnw6PR/xRJr2gH4eYm5xxNiKPA1zKC7msWV/iaFyl/8bqIPMqZh0rp3B6rxd
+        Y7mrWqZAFvoeaRh6JyvJFYgUSOVE87alLoVhKgu23BAyFfR5zHrDvvhNIEB6yf4gcrGN5Z+wBImR
+        dOogYC7LDiIs9oSE5dUljQGSN2f8F7733zSWFgFrCgAA
+    headers:
+      Cache-Control:
+      - max-age=86400, public
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '375'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 07 Jul 2019 08:03:11 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 36fbf419b5fa237613e1567ab33d3698.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - Xay3ckM6Y4Lrhgo6cIRWC6BeVpwNqhpWBfzmYQXvsK9v5th561Yvyg==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Miss from cloudfront
+      x-amz-apigw-id:
+      - cccR2FBVoAMF99Q=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Content-Length:
+      - '375'
+      x-amzn-Remapped-Date:
+      - Sun, 07 Jul 2019 08:03:11 GMT
+      x-amzn-RequestId:
+      - a9c3b99c-a08d-11e9-9f3b-5d29d4583d12
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: http://api.petfinder.com/v2/types/scales-fins-other/breeds
+  response:
+    body:
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '183'
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 07 Jul 2019 08:03:11 GMT
+      Location:
+      - https://api.petfinder.com/v2/types/scales-fins-other/breeds
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 840717da68adc4ace0e2050590aef6c5.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - ZmI9ivemnWg9VgjMPJgH37FHggJqyfeNo2_tDIEB0InrrrV5i3NZSQ==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Redirect from cloudfront
+    status:
+      code: 301
+      message: Moved Permanently
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/scales-fins-other/breeds
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA7WY3YrbQAyFX2Xw9YZAL/euSTfb0k0TYpdSmlKUWLZFJiOjGTdNQ969M3uxT3AK
+        Bpux/THWz5HkW3Uw5jZWjz9uVaAzV4/V+ygU3EL/VA/VLy/hlO/eqnQduZwH4y4/tJ//frefl8W4
+        n8cjeY6zTkKcaRrYqvv9/vAGXJD3bntNgwYYkslabt0Hox5IVQKi3FJDTCbHpIbD4rwyeY9kdaY9
+        jmdnjgwOmuWQz56BQLXg9nO3o4RCPlFMbND0W4mxq8nTmULLsFAs2NmCvRdu/wfTfeELzKwrryYt
+        Qc1qHIcLZW+5lcQBh8Wl0TNZ2V6JUDkccHH/zMeTwmDq2w5owI9sZ0luaXSAIXOe54BEuuZTP1GA
+        VZvPEvri5rX4E4r5wjrmIgvGQY34In+BO1xLjOUYR3FrGl0zWfIMo2sQYCOwnnDfPUVY0GyMcz8G
+        le6NlYuQyCPVe/O6BIJtqW09u4bEg+vWliQkXH3F9lO7oomqsI/NvNkTWabWXoCdym6KZaRB4XIr
+        lfB1vz6qjYJzTh3oBBOvDMuqGGDCXWuXXD0wbgKpdSqLOPNN/kgJVqAbMgpp8jhgfodnjeZkAapi
+        I30Oa/ys0CjBNKxRSyoRFttNNiS0K8H2DV9Nz3kmvMJ8/O1VurA/Tr7nTNbL2+SGkO+f938yy0KB
+        nBIAAA==
+    headers:
+      Cache-Control:
+      - max-age=86400, public
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '517'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 07 Jul 2019 08:03:11 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 9f2fa0c5a611130a0b26673bb62c8388.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - WgKNy_Rvqwxa2nyWx9ggcYGtTXkjlfVbMHvlqFm8SIHY_UyT0hkoEQ==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Miss from cloudfront
+      x-amz-apigw-id:
+      - cccR6HaOoAMFx1w=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Content-Length:
+      - '517'
+      x-amzn-Remapped-Date:
+      - Sun, 07 Jul 2019 08:03:11 GMT
+      x-amzn-RequestId:
+      - aa02e4e9-a08d-11e9-8608-4337ad202c01
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: http://api.petfinder.com/v2/types/barnyard/breeds
+  response:
+    body:
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '183'
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 07 Jul 2019 08:03:11 GMT
+      Location:
+      - https://api.petfinder.com/v2/types/barnyard/breeds
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 44c580258abdf211fd3f1cae43c497e9.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - BEv18v_MLafMo6IQAOS2MAtnR4ZQdhX77g5c7U18muUbQyqeyLx7kQ==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Redirect from cloudfront
+    status:
+      code: 301
+      message: Moved Permanently
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/barnyard/breeds
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA63U30vDMBAH8H+l5HlQ8HFvzqFDtjmYCGJFru2tDUvvyiV1lNH/3e7NZ78+JSTh
+        Q3I/cnWlMdfRLT+uTqhjt3T3oaeK3MJ9BS/neevq0tjzbWyNT/OJIv++K/LbYizykkxGstpN07T4
+        jXhhFJFGDb6JNEMEjRVZSbXCjLKBxINeQGE9mFag8aSUQGJDXR9bb2iNbDTExF5A5pkt8ggiW9qR
+        VC1asVuS2qhCI7MN1KFX2bF5URTR4RQUzdBu1KTiq6zIs0fykrw0ILn3zfw+kmx9ITuh2FDOFIi8
+        lGwtxeBB5+DR2Bw0ZSsOwXONSmPToZ11JBJGg3tsmXvcSGHuT5B51aZhKQdD0/TmOd2mkbP/y9i7
+        2vnvf/Pn9APUOtdMVggAAA==
+    headers:
+      Cache-Control:
+      - max-age=86400, public
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '301'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 07 Jul 2019 08:03:11 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 ba150248cd293ea895c35304503c9f27.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - HoLnjh8bDtGyXLJeXY1qMsRhHaVC7HU6LyuR5Hrf1hENHvYOOTyETw==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Miss from cloudfront
+      x-amz-apigw-id:
+      - cccR_HKioAMFoOQ=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Content-Length:
+      - '301'
+      x-amzn-Remapped-Date:
+      - Sun, 07 Jul 2019 08:03:11 GMT
+      x-amzn-RequestId:
+      - aa49d8df-a08d-11e9-b841-7d7762f5532a
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: http://api.petfinder.com/v2/types/dog/breeds
+  response:
+    body:
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '183'
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 07 Jul 2019 08:03:12 GMT
+      Location:
+      - https://api.petfinder.com/v2/types/dog/breeds
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 36fbf419b5fa237613e1567ab33d3698.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 1HxcfyhwWxcRFdNZEeajgVki2VSnkSdcvy-7svGC8yBoAYViwqThoA==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Redirect from cloudfront
+    status:
+      code: 301
+      message: Moved Permanently
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/dog/breeds
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA62cXW/buBKG/4qQ6110sTcH2Lva+WyS1oiD5hSbg8VYmlg8ojgCRTpxiv73Hcp2
+        nS72qu8ARVsk0QOanI93hqN8PVlF5mY8+ePPryeBej754+T90xOHwYWxbjme/HLyl3eh05/4epK2
+        A5d/28hP+oOP7za/P74rXxwf3zWyPvn27dsvbzDrlkJ1KTk0AMVFbshzdc8xOmg93YrGFnneJQIe
+        9zR2uh+35KnPiQFSz9HVippl78t3cdLZ2LleqlMT2Lm8tOChH1CX5KLncTQ4/QNymejpSWIztmpZ
+        htwHShyr5UDBsQd4gZJ4Vxba8qAOiGzjMHB4Ze+rWz2PRC6AJ5zHFGla3JxSUqdUXPX4rpr5zNUl
+        s4d28ki/Zj84xEOOKINdPMJga5nRyOH/DgKMnNCgOmNae2B/9fnYcFPNxXvknJSTa44SEESjD66T
+        WJwO+/VbmymmfUPccRA32mI1Czh7qv6fBygj/BtV93WTI0OHFAOPbBSGZq5u9bjPoxsR2/NUdxWF
+        prov8UwkgElrB7yhVaRGYnXHSa1xA9njRNRNS201zzDoLo+jTRTzIg28W5oybqjeYojk9INZHJ5w
+        XAmSuGfiZV2sHEFoVI14VN1h8GOW+CpIrpLRJixL3iiganiszr16bGQkbsoLtphtpwEM1nmz6AhR
+        Jfp8ShS2FivRuMB+rC6iU2WMhHmtRwyOWyk9jUkX8/OQuRYOBqY3p0AEpitlsPp0HAVhxMatS5Wh
+        B9UW2hpwTKVpiREI/VyJNOp6qm5YBl0gjNtXFAgj1zTu9cukhIp+OX710ybVLcUOKOPntFHpptHo
+        WlVnNVea1qe4E85bHmlg6ria0dZCPMxb12bSPxBikm1zDbiJ0fPdw84F7DMUkEiHAKQWr+W6qVhT
+        6nNV/gIQGrO4Fk103j/m3377/T9nKSDn53O/smhKzKXuaBAkgCnBZiWYNjKQimjwlSKKGq7us9cy
+        GgDl6Le/zoWKaxoY8CnV7dhCW3NKmrmTRloEERqnacCFXkLCM/ipqAf0GvsXcENbo5ZU7+OaQ9II
+        BHG09lELmIQ65RcAlTWhGfS4zsLaOxUWcEf5ALLy9yMP9tsDCm9PH0gLcSEhFnUALTnZcMwMYTlE
+        1TeWJ3gvBrXKWVCNuMqYH1tcdpyzGxPwuO5Cg2/HuVP1PYsqbj27CISkcxdCOaQbGgYsBRxIy8Gl
+        VwCj+swwt6nP46kEDxznkUNtEGUvyGsqmsxHt/oi8hZc2IVVjtyDvrePISf7DpOYWioXwXjIPTAx
+        89xTHnRNZgtT2ZSqZd0Gyq8QyHOo5Km66okM2jEX4hsFGjjhhcodlb5oslNzp1SpTgTKgB1jsVV/
+        ZKSZOHFKlnx242h0vWHgzpfUO69lxphkQxHYp0sCreeSNoQ1xcGrzkvdgWeKQK6+zGMH3FJcrdwr
+        PgZzVXPpfLva4I7vyvttfNskA1DRQr7uKHCk2mGM5jD2MPFPoC9epd3sgIFbfzjc4rFFn/0DDbRr
+        77UOKNg/uNAAyvOaHBYurzXATRtchhJAlOaCVpATutZD2e7GYeDzuVYDzMDjnrnS3QUI0utmCPIR
+        8oZGQGZdb125XPh5gGWD94a6KQbjJ3tDoabd/Bk6NKW7E1Yc1xCjpZGq9wNyQXUjz1o4AGHklnyC
+        dMKtbmpb7ikMbr5vNab0PRkkyFv0IvO2/kgr4HEXHKWslmZzOXvkGbSLjzC88HzDEmmQ4bYjyaAY
+        u3UvWhzOyow1ADnUFdAQkE11cptD8bESCJF9+cg0iHdpGogGXeQjP1cX2QVWh3VhXe5loY+ovKci
+        1KZgj5EkPonvcLdT0DNPg3mzjPnckXTmO1CPHlk3ymF8Ya42KAM+asWnrivJUXWaVTHflztDNQoD
+        DfDJN9WbZjuYHD6Vsgk8gwUNzntkamdBcZRgV1csqHyst+9slCGMcxs2d+VaAtEJC+5XUTq2GaVZ
+        cMyb4gFXKumqT7FuHXKYnFyq9jPe+3Gs6jOrbyHSatFSJGnRFsSiLM1ERCy8JHiGHW64LmRyY1Wu
+        U6DH3XkhPUcK0PU3Kl4WElNe51LWL6ThsAY0/RvWrqkC5cJFZK0yykBddMiiMrKG7BFfzz3y9NRs
+        Nnkj5Y4MBiPuuFnJNJkI36wbJNa7Vq11mtG7c82aV1QDA153Gl6e2UGF9Z3kdQuPYi9Vb2vU5Big
+        Yd8l+dwBtrekXrZIBbKkOGiUdIFqAKLJcRg4dsiG4iVZkYapRP5ThtXXdxbsjksmv22ptyBh3fil
+        yoVfF4yYW0mlWLbAg6QS0g+Jff+ClE+QQ7duRSr2gMasItReXhGCW/F0gQNeTS2d77YGBtdtDdrd
+        S18iLmJ1vUgyCNk7jMnEyHJ6devw3pXB9Dl8rXWYGTEQdMvBhSIg9hdcgKYDhzF+fKPbpkRRZmjK
+        Ow2oIP8OsshcpUR/we82l8/cFCP4TN5jTRt4n+9bchaS715Dokkz8QCCN/kAwrdIRjDjlNFLk3hW
+        QJb3LPeRuXTmHsh304uPcCny2b2OHgiwD+x60iIe+VS7xpLdBO2OB2/2gx5adenW7aSKHlqXfmjQ
+        lW8jefOhLaNQBvb+MFUJwMDO7qP9YxIRwJWsYuI+b8YFDW7P/jl8WBwJfoXzDRT+uP8VL5rY66yL
+        8276rQf88sOvdfl59hf2Xp5NX+D6IrGDfinM/779DQf0lEBOSQAA
+    headers:
+      Cache-Control:
+      - max-age=86400, public
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '2034'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 07 Jul 2019 08:03:12 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 5ab60a1edc7a4b1ee4a5fb18ec06ce15.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - cF6snFOrJtFVngMA1Fa0zuTrvo22BABpAnVZEEfh4vdpLIUf-4Ig3Q==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Miss from cloudfront
+      x-amz-apigw-id:
+      - cccSCF8joAMF8LQ=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Content-Length:
+      - '2034'
+      x-amzn-Remapped-Date:
+      - Sun, 07 Jul 2019 08:03:12 GMT
+      x-amzn-RequestId:
+      - aa794dbb-a08d-11e9-8db9-2f2f4151f2bb
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: http://api.petfinder.com/v2/types/cat/breeds
+  response:
+    body:
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '183'
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 07 Jul 2019 08:03:12 GMT
+      Location:
+      - https://api.petfinder.com/v2/types/cat/breeds
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 078ca3a7cfdee29c8e3514176205c50a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - inIz-PPIwVaAWwVIXCYyib9ORGrRVUWG2rrehGxJZB3sielfbXI7fg==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Redirect from cloudfront
+    status:
+      code: 301
+      message: Moved Permanently
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/cat/breeds
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA62XT2vbQBDFv4rQOcXQY26xkxDSuA2RaCl1KSNpIg1e7Yj941gEf/euTJqcq6eT
+        Ye35WZqZ92b2Na8cc+Pzy1+vuaWe88v8qhq9Fytk84v8jxG7T1+/5mEcePrsHD+nX+1Wh8+71XTo
+        d6uaQn46nS4+GD07qclma60CiVmAtIluCUzRqQsdiVuA9UMcg6hhMNwxNVkh6cTzfNSaUhxGYNsS
+        kOO1uB5pmrX2FY1AvJMgvluixOvowGokgBhD8wmbVM9akXhLTRJxdpcyYdh7ANWRC47jEUJEL0BC
+        N53YugNTqs5ODfLEyJuMfVL//PhrPqjFHuFaTAycoR3yhimTWlQ8+44NoP5rTYoJUmcPattz0y3A
+        2nIjsV+KdjYGEHbTjkOYZLWlCFCO+v5AmFPdHIOjT6WyT/0Qst0qu+NebPtCY/aoZmyoDiNQ1js6
+        JCMB4qUnQyMyF+5poGmy4cvE/fQykK9/UZeOZoc/0CO7fn78ltKMzzaqQDq3ZAHv2cZkw3sB/v8r
+        V2yibQGCuhduJxHeqkvSnjp/Pu1bLTUU74RtILOE8b2zlrCqd1hJVQXsVallPXQbeJSjcKXVfMIT
+        tdTH52ek7xKjUWTCPUU/5SFbmwg4SFFrOK+pt2oaAMNmL26PLRLwpaOQKt2FkN4oxBwYaPIizToa
+        ogNGVGH1xXeKpEHTkBMgfuhGezwP77dlHbM0UPCltEhJSrV78CqadtIKuS0stNOW0e0nqV7ZVpEO
+        +8f5jiiljEdugHX/pya72HRaq6Hw37n9ffoLp6OEciwSAAA=
+    headers:
+      Cache-Control:
+      - max-age=86400, public
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '605'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 07 Jul 2019 08:03:12 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 d9a3481018b2f1931201627713f68e77.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - QLLYttMOAhG09EJjmyqa-Y75wKVCFYVhSOE10wTnvmUJNKWIdMRKdA==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Miss from cloudfront
+      x-amz-apigw-id:
+      - cccSEHLloAMFzfQ=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Content-Length:
+      - '605'
+      x-amzn-Remapped-Date:
+      - Sun, 07 Jul 2019 08:03:12 GMT
+      x-amzn-RequestId:
+      - aa9fc170-a08d-11e9-96aa-25ce8e5d7862
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: http://api.petfinder.com/v2/types/rabbit/breeds
+  response:
+    body:
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '183'
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 07 Jul 2019 08:03:12 GMT
+      Location:
+      - https://api.petfinder.com/v2/types/rabbit/breeds
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 44c580258abdf211fd3f1cae43c497e9.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 7jeIU6B7p5bLVynn5dbrxwBx-jpKg8INUHoIUr3KtSEDNdD_-_hsnA==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Redirect from cloudfront
+    status:
+      code: 301
+      message: Moved Permanently
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/rabbit/breeds
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA62WQWvbQBCF/8qy54BDLoXc4iSqKUkIdiHQuJSxNNYOWc2645VTxfi/Z+U2p9z6
+        fNKiXT6enuY9ae9Xxtxs/eXz3it17C/9VccmNak/87+i6EvZ3Ps8bHi8BuN1ObOc7C6Wk/Hmdjkx
+        Wq0k+8PhcPYJ4qr+7W1wd2lzGtyCVpExlLbJyM3/biGkKcdWiqYZGSZpyjs2xgyfmmRSFXKPnCWD
+        gnrV4RQWXVOUdbIiC3u660Ddhlpld7Psz88vvlxZywpqC1y/FN8b97XIQ1midZAYCcOIllUCvTLu
+        TunTTZ/rgBFeydY4wd2WoDUQ51bbKNsA99EHZ7FJmLlV5G4E4SNYxWTSkHsKaPqr0kU17lGpxci/
+        e8GmeUY7UixVM+ko0gBW0CyVdGuD25IyODPf2LY8uKeU4gCB7iRSDRKSBiYslMXRE0T7XlTgl3OE
+        zPkPBHngHNiOw4I33wO/uh9MIw3iPFJMnWjCIGlsPQiBmjsvX1oe3WCDOAvKYDMtJO5QEUeEqxLm
+        yT/MPVkG/yK//1dJ/jy8AzwiFXZIDAAA
+    headers:
+      Cache-Control:
+      - max-age=86400, public
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '423'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 07 Jul 2019 08:03:12 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 fa751ee53e2bf18781ae98b293ff9375.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - A_FYYe5Dm5mKofNYdyLAtCNmDtidnm2LY4BfXdgM1sRpm60ylx5IUA==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Miss from cloudfront
+      x-amz-apigw-id:
+      - cccSIFGcIAMFfEw=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Content-Length:
+      - '423'
+      x-amzn-Remapped-Date:
+      - Sun, 07 Jul 2019 08:03:12 GMT
+      x-amzn-RequestId:
+      - aacf0e47-a08d-11e9-bbb0-c700fbbe95cd
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: http://api.petfinder.com/v2/types/small-furry/breeds
+  response:
+    body:
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '183'
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 07 Jul 2019 08:03:12 GMT
+      Location:
+      - https://api.petfinder.com/v2/types/small-furry/breeds
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 5ab60a1edc7a4b1ee4a5fb18ec06ce15.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - rvYvqvUBwL_Aht_KGJ-XYlxQ8kItvLzSMIc_ToQXIKIS-S6m7H0H4Q==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Redirect from cloudfront
+    status:
+      code: 301
+      message: Moved Permanently
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/small-furry/breeds
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA63SzUrEMBQF4FcpWc9QcDk7cXC6EcrUnRVJzWlzaZrKTTJaSt/dzsYHMHcVSMLH
+        /Tmr6hgwQZ3eVuX1BHVSj90SAnnSXh3UhyM/7s+rissX7qdl9Puvtrw9tOX9MrRlmLRzxz4xL2rb
+        tsOf9WTJf1pyTudbZwxJQPnW3BeVnkIE53PPYEbMdy7gjpyAk8hDFzUN+ZbYkCqYAXYWKOllTgH5
+        TA1ON5GA16yJCcVZorurFkjSFT/5SGNnjsdq7w1GQCM37jNqy6KxcJEENtiMyY8CTBo0FxdHRiLn
+        rzBm+S/zvv0C40vRSI0FAAA=
+    headers:
+      Cache-Control:
+      - max-age=86400, public
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '245'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 07 Jul 2019 08:03:13 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 6a1e4dd9fa29c61c4b71a53d6bf94267.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - Utn3IdID_zD6RnfnYKfX2AhtAc7hXtUzTDukNFhJfbp91FgCaZpEQg==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Miss from cloudfront
+      x-amz-apigw-id:
+      - cccSLEh0IAMF9WQ=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Content-Length:
+      - '245'
+      x-amzn-Remapped-Date:
+      - Sun, 07 Jul 2019 08:03:13 GMT
+      x-amzn-RequestId:
+      - ab033e3d-a08d-11e9-9854-8b1db8c8f269
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: http://api.petfinder.com/v2/types/horse/breeds
+  response:
+    body:
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '183'
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 07 Jul 2019 08:03:13 GMT
+      Location:
+      - https://api.petfinder.com/v2/types/horse/breeds
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 5d89a565ccf3467bf90667ebfc36953c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - t6Kem7qGsWZeB90dtwR5xjt-tp8LLai_CjH487okgOYWdGXsEAfcTA==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Redirect from cloudfront
+    status:
+      code: 301
+      message: Moved Permanently
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/horse/breeds
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6WWwWrDMAyGX8X4XAjs2FvX0XWwQLcWeljGUGMlMXGsINtlacm7z9ll9+lkkO0P
+        +Zf123d9YUQT9Prjrj0MqNd6M47giALolf5y1vd59q7jNOIydoxNXlQV14eqWIKhKjrigHqe59Uf
+        hOFiwUsQj+haIWLrJoPBgEMRhbzHAVgkyDaxm9T+d0KAeSLf4yQiMDRRAtixxSAszDPYiEZEYDAi
+        JffQ5K0tsgTyUqMDb2wtr+yrHe3tJpO1tN5CTIzydEobAiW2akffkSlGmVAlcSs8W5J1cZlCBN9K
+        EAewPqqqUIc8kozkaLBeyAikdlIIct0hk6g0GZKu2RHUkpIIRF7kbct+RY2KHarNgGxrCBLeWwLO
+        F7+TNtM71f2kSko+5iskb84jGOMwP90iCz12GBf3UlLZj7mxDLCRJnTC/NCGgKjO4HqZ4ZxyjFLb
+        SXM6Aw+X/B36B+Rz/gF3M+yXXwkAAA==
+    headers:
+      Cache-Control:
+      - max-age=86400, public
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '364'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 07 Jul 2019 08:03:13 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 88eb066576c1b47cd896ab0019b9f25f.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - HoNDgqM0QNKaUclWVe5sufbczwtNVyfW5TqwYxhOfDcJUc_ipKNc_Q==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Miss from cloudfront
+      x-amz-apigw-id:
+      - cccSOGsOoAMFeMw=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Content-Length:
+      - '364'
+      x-amzn-Remapped-Date:
+      - Sun, 07 Jul 2019 08:03:13 GMT
+      x-amzn-RequestId:
+      - ab31a0d0-a08d-11e9-ad00-5933d1e5698d
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: http://api.petfinder.com/v2/types/bird/breeds
+  response:
+    body:
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '183'
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 07 Jul 2019 08:03:13 GMT
+      Location:
+      - https://api.petfinder.com/v2/types/bird/breeds
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 08df71188a92655a7dcd1bb872797741.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - HnSEaXrB56UJIoZqboi4s0rHLatEhk_hs34i80bfm1gYIKDYoK1g_A==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Redirect from cloudfront
+    status:
+      code: 301
+      message: Moved Permanently
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/bird/breeds
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA62WzU7DMBCEXyXyCaSiSBx7g1J6ANRAuRGEtu42WTm1i39alSrvjlOBuHc42bI8
+        n6Kd0ThHtfTMq6DGb0dlacNqrG7WXjTZYub5oEbqoxNr8oWjioctD2vreZ3v1eXuui6Hw1CXS/Er
+        1ff96A+zoS9nAcCtd9E17CUgkLRqhIu6LIZdhjXkIVyMzl49J5IOwExIPhNDAEsecWfSijaM2DNx
+        2lAUhuZwYjgHIWzyyCjv3A6SJ20A+VR3rGNCIj7dJEB9L1a3gH7mXEDmN0timYp7t0eC9ECGvBgB
+        EI/OH4aeyKsY5gihdnw6PR/xRJr2gH4eYm5xxNiKPA1zKC7msWV/iaFyl/8bqIPMqZh0rp3B6rxd
+        Y7mrWqZAFvoeaRh6JyvJFYgUSOVE87alLoVhKgu23BAyFfR5zHrDvvhNIEB6yf4gcrGN5Z+wBImR
+        dOogYC7LDiIs9oSE5dUljQGSN2f8F7733zSWFgFrCgAA
+    headers:
+      Cache-Control:
+      - max-age=86400, public
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '375'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 07 Jul 2019 08:03:13 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 cc939d428763f6bf98a05191227da596.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - KIxzoeaYgwQXndphG5y9uXxJKJykbjGw6TR6g256MEBLnyU7U68RoQ==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Miss from cloudfront
+      x-amz-apigw-id:
+      - cccSRHoiIAMFUVw=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Content-Length:
+      - '375'
+      x-amzn-Remapped-Date:
+      - Sun, 07 Jul 2019 08:03:13 GMT
+      x-amzn-RequestId:
+      - ab5a5f2a-a08d-11e9-b823-f3e594074d03
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: http://api.petfinder.com/v2/types/scales-fins-other/breeds
+  response:
+    body:
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '183'
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 07 Jul 2019 08:03:13 GMT
+      Location:
+      - https://api.petfinder.com/v2/types/scales-fins-other/breeds
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 36fbf419b5fa237613e1567ab33d3698.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - XXNykB6KgWWjQJ5zu4yfsliiBHRelZoNagTaohMp1sASkBqjWxBgAA==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Redirect from cloudfront
+    status:
+      code: 301
+      message: Moved Permanently
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/scales-fins-other/breeds
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA7WY3YrbQAyFX2Xw9YZAL/euSTfb0k0TYpdSmlKUWLZFJiOjGTdNQ969M3uxT3AK
+        Bpux/THWz5HkW3Uw5jZWjz9uVaAzV4/V+ygU3EL/VA/VLy/hlO/eqnQduZwH4y4/tJ//frefl8W4
+        n8cjeY6zTkKcaRrYqvv9/vAGXJD3bntNgwYYkslabt0Hox5IVQKi3FJDTCbHpIbD4rwyeY9kdaY9
+        jmdnjgwOmuWQz56BQLXg9nO3o4RCPlFMbND0W4mxq8nTmULLsFAs2NmCvRdu/wfTfeELzKwrryYt
+        Qc1qHIcLZW+5lcQBh8Wl0TNZ2V6JUDkccHH/zMeTwmDq2w5owI9sZ0luaXSAIXOe54BEuuZTP1GA
+        VZvPEvri5rX4E4r5wjrmIgvGQY34In+BO1xLjOUYR3FrGl0zWfIMo2sQYCOwnnDfPUVY0GyMcz8G
+        le6NlYuQyCPVe/O6BIJtqW09u4bEg+vWliQkXH3F9lO7oomqsI/NvNkTWabWXoCdym6KZaRB4XIr
+        lfB1vz6qjYJzTh3oBBOvDMuqGGDCXWuXXD0wbgKpdSqLOPNN/kgJVqAbMgpp8jhgfodnjeZkAapi
+        I30Oa/ys0CjBNKxRSyoRFttNNiS0K8H2DV9Nz3kmvMJ8/O1VurA/Tr7nTNbL2+SGkO+f938yy0KB
+        nBIAAA==
+    headers:
+      Cache-Control:
+      - max-age=86400, public
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '517'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 07 Jul 2019 08:03:14 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 ca79756ec49e2babf1b916300304b2fb.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - E1Id034oA2LmqlPEdF0K6WxRyM9b-5OAH3w0XDKbCcIvcS-aQ0CGSA==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Miss from cloudfront
+      x-amz-apigw-id:
+      - cccSTEMKIAMF64Q=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Content-Length:
+      - '517'
+      x-amzn-Remapped-Date:
+      - Sun, 07 Jul 2019 08:03:14 GMT
+      x-amzn-RequestId:
+      - ab805d22-a08d-11e9-b678-59d757f191ea
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: http://api.petfinder.com/v2/types/barnyard/breeds
+  response:
+    body:
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '183'
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 07 Jul 2019 08:03:14 GMT
+      Location:
+      - https://api.petfinder.com/v2/types/barnyard/breeds
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 3a89ec81413ada8ae1c2005b5973a09f.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - -V4t68jeVm9HPC-AmlJRYLvmkE8Jl70u3oAhKJIu53wtMWi3sRHmdQ==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Redirect from cloudfront
+    status:
+      code: 301
+      message: Moved Permanently
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/barnyard/breeds
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA63U30vDMBAH8H+l5HlQ8HFvzqFDtjmYCGJFru2tDUvvyiV1lNH/3e7NZ78+JSTh
+        Q3I/cnWlMdfRLT+uTqhjt3T3oaeK3MJ9BS/neevq0tjzbWyNT/OJIv++K/LbYizykkxGstpN07T4
+        jXhhFJFGDb6JNEMEjRVZSbXCjLKBxINeQGE9mFag8aSUQGJDXR9bb2iNbDTExF5A5pkt8ggiW9qR
+        VC1asVuS2qhCI7MN1KFX2bF5URTR4RQUzdBu1KTiq6zIs0fykrw0ILn3zfw+kmx9ITuh2FDOFIi8
+        lGwtxeBB5+DR2Bw0ZSsOwXONSmPToZ11JBJGg3tsmXvcSGHuT5B51aZhKQdD0/TmOd2mkbP/y9i7
+        2vnvf/Pn9APUOtdMVggAAA==
+    headers:
+      Cache-Control:
+      - max-age=86400, public
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '301'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 07 Jul 2019 08:03:14 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 44c580258abdf211fd3f1cae43c497e9.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - vYMTMB_L3I6hYGnXcrzHxEqGx4OFOBi2SEBrG9HyayWwUVqLbsriIA==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Miss from cloudfront
+      x-amz-apigw-id:
+      - cccSYEpuIAMFV5w=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Content-Length:
+      - '301'
+      x-amzn-Remapped-Date:
+      - Sun, 07 Jul 2019 08:03:14 GMT
+      x-amzn-RequestId:
+      - abccf6fe-a08d-11e9-b2cb-fb1a4330ccea
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: http://api.petfinder.com/v2/types/cat/breeds
+  response:
+    body:
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '183'
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 07 Jul 2019 08:03:14 GMT
+      Location:
+      - https://api.petfinder.com/v2/types/cat/breeds
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 e7a6b3b39a146e70091418a22590a905.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 5S2UDIJz8Jfs9oTurqx5y58gAXflg8cFSZht2kVlRVIxI5FIozPgJQ==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Redirect from cloudfront
+    status:
+      code: 301
+      message: Moved Permanently
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/cat/breeds
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA62XT2vbQBDFv4rQOcXQY26xkxDSuA2RaCl1KSNpIg1e7Yj941gEf/euTJqcq6eT
+        Ye35WZqZ92b2Na8cc+Pzy1+vuaWe88v8qhq9Fytk84v8jxG7T1+/5mEcePrsHD+nX+1Wh8+71XTo
+        d6uaQn46nS4+GD07qclma60CiVmAtIluCUzRqQsdiVuA9UMcg6hhMNwxNVkh6cTzfNSaUhxGYNsS
+        kOO1uB5pmrX2FY1AvJMgvluixOvowGokgBhD8wmbVM9akXhLTRJxdpcyYdh7ANWRC47jEUJEL0BC
+        N53YugNTqs5ODfLEyJuMfVL//PhrPqjFHuFaTAycoR3yhimTWlQ8+44NoP5rTYoJUmcPattz0y3A
+        2nIjsV+KdjYGEHbTjkOYZLWlCFCO+v5AmFPdHIOjT6WyT/0Qst0qu+NebPtCY/aoZmyoDiNQ1js6
+        JCMB4qUnQyMyF+5poGmy4cvE/fQykK9/UZeOZoc/0CO7fn78ltKMzzaqQDq3ZAHv2cZkw3sB/v8r
+        V2yibQGCuhduJxHeqkvSnjp/Pu1bLTUU74RtILOE8b2zlrCqd1hJVQXsVallPXQbeJSjcKXVfMIT
+        tdTH52ek7xKjUWTCPUU/5SFbmwg4SFFrOK+pt2oaAMNmL26PLRLwpaOQKt2FkN4oxBwYaPIizToa
+        ogNGVGH1xXeKpEHTkBMgfuhGezwP77dlHbM0UPCltEhJSrV78CqadtIKuS0stNOW0e0nqV7ZVpEO
+        +8f5jiiljEdugHX/pya72HRaq6Hw37n9ffoLp6OEciwSAAA=
+    headers:
+      Cache-Control:
+      - max-age=86400, public
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '605'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 07 Jul 2019 08:03:15 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 72f0ac9702110cafbb646d71a297e2c7.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - mnns-x-N6r-1HDl_OolA8r7o0YWaB7x10o15xF0PXSI35pDTL3AYTg==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Miss from cloudfront
+      x-amz-apigw-id:
+      - cccSeFcCIAMF-fw=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Content-Length:
+      - '605'
+      x-amzn-Remapped-Date:
+      - Sun, 07 Jul 2019 08:03:15 GMT
+      x-amzn-RequestId:
+      - ac1e728c-a08d-11e9-bb09-61cf75f36582
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: http://api.petfinder.com/v2/types/cat/breeds
+  response:
+    body:
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '183'
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 07 Jul 2019 08:03:15 GMT
+      Location:
+      - https://api.petfinder.com/v2/types/cat/breeds
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 72ab9d86bb504f153766d6e4b4cb7029.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - vaaBvIorynq6zpx45ZtMMXXycfTusqPjfFwwPF4QVJZenKqKBUT8Gg==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Redirect from cloudfront
+    status:
+      code: 301
+      message: Moved Permanently
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/cat/breeds
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA62XT2vbQBDFv4rQOcXQY26xkxDSuA2RaCl1KSNpIg1e7Yj941gEf/euTJqcq6eT
+        Ye35WZqZ92b2Na8cc+Pzy1+vuaWe88v8qhq9Fytk84v8jxG7T1+/5mEcePrsHD+nX+1Wh8+71XTo
+        d6uaQn46nS4+GD07qclma60CiVmAtIluCUzRqQsdiVuA9UMcg6hhMNwxNVkh6cTzfNSaUhxGYNsS
+        kOO1uB5pmrX2FY1AvJMgvluixOvowGokgBhD8wmbVM9akXhLTRJxdpcyYdh7ANWRC47jEUJEL0BC
+        N53YugNTqs5ODfLEyJuMfVL//PhrPqjFHuFaTAycoR3yhimTWlQ8+44NoP5rTYoJUmcPattz0y3A
+        2nIjsV+KdjYGEHbTjkOYZLWlCFCO+v5AmFPdHIOjT6WyT/0Qst0qu+NebPtCY/aoZmyoDiNQ1js6
+        JCMB4qUnQyMyF+5poGmy4cvE/fQykK9/UZeOZoc/0CO7fn78ltKMzzaqQDq3ZAHv2cZkw3sB/v8r
+        V2yibQGCuhduJxHeqkvSnjp/Pu1bLTUU74RtILOE8b2zlrCqd1hJVQXsVallPXQbeJSjcKXVfMIT
+        tdTH52ek7xKjUWTCPUU/5SFbmwg4SFFrOK+pt2oaAMNmL26PLRLwpaOQKt2FkN4oxBwYaPIizToa
+        ogNGVGH1xXeKpEHTkBMgfuhGezwP77dlHbM0UPCltEhJSrV78CqadtIKuS0stNOW0e0nqV7ZVpEO
+        +8f5jiiljEdugHX/pya72HRaq6Hw37n9ffoLp6OEciwSAAA=
+    headers:
+      Cache-Control:
+      - max-age=86400, public
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '605'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 07 Jul 2019 08:03:15 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 72f0ac9702110cafbb646d71a297e2c7.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - FXODBzkOw5IjkQXQmWkKAVWP4RcLaig8s70X3Zs_PSASm0CrWS6_lA==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Miss from cloudfront
+      x-amz-apigw-id:
+      - cccShE-8oAMF2qQ=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Content-Length:
+      - '605'
+      x-amzn-Remapped-Date:
+      - Sun, 07 Jul 2019 08:03:15 GMT
+      x-amzn-RequestId:
+      - ac4d234d-a08d-11e9-86ca-4364dfb8f3ad
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: http://api.petfinder.com/v2/types/cat/breeds
+  response:
+    body:
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '183'
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 07 Jul 2019 08:03:15 GMT
+      Location:
+      - https://api.petfinder.com/v2/types/cat/breeds
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 cc939d428763f6bf98a05191227da596.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - LcU7w76BCIg7ziUuun4U-XUBi8vOUOmSETB_8RTpIVqBE-fe4Y217A==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Redirect from cloudfront
+    status:
+      code: 301
+      message: Moved Permanently
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/cat/breeds
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA62XT2vbQBDFv4rQOcXQY26xkxDSuA2RaCl1KSNpIg1e7Yj941gEf/euTJqcq6eT
+        Ye35WZqZ92b2Na8cc+Pzy1+vuaWe88v8qhq9Fytk84v8jxG7T1+/5mEcePrsHD+nX+1Wh8+71XTo
+        d6uaQn46nS4+GD07qclma60CiVmAtIluCUzRqQsdiVuA9UMcg6hhMNwxNVkh6cTzfNSaUhxGYNsS
+        kOO1uB5pmrX2FY1AvJMgvluixOvowGokgBhD8wmbVM9akXhLTRJxdpcyYdh7ANWRC47jEUJEL0BC
+        N53YugNTqs5ODfLEyJuMfVL//PhrPqjFHuFaTAycoR3yhimTWlQ8+44NoP5rTYoJUmcPattz0y3A
+        2nIjsV+KdjYGEHbTjkOYZLWlCFCO+v5AmFPdHIOjT6WyT/0Qst0qu+NebPtCY/aoZmyoDiNQ1js6
+        JCMB4qUnQyMyF+5poGmy4cvE/fQykK9/UZeOZoc/0CO7fn78ltKMzzaqQDq3ZAHv2cZkw3sB/v8r
+        V2yibQGCuhduJxHeqkvSnjp/Pu1bLTUU74RtILOE8b2zlrCqd1hJVQXsVallPXQbeJSjcKXVfMIT
+        tdTH52ek7xKjUWTCPUU/5SFbmwg4SFFrOK+pt2oaAMNmL26PLRLwpaOQKt2FkN4oxBwYaPIizToa
+        ogNGVGH1xXeKpEHTkBMgfuhGezwP77dlHbM0UPCltEhJSrV78CqadtIKuS0stNOW0e0nqV7ZVpEO
+        +8f5jiiljEdugHX/pya72HRaq6Hw37n9ffoLp6OEciwSAAA=
+    headers:
+      Cache-Control:
+      - max-age=86400, public
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '605'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 07 Jul 2019 08:03:15 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 5d89a565ccf3467bf90667ebfc36953c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - h9w7VM7B77ck4FFp3i04HGOOBZr7P2jWz-HByjFf6qXwoCsDhleDVg==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Miss from cloudfront
+      x-amz-apigw-id:
+      - cccSkGxcoAMF_Ng=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Content-Length:
+      - '605'
+      x-amzn-Remapped-Date:
+      - Sun, 07 Jul 2019 08:03:15 GMT
+      x-amzn-RequestId:
+      - ac7d3449-a08d-11e9-b206-3b8fb1029b6c
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: http://api.petfinder.com/v2/types/dog/breeds
+  response:
+    body:
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '183'
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 07 Jul 2019 08:03:15 GMT
+      Location:
+      - https://api.petfinder.com/v2/types/dog/breeds
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 e7a6b3b39a146e70091418a22590a905.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - ApEqhs4CQY1SJqj849uqM7Zcwl2aWDjSCjKBuwRyElDoGoUIBJe5zQ==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Redirect from cloudfront
+    status:
+      code: 301
+      message: Moved Permanently
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/dog/breeds
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Cache-Control:
+      - max-age=86400, public
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '2034'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 07 Jul 2019 08:03:15 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 9f2fa0c5a611130a0b26673bb62c8388.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - MYzmwiOrLDiFBecjJbfnvG8wsRms4wGTUVJvCphmDZ2aMv87i2-ubQ==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Miss from cloudfront
+      x-amz-apigw-id:
+      - cccSmEZdoAMF83A=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Content-Length:
+      - '2034'
+      x-amzn-Remapped-Date:
+      - Sun, 07 Jul 2019 08:03:15 GMT
+      x-amzn-RequestId:
+      - aca55517-a08d-11e9-a218-8fb53d77b24c
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: http://api.petfinder.com/v2/types/cat/breeds
+  response:
+    body:
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '183'
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 07 Jul 2019 08:03:16 GMT
+      Location:
+      - https://api.petfinder.com/v2/types/cat/breeds
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 5ab60a1edc7a4b1ee4a5fb18ec06ce15.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - Qj8KgyPBO22sDMFUDn0S4EXqnVYWAZZEn3DonZ45TMCHf4hefl_Tqg==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Redirect from cloudfront
+    status:
+      code: 301
+      message: Moved Permanently
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/cat/breeds
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA62XT2vbQBDFv4rQOcXQY26xkxDSuA2RaCl1KSNpIg1e7Yj941gEf/euTJqcq6eT
+        Ye35WZqZ92b2Na8cc+Pzy1+vuaWe88v8qhq9Fytk84v8jxG7T1+/5mEcePrsHD+nX+1Wh8+71XTo
+        d6uaQn46nS4+GD07qclma60CiVmAtIluCUzRqQsdiVuA9UMcg6hhMNwxNVkh6cTzfNSaUhxGYNsS
+        kOO1uB5pmrX2FY1AvJMgvluixOvowGokgBhD8wmbVM9akXhLTRJxdpcyYdh7ANWRC47jEUJEL0BC
+        N53YugNTqs5ODfLEyJuMfVL//PhrPqjFHuFaTAycoR3yhimTWlQ8+44NoP5rTYoJUmcPattz0y3A
+        2nIjsV+KdjYGEHbTjkOYZLWlCFCO+v5AmFPdHIOjT6WyT/0Qst0qu+NebPtCY/aoZmyoDiNQ1js6
+        JCMB4qUnQyMyF+5poGmy4cvE/fQykK9/UZeOZoc/0CO7fn78ltKMzzaqQDq3ZAHv2cZkw3sB/v8r
+        V2yibQGCuhduJxHeqkvSnjp/Pu1bLTUU74RtILOE8b2zlrCqd1hJVQXsVallPXQbeJSjcKXVfMIT
+        tdTH52ek7xKjUWTCPUU/5SFbmwg4SFFrOK+pt2oaAMNmL26PLRLwpaOQKt2FkN4oxBwYaPIizToa
+        ogNGVGH1xXeKpEHTkBMgfuhGezwP77dlHbM0UPCltEhJSrV78CqadtIKuS0stNOW0e0nqV7ZVpEO
+        +8f5jiiljEdugHX/pya72HRaq6Hw37n9ffoLp6OEciwSAAA=
+    headers:
+      Cache-Control:
+      - max-age=86400, public
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '605'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 07 Jul 2019 08:03:16 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 e785d36fcfe1e6758d8c1a9a71445bbe.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 3tIiq47IRtiVYa84OQWYm7MBTmUEdvJtIQqH3alvaU2hX0D6I0eN6w==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Miss from cloudfront
+      x-amz-apigw-id:
+      - cccSpE_XIAMFzJg=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Content-Length:
+      - '605'
+      x-amzn-Remapped-Date:
+      - Sun, 07 Jul 2019 08:03:16 GMT
+      x-amzn-RequestId:
+      - acc9a648-a08d-11e9-8dbb-87fc210d9817
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: http://api.petfinder.com/v2/types/dog/breeds
+  response:
+    body:
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '183'
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 07 Jul 2019 08:03:16 GMT
+      Location:
+      - https://api.petfinder.com/v2/types/dog/breeds
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 5ab60a1edc7a4b1ee4a5fb18ec06ce15.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 8p0Cd2entOhwgB4EA72bVP60AV1DffiZOtPG-2K7ZW4m4cfStg8Tzw==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Redirect from cloudfront
+    status:
+      code: 301
+      message: Moved Permanently
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjYyNTFiYzEzMjZhMjZlN2Q4NjNlYTNiMjhjMjA1MjJlZGM0NjQ4ZWNmYzc0ZGU4MmJiZTA5ZjNjNWQyMTdhNjU1ZmMwNTZiZjMyYWYyZDk1IiwiaWF0IjoxNTYyNDg2NTg3LCJuYmYiOjE1NjI0ODY1ODcsImV4cCI6MTU2MjQ5MDE4Nywic3ViIjoiIiwic2NvcGVzIjpbXX0.XttF7Upou0ZOBoCp0Fn4bvPpDtF93c0TuiRqhohCKkV9M2WLsSigDIKiy3yX5EWpH1Jsiapy4kQKYLDmRerkGbAMkHUVHTuSy40qj3i2g7rVyYQ_LSiGGhrH3_-71A2mh-KLkChMW46sfwJRM72dkCaW2k79TtE9fb3kYkcpHe3tVr3feB-1H-fYcWhak8n-id6oeBCtgvKxorWrRJOWNur7mdsh73wZgrvuZvkI5397ju3f754HEbJ2_X4_B45pawYIkTgx9ohLY_gak-J57QcSK1Y9fkV8X0WhnmNGqF9FUPIMPU3MlBRO05Vl6IBfpNHU_UzTYNaYGA2io2O90w
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.21.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/dog/breeds
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Cache-Control:
+      - max-age=86400, public
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '2034'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 07 Jul 2019 08:03:16 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 840717da68adc4ace0e2050590aef6c5.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - ot3443HHqqaaz8wfSrF6cltJI7xA9EAvAP56wcmcIiVDiO9yIXDyJw==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Miss from cloudfront
+      x-amz-apigw-id:
+      - cccSsHJkoAMFuFw=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Content-Length:
+      - '2034'
+      x-amzn-Remapped-Date:
+      - Sun, 07 Jul 2019 08:03:16 GMT
+      x-amzn-RequestId:
+      - acfc0155-a08d-11e9-960c-b33b1ab11aba
+    status:
+      code: 200
+      message: OK
+version: 1

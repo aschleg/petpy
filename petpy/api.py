@@ -7,6 +7,10 @@ import requests
 from urllib.parse import urljoin
 
 
+_animal_types = ('dog', 'cat', 'rabbit', 'small-furry',
+                     'horse', 'bird', 'scales-fins-other', 'barnyard')
+
+
 class Petfinder(object):
     r"""
     Wrapper class for the PetFinder API.
@@ -17,13 +21,18 @@ class Petfinder(object):
         The base URL of the Petfinder API.
     key : str
         The API key.
-    secret: str
+    secret : str
         The secret key.
+    auth : str
+
 
     Methods
     -------
     animal_types(types, return_df=False)
         Returns data on an animal type, or types available from the PetFinder API.
+    breeds
+    animals
+    organizations
 
     """
     def __init__(self, key, secret):
@@ -42,9 +51,6 @@ class Petfinder(object):
         self.secret = secret
         self.host = 'http://api.petfinder.com/v2/'
         self.auth = self._authenticate()
-
-        self._animal_types = ('dog', 'cat', 'rabbit', 'small-furry',
-                                 'horse', 'bird', 'scales-fins-other', 'barnyard')
 
     def _authenticate(self):
         r"""
@@ -74,14 +80,8 @@ class Petfinder(object):
 
         r = requests.post(url, data=data)
 
-        if r.status_code != 200:
-            raise requests.exceptions.HTTPError(r.reason)
-
         if r.json()['token_type'] == 'Bearer':
             return r.json()['access_token']
-
-        else:
-            raise requests.exceptions.HTTPError('could not authenticate to the PetFinder API')
 
     def animal_types(self, types=None):
         r"""
@@ -124,7 +124,7 @@ class Petfinder(object):
             result = r.json()
 
         elif isinstance(types, str):
-            if str.lower(types) not in self._animal_types:
+            if str.lower(types) not in _animal_types:
                 raise ValueError('type must be one of "dog", "cat", "rabbit", "small-furry", "horse", '
                                  '"bird", "scales-fins-others", "barnyard"')
             else:
@@ -138,7 +138,7 @@ class Petfinder(object):
                 result = r.json()
 
         elif isinstance(types, (tuple, list)):
-            types_check = list(set(types).difference(self._animal_types))
+            types_check = list(set(types).difference(_animal_types))
 
             if len(types_check) >= 1:
                 unknown_types = ', '.join(types_check)
@@ -160,7 +160,7 @@ class Petfinder(object):
 
                     types_collection.append(r.json()['type'])
 
-            result = {'types': types_collection}
+            result = {'type': types_collection}
 
         else:
             raise TypeError('types parameter must be either None, str, list or tuple')
@@ -207,10 +207,10 @@ class Petfinder(object):
         """
         if types is None or isinstance(types, (list, tuple)):
             if types is None:
-                types = self._animal_types
+                types = _animal_types
 
             else:
-                types_check = list(set(types).difference(self._animal_types))
+                types_check = list(set(types).difference(_animal_types))
 
                 if len(types_check) >= 1:
                     unknown_types = ', '.join(types_check)
@@ -234,7 +234,7 @@ class Petfinder(object):
             result = {'breeds': breeds}
 
         elif isinstance(types, str):
-            if str.lower(types) not in self._animal_types:
+            if str.lower(types) not in _animal_types:
                 raise ValueError('type must be one of "dog", "cat", "rabbit", "small-furry", "horse", '
                                  '"bird", "scales-fins-others", "barnyard"')
 
@@ -594,6 +594,9 @@ def _parameters(animal=None, breed=None, size=None, gender=None, color=None, coa
                 location=None, distance=None, state=None, country=None, query=None, sort=None, name=None,
                 age=None, animal_id=None, organization_id=None, status=None, results_per_page=None, page=None):
 
+    _check_parameters(animal_types=animal_type, size=size, gender=gender, age=age, coat=coat, status=status,
+                      location=location, distance=distance, sort=sort, limit=results_per_page)
+
     args = {
         'animal': animal,
         'breed': breed,
@@ -620,3 +623,120 @@ def _parameters(animal=None, breed=None, size=None, gender=None, color=None, coa
     args = {key: val for key, val in args.items() if val is not None}
 
     return args
+
+
+def _check_parameters(animal_types=None, size=None, gender=None, age=None, coat=None, status=None,
+                      location=None, distance=None, sort=None, limit=None):
+
+    _animal_types = ('dog', 'cat', 'rabbit', 'small-furry',
+                     'horse', 'bird', 'scales-fins-other', 'barnyard')
+    _sizes = ('small', 'medium', 'large', 'xlarge')
+    _genders = ('male', 'female', 'unknown')
+    _ages = ('baby', 'young', 'adult', 'senior')
+    _coats = ('short', 'medium', 'long', 'wire', 'hairless', 'curly')
+    _status = ('adoptable', 'adopted', 'found')
+    _location = ('city', 'state', 'latitude', 'longitude', 'postal code')
+    _sort = ('recent', '-recent', 'distance', '-distance')
+
+    incorrect_values = {}
+
+    if animal_types is not None:
+        if isinstance(animal_types, str):
+            animal_types = [animal_types]
+        diff = set(animal_types).difference(_animal_types)
+
+        if len(diff) > 0:
+            incorrect_values['animal_types'] = "animal types {types} are not valid. Animal types " \
+                                               "must of the following: {animal_types}"\
+                .format(types=diff,
+                        animal_types=_animal_types)
+
+    if size is not None:
+        if isinstance(size, str):
+            size = [size]
+        diff = set(size).difference(_sizes)
+
+        if len(diff) > 0:
+            incorrect_values['size'] = "sizes {sizes} are not valid. Sizes must be of the following: {size_list}"\
+                .format(sizes=diff,
+                        size_list=_sizes)
+
+    if gender is not None:
+        if isinstance(gender, str):
+            gender = [gender]
+        diff = set(gender).difference(_genders)
+
+        if len(diff) > 0:
+            incorrect_values['gender'] = "genders {genders} are not valid. Genders must be of the following: " \
+                                         "{gender_list}"\
+                .format(genders=diff,
+                        gender_list=_genders)
+
+    if age is not None:
+        if isinstance(age, str):
+            age = [age]
+        diff = set(age).difference(_ages)
+
+        if len(diff) > 0:
+            incorrect_values['age'] = "ages {age} are not valid. Ages must be of the following: " \
+                                      "{ages_list}"\
+                .format(age=diff,
+                        ages_list=_ages)
+
+    if coat is not None:
+        if isinstance(coat, str):
+            coat = [coat]
+        diff = set(coat).difference(_coats)
+
+        if len(diff) > 0:
+            incorrect_values['coat'] = "coats {coats} are not valid. Coats must be of the following: " \
+                                       "{coat_list}"\
+                .format(coats=diff,
+                        coat_list=_coats)
+
+    if status is not None:
+        if isinstance(status, str):
+            status = [status]
+        diff = set(status).difference(_status)
+
+        if len(diff) > 0:
+            incorrect_values['status'] = "status {status} are not valid. Status must be of the following: " \
+                                         "{statuses}".format(status=diff,
+                                                             statuses=_status)
+
+    if sort is not None:
+        if isinstance(sort, str):
+            sort = [sort]
+        diff = set(sort).difference(_sort)
+
+        if len(diff) > 0:
+            incorrect_values['sort'] = "sort order {sort} must be one of: {sort_list}"\
+                .format(sort=sort,
+                        sort_list=_sort)
+
+    if location is not None:
+        if isinstance(location, str):
+            location = [location]
+        diff = set(location).difference(_location)
+
+        if len(diff) > 0:
+            incorrect_values['location'] = "location {location} must be one of: {locations}"\
+                .format(location=location,
+                        locations=_location)
+
+    if distance is not None:
+        if not 100 <= int(distance) <= 500:
+            incorrect_values['distance'] = "location must be between 100 and 500"
+
+    if limit is not None:
+        if not 20 <= int(limit) <= 100:
+            incorrect_values['limit'] = "results per page must be between 20 and 100"
+
+    if len(incorrect_values) > 0:
+        errors = ''
+        for k, v in incorrect_values.items():
+            errors = errors + v + '\n'
+
+        raise ValueError(errors)
+
+    return None

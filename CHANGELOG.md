@@ -11,15 +11,18 @@ Below is a summary of all the changes made in the release of `petpy 2.0`.
   
 - Changes Made
     - `petpy` now supports the latest release of Python 3.7
-    - Added method `get_animal_types` for getting animal types (or type) available from the Petfinder API. The release 
-      of v2.0 of the Petfinder API added several endpoints for accessing animal types in the Petfinder database. 
-      More information on the animal type endpoints in the Petfinder API can be found in its documentation:
-        - [Get Animal Types](https://www.petfinder.com/developers/v2/docs/#get-animal-types)
-        - [Get Single Animal Type](https://www.petfinder.com/developers/v2/docs/#get-a-single-animal-type)
-    - New method for getting available animal breeds from the Petfinder database, `breeds` has been added. This new 
-      method depreciates `breed_list` which was based on the Petfinder API v1.0. The API endpoint documentation is 
-      available on the Petfinder API documentation page.
-        - [Get Animal Breeds](https://www.petfinder.com/developers/v2/docs/#get-animal-breeds)
+    - The following methods have been added to `petpy` to make it compatible with v2.0 of the Petfinder API.
+        - `get_animal_types()` is used to getting animal types (or type) available from the Petfinder API. The release 
+          of v2.0 of the Petfinder API added several endpoints for accessing animal types in the Petfinder database.
+          This method wraps both Petfinder API endpoints for getting animal types. More information on the animal type 
+          endpoints in the Petfinder API can be found in its documentation:
+            - [Get Animal Types](https://www.petfinder.com/developers/v2/docs/#get-animal-types)
+            - [Get Single Animal Type](https://www.petfinder.com/developers/v2/docs/#get-a-single-animal-type)
+        - `breeds()` is the new method for getting available animal breeds from the Petfinder database. The API 
+          endpoint documentation is available on the Petfinder API documentation page.
+            - [Get Animal Breeds](https://www.petfinder.com/developers/v2/docs/#get-animal-breeds)
+        - `animals()`
+        - `organizations()`
     - The following methods have been removed as they are no longer valid endpoints with the release of v2.0 of the 
       PetFinder API. 
         - `pet_get_random()`

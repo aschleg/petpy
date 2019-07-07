@@ -1,0 +1,118 @@
+interactions:
+- request:
+    body: grant_type=client_credentials&client_id=Or9jcKgR1mE5gJPV7Qj96K9uwdY6oRK4DDB52P9kYYhaRIJowB&client_secret=5HrNAz9wMFZ6aEdWc9oLtt2RLMtnlGoo0DmPi46G
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '145'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.21.0
+    method: POST
+    uri: http://api.petfinder.com/v2/oauth2/token
+  response:
+    body:
+      string: "<html>\r\n<head><title>307 Temporary Redirect</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>307 Temporary Redirect</h1></center>\r\n<hr><center>CloudFront</center>\r\n</body>\r\n</html>\r\n"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '185'
+      Content-Type:
+      - text/html
+      Date:
+      - Sun, 07 Jul 2019 07:58:31 GMT
+      Location:
+      - https://api.petfinder.com/v2/oauth2/token
+      Server:
+      - CloudFront
+      Via:
+      - 1.1 8ddadd1ab84a7f1bef108d6a72eccf06.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - wrvbmmnd6RW61CUmKiPekswMjJRW7BVyVCRHz04v0CpwzaMOJ-lRCw==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Redirect from cloudfront
+    status:
+      code: 307
+      message: Temporary Redirect
+- request:
+    body: grant_type=client_credentials&client_id=Or9jcKgR1mE5gJPV7Qj96K9uwdY6oRK4DDB52P9kYYhaRIJowB&client_secret=5HrNAz9wMFZ6aEdWc9oLtt2RLMtnlGoo0DmPi46G
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '145'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.21.0
+    method: POST
+    uri: https://api.petfinder.com/v2/oauth2/token
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA8WR27KiMBBF/4XnM6e4eTtvaECDJIhCILxYgIgJFxEQkan598H5iXnsql1r7e7+
+        LXT3PK3O3btOhR9hnUZN2ghfQjrUrEnbM6uEH2Uuil9ClCRp257/xadk+jbFNNCYzcw9kRxmbcxb
+        vE0+88kboYQZbGFZi9EJziHPVTRmEvIxD0uSI0BFBNYFLnXZBvqI3GxAIy5DjkTqhrcQoJft5gMe
+        17ntm3nIExkDT6LcUyjHjI6JFPrOiAEdMHdU5BMeAn2gPB9gJX5P3W4X3/l0OSS8eFCxqzxudEeX
+        VKdi7WPJeNhuaNkBUUIjl2PJtLB+1B3uvT1QND4p7pSY5qlcKc7/2oO9WOQbIuT3Abv0jUEmo1Ef
+        pjs/aUmZzXUJcyjagE5efepI1GQD58j1ZDSxPl50erFEIWxisA9vsvfJloyQ13EQiN87kj4OCgy8
+        7iDvb4ta9NmvG5B2ZPVcPgd0WB2y7Vn2LxKQV+ViYBooUwvYoVY89GYHg7W1sY8sJheLSpVRY0PJ
+        wSp67g1ZNEEW+/fJq/V4EVG4rv2ABFGrHT3vhbpgdo3bSFKzFi251BtXK7PUQ3Ir+90limHkmF2Y
+        tzOxa6KFaWtpu6kj2Vmu1HOfbRa6qowDha0krXfJISl4ZZwvABwBzmhfaVA3SHu6jIVmykd9fuhn
+        Ra8PXJUIa1Y0bujSF03yHMnLfZ6n5xXzcG4Xtj730yazN8omUFt/pr4L+bij3aAiZkV35BrDm9Gr
+        bljKS7k990zdlzpaXLendCXDe3Hncbnb0vdL+PMXwPciuVUDAAA=
+    headers:
+      Cache-Control:
+      - no-store, private
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '608'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Sun, 07 Jul 2019 07:58:31 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 4ffd1199c1038a2d2062d6a465270ae2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - qeK4-hv38hVFXG8gT100aeTr5DuBa-xkDvnrX3b3TMIKFJYMOHopYg==
+      X-Amz-Cf-Pop:
+      - SEA19
+      X-Cache:
+      - Miss from cloudfront
+      pragma:
+      - no-cache
+      x-amz-apigw-id:
+      - ccbmJHPkIAMF-fg=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Content-Length:
+      - '608'
+      x-amzn-Remapped-Date:
+      - Sun, 07 Jul 2019 07:58:31 GMT
+      x-amzn-RequestId:
+      - 030a99f1-a08d-11e9-9e44-8784e5f7072a
+    status:
+      code: 200
+      message: OK
+version: 1
