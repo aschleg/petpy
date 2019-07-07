@@ -26,6 +26,10 @@ def authenticate():
 pf = authenticate()
 
 
+animal_types = ('dog', 'cat', 'rabbit', 'small-furry',
+                'horse', 'bird', 'scales-fins-other', 'barnyard')
+
+
 @vcr.use_cassette('tests/cassettes/authenticate.yml')
 def test_authentication():
     p = Petfinder(key=key, secret=secret_key)
@@ -47,12 +51,14 @@ def test_animal_types():
     assert str.lower(response3['type'][0]['name']) == 'cat'
     assert str.lower(response3['type'][1]['name']) == 'dog'
 
+    with pytest.raises(ValueError):
+        pf.animal_types(types='elephant')
+    with pytest.raises(ValueError):
+        pf.animal_types(types=['dragon', 'unicorn'])
+
 
 @vcr.use_cassette('tests/cassettes/breeds.yml')
 def test_breeds():
-
-    animal_types = ('dog', 'cat', 'rabbit', 'small-furry',
-                    'horse', 'bird', 'scales-fins-other', 'barnyard')
 
     response1 = pf.breeds()
     response1_df = pf.breeds(return_df=True)
@@ -72,3 +78,86 @@ def test_breeds():
     assert isinstance(response3, dict)
     assert len(list(set(list(response3['breeds'].keys())).difference(animal_types))) == 0
     assert isinstance(response3_df, DataFrame)
+
+    with pytest.raises(ValueError):
+        pf.animal_types(types='elephant')
+    with pytest.raises(ValueError):
+        pf.animal_types(types=['dragon', 'unicorn'])
+
+
+@vcr.use_cassette('tests/cassettes/animals.yml')
+def test_animals():
+    response1 = pf.animals()
+    response1_df = pf.animals(return_df=True)
+    response2 = pf.animals(results_per_page=50, pages=3)
+    response2_df = pf.animals(results_per_page=50, pages=3, return_df=True)
+
+    animal_ids = []
+    for i in response1['animals'][0:3]:
+        animal_ids.append(i['id'])
+
+    response3 = pf.animals(animal_id=animal_ids)
+    response3_df = pf.animals(animal_id=animal_ids, return_df=True)
+
+    response4 = pf.animals(animal_id=animal_ids[0])
+    response4_df = pf.animals(animal_id=animal_ids[0], return_df=True)
+
+    assert isinstance(response1, dict)
+    assert len(response1['animals']) == 20
+    assert isinstance(response1_df, DataFrame)
+
+    assert isinstance(response2, dict)
+    assert len(response2['animals']) == 150
+    assert isinstance(response2_df, DataFrame)
+    assert response2_df.shape[0] == 150
+
+    assert isinstance(response3, dict)
+    assert len(response3['animals']) == 3
+    assert isinstance(response3_df, DataFrame)
+    assert response3_df.shape[0] == 3
+
+    assert isinstance(response4, dict)
+    assert isinstance(response4['animals'], dict)
+    assert isinstance(response4_df, DataFrame)
+    assert response4_df.shape[0] == 1
+
+
+@vcr.use_cassette('tests/cassettes/organizations.yml')
+def test_organizations():
+    response1 = pf.organizations()
+    response1_df = pf.organizations(return_df=True)
+    response2 = pf.organizations(results_per_page=50, pages=3)
+    response2_df = pf.organizations(results_per_page=50, pages=3, return_df=True)
+
+    org_ids = []
+    for i in response1['organizations'][0:3]:
+        org_ids.append(i['id'])
+
+    response3 = pf.organizations(organization_id=org_ids)
+    response3_df = pf.organizations(organization_id=org_ids, return_df=True)
+
+    response4 = pf.organizations(organization_id=org_ids[0])
+    response4_df = pf.organizations(organization_id=org_ids[0], return_df=True)
+
+    assert isinstance(response1, dict)
+    assert len(response1['organizations']) == 20
+    assert isinstance(response1_df, DataFrame)
+
+    assert isinstance(response2, dict)
+    assert len(response2['organizations']) == 150
+    assert isinstance(response2_df, DataFrame)
+    assert response2_df.shape[0] == 150
+
+    assert isinstance(response3, dict)
+    assert len(response3['organizations']) == 3
+    assert isinstance(response3_df, DataFrame)
+    assert response3_df.shape[0] == 3
+
+    assert isinstance(response4, dict)
+    assert isinstance(response4['organizations'], dict)
+    assert isinstance(response4_df, DataFrame)
+    assert response4_df.shape[0] == 1
+
+
+def test_check_parameters():
+    pass

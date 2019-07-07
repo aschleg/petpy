@@ -577,11 +577,11 @@ class Petfinder(object):
                 raise TypeError('parameter results must be an integer or None.')
 
         organizations = {
-            'organization': organizations
+            'organizations': organizations
         }
 
         if return_df:
-            organizations = json_normalize(organizations['organization'])
+            organizations = json_normalize(organizations['organizations'])
 
         if max_page_warning:
             print('pages parameter exceeded maximum number of available pages available from the Petfinder API. As '
