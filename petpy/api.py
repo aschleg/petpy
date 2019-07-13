@@ -7,10 +7,6 @@ import requests
 from urllib.parse import urljoin
 
 
-_animal_types = ('dog', 'cat', 'rabbit', 'small-furry',
-                     'horse', 'bird', 'scales-fins-other', 'barnyard')
-
-
 class Petfinder(object):
     r"""
     Wrapper class for the PetFinder API.
@@ -20,23 +16,31 @@ class Petfinder(object):
     host : str
         The base URL of the Petfinder API.
     key : str
-        The API key.
+        The key from the Petfinder API passed when the :code:`Petfinder` class is initialized.
     secret : str
-        The secret key.
+        The secret key obtained from the Petfinder API passed when the :code:`Petfinder` class is initialized.
     auth : str
-
+        The authorization token string returned when the connection to the Petfinder API is made with the specified
+        :code:`key` and :code:`secret`.
 
     Methods
     -------
     animal_types(types, return_df=False)
-        Returns data on an animal type, or types available from the PetFinder API.
+        Returns data on an animal type, or types, available from the Petfinder API.
     breeds(types=None, return_df=False, raw_results=False)
-    animals
-    organizations
+        Returns available breeds of specified animal type(s) from the Petfinder API.
+    animals(animal_id=None, animal_type=None, breed=None, size=None, gender=None, age=None, color=None,
+            coat=None, status=None, name=None, organization_id=None, location=None, distance=None,
+            sort=None, pages=None, results_per_page=20, return_df=False)
+        Finds adoptable animals based on given criteria.
+    organizations(organization_id=None, name=None, location=None, distance=None, state=None, country=None,
+                  query=None, sort=None, results_per_page=20, pages=None, return_df=False)
+        Finds animal organizations based on specified criteria in the Petfinder API database.
 
     """
     def __init__(self, key, secret):
         r"""
+        Initialization method of the :code:`Petfinder` class.
 
         Parameters
         ----------
@@ -58,8 +62,6 @@ class Petfinder(object):
 
         Raises
         ------
-        HTTPError
-            Raised when the authentication to the Petfinder API is unsuccessful.
 
         Returns
         -------
@@ -85,7 +87,7 @@ class Petfinder(object):
 
     def animal_types(self, types=None):
         r"""
-        Returns data on an animal type, or types available from the PetFinder API. This data includes the
+        Returns data on an animal type, or types available from the Petfinder API. This data includes the
         available type's coat names and colors, gender and other specific information relevant to the
         specified type(s). The animal type must be of 'dog', 'cat', 'rabbit', 'small-furry', 'horse', 'bird',
         'scales-fins-other', 'barnyard'.
@@ -107,12 +109,11 @@ class Petfinder(object):
 
         Returns
         -------
-        dict or pandas DataFrame
-
-        Examples
-        --------
+        dict
+            Dictionary object representing JSON data returned from the Petfinder API.
 
         """
+        _check_parameters(animal_types=types)
 
         if types is None:
             url = urljoin(self.host, 'types')
@@ -124,41 +125,27 @@ class Petfinder(object):
             result = r.json()
 
         elif isinstance(types, str):
-            if str.lower(types) not in _animal_types:
-                raise ValueError('type must be one of "dog", "cat", "rabbit", "small-furry", "horse", '
-                                 '"bird", "scales-fins-others", "barnyard"')
-            else:
-                url = urljoin(self.host, 'types/{type}'.format(type=types))
+            url = urljoin(self.host, 'types/{type}'.format(type=types))
+
+            r = requests.get(url,
+                             headers={
+                                 'Authorization': 'Bearer ' + self.auth
+                             })
+
+            result = r.json()
+
+        elif isinstance(types, (tuple, list)):
+            types_collection = []
+
+            for type in types:
+                url = urljoin(self.host, 'types/{type}'.format(type=type))
 
                 r = requests.get(url,
                                  headers={
                                      'Authorization': 'Bearer ' + self.auth
                                  })
 
-                result = r.json()
-
-        elif isinstance(types, (tuple, list)):
-            types_check = list(set(types).difference(_animal_types))
-
-            if len(types_check) >= 1:
-                unknown_types = ', '.join(types_check)
-
-                raise ValueError('animal types {types} not available. Must be one of "dog", "cat", "rabbit", '
-                                 '"small-furry", "horse", "bird", "scales-fins-others", "barnyard"'
-                                 .format(types=unknown_types))
-
-            else:
-                types_collection = []
-
-                for type in types:
-                    url = urljoin(self.host, 'types/{type}'.format(type=type))
-
-                    r = requests.get(url,
-                                     headers={
-                                         'Authorization': 'Bearer ' + self.auth
-                                     })
-
-                    types_collection.append(r.json()['type'])
+                types_collection.append(r.json()['type'])
 
             result = {'type': types_collection}
 
@@ -169,7 +156,7 @@ class Petfinder(object):
 
     def breeds(self, types=None, return_df=False, raw_results=False):
         r"""
-        Returns breed names of specified animal type or types.
+        Returns breed names of specified animal type, or types.
 
         Parameters
         ----------
@@ -200,25 +187,15 @@ class Petfinder(object):
         Returns
         -------
         dict or pandas DataFrame
-
-        Examples
-        --------
+            If the parameter :code:`return_df` is :code:`False`, a dictionary object representing the JSON data
+            returned from the Petfinder API is returned. If :code:`return_df=True`, the resulting dictionary is
+            coerced into a pandas DataFrame. Note if :code:`return_df=True`, the parameter :code:`raw_results` is
+            overridden.
 
         """
+        _check_parameters(animal_types=types)
+
         if types is None or isinstance(types, (list, tuple)):
-            if types is None:
-                types = _animal_types
-
-            else:
-                types_check = list(set(types).difference(_animal_types))
-
-                if len(types_check) >= 1:
-                    unknown_types = ', '.join(types_check)
-
-                    raise ValueError('animal types {types} not available. Must be one of "dog", "cat", "rabbit", '
-                                     '"small-furry", "horse", "bird", "scales-fins-others", "barnyard"'
-                                     .format(types=unknown_types))
-
             breeds = []
 
             for t in types:
@@ -234,10 +211,6 @@ class Petfinder(object):
             result = {'breeds': breeds}
 
         elif isinstance(types, str):
-            if str.lower(types) not in _animal_types:
-                raise ValueError('type must be one of "dog", "cat", "rabbit", "small-furry", "horse", '
-                                 '"bird", "scales-fins-others", "barnyard"')
-
             url = urljoin(self.host, 'types/{type}/breeds'.format(type=types))
 
             r = requests.get(url,
@@ -297,6 +270,7 @@ class Petfinder(object):
                 age=None, color=None, coat=None, status=None, name=None, organization_id=None,
                 location=None, distance=None, sort=None, pages=None, results_per_page=20, return_df=False):
         r"""
+        Returns adoptable animal data from Petfinder based on specified criteria.
 
         Parameters
         ----------
@@ -593,7 +567,38 @@ class Petfinder(object):
 def _parameters(animal=None, breed=None, size=None, gender=None, color=None, coat=None, animal_type=None,
                 location=None, distance=None, state=None, country=None, query=None, sort=None, name=None,
                 age=None, animal_id=None, organization_id=None, status=None, results_per_page=None, page=None):
+    r"""
+    Internal function for determining which parameters have been passed and aligning them to their respective
+    Petfinder API parameters.
 
+    Parameters
+    ----------
+    animal :
+    :param breed:
+    :param size:
+    :param gender:
+    :param color:
+    :param coat:
+    :param animal_type:
+    :param location:
+    :param distance:
+    :param state:
+    :param country:
+    :param query:
+    :param sort:
+    :param name:
+    :param age:
+    :param animal_id:
+    :param organization_id:
+    :param status:
+    :param results_per_page:
+    :param page:
+
+    Returns
+    -------
+
+
+    """
     _check_parameters(animal_types=animal_type, size=size, gender=gender, age=age, coat=coat, status=status,
                       location=location, distance=distance, sort=sort, limit=results_per_page)
 
@@ -627,7 +632,33 @@ def _parameters(animal=None, breed=None, size=None, gender=None, color=None, coa
 
 def _check_parameters(animal_types=None, size=None, gender=None, age=None, coat=None, status=None,
                       location=None, distance=None, sort=None, limit=None):
+    r"""
+    Internal function for checking the passed parameters against valid options available in the Petfinder API.
 
+    Parameters
+    ----------
+    animal_types :
+    :param size:
+    :param gender:
+    :param age:
+    :param coat:
+    :param status:
+    :param location:
+    :param distance:
+    :param sort:
+    :param limit:
+
+    Raises
+    ------
+    ValueError
+
+    Returns
+    -------
+    None
+        If :code:`ValueError` is not raised, the function returns :code:`None` which signifies the passed API
+        parameters are valid.
+
+    """
     _animal_types = ('dog', 'cat', 'rabbit', 'small-furry',
                      'horse', 'bird', 'scales-fins-other', 'barnyard')
     _sizes = ('small', 'medium', 'large', 'xlarge')
@@ -743,6 +774,19 @@ def _check_parameters(animal_types=None, size=None, gender=None, age=None, coat=
 
 
 def _coerce_to_dataframe(results):
+    r"""
+    Internal function for coercing results from the Petfinder API into a pandas DataFrame.
+
+    Parameters
+    ----------
+    results:
+
+    Returns
+    -------
+    pandas DataFrame
+        pandas DataFrame coerced from resulting JSON data returned from the Petfinder API
+
+    """
     key = list(results.keys())[0]
     results_df = json_normalize(results[key])
 
