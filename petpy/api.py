@@ -30,7 +30,7 @@ class Petfinder(object):
     -------
     animal_types(types, return_df=False)
         Returns data on an animal type, or types available from the PetFinder API.
-    breeds
+    breeds(types=None, return_df=False, raw_results=False)
     animals
     organizations
 
@@ -740,3 +740,26 @@ def _check_parameters(animal_types=None, size=None, gender=None, age=None, coat=
         raise ValueError(errors)
 
     return None
+
+
+def _coerce_to_dataframe(results):
+    key = list(results.keys())[0]
+    results_df = json_normalize(results[key])
+
+    if key == 'animals':
+        results_df.rename(columns={'_links.organizations.href': 'organization_id',
+                                   '_links.self.href': 'animal_id',
+                                   '_links.type.href': 'animal_type'}, inplace=True)
+
+        results_df['organization_id'] = results_df['organization_id'].str.replace('/v2/organizations/', '')
+        results_df['animal_id'] = results_df['animal_id'].str.replace('/v2/animals/', '')
+        results_df['animal_type'] = results_df['animal_type'].str.replace('/v2/types/', '')
+
+    if key == 'organizations':
+        del results_df['_links.animals.href']
+
+        results_df.rename(columns={'_links.self.href': 'organization_id'}, inplace=True)
+
+        results_df['organization_id'] = results_df['organization_id'].str.replace('/v2/organizations/', '')
+
+    return results_df

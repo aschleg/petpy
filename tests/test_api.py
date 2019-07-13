@@ -1,7 +1,6 @@
 import os
 import pytest
 import vcr
-import pandas as pd
 from pandas import DataFrame
 
 from petpy.api import Petfinder
@@ -16,6 +15,9 @@ tape = vcr.VCR(
 key = os.environ.get('PETFINDER_KEY')
 secret_key = os.environ.get('PETFINDER_SECRET_KEY')
 
+animal_types = ('dog', 'cat', 'rabbit', 'small-furry',
+                'horse', 'bird', 'scales-fins-other', 'barnyard')
+
 
 def authenticate():
     pf = Petfinder(key=key, secret=secret_key)
@@ -24,10 +26,6 @@ def authenticate():
 
 
 pf = authenticate()
-
-
-animal_types = ('dog', 'cat', 'rabbit', 'small-furry',
-                'horse', 'bird', 'scales-fins-other', 'barnyard')
 
 
 @vcr.use_cassette('tests/cassettes/authenticate.yml')
@@ -157,7 +155,3 @@ def test_organizations():
     assert isinstance(response4['organizations'], dict)
     assert isinstance(response4_df, DataFrame)
     assert response4_df.shape[0] == 1
-
-
-def test_check_parameters():
-    pass

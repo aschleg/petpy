@@ -3,7 +3,7 @@
 [![Documentation Status](https://readthedocs.org/projects/petpy/badge/?version=latest)](http://petpy.readthedocs.io/en/latest/?badge=latest)
 [![Build Status](https://travis-ci.org/aschleg/petpy.svg?branch=petfinder_v2)](https://travis-ci.org/aschleg/petpy)
 [![Build status](https://ci.appveyor.com/api/projects/status/xjxufxt7obd84ygr/branch/master?svg=true)](https://ci.appveyor.com/project/aschleg/petpy/branch/master)
-[![Coverage Status](https://coveralls.io/repos/github/aschleg/petpy/badge.svg?branch=petfinder_v2)](https://coveralls.io/github/aschleg/petpy?branch=petfinder_v2)
+[![Coverage Status](https://coveralls.io/repos/github/aschleg/petpy/badge.svg?branch=master)](https://coveralls.io/github/aschleg/petpy?branch=master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ac2a4c228a9e425ba11af69f7a5c9e51)](https://www.codacy.com/app/aschleg/petpy?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=aschleg/petpy&amp;utm_campaign=Badge_Grade)
 ![https://pypi.org/project/petpy/](https://img.shields.io/badge/pypi%20version-2.0.0-blue.svg)
 ![https://pypi.org/project/petpy/](https://img.shields.io/badge/python-3.4%2C%203.5%2C%203.6%2C%203.7-blue.svg)
