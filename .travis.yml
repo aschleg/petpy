@@ -15,5 +15,5 @@ script:
   - coverage run --source petpy -m py.test
   - coverage report
 after_success:
-  coveralls
-  codecov
+  - coveralls
+  - codecov
