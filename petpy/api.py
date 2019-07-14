@@ -198,6 +198,10 @@ class Petfinder(object):
         if types is None or isinstance(types, (list, tuple)):
             breeds = []
 
+            if types is None:
+                types = ('dog', 'cat', 'rabbit', 'small-furry',
+                         'horse', 'bird', 'scales-fins-other', 'barnyard')
+
             for t in types:
                 url = urljoin(self.host, 'types/{type}/breeds'.format(type=t))
 
