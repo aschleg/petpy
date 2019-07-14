@@ -409,7 +409,7 @@ class Petfinder(object):
         }
 
         if return_df:
-            animals = json_normalize(animals['animals'])
+            animals = _coerce_to_dataframe(animals)
 
         if max_page_warning:
             print('pages parameter exceeded maximum number of available pages available from the Petfinder API. As '
@@ -525,7 +525,7 @@ class Petfinder(object):
         }
 
         if return_df:
-            organizations = json_normalize(organizations['organizations'])
+            organizations = _coerce_to_dataframe(organizations)
 
         if max_page_warning:
             print('pages parameter exceeded maximum number of available pages available from the Petfinder API. As '
