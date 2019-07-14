@@ -1,5 +1,13 @@
 # encoding=utf-8
 
+r"""
+
+The :code:`api.py` file stores all the :code:`Petfinder` class and all associated functions and methods for
+interacting with the Petfinder API. Before getting started with :code:`petpy`, please be sure to obtain an
+API and secret key from Petfinder by registering for an account on the Petfinder developers page at
+https://www.petfinder.com/developers/
+
+"""
 
 from pandas import DataFrame
 from pandas.io.json import json_normalize
@@ -113,7 +121,15 @@ class Petfinder(object):
             Dictionary object representing JSON data returned from the Petfinder API.
 
         """
-        _check_parameters(animal_types=types)
+        if types is not None:
+            type_check = types
+            if isinstance(types, str):
+                type_check = [types]
+            diff = set(type_check).difference(('dog', 'cat', 'rabbit', 'small-furry', 'horse', 'bird',
+                                               'scales-fins-other', 'barnyard'))
+            if len(diff) > 0:
+                raise ValueError("animal types must be of the following 'dog', 'cat', 'rabbit', "
+                                 "'small-furry', 'horse', 'bird', 'scales-fins-other', 'barnyard'")
 
         if types is None:
             url = urljoin(self.host, 'types')
@@ -193,7 +209,6 @@ class Petfinder(object):
             overridden.
 
         """
-        _check_parameters(animal_types=types)
 
         if types is None or isinstance(types, (list, tuple)):
             breeds = []
@@ -278,7 +293,7 @@ class Petfinder(object):
 
         Parameters
         ----------
-        animal_id : optional
+        animal_id : int, tuple or list of int, optional
         animal_type : optional
         breed: optional
         size: optional
@@ -670,21 +685,16 @@ def _check_parameters(animal_types=None, size=None, gender=None, age=None, coat=
     _ages = ('baby', 'young', 'adult', 'senior')
     _coats = ('short', 'medium', 'long', 'wire', 'hairless', 'curly')
     _status = ('adoptable', 'adopted', 'found')
-    _location = ('city', 'state', 'latitude', 'longitude', 'postal code')
+    _location = ('city,state', 'latitude,longitude', 'postal code')
     _sort = ('recent', '-recent', 'distance', '-distance')
 
     incorrect_values = {}
 
-    if animal_types is not None:
-        if isinstance(animal_types, str):
-            animal_types = [animal_types]
-        diff = set(animal_types).difference(_animal_types)
-
-        if len(diff) > 0:
-            incorrect_values['animal_types'] = "animal types {types} are not valid. Animal types " \
-                                               "must of the following: {animal_types}"\
-                .format(types=diff,
-                        animal_types=_animal_types)
+    if animal_types is not None and animal_types not in _animal_types:
+        incorrect_values['animal_types'] = "animal types {types} is not valid. Animal types " \
+                                           "must of the following: {animal_types}"\
+            .format(types=animal_types,
+                    animal_types=_animal_types)
 
     if size is not None:
         if isinstance(size, str):
@@ -729,43 +739,28 @@ def _check_parameters(animal_types=None, size=None, gender=None, age=None, coat=
                 .format(coats=diff,
                         coat_list=_coats)
 
-    if status is not None:
-        if isinstance(status, str):
-            status = [status]
-        diff = set(status).difference(_status)
+    if status is not None and status not in _status:
+        incorrect_values['status'] = "animal status {status} is not valid. Status must be of the following: " \
+                                     "{statuses}".format(status=status,
+                                                         statuses=_status)
 
-        if len(diff) > 0:
-            incorrect_values['status'] = "status {status} are not valid. Status must be of the following: " \
-                                         "{statuses}".format(status=diff,
-                                                             statuses=_status)
+    if sort is not None and sort not in _sort:
+        incorrect_values['sort'] = "sort order {sort} must be one of: {sort_list}"\
+            .format(sort=sort,
+                    sort_list=_sort)
 
-    if sort is not None:
-        if isinstance(sort, str):
-            sort = [sort]
-        diff = set(sort).difference(_sort)
-
-        if len(diff) > 0:
-            incorrect_values['sort'] = "sort order {sort} must be one of: {sort_list}"\
-                .format(sort=sort,
-                        sort_list=_sort)
-
-    if location is not None:
-        if isinstance(location, str):
-            location = [location]
-        diff = set(location).difference(_location)
-
-        if len(diff) > 0:
-            incorrect_values['location'] = "location {location} must be one of: {locations}"\
-                .format(location=location,
-                        locations=_location)
+    if location is not None and location not in _location:
+        incorrect_values['location'] = "location {location} must be one of: {locations}"\
+            .format(location=location,
+                    locations=_location)
 
     if distance is not None:
-        if not 100 <= int(distance) <= 500:
-            incorrect_values['distance'] = "location must be between 100 and 500"
+        if int(distance) > 500:
+            incorrect_values['distance'] = "distance cannot be greater than 500"
 
     if limit is not None:
-        if not 20 <= int(limit) <= 100:
-            incorrect_values['limit'] = "results per page must be between 20 and 100"
+        if int(limit) > 100:
+            incorrect_values['limit'] = "results per page cannot be greater than 100"
 
     if len(incorrect_values) > 0:
         errors = ''

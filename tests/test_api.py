@@ -53,6 +53,8 @@ def test_animal_types():
         pf.animal_types(types='elephant')
     with pytest.raises(ValueError):
         pf.animal_types(types=['dragon', 'unicorn'])
+    with pytest.raises(TypeError):
+        pf.animal_types(types={})
 
 
 @vcr.use_cassette('tests/cassettes/breeds.yml')
@@ -81,6 +83,8 @@ def test_breeds():
         pf.animal_types(types='elephant')
     with pytest.raises(ValueError):
         pf.animal_types(types=['dragon', 'unicorn'])
+    with pytest.raises(TypeError):
+        pf.animal_types(types={})
 
 
 @vcr.use_cassette('tests/cassettes/animals.yml')
@@ -155,3 +159,46 @@ def test_organizations():
     assert isinstance(response4['organizations'], dict)
     assert isinstance(response4_df, DataFrame)
     assert response4_df.shape[0] == 1
+
+
+def test_check_parameters():
+    size1, size2 = 'big', 'bigger'
+    gender1, gender2 = 'MF', 'FM'
+    age1, age2 = 'kitten', 'puppy'
+    coat1, coat2 = 'fluffy', 'more fluffy'
+    status = 'cute'
+    sort = 'ascending'
+    location = 'planet'
+    distance_int, distance_str = 1000, '1000'
+    limit_int, limit_str = 200, '200'
+
+    with pytest.raises(ValueError):
+        pf.animals(size=size1)
+    with pytest.raises(ValueError):
+        pf.animals(size=[size1, size2])
+    with pytest.raises(ValueError):
+        pf.animals(gender=gender1)
+    with pytest.raises(ValueError):
+        pf.animals(gender=[gender1, gender2])
+    with pytest.raises(ValueError):
+        pf.animals(age=age1)
+    with pytest.raises(ValueError):
+        pf.animals(age=[age1, age2])
+    with pytest.raises(ValueError):
+        pf.animals(coat=coat1)
+    with pytest.raises(ValueError):
+        pf.animals(coat=[coat1, coat2])
+    with pytest.raises(ValueError):
+        pf.animals(status=status)
+    with pytest.raises(ValueError):
+        pf.animals(sort=sort)
+    with pytest.raises(ValueError):
+        pf.animals(location=location)
+    with pytest.raises(ValueError):
+        pf.animals(distance=distance_int)
+    with pytest.raises(ValueError):
+        pf.animals(distance=distance_str)
+    with pytest.raises(ValueError):
+        pf.animals(results_per_page=limit_int)
+    with pytest.raises(ValueError):
+        pf.animals(results_per_page=limit_str)
