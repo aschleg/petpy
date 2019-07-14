@@ -80,11 +80,11 @@ def test_breeds():
     assert isinstance(response3_df, DataFrame)
 
     with pytest.raises(ValueError):
-        pf.animal_types(types='elephant')
+        pf.breeds(types='elephant')
     with pytest.raises(ValueError):
-        pf.animal_types(types=['dragon', 'unicorn'])
+        pf.breeds(types=['dragon', 'unicorn'])
     with pytest.raises(TypeError):
-        pf.animal_types(types={})
+        pf.breeds(types={})
 
 
 @vcr.use_cassette('tests/cassettes/animals.yml')

@@ -209,6 +209,15 @@ class Petfinder(object):
             overridden.
 
         """
+        if types is not None:
+            type_check = types
+            if isinstance(types, str):
+                type_check = [types]
+            diff = set(type_check).difference(('dog', 'cat', 'rabbit', 'small-furry', 'horse', 'bird',
+                                               'scales-fins-other', 'barnyard'))
+            if len(diff) > 0:
+                raise ValueError("animal types must be of the following 'dog', 'cat', 'rabbit', "
+                                 "'small-furry', 'horse', 'bird', 'scales-fins-other', 'barnyard'")
 
         if types is None or isinstance(types, (list, tuple)):
             breeds = []
@@ -364,7 +373,7 @@ class Petfinder(object):
 
                 animals = r.json()['animals']
 
-            elif pages is not None:
+            else:
                 pages += 1
                 params['page'] = 1
 
@@ -394,35 +403,6 @@ class Petfinder(object):
 
                     for i in r.json()['animals']:
                         animals.append(i)
-
-            elif results_per_page is None:
-
-                params['results'] = 100
-
-                r = requests.get(url,
-                                 headers={
-                                     'Authorization': 'Bearer ' + self.auth
-                                 },
-                                 params=params)
-
-                pagination = r.json()['pagination']['total_pages']
-
-                animals = r.json()['animals']
-
-                for p in range(2, pagination):
-                    params['page'] = p
-
-                    r = requests.get(url,
-                                     headers={
-                                         'Authorization': 'Bearer ' + self.auth
-                                     },
-                                     params=params)
-
-                    for i in r.json()['animals']:
-                        animals.append(i)
-
-            else:
-                raise TypeError('parameter results must be an integer or None.')
 
         animals = {
             'animals': animals
@@ -509,7 +489,7 @@ class Petfinder(object):
                 
                 organizations = r.json()['organizations']
                 
-            elif pages is not None:
+            else:
                 pages += 1
                 params['page'] = 1
 
@@ -539,35 +519,6 @@ class Petfinder(object):
 
                     for i in r.json()['organizations']:
                         organizations.append(i)
-
-            elif results_per_page is None:
-
-                params['results'] = 100
-
-                r = requests.get(url,
-                                 headers={
-                                     'Authorization': 'Bearer ' + self.auth
-                                 },
-                                 params=params)
-
-                pagination = r.json()['pagination']['total_pages']
-
-                organizations = r.json()['organizations']
-
-                for p in range(2, pagination):
-                    params['page'] = p
-
-                    r = requests.get(url,
-                                     headers={
-                                         'Authorization': 'Bearer ' + self.auth
-                                     },
-                                     params=params)
-
-                    for i in r.json()['organizations']:
-                        organizations.append(i)
-
-            else:
-                raise TypeError('parameter results must be an integer or None.')
 
         organizations = {
             'organizations': organizations
