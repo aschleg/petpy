@@ -296,37 +296,65 @@ class Petfinder(object):
 
     def animals(self, animal_id=None, animal_type=None, breed=None, size=None, gender=None,
                 age=None, color=None, coat=None, status=None, name=None, organization_id=None,
-                location=None, distance=None, sort=None, pages=None, results_per_page=20, return_df=False):
+                location=None, distance=None, sort=None, pages=1, results_per_page=20, return_df=False):
         r"""
         Returns adoptable animal data from Petfinder based on specified criteria.
 
         Parameters
         ----------
         animal_id : int, tuple or list of int, optional
-        animal_type : optional
-        breed: optional
-        size: optional
-        gender : optional
-        age : optional
-        color : optional
-        coat : optional
-        status : optional
-        name : optional
-        organization_id : optional
-        location : optional
-        distance : optional
-        sort : optional
-        pages : int, default None
+            Integer or list or tuple of integers representing animal IDs obtained from Petfinder. When
+            :code:`animal_id` is specified, the other function parameters are overridden. If :code:`animal_id`
+            is not specified, a search of animals on Petfinder matching given criteria is performed.
+        animal_type : {'dog', 'cat', 'rabbit', 'small-furry', 'horse', 'bird', 'scales-fins-other', 'barnyard'}, str, optional
+            String representing desired animal type to search. Must be one of 'dog', 'cat', 'rabbit', 'small-furry',
+            'horse', 'bird', 'scales-fins-other', or 'barnyard'.
+        breed: str, tuple or list of str, optional
+            String or tuple or list of strings of desired animal type breed to search. Available animal breeds in
+            the Petfinder database can be found using the :code:`breeds()` method.
+        size: {'small', 'medium', 'large', 'xlarge'}, str, tuple or list of str, optional
+            String or tuple or list of strings of desired animal sizes to return. The specified size(s) must be one
+            of 'small', 'medium', 'large', or 'xlarge'.
+        gender : {'male', 'female', 'unknown'} str, tuple or list of str, optional
+            String or tuple or list of strings representing animal genders to return. Must be of 'male', 'female',
+            or 'unknown'.
+        age : {'baby', 'young', 'adult', 'senior'} str, tuple or list of str, optional
+            String or tuple or list of strings specifying animal age(s) to return from search. Must be of 'baby',
+            'young', 'adult', 'senior'.
+        color : str, optional
+            String representing specified animal 'color' to search. Colors for each available animal type in the
+            Petfinder database can be found using the :code:`animal_types()` method.
+        coat : {'short', 'medium', 'long', 'wire', 'hairless', 'curly'}, str, tuple or list of str, optional
+            Desired coat(s) to return. Must be of 'short', 'medium', 'long', 'wire', 'hairless', or 'curly'.
+        status : {'adoptable', 'adopted', 'found'} str, optional
+            Animal status to filter search results. Must be one of 'adoptable', 'adopted', or 'found'.
+        name : str, optional
+            Searches for animal names matching or partially matching name.
+        organization_id : str, tuple or list of str, optional
+            Returns animals associated with given :code:`organization_id`. Can be a str or a tuple or list of str
+            representing multiple organizations.
+        location : str, optional
+            Returns results by specified location. Must be in the format 'city, state' for city-level results,
+            'latitude, longitude' for lat-long results, or 'postal code'.
+        distance : int, optional
+            Returns results within the distance of the specified location. If not given, defaults to 100 miles.
+            Maximum distance range is 500 miles.
+        sort : {'recent', '-recent', 'distance', '-distance'}, optional
+            Sorts by specified attribute. Leading dashes represents a reverse-order sort. Must be one of 'recent',
+            '-recent', 'distance', or '-distance'.
+        pages : int, default 1
+            Specifies which page of results to return. Defaults to the first page of results. If set to :code:`None`,
+            all results will be returned.
         results_per_page : int, default 20
+            Number of results to return per page. Defaults to 20 results and cannot exceed 100 results per page.
         return_df : boolean, default False
-
-        Raises
-        ------
-        TypeError
+            If :code:`True`, the results will be coerced into a pandas DataFrame.
 
         Returns
         -------
         dict or pandas DataFrame
+            Dictionary object representing the returned JSON object from the Petfinder API. If :code:`return_df=True`,
+            the results are returned as a pandas DataFrame.
 
         """
         max_page_warning = False
@@ -418,31 +446,47 @@ class Petfinder(object):
         return animals
 
     def organizations(self, organization_id=None, name=None, location=None, distance=None, state=None,
-                      country=None, query=None, sort=None, results_per_page=20, pages=None, return_df=False):
+                      country=None, query=None, sort=None, results_per_page=20, pages=1, return_df=False):
         r"""
+        Returns data on an animal welfare organization, or organizations, based on specified criteria.
 
         Parameters
         ----------
-        organization_id : optional
-        name : optional
-        location : optional
-        distance : optional
-        state : optional
-        country : optional
-        query : optional
-        sort : optional
-        pages : int, default None
+        organization_id : str, tuple or list of str, optional
+            Returns results for specified :code:`organization_id`. Can be a str or a tuple or list of str
+            representing multiple organizations.
+        name : str, optional
+            Returns results matching or partially matching organization name.
+        location : str, optional
+            Returns results by specified location. Must be in the format 'city, state' for city-level results,
+            'latitude, longitude' for lat-long results, or 'postal code'.
+        distance : int, optional
+            Returns results within the distance of the specified location. If not given, defaults to 100 miles.
+            Maximum distance range is 500 miles.
+        state : str, optional
+            Filters the results by the selected state. Must be a two-letter state code abbreviation of the state
+            name, such as 'WA' for Washington or 'NY' for New York.
+        country : {'US', 'CA'}, optional
+            Filters results to specified country. Must be a two-letter abbreviation of the country and is limited
+            to the United States and Canada.
+        query : str, optional
+            Search matching and partially matching name, city or state.
+        sort : {'recent', '-recent', 'distance', '-distance'}, optional
+            Sorts by specified attribute. Leading dashes represents a reverse-order sort. Must be one of 'recent',
+            '-recent', 'distance', or '-distance'.
+        pages : int, default 1
+            Specifies which page of results to return. Defaults to the first page of results. If set to :code:`None`,
+            all results will be returned.
         results_per_page : int, default 20
+            Number of results to return per page. Defaults to 20 results and cannot exceed 100 results per page.
         return_df : boolean, default False
-
-        Raises
-        ------
-        TypeError
-
+            If :code:`True`, the results will be coerced into a pandas DataFrame.
 
         Returns
         -------
         dict or pandas DataFrame
+            Dictionary object representing the returned JSON object from the Petfinder API. If :code:`return_df=True`,
+            the results are returned as a pandas DataFrame.
 
         """
         max_page_warning = False
@@ -534,46 +578,71 @@ class Petfinder(object):
         return organizations
 
 
-def _parameters(animal=None, breed=None, size=None, gender=None, color=None, coat=None, animal_type=None,
-                location=None, distance=None, state=None, country=None, query=None, sort=None, name=None,
-                age=None, animal_id=None, organization_id=None, status=None, results_per_page=None, page=None):
+def _parameters(breed=None, size=None, gender=None, color=None, coat=None, animal_type=None, location=None,
+                distance=None, state=None, country=None, query=None, sort=None, name=None, age=None,
+                animal_id=None, organization_id=None, status=None, results_per_page=None, page=None):
     r"""
     Internal function for determining which parameters have been passed and aligning them to their respective
     Petfinder API parameters.
 
     Parameters
     ----------
-    animal :
-    :param breed:
-    :param size:
-    :param gender:
-    :param color:
-    :param coat:
-    :param animal_type:
-    :param location:
-    :param distance:
+    breed: str, tuple or list of str, optional
+        String or tuple or list of strings of desired animal type breed to search.
+    size: {'small', 'medium', 'large', 'xlarge'}, str, tuple or list of str, optional
+        String or tuple or list of strings of desired animal sizes to return. The specified size(s) must be one
+        of 'small', 'medium', 'large', or 'xlarge'.
+    gender: {'male', 'female', 'unknown'} str, tuple or list of str, optional
+        String or tuple or list of strings representing animal genders to return. Must be of 'male', 'female',
+        or 'unknown'.
+    color : str, optional
+        String representing specified animal 'color' to search. Colors for each available animal type in the
+        Petfinder database can be found using the :code:`animal_types()` method.
+    coat : {'short', 'medium', 'long', 'wire', 'hairless', 'curly'}, str, tuple or list of str, optional
+        Desired coat(s) to return. Must be of 'short', 'medium', 'long', 'wire', 'hairless', or 'curly'.
+    animal_type : {'dog', 'cat', 'rabbit', 'small-furry', 'horse', 'bird', 'scales-fins-other', 'barnyard'}, str, optional
+        String representing desired animal type to search. Must be one of 'dog', 'cat', 'rabbit', 'small-furry',
+        'horse', 'bird', 'scales-fins-other', or 'barnyard'.
+    location : str, optional
+        Returns results by specified location. Must be in the format 'city, state' for city-level results,
+        'latitude, longitude' for lat-long results, or 'postal code'.
+    distance : int, optional
+        Returns results within the distance of the specified location. If not given, defaults to 100 miles.
+        Maximum distance range is 500 miles.
     :param state:
     :param country:
     :param query:
-    :param sort:
-    :param name:
-    :param age:
-    :param animal_id:
-    :param organization_id:
-    :param status:
-    :param results_per_page:
-    :param page:
+    sort : {'recent', '-recent', 'distance', '-distance'}, optional
+            Sorts by specified attribute. Leading dashes represents a reverse-order sort. Must be one of 'recent',
+            '-recent', 'distance', or '-distance'.
+    name : str, optional
+        Name of animal or organization to search.
+    age : {'baby', 'young', 'adult', 'senior'} str, tuple or list of str, optional
+        String or tuple or list of strings specifying animal age(s) to return from search. Must be of 'baby',
+        'young', 'adult', 'senior'.
+    animal_id : int, tuple or list of int, optional
+        Integer or list or tuple of integers representing animal IDs obtained from Petfinder.
+    organization_id : str, tuple or list of str, optional
+        Returns animals associated with given :code:`organization_id`. Can be a str or a tuple or list of str
+        representing multiple organizations.
+    status : {'adoptable', 'adopted', 'found'} str, optional
+        Animal status to filter search results. Must be one of 'adoptable', 'adopted', or 'found'.
+    results_per_page : int, default 20
+        Number of results to return per page. Defaults to 20 results and cannot exceed 100 results per page.
+    pages : int, default 1
+        Specifies which page of results to return. Defaults to the first page of results. If set to :code:`None`,
+        all results will be returned.
 
     Returns
     -------
-
+    dict
+        Dictionary representing aligned parameters and headers for ingestion into the Petfinder API.
 
     """
     _check_parameters(animal_types=animal_type, size=size, gender=gender, age=age, coat=coat, status=status,
-                      location=location, distance=distance, sort=sort, limit=results_per_page)
+                      distance=distance, sort=sort, limit=results_per_page)
 
     args = {
-        'animal': animal,
         'breed': breed,
         'size': size,
         'gender': gender,
@@ -601,22 +670,34 @@ def _parameters(animal=None, breed=None, size=None, gender=None, color=None, coa
 
 
 def _check_parameters(animal_types=None, size=None, gender=None, age=None, coat=None, status=None,
-                      location=None, distance=None, sort=None, limit=None):
+                      distance=None, sort=None, limit=None):
     r"""
     Internal function for checking the passed parameters against valid options available in the Petfinder API.
 
     Parameters
     ----------
     animal_types :
-    :param size:
-    :param gender:
-    :param age:
-    :param coat:
-    :param status:
-    :param location:
-    :param distance:
-    :param sort:
-    :param limit:
+    size: {'small', 'medium', 'large', 'xlarge'}, str, tuple or list of str, optional
+        String or tuple or list of strings of desired animal sizes to return. The specified size(s) must be one
+        of 'small', 'medium', 'large', or 'xlarge'.
+    gender: {'male', 'female', 'unknown'} str, tuple or list of str, optional
+        String or tuple or list of strings representing animal genders to return. Must be of 'male', 'female',
+        or 'unknown'.
+    age : {'baby', 'young', 'adult', 'senior'} str, tuple or list of str, optional
+        String or tuple or list of strings specifying animal age(s) to return from search. Must be of 'baby',
+        'young', 'adult', 'senior'.
+    coat : {'short', 'medium', 'long', 'wire', 'hairless', 'curly'}, str, tuple or list of str, optional
+        Desired coat(s) to return. Must be of 'short', 'medium', 'long', 'wire', 'hairless', or 'curly'.
+    status : {'adoptable', 'adopted', 'found'} str, optional
+        Animal status to filter search results. Must be one of 'adoptable', 'adopted', or 'found'.
+    distance : int, optional
+        Returns results within the distance of the specified location. If not given, defaults to 100 miles.
+        Maximum distance range is 500 miles.
+    sort : {'recent', '-recent', 'distance', '-distance'}, optional
+            Sorts by specified attribute. Leading dashes represents a reverse-order sort. Must be one of 'recent',
+            '-recent', 'distance', or '-distance'.
+    limit : int, default 20
+        Number of results to return per page. Defaults to 20 results and cannot exceed 100 results per page.
 
     Raises
     ------
@@ -636,7 +717,6 @@ def _check_parameters(animal_types=None, size=None, gender=None, age=None, coat=
     _ages = ('baby', 'young', 'adult', 'senior')
     _coats = ('short', 'medium', 'long', 'wire', 'hairless', 'curly')
     _status = ('adoptable', 'adopted', 'found')
-    _location = ('city,state', 'latitude,longitude', 'postal code')
     _sort = ('recent', '-recent', 'distance', '-distance')
 
     incorrect_values = {}
@@ -700,11 +780,6 @@ def _check_parameters(animal_types=None, size=None, gender=None, age=None, coat=
             .format(sort=sort,
                     sort_list=_sort)
 
-    if location is not None and location not in _location:
-        incorrect_values['location'] = "location {location} must be one of: {locations}"\
-            .format(location=location,
-                    locations=_location)
-
     if distance is not None:
         if int(distance) > 500:
             incorrect_values['distance'] = "distance cannot be greater than 500"
@@ -729,7 +804,8 @@ def _coerce_to_dataframe(results):
 
     Parameters
     ----------
-    results:
+    results: dict
+        Dictionary object representing JSON results from the Petfinder API.
 
     Returns
     -------

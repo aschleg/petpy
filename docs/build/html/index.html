@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Petpy - Python Wrapper of the Petfinder API &mdash; petpy 1.8.1 documentation</title>
+  <title>Petpy - Python Wrapper of the Petfinder API &mdash; petpy 2.0.0 documentation</title>
   
 
   
@@ -17,34 +17,35 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="API Reference" href="api.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -58,7 +59,7 @@
             
             
               <div class="version">
-                1.8
+                2.0
               </div>
             
           
@@ -151,30 +152,45 @@
             
   <div class="section" id="petpy-python-wrapper-of-the-petfinder-api">
 <h1>Petpy - Python Wrapper of the Petfinder API<a class="headerlink" href="#petpy-python-wrapper-of-the-petfinder-api" title="Permalink to this headline">¶</a></h1>
-<p>Petpy is an unofficial wrapper of the <a class="reference external" href="https://www.petfinder.com/developers/api-docs">Petfinder API</a> for
-interacting with Petfinder’s database and animal welfare organizations. The library uses the
-<a class="reference external" href="http://docs.python-requests.org/en/master/">requests</a> package for making calls to the API.</p>
+<p>Petpy is an unofficial Pythonwrapper of the <a class="reference external" href="https://www.petfinder.com/developers/api-docs">Petfinder API</a> for
+interacting with Petfinder’s database of animals and animal welfare organizations.</p>
 </div>
-<div class="section" id="getting-a-petfinder-api-key">
-<h1>Getting a Petfinder API Key<a class="headerlink" href="#getting-a-petfinder-api-key" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://www.petfinder.com/developers/api-key">Register with Petfinder</a> to receive an API key which will be
-used to authenticate requests made to the API.</p>
+<div class="section" id="getting-a-petfinder-api-and-secret-key">
+<h1>Getting a Petfinder API and Secret Key<a class="headerlink" href="#getting-a-petfinder-api-and-secret-key" title="Permalink to this headline">¶</a></h1>
+<p>An account must first be created with <a class="reference external" href="https://www.petfinder.com/developers/">Petfinder</a> to receive an API and secret
+key. The API and secret key will be used to grant access to the Petfinder API, which lasts for 3600 seconds, or one
+hour. After the authentication period ends, you must re-authenticate with the Petfinder API.</p>
+</div>
+<div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p><code class="code docutils literal notranslate"><span class="pre">petpy</span></code> is best installed through <code class="code docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install petpy
+</pre></div>
+</div>
+<p>For those of you who prefer it, the library can also be cloned or downloaded into a location of your choosing and then
+installed using the <code class="code docutils literal notranslate"><span class="pre">setup.py</span></code> script per the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone git@github.com:aschleg/petpy.git
+
+<span class="nb">cd</span> petpy
+
+python setup.py install
+</pre></div>
+</div>
 </div>
 <div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>Connecting and using the Petfinder API is straightforward with petpy. The following is a simple example of
-some of the usage of the petpy library.</p>
+<p>Connecting and using the Petfinder API is as straightforward as initializing the <code class="code docutils literal notranslate"><span class="pre">Petfinder()</span></code> class. The
+following are several examples for extracting data from the Petfinder database and interacting with the Petfinder API.</p>
+<div class="section" id="authenticating-with-the-petfinder-api">
+<h2>Authenticating with the Petfinder API<a class="headerlink" href="#authenticating-with-the-petfinder-api" title="Permalink to this headline">¶</a></h2>
+<p>Authentication to the Petfinder API occurs when the <code class="code docutils literal notranslate"><span class="pre">Petfinder()</span></code> class is initialized.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">petpy</span>
 
-<span class="n">pf</span> <span class="o">=</span> <span class="n">Petfinder</span><span class="p">(</span><span class="n">API_key</span><span class="p">)</span>
-
-<span class="n">pf</span><span class="o">.</span><span class="n">breed_list</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">)</span>
-
-<span class="n">pf</span><span class="o">.</span><span class="n">pet_getRandom</span><span class="p">()</span>
+<span class="n">pf</span> <span class="o">=</span> <span class="n">Petfinder</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">API_key</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="n">API_secret</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The example starts by creating an authenticated connection to the Petfinder API which is then used to pull the
-list of cat breeds available in the Petfinder database as well as a randomly selected pet record.</p>
+<p>Calls to the API to extract data can now be made!</p>
+</div>
 </div>
 <div class="section" id="contents">
 <h1>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h1>
@@ -214,7 +230,7 @@ with <a class="reference external" href="https://mybinder.org/">binder</a></p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, Aaron Schlegel.
+        &copy; Copyright 2017, Aaron Schlegel
 
     </p>
   </div>
@@ -231,35 +247,16 @@ with <a class="reference external" href="https://mybinder.org/">binder</a></p>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'1.8.1',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

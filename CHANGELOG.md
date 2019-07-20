@@ -1,6 +1,6 @@
 # Version 2.0.0
 
-New major release coninciding with the release of [v2.0 of the Petfinder API](https://www.petfinder.com/developers/)! 
+New major release coinciding with the release of [v2.0 of the Petfinder API](https://www.petfinder.com/developers/)! 
 The legacy version of the Petfinder API, v1.0, will be retired in January 2020, therefore, the `petpy` library has 
 been updated almost from the ground up to be compatible as possible with the new version of the Petfinder API! The 
 new version of the Petfinder API is a huge improvement over the legacy version, with many changes and additions to 
@@ -9,26 +9,35 @@ will be deprecated over the next few releases.
 
 Below is a summary of all the changes made in the release of `petpy 2.0`. 
   
-- Changes Made
-    - `petpy` now supports the latest release of Python 3.7
-    - The following methods have been added to `petpy` to make it compatible with v2.0 of the Petfinder API.
-        - `get_animal_types()` is used to getting animal types (or type) available from the Petfinder API. The release 
-          of v2.0 of the Petfinder API added several endpoints for accessing animal types in the Petfinder database.
-          This method wraps both Petfinder API endpoints for getting animal types. More information on the animal type 
-          endpoints in the Petfinder API can be found in its documentation:
-            - [Get Animal Types](https://www.petfinder.com/developers/v2/docs/#get-animal-types)
-            - [Get Single Animal Type](https://www.petfinder.com/developers/v2/docs/#get-a-single-animal-type)
-        - `breeds()` is the new method for getting available animal breeds from the Petfinder database. The API 
-          endpoint documentation is available on the Petfinder API documentation page.
-            - [Get Animal Breeds](https://www.petfinder.com/developers/v2/docs/#get-animal-breeds)
-        - `animals()`
-        - `organizations()`
-    - The following methods have been removed as they are no longer valid endpoints with the release of v2.0 of the 
-      PetFinder API. 
-        - `pet_get_random()`
-        - `shelter_list_by_breed()`
-        - `shelter_get_pets()`
-    - General refactoring and code clean-up.
+- `petpy` now supports the latest release of Python 3.7
+- Support for Python 2.7 is discontinued as Python 2.7 will be officially discontinued in January 2020.
+- The following methods have been added to `petpy` to make it compatible with v2.0 of the Petfinder API.
+    - `animal_types()` is used to getting animal types (or type) available from the Petfinder API. The release 
+      of v2.0 of the Petfinder API added several endpoints for accessing animal types in the Petfinder database.
+      This method wraps both Petfinder API endpoints for getting animal types. More information on the animal type 
+      endpoints in the Petfinder API can be found in its documentation:
+        - [Get Animal Types](https://www.petfinder.com/developers/v2/docs/#get-animal-types)
+        - [Get Single Animal Type](https://www.petfinder.com/developers/v2/docs/#get-a-single-animal-type)
+    - `breeds()` is the new method for getting available animal breeds from the Petfinder database. The API 
+      endpoint documentation is available on the Petfinder API documentation page.
+        - [Get Animal Breeds](https://www.petfinder.com/developers/v2/docs/#get-animal-breeds)
+    - `animals()` is the method for extracting animal data available on the Petfinder API and deprecates the 
+      `pets()` related methods. The method wraps both the `animals` and `animal/{id}` endpoints of the Petfinder API. The documentation for these endpoints can be 
+      found in the Petfinder API documentation:
+        - [Get Animal](https://www.petfinder.com/developers/v2/docs/#get-animal)
+        - [Get Animals](https://www.petfinder.com/developers/v2/docs/#get-animals)
+    - `organizations()` is now the method for extracting animal welfare organization data available on Petfinder 
+      and deprecates previous `shelter()` related methods and endpoints. The `organizations()` method wraps both 
+      the Petfinder API `organizations` and `organizations/{id}` endpoints. The Petfinder API documentation for 
+      these two endpoints can be found below:
+        - [Get Organizations](https://www.petfinder.com/developers/v2/docs/#get-organizations)
+        - [Get Organization](https://www.petfinder.com/developers/v2/docs/#get-organization)
+- The following methods have been removed as they are no longer valid endpoints with the release of v2.0 of the 
+  PetFinder API. 
+    - `pet_get_random()`
+    - `shelter_list_by_breed()`
+    - `shelter_get_pets()`
+- General refactoring and code clean-up.
     
 
 ## Version 1.8.2

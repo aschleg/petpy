@@ -19,6 +19,13 @@ animal_types = ('dog', 'cat', 'rabbit', 'small-furry',
                 'horse', 'bird', 'scales-fins-other', 'barnyard')
 
 
+@vcr.use_cassette('tests/cassettes/authenticate.yml')
+def test_authentication():
+    p = Petfinder(key=key, secret=secret_key)
+
+    assert isinstance(p.auth, str)
+
+
 def authenticate():
     pf = Petfinder(key=key, secret=secret_key)
 
@@ -26,13 +33,6 @@ def authenticate():
 
 
 pf = authenticate()
-
-
-@vcr.use_cassette('tests/cassettes/authenticate.yml')
-def test_authentication():
-    p = Petfinder(key=key, secret=secret_key)
-
-    assert isinstance(p.auth, str)
 
 
 @vcr.use_cassette('tests/cassettes/animal_types.yml')
@@ -168,7 +168,6 @@ def test_check_parameters():
     coat1, coat2 = 'fluffy', 'more fluffy'
     status = 'cute'
     sort = 'ascending'
-    location = 'planet'
     distance_int, distance_str = 1000, '1000'
     limit_int, limit_str = 200, '200'
 
@@ -192,8 +191,6 @@ def test_check_parameters():
         pf.animals(status=status)
     with pytest.raises(ValueError):
         pf.animals(sort=sort)
-    with pytest.raises(ValueError):
-        pf.animals(location=location)
     with pytest.raises(ValueError):
         pf.animals(distance=distance_int)
     with pytest.raises(ValueError):

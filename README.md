@@ -29,92 +29,105 @@ cd petpy
 python setup.py install
 ~~~
 
-## Examples and Usage
+## Examples and usage
 
-After receiving an API key from [Petfinder](https://www.petfinder.com/developers/api-key), usage of `petpy` to extract
-data from the Petfinder database is straightforward.
+An account must first be created with [Petfinder](https://www.petfinder.com/developers/) to receive an API and secret 
+key. The API and secret key will be used to grant access to the Petfinder API, which lasts for 3600 seconds, or one 
+hour. After the authentication period ends, you must re-authenticate with the Petfinder API. The following are some 
+quick examples for using `petpy` to get started. More in-depth tutorials for `petpy` and some examples of what 
+can be done with the library, please see the More Examples and Tutorials section below.
 
 ### Authenticating with the Petfinder API
 
-Authenticating the connection with the Petfinder API is as simple as initializing the `Petfinder` class with an API 
-key received from Petfinder.
+Authenticating the connection with the Petfinder API is done at the same time the `Petfinder` class is initialized.
 
 ~~~ python
-pf = Petfinder(key)
+pf = Petfinder(key=key, secret=secret)
 ~~~
 
-### Getting currently listed animal breeds on Petfinder
-
-Once the `Petfinder` class has been initialized with a key received from Petfinder, the methods can then be used to 
-interact with and extract data from the Petfinder API. In this example, we use the `pf` object created above to get 
-the currently listed breeds of cats and dogs.
+### Finding animal types
 
 ~~~ python
-cat_breeds = pf.breed_list('cat')
-dog_breeds = pf.breed_list('dog')
+# All animal types and their relevant data.
+all_types = pf.animal_types()
 
-# The method can also be set to coerce the returned JSON results into a pandas DataFrame by setting the parameter 
-return_df = True.
+# Returning data for a single animal type
+dogs = pf.animal_types('dog')
 
-cat_breeds_df = pf.breed_list('cat', return_df = True)
-dog_breeds_df = pf.breed_list('dog', return_df = True)
+# Getting multiple animal types at once
+cat_dog_rabbit_types = pf.animal_types(['cat', 'dog', 'rabbit'])
 ~~~
 
-### Finding available pets in specific locations
-
-The `pet_find` method returns animals available on Petfinder at local animal shelters given a specific location. The 
-location can be as granular as a city or as broad as a country in North America. For example, let's say we are 
-interested in finding the first 100 female cats available for adoption in the Seattle area and coerce the default 
-JSON results into a pandas DataFrame for easier analysis.
+### Getting animal breeds for available animal types
 
 ~~~ python
-wa_female_cats = pf.pet_find(location='Seattle', 
-                             animal='cat', 
-                             sex='Female', 
-                             count=100, 
-                             return_df=True) 
-~~~
+cat_breeds = pf.breeds('cat')
+dog_breeds = pf.breeds('dog')
 
-### Locating animal shelters in a given location
+# All available breeds or multiple breeds can also be returned.
 
-The `shelter_find` method is similar to the `pet_find` method above, with the exception that it returns the location 
-and information on shelters within the given region specified in the `location` parameter. The Petfinder API will 
-automatically extend its search for shelters if the `count` exceeds the number of shelters in the specified area. For 
-example, let's say we wanted to find 500 animal shelters in Seattle, Washington. As there are not 500 shelters in 
-Seattle alone, the API will expand its return results to include likely most, if not, all of Washington State and 
-likely surrounding states like Oregon and Idaho until it finds 500 shelters to return. As with the `pet_find` method, 
-the `shelter_find` method also has a `return_df` parameter that automatically transforms the returned JSON data from 
-the API into a pandas DataFrame. 
+all_breeds = pf.breeds()
+cat_dog_rabbit = pf.breeds(types=['cat', 'dog', 'rabbit'])
+~~~ 
+
+The `breeds` method can also be set to coerce the returned JSON results into a pandas DataFrame by setting 
+the parameter `return_df = True`.
 
 ~~~ python
-wa_shelters = pf.shelter_find(location='Seattle',
-                              count=500,
-                              return_df=True)
+cat_breeds_df = pf.breeds('cat', return_df = True)
+all_breeds_df = pf.breeds(return_df = True)
 ~~~
 
-## Available Methods
+### Finding available animals on Petfinder
 
-Below is a summary table of the available methods in the petpy library and the accompanying Petfinder API method, as
-well as a brief description. Please see the petpy documentation for more information on each method. The Petfinder
-API methods documentation can also be found [here](https://www.petfinder.com/developers/api-docs#methods). All 
-functions have a `return_df` parameter that when set to `True`, returns a pandas DataFrame of the results to facilitate 
-more efficient data analysis.
+The `animals()` method returns animals based on specified criteria that are listed in the Petfinder database. Specific 
+animals can be searched using the `animal_id` parameter, or a search of the database can be performed by entering 
+the desired search criteria.
 
-| Method                  | Petfinder API Method | Description                                                                                        |
-|-------------------------|----------------------|----------------------------------------------------------------------------------------------------|
-| breed_list()            | breed.list           | Returns the available breeds for the selected animal.                                              |
-| pet_find()              | pet.find             | Returns a collection of pet records matching input parameters.                                     |
-| pet_get()               | pet.get              | Returns a single record for a pet.                                                                 |
-| shelter_find()          | shelter.find         | Returns a collection of shelter records matching input parameters.                                 |
-| shelter_get()           | shelter.get          | Returns a single shelter record.                                                                   |
+~~~ python
+# Getting first 20 results without any search criteria
+animals = pf.animals()
 
-## Introduction and Example Uses of `petpy`
+# Extracting data on specific animals with animal_ids
+
+animal_ids = []
+for i in animals['animals'][0:3]:
+    animal_ids.append(i['id'])
+    
+animal_data = pf.animals(animal_id=animal_ids)
+
+# Returning a pandas DataFrame of the first 150 animal results
+animals = pf.animals(results_per_page=50, pages=3, return_df=True)
+~~~
+
+### Getting animal welfare organizations in the Petfinder database 
+
+Similar to the `animals()` method described above, the `organizations()` method returns data on animal welfare 
+organizations listed in the Petfinder database based on specific criteria, if any. In addition to a general search 
+of animal welfare organizations, specific organizational data can be extracted by supplying the `organizations()` 
+method with organization IDs.
+
+~~~ python
+# Return the first 1,000 animal welfare organizations as a pandas DataFrame
+
+organizations = pf.organizations(results_per_page=100, pages=10, return_df=True)
+
+# Get organizations in the state of Washington
+
+wa_organizations = pf.organizations(state='WA')
+~~~
+
+## More Examples and Tutorials
 
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/aschleg/petpy/master?filepath=notebooks)
 
 A series of IPython notebooks that introduce and explore some of the functionality and possible uses of the 
 `petpy` library. The notebooks can also be launched interactively with [binder](https://mybinder.org/) by clicking the 
 "launch binder" badge.
+
+**Please note these example notebooks are still based on the legacy version of Petfinder and thus are not fully 
+representative of the functionality and methods of the most recent version of `petpy` and the Petfinder API. These 
+are currently being updated to reflect the new version of `petpy`.**
 
 * [01 -Introduction to petpy](https://github.com/aschleg/petpy/blob/master/notebooks/01-Introduction%20to%20petpy.ipynb)
 * [02 - Download 45,000 Adoptable Cat Images using petpy and multiprocessing](https://github.com/aschleg/petpy/blob/master/notebooks/02-Download%2045%2C000%20Adoptable%20Cat%20Images%20with%20petpy%20and%20multiprocessing.ipynb)
@@ -130,7 +143,7 @@ A series of IPython notebooks that introduce and explore some of the functionali
 * Python >= 3.4
 * [requests](http://docs.python-requests.org/en/master/) >= 2.18.4
 * Although not strictly required to use `petpy`, the [pandas](https://pandas.pydata.org/) library is needed 
-for returning the results as a DataFrame.
+  for returning the results as a DataFrame.
 
 ## License
 

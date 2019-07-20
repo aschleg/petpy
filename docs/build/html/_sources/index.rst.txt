@@ -3,34 +3,56 @@
 Petpy - Python Wrapper of the Petfinder API
 ===========================================
 
-Petpy is an unofficial wrapper of the `Petfinder API <https://www.petfinder.com/developers/api-docs>`_ for
-interacting with Petfinder's database and animal welfare organizations. The library uses the
-`requests <http://docs.python-requests.org/en/master/>`_ package for making calls to the API.
+Petpy is an unofficial Pythonwrapper of the `Petfinder API <https://www.petfinder.com/developers/api-docs>`_ for
+interacting with Petfinder's database of animals and animal welfare organizations.
 
-Getting a Petfinder API Key
-===========================
+Getting a Petfinder API and Secret Key
+======================================
 
-`Register with Petfinder <https://www.petfinder.com/developers/api-key>`_ to receive an API key which will be
-used to authenticate requests made to the API.
+An account must first be created with `Petfinder <https://www.petfinder.com/developers/>`_ to receive an API and secret
+key. The API and secret key will be used to grant access to the Petfinder API, which lasts for 3600 seconds, or one
+hour. After the authentication period ends, you must re-authenticate with the Petfinder API.
+
+Installation
+============
+
+:code:`petpy` is best installed through :code:`pip`.
+
+.. code-block :: bash
+
+   pip install petpy
+
+For those of you who prefer it, the library can also be cloned or downloaded into a location of your choosing and then
+installed using the :code:`setup.py` script per the following:
+
+.. code-block :: bash
+
+   git clone git@github.com:aschleg/petpy.git
+
+   cd petpy
+
+   python setup.py install
+
 
 Introduction
 ============
 
-Connecting and using the Petfinder API is straightforward with petpy. The following is a simple example of
-some of the usage of the petpy library.
+Connecting and using the Petfinder API is as straightforward as initializing the :code:`Petfinder()` class. The
+following are several examples for extracting data from the Petfinder database and interacting with the Petfinder API.
+
+Authenticating with the Petfinder API
+-------------------------------------
+
+Authentication to the Petfinder API occurs when the :code:`Petfinder()` class is initialized.
 
 .. code-block :: python
 
    import petpy
 
-   pf = Petfinder(API_key)
+   pf = Petfinder(key=API_key, secret=API_secret)
 
-   pf.breed_list('cat')
+Calls to the API to extract data can now be made!
 
-   pf.pet_getRandom()
-
-The example starts by creating an authenticated connection to the Petfinder API which is then used to pull the
-list of cat breeds available in the Petfinder database as well as a randomly selected pet record.
 
 Contents
 ========
@@ -40,6 +62,7 @@ Contents
 
    api.rst
    versions.rst
+
 
 Tutorials and Examples
 ======================
