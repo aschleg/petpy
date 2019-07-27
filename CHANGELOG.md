@@ -1,11 +1,21 @@
+## Version 2.0.1
+
+- Fixes the `animals()` and `organizations()` method to return all matching search results when the `pages` parameter 
+  is set to `None`.
+- The resulting JSON (dictionary) from the `breeds()` method when the parameter `return_df=False` will now consistently 
+  have `types` as the key. Prior to this change, if the `breeds()` method was called with a single animal type, the 
+  resulting key name in the returned object would be named `type`, whereas if more than one animal type is specified 
+  the key name would be `types`.
+- The `distance` parameter for the `animals()` and `organizations()` parameters will now raise a `ValueError` if it is 
+  less than 0.
+
 # Version 2.0.0
 
 New major release coinciding with the release of [v2.0 of the Petfinder API](https://www.petfinder.com/developers/)! 
 The legacy version of the Petfinder API, v1.0, will be retired in January 2020, therefore, the `petpy` library has 
 been updated almost from the ground up to be compatible as possible with the new version of the Petfinder API! The 
 new version of the Petfinder API is a huge improvement over the legacy version, with many changes and additions to 
-the design of the API itself. As such, several methods from earlier releases of `petpy` that wrapped these endpoints 
-will be deprecated over the next few releases.
+the design of the API itself. 
 
 Below is a summary of all the changes made in the release of `petpy 2.0`. 
   

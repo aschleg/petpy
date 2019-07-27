@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Version History &mdash; petpy 2.0.0 documentation</title>
+  <title>Version History &mdash; petpy 2.0.1 documentation</title>
   
 
   
@@ -86,6 +86,7 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Version History</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#version-2-0-1">Version 2.0.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#version-2-0-0">Version 2.0.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#version-1-8-2">Version 1.8.2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#version-1-8-1">Version 1.8.1</a></li>
@@ -173,8 +174,65 @@
   <div class="section" id="version-history">
 <span id="versions"></span><h1>Version History<a class="headerlink" href="#version-history" title="Permalink to this headline">¶</a></h1>
 <p>Changelog and version changes made with each release.</p>
+<div class="section" id="version-2-0-1">
+<h2>Version 2.0.1<a class="headerlink" href="#version-2-0-1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fixes the <code class="code docutils literal notranslate"><span class="pre">animals()</span></code> and <code class="code docutils literal notranslate"><span class="pre">organizations()</span></code> method to return all matching search results when the
+<code class="code docutils literal notranslate"><span class="pre">pages</span></code> parameter is set to <code class="code docutils literal notranslate"><span class="pre">None</span></code>.</li>
+<li>The resulting JSON (dictionary) from the <code class="code docutils literal notranslate"><span class="pre">breeds()</span></code> method when the parameter <code class="code docutils literal notranslate"><span class="pre">return_df=False</span></code> will now
+consistently have <code class="code docutils literal notranslate"><span class="pre">types</span></code> as the key. Prior to this change, if the <code class="code docutils literal notranslate"><span class="pre">breeds()</span></code> method was called with a
+single animal type, the resulting key name in the returned object would be named <code class="code docutils literal notranslate"><span class="pre">type</span></code>, whereas if more than
+one animal type is specified the key name would be <code class="code docutils literal notranslate"><span class="pre">types</span></code>.</li>
+<li>The <code class="code docutils literal notranslate"><span class="pre">distance</span></code> parameter for the <code class="code docutils literal notranslate"><span class="pre">animals()</span></code> and <code class="code docutils literal notranslate"><span class="pre">organizations()</span></code> parameters will now raise a
+<code class="code docutils literal notranslate"><span class="pre">ValueError</span></code> if it is less than 0.</li>
+</ul>
+</div>
 <div class="section" id="version-2-0-0">
 <h2>Version 2.0.0<a class="headerlink" href="#version-2-0-0" title="Permalink to this headline">¶</a></h2>
+<p>New major release coinciding with the release of <a class="reference external" href="https://www.petfinder.com/developers/">v2.0 of the Petfinder API</a>!
+The legacy version of the Petfinder API, v1.0, will be retired in January 2020, therefore, the <code class="code docutils literal notranslate"><span class="pre">petpy</span></code> library has
+been updated almost from the ground up to be compatible as possible with the new version of the Petfinder API! The
+new version of the Petfinder API is a huge improvement over the legacy version, with many changes and additions to
+the design of the API itself. As such, several methods from earlier releases of <code class="code docutils literal notranslate"><span class="pre">petpy</span></code> that wrapped these
+endpoints will be deprecated over the next few releases.</p>
+<p>Below is a summary of all the changes made in the release of <code class="code docutils literal notranslate"><span class="pre">petpy</span> <span class="pre">2.0</span></code>.</p>
+<ul class="simple">
+<li><code class="code docutils literal notranslate"><span class="pre">petpy</span></code> now supports the latest release of Python 3.7</li>
+<li>Support for Python 2.7 is discontinued as Python 2.7 will be officially discontinued in January 2020.</li>
+<li><dl class="first docutils">
+<dt>The following methods have been added to <code class="code docutils literal notranslate"><span class="pre">petpy</span></code> to make it compatible with v2.0 of the Petfinder API.</dt>
+<dd><ul class="first last">
+<li><code class="code docutils literal notranslate"><span class="pre">animal_types()</span></code> is used to getting animal types (or type) available from the Petfinder API. The release
+of v2.0 of the Petfinder API added several endpoints for accessing animal types in the Petfinder database.
+This method wraps both Petfinder API endpoints for getting animal types. More information on the animal type
+endpoints in the Petfinder API can be found in its documentation:
+- <a class="reference external" href="https://www.petfinder.com/developers/v2/docs/#get-animal-types">Get Animal Types</a>
+- <a class="reference external" href="https://www.petfinder.com/developers/v2/docs/#get-a-single-animal-type">Get Single Animal Type</a></li>
+<li><code class="code docutils literal notranslate"><span class="pre">breeds()</span></code> is the new method for getting available animal breeds from the Petfinder database. The API
+endpoint documentation is available on the Petfinder API documentation page.
+- <a class="reference external" href="https://www.petfinder.com/developers/v2/docs/#get-animal-breeds">Get Animal Breeds</a></li>
+<li><code class="code docutils literal notranslate"><span class="pre">animals()</span></code> is the method for extracting animal data available on the Petfinder API and deprecates the
+<code class="code docutils literal notranslate"><span class="pre">pets()</span></code> related methods. The method wraps both the <code class="code docutils literal notranslate"><span class="pre">animals</span></code> and <code class="code docutils literal notranslate"><span class="pre">animal/{id}</span></code> endpoints of
+the Petfinder API. The documentation for these endpoints can be found in the Petfinder API documentation:
+- <a class="reference external" href="https://www.petfinder.com/developers/v2/docs/#get-animal">Get Animal</a>
+- <a class="reference external" href="https://www.petfinder.com/developers/v2/docs/#get-animals">Get Animals</a></li>
+<li><code class="code docutils literal notranslate"><span class="pre">organizations()</span></code> is now the method for extracting animal welfare organization data available on Petfinder
+and deprecates previous <code class="code docutils literal notranslate"><span class="pre">shelter()</span></code> related methods and endpoints. The <code class="code docutils literal notranslate"><span class="pre">organizations()</span></code> method wraps
+both the Petfinder API <code class="code docutils literal notranslate"><span class="pre">organizations</span></code> and <code class="code docutils literal notranslate"><span class="pre">organizations/{id}</span></code> endpoints. The Petfinder API
+documentation for these two endpoints can be found below:
+- <a class="reference external" href="https://www.petfinder.com/developers/v2/docs/#get-organizations">Get Organizations</a>
+- <a class="reference external" href="https://www.petfinder.com/developers/v2/docs/#get-organization">Get Organization</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>The following methods have been removed as they are no longer valid endpoints with the release of v2.0 of the
+PetFinder API.
+- <code class="code docutils literal notranslate"><span class="pre">pet_get_random()</span></code>
+- <code class="code docutils literal notranslate"><span class="pre">shelter_list_by_breed()</span></code>
+- <code class="code docutils literal notranslate"><span class="pre">shelter_get_pets()</span></code></li>
+<li>General refactoring and code clean-up.</li>
+</ul>
 </div>
 <div class="section" id="version-1-8-2">
 <h2>Version 1.8.2<a class="headerlink" href="#version-1-8-2" title="Permalink to this headline">¶</a></h2>

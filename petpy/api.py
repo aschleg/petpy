@@ -9,10 +9,18 @@ https://www.petfinder.com/developers/
 
 """
 
+
 from pandas import DataFrame
 from pandas.io.json import json_normalize
 import requests
 from urllib.parse import urljoin
+
+
+#################################################################################################################
+#
+# Petfinder Class
+#
+#################################################################################################################
 
 
 class Petfinder(object):
@@ -90,8 +98,7 @@ class Petfinder(object):
 
         r = requests.post(url, data=data)
 
-        if r.json()['token_type'] == 'Bearer':
-            return r.json()['access_token']
+        return r.json()['access_token']
 
     def animal_types(self, types=None):
         r"""
@@ -163,7 +170,7 @@ class Petfinder(object):
 
                 types_collection.append(r.json()['type'])
 
-            result = {'type': types_collection}
+            result = {'types': types_collection}
 
         else:
             raise TypeError('types parameter must be either None, str, list or tuple')
@@ -247,6 +254,7 @@ class Petfinder(object):
                              })
 
             result = r.json()
+            result['type'] = result.pop('types')
 
         else:
             raise TypeError('types parameter must be either None, str, list or tuple')
@@ -393,6 +401,9 @@ class Petfinder(object):
                                  sort=sort, results_per_page=results_per_page)
 
             if pages is None:
+                params['limit'] = 100
+                params['page'] = 1
+
                 r = requests.get(url,
                                  headers={
                                      'Authorization': 'Bearer ' + self.auth
@@ -400,6 +411,20 @@ class Petfinder(object):
                                  params=params)
 
                 animals = r.json()['animals']
+                max_pages = r.json()['pagination']['total_pages']
+
+                for page in range(2, max_pages + 1):
+
+                    params['page'] = page
+
+                    r = requests.get(url,
+                                     headers={
+                                         'Authorization': 'Bearer ' + self.auth
+                                     },
+                                     params=params)
+
+                    for i in r.json()['animals']:
+                        animals.append(i)
 
             else:
                 pages += 1
@@ -412,7 +437,6 @@ class Petfinder(object):
                                  params=params)
 
                 animals = r.json()['animals']
-
                 max_pages = r.json()['pagination']['total_pages']
 
                 if pages > int(max_pages):
@@ -524,7 +548,8 @@ class Petfinder(object):
                                  results_per_page=results_per_page)
 
             if pages is None:
-
+                params['limit'] = 100
+                params['page'] = 1
                 r = requests.get(url,
                                  headers={
                                      'Authorization': 'Bearer ' + self.auth
@@ -532,7 +557,22 @@ class Petfinder(object):
                                  params=params)
                 
                 organizations = r.json()['organizations']
-                
+
+                max_pages = r.json()['pagination']['total_pages']
+
+                for page in range(2, max_pages + 1):
+
+                    params['page'] = page
+
+                    r = requests.get(url,
+                                     headers={
+                                         'Authorization': 'Bearer ' + self.auth
+                                     },
+                                     params=params)
+
+                    for i in r.json()['organizations']:
+                        organizations.append(i)
+
             else:
                 pages += 1
                 params['page'] = 1
@@ -578,6 +618,13 @@ class Petfinder(object):
         return organizations
 
 
+#################################################################################################################
+#
+# Internal helper functions
+#
+#################################################################################################################
+
+
 def _parameters(breed=None, size=None, gender=None, color=None, coat=None, animal_type=None, location=None,
                 distance=None, state=None, country=None, query=None, sort=None, name=None, age=None,
                 animal_id=None, organization_id=None, status=None, results_per_page=None, page=None):
@@ -609,9 +656,14 @@ def _parameters(breed=None, size=None, gender=None, color=None, coat=None, anima
     distance : int, optional
         Returns results within the distance of the specified location. If not given, defaults to 100 miles.
         Maximum distance range is 500 miles.
-    :param state:
-    :param country:
-    :param query:
+    state : str, optional
+        Filters the results by the selected state. Must be a two-letter state code abbreviation of the state
+        name, such as 'WA' for Washington or 'NY' for New York.
+    country : {'US', 'CA'}, optional
+        Filters results to specified country. Must be a two-letter abbreviation of the country and is limited
+        to the United States and Canada.
+    query : str, optional
+        Search matching and partially matching name, city or state.
     sort : {'recent', '-recent', 'distance', '-distance'}, optional
             Sorts by specified attribute. Leading dashes represents a reverse-order sort. Must be one of 'recent',
             '-recent', 'distance', or '-distance'.
@@ -676,7 +728,9 @@ def _check_parameters(animal_types=None, size=None, gender=None, age=None, coat=
 
     Parameters
     ----------
-    animal_types :
+    animal_type : {'dog', 'cat', 'rabbit', 'small-furry', 'horse', 'bird', 'scales-fins-other', 'barnyard'}, str, optional
+        String representing desired animal type to search. Must be one of 'dog', 'cat', 'rabbit', 'small-furry',
+        'horse', 'bird', 'scales-fins-other', or 'barnyard'.
     size: {'small', 'medium', 'large', 'xlarge'}, str, tuple or list of str, optional
         String or tuple or list of strings of desired animal sizes to return. The specified size(s) must be one
         of 'small', 'medium', 'large', or 'xlarge'.
@@ -781,8 +835,8 @@ def _check_parameters(animal_types=None, size=None, gender=None, age=None, coat=
                     sort_list=_sort)
 
     if distance is not None:
-        if int(distance) > 500:
-            incorrect_values['distance'] = "distance cannot be greater than 500"
+        if 0 > int(distance) > 500:
+            incorrect_values['distance'] = "distance cannot be greater than 500 or less than 0."
 
     if limit is not None:
         if int(limit) > 100:
@@ -817,19 +871,19 @@ def _coerce_to_dataframe(results):
     results_df = json_normalize(results[key])
 
     if key == 'animals':
-        results_df.rename(columns={'_links.organizations.href': 'organization_id',
+        results_df['_links.organization.href'] = results_df['_links.organization.href']\
+            .str.replace('/v2/organizations/', '')
+        results_df['_links.self.href'] = results_df['_links.self.href'].str.replace('/v2/animals/', '')
+        results_df['_links.type.href'] = results_df['_links.type.href'].str.replace('/v2/types/', '')
+
+        results_df.rename(columns={'_links.organization.href': 'organization_id',
                                    '_links.self.href': 'animal_id',
                                    '_links.type.href': 'animal_type'}, inplace=True)
 
-        results_df['organization_id'] = results_df['organization_id'].str.replace('/v2/organizations/', '')
-        results_df['animal_id'] = results_df['animal_id'].str.replace('/v2/animals/', '')
-        results_df['animal_type'] = results_df['animal_type'].str.replace('/v2/types/', '')
-
     if key == 'organizations':
         del results_df['_links.animals.href']
+        results_df['_links.self.href'] = results_df['_links.self.href'].str.replace('/v2/organizations/', '')
 
         results_df.rename(columns={'_links.self.href': 'organization_id'}, inplace=True)
-
-        results_df['organization_id'] = results_df['organization_id'].str.replace('/v2/organizations/', '')
 
     return results_df

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Petpy - Python Wrapper of the Petfinder API &mdash; petpy 2.0.0 documentation</title>
+  <title>Petpy - Python Wrapper of the Petfinder API &mdash; petpy 2.0.1 documentation</title>
   
 
   
@@ -190,6 +190,71 @@ following are several examples for extracting data from the Petfinder database a
 </pre></div>
 </div>
 <p>Calls to the API to extract data can now be made!</p>
+</div>
+<div class="section" id="finding-animal-types">
+<h2>Finding Animal Types<a class="headerlink" href="#finding-animal-types" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># All animal types and their relevant data.</span>
+<span class="n">all_types</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">animal_types</span><span class="p">()</span>
+
+<span class="c1"># Returning data for a single animal type</span>
+<span class="n">dogs</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">animal_types</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">)</span>
+
+<span class="c1"># Getting multiple animal types at once</span>
+<span class="n">cat_dog_rabbit_types</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">animal_types</span><span class="p">([</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;rabbit&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-breeds-of-animal-types">
+<h2>Get Breeds of Animal Types<a class="headerlink" href="#get-breeds-of-animal-types" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cat_breeds</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">breeds</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">)</span>
+<span class="n">dog_breeds</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">breeds</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">)</span>
+
+<span class="c1"># All available breeds or multiple breeds can also be returned.</span>
+<span class="n">all_breeds</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">breeds</span><span class="p">()</span>
+<span class="n">cat_dog_rabbit</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">breeds</span><span class="p">(</span><span class="n">types</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;rabbit&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>The <cite>breeds</cite> method can also be set to coerce the returned JSON results into a pandas DataFrame by setting
+the parameter <cite>return_df = True</cite>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cat_breeds_df</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">breeds</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="n">return_df</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">all_breeds_df</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">breeds</span><span class="p">(</span><span class="n">return_df</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="getting-animals-on-petfinder">
+<h2>Getting animals on Petfinder<a class="headerlink" href="#getting-animals-on-petfinder" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="code docutils literal notranslate"><span class="pre">animals()</span></code> method returns animals based on specified criteria that are listed in the Petfinder database.
+Specific animals can be searched using the <code class="code docutils literal notranslate"><span class="pre">animal_id</span></code> parameter, or a search of the database can be performed
+by entering the desired search criteria.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Getting first 20 results without any search criteria</span>
+<span class="n">animals</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">animals</span><span class="p">()</span>
+
+<span class="c1"># Extracting data on specific animals with animal_ids</span>
+
+<span class="n">animal_ids</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">animals</span><span class="p">[</span><span class="s1">&#39;animals&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]:</span>
+    <span class="n">animal_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">])</span>
+
+<span class="n">animal_data</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">animals</span><span class="p">(</span><span class="n">animal_id</span><span class="o">=</span><span class="n">animal_ids</span><span class="p">)</span>
+
+<span class="c1"># Returning a pandas DataFrame of the first 150 animal results</span>
+<span class="n">animals</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">animals</span><span class="p">(</span><span class="n">results_per_page</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">pages</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="getting-animal-welfare-organizations-in-the-petfinder-database">
+<h2>Getting animal welfare organizations in the Petfinder database<a class="headerlink" href="#getting-animal-welfare-organizations-in-the-petfinder-database" title="Permalink to this headline">¶</a></h2>
+<p>Similar to the <code class="code docutils literal notranslate"><span class="pre">animals()</span></code> method described above, the <code class="code docutils literal notranslate"><span class="pre">organizations()</span></code> method returns data on animal
+welfare organizations listed in the Petfinder database based on specific criteria, if any. In addition to a general
+search of animal welfare organizations, specific organizational data can be extracted by supplying the
+<code class="code docutils literal notranslate"><span class="pre">organizations()</span></code> method with organization IDs.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Return the first 1,000 animal welfare organizations as a pandas DataFrame</span>
+<span class="n">organizations</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">results_per_page</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">pages</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="c1"># Get organizations in the state of Washington</span>
+<span class="n">wa_organizations</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="s1">&#39;WA&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="contents">
