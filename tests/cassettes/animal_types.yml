@@ -7,7 +7,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjMwNzlhNjk3ZWZhNTIxZDUzNDM3OTg2Yzk0MWY1ZTFiOWI1ZmYyNjUzZDUzYmRkNzM0ODc5NDgyNmFhYTgwMGM0ZjljMGIzNmIyMWMxYmUyIn0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjMwNzlhNjk3ZWZhNTIxZDUzNDM3OTg2Yzk0MWY1ZTFiOWI1ZmYyNjUzZDUzYmRkNzM0ODc5NDgyNmFhYTgwMGM0ZjljMGIzNmIyMWMxYmUyIiwiaWF0IjoxNTYzMTA1NjIzLCJuYmYiOjE1NjMxMDU2MjMsImV4cCI6MTU2MzEwOTIyMywic3ViIjoiIiwic2NvcGVzIjpbXX0.LEEJIASmg5WOftUQ1jMzNgG1dqmhePgJiP4EsJev6iza0axfyHOyIRFoemSYCdK7N8zTkuRHOS3r5lYAW23CSA38Gj8s-0agkH6tq-wwu3mQsCWyNJjHd9j2V_LGRdVwMT3PgNmKsgRKBNuWYyU2UbxSCIBLTK-bcrHlxzt758PEr37nZk0gtfma0fqKnDvubiFOuxSNzz2IRasKoXLNTphv8cu7hxezyxy7FRp7U6Tc_lMTiVgzo4klWKPyfb3uhF54dnrEdmLbtF7KV-Q0A5rfsm9FZrEvZxiyUp4sVOAxfkhcyioad6erOa7uDhrKnHnT7PfTR4Gs87Rl16tXQQ
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBkNjg4ZDdmNWIwZTJmZjY0Y2EzYjg3ZGZjZGM5YjlkNjNjN2NlNWFhZTJhOWU2NWFhNDZiODIzYjE0YTI0ZWE4ODYxYTcxMTlhZDJhZjQ0In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjBkNjg4ZDdmNWIwZTJmZjY0Y2EzYjg3ZGZjZGM5YjlkNjNjN2NlNWFhZTJhOWU2NWFhNDZiODIzYjE0YTI0ZWE4ODYxYTcxMTlhZDJhZjQ0IiwiaWF0IjoxNTY1MjkxMTM4LCJuYmYiOjE1NjUyOTExMzgsImV4cCI6MTU2NTI5NDczOCwic3ViIjoiIiwic2NvcGVzIjpbXX0.IWcDtZLLkhUIaCTZfweDz5SrEfBzhUrrH6073jQx8SSiiroWQNR-3iPymlSgQ4ncAmpI6ohd7a39SM7VZbHalJv7ljrs3A8wpPv5GksLZtZ_wYiEPKGqvRZhDIqzyccyrUCSGK2AZl025P5yPMVIbsNcUjXrfafoCJrVZjZgpAzDz8HbVbQtaDj7mbf7H9fr3WHVvdz-bORbeL38hrZ1O0Ju3t3bLG9zmp7FTQr5jo26RrDjTetCBhLZ1T9zohVeq9cTR5h-iCLrbac4VXm2MaP2esyKuqyr72H4OgRNObiAxyEFicihnTeLgpz8fyS3PpMVJ63xVtjUhws1Om5iRQ
       Connection:
       - keep-alive
       User-Agent:
@@ -26,17 +26,17 @@ interactions:
       Content-Type:
       - text/html
       Date:
-      - Sun, 14 Jul 2019 12:00:23 GMT
+      - Thu, 08 Aug 2019 19:05:39 GMT
       Location:
       - https://api.petfinder.com/v2/types
       Server:
       - CloudFront
       Via:
-      - 1.1 1b74ccf4cb51eacf97a0e6d60ae46a3f.cloudfront.net (CloudFront)
+      - 1.1 b838ef1ff22a4a994af82d5178c30e1d.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - otQ_fTQ1XKl54ftY5aBNzlrlisk46s-tqoz6Cwne8X8pwF_k1P2TXg==
+      - uiDqFQYLPKrP9Lz-FAy-rHWYCpV7MtpoOclFbdPUVFd4qPS3AbgyWg==
       X-Amz-Cf-Pop:
-      - SEA19-C2
+      - SEA19-C1
       X-Cache:
       - Redirect from cloudfront
     status:
@@ -50,7 +50,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjMwNzlhNjk3ZWZhNTIxZDUzNDM3OTg2Yzk0MWY1ZTFiOWI1ZmYyNjUzZDUzYmRkNzM0ODc5NDgyNmFhYTgwMGM0ZjljMGIzNmIyMWMxYmUyIn0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjMwNzlhNjk3ZWZhNTIxZDUzNDM3OTg2Yzk0MWY1ZTFiOWI1ZmYyNjUzZDUzYmRkNzM0ODc5NDgyNmFhYTgwMGM0ZjljMGIzNmIyMWMxYmUyIiwiaWF0IjoxNTYzMTA1NjIzLCJuYmYiOjE1NjMxMDU2MjMsImV4cCI6MTU2MzEwOTIyMywic3ViIjoiIiwic2NvcGVzIjpbXX0.LEEJIASmg5WOftUQ1jMzNgG1dqmhePgJiP4EsJev6iza0axfyHOyIRFoemSYCdK7N8zTkuRHOS3r5lYAW23CSA38Gj8s-0agkH6tq-wwu3mQsCWyNJjHd9j2V_LGRdVwMT3PgNmKsgRKBNuWYyU2UbxSCIBLTK-bcrHlxzt758PEr37nZk0gtfma0fqKnDvubiFOuxSNzz2IRasKoXLNTphv8cu7hxezyxy7FRp7U6Tc_lMTiVgzo4klWKPyfb3uhF54dnrEdmLbtF7KV-Q0A5rfsm9FZrEvZxiyUp4sVOAxfkhcyioad6erOa7uDhrKnHnT7PfTR4Gs87Rl16tXQQ
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBkNjg4ZDdmNWIwZTJmZjY0Y2EzYjg3ZGZjZGM5YjlkNjNjN2NlNWFhZTJhOWU2NWFhNDZiODIzYjE0YTI0ZWE4ODYxYTcxMTlhZDJhZjQ0In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjBkNjg4ZDdmNWIwZTJmZjY0Y2EzYjg3ZGZjZGM5YjlkNjNjN2NlNWFhZTJhOWU2NWFhNDZiODIzYjE0YTI0ZWE4ODYxYTcxMTlhZDJhZjQ0IiwiaWF0IjoxNTY1MjkxMTM4LCJuYmYiOjE1NjUyOTExMzgsImV4cCI6MTU2NTI5NDczOCwic3ViIjoiIiwic2NvcGVzIjpbXX0.IWcDtZLLkhUIaCTZfweDz5SrEfBzhUrrH6073jQx8SSiiroWQNR-3iPymlSgQ4ncAmpI6ohd7a39SM7VZbHalJv7ljrs3A8wpPv5GksLZtZ_wYiEPKGqvRZhDIqzyccyrUCSGK2AZl025P5yPMVIbsNcUjXrfafoCJrVZjZgpAzDz8HbVbQtaDj7mbf7H9fr3WHVvdz-bORbeL38hrZ1O0Ju3t3bLG9zmp7FTQr5jo26RrDjTetCBhLZ1T9zohVeq9cTR5h-iCLrbac4VXm2MaP2esyKuqyr72H4OgRNObiAxyEFicihnTeLgpz8fyS3PpMVJ63xVtjUhws1Om5iRQ
       Connection:
       - keep-alive
       User-Agent:
@@ -89,29 +89,29 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 14 Jul 2019 12:00:24 GMT
+      - Thu, 08 Aug 2019 19:05:39 GMT
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
       Vary:
       - Accept-Encoding
       Via:
-      - 1.1 7022a5bbf9872d4a09d63e6cdb457dfe.cloudfront.net (CloudFront)
+      - 1.1 7514e5e25722778fd4b1744d4ecc67e1.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - M-irCpfr_kcL_swwoLZpwWDfiD2ozX-9T6amKd6erw-4A-hztelWhw==
+      - -PnJguxR3aVlpF7jhy8eYKXmXM6Ycyx8uhgYiXNO9-FUBDlZuufhjQ==
       X-Amz-Cf-Pop:
-      - SEA19-C2
+      - SEA19-C1
       X-Cache:
       - Miss from cloudfront
       x-amz-apigw-id:
-      - c0DlvGYtIAMFsIw=
+      - eHbUiFkboAMFSpQ=
       x-amzn-Remapped-Connection:
       - keep-alive
       x-amzn-Remapped-Content-Length:
       - '932'
       x-amzn-Remapped-Date:
-      - Sun, 14 Jul 2019 12:00:24 GMT
+      - Thu, 08 Aug 2019 19:05:39 GMT
       x-amzn-RequestId:
-      - f61bbcbc-a62e-11e9-a088-977c4d559f5e
+      - 82e062f0-ba0f-11e9-b45f-bb1b2109f45f
     status:
       code: 200
       message: OK
@@ -123,7 +123,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjMwNzlhNjk3ZWZhNTIxZDUzNDM3OTg2Yzk0MWY1ZTFiOWI1ZmYyNjUzZDUzYmRkNzM0ODc5NDgyNmFhYTgwMGM0ZjljMGIzNmIyMWMxYmUyIn0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjMwNzlhNjk3ZWZhNTIxZDUzNDM3OTg2Yzk0MWY1ZTFiOWI1ZmYyNjUzZDUzYmRkNzM0ODc5NDgyNmFhYTgwMGM0ZjljMGIzNmIyMWMxYmUyIiwiaWF0IjoxNTYzMTA1NjIzLCJuYmYiOjE1NjMxMDU2MjMsImV4cCI6MTU2MzEwOTIyMywic3ViIjoiIiwic2NvcGVzIjpbXX0.LEEJIASmg5WOftUQ1jMzNgG1dqmhePgJiP4EsJev6iza0axfyHOyIRFoemSYCdK7N8zTkuRHOS3r5lYAW23CSA38Gj8s-0agkH6tq-wwu3mQsCWyNJjHd9j2V_LGRdVwMT3PgNmKsgRKBNuWYyU2UbxSCIBLTK-bcrHlxzt758PEr37nZk0gtfma0fqKnDvubiFOuxSNzz2IRasKoXLNTphv8cu7hxezyxy7FRp7U6Tc_lMTiVgzo4klWKPyfb3uhF54dnrEdmLbtF7KV-Q0A5rfsm9FZrEvZxiyUp4sVOAxfkhcyioad6erOa7uDhrKnHnT7PfTR4Gs87Rl16tXQQ
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBkNjg4ZDdmNWIwZTJmZjY0Y2EzYjg3ZGZjZGM5YjlkNjNjN2NlNWFhZTJhOWU2NWFhNDZiODIzYjE0YTI0ZWE4ODYxYTcxMTlhZDJhZjQ0In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjBkNjg4ZDdmNWIwZTJmZjY0Y2EzYjg3ZGZjZGM5YjlkNjNjN2NlNWFhZTJhOWU2NWFhNDZiODIzYjE0YTI0ZWE4ODYxYTcxMTlhZDJhZjQ0IiwiaWF0IjoxNTY1MjkxMTM4LCJuYmYiOjE1NjUyOTExMzgsImV4cCI6MTU2NTI5NDczOCwic3ViIjoiIiwic2NvcGVzIjpbXX0.IWcDtZLLkhUIaCTZfweDz5SrEfBzhUrrH6073jQx8SSiiroWQNR-3iPymlSgQ4ncAmpI6ohd7a39SM7VZbHalJv7ljrs3A8wpPv5GksLZtZ_wYiEPKGqvRZhDIqzyccyrUCSGK2AZl025P5yPMVIbsNcUjXrfafoCJrVZjZgpAzDz8HbVbQtaDj7mbf7H9fr3WHVvdz-bORbeL38hrZ1O0Ju3t3bLG9zmp7FTQr5jo26RrDjTetCBhLZ1T9zohVeq9cTR5h-iCLrbac4VXm2MaP2esyKuqyr72H4OgRNObiAxyEFicihnTeLgpz8fyS3PpMVJ63xVtjUhws1Om5iRQ
       Connection:
       - keep-alive
       User-Agent:
@@ -142,17 +142,17 @@ interactions:
       Content-Type:
       - text/html
       Date:
-      - Sun, 14 Jul 2019 12:00:24 GMT
+      - Thu, 08 Aug 2019 19:05:39 GMT
       Location:
       - https://api.petfinder.com/v2/types/cat
       Server:
       - CloudFront
       Via:
-      - 1.1 d8792dbd3191bbe722eba5b536b979c8.cloudfront.net (CloudFront)
+      - 1.1 d042f60a962591f741406f28a8170c5a.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - NcTycIa4q5aG2do8NSsJqA2VFuP990ciBdIWU1h1AVqN1WPYUv6JHg==
+      - wIo2HFskGyjIVLG99hTOs0ktlfzcwExENS8xuppdpGMv_2Df1J6Urw==
       X-Amz-Cf-Pop:
-      - SEA19-C2
+      - SEA19-C1
       X-Cache:
       - Redirect from cloudfront
     status:
@@ -166,7 +166,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjMwNzlhNjk3ZWZhNTIxZDUzNDM3OTg2Yzk0MWY1ZTFiOWI1ZmYyNjUzZDUzYmRkNzM0ODc5NDgyNmFhYTgwMGM0ZjljMGIzNmIyMWMxYmUyIn0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjMwNzlhNjk3ZWZhNTIxZDUzNDM3OTg2Yzk0MWY1ZTFiOWI1ZmYyNjUzZDUzYmRkNzM0ODc5NDgyNmFhYTgwMGM0ZjljMGIzNmIyMWMxYmUyIiwiaWF0IjoxNTYzMTA1NjIzLCJuYmYiOjE1NjMxMDU2MjMsImV4cCI6MTU2MzEwOTIyMywic3ViIjoiIiwic2NvcGVzIjpbXX0.LEEJIASmg5WOftUQ1jMzNgG1dqmhePgJiP4EsJev6iza0axfyHOyIRFoemSYCdK7N8zTkuRHOS3r5lYAW23CSA38Gj8s-0agkH6tq-wwu3mQsCWyNJjHd9j2V_LGRdVwMT3PgNmKsgRKBNuWYyU2UbxSCIBLTK-bcrHlxzt758PEr37nZk0gtfma0fqKnDvubiFOuxSNzz2IRasKoXLNTphv8cu7hxezyxy7FRp7U6Tc_lMTiVgzo4klWKPyfb3uhF54dnrEdmLbtF7KV-Q0A5rfsm9FZrEvZxiyUp4sVOAxfkhcyioad6erOa7uDhrKnHnT7PfTR4Gs87Rl16tXQQ
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBkNjg4ZDdmNWIwZTJmZjY0Y2EzYjg3ZGZjZGM5YjlkNjNjN2NlNWFhZTJhOWU2NWFhNDZiODIzYjE0YTI0ZWE4ODYxYTcxMTlhZDJhZjQ0In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjBkNjg4ZDdmNWIwZTJmZjY0Y2EzYjg3ZGZjZGM5YjlkNjNjN2NlNWFhZTJhOWU2NWFhNDZiODIzYjE0YTI0ZWE4ODYxYTcxMTlhZDJhZjQ0IiwiaWF0IjoxNTY1MjkxMTM4LCJuYmYiOjE1NjUyOTExMzgsImV4cCI6MTU2NTI5NDczOCwic3ViIjoiIiwic2NvcGVzIjpbXX0.IWcDtZLLkhUIaCTZfweDz5SrEfBzhUrrH6073jQx8SSiiroWQNR-3iPymlSgQ4ncAmpI6ohd7a39SM7VZbHalJv7ljrs3A8wpPv5GksLZtZ_wYiEPKGqvRZhDIqzyccyrUCSGK2AZl025P5yPMVIbsNcUjXrfafoCJrVZjZgpAzDz8HbVbQtaDj7mbf7H9fr3WHVvdz-bORbeL38hrZ1O0Ju3t3bLG9zmp7FTQr5jo26RrDjTetCBhLZ1T9zohVeq9cTR5h-iCLrbac4VXm2MaP2esyKuqyr72H4OgRNObiAxyEFicihnTeLgpz8fyS3PpMVJ63xVtjUhws1Om5iRQ
       Connection:
       - keep-alive
       User-Agent:
@@ -195,29 +195,29 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 14 Jul 2019 12:00:24 GMT
+      - Thu, 08 Aug 2019 19:05:40 GMT
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
       Vary:
       - Accept-Encoding
       Via:
-      - 1.1 ee8246c5442dace7525c74f6a799bb47.cloudfront.net (CloudFront)
+      - 1.1 f126db770f21f288439f44d357978a27.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - ExnCq1fFJECTpd_YJnq-KVF2p4pi9DJM7c2YQ5uT6-7N9nk6BvDuSQ==
+      - uqIV7CB5_s4PMoMVgNlBdrZVi0U2pxHRBCWS7Mo_asam14Kf9ZgWXg==
       X-Amz-Cf-Pop:
-      - SEA19-C2
+      - SEA19-C1
       X-Cache:
       - Miss from cloudfront
       x-amz-apigw-id:
-      - c0Dl2GTRoAMF5-w=
+      - eHbUoGMmoAMFQew=
       x-amzn-Remapped-Connection:
       - keep-alive
       x-amzn-Remapped-Content-Length:
       - '371'
       x-amzn-Remapped-Date:
-      - Sun, 14 Jul 2019 12:00:24 GMT
+      - Thu, 08 Aug 2019 19:05:40 GMT
       x-amzn-RequestId:
-      - f68b957a-a62e-11e9-a071-e5b08cbc9563
+      - 8342593b-ba0f-11e9-a2e3-f7df0f970e14
     status:
       code: 200
       message: OK
@@ -229,7 +229,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjMwNzlhNjk3ZWZhNTIxZDUzNDM3OTg2Yzk0MWY1ZTFiOWI1ZmYyNjUzZDUzYmRkNzM0ODc5NDgyNmFhYTgwMGM0ZjljMGIzNmIyMWMxYmUyIn0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjMwNzlhNjk3ZWZhNTIxZDUzNDM3OTg2Yzk0MWY1ZTFiOWI1ZmYyNjUzZDUzYmRkNzM0ODc5NDgyNmFhYTgwMGM0ZjljMGIzNmIyMWMxYmUyIiwiaWF0IjoxNTYzMTA1NjIzLCJuYmYiOjE1NjMxMDU2MjMsImV4cCI6MTU2MzEwOTIyMywic3ViIjoiIiwic2NvcGVzIjpbXX0.LEEJIASmg5WOftUQ1jMzNgG1dqmhePgJiP4EsJev6iza0axfyHOyIRFoemSYCdK7N8zTkuRHOS3r5lYAW23CSA38Gj8s-0agkH6tq-wwu3mQsCWyNJjHd9j2V_LGRdVwMT3PgNmKsgRKBNuWYyU2UbxSCIBLTK-bcrHlxzt758PEr37nZk0gtfma0fqKnDvubiFOuxSNzz2IRasKoXLNTphv8cu7hxezyxy7FRp7U6Tc_lMTiVgzo4klWKPyfb3uhF54dnrEdmLbtF7KV-Q0A5rfsm9FZrEvZxiyUp4sVOAxfkhcyioad6erOa7uDhrKnHnT7PfTR4Gs87Rl16tXQQ
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBkNjg4ZDdmNWIwZTJmZjY0Y2EzYjg3ZGZjZGM5YjlkNjNjN2NlNWFhZTJhOWU2NWFhNDZiODIzYjE0YTI0ZWE4ODYxYTcxMTlhZDJhZjQ0In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjBkNjg4ZDdmNWIwZTJmZjY0Y2EzYjg3ZGZjZGM5YjlkNjNjN2NlNWFhZTJhOWU2NWFhNDZiODIzYjE0YTI0ZWE4ODYxYTcxMTlhZDJhZjQ0IiwiaWF0IjoxNTY1MjkxMTM4LCJuYmYiOjE1NjUyOTExMzgsImV4cCI6MTU2NTI5NDczOCwic3ViIjoiIiwic2NvcGVzIjpbXX0.IWcDtZLLkhUIaCTZfweDz5SrEfBzhUrrH6073jQx8SSiiroWQNR-3iPymlSgQ4ncAmpI6ohd7a39SM7VZbHalJv7ljrs3A8wpPv5GksLZtZ_wYiEPKGqvRZhDIqzyccyrUCSGK2AZl025P5yPMVIbsNcUjXrfafoCJrVZjZgpAzDz8HbVbQtaDj7mbf7H9fr3WHVvdz-bORbeL38hrZ1O0Ju3t3bLG9zmp7FTQr5jo26RrDjTetCBhLZ1T9zohVeq9cTR5h-iCLrbac4VXm2MaP2esyKuqyr72H4OgRNObiAxyEFicihnTeLgpz8fyS3PpMVJ63xVtjUhws1Om5iRQ
       Connection:
       - keep-alive
       User-Agent:
@@ -248,17 +248,17 @@ interactions:
       Content-Type:
       - text/html
       Date:
-      - Sun, 14 Jul 2019 12:00:24 GMT
+      - Thu, 08 Aug 2019 19:05:40 GMT
       Location:
       - https://api.petfinder.com/v2/types/cat
       Server:
       - CloudFront
       Via:
-      - 1.1 591683988172c7980c4ebb318cbf18a9.cloudfront.net (CloudFront)
+      - 1.1 7514e5e25722778fd4b1744d4ecc67e1.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - L489DVIBCq27QYGwxGY7DPui16Fjj57wqvIE7e1DacmQpO6kbmqONg==
+      - wFOlUpqb69bm9bAgP5M5jl8fNHibcXgR64VJMVF-qsg64Q12g6pu2A==
       X-Amz-Cf-Pop:
-      - SEA19-C2
+      - SEA19-C1
       X-Cache:
       - Redirect from cloudfront
     status:
@@ -272,7 +272,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjMwNzlhNjk3ZWZhNTIxZDUzNDM3OTg2Yzk0MWY1ZTFiOWI1ZmYyNjUzZDUzYmRkNzM0ODc5NDgyNmFhYTgwMGM0ZjljMGIzNmIyMWMxYmUyIn0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjMwNzlhNjk3ZWZhNTIxZDUzNDM3OTg2Yzk0MWY1ZTFiOWI1ZmYyNjUzZDUzYmRkNzM0ODc5NDgyNmFhYTgwMGM0ZjljMGIzNmIyMWMxYmUyIiwiaWF0IjoxNTYzMTA1NjIzLCJuYmYiOjE1NjMxMDU2MjMsImV4cCI6MTU2MzEwOTIyMywic3ViIjoiIiwic2NvcGVzIjpbXX0.LEEJIASmg5WOftUQ1jMzNgG1dqmhePgJiP4EsJev6iza0axfyHOyIRFoemSYCdK7N8zTkuRHOS3r5lYAW23CSA38Gj8s-0agkH6tq-wwu3mQsCWyNJjHd9j2V_LGRdVwMT3PgNmKsgRKBNuWYyU2UbxSCIBLTK-bcrHlxzt758PEr37nZk0gtfma0fqKnDvubiFOuxSNzz2IRasKoXLNTphv8cu7hxezyxy7FRp7U6Tc_lMTiVgzo4klWKPyfb3uhF54dnrEdmLbtF7KV-Q0A5rfsm9FZrEvZxiyUp4sVOAxfkhcyioad6erOa7uDhrKnHnT7PfTR4Gs87Rl16tXQQ
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBkNjg4ZDdmNWIwZTJmZjY0Y2EzYjg3ZGZjZGM5YjlkNjNjN2NlNWFhZTJhOWU2NWFhNDZiODIzYjE0YTI0ZWE4ODYxYTcxMTlhZDJhZjQ0In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjBkNjg4ZDdmNWIwZTJmZjY0Y2EzYjg3ZGZjZGM5YjlkNjNjN2NlNWFhZTJhOWU2NWFhNDZiODIzYjE0YTI0ZWE4ODYxYTcxMTlhZDJhZjQ0IiwiaWF0IjoxNTY1MjkxMTM4LCJuYmYiOjE1NjUyOTExMzgsImV4cCI6MTU2NTI5NDczOCwic3ViIjoiIiwic2NvcGVzIjpbXX0.IWcDtZLLkhUIaCTZfweDz5SrEfBzhUrrH6073jQx8SSiiroWQNR-3iPymlSgQ4ncAmpI6ohd7a39SM7VZbHalJv7ljrs3A8wpPv5GksLZtZ_wYiEPKGqvRZhDIqzyccyrUCSGK2AZl025P5yPMVIbsNcUjXrfafoCJrVZjZgpAzDz8HbVbQtaDj7mbf7H9fr3WHVvdz-bORbeL38hrZ1O0Ju3t3bLG9zmp7FTQr5jo26RrDjTetCBhLZ1T9zohVeq9cTR5h-iCLrbac4VXm2MaP2esyKuqyr72H4OgRNObiAxyEFicihnTeLgpz8fyS3PpMVJ63xVtjUhws1Om5iRQ
       Connection:
       - keep-alive
       User-Agent:
@@ -301,29 +301,29 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 14 Jul 2019 12:00:25 GMT
+      - Thu, 08 Aug 2019 19:05:40 GMT
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
       Vary:
       - Accept-Encoding
       Via:
-      - 1.1 aef00f14752da9aa504d392fd46eff94.cloudfront.net (CloudFront)
+      - 1.1 7514e5e25722778fd4b1744d4ecc67e1.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - VX7BG5y0PCygeQMQkahbG4ARkfZAq_QAXEDX0hNRA0Cvb6krlmDHvw==
+      - lnPOCU1UgJN3uaDiLtXZ14OzhlxoQftAVWEWOFOQsbharOCkI2-9aA==
       X-Amz-Cf-Pop:
-      - SEA19-C2
+      - SEA19-C1
       X-Cache:
       - Miss from cloudfront
       x-amz-apigw-id:
-      - c0Dl5ESAoAMFcyQ=
+      - eHbUsE6zoAMFghQ=
       x-amzn-Remapped-Connection:
       - keep-alive
       x-amzn-Remapped-Content-Length:
       - '371'
       x-amzn-Remapped-Date:
-      - Sun, 14 Jul 2019 12:00:25 GMT
+      - Thu, 08 Aug 2019 19:05:40 GMT
       x-amzn-RequestId:
-      - f6b95bea-a62e-11e9-8ce6-e9c6ed273d23
+      - 83730691-ba0f-11e9-a624-b1df5b6cf436
     status:
       code: 200
       message: OK
@@ -335,7 +335,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjMwNzlhNjk3ZWZhNTIxZDUzNDM3OTg2Yzk0MWY1ZTFiOWI1ZmYyNjUzZDUzYmRkNzM0ODc5NDgyNmFhYTgwMGM0ZjljMGIzNmIyMWMxYmUyIn0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjMwNzlhNjk3ZWZhNTIxZDUzNDM3OTg2Yzk0MWY1ZTFiOWI1ZmYyNjUzZDUzYmRkNzM0ODc5NDgyNmFhYTgwMGM0ZjljMGIzNmIyMWMxYmUyIiwiaWF0IjoxNTYzMTA1NjIzLCJuYmYiOjE1NjMxMDU2MjMsImV4cCI6MTU2MzEwOTIyMywic3ViIjoiIiwic2NvcGVzIjpbXX0.LEEJIASmg5WOftUQ1jMzNgG1dqmhePgJiP4EsJev6iza0axfyHOyIRFoemSYCdK7N8zTkuRHOS3r5lYAW23CSA38Gj8s-0agkH6tq-wwu3mQsCWyNJjHd9j2V_LGRdVwMT3PgNmKsgRKBNuWYyU2UbxSCIBLTK-bcrHlxzt758PEr37nZk0gtfma0fqKnDvubiFOuxSNzz2IRasKoXLNTphv8cu7hxezyxy7FRp7U6Tc_lMTiVgzo4klWKPyfb3uhF54dnrEdmLbtF7KV-Q0A5rfsm9FZrEvZxiyUp4sVOAxfkhcyioad6erOa7uDhrKnHnT7PfTR4Gs87Rl16tXQQ
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBkNjg4ZDdmNWIwZTJmZjY0Y2EzYjg3ZGZjZGM5YjlkNjNjN2NlNWFhZTJhOWU2NWFhNDZiODIzYjE0YTI0ZWE4ODYxYTcxMTlhZDJhZjQ0In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjBkNjg4ZDdmNWIwZTJmZjY0Y2EzYjg3ZGZjZGM5YjlkNjNjN2NlNWFhZTJhOWU2NWFhNDZiODIzYjE0YTI0ZWE4ODYxYTcxMTlhZDJhZjQ0IiwiaWF0IjoxNTY1MjkxMTM4LCJuYmYiOjE1NjUyOTExMzgsImV4cCI6MTU2NTI5NDczOCwic3ViIjoiIiwic2NvcGVzIjpbXX0.IWcDtZLLkhUIaCTZfweDz5SrEfBzhUrrH6073jQx8SSiiroWQNR-3iPymlSgQ4ncAmpI6ohd7a39SM7VZbHalJv7ljrs3A8wpPv5GksLZtZ_wYiEPKGqvRZhDIqzyccyrUCSGK2AZl025P5yPMVIbsNcUjXrfafoCJrVZjZgpAzDz8HbVbQtaDj7mbf7H9fr3WHVvdz-bORbeL38hrZ1O0Ju3t3bLG9zmp7FTQr5jo26RrDjTetCBhLZ1T9zohVeq9cTR5h-iCLrbac4VXm2MaP2esyKuqyr72H4OgRNObiAxyEFicihnTeLgpz8fyS3PpMVJ63xVtjUhws1Om5iRQ
       Connection:
       - keep-alive
       User-Agent:
@@ -354,17 +354,17 @@ interactions:
       Content-Type:
       - text/html
       Date:
-      - Sun, 14 Jul 2019 12:00:25 GMT
+      - Thu, 08 Aug 2019 19:05:40 GMT
       Location:
       - https://api.petfinder.com/v2/types/dog
       Server:
       - CloudFront
       Via:
-      - 1.1 e66162aafd55b64ba1478ff7105150fb.cloudfront.net (CloudFront)
+      - 1.1 44cd593d82a2d200a94217033c614c6a.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - UboyJcxFYiXWUghM5j0DdIu5w5Ob_i0dqbJ-4SgTCuC69FuQyrN2Og==
+      - unL6g5FU5NinyhODMv0lyZmSWRsvVHlwgInRXfa77IK2tV9alJF86A==
       X-Amz-Cf-Pop:
-      - SEA19-C2
+      - SEA19-C1
       X-Cache:
       - Redirect from cloudfront
     status:
@@ -378,7 +378,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjMwNzlhNjk3ZWZhNTIxZDUzNDM3OTg2Yzk0MWY1ZTFiOWI1ZmYyNjUzZDUzYmRkNzM0ODc5NDgyNmFhYTgwMGM0ZjljMGIzNmIyMWMxYmUyIn0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjMwNzlhNjk3ZWZhNTIxZDUzNDM3OTg2Yzk0MWY1ZTFiOWI1ZmYyNjUzZDUzYmRkNzM0ODc5NDgyNmFhYTgwMGM0ZjljMGIzNmIyMWMxYmUyIiwiaWF0IjoxNTYzMTA1NjIzLCJuYmYiOjE1NjMxMDU2MjMsImV4cCI6MTU2MzEwOTIyMywic3ViIjoiIiwic2NvcGVzIjpbXX0.LEEJIASmg5WOftUQ1jMzNgG1dqmhePgJiP4EsJev6iza0axfyHOyIRFoemSYCdK7N8zTkuRHOS3r5lYAW23CSA38Gj8s-0agkH6tq-wwu3mQsCWyNJjHd9j2V_LGRdVwMT3PgNmKsgRKBNuWYyU2UbxSCIBLTK-bcrHlxzt758PEr37nZk0gtfma0fqKnDvubiFOuxSNzz2IRasKoXLNTphv8cu7hxezyxy7FRp7U6Tc_lMTiVgzo4klWKPyfb3uhF54dnrEdmLbtF7KV-Q0A5rfsm9FZrEvZxiyUp4sVOAxfkhcyioad6erOa7uDhrKnHnT7PfTR4Gs87Rl16tXQQ
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBkNjg4ZDdmNWIwZTJmZjY0Y2EzYjg3ZGZjZGM5YjlkNjNjN2NlNWFhZTJhOWU2NWFhNDZiODIzYjE0YTI0ZWE4ODYxYTcxMTlhZDJhZjQ0In0.eyJhdWQiOiJPcjlqY0tnUjFtRTVnSlBWN1FqOTZLOXV3ZFk2b1JLNEREQjUyUDlrWVloYVJJSm93QiIsImp0aSI6IjBkNjg4ZDdmNWIwZTJmZjY0Y2EzYjg3ZGZjZGM5YjlkNjNjN2NlNWFhZTJhOWU2NWFhNDZiODIzYjE0YTI0ZWE4ODYxYTcxMTlhZDJhZjQ0IiwiaWF0IjoxNTY1MjkxMTM4LCJuYmYiOjE1NjUyOTExMzgsImV4cCI6MTU2NTI5NDczOCwic3ViIjoiIiwic2NvcGVzIjpbXX0.IWcDtZLLkhUIaCTZfweDz5SrEfBzhUrrH6073jQx8SSiiroWQNR-3iPymlSgQ4ncAmpI6ohd7a39SM7VZbHalJv7ljrs3A8wpPv5GksLZtZ_wYiEPKGqvRZhDIqzyccyrUCSGK2AZl025P5yPMVIbsNcUjXrfafoCJrVZjZgpAzDz8HbVbQtaDj7mbf7H9fr3WHVvdz-bORbeL38hrZ1O0Ju3t3bLG9zmp7FTQr5jo26RrDjTetCBhLZ1T9zohVeq9cTR5h-iCLrbac4VXm2MaP2esyKuqyr72H4OgRNObiAxyEFicihnTeLgpz8fyS3PpMVJ63xVtjUhws1Om5iRQ
       Connection:
       - keep-alive
       User-Agent:
@@ -406,29 +406,29 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 14 Jul 2019 12:00:25 GMT
+      - Thu, 08 Aug 2019 19:05:40 GMT
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
       Vary:
       - Accept-Encoding
       Via:
-      - 1.1 a847181d425b7fc57e81eb3c800bfdf2.cloudfront.net (CloudFront)
+      - 1.1 d16c3f15bd14953a9d4109eaaa991de2.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - 1ezs63fKHgIbVmHlzQYHPlNKXNECW1AXL-i9t54hRsbQ1TAV6--vAg==
+      - HSAhXw3XFt6BjqKMxf4O5IkgX5IwL-V7mYQmXFvgac6iF-r5EEOvOw==
       X-Amz-Cf-Pop:
-      - SEA19-C2
+      - SEA19-C1
       X-Cache:
       - Miss from cloudfront
       x-amz-apigw-id:
-      - c0Dl9FMGoAMFZOQ=
+      - eHbUwGLEoAMFvTQ=
       x-amzn-Remapped-Connection:
       - keep-alive
       x-amzn-Remapped-Content-Length:
       - '306'
       x-amzn-Remapped-Date:
-      - Sun, 14 Jul 2019 12:00:25 GMT
+      - Thu, 08 Aug 2019 19:05:40 GMT
       x-amzn-RequestId:
-      - f6fc5847-a62e-11e9-b63b-2dc8c208bebb
+      - 83b985ba-ba0f-11e9-a769-e7ae29dc05e7
     status:
       code: 200
       message: OK

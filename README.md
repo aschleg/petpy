@@ -146,6 +146,13 @@ are currently being updated to reflect the new version of `petpy`.**
 * Although not strictly required to use `petpy`, the [pandas](https://pandas.pydata.org/) library is needed 
   for returning the results as a DataFrame.
 
+## About [Petfinder.com](https://www.petfinder.com)
+
+Petfinder.com is one of the largest online, searchable databases for finding a new pet online. The database contains 
+information on over 14,000 animal shelters and adoption organizations across North America with nearly 300,000 animals 
+available for adoption. Not only does this make it a great resource for those looking to adopt their new best friend, 
+but the data and information provided in Petfinder's database makes it ideal for analysis. 
+
 ## License
 
 MIT

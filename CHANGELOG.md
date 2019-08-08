@@ -1,3 +1,10 @@
+## Version 2.0.2
+
+Minor bug fix release with following:
+  - `breeds()` method now correctly returns data when a single animal type is supplied.
+  - `animals()` method now properly displays the correct error message when the `distance` parameter is 
+    0 <= distance <= 500.
+
 ## Version 2.0.1
 
 - Fixes the `animals()` and `organizations()` method to return all matching search results when the `pages` parameter 

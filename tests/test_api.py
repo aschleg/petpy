@@ -46,8 +46,8 @@ def test_animal_types():
     assert str.lower(response2['type']['name']) == 'cat'
 
     assert isinstance(response3, dict)
-    assert str.lower(response3['type'][0]['name']) == 'cat'
-    assert str.lower(response3['type'][1]['name']) == 'dog'
+    assert str.lower(response3['types'][0]['name']) == 'cat'
+    assert str.lower(response3['types'][1]['name']) == 'dog'
 
     with pytest.raises(ValueError):
         pf.animal_types(types='elephant')

@@ -254,7 +254,6 @@ class Petfinder(object):
                              })
 
             result = r.json()
-            result['type'] = result.pop('types')
 
         else:
             raise TypeError('types parameter must be either None, str, list or tuple')
@@ -550,6 +549,7 @@ class Petfinder(object):
             if pages is None:
                 params['limit'] = 100
                 params['page'] = 1
+
                 r = requests.get(url,
                                  headers={
                                      'Authorization': 'Bearer ' + self.auth
@@ -835,7 +835,7 @@ def _check_parameters(animal_types=None, size=None, gender=None, age=None, coat=
                     sort_list=_sort)
 
     if distance is not None:
-        if 0 > int(distance) > 500:
+        if not 0 >= int(distance) >= 500:
             incorrect_values['distance'] = "distance cannot be greater than 500 or less than 0."
 
     if limit is not None:

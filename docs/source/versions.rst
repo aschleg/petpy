@@ -5,6 +5,15 @@ Version History
 
 Changelog and version changes made with each release.
 
+
+Version 2.0.2
+-------------
+
+Minor bug fix release with following:
+  - :code:`breeds()` method now correctly returns data when a single animal type is supplied.
+  - :code:`animals()` method now properly displays the correct error message when the :code:`distance` parameter is
+    0 <= distance <= 500.
+
 Version 2.0.1
 -------------
 
