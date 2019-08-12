@@ -620,6 +620,71 @@ class Petfinder(object):
 
 #################################################################################################################
 #
+# Petfinder Error Class
+#
+#################################################################################################################
+
+
+class PetfinderError(Exception):
+    pass
+
+
+class PetfinderInvalidCredentials(PetfinderError):
+
+    def __init__(self, message, err, *args):
+        self.message = message
+        self.err = err
+        
+        super(PetfinderInvalidCredentials, self).__init__(message, err, *args)
+
+
+class PetfinderInsufficientAccess(PetfinderError):
+
+    def __init__(self, message, err, *args):
+        self.message = message
+        self.err = err
+
+        super(PetfinderInsufficientAccess, self).__init__(message, err, *args)
+
+
+class PetfinderResourceNotFound(PetfinderError):
+
+    def __init__(self, message, err, *args):
+        self.message = message
+        self.err = err
+
+        super(PetfinderResourceNotFound, self).__init__(message, err, *args)
+
+
+class PetfinderUnexpectedError(PetfinderError):
+
+    def __init__(self, message, err, *args):
+        self.message = message
+        self.err = err
+
+        super(PetfinderUnexpectedError, self).__init__(message, err, *args)
+
+
+class PetfinderMissingParameters(PetfinderError):
+
+    def __init__(self, message, err, *args):
+        self.message = message
+        self.err = err
+
+        super(PetfinderMissingParameters, self).__init__(message, err, *args)
+
+
+class PetfinderInvalidParameters(PetfinderError):
+
+    def __init__(self, message, err, *args):
+        self.message = message
+        self.err = err
+
+        super(PetfinderInvalidParameters, self).__init__(message, err, *args)
+
+
+#################################################################################################################
+#
 # Internal helper functions
 #
 #################################################################################################################
