@@ -5,6 +5,9 @@ Version History
 
 Changelog and version changes made with each release.
 
+Version 2.1.0
+-------------
+
 
 Version 2.0.2
 -------------

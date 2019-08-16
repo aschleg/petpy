@@ -3,7 +3,9 @@ import pytest
 import vcr
 from pandas import DataFrame
 
-from petpy.api import Petfinder
+from petpy.api import Petfinder, PetfinderError, \
+    PetfinderInvalidParameters, PetfinderUnexpectedError, PetfinderResourceNotFound, \
+    PetfinderInvalidCredentials, PetfinderInsufficientAccess
 
 tape = vcr.VCR(
     cassette_library_dir='tests/cassettes',
@@ -23,7 +25,7 @@ animal_types = ('dog', 'cat', 'rabbit', 'small-furry',
 def test_authentication():
     p = Petfinder(key=key, secret=secret_key)
 
-    assert isinstance(p.auth, str)
+    assert isinstance(p._auth, str)
 
 
 def authenticate():
@@ -199,3 +201,21 @@ def test_check_parameters():
         pf.animals(results_per_page=limit_int)
     with pytest.raises(ValueError):
         pf.animals(results_per_page=limit_str)
+
+
+def test_petfinder_invalidcredentials():
+    test_key, test_secret = 'test', 'test1'
+
+    with pytest.raises(PetfinderError):
+        Petfinder(key=test_key, secret=test_secret)
+    with pytest.raises(PetfinderInvalidCredentials):
+        Petfinder(key=test_key, secret=test_secret)
+
+
+def test_petfinder_insufficientaccess():
+    p = Petfinder(key=key, secret=secret_key)
+
+    p._host = 'http://api.petfinder.com/v3/'
+
+    with pytest.raises(PetfinderInsufficientAccess):
+        p.animal_types('cat')

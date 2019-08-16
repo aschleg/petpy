@@ -1,9 +1,44 @@
+## Version 2.1.0
+
+The `2.1.0` release of `petpy` implements several user-defined exceptions to help users debug any 
+errors that may occur. Although the `petpy` library attempts to find any invalid passed parameter values and raise the 
+appropriate error before the call to the Petfinder API is made to reduce the number of calls made to the API; however, 
+some errors cannot be caught until after the API call is made. This update introduces these custom, user-defined 
+exceptions for debugging error responses from the Petfinder API. 
+
+The following is a list of the new user-defined exceptions.
+
+- `PetfinderInvalidCredentials`
+  - Raised when a user enters invalid API key and secret key credentials.
+- `PetfinderInsufficientAccess`
+  - Raised when a [status code 403](https://httpstatuses.com/403) occurs. This error would typically be 
+    raised when the current authentication token to the Petfinder API has expired and requires the connnection 
+    to be re-authenticated.
+- `PetfinderResourceNotFound`
+  - Raised when a [status code 404](https://httpstatuses.com/404) occurs.
+- `PetfinderUnexpectedError`
+  - Raised when a [status code 500](https://httpstatuses.com/500) occurs.
+- `PetfinderInvalidParameters`
+  - Raised when a [400 status code](https://httpstatuses.com/400) occurs. The exception will include the invalid 
+  parameters detected by the Petfinder API and include those parameters as part of the error output as a JSON object. 
+  For more information on this error, please see the 
+  [Petfinder API documentation](https://www.petfinder.com/developers/v2/docs/#err-00002).
+    - Please note the `petpy` library will attempt to catch any invalid parameters before the API call is made to avoid 
+      extraneous issuage of the API, but if an invalid parameter does get through then this error should help provide 
+      the necessary information for users to debug any errors related to their chosen parameters.
+
+The following other changes have been made in the `2.1.0` release.
+
+- The `host` and `auth` attributes of the `Petfinder` class are now private (to the extent that Python allows private 
+  attributes, denoted with an underscore in front of the attribute).
+
 ## Version 2.0.2
 
 Minor bug fix release with following:
-  - `breeds()` method now correctly returns data when a single animal type is supplied.
-  - `animals()` method now properly displays the correct error message when the `distance` parameter is 
-    0 <= distance <= 500.
+
+- `breeds()` method now correctly returns data when a single animal type is supplied.
+- `animals()` method now properly displays the correct error message when the `distance` parameter is 
+0 <= distance <= 500.
 
 ## Version 2.0.1
 
