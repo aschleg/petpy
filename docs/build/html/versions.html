@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Version History &mdash; petpy 2.0.2 documentation</title>
+  <title>Version History &mdash; petpy 2.1.0 documentation</title>
   
 
   
@@ -85,7 +85,9 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html#api-exceptions">API Exceptions</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Version History</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#version-2-1-0">Version 2.1.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#version-2-0-2">Version 2.0.2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#version-2-0-1">Version 2.0.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#version-2-0-0">Version 2.0.0</a></li>
@@ -175,6 +177,65 @@
   <div class="section" id="version-history">
 <span id="versions"></span><h1>Version History<a class="headerlink" href="#version-history" title="Permalink to this headline">¶</a></h1>
 <p>Changelog and version changes made with each release.</p>
+<div class="section" id="version-2-1-0">
+<h2>Version 2.1.0<a class="headerlink" href="#version-2-1-0" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="code docutils literal notranslate"><span class="pre">2.1.0</span></code> release of <code class="code docutils literal notranslate"><span class="pre">petpy</span></code> implements several user-defined exceptions to help users debug any
+errors that may occur. Although the <code class="code docutils literal notranslate"><span class="pre">petpy</span></code> library attempts to find any invalid passed parameter values and
+raise the appropriate error before the call to the Petfinder API is made to reduce the number of calls made to the
+API; however, some errors cannot be caught until after the API call is made. This update introduces these custom,
+user-defined exceptions for debugging error responses from the Petfinder API. For more information on the Petfinder
+API error definitions, please see the <a class="reference external" href="https://www.petfinder.com/developers/v2/docs/#errors">Petfinder API documentation</a>.</p>
+<p>The following is a list of the new user-defined exceptions.</p>
+<ul class="simple">
+<li><code class="code docutils literal notranslate"><span class="pre">PetfinderInvalidCredentials</span></code>
+- Raised when a user enters invalid API key and secret key credentials.</li>
+<li><dl class="first docutils">
+<dt><code class="code docutils literal notranslate"><span class="pre">PetfinderInsufficientAccess</span></code></dt>
+<dd><ul class="first last">
+<li>Raised when a <a class="reference external" href="https://httpstatuses.com/403">status code 403</a> occurs. This error would typically be
+raised when the current authentication token to the Petfinder API has expired and requires the connnection
+to be re-authenticated.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="code docutils literal notranslate"><span class="pre">PetfinderResourceNotFound</span></code></dt>
+<dd><ul class="first last">
+<li>Raised when a <a class="reference external" href="https://httpstatuses.com/404">status code 404</a> occurs.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="code docutils literal notranslate"><span class="pre">PetfinderUnexpectedError</span></code></dt>
+<dd><ul class="first last">
+<li>Raised when a <a class="reference external" href="https://httpstatuses.com/500">status code 500</a> occurs.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="code docutils literal notranslate"><span class="pre">PetfinderInvalidParameters</span></code></dt>
+<dd><ul class="first last">
+<li>Raised when a <a class="reference external" href="https://httpstatuses.com/400">400 status code</a> occurs. The exception will include the invalid
+parameters detected by the Petfinder API and include those parameters as part of the error output as a JSON object.
+For more information on this error, please see the
+<a class="reference external" href="https://www.petfinder.com/developers/v2/docs/#err-00002">Petfinder API error documentation</a>.</li>
+<li>Please note the <cite>petpy</cite> library will attempt to catch any invalid parameters before the API call is made to avoid
+extraneous issuage of the API, but if an invalid parameter does get through then this error should help provide
+the necessary information for users to debug any errors related to their chosen parameters.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>The following other changes have been made in the <code class="code docutils literal notranslate"><span class="pre">2.1.0</span></code> release.</p>
+<ul class="simple">
+<li>The <code class="code docutils literal notranslate"><span class="pre">host</span></code> and <code class="code docutils literal notranslate"><span class="pre">auth</span></code> attributes of the <code class="code docutils literal notranslate"><span class="pre">Petfinder</span></code> class are now private (to the extent that
+Python allows private attributes, denoted with an underscore in front of the attribute).</li>
+</ul>
+</div>
 <div class="section" id="version-2-0-2">
 <h2>Version 2.0.2<a class="headerlink" href="#version-2-0-2" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">

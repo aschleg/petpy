@@ -8,6 +8,38 @@ Changelog and version changes made with each release.
 Version 2.1.0
 -------------
 
+The :code:`2.1.0` release of :code:`petpy` implements several user-defined exceptions to help users debug any
+errors that may occur. Although the :code:`petpy` library attempts to find any invalid passed parameter values and
+raise the appropriate error before the call to the Petfinder API is made to reduce the number of calls made to the
+API; however, some errors cannot be caught until after the API call is made. This update introduces these custom,
+user-defined exceptions for debugging error responses from the Petfinder API. For more information on the Petfinder
+API error definitions, please see the `Petfinder API documentation <https://www.petfinder.com/developers/v2/docs/#errors>`_.
+
+The following is a list of the new user-defined exceptions.
+
+- :code:`PetfinderInvalidCredentials`
+  - Raised when a user enters invalid API key and secret key credentials.
+- :code:`PetfinderInsufficientAccess`
+    - Raised when a `status code 403 <https://httpstatuses.com/403>`_ occurs. This error would typically be
+      raised when the current authentication token to the Petfinder API has expired and requires the connnection
+      to be re-authenticated.
+- :code:`PetfinderResourceNotFound`
+    - Raised when a `status code 404 <https://httpstatuses.com/404>`_ occurs.
+- :code:`PetfinderUnexpectedError`
+    - Raised when a `status code 500 <https://httpstatuses.com/500>`_ occurs.
+- :code:`PetfinderInvalidParameters`
+    - Raised when a `400 status code <https://httpstatuses.com/400>`_ occurs. The exception will include the invalid
+      parameters detected by the Petfinder API and include those parameters as part of the error output as a JSON object.
+      For more information on this error, please see the
+      `Petfinder API error documentation <https://www.petfinder.com/developers/v2/docs/#err-00002>`_.
+    - Please note the `petpy` library will attempt to catch any invalid parameters before the API call is made to avoid
+      extraneous issuage of the API, but if an invalid parameter does get through then this error should help provide
+      the necessary information for users to debug any errors related to their chosen parameters.
+
+The following other changes have been made in the :code:`2.1.0` release.
+
+- The :code:`host` and :code:`auth` attributes of the :code:`Petfinder` class are now private (to the extent that
+  Python allows private attributes, denoted with an underscore in front of the attribute).
 
 Version 2.0.2
 -------------

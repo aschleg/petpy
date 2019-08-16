@@ -4,7 +4,8 @@ The `2.1.0` release of `petpy` implements several user-defined exceptions to hel
 errors that may occur. Although the `petpy` library attempts to find any invalid passed parameter values and raise the 
 appropriate error before the call to the Petfinder API is made to reduce the number of calls made to the API; however, 
 some errors cannot be caught until after the API call is made. This update introduces these custom, user-defined 
-exceptions for debugging error responses from the Petfinder API. 
+exceptions for debugging error responses from the Petfinder API. For more information on the Petfinder API error 
+definitions, please see the [Petfinder API documentation](https://www.petfinder.com/developers/v2/docs/#errors).
 
 The following is a list of the new user-defined exceptions.
 

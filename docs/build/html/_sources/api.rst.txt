@@ -10,10 +10,12 @@ API Reference
 :mod:`Petfinder` -- Petfinder API Wrapper
 -----------------------------------------
 
-.. class:: Petfinder([key], [secret], [host='http://api.petfinder.com/'])
+.. class:: Petfinder([key], [secret])
 
     The Petfinder class provides the wrapper for the Petfinder API. The API methods are listed below
 
+    :param: key: API key received from Petfinder after creating a developer account.
+    :param: secret: Secret key received from Petfinder.
 
 Get Animal Types
 ----------------
@@ -91,3 +93,34 @@ Get Animal Welfare Organization Data
     :param return_df: |return_df|
     :rtype: dict or pandas DataFrame. Dictionary object representing the returned JSON object from the Petfinder API.
             If :code:`return_df=True`, the results are returned as a pandas DataFrame.
+
+
+API Exceptions
+==============
+
+.. class:: PetfinderError(Exception)
+
+    Base Exception class for Petfinder API Exception definitions.
+
+.. class:: PetfinderInvalidCredentials(PetfinderError)
+
+    Exception for handling invalid API and secret keys passed to the Petfinder class.
+
+.. class:: PetfinderInsufficientAccess(PetfinderError)
+
+    Exception for handling insufficient access errors when working with the Petfinder API. This exception is typically
+    raised when the credentials supplied to the Petfinder API have expired and the connection to the API needs to be
+    re-authenticated.
+
+.. class:: PetfinderResourceNotFound(PetfinderError)
+
+    Exception for handling unknown resource requests.
+
+.. class:: PetfinderUnexpectedError(PetfinderError)
+
+    Exception for handling unexpected errors from the Petfinder API. This error is generally the result of an unknown
+    and unexpected error that occurs on the server-side of the Petfinder API when sending a request.
+
+.. class:: PetfinderInvalidParameters(PetfinderError)
+
+    Exception for handling invalid values passed to Petfinder API method parameters.

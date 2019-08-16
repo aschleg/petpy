@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; petpy 2.0.2 documentation</title>
+  <title>API Reference &mdash; petpy 2.1.0 documentation</title>
   
 
   
@@ -93,6 +93,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#get-animal-welfare-organization-data">Get Animal Welfare Organization Data</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="#api-exceptions">API Exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="versions.html">Version History</a></li>
 </ul>
 
@@ -164,8 +165,18 @@
 <h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">Petfinder</span></code> – Petfinder API Wrapper<a class="headerlink" href="#petfinder-petfinder-api-wrapper" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="petpy.api.Petfinder">
-<em class="property">class </em><code class="descclassname">petpy.api.</code><code class="descname">Petfinder</code><span class="sig-paren">(</span><span class="optional">[</span><em>key</em><span class="optional">]</span><span class="optional">[</span>, <em>secret</em><span class="optional">]</span><span class="optional">[</span>, <em>host='http://api.petfinder.com/'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">petpy.api.</code><code class="descname">Petfinder</code><span class="sig-paren">(</span><span class="optional">[</span><em>key</em><span class="optional">]</span><span class="optional">[</span>, <em>secret</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Petfinder class provides the wrapper for the Petfinder API. The API methods are listed below</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Param:</th><td class="field-body">key: API key received from Petfinder after creating a developer account.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Param:</th><td class="field-body">secret: Secret key received from Petfinder.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -293,6 +304,48 @@ If <code class="code docutils literal notranslate"><span class="pre">return_df=T
 </dd></dl>
 
 </div>
+</div>
+<div class="section" id="api-exceptions">
+<h1>API Exceptions<a class="headerlink" href="#api-exceptions" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="petpy.api.PetfinderError">
+<em class="property">class </em><code class="descclassname">petpy.api.</code><code class="descname">PetfinderError</code><span class="sig-paren">(</span><em>Exception</em><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.PetfinderError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base Exception class for Petfinder API Exception definitions.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="petpy.api.PetfinderInvalidCredentials">
+<em class="property">class </em><code class="descclassname">petpy.api.</code><code class="descname">PetfinderInvalidCredentials</code><span class="sig-paren">(</span><em>PetfinderError</em><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.PetfinderInvalidCredentials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception for handling invalid API and secret keys passed to the Petfinder class.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="petpy.api.PetfinderInsufficientAccess">
+<em class="property">class </em><code class="descclassname">petpy.api.</code><code class="descname">PetfinderInsufficientAccess</code><span class="sig-paren">(</span><em>PetfinderError</em><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.PetfinderInsufficientAccess" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception for handling insufficient access errors when working with the Petfinder API. This exception is typically
+raised when the credentials supplied to the Petfinder API have expired and the connection to the API needs to be
+re-authenticated.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="petpy.api.PetfinderResourceNotFound">
+<em class="property">class </em><code class="descclassname">petpy.api.</code><code class="descname">PetfinderResourceNotFound</code><span class="sig-paren">(</span><em>PetfinderError</em><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.PetfinderResourceNotFound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception for handling unknown resource requests.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="petpy.api.PetfinderUnexpectedError">
+<em class="property">class </em><code class="descclassname">petpy.api.</code><code class="descname">PetfinderUnexpectedError</code><span class="sig-paren">(</span><em>PetfinderError</em><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.PetfinderUnexpectedError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception for handling unexpected errors from the Petfinder API. This error is generally the result of an unknown
+and unexpected error that occurs on the server-side of the Petfinder API when sending a request.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="petpy.api.PetfinderInvalidParameters">
+<em class="property">class </em><code class="descclassname">petpy.api.</code><code class="descname">PetfinderInvalidParameters</code><span class="sig-paren">(</span><em>PetfinderError</em><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.PetfinderInvalidParameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception for handling invalid values passed to Petfinder API method parameters.</p>
+</dd></dl>
+
 </div>
 
 

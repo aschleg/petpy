@@ -145,4 +145,9 @@ its usage. The notebooks can also be launched in an `interactive environment <ht
 with `binder <https://mybinder.org/>`_
 
 - `Introduction to petpy <https://github.com/aschleg/petpy/blob/master/docs/notebooks/01-Introduction%20to%20petpy.ipynb>`_
+
+Please note the following notebook is still based on the legacy version of the Petfinder API and thus are not fully
+representative of the functionality and methods of the most recent version of :code:`petpy` and the Petfinder API.
+These are currently being updated to reflect the new version of :code:`petpy`.
+
 - `Download 45,000 Cat Images in 6.5 Minutes with petpy and multiprocessing <https://github.com/aschleg/petpy/blob/master/docs/notebooks/02-Download%2045%2C000%20Adoptable%20Cat%20Images%20with%20petpy%20and%20multiprocessing.ipynb>`_
