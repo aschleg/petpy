@@ -646,16 +646,16 @@ class PetfinderInvalidCredentials(PetfinderError):
     message : str
         Error specifying invalid credentials have been passed to the Petfinder API when initializing the
         Petfinder class
-    err : str
-        Returns the reason and status code of the error.
+    err : tuple
+        Tuple containing the reason for the error and the associated status code.
 
     Attributes
     ----------
     message : str
         Error specifying invalid credentials have been passed to the Petfinder API when initializing the
         Petfinder class
-    err : str
-        Returns the reason and status code of the error.
+    err : tuple
+        Tuple containing the reason for the error and the associated status code.
 
     Notes
     -----
@@ -680,16 +680,16 @@ class PetfinderInsufficientAccess(PetfinderError):
     message : str
         Error specifying the current credentials supplied to the Petfinder API are insufficient and cannot access the
         requested resource.
-    err : str
-        Returns the reason and status code of the error.
+    err : tuple
+        Tuple containing the reason for the error and the associated status code.
 
     Attributes
     ----------
     message : str
         Error specifying the current credentials supplied to the Petfinder API are insufficient and cannot access the
         requested resource.
-    err : str
-        Returns the reason and status code of the error.
+    err : tuple
+        Tuple containing the reason for the error and the associated status code.
 
     Notes
     -----
@@ -711,15 +711,15 @@ class PetfinderResourceNotFound(PetfinderError):
     ----------
     message : str
         Error specifying the requested resource cannot be found.
-    err : str
-        Returns the reason and status code of the error.
+    err : tuple
+        Tuple containing the reason for the error and the associated status code.
 
     Attributes
     ----------
     message : str
         Error specifying the requested resource cannot be found.
-    err : str
-        Returns the reason and status code of the error.
+    err : tuple
+        Tuple containing the reason for the error and the associated status code.
 
     Notes
     -----
@@ -742,15 +742,15 @@ class PetfinderUnexpectedError(PetfinderError):
     ----------
     message : str
         Message stating the Petfinder API encountered an unexpected error.
-    err : str
-        Returns the reason and status code of the error.
+    err : tuple
+        Tuple containing the reason for the error and the associated status code.
 
     Attributes
     ----------
     message : str
         Message stating the Petfinder API encountered an unexpected error.
-    err : str
-        Returns the reason and status code of the error.
+    err : tuple
+        Tuple containing the reason for the error and the associated status code.
 
     Notes
     -----
@@ -772,8 +772,8 @@ class PetfinderInvalidParameters(PetfinderError):
     ----------
     message : str
         Message stating the Petfinder API received invalid parameter values.
-    err : dict
-        The invalid parameters that were passed and the values are that were not accepted.
+    err : tuple
+        Tuple containing the reason for the error and the associated status code.
 
     Attributes
     ----------
@@ -809,19 +809,19 @@ def _get_result(url, headers, params=None):
 
     if r.status_code == 401:
         raise PetfinderInvalidCredentials(message='Invalid Credentials',
-                                          err=r.reason)
+                                          err=(r.reason, r.status_code))
 
     if r.status_code == 403:
         raise PetfinderInsufficientAccess(message='Insufficient Access',
-                                          err=r.reason)
+                                          err=(r.reason, r.status_code))
 
     if r.status_code == 404:
         raise PetfinderResourceNotFound(message='Requested Resource not Found',
-                                        err=r.reason)
+                                        err=(r.reason, r.status_code))
 
     if r.status_code == 500:
         raise PetfinderUnexpectedError(message='The Petfinder API encountered an unexpected error.',
-                                       err=r.reason)
+                                       err=(r.reason, r.status_code))
 
     return r
 
