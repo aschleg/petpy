@@ -1036,7 +1036,7 @@ def _check_parameters(animal_types=None, size=None, gender=None, age=None, coat=
                     sort_list=_sort)
 
     if distance is not None:
-        if not 0 >= int(distance) >= 500:
+        if not 0 <= int(distance) <= 500:
             incorrect_values['distance'] = "distance cannot be greater than 500 or less than 0."
 
     if limit is not None:
