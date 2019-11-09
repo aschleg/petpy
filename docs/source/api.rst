@@ -10,12 +10,17 @@ API Reference
 :mod:`Petfinder` -- Petfinder API Wrapper
 -----------------------------------------
 
-.. class:: Petfinder([key], [secret])
+.. class:: Petfinder(key, secret)
 
     The Petfinder class provides the wrapper for the Petfinder API. The API methods are listed below
 
     :param: key: API key received from Petfinder after creating a developer account.
     :param: secret: Secret key received from Petfinder.
+
+    .. code-block:: python
+
+        import petpy
+        pf = Petfinder(key=API_key, secret=API_secret)
 
 Get Animal Types
 ----------------
@@ -30,11 +35,21 @@ Get Animal Types
     :param types: |types|
     :rtype: dict. Dictionary object representing JSON data returned from the Petfinder API.
 
+    .. code-block:: python
+
+       # All animal types and their relevant data.
+       all_types = pf.animal_types()
+
+       # Returning data for a single animal type
+       dogs = pf.animal_types('dog')
+
+       # Getting multiple animal types at once
+       cat_dog_rabbit_types = pf.animal_types(['cat', 'dog', 'rabbit'])
 
 Get Available Animal Breeds
 ---------------------------
 
-.. method:: Petfinder.breeds([types], [return_df=False], [raw_results=False])
+.. method:: Petfinder.breeds(types[, return_df=False][, raw_results=False])
 
     Returns breed names of specified animal type, or types.
 
@@ -46,10 +61,25 @@ Get Available Animal Breeds
             resulting dictionary is coerced into a pandas DataFrame. Note if :code:`return_df=True`, the parameter
             :code:`raw_results` is overridden.
 
+    .. code-block:: python
+
+           cat_breeds = pf.breeds('cat')
+           dog_breeds = pf.breeds('dog')
+
+           # All available breeds or multiple breeds can also be returned.
+           all_breeds = pf.breeds()
+           cat_dog_rabbit = pf.breeds(types=['cat', 'dog', 'rabbit'])
+
+           # The `breeds` method can also be set to coerce the returned JSON results into a pandas DataFrame
+           # by setting the parameter `return_df = True`.
+
+           cat_breeds_df = pf.breeds('cat', return_df = True)
+           all_breeds_df = pf.breeds(return_df = True)
+
 Find Listed Animals on Petfinder
 --------------------------------
 
-.. method:: Petfinder.animals([animal_id=None], [animal_type=None], [breed=None], [size=None], [gender=None], [age=None], [color=None], [coat=None], [status=None], [name=None], [organization_id=None], [location=None], [distance=None], [sort=None], [results_per_page=None], [pages=None], [return_df=False])
+.. method:: Petfinder.animals([animal_id=None][, animal_type=None][, breed=None][, size=None][, gender=None][, age=None][, color=None][, coat=None][, status=None][, name=None][, organization_id=None][, location=None][, distance=None][, sort=None][, results_per_page=None][, pages=None][, return_df=False])
 
     Returns adoptable animal data from Petfinder based on specified criteria.
 
@@ -73,10 +103,26 @@ Find Listed Animals on Petfinder
     :rtype: dict or pandas DataFrame. Dictionary object representing the returned JSON object from the Petfinder API.
             If :code:`return_df=True`, the results are returned as a pandas DataFrame.
 
+    .. code-block:: python
+
+        # Getting first 20 results without any search criteria
+        animals = pf.animals()
+
+        # Extracting data on specific animals with animal_ids
+
+        animal_ids = []
+        for i in animals['animals'][0:3]:
+           animal_ids.append(i['id'])
+
+        animal_data = pf.animals(animal_id=animal_ids)
+
+        # Returning a pandas DataFrame of the first 150 animal results
+        animals = pf.animals(results_per_page=50, pages=3, return_df=True)
+
 Get Animal Welfare Organization Data
 ------------------------------------
 
-.. method:: Petfinder.organizations([organization_id=None], [name=None], [location=None], [distance=None], [state=None], [country=None], [query=None], [sort=True], [results_per_page=None], [pages=None], [return_df=False])
+.. method:: Petfinder.organizations([organization_id=None][, name=None][, location=None][, distance=None][, state=None][, country=None][, query=None][, sort=True][, results_per_page=None][, pages=None][, return_df=False])
 
     Returns data on an animal welfare organization, or organizations, based on specified criteria.
 
@@ -94,33 +140,10 @@ Get Animal Welfare Organization Data
     :rtype: dict or pandas DataFrame. Dictionary object representing the returned JSON object from the Petfinder API.
             If :code:`return_df=True`, the results are returned as a pandas DataFrame.
 
+    .. code-block:: python
 
-API Exceptions
-==============
+        # Return the first 1,000 animal welfare organizations as a pandas DataFrame
+        organizations = pf.organizations(results_per_page=100, pages=10, return_df=True)
 
-.. class:: PetfinderError(Exception)
-
-    Base Exception class for Petfinder API Exception definitions.
-
-.. class:: PetfinderInvalidCredentials(PetfinderError)
-
-    Exception for handling invalid API and secret keys passed to the Petfinder class.
-
-.. class:: PetfinderInsufficientAccess(PetfinderError)
-
-    Exception for handling insufficient access errors when working with the Petfinder API. This exception is typically
-    raised when the credentials supplied to the Petfinder API have expired and the connection to the API needs to be
-    re-authenticated.
-
-.. class:: PetfinderResourceNotFound(PetfinderError)
-
-    Exception for handling unknown resource requests.
-
-.. class:: PetfinderUnexpectedError(PetfinderError)
-
-    Exception for handling unexpected errors from the Petfinder API. This error is generally the result of an unknown
-    and unexpected error that occurs on the server-side of the Petfinder API when sending a request.
-
-.. class:: PetfinderInvalidParameters(PetfinderError)
-
-    Exception for handling invalid values passed to Petfinder API method parameters.
+        # Get organizations in the state of Washington
+        wa_organizations = pf.organizations(state='WA')

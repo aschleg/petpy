@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Petpy - Python Wrapper of the Petfinder API &mdash; petpy 2.1.0 documentation</title>
+  <title>petpy - Python Wrapper of the Petfinder API &mdash; petpy 2.1.0 documentation</title>
   
 
   
@@ -85,7 +85,7 @@
             
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html#api-exceptions">API Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">API Exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="versions.html">Version History</a></li>
 </ul>
 
@@ -132,7 +132,7 @@
     
       <li><a href="#">Docs</a> &raquo;</li>
         
-      <li>Petpy - Python Wrapper of the Petfinder API</li>
+      <li>petpy - Python Wrapper of the Petfinder API</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -152,7 +152,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="petpy-python-wrapper-of-the-petfinder-api">
-<h1>Petpy - Python Wrapper of the Petfinder API<a class="headerlink" href="#petpy-python-wrapper-of-the-petfinder-api" title="Permalink to this headline">¶</a></h1>
+<h1>petpy - Python Wrapper of the Petfinder API<a class="headerlink" href="#petpy-python-wrapper-of-the-petfinder-api" title="Permalink to this headline">¶</a></h1>
 <p>Petpy is an unofficial Pythonwrapper of the <a class="reference external" href="https://www.petfinder.com/developers/api-docs">Petfinder API</a> for
 interacting with Petfinder’s database of animals and animal welfare organizations.</p>
 </div>
@@ -165,17 +165,29 @@ hour. After the authentication period ends, you must re-authenticate with the Pe
 <div class="section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <p><code class="code docutils literal notranslate"><span class="pre">petpy</span></code> is best installed through <code class="code docutils literal notranslate"><span class="pre">pip</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install petpy
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install petpy
 </pre></div>
 </div>
+</div></blockquote>
 <p>For those of you who prefer it, the library can also be cloned or downloaded into a location of your choosing and then
 installed using the <code class="code docutils literal notranslate"><span class="pre">setup.py</span></code> script per the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone git@github.com:aschleg/petpy.git
-
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone git@github.com:aschleg/petpy.git
 <span class="nb">cd</span> petpy
-
 python setup.py install
 </pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="contents">
+<h1>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">API Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="versions.html">Version History</a></li>
+</ul>
 </div>
 </div>
 <div class="section" id="introduction">
@@ -185,16 +197,18 @@ following are several examples for extracting data from the Petfinder database a
 <div class="section" id="authenticating-with-the-petfinder-api">
 <h2>Authenticating with the Petfinder API<a class="headerlink" href="#authenticating-with-the-petfinder-api" title="Permalink to this headline">¶</a></h2>
 <p>Authentication to the Petfinder API occurs when the <code class="code docutils literal notranslate"><span class="pre">Petfinder()</span></code> class is initialized.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">petpy</span>
-
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">petpy</span>
 <span class="n">pf</span> <span class="o">=</span> <span class="n">Petfinder</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">API_key</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="n">API_secret</span><span class="p">)</span>
 </pre></div>
 </div>
+</div></blockquote>
 <p>Calls to the API to extract data can now be made!</p>
 </div>
 <div class="section" id="finding-animal-types">
 <h2>Finding Animal Types<a class="headerlink" href="#finding-animal-types" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># All animal types and their relevant data.</span>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># All animal types and their relevant data.</span>
 <span class="n">all_types</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">animal_types</span><span class="p">()</span>
 
 <span class="c1"># Returning data for a single animal type</span>
@@ -204,10 +218,12 @@ following are several examples for extracting data from the Petfinder database a
 <span class="n">cat_dog_rabbit_types</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">animal_types</span><span class="p">([</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;rabbit&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
+</div></blockquote>
 </div>
 <div class="section" id="get-breeds-of-animal-types">
 <h2>Get Breeds of Animal Types<a class="headerlink" href="#get-breeds-of-animal-types" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cat_breeds</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">breeds</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">)</span>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cat_breeds</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">breeds</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">)</span>
 <span class="n">dog_breeds</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">breeds</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">)</span>
 
 <span class="c1"># All available breeds or multiple breeds can also be returned.</span>
@@ -215,19 +231,23 @@ following are several examples for extracting data from the Petfinder database a
 <span class="n">cat_dog_rabbit</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">breeds</span><span class="p">(</span><span class="n">types</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;rabbit&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
+</div></blockquote>
 <p>The <cite>breeds</cite> method can also be set to coerce the returned JSON results into a pandas DataFrame by setting
 the parameter <cite>return_df = True</cite>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cat_breeds_df</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">breeds</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="n">return_df</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cat_breeds_df</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">breeds</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="n">return_df</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
 <span class="n">all_breeds_df</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">breeds</span><span class="p">(</span><span class="n">return_df</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
 </pre></div>
 </div>
+</div></blockquote>
 </div>
 <div class="section" id="getting-animals-on-petfinder">
 <h2>Getting animals on Petfinder<a class="headerlink" href="#getting-animals-on-petfinder" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="code docutils literal notranslate"><span class="pre">animals()</span></code> method returns animals based on specified criteria that are listed in the Petfinder database.
 Specific animals can be searched using the <code class="code docutils literal notranslate"><span class="pre">animal_id</span></code> parameter, or a search of the database can be performed
 by entering the desired search criteria.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Getting first 20 results without any search criteria</span>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Getting first 20 results without any search criteria</span>
 <span class="n">animals</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">animals</span><span class="p">()</span>
 
 <span class="c1"># Extracting data on specific animals with animal_ids</span>
@@ -242,6 +262,7 @@ by entering the desired search criteria.</p>
 <span class="n">animals</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">animals</span><span class="p">(</span><span class="n">results_per_page</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">pages</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 </div>
+</div></blockquote>
 </div>
 <div class="section" id="getting-animal-welfare-organizations-in-the-petfinder-database">
 <h2>Getting animal welfare organizations in the Petfinder database<a class="headerlink" href="#getting-animal-welfare-organizations-in-the-petfinder-database" title="Permalink to this headline">¶</a></h2>
@@ -249,23 +270,15 @@ by entering the desired search criteria.</p>
 welfare organizations listed in the Petfinder database based on specific criteria, if any. In addition to a general
 search of animal welfare organizations, specific organizational data can be extracted by supplying the
 <code class="code docutils literal notranslate"><span class="pre">organizations()</span></code> method with organization IDs.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Return the first 1,000 animal welfare organizations as a pandas DataFrame</span>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Return the first 1,000 animal welfare organizations as a pandas DataFrame</span>
 <span class="n">organizations</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">results_per_page</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">pages</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
 <span class="c1"># Get organizations in the state of Washington</span>
 <span class="n">wa_organizations</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="s1">&#39;WA&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="contents">
-<h1>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html#api-exceptions">API Exceptions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="versions.html">Version History</a></li>
-</ul>
+</div></blockquote>
 </div>
 </div>
 <div class="section" id="tutorials-and-examples">
