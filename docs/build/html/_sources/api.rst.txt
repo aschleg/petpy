@@ -14,8 +14,8 @@ API Reference
 
     The Petfinder class provides the wrapper for the Petfinder API. The API methods are listed below
 
-    :param: key: API key received from Petfinder after creating a developer account.
-    :param: secret: Secret key received from Petfinder.
+    :param key: API key received from Petfinder after creating a developer account.
+    :param secret: Secret key received from Petfinder.
 
     .. code-block:: python
 
