@@ -1,3 +1,13 @@
+
+# Version History
+
+Changelog and version changes made with each release.
+
+## Version 2.1.1
+
+Small update release to fix the `distance` parameter logic when searching for pets using the `animals()` or
+`organizations()` methods. 
+
 ## Version 2.1.0
 
 The `2.1.0` release of `petpy` implements several user-defined exceptions to help users debug any 

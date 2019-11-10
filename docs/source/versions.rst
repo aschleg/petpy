@@ -5,6 +5,12 @@ Version History
 
 Changelog and version changes made with each release.
 
+Version 2.1.1
+-------------
+
+Small update release to fix the :code:`distance` parameter logic when searching for pets using the :code:`animals()` or
+:code:`organizations()` methods.
+
 Version 2.1.0
 -------------
 
