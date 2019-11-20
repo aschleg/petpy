@@ -416,6 +416,14 @@ class Petfinder(object):
 
             url = urljoin(self._host, 'animals/{id}')
 
+            if animal_type: # Petfinder API does not return correct results for animal_type otherwise
+                if animal_type not in ['dog', 'cat', 'rabbit', 'small-furry', 'horse', 
+                                        'bird', 'scales-fins-other', 'barnyard']:
+                     raise ValueError("animal types must be of the following 'dog', 'cat', 'rabbit', "
+                                 "'small-furry', 'horse', 'bird', 'scales-fins-other', 'barnyard'")
+                else:
+                    url = url + '?type={}'.format(animal_type)
+
             if isinstance(animal_id, (tuple, list)):
 
                 animals = []
