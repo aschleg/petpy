@@ -440,6 +440,9 @@ class Petfinder(object):
 
             url = urljoin(self._host, 'animals/')
 
+            if animal_type: # Petfinder API does not return correct results for animal_type otherwise
+                    url += '?type={}'.format(animal_type)
+
             params = _parameters(animal_type=animal_type, breed=breed, size=size, gender=gender,
                                  age=age, color=color, coat=coat, status=status, name=name,
                                  organization_id=organization_id, location=location, distance=distance,
