@@ -472,7 +472,7 @@ class Petfinder(object):
                                     },
                                     params=params)
                     if isinstance(r.json(), dict):
-                        if 'animals' in r.json().keys():
+                        if 'animals' in r.json().keys:
                             for i in r.json()['animals']:
                                 animals.append(i)
 
@@ -503,7 +503,7 @@ class Petfinder(object):
                                     },
                                     params=params)
                     if isinstance(r.json(), dict):
-                        if 'animals' in r.json().keys():
+                        if 'animals' in r.json().keys:
                             for i in r.json()['animals']:
                                 animals.append(i)
 
@@ -632,7 +632,7 @@ class Petfinder(object):
                                     },
                                     params=params)
                     if isinstance(r.json(), dict):
-                        if 'organizations' in r.json().keys():
+                        if 'organizations' in r.json().keys:
                             for i in r.json()['organizations']:
                                 organizations.append(i)
 
@@ -665,7 +665,7 @@ class Petfinder(object):
                                     },
                                     params=params)
                     if isinstance(r.json(), dict):
-                        if 'organizations' in r.json().keys():
+                        if 'organizations' in r.json().keys:
                             for i in r.json()['organizations']:
                                 organizations.append(i)
 
