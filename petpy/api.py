@@ -479,7 +479,7 @@ class Petfinder(object):
             else:
                 pages += 1
                 params['page'] = 1
-
+                
                 r = _get_result(url,
                                 headers={
                                     'Authorization': 'Bearer ' + self._auth
@@ -488,12 +488,11 @@ class Petfinder(object):
 
                 animals = r.json()['animals']
                 max_pages = r.json()['pagination']['total_pages']
-                max_pages = _check_pages_api_limit(max_pages)
-
+                pages = _check_pages_api_limit(pages)
                 if pages > int(max_pages):
                     pages = max_pages
                     max_page_warning = True
-
+                
                 for page in range(2, pages):
 
                     params['page'] = page
@@ -650,7 +649,7 @@ class Petfinder(object):
                 organizations = r.json()['organizations']
 
                 max_pages = r.json()['pagination']['total_pages']
-                max_pages = _check_pages_api_limit(max_pages)
+                pages = _check_pages_api_limit(pages)
 
                 if pages > int(max_pages):
                     pages = max_pages
@@ -998,7 +997,7 @@ def _check_pages_api_limit(max_pages):
 
     """
     if max_pages > 10000: # Limit for api calls per day
-        ans = input('''Total pages available is {} which exceeds the daily API requests quota by PetFinder,
+        ans = input('''Total pages requested is {} which exceeds the daily API requests quota by PetFinder,
                         do you want to limit the pages to 10,000 only? y|n '''.format(max_pages))
         if ans.lower() in ['y', 'yes']:
             max_pages = 10000
