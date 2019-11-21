@@ -272,7 +272,7 @@ class Petfinder(object):
                                 headers={
                                     'Authorization': 'Bearer ' + self._auth
                                 })
-
+                _check_api_rate_exceeded(r.json())
                 breeds.append({t: r.json()})
 
             result = {'breeds': breeds}
@@ -284,7 +284,7 @@ class Petfinder(object):
                             headers={
                                 'Authorization': 'Bearer ' + self._auth
                             })
-
+            _check_api_rate_exceeded(r.json())
             result = r.json()
 
         else:
@@ -425,7 +425,7 @@ class Petfinder(object):
                                     headers={
                                         'Authorization': 'Bearer ' + self._auth
                                     })
-
+                    _check_api_rate_exceeded(r.json())
                     animals.append(r.json()['animal'])
 
             else:
@@ -433,7 +433,7 @@ class Petfinder(object):
                                 headers={
                                     'Authorization': 'Bearer ' + self._auth
                                 })
-
+                _check_api_rate_exceeded(r.json())
                 animals = r.json()['animal']
 
         else:
@@ -457,7 +457,7 @@ class Petfinder(object):
                                     'Authorization': 'Bearer ' + self._auth
                                 },
                                 params=params)
-
+                _check_api_rate_exceeded(r.json())
                 animals = r.json()['animals']
                 max_pages = r.json()['pagination']['total_pages']
                 max_pages = _check_pages_api_limit(max_pages)
@@ -471,6 +471,8 @@ class Petfinder(object):
                                         'Authorization': 'Bearer ' + self._auth
                                     },
                                     params=params)
+                    if _check_api_rate_exceeded(r.json(), exit_loop=True):
+                        break
                     if isinstance(r.json(), dict):
                         if 'animals' in r.json().keys():
                             for i in r.json()['animals']:
@@ -485,14 +487,14 @@ class Petfinder(object):
                                     'Authorization': 'Bearer ' + self._auth
                                 },
                                 params=params)
-
+                _check_api_rate_exceeded(r.json())
                 animals = r.json()['animals']
                 max_pages = r.json()['pagination']['total_pages']
                 pages = _check_pages_api_limit(pages)
                 if pages > int(max_pages):
                     pages = max_pages
                     max_page_warning = True
-                
+
                 for page in range(2, pages):
 
                     params['page'] = page
@@ -502,6 +504,8 @@ class Petfinder(object):
                                         'Authorization': 'Bearer ' + self._auth
                                     },
                                     params=params)
+                    if _check_api_rate_exceeded(r.json(), exit_loop=True):
+                        break
                     if isinstance(r.json(), dict):
                         if 'animals' in r.json().keys():
                             for i in r.json()['animals']:
@@ -616,7 +620,7 @@ class Petfinder(object):
                                     'Authorization': 'Bearer ' + self._auth
                                 },
                                 params=params)
-
+                check_api_rate_exceeded(r.json())
                 organizations = r.json()['organizations']
 
                 max_pages = r.json()['pagination']['total_pages']
@@ -631,6 +635,8 @@ class Petfinder(object):
                                         'Authorization': 'Bearer ' + self._auth
                                     },
                                     params=params)
+                    if _check_api_rate_exceeded(r.json(), exit_loop=True):
+                        break
                     if isinstance(r.json(), dict):
                         if 'organizations' in r.json().keys():
                             for i in r.json()['organizations']:
@@ -645,9 +651,8 @@ class Petfinder(object):
                                     'Authorization': 'Bearer ' + self._auth
                                 },
                                 params=params)
-
+                check_api_rate_exceeded(r.json())
                 organizations = r.json()['organizations']
-
                 max_pages = r.json()['pagination']['total_pages']
                 pages = _check_pages_api_limit(pages)
 
@@ -664,6 +669,8 @@ class Petfinder(object):
                                         'Authorization': 'Bearer ' + self._auth
                                     },
                                     params=params)
+                    if _check_api_rate_exceeded(r.json(), exit_loop=True):
+                        break
                     if isinstance(r.json(), dict):
                         if 'organizations' in r.json().keys():
                             for i in r.json()['organizations']:
@@ -1005,3 +1012,26 @@ def _check_pages_api_limit(max_pages):
             raise ValueError('Only y|n accepted as answers')
 
     return max_pages
+
+def _check_api_rate_exceeded(r, exit_loop=False):
+    r"""
+    Internal function for catching api exceeded error.
+
+    Parameters
+    ----------
+    r: dict
+        response.json() returned from the Petfinder API.
+
+    Returns
+    -------
+    None
+        raises an error and terminates the program
+    """
+    if isinstance(r, dict):
+        if 'status' in r.keys() and r['status'] == 429:
+            if exit_loop:
+                print(r['title'])
+            else:
+                raise RuntimeError(r['title'])
+                
+
