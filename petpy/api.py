@@ -1031,6 +1031,7 @@ def _check_api_rate_exceeded(r, exit_loop=False):
         if 'status' in r.keys() and r['status'] == 429:
             if exit_loop:
                 print(r['title'])
+                return True
             else:
                 raise RuntimeError(r['title'])
                 
