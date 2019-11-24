@@ -18,7 +18,7 @@ Petpy is an easy-to-use and convenient Python wrapper for the [Petfinder API](ht
 `petpy` is easily installed through `pip`.
 
 ~~~ python
-pip install petpy
+pip install git+https://github.com/ma7555/petpy
 ~~~
 
 The library can also be cloned or downloaded into a location of your choosing and then installed using the `setup.py` 
