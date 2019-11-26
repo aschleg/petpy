@@ -156,7 +156,10 @@ but the data and information provided in Petfinder's database makes it ideal for
 
 ## Contributors
 
-
+* [ma755](https://github.com/ma7555) - Fixed several functions that use an `animal` parameter and 
+  implementing checks for exceeding the Petfinder API limit.
+* [ljlevins](https://github.com/ljlevins) - Found and fixed an error with the `distance` parameter used in the 
+  `organizations` API endpoint.  
 
 ## License
 

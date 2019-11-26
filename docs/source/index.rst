@@ -40,6 +40,7 @@ Contents
    api.rst
    exceptions.rst
    versions.rst
+   contributors.rst
 
 Introduction
 ============
