@@ -1028,6 +1028,7 @@ def _check_api_rate_exceeded(r, exit_loop=False):
     -------
     None
         raises an error and terminates the program
+
     """
     if isinstance(r, dict):
         if 'status' in r.keys() and r['status'] == 429:

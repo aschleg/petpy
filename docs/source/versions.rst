@@ -8,13 +8,24 @@ Changelog and version changes made with each release.
 Version 2.1.2
 -------------
 
+New release includes a bug fix and some additional changes for checking total usage against the Petfinder API.
 
+- :code:`animal_type` parameter used in the :code:`animals()` endpoint has been corrected and should be working
+  properly.
+- New methods for checking the usage of the supplied API key against the limits defined by the Petfinder API have been
+  implemented to better help warn users when they are approaching their API request limit.
+   - If the :code:`max_pages` parameter exceeds 10,000, a warning will be issued to give the user the opportunity to
+     continue or limit their results to 10,000 pages.
+   - When the API limits are exceeded, a :code:`RuntimeError` will be issued.
+
+Thank you to contributor `ma755 <https://github.com/ma7555>`_ for submitting the pull request.
 
 Version 2.1.1
 -------------
 
 Small update release to fix the :code:`distance` parameter logic when searching for pets using the :code:`animals()` or
-:code:`organizations()` methods.
+:code:`organizations()` methods. Thank you to contributor `ljlevins <https://github.com/ljlevins>`_ for submitting the
+pull request.
 
 Version 2.1.0
 -------------
