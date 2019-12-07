@@ -127,13 +127,13 @@ A series of IPython notebooks that introduce and explore some of the functionali
 "launch binder" badge.
 
 * [01 -Introduction to petpy](https://github.com/aschleg/petpy/blob/master/notebooks/01-Introduction%20to%20petpy.ipynb)
-
-**Please note the following notebook is still based on the legacy version of Petfinder and thus are not fully 
-representative of the functionality and methods of the most recent version of `petpy` and the Petfinder API. These 
-are currently being updated to reflect the new version of `petpy`.**
-
 * [02 - Download 45,000 Adoptable Cat Images using petpy and multiprocessing](https://github.com/aschleg/petpy/blob/master/notebooks/02-Download%2045%2C000%20Adoptable%20Cat%20Images%20with%20petpy%20and%20multiprocessing.ipynb)
-
+  - Please note the following notebook is still based on the legacy version of Petfinder and thus are not fully 
+    representative of the functionality and methods of the most recent version of `petpy` and the Petfinder API. These 
+    are currently being updated to reflect the new version of `petpy`.
+* [03 - Download Pure Breeds Cat Images with petpy for Deep Neural Network training](https://github.com/aschleg/petpy/blob/master/notebooks/03-Download%20Pure%20Breeds%20Cat%20Images%20with%20petpy%20for%20Deep%20Neural%20Network%20training%20-%20multiprocessing.ipynb)
+  - Provided by contributor [ma755](https://github.com/ma7555)
+  
 ## Documentation
 
 * [Petpy documentation](http://petpy.readthedocs.io/en/latest/)

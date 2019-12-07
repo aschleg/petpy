@@ -14,9 +14,9 @@ New release includes a bug fix and some additional changes for checking total us
   properly.
 - New methods for checking the usage of the supplied API key against the limits defined by the Petfinder API have been
   implemented to better help warn users when they are approaching their API request limit.
-   - If the :code:`max_pages` parameter exceeds 10,000, a warning will be issued to give the user the opportunity to
-     continue or limit their results to 10,000 pages.
-   - When the API limits are exceeded, a :code:`RuntimeError` will be issued.
+
+    - If the :code:`max_pages` parameter exceeds 10,000, a warning will be issued to give the user the opportunity to continue or limit their results to 10,000 pages.
+    - When the API limits are exceeded, a :code:`RuntimeError` will be issued.
 
 Thank you to contributor `ma755 <https://github.com/ma7555>`_ for submitting the pull request.
 
