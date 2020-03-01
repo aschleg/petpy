@@ -21,10 +21,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -237,8 +237,8 @@ following are several examples for extracting data from the Petfinder database a
 <p>The <cite>breeds</cite> method can also be set to coerce the returned JSON results into a pandas DataFrame by setting
 the parameter <cite>return_df = True</cite>.</p>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cat_breeds_df</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">breeds</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="n">return_df</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
-<span class="n">all_breeds_df</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">breeds</span><span class="p">(</span><span class="n">return_df</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cat_breeds_df</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">breeds</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="n">return_df</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">all_breeds_df</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">breeds</span><span class="p">(</span><span class="n">return_df</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -261,7 +261,7 @@ by entering the desired search criteria.</p>
 <span class="n">animal_data</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">animals</span><span class="p">(</span><span class="n">animal_id</span><span class="o">=</span><span class="n">animal_ids</span><span class="p">)</span>
 
 <span class="c1"># Returning a pandas DataFrame of the first 150 animal results</span>
-<span class="n">animals</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">animals</span><span class="p">(</span><span class="n">results_per_page</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">pages</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">animals</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">animals</span><span class="p">(</span><span class="n">results_per_page</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">pages</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -274,7 +274,7 @@ search of animal welfare organizations, specific organizational data can be extr
 <code class="code docutils literal notranslate"><span class="pre">organizations()</span></code> method with organization IDs.</p>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Return the first 1,000 animal welfare organizations as a pandas DataFrame</span>
-<span class="n">organizations</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">results_per_page</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">pages</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">organizations</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">results_per_page</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">pages</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># Get organizations in the state of Washington</span>
 <span class="n">wa_organizations</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="s1">&#39;WA&#39;</span><span class="p">)</span>
@@ -289,17 +289,24 @@ search of animal welfare organizations, specific organizational data can be extr
 its usage. The notebooks can also be launched in an <a class="reference external" href="https://hub.mybinder.org/user/aschleg-petpy-klvuc0pp/tree/docs/notebooks">interactive environment</a>
 with <a class="reference external" href="https://mybinder.org/">binder</a></p>
 <ul class="simple">
-<li><a class="reference external" href="https://github.com/aschleg/petpy/blob/master/docs/notebooks/01-Introduction%20to%20petpy.ipynb">Introduction to petpy</a></li>
-<li><a class="reference external" href="https://github.com/aschleg/petpy/blob/master/docs/notebooks/02-Download%2045%2C000%20Adoptable%20Cat%20Images%20with%20petpy%20and%20multiprocessing.ipynb">Download 45,000 Cat Images in 6.5 Minutes with petpy and multiprocessing</a><ul>
-<li>Please note the following notebook is still based on the legacy version of the Petfinder API and thus are not fully
+<li><p><a class="reference external" href="https://github.com/aschleg/petpy/blob/master/docs/notebooks/01-Introduction%20to%20petpy.ipynb">Introduction to petpy</a></p></li>
+<li><p><a class="reference external" href="https://github.com/aschleg/petpy/blob/master/docs/notebooks/02-Download%2045%2C000%20Adoptable%20Cat%20Images%20with%20petpy%20and%20multiprocessing.ipynb">Download 45,000 Cat Images in 6.5 Minutes with petpy and multiprocessing</a></p>
+<ul>
+<li><p>Please note the following notebook is still based on the legacy version of the Petfinder API and thus are not fully
 representative of the functionality and methods of the most recent version of <code class="code docutils literal notranslate"><span class="pre">petpy</span></code> and the Petfinder API.
-These are currently being updated to reflect the new version of <code class="code docutils literal notranslate"><span class="pre">petpy</span></code>.</li>
+These are currently being updated to reflect the new version of <code class="code docutils literal notranslate"><span class="pre">petpy</span></code>.</p></li>
 </ul>
 </li>
-<li><a class="reference external" href="https://github.com/aschleg/petpy/blob/master/notebooks/03-Download%20Pure%20Breeds%20Cat%20Images%20with%20petpy%20for%20Deep%20Neural%20Network%20training%20-%20multiprocessing.ipynb">Download Pure Breeds Cat Images with petpy for Deep Neural Network training</a><ul>
-<li>Provided by contributor <a class="reference external" href="https://github.com/ma7555">ma755</a></li>
+<li><p><a class="reference external" href="https://github.com/aschleg/petpy/blob/master/notebooks/03-Download%20Pure%20Breeds%20Cat%20Images%20with%20petpy%20for%20Deep%20Neural%20Network%20training%20-%20multiprocessing.ipynb">Download Pure Breeds Cat Images with petpy for Deep Neural Network training</a></p>
+<ul>
+<li><p>Provided by contributor <a class="reference external" href="https://github.com/ma7555">ma755</a></p></li>
 </ul>
 </li>
+</ul>
+<p>The following are longer usage examples and tutorials that have been posted to external media websites such as
+<a class="reference external" href="medium.com">Medium.com</a>:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://medium.com/&#64;AaronSchlegel/analyze-petfinder-adoptable-pet-descriptions-with-the-ibm-watson-tone-analyzer-part-one-4efabaa1164b">Analyze Petfinder Adoptable Pet Descriptions with the IBM Watson Tone Analyzer — Part One</a></p></li>
 </ul>
 </div>
 

@@ -150,3 +150,8 @@ with `binder <https://mybinder.org/>`_
 - `Download Pure Breeds Cat Images with petpy for Deep Neural Network training <https://github.com/aschleg/petpy/blob/master/notebooks/03-Download%20Pure%20Breeds%20Cat%20Images%20with%20petpy%20for%20Deep%20Neural%20Network%20training%20-%20multiprocessing.ipynb>`_
 
   - Provided by contributor `ma755 <https://github.com/ma7555>`_
+
+The following are longer usage examples and tutorials that have been posted to external media websites such as
+`Medium.com <medium.com>`_:
+
+- `Analyze Petfinder Adoptable Pet Descriptions with the IBM Watson Tone Analyzer — Part One <https://medium.com/@AaronSchlegel/analyze-petfinder-adoptable-pet-descriptions-with-the-ibm-watson-tone-analyzer-part-one-4efabaa1164b>`_

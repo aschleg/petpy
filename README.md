@@ -133,7 +133,14 @@ A series of IPython notebooks that introduce and explore some of the functionali
     are currently being updated to reflect the new version of `petpy`.
 * [03 - Download Pure Breeds Cat Images with petpy for Deep Neural Network training](https://github.com/aschleg/petpy/blob/master/notebooks/03-Download%20Pure%20Breeds%20Cat%20Images%20with%20petpy%20for%20Deep%20Neural%20Network%20training%20-%20multiprocessing.ipynb)
   - Provided by contributor [ma755](https://github.com/ma7555)
-  
+
+### Other
+
+The following are longer usage examples and tutorials that have been posted to external media websites such as 
+[Medium.com](medium.com):
+
+* [Analyze Petfinder Adoptable Pet Descriptions with the IBM Watson Tone Analyzer — Part One](https://medium.com/@AaronSchlegel/analyze-petfinder-adoptable-pet-descriptions-with-the-ibm-watson-tone-analyzer-part-one-4efabaa1164b)
+
 ## Documentation
 
 * [Petpy documentation](http://petpy.readthedocs.io/en/latest/)
