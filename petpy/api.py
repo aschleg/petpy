@@ -11,7 +11,7 @@ https://www.petfinder.com/developers/
 
 
 from pandas import DataFrame
-from pandas import json_normalize
+from pandas.io.json import json_normalize
 import requests
 from urllib.parse import urljoin
 
