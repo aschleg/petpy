@@ -5,6 +5,13 @@ Version History
 
 Changelog and version changes made with each release.
 
+Version 2.1.3
+-------------
+
+- :code:`organization_id` parameter in the :code:`animals` method should now only return animals from specified organization IDs.
+- The deprecation warning should no longer appear when results are returned as a pandas DataFrame when setting the
+  :code:`return_df` parameter to :code:`True`.
+
 Version 2.1.2
 -------------
 

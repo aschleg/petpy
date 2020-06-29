@@ -3,6 +3,12 @@
 
 Changelog and version changes made with each release.
 
+## Version 2.1.3
+
+* `organization_id` parameter in the `animals` method should now only return animals from specified organization IDs.
+* The deprecation warning should no longer appear when results are returned as a pandas DataFrame when setting the 
+`return_df` parameter to `True`.
+
 ## Version 2.1.2 
 
 New release includes a bug fix and some additional changes for checking total usage against the Petfinder API. 

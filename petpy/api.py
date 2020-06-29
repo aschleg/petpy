@@ -11,7 +11,7 @@ https://www.petfinder.com/developers/
 
 
 from pandas import DataFrame
-from pandas.io.json import json_normalize
+from pandas import json_normalize
 import requests
 from urllib.parse import urljoin
 
@@ -487,11 +487,15 @@ class Petfinder(object):
                                     'Authorization': 'Bearer ' + self._auth
                                 },
                                 params=params)
+
                 _check_api_rate_exceeded(r.json())
+
                 animals = r.json()['animals']
                 max_pages = r.json()['pagination']['total_pages']
+
                 pages = _check_pages_api_limit(pages)
-                if pages > int(max_pages):
+
+                if pages > int(max_pages) + 1:
                     pages = max_pages
                     max_page_warning = True
 
@@ -811,7 +815,7 @@ def _parameters(breed=None, size=None, gender=None, color=None, coat=None, anima
         'sort': sort,
         'name': name,
         'animal_id': animal_id,
-        'organization_id': organization_id,
+        'organization': organization_id,
         'status': status,
         'limit': results_per_page,
         'page': page
