@@ -5,6 +5,7 @@ Changelog and version changes made with each release.
 
 ## Version 2.2.0
 
+* Support for Python 3.5 has been discontinued. 
 * The `animals()` method has been updated to include new parameters provided by Petfinder's `animal` 
   endpoint. This parameters include:
   - `good_with_cats`: Boolean for filtering animals that are designated as good with cats.
