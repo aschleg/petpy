@@ -13,6 +13,7 @@ https://www.petfinder.com/developers/
 from pandas import DataFrame
 from pandas.io.json import json_normalize
 import requests
+import datetime
 from urllib.parse import urljoin
 
 from petpy.exceptions import PetfinderInvalidCredentials, PetfinderInsufficientAccess, PetfinderResourceNotFound, \
@@ -335,7 +336,8 @@ class Petfinder(object):
 
     def animals(self, animal_id=None, animal_type=None, breed=None, size=None, gender=None,
                 age=None, color=None, coat=None, status=None, name=None, organization_id=None,
-                location=None, distance=None, sort=None, pages=1, results_per_page=20, return_df=False):
+                location=None, distance=None, good_with_children=None, good_with_dogs=None, good_with_cats=None,
+                before_date=None, after_date=None, sort=None, pages=1, results_per_page=20, return_df=False):
         r"""
         Returns adoptable animal data from Petfinder based on specified criteria.
 
@@ -378,6 +380,11 @@ class Petfinder(object):
         distance : int, optional
             Returns results within the distance of the specified location. If not given, defaults to 100 miles.
             Maximum distance range is 500 miles.
+        good_with_children : bool, optional
+        good_with_cats : bool, optional
+        good_with_dogs : bool, optional
+        before_date : str, datetime
+        after_date : str, datetime
         sort : {'recent', '-recent', 'distance', '-distance'}, optional
             Sorts by specified attribute. Leading dashes represents a reverse-order sort. Must be one of 'recent',
             '-recent', 'distance', or '-distance'.
@@ -411,6 +418,26 @@ class Petfinder(object):
 
         """
         max_page_warning = False
+
+        if before_date is not None:
+            if isinstance(before_date, str):
+                try:
+                    before_date = datetime.datetime.strptime(before_date, '%Y-%m-%d %H:%M:%S')
+                except ValueError:
+                    before_date = datetime.datetime.strptime(before_date, '%Y-%m-%d')
+            before_date = before_date.astimezone().replace(microsecond=0).isoformat()
+
+        if after_date is not None:
+            if isinstance(after_date, str):
+                try:
+                    after_date = datetime.datetime.strptime(after_date, '%Y-%m-%d %H:%M:%S')
+                except ValueError:
+                    after_date = datetime.datetime.strptime(after_date, '%Y-%m-%d')
+            after_date = after_date.astimezone().replace(microsecond=0).isoformat()
+
+        if after_date is not None and before_date is not None:
+            if before_date < after_date:
+                raise ValueError('before_date parameter must be more recent than after_date parameter.')
 
         if animal_id is not None:
 
@@ -446,7 +473,9 @@ class Petfinder(object):
             params = _parameters(animal_type=animal_type, breed=breed, size=size, gender=gender,
                                  age=age, color=color, coat=coat, status=status, name=name,
                                  organization_id=organization_id, location=location, distance=distance,
-                                 sort=sort, results_per_page=results_per_page)
+                                 sort=sort, results_per_page=results_per_page, before_date=before_date,
+                                 after_date=after_date, good_with_cats=good_with_cats,
+                                 good_with_children=good_with_children, good_with_dogs=good_with_dogs)
 
             if pages is None:
                 params['limit'] = 100
@@ -457,7 +486,9 @@ class Petfinder(object):
                                     'Authorization': 'Bearer ' + self._auth
                                 },
                                 params=params)
+
                 _check_api_rate_exceeded(r.json())
+
                 animals = r.json()['animals']
                 max_pages = r.json()['pagination']['total_pages']
                 max_pages = _check_pages_api_limit(max_pages)
@@ -732,6 +763,7 @@ def _get_result(url, headers, params=None):
 
 def _parameters(breed=None, size=None, gender=None, color=None, coat=None, animal_type=None, location=None,
                 distance=None, state=None, country=None, query=None, sort=None, name=None, age=None,
+                good_with_children=None, good_with_dogs=None, good_with_cats=None, before_date=None, after_date=None,
                 animal_id=None, organization_id=None, status=None, results_per_page=None, page=None):
     r"""
     Internal function for determining which parameters have been passed and aligning them to their respective
@@ -797,7 +829,15 @@ def _parameters(breed=None, size=None, gender=None, color=None, coat=None, anima
 
     """
     _check_parameters(animal_types=animal_type, size=size, gender=gender, age=age, coat=coat, status=status,
-                      distance=distance, sort=sort, limit=results_per_page)
+                      distance=distance, sort=sort, limit=results_per_page, good_with_cats=good_with_cats,
+                      good_with_children=good_with_children, good_with_dogs=good_with_dogs)
+
+    if good_with_cats is not None:
+        good_with_cats = int(good_with_cats)
+    if good_with_children is not None:
+        good_with_children = int(good_with_children)
+    if good_with_dogs is not None:
+        good_with_dogs = int(good_with_dogs)
 
     args = {
         'breed': breed,
@@ -816,6 +856,11 @@ def _parameters(breed=None, size=None, gender=None, color=None, coat=None, anima
         'name': name,
         'animal_id': animal_id,
         'organization': organization_id,
+        'good_with_cats': good_with_cats,
+        'good_with_children': good_with_children,
+        'good_with_dogs': good_with_dogs,
+        'before': before_date,
+        'after': after_date,
         'status': status,
         'limit': results_per_page,
         'page': page
@@ -827,7 +872,8 @@ def _parameters(breed=None, size=None, gender=None, color=None, coat=None, anima
 
 
 def _check_parameters(animal_types=None, size=None, gender=None, age=None, coat=None, status=None,
-                      distance=None, sort=None, limit=None):
+                      distance=None, good_with_children=None, good_with_dogs=None, good_with_cats=None,
+                      sort=None, limit=None):
     r"""
     Internal function for checking the passed parameters against valid options available in the Petfinder API.
 
@@ -943,6 +989,18 @@ def _check_parameters(animal_types=None, size=None, gender=None, age=None, coat=
         if not 0 <= int(distance) <= 500:
             incorrect_values['distance'] = "distance cannot be greater than 500 or less than 0."
 
+    if good_with_dogs is not None:
+        if not isinstance(good_with_dogs, (bool, int)):
+            incorrect_values['good_with_dogs'] = 'good_with_dogs must be a boolean (True, False, 1, or 0).'
+
+    if good_with_cats is not None:
+        if not isinstance(good_with_cats, (bool, int)):
+            incorrect_values['good_with_cats'] = 'good_with_dogs must be a boolean (True, False, 1, or 0).'
+
+    if good_with_children is not None:
+        if not isinstance(good_with_children, (bool, int)):
+            incorrect_values['good_with_children'] = 'good_with_dogs must be a boolean (True, False, 1, or 0).'
+
     if limit is not None:
         if int(limit) > 100:
             incorrect_values['limit'] = "results per page cannot be greater than 100"
@@ -974,6 +1032,7 @@ def _coerce_to_dataframe(results):
     """
     key = list(results.keys())[0]
     results_df = json_normalize(results[key])
+
     if key == 'animals':
         results_df['_links.organization.href'] = results_df['_links.organization.href']\
             .str.replace('/v2/organizations/', '')
