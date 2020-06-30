@@ -425,7 +425,7 @@ class Petfinder(object):
                     before_date = datetime.datetime.strptime(before_date, '%Y-%m-%d %H:%M:%S')
                 except ValueError:
                     before_date = datetime.datetime.strptime(before_date, '%Y-%m-%d')
-            before_date = before_date.replace(tzinfo=datetime.datetime.now().astimezone().tzinfo).replace(microsecond=0).isoformat()
+            before_date = before_date.astimezone().replace(microsecond=0).isoformat()
 
         if after_date is not None:
             if isinstance(after_date, str):
@@ -433,7 +433,7 @@ class Petfinder(object):
                     after_date = datetime.datetime.strptime(after_date, '%Y-%m-%d %H:%M:%S')
                 except ValueError:
                     after_date = datetime.datetime.strptime(after_date, '%Y-%m-%d')
-            after_date = after_date.replace(tzinfo=datetime.datetime.now().astimezone().tzinfo).replace(microsecond=0).isoformat()
+            after_date = after_date.astimezone().replace(microsecond=0).isoformat()
 
         if after_date is not None and before_date is not None:
             if before_date < after_date:

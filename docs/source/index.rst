@@ -31,6 +31,14 @@ installed using the :code:`setup.py` script per the following:
        cd petpy
        python setup.py install
 
+Requirements
+============
+
+- Python >= 3.6
+- `requests <http://docs.python-requests.org/en/master/>`_ >= 2.18.4
+- Although not strictly required to use :code:`petpy`, the `pandas <https://pandas.pydata.org/>`_ library (>=0.22.0)
+  is needed for returning the results as a DataFrame.
+
 Contents
 ========
 

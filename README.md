@@ -149,7 +149,7 @@ The following are longer usage examples and tutorials that have been posted to e
 
 ## Requirements
 
-* Python >= 3.4
+* Python >= 3.6
 * [requests](http://docs.python-requests.org/en/master/) >= 2.18.4
 * Although not strictly required to use `petpy`, the [pandas](https://pandas.pydata.org/) library is needed 
   for returning the results as a DataFrame.
