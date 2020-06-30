@@ -98,6 +98,16 @@ Find Listed Animals on Petfinder
     :param distance: |distance|
     :param sort: |sort|
     :param pages: |pages|
+    :param good_with_cats: Filters returned animal results to animals that are designated as good with cats. Must be a boolean value
+                           (True, False) or a value that can be coerced to a boolean (1, 0).
+    :param good_with_children: Filters returned animal results to animals that are designated as good with children. Must be a boolean value
+                               (True, False) or a value that can be coerced to a boolean (1, 0).
+    :param good_with_dogs: Filters returned animal results to animals that are designated as good with dogs. Must be a boolean value
+                           (True, False) or a value that can be coerced to a boolean (1, 0).
+    :param before_date: Returns results with a `published_at` datetime before the specified time. Must be a string in the form of
+                        'YYYY-MM-DD' or 'YYYY-MM-DD H:M:S' or a datetime object.
+    :param after_date: Returns results with a `published_at` datetime after the specified time. Must be a string in the form of
+                       'YYYY-MM-DD' or 'YYYY-MM-DD H:M:S' or a datetime object.
     :param results_per_page: |results_per_page|
     :param return_df: |return_df|
     :rtype: dict or pandas DataFrame. Dictionary object representing the returned JSON object from the Petfinder API.

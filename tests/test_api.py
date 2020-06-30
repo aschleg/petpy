@@ -103,6 +103,14 @@ def test_animals():
     response4 = pf.animals(animal_id=animal_ids[0])
     response4_df = pf.animals(animal_id=animal_ids[0], return_df=True)
 
+    response5 = pf.animals(good_with_children=1, good_with_cats=1)
+
+    response6 = pf.animals(before_date='2020-06-30', after_date='2020-01-01')
+    response7 = pf.animals(before_date='2020-06-30 0:0:0', after_date='2020-01-01 12:00:00')
+
+    response8 = pf.animals(good_with_dogs=1)
+    response9 = pf.animals(good_with_dogs=1, good_with_cats=1, good_with_children=1, return_df=True)
+
     assert isinstance(response1, dict)
     assert len(response1['animals']) == 20
     assert isinstance(response1_df, DataFrame)
@@ -121,6 +129,22 @@ def test_animals():
     assert isinstance(response4['animals'], dict)
     assert isinstance(response4_df, DataFrame)
     assert response4_df.shape[0] == 1
+
+    assert isinstance(response5, dict)
+    assert isinstance(response5['animals'], list)
+
+    assert isinstance(response6, dict)
+    assert isinstance(response6['animals'], list)
+
+    assert isinstance(response7, dict)
+    assert isinstance(response7['animals'], list)
+
+    assert isinstance(response8, dict)
+    assert isinstance(response8['animals'], list)
+
+    assert all(x == response9['environment.cats'][0] for x in response9['environment.cats'])
+    assert all(x == response9['environment.children'][0] for x in response9['environment.children'])
+    assert all(x == response9['environment.dogs'][0] for x in response9['environment.dogs'])
 
 
 @vcr.use_cassette('tests/cassettes/organizations.yml')

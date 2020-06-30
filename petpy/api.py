@@ -809,6 +809,21 @@ def _parameters(breed=None, size=None, gender=None, color=None, coat=None, anima
     age : {'baby', 'young', 'adult', 'senior'} str, tuple or list of str, optional
         String or tuple or list of strings specifying animal age(s) to return from search. Must be of 'baby',
         'young', 'adult', 'senior'.
+    good_with_cats: bool, optional
+        Filters returned animal results to animals that are designated as good with cats. Must be a boolean value
+        (True, False) or a value that can be coerced to a boolean (1, 0).
+    good_with_children: bool, optional
+        Filters returned animal results to animals that are designated as good with children. Must be a boolean value
+        (True, False) or a value that can be coerced to a boolean (1, 0).
+    good_with_dogs: bool, optional
+        Filters returned animal results to animals that are designated as good with dogs. Must be a boolean value
+        (True, False) or a value that can be coerced to a boolean (1, 0).
+    before_date: str, datetime, optional
+        Returns results with a `published_at` datetime before the specified time. Must be a string in the form of
+        'YYYY-MM-DD' or 'YYYY-MM-DD H:M:S' or a datetime object.
+    after_date: str, datetime, optional
+        Returns results with a `published_at` datetime after the specified time. Must be a string in the form of
+        'YYYY-MM-DD' or 'YYYY-MM-DD H:M:S' or a datetime object.
     animal_id : int, tuple or list of int, optional
         Integer or list or tuple of integers representing animal IDs obtained from Petfinder.
     organization_id : str, tuple or list of str, optional
@@ -818,7 +833,7 @@ def _parameters(breed=None, size=None, gender=None, color=None, coat=None, anima
         Animal status to filter search results. Must be one of 'adoptable', 'adopted', or 'found'.
     results_per_page : int, default 20
         Number of results to return per page. Defaults to 20 results and cannot exceed 100 results per page.
-    pages : int, default 1
+    page : int, default 1
         Specifies which page of results to return. Defaults to the first page of results. If set to :code:`None`,
         all results will be returned.
 

@@ -5,6 +5,17 @@ Version History
 
 Changelog and version changes made with each release.
 
+Version 2.2.0
+-------------
+
+- The :code:`animals()` method has been updated to include new parameters provided by Petfinder's :code:`animal`
+  endpoint. This parameters include:
+  - :code:`good_with_cats`: Boolean for filtering animals that are designated as good with cats.
+  - :code:`good_with_children`: Boolean for filtering animals that are designated as good with children.
+  - :code:`good_with_dogs`: Boolean for filtering animals that are designated as good with dogs.
+  - :code:`before_date`: Returns results published before the specified time.
+  - :code:`after_date`: Returns results published after the specified time.
+
 Version 2.1.3
 -------------
 

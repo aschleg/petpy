@@ -3,6 +3,16 @@
 
 Changelog and version changes made with each release.
 
+## Version 2.2.0
+
+* The `animals()` method has been updated to include new parameters provided by Petfinder's `animal` 
+  endpoint. This parameters include:
+  - `good_with_cats`: Boolean for filtering animals that are designated as good with cats.
+  - `good_with_children`: Boolean for filtering animals that are designated as good with children.
+  - `good_with_dogs`: Boolean for filtering animals that are designated as good with dogs.
+  - `before_date`: Returns results published before the specified time.
+  - `after_date`: Returns results published after the specified time.
+
 ## Version 2.1.3
 
 * `organization_id` parameter in the `animals` method should now only return animals from specified organization IDs.

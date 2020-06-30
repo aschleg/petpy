@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; petpy 2.1.2 documentation</title>
+  <title>API Reference &mdash; petpy 2.2.0 documentation</title>
   
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                2.1
+                2.2
               </div>
             
           
@@ -275,6 +275,16 @@ resulting dictionary is coerced into a pandas DataFrame. Note if <code class="co
 <li><p><strong>distance</strong> – Returns results within the distance of the specified location. If not given, defaults to 100 miles. Maximum distance range is 500 miles.</p></li>
 <li><p><strong>sort</strong> – Sorts by specified attribute. Leading dashes represents a reverse-order sort. Must be one of ‘recent’, ‘-recent’, ‘distance’, or ‘-distance’.</p></li>
 <li><p><strong>pages</strong> – The number of pages of results to return. For example, if <code class="code docutils literal notranslate"><span class="pre">pages=4</span></code> with the default <code class="code docutils literal notranslate"><span class="pre">count</span></code> parameter (25), 100 results would be returned. The paged results are returned as a list.</p></li>
+<li><p><strong>good_with_cats</strong> – Filters returned animal results to animals that are designated as good with cats. Must be a boolean value
+(True, False) or a value that can be coerced to a boolean (1, 0).</p></li>
+<li><p><strong>good_with_children</strong> – Filters returned animal results to animals that are designated as good with children. Must be a boolean value
+(True, False) or a value that can be coerced to a boolean (1, 0).</p></li>
+<li><p><strong>good_with_dogs</strong> – Filters returned animal results to animals that are designated as good with dogs. Must be a boolean value
+(True, False) or a value that can be coerced to a boolean (1, 0).</p></li>
+<li><p><strong>before_date</strong> – Returns results with a <cite>published_at</cite> datetime before the specified time. Must be a string in the form of
+‘YYYY-MM-DD’ or ‘YYYY-MM-DD H:M:S’ or a datetime object.</p></li>
+<li><p><strong>after_date</strong> – Returns results with a <cite>published_at</cite> datetime after the specified time. Must be a string in the form of
+‘YYYY-MM-DD’ or ‘YYYY-MM-DD H:M:S’ or a datetime object.</p></li>
 <li><p><strong>results_per_page</strong> – Number of results to return per page. Defaults to 20 results and cannot exceed 100 results per page.</p></li>
 <li><p><strong>return_df</strong> – If True, coerces results returned from the Petfinder API into a pandas DataFrame.</p></li>
 </ul>
