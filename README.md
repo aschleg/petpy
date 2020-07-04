@@ -46,6 +46,7 @@ Authenticating the connection with the Petfinder API is done at the same time th
 pf = Petfinder(key=key, secret=secret)
 ~~~
 
+The following are some quick examples for getting started with `petpy` and the Petfinder API.
 ### Finding animal types
 
 ~~~ python
