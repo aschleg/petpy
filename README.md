@@ -11,8 +11,6 @@
 
 :cat2: :dog2: :rooster: :rabbit2: :racehorse:
 
-Petpy is an easy-to-use and convenient Python wrapper for the [Petfinder API](https://www.petfinder.com/developers/v2/docs/).
-
 ## Installation
 
 `petpy` is easily installed through `pip`.
