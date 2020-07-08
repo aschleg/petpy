@@ -5,6 +5,11 @@ Version History
 
 Changelog and version changes made with each release.
 
+Version 2.2.1
+-------------
+
+Very small maintenance patch to update several :code:`setup.py` settings. There is no need to update to this version.
+
 Version 2.2.0
 -------------
 

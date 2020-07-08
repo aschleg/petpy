@@ -4,9 +4,9 @@ from setuptools import find_packages, setup
 
 setup(
     name='petpy',
-    version='2.2.0',
+    version='2.2.1',
     author='Aaron Schlegel',
-    author_email='aaron@aaronschlegel.com',
+    author_email='aaron@aaronschlegel.me',
     url='https://github.com/aschleg/petpy',
     description='Wrapper for the Petfinder API',
     license='MIT',
@@ -27,8 +27,6 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Topic :: Software Development :: Libraries :: Python Modules'
