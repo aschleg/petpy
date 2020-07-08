@@ -7,9 +7,7 @@
 [![https://pypi.org/project/petpy/](https://img.shields.io/badge/pypi%20version-2.2.0-blue.svg)](https://pypi.org/project/petpy/)
 [![https://pypi.org/project/petpy/](https://img.shields.io/badge/python-3.6%2C%203.7-blue.svg)](https://pypi.org/project/petpy/)
 
-:cat2: :dog2: :rooster: :rabbit2: :racehorse:
-
-### Installation
+# Installation
 
 `petpy` is easily installed through `pip`.
 
@@ -26,21 +24,21 @@ cd petpy
 python setup.py install
 ~~~
 
-### Authenticating with the Petfinder API
+# Authenticating with the Petfinder API
 
 Authenticating the connection with the Petfinder API is done at the same time the `Petfinder` class is initialized. An 
 account must first be created with [Petfinder](https://www.petfinder.com/developers/) to receive an API and secret 
 key. The API and Secret key will be used to grant access to the Petfinder API, which lasts for 3600 seconds, or one 
 hour. After the authentication period ends, you must re-authenticate with the Petfinder API.
 
-### Requirements
+# Requirements
 
 * Python >= 3.6
 * [requests](http://docs.python-requests.org/en/master/) >= 2.18.4
 * Although not strictly required to use `petpy`, the [pandas](https://pandas.pydata.org/) library is needed 
   for returning the results as a DataFrame.
   
-### About [Petfinder.com](https://www.petfinder.com)
+# About [Petfinder.com](https://www.petfinder.com)
 
 Petfinder.com is one of the largest online, searchable databases for finding a new pet online. The database contains 
 information on over 14,000 animal shelters and adoption organizations across North America with nearly 300,000 animals 
