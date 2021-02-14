@@ -9,6 +9,7 @@ venv/
 .cache
 petpy.egg*
 /build
+tests/cassettes/
 docs/vignettes/source/drafts
 docs/vignettes/source/db
 docs/vignettes/source/pkl

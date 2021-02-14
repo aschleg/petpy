@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -29,10 +34,6 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Version History" href="versions.html" />
@@ -50,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> petpy
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> petpy
           
 
           
@@ -77,6 +78,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -94,6 +96,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -132,7 +135,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>API Exceptions</li>
     
@@ -155,42 +158,42 @@
             
   <div class="section" id="api-exceptions">
 <span id="exceptions"></span><h1>API Exceptions<a class="headerlink" href="#api-exceptions" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="petpy.exceptions.PetfinderError">
-<em class="property">class </em><code class="sig-prename descclassname">petpy.exceptions.</code><code class="sig-name descname">PetfinderError</code><span class="sig-paren">(</span><em class="sig-param">Exception</em><span class="sig-paren">)</span><a class="headerlink" href="#petpy.exceptions.PetfinderError" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">petpy.exceptions.</code><code class="sig-name descname">PetfinderError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Exception</span></em><span class="sig-paren">)</span><a class="headerlink" href="#petpy.exceptions.PetfinderError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base Exception class for Petfinder API Exception definitions.</p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="petpy.exceptions.PetfinderInvalidCredentials">
-<em class="property">class </em><code class="sig-prename descclassname">petpy.exceptions.</code><code class="sig-name descname">PetfinderInvalidCredentials</code><span class="sig-paren">(</span><em class="sig-param">PetfinderError</em><span class="sig-paren">)</span><a class="headerlink" href="#petpy.exceptions.PetfinderInvalidCredentials" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">petpy.exceptions.</code><code class="sig-name descname">PetfinderInvalidCredentials</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">PetfinderError</span></em><span class="sig-paren">)</span><a class="headerlink" href="#petpy.exceptions.PetfinderInvalidCredentials" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exception for handling invalid API and secret keys passed to the Petfinder class.</p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="petpy.exceptions.PetfinderInsufficientAccess">
-<em class="property">class </em><code class="sig-prename descclassname">petpy.exceptions.</code><code class="sig-name descname">PetfinderInsufficientAccess</code><span class="sig-paren">(</span><em class="sig-param">PetfinderError</em><span class="sig-paren">)</span><a class="headerlink" href="#petpy.exceptions.PetfinderInsufficientAccess" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">petpy.exceptions.</code><code class="sig-name descname">PetfinderInsufficientAccess</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">PetfinderError</span></em><span class="sig-paren">)</span><a class="headerlink" href="#petpy.exceptions.PetfinderInsufficientAccess" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exception for handling insufficient access errors when working with the Petfinder API. This exception is typically
 raised when the credentials supplied to the Petfinder API have expired and the connection to the API needs to be
 re-authenticated.</p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="petpy.exceptions.PetfinderResourceNotFound">
-<em class="property">class </em><code class="sig-prename descclassname">petpy.exceptions.</code><code class="sig-name descname">PetfinderResourceNotFound</code><span class="sig-paren">(</span><em class="sig-param">PetfinderError</em><span class="sig-paren">)</span><a class="headerlink" href="#petpy.exceptions.PetfinderResourceNotFound" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">petpy.exceptions.</code><code class="sig-name descname">PetfinderResourceNotFound</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">PetfinderError</span></em><span class="sig-paren">)</span><a class="headerlink" href="#petpy.exceptions.PetfinderResourceNotFound" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exception for handling unknown resource requests.</p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="petpy.exceptions.PetfinderUnexpectedError">
-<em class="property">class </em><code class="sig-prename descclassname">petpy.exceptions.</code><code class="sig-name descname">PetfinderUnexpectedError</code><span class="sig-paren">(</span><em class="sig-param">PetfinderError</em><span class="sig-paren">)</span><a class="headerlink" href="#petpy.exceptions.PetfinderUnexpectedError" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">petpy.exceptions.</code><code class="sig-name descname">PetfinderUnexpectedError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">PetfinderError</span></em><span class="sig-paren">)</span><a class="headerlink" href="#petpy.exceptions.PetfinderUnexpectedError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exception for handling unexpected errors from the Petfinder API. This error is generally the result of an unknown
 and unexpected error that occurs on the server-side of the Petfinder API when sending a request.</p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="petpy.exceptions.PetfinderInvalidParameters">
-<em class="property">class </em><code class="sig-prename descclassname">petpy.exceptions.</code><code class="sig-name descname">PetfinderInvalidParameters</code><span class="sig-paren">(</span><em class="sig-param">PetfinderError</em><span class="sig-paren">)</span><a class="headerlink" href="#petpy.exceptions.PetfinderInvalidParameters" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">petpy.exceptions.</code><code class="sig-name descname">PetfinderInvalidParameters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">PetfinderError</span></em><span class="sig-paren">)</span><a class="headerlink" href="#petpy.exceptions.PetfinderInvalidParameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exception for handling invalid values passed to Petfinder API method parameters.</p>
 </dd></dl>
 
@@ -216,11 +219,19 @@ and unexpected error that occurs on the server-side of the Petfinder API when se
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2017, Aaron Schlegel
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -231,7 +242,6 @@ and unexpected error that occurs on the server-side of the Petfinder API when se
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

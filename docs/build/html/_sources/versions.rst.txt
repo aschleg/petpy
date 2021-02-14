@@ -5,6 +5,19 @@ Version History
 
 Changelog and version changes made with each release.
 
+Version 2.3.0
+-------------
+
+- Added several additional search filters to the :code:`animals()` function.
+  - :code:`declawed`: Filters results by animals that are marked as declawed.
+  - :code:`house_trained`: Filters results by animals that are house trained.
+  - :code:`special_needs`: Filters results by animals that have special needs
+- Search filters that can take multiple values in the :code:`animals()` function,
+  including :code:`age`, :code:`gender`, :code:`status`, :code:`animal_type`,
+  :code:`size`, and :code:`coat`, should now correctly accept both
+  comma-delimited strings, such as :code:`age='baby,'young'` and lists or tuples.
+- The required version for :code:`pandas` has been updated to at least version :code:`1.0.0`
+
 Version 2.2.1
 -------------
 

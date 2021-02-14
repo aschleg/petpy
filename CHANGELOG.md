@@ -9,6 +9,11 @@ Changelog and version changes made with each release.
     - `declawed`: Filters results by animals that are marked as declawed.
     - `house_trained`: Filters results by animals that are house trained.
     - `special_needs`: Filters results by animals that have special needs
+* Search filters that can take multiple values in the `animals()` function, 
+  including `age`, `gender`, `status`, `animal_type`, `size`, and `coat`, should 
+  now correctly accept both comma-delimited strings, such as `age='baby,'young'` 
+  and lists or tuples.
+* The required version for `pandas` has been updated to at least version `1.0.0`
 
 ## Version 2.2.1
 

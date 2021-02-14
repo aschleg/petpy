@@ -112,6 +112,7 @@ def test_animals():
 
     response8 = pf.animals(good_with_dogs=1)
     response9 = pf.animals(good_with_dogs=1, good_with_cats=1, good_with_children=1, return_df=True)
+    #response10 = pf.animals(special_needs=1, house_trained=1, declawed=1, return_df=True)
 
     assert isinstance(response1, dict)
     assert len(response1['animals']) == 20
@@ -195,6 +196,9 @@ def test_check_parameters():
     sort = 'ascending'
     distance_int, distance_str = 1000, '1000'
     limit_int, limit_str = 200, '200'
+    declawed = 'yes'
+    house_trained = 'yes'
+    special_needs = 'yes'
 
     with pytest.raises(ValueError):
         pf.animals(size=size1)
@@ -224,3 +228,9 @@ def test_check_parameters():
         pf.animals(results_per_page=limit_int)
     with pytest.raises(ValueError):
         pf.animals(results_per_page=limit_str)
+    with pytest.raises(ValueError):
+        pf.animals(declawed=declawed)
+    with pytest.raises(ValueError):
+        pf.animals(house_trained=house_trained)
+    with pytest.raises(ValueError):
+        pf.animals(special_needs=special_needs)

@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,12 +11,18 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -29,10 +34,6 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="API Exceptions" href="exceptions.html" />
@@ -50,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> petpy
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> petpy
           
 
           
@@ -77,6 +78,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -101,6 +103,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -139,7 +142,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>API Reference</li>
     
@@ -164,9 +167,9 @@
 <span id="api"></span><h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="petfinder-petfinder-api-wrapper">
 <h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">Petfinder</span></code> – Petfinder API Wrapper<a class="headerlink" href="#petfinder-petfinder-api-wrapper" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
+<dl class="py class">
 <dt id="petpy.api.Petfinder">
-<em class="property">class </em><code class="sig-prename descclassname">petpy.api.</code><code class="sig-name descname">Petfinder</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">secret</em><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">petpy.api.</code><code class="sig-name descname">Petfinder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">secret</span></em><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Petfinder class provides the wrapper for the Petfinder API. The API methods are listed below</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -185,7 +188,7 @@
 </div>
 <div class="section" id="get-animal-types">
 <h2>Get Animal Types<a class="headerlink" href="#get-animal-types" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="py method">
 <dt id="petpy.api.Petfinder.animal_types">
 <code class="sig-prename descclassname">Petfinder.</code><code class="sig-name descname">animal_types</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">types=None</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder.animal_types" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns data on an animal type, or types available from the Petfinder API. This data includes the
@@ -215,7 +218,7 @@ specified type(s). The animal type must be of ‘dog’, ‘cat’, ‘rabbit’
 </div>
 <div class="section" id="get-available-animal-breeds">
 <h2>Get Available Animal Breeds<a class="headerlink" href="#get-available-animal-breeds" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="py method">
 <dt id="petpy.api.Petfinder.breeds">
 <code class="sig-prename descclassname">Petfinder.</code><code class="sig-name descname">breeds</code><span class="sig-paren">(</span><em class="sig-param">types[, return_df=False][, raw_results=False]</em><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder.breeds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns breed names of specified animal type, or types.</p>
@@ -253,7 +256,7 @@ resulting dictionary is coerced into a pandas DataFrame. Note if <code class="co
 </div>
 <div class="section" id="find-listed-animals-on-petfinder">
 <h2>Find Listed Animals on Petfinder<a class="headerlink" href="#find-listed-animals-on-petfinder" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="py method">
 <dt id="petpy.api.Petfinder.animals">
 <code class="sig-prename descclassname">Petfinder.</code><code class="sig-name descname">animals</code><span class="sig-paren">(</span><em class="sig-param">[animal_id=None][, animal_type=None][, breed=None][, size=None][, gender=None][, age=None][, color=None][, coat=None][, status=None][, name=None][, organization_id=None][, location=None][, distance=None][, sort=None][, results_per_page=None][, pages=None][, return_df=False]</em><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder.animals" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns adoptable animal data from Petfinder based on specified criteria.</p>
@@ -314,7 +317,7 @@ If <code class="code docutils literal notranslate"><span class="pre">return_df=T
 </div>
 <div class="section" id="get-animal-welfare-organization-data">
 <h2>Get Animal Welfare Organization Data<a class="headerlink" href="#get-animal-welfare-organization-data" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
+<dl class="py method">
 <dt id="petpy.api.Petfinder.organizations">
 <code class="sig-prename descclassname">Petfinder.</code><code class="sig-name descname">organizations</code><span class="sig-paren">(</span><em class="sig-param">[organization_id=None][, name=None][, location=None][, distance=None][, state=None][, country=None][, query=None][, sort=True][, results_per_page=None][, pages=None][, return_df=False]</em><span class="sig-paren">)</span><a class="headerlink" href="#petpy.api.Petfinder.organizations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns data on an animal welfare organization, or organizations, based on specified criteria.</p>
@@ -371,11 +374,19 @@ If <code class="code docutils literal notranslate"><span class="pre">return_df=T
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2017, Aaron Schlegel
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -386,7 +397,6 @@ If <code class="code docutils literal notranslate"><span class="pre">return_df=T
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
