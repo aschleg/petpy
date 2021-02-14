@@ -199,6 +199,9 @@ def test_check_parameters():
     declawed = 'yes'
     house_trained = 'yes'
     special_needs = 'yes'
+    good_with_children = 'yes'
+    good_with_cats = 'yes'
+    good_with_dogs = 'yes'
 
     with pytest.raises(ValueError):
         pf.animals(size=size1)
@@ -234,3 +237,9 @@ def test_check_parameters():
         pf.animals(house_trained=house_trained)
     with pytest.raises(ValueError):
         pf.animals(special_needs=special_needs)
+    with pytest.raises(ValueError):
+        pf.animals(good_with_cats=good_with_cats)
+    with pytest.raises(ValueError):
+        pf.animals(good_with_dogs=good_with_dogs)
+    with pytest.raises(ValueError):
+        pf.animals(good_with_children=good_with_children)
