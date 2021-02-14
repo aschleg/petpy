@@ -11,7 +11,7 @@ https://www.petfinder.com/developers/
 
 
 from pandas import DataFrame
-from pandas.io.json import json_normalize
+from pandas import json_normalize
 import requests
 import datetime
 from urllib.parse import urljoin
@@ -337,7 +337,8 @@ class Petfinder(object):
     def animals(self, animal_id=None, animal_type=None, breed=None, size=None, gender=None,
                 age=None, color=None, coat=None, status=None, name=None, organization_id=None,
                 location=None, distance=None, good_with_children=None, good_with_dogs=None, good_with_cats=None,
-                before_date=None, after_date=None, sort=None, pages=1, results_per_page=20, return_df=False):
+                house_trained=None, declawed=None, special_needs=None, before_date=None, after_date=None,
+                sort=None, pages=1, results_per_page=20, return_df=False):
         r"""
         Returns adoptable animal data from Petfinder based on specified criteria.
 
@@ -470,12 +471,28 @@ class Petfinder(object):
             if animal_type: # Petfinder API does not return correct results for animal_type otherwise
                     url += '?type={}'.format(animal_type)
 
-            params = _parameters(animal_type=animal_type, breed=breed, size=size, gender=gender,
-                                 age=age, color=color, coat=coat, status=status, name=name,
-                                 organization_id=organization_id, location=location, distance=distance,
-                                 sort=sort, results_per_page=results_per_page, before_date=before_date,
-                                 after_date=after_date, good_with_cats=good_with_cats,
-                                 good_with_children=good_with_children, good_with_dogs=good_with_dogs)
+            params = _parameters(animal_type=animal_type,
+                                 breed=breed,
+                                 size=size,
+                                 gender=gender,
+                                 age=age,
+                                 color=color,
+                                 coat=coat,
+                                 status=status,
+                                 name=name,
+                                 organization_id=organization_id,
+                                 location=location,
+                                 distance=distance,
+                                 sort=sort,
+                                 results_per_page=results_per_page,
+                                 before_date=before_date,
+                                 after_date=after_date,
+                                 good_with_cats=good_with_cats,
+                                 good_with_children=good_with_children,
+                                 good_with_dogs=good_with_dogs,
+                                 house_trained=house_trained,
+                                 declawed=declawed,
+                                 special_needs=special_needs)
 
             if pages is None:
                 params['limit'] = 100
@@ -763,8 +780,9 @@ def _get_result(url, headers, params=None):
 
 def _parameters(breed=None, size=None, gender=None, color=None, coat=None, animal_type=None, location=None,
                 distance=None, state=None, country=None, query=None, sort=None, name=None, age=None,
-                good_with_children=None, good_with_dogs=None, good_with_cats=None, before_date=None, after_date=None,
-                animal_id=None, organization_id=None, status=None, results_per_page=None, page=None):
+                good_with_children=None, good_with_dogs=None, good_with_cats=None, declawed=None,
+                house_trained=None, special_needs=None, before_date=None, after_date=None, animal_id=None,
+                organization_id=None, status=None, results_per_page=None, page=None):
     r"""
     Internal function for determining which parameters have been passed and aligning them to their respective
     Petfinder API parameters.
@@ -843,9 +861,18 @@ def _parameters(breed=None, size=None, gender=None, color=None, coat=None, anima
         Dictionary representing aligned parameters and headers for ingestion into the Petfinder API.
 
     """
-    _check_parameters(animal_types=animal_type, size=size, gender=gender, age=age, coat=coat, status=status,
-                      distance=distance, sort=sort, limit=results_per_page, good_with_cats=good_with_cats,
-                      good_with_children=good_with_children, good_with_dogs=good_with_dogs)
+    if isinstance(age, (list, tuple)):
+        age = ','.join(age).replace(' ', '')
+    if isinstance(gender, (list, tuple)):
+        gender = ','.join(gender).replace(' ', '')
+    if isinstance(status, (list, tuple)):
+        status = ','.join(status).replace(' ', '')
+    if isinstance(animal_type, (list, tuple)):
+        animal_type = ','.join(animal_type).replace(' ', '')
+    if isinstance(size, (list, tuple)):
+        size = ','.join(size).replace(' ', '')
+    if isinstance(coat, (list, tuple)):
+        coat = ','.join(coat).replace(' ', '')
 
     if good_with_cats is not None:
         good_with_cats = int(good_with_cats)
@@ -853,6 +880,17 @@ def _parameters(breed=None, size=None, gender=None, color=None, coat=None, anima
         good_with_children = int(good_with_children)
     if good_with_dogs is not None:
         good_with_dogs = int(good_with_dogs)
+    if declawed is not None:
+        declawed = int(declawed)
+    if house_trained is not None:
+        house_trained = int(house_trained)
+    if special_needs is not None:
+        special_needs = int(special_needs)
+
+    _check_parameters(animal_types=animal_type, size=size, gender=gender, age=age, coat=coat, status=status,
+                      distance=distance, sort=sort, limit=results_per_page, good_with_cats=good_with_cats,
+                      good_with_children=good_with_children, good_with_dogs=good_with_dogs, declawed=declawed,
+                      house_trained=house_trained, special_needs=special_needs)
 
     args = {
         'breed': breed,
@@ -874,6 +912,9 @@ def _parameters(breed=None, size=None, gender=None, color=None, coat=None, anima
         'good_with_cats': good_with_cats,
         'good_with_children': good_with_children,
         'good_with_dogs': good_with_dogs,
+        'house_trained': house_trained,
+        'special_needs': special_needs,
+        'declawed': declawed,
         'before': before_date,
         'after': after_date,
         'status': status,
@@ -888,7 +929,7 @@ def _parameters(breed=None, size=None, gender=None, color=None, coat=None, anima
 
 def _check_parameters(animal_types=None, size=None, gender=None, age=None, coat=None, status=None,
                       distance=None, good_with_children=None, good_with_dogs=None, good_with_cats=None,
-                      sort=None, limit=None):
+                      declawed=None, house_trained=None, special_needs=None, sort=None, limit=None):
     r"""
     Internal function for checking the passed parameters against valid options available in the Petfinder API.
 
@@ -948,9 +989,8 @@ def _check_parameters(animal_types=None, size=None, gender=None, age=None, coat=
                     animal_types=_animal_types)
 
     if size is not None:
-        if isinstance(size, str):
-            size = [size]
-        diff = set(size).difference(_sizes)
+        size_list = size.split(',')
+        diff = list(set(size_list).difference(_sizes))
 
         if len(diff) > 0:
             incorrect_values['size'] = "sizes {sizes} are not valid. Sizes must be of the following: {size_list}"\
@@ -958,9 +998,8 @@ def _check_parameters(animal_types=None, size=None, gender=None, age=None, coat=
                         size_list=_sizes)
 
     if gender is not None:
-        if isinstance(gender, str):
-            gender = [gender]
-        diff = set(gender).difference(_genders)
+        gender_list = gender.split(',')
+        diff = list(set(gender_list).difference(_genders))
 
         if len(diff) > 0:
             incorrect_values['gender'] = "genders {genders} are not valid. Genders must be of the following: " \
@@ -969,20 +1008,18 @@ def _check_parameters(animal_types=None, size=None, gender=None, age=None, coat=
                         gender_list=_genders)
 
     if age is not None:
-        if isinstance(age, str):
-            age = [age]
-        diff = set(age).difference(_ages)
+        age_list = age.split(',')
+        diff = list(set(age_list).difference(_ages))
 
         if len(diff) > 0:
             incorrect_values['age'] = "ages {age} are not valid. Ages must be of the following: " \
-                                      "{ages_list}"\
+                                      "{ages_list}" \
                 .format(age=diff,
                         ages_list=_ages)
 
     if coat is not None:
-        if isinstance(coat, str):
-            coat = [coat]
-        diff = set(coat).difference(_coats)
+        coat_list = coat.split(',')
+        diff = list(set(coat_list).difference(_coats))
 
         if len(diff) > 0:
             incorrect_values['coat'] = "coats {coats} are not valid. Coats must be of the following: " \
@@ -991,9 +1028,14 @@ def _check_parameters(animal_types=None, size=None, gender=None, age=None, coat=
                         coat_list=_coats)
 
     if status is not None and status not in _status:
-        incorrect_values['status'] = "animal status {status} is not valid. Status must be of the following: " \
-                                     "{statuses}".format(status=status,
-                                                         statuses=_status)
+        status_list = status.split(',')
+        diff = list(set(status_list).difference(_status))
+
+        if len(diff) > 0:
+            incorrect_values['status'] = "status {status} are not valid. Coats must be of the following: " \
+                                       "{status_list}" \
+                .format(status=diff,
+                        status_list=_coats)
 
     if sort is not None and sort not in _sort:
         incorrect_values['sort'] = "sort order {sort} must be one of: {sort_list}"\
@@ -1015,6 +1057,18 @@ def _check_parameters(animal_types=None, size=None, gender=None, age=None, coat=
     if good_with_children is not None:
         if not isinstance(good_with_children, (bool, int)):
             incorrect_values['good_with_children'] = 'good_with_dogs must be a boolean (True, False, 1, or 0).'
+
+    if declawed is not None:
+        if not isinstance(declawed, (bool, int)):
+            incorrect_values['declawed'] = 'declawed must be a boolean (True, False, 1, or 0).'
+
+    if house_trained is not None:
+        if not isinstance(house_trained, (bool, int)):
+            incorrect_values['house_trained'] = 'house_trained must be a boolean (True, False, 1, or 0).'
+
+    if special_needs is not None:
+        if not isinstance(special_needs, (bool, int)):
+            incorrect_values['special_needs'] = 'house_trained must be a boolean (True, False, 1, or 0).'
 
     if limit is not None:
         if int(limit) > 100:

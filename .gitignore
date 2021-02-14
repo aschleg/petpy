@@ -3,6 +3,7 @@ $ cat .gitignore
 dist/
 data/
 venv/
+.env
 *.pyc
 .idea
 .cache

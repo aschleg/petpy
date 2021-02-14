@@ -3,6 +3,13 @@
 
 Changelog and version changes made with each release.
 
+## Version 2.3.0
+
+* Added several additional search filters to the `animals()` function.
+    - `declawed`: Filters results by animals that are marked as declawed.
+    - `house_trained`: Filters results by animals that are house trained.
+    - `special_needs`: Filters results by animals that have special needs
+
 ## Version 2.2.1
 
 Very small maintenance patch to update several `setup.py` settings. There is no need to update to this version.

@@ -1,6 +1,7 @@
 import os
 import pytest
 import vcr
+from dotenv import load_dotenv
 from pandas import DataFrame
 
 from petpy.api import Petfinder
@@ -11,6 +12,7 @@ tape = vcr.VCR(
     record_mode='once'
 )
 
+load_dotenv('../.env')
 key = os.environ.get('PETFINDER_KEY')
 secret_key = os.environ.get('PETFINDER_SECRET_KEY')
 

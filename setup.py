@@ -4,14 +4,14 @@ from setuptools import find_packages, setup
 
 setup(
     name='petpy',
-    version='2.2.1',
+    version='2.3.0',
     author='Aaron Schlegel',
     author_email='aaron@aaronschlegel.me',
     url='https://github.com/aschleg/petpy',
     description='Wrapper for the Petfinder API',
     license='MIT',
     packages=find_packages(exclude=['build', 'dist', 'petpy.egg-info',
-                                    'docs', 'notebooks', 'tests*']),
+                                    'docs', 'notebooks', 'tests*', 'venv']),
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     install_requires=['pandas>=0.22.0', 'requests>=2.18.4'],
@@ -29,6 +29,7 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
         'Topic :: Software Development :: Libraries :: Python Modules'
     ]
 )
