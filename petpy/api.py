@@ -384,6 +384,9 @@ class Petfinder(object):
         good_with_children : bool, optional
         good_with_cats : bool, optional
         good_with_dogs : bool, optional
+        declawed : bool, optional
+        special_needs : bool, optional
+        house_trained : bool, optional
         before_date : str, datetime
         after_date : str, datetime
         sort : {'recent', '-recent', 'distance', '-distance'}, optional
@@ -1027,7 +1030,7 @@ def _check_parameters(animal_types=None, size=None, gender=None, age=None, coat=
                 .format(coats=diff,
                         coat_list=_coats)
 
-    if status is not None and status not in _status:
+    if status is not None:
         status_list = status.split(',')
         diff = list(set(status_list).difference(_status))
 

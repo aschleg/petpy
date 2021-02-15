@@ -112,7 +112,7 @@ def test_animals():
 
     response8 = pf.animals(good_with_dogs=1)
     response9 = pf.animals(good_with_dogs=1, good_with_cats=1, good_with_children=1, return_df=True)
-    #response10 = pf.animals(special_needs=1, house_trained=1, declawed=1, return_df=True)
+    response10 = pf.animals(special_needs=1, house_trained=1, declawed=1, return_df=True)
 
     assert isinstance(response1, dict)
     assert len(response1['animals']) == 20
@@ -148,6 +148,10 @@ def test_animals():
     assert all(x == response9['environment.cats'][0] for x in response9['environment.cats'])
     assert all(x == response9['environment.children'][0] for x in response9['environment.children'])
     assert all(x == response9['environment.dogs'][0] for x in response9['environment.dogs'])
+
+    assert all(x == response10['attributes.declawed'][0] for x in response10['attributes.declawed'])
+    assert all(x == response10['attributes.house_trained'][0] for x in response10['attributes.house_trained'])
+    assert all(x == response10['attributes.special_needs'][0] for x in response10['attributes.special_needs'])
 
 
 @vcr.use_cassette('tests/cassettes/organizations.yml')
