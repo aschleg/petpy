@@ -3,6 +3,11 @@
 
 Changelog and version changes made with each release.
 
+## Version 2.3.1
+
+* Removed rate check limits that were causing errors with trying to call more
+  than one page for several endpoint functions. 
+
 ## Version 2.3.0
 
 * Added several additional search filters to the `animals()` function.
