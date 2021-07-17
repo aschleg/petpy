@@ -13,8 +13,8 @@ tape = vcr.VCR(
 )
 
 load_dotenv('../.env')
-key = os.environ.get('PETFINDER_KEY')
-secret_key = os.environ.get('PETFINDER_SECRET_KEY')
+key = os.environ.get('PETPY_PETFINDER_KEY')
+secret_key = os.environ.get('PETPY_PETFINDER_SECRET_KEY')
 
 animal_types = ('dog', 'cat', 'rabbit', 'small-furry',
                 'horse', 'bird', 'scales-fins-other', 'barnyard')
