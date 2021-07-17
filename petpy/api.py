@@ -170,7 +170,7 @@ class Petfinder(object):
         if types is None:
             url = urljoin(self._host, 'types')
 
-            r = _get_result(url,
+            r = self._get_result(url,
                             headers={
                                 'Authorization': 'Bearer ' + self._access_token
                             })
@@ -180,7 +180,7 @@ class Petfinder(object):
         elif isinstance(types, str):
             url = urljoin(self._host, 'types/{type}'.format(type=types))
 
-            r = _get_result(url,
+            r = self._get_result(url,
                             headers={
                                 'Authorization': 'Bearer ' + self._access_token
                             })
@@ -193,7 +193,7 @@ class Petfinder(object):
             for t in types:
                 url = urljoin(self._host, 'types/{type}'.format(type=t))
 
-                r = _get_result(url,
+                r = self._get_result(url,
                                 headers={
                                     'Authorization': 'Bearer ' + self._access_token
                                 })
@@ -284,7 +284,7 @@ class Petfinder(object):
             for t in types:
                 url = urljoin(self._host, 'types/{type}/breeds'.format(type=t))
 
-                r = _get_result(url,
+                r = self._get_result(url,
                                 headers={
                                     'Authorization': 'Bearer ' + self._access_token
                                 })
@@ -295,7 +295,7 @@ class Petfinder(object):
         elif isinstance(types, str):
             url = urljoin(self._host, 'types/{type}/breeds'.format(type=types))
 
-            r = _get_result(url,
+            r = self._get_result(url,
                             headers={
                                 'Authorization': 'Bearer ' + self._access_token
                             })
@@ -478,14 +478,14 @@ class Petfinder(object):
                 animals = []
 
                 for ani_id in animal_id:
-                    r = _get_result(url.format(id=ani_id),
+                    r = self._get_result(url.format(id=ani_id),
                                     headers={
                                         'Authorization': 'Bearer ' + self._access_token
                                     })
                     animals.append(r.json()['animal'])
 
             else:
-                r = _get_result(url.format(id=animal_id),
+                r = self._get_result(url.format(id=animal_id),
                                 headers={
                                     'Authorization': 'Bearer ' + self._access_token
                                 })
@@ -525,7 +525,7 @@ class Petfinder(object):
                 params['limit'] = 100
                 params['page'] = 1
 
-                r = _get_result(url,
+                r = self._get_result(url,
                                 headers={
                                     'Authorization': 'Bearer ' + self._access_token
                                 },
@@ -538,7 +538,7 @@ class Petfinder(object):
 
                     params['page'] = page
 
-                    r = _get_result(url,
+                    r = self._get_result(url,
                                     headers={
                                         'Authorization': 'Bearer ' + self._access_token
                                     },
@@ -553,7 +553,7 @@ class Petfinder(object):
                 pages += 1
                 params['page'] = 1
                 
-                r = _get_result(url,
+                r = self._get_result(url,
                                 headers={
                                     'Authorization': 'Bearer ' + self._access_token
                                 },
@@ -570,7 +570,7 @@ class Petfinder(object):
 
                     params['page'] = page
 
-                    r = _get_result(url,
+                    r = self._get_result(url,
                                     headers={
                                         'Authorization': 'Bearer ' + self._access_token
                                     },
@@ -661,7 +661,7 @@ class Petfinder(object):
                 organizations = []
 
                 for org_id in organization_id:
-                    r = _get_result(url.format(id=org_id),
+                    r = self._get_result(url.format(id=org_id),
                                     headers={
                                         'Authorization': 'Bearer ' + self._access_token
                                     })
@@ -669,7 +669,7 @@ class Petfinder(object):
                     organizations.append(r.json()['organization'])
 
             else:
-                r = _get_result(url.format(id=organization_id),
+                r = self._get_result(url.format(id=organization_id),
                                 headers={
                                     'Authorization': 'Bearer ' + self._access_token
                                 })
@@ -688,7 +688,7 @@ class Petfinder(object):
                 params['limit'] = 100
                 params['page'] = 1
 
-                r = _get_result(url,
+                r = self._get_result(url,
                                 headers={
                                     'Authorization': 'Bearer ' + self._access_token
                                 },
@@ -702,7 +702,7 @@ class Petfinder(object):
 
                     params['page'] = page
 
-                    r = _get_result(url,
+                    r = self._get_result(url,
                                     headers={
                                         'Authorization': 'Bearer ' + self._access_token
                                     },
@@ -717,7 +717,7 @@ class Petfinder(object):
                 pages += 1
                 params['page'] = 1
 
-                r = _get_result(url,
+                r = self._get_result(url,
                                 headers={
                                     'Authorization': 'Bearer ' + self._access_token
                                 },
@@ -733,7 +733,7 @@ class Petfinder(object):
 
                     params['page'] = page
 
-                    r = _get_result(url,
+                    r = self._get_result(url,
                                     headers={
                                         'Authorization': 'Bearer ' + self._access_token
                                     },
