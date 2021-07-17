@@ -5,12 +5,15 @@ orbs:
   coveralls: coveralls/coveralls@1.0.6
 
 workflows:
-  sample:  # This is the name of the workflow, feel free to change it to better match your workflow.
+  version: 2
+  build-test-coverage:  # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
     # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows
     jobs:
       - build-and-test
-      - upload-to-coveralls
+      - upload-to-coveralls:
+          requires:
+            build-and-test
 
 jobs:
   build-and-test:  # This is the name of the job, feel free to change it to better match what you're trying to do!
