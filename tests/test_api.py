@@ -24,7 +24,7 @@ animal_types = ('dog', 'cat', 'rabbit', 'small-furry',
 def test_authentication():
     p = Petfinder(key=key, secret=secret_key)
 
-    assert isinstance(p._auth, str)
+    assert isinstance(p._access_token, str)
 
 
 def authenticate():
