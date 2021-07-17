@@ -41,5 +41,5 @@ jobs:
       - checkout
       - run:
           name: Install and Make
-          command: npm install && make test-coverage
+          command: npm install coveralls --save-dev
       - coveralls/upload
