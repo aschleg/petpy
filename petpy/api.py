@@ -15,9 +15,11 @@ from pandas import json_normalize
 import requests
 import datetime
 from urllib.parse import urljoin
+from ratelimit import limits, RateLimitException
+from backoff import on_exception, expo
 
 from petpy.exceptions import PetfinderInvalidCredentials, PetfinderInsufficientAccess, PetfinderResourceNotFound, \
-    PetfinderUnexpectedError, PetfinderInvalidParameters
+    PetfinderUnexpectedError, PetfinderInvalidParameters, PetfinderRateLimitExceeded
 
 #################################################################################################################
 #
@@ -73,7 +75,7 @@ class Petfinder(object):
         self.key = key
         self.secret = secret
         self._host = 'http://api.petfinder.com/v2/'
-        self._auth = self._authenticate()
+        self._access_token = self._authenticate()
 
     def _authenticate(self):
         r"""
@@ -81,12 +83,19 @@ class Petfinder(object):
 
         Raises
         ------
+        PetfinderInvalidCredentials
+            Raised if the supplied secret key and secret access key are invalid. Check the generated API key from
+            petfinder.com is still active and that the secret and access keys are the same as those passed.
 
         Returns
         -------
         str
             Access token granted by the Petfinder API. The access token stays live for 3600 seconds, or one hour,
             at which point the user must reauthenticate.
+
+        See Also
+        --------
+        PetfinderInvalidCredentials
 
         """
         endpoint = 'oauth2/token'
@@ -106,6 +115,9 @@ class Petfinder(object):
 
         return r.json()['access_token']
 
+    @on_exception(expo, RateLimitException, max_tries=10)
+    @limits(calls=50, period=1)
+    @limits(calls=1000, period=86400)
     def animal_types(self, types=None):
         r"""
         Returns data on an animal type, or types available from the Petfinder API. This data includes the
@@ -160,7 +172,7 @@ class Petfinder(object):
 
             r = _get_result(url,
                             headers={
-                                'Authorization': 'Bearer ' + self._auth
+                                'Authorization': 'Bearer ' + self._access_token
                             })
 
             result = r.json()
@@ -170,7 +182,7 @@ class Petfinder(object):
 
             r = _get_result(url,
                             headers={
-                                'Authorization': 'Bearer ' + self._auth
+                                'Authorization': 'Bearer ' + self._access_token
                             })
 
             result = r.json()
@@ -183,7 +195,7 @@ class Petfinder(object):
 
                 r = _get_result(url,
                                 headers={
-                                    'Authorization': 'Bearer ' + self._auth
+                                    'Authorization': 'Bearer ' + self._access_token
                                 })
 
                 types_collection.append(r.json()['type'])
@@ -195,6 +207,9 @@ class Petfinder(object):
 
         return result
 
+    @on_exception(expo, RateLimitException, max_tries=10)
+    @limits(calls=50, period=1)
+    @limits(calls=1000, period=86400)
     def breeds(self, types=None, return_df=False, raw_results=False):
         r"""
         Returns breed names of specified animal type, or types.
@@ -271,7 +286,7 @@ class Petfinder(object):
 
                 r = _get_result(url,
                                 headers={
-                                    'Authorization': 'Bearer ' + self._auth
+                                    'Authorization': 'Bearer ' + self._access_token
                                 })
                 breeds.append({t: r.json()})
 
@@ -282,7 +297,7 @@ class Petfinder(object):
 
             r = _get_result(url,
                             headers={
-                                'Authorization': 'Bearer ' + self._auth
+                                'Authorization': 'Bearer ' + self._access_token
                             })
             result = r.json()
 
@@ -332,6 +347,9 @@ class Petfinder(object):
 
         return result
 
+    @on_exception(expo, RateLimitException, max_tries=10)
+    @limits(calls=50, period=1)
+    @limits(calls=1000, period=86400)
     def animals(self, animal_id=None, animal_type=None, breed=None, size=None, gender=None,
                 age=None, color=None, coat=None, status=None, name=None, organization_id=None,
                 location=None, distance=None, good_with_children=None, good_with_dogs=None, good_with_cats=None,
@@ -380,13 +398,23 @@ class Petfinder(object):
             Returns results within the distance of the specified location. If not given, defaults to 100 miles.
             Maximum distance range is 500 miles.
         good_with_children : bool, optional
+            Filters animals that have been designated as being good with children.
         good_with_cats : bool, optional
+            Filters the returned animals by those who have been flagged as being good with cats.
         good_with_dogs : bool, optional
+            Returns results restricted to animals who have been flagged as being good with dogs.
         declawed : bool, optional
+            Filters results for animals that have been declawed.
         special_needs : bool, optional
+            Returns animals that have special needs.
         house_trained : bool, optional
+            If specified, only returns animals that are listed as house-trained.
         before_date : str, datetime
+            Returns results that have been published before the specified datetime. Must be a valid ISO8601 date-time
+            string or a datetime object.
         after_date : str, datetime
+            Returns results that have been published after the specified datetime. Must be a valid ISO8601 date-time
+            string or a datetime object.
         sort : {'recent', '-recent', 'distance', '-distance'}, optional
             Sorts by specified attribute. Leading dashes represents a reverse-order sort. Must be one of 'recent',
             '-recent', 'distance', or '-distance'.
@@ -452,14 +480,14 @@ class Petfinder(object):
                 for ani_id in animal_id:
                     r = _get_result(url.format(id=ani_id),
                                     headers={
-                                        'Authorization': 'Bearer ' + self._auth
+                                        'Authorization': 'Bearer ' + self._access_token
                                     })
                     animals.append(r.json()['animal'])
 
             else:
                 r = _get_result(url.format(id=animal_id),
                                 headers={
-                                    'Authorization': 'Bearer ' + self._auth
+                                    'Authorization': 'Bearer ' + self._access_token
                                 })
                 animals = r.json()['animal']
 
@@ -499,7 +527,7 @@ class Petfinder(object):
 
                 r = _get_result(url,
                                 headers={
-                                    'Authorization': 'Bearer ' + self._auth
+                                    'Authorization': 'Bearer ' + self._access_token
                                 },
                                 params=params)
 
@@ -512,7 +540,7 @@ class Petfinder(object):
 
                     r = _get_result(url,
                                     headers={
-                                        'Authorization': 'Bearer ' + self._auth
+                                        'Authorization': 'Bearer ' + self._access_token
                                     },
                                     params=params)
 
@@ -527,14 +555,14 @@ class Petfinder(object):
                 
                 r = _get_result(url,
                                 headers={
-                                    'Authorization': 'Bearer ' + self._auth
+                                    'Authorization': 'Bearer ' + self._access_token
                                 },
                                 params=params)
 
                 animals = r.json()['animals']
                 max_pages = r.json()['pagination']['total_pages']
 
-                if pages > int(max_pages) + 1:
+                if pages > int(max_pages):
                     pages = max_pages
                     max_page_warning = True
 
@@ -544,7 +572,7 @@ class Petfinder(object):
 
                     r = _get_result(url,
                                     headers={
-                                        'Authorization': 'Bearer ' + self._auth
+                                        'Authorization': 'Bearer ' + self._access_token
                                     },
                                     params=params)
 
@@ -566,6 +594,9 @@ class Petfinder(object):
 
         return animals
 
+    @on_exception(expo, RateLimitException, max_tries=10)
+    @limits(calls=50, period=1)
+    @limits(calls=1000, period=86400)
     def organizations(self, organization_id=None, name=None, location=None, distance=None, state=None,
                       country=None, query=None, sort=None, results_per_page=20, pages=1, return_df=False):
         r"""
@@ -632,7 +663,7 @@ class Petfinder(object):
                 for org_id in organization_id:
                     r = _get_result(url.format(id=org_id),
                                     headers={
-                                        'Authorization': 'Bearer ' + self._auth
+                                        'Authorization': 'Bearer ' + self._access_token
                                     })
 
                     organizations.append(r.json()['organization'])
@@ -640,7 +671,7 @@ class Petfinder(object):
             else:
                 r = _get_result(url.format(id=organization_id),
                                 headers={
-                                    'Authorization': 'Bearer ' + self._auth
+                                    'Authorization': 'Bearer ' + self._access_token
                                 })
 
                 organizations = r.json()['organization']
@@ -659,7 +690,7 @@ class Petfinder(object):
 
                 r = _get_result(url,
                                 headers={
-                                    'Authorization': 'Bearer ' + self._auth
+                                    'Authorization': 'Bearer ' + self._access_token
                                 },
                                 params=params)
 
@@ -673,7 +704,7 @@ class Petfinder(object):
 
                     r = _get_result(url,
                                     headers={
-                                        'Authorization': 'Bearer ' + self._auth
+                                        'Authorization': 'Bearer ' + self._access_token
                                     },
                                     params=params)
 
@@ -688,7 +719,7 @@ class Petfinder(object):
 
                 r = _get_result(url,
                                 headers={
-                                    'Authorization': 'Bearer ' + self._auth
+                                    'Authorization': 'Bearer ' + self._access_token
                                 },
                                 params=params)
                 organizations = r.json()['organizations']
@@ -704,7 +735,7 @@ class Petfinder(object):
 
                     r = _get_result(url,
                                     headers={
-                                        'Authorization': 'Bearer ' + self._auth
+                                        'Authorization': 'Bearer ' + self._access_token
                                     },
                                     params=params)
                     if isinstance(r.json(), dict):
@@ -725,41 +756,51 @@ class Petfinder(object):
 
         return organizations
 
+    def _get_result(self, url, headers, params=None):
+        r"""
+
+        Parameters
+        ----------
+
+        Returns
+        -------
+
+        """
+        r = requests.get(url,
+                         headers=headers,
+                         params=params)
+
+        if r.status_code == 400:
+            raise PetfinderInvalidParameters(message='There are invalid parameters in the API query.',
+                                             err=r.json()['invalid-params'])
+
+        if r.status_code == 401:
+            if r.json()['detail'] == 'Access token invalid or expired':
+                self._access_token = self._authenticate()
+            else:
+                raise PetfinderInvalidCredentials(message='Invalid Credentials',
+                                                  err=(r.reason, r.status_code))
+
+        if r.status_code == 403:
+            raise PetfinderInsufficientAccess(message='Insufficient Access',
+                                              err=(r.reason, r.status_code))
+
+        if r.status_code == 404:
+            raise PetfinderResourceNotFound(message='Requested Resource not Found',
+                                            err=(r.reason, r.status_code))
+
+        if r.status_code == 500:
+            raise PetfinderUnexpectedError(message='The Petfinder API encountered an unexpected error.',
+                                           err=(r.reason, r.status_code))
+
+        return r
+
 
 #################################################################################################################
 #
 # Internal helper functions
 #
 #################################################################################################################
-
-
-def _get_result(url, headers, params=None):
-
-    r = requests.get(url,
-                     headers=headers,
-                     params=params)
-
-    if r.status_code == 400:
-        raise PetfinderInvalidParameters(message='There are invalid parameters in the API query.',
-                                         err=r.json()['invalid-params'])
-
-    if r.status_code == 401:
-        raise PetfinderInvalidCredentials(message='Invalid Credentials',
-                                          err=(r.reason, r.status_code))
-
-    if r.status_code == 403:
-        raise PetfinderInsufficientAccess(message='Insufficient Access',
-                                          err=(r.reason, r.status_code))
-
-    if r.status_code == 404:
-        raise PetfinderResourceNotFound(message='Requested Resource not Found',
-                                        err=(r.reason, r.status_code))
-
-    if r.status_code == 500:
-        raise PetfinderUnexpectedError(message='The Petfinder API encountered an unexpected error.',
-                                       err=(r.reason, r.status_code))
-
-    return r
 
 
 def _parameters(breed=None, size=None, gender=None, color=None, coat=None, animal_type=None, location=None,
