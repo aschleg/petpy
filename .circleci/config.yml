@@ -36,7 +36,7 @@ jobs:
           command: pytest
   upload-to-coveralls:
     docker:
-      - image: 'circleci/node:10.0.0'
+      - image: cimg/node:16.5.0
     steps:
       - checkout
       - run:
