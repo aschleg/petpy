@@ -2,8 +2,6 @@ version: 2.1
 
 orbs:
   python: circleci/python@1.2
-  coveralls: coveralls/coveralls@1.0.6
-
 workflows:
   version: 2
   build-test-coverage:  # This is the name of the workflow, feel free to change it to better match your workflow.
@@ -11,11 +9,6 @@ workflows:
     # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows
     jobs:
       - build-and-test
-      - upload-to-coveralls:
-          requires:
-            - build-and-test
-          context: COVERALLS_REPO_TOKEN
-
 jobs:
   build-and-test:  # This is the name of the job, feel free to change it to better match what you're trying to do!
     # These next lines defines a Docker executors: https://circleci.com/docs/2.0/executor-types/
@@ -35,12 +28,11 @@ jobs:
           name: Run tests
           # This assumes pytest is installed via the install-package step above
           command: pytest
-  upload-to-coveralls:
-    docker:
-      - image: cimg/node:16.5.0
-    steps:
-      - checkout
       - run:
-          name: Install and Make
-          command: npm install coverage coveralls --save-dev
-      - coveralls/upload
+          name: codecov
+          command: codecov -t $CODECOV_TOKEN
+      - run:
+          name: coveralls
+          command: |
+            coverage run --source=petpy -m pytest tests/
+            coveralls
