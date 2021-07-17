@@ -4,7 +4,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='petpy',
-    version='2.3.1',
+    version='2.3.2',
     author='Aaron Schlegel',
     author_email='aaron@aaronschlegel.me',
     url='https://github.com/aschleg/petpy',

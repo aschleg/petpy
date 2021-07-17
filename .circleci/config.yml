@@ -14,6 +14,7 @@ workflows:
       - upload-to-coveralls:
           requires:
             - build-and-test
+          context: COVERALLS_REPO_TOKEN
 
 jobs:
   build-and-test:  # This is the name of the job, feel free to change it to better match what you're trying to do!
@@ -41,5 +42,5 @@ jobs:
       - checkout
       - run:
           name: Install and Make
-          command: npm install coveralls --save-dev
+          command: npm install coverage coveralls --save-dev
       - coveralls/upload

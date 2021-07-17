@@ -3,6 +3,15 @@
 
 Changelog and version changes made with each release.
 
+## Version 2.3.2
+
+* Implemented rate-limiting for API calls that could potentially exceed the quotas 
+  set by Petfinder (50 calls/second, 1,000/day). An exponential backoff strategy is employed when rates exceed 
+  the given limits and tries ten more times before giving up and returning the collected results.
+* Access token that is generated on first initialization of Petfinder is now refreshed automatically
+  after expiring. 
+  
+
 ## Version 2.3.1
 
 * Removed rate check limits that were causing errors with trying to call more
