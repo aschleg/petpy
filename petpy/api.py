@@ -19,7 +19,7 @@ from ratelimit import limits, RateLimitException
 from backoff import on_exception, expo
 
 from petpy.exceptions import PetfinderInvalidCredentials, PetfinderInsufficientAccess, PetfinderResourceNotFound, \
-    PetfinderUnexpectedError, PetfinderInvalidParameters, PetfinderRateLimitExceeded
+    PetfinderUnexpectedError, PetfinderInvalidParameters
 
 #################################################################################################################
 #
