@@ -1,6 +1,7 @@
 # Petpy - Python Wrapper for the Petfinder API
 
 [![Documentation Status](https://readthedocs.org/projects/petpy/badge/?version=latest)](http://petpy.readthedocs.io/en/latest/?badge=latest)
+[![CircleCI](https://circleci.com/gh/aschleg/petpy/tree/master.svg?style=svg)](https://circleci.com/gh/aschleg/petpy/tree/master)
 [![Coverage Status](https://coveralls.io/repos/github/aschleg/petpy/badge.svg?branch=master)](https://coveralls.io/github/aschleg/petpy?branch=master)
 [![codecov](https://codecov.io/gh/aschleg/petpy/branch/master/graph/badge.svg)](https://codecov.io/gh/aschleg/petpy)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ac2a4c228a9e425ba11af69f7a5c9e51)](https://www.codacy.com/app/aschleg/petpy?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=aschleg/petpy&amp;utm_campaign=Badge_Grade)
