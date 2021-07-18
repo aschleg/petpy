@@ -19,7 +19,7 @@ from ratelimit import limits, RateLimitException
 from backoff import on_exception, expo
 
 from petpy.exceptions import PetfinderInvalidCredentials, PetfinderInsufficientAccess, PetfinderResourceNotFound, \
-    PetfinderUnexpectedError, PetfinderInvalidParameters
+    PetfinderUnexpectedError, PetfinderInvalidParameters, PetfinderRateLimitExceeded
 
 #################################################################################################################
 #
@@ -306,14 +306,10 @@ class Petfinder(object):
 
         if return_df:
             raw_results = True
-
             df_results = DataFrame()
-
             if isinstance(types, (tuple, list)):
-
                 for t in range(0, len(types)):
                     df_results = df_results.append(json_normalize(result['breeds'][t][types[t]]['breeds']))
-
             else:
                 df_results = df_results.append(json_normalize(result['breeds']))
 
@@ -323,7 +319,6 @@ class Petfinder(object):
             result = df_results
 
         if not raw_results:
-
             json_result = {
                 'breeds': {
 
@@ -365,8 +360,8 @@ class Petfinder(object):
             :code:`animal_id` is specified, the other function parameters are overridden. If :code:`animal_id`
             is not specified, a search of animals on Petfinder matching given criteria is performed.
         animal_type : {'dog', 'cat', 'rabbit', 'small-furry', 'horse', 'bird', 'scales-fins-other', 'barnyard'}, str, optional
-            String representing desired animal type to search. Must be one of 'dog', 'cat', 'rabbit', 'small-furry',
-            'horse', 'bird', 'scales-fins-other', or 'barnyard'.
+            String representing desired animal type to search. If specified, must be one of 'dog', 'cat', 'rabbit',
+            'small-furry', 'horse', 'bird', 'scales-fins-other', or 'barnyard'.
         breed: str, tuple or list of str, optional
             String or tuple or list of strings of desired animal type breed to search. Available animal breeds in
             the Petfinder database can be found using the :code:`breeds()` method.
@@ -375,17 +370,17 @@ class Petfinder(object):
             of 'small', 'medium', 'large', or 'xlarge'.
         gender : {'male', 'female', 'unknown'} str, tuple or list of str, optional
             String or tuple or list of strings representing animal genders to return. Must be of 'male', 'female',
-            or 'unknown'.
+            or 'unknown' if specified.
         age : {'baby', 'young', 'adult', 'senior'} str, tuple or list of str, optional
             String or tuple or list of strings specifying animal age(s) to return from search. Must be of 'baby',
-            'young', 'adult', 'senior'.
+            'young', 'adult', 'senior' if specified.
         color : str, optional
             String representing specified animal 'color' to search. Colors for each available animal type in the
             Petfinder database can be found using the :code:`animal_types()` method.
         coat : {'short', 'medium', 'long', 'wire', 'hairless', 'curly'}, str, tuple or list of str, optional
             Desired coat(s) to return. Must be of 'short', 'medium', 'long', 'wire', 'hairless', or 'curly'.
         status : {'adoptable', 'adopted', 'found'} str, optional
-            Animal status to filter search results. Must be one of 'adoptable', 'adopted', or 'found'.
+            Animal status to filter search results. If specified, must be one of 'adoptable', 'adopted', or 'found'.
         name : str, optional
             Searches for animal names matching or partially matching name.
         organization_id : str, tuple or list of str, optional
@@ -470,13 +465,9 @@ class Petfinder(object):
                 raise ValueError('before_date parameter must be more recent than after_date parameter.')
 
         if animal_id is not None:
-
             url = urljoin(self._host, 'animals/{id}')
-
             if isinstance(animal_id, (tuple, list)):
-
                 animals = []
-
                 for ani_id in animal_id:
                     r = self._get_result(url.format(id=ani_id),
                                     headers={
@@ -492,7 +483,6 @@ class Petfinder(object):
                 animals = r.json()['animal']
 
         else:
-
             url = urljoin(self._host, 'animals/')
 
             if animal_type: # Petfinder API does not return correct results for animal_type otherwise
@@ -788,6 +778,10 @@ class Petfinder(object):
         if r.status_code == 404:
             raise PetfinderResourceNotFound(message='Requested Resource not Found',
                                             err=(r.reason, r.status_code))
+
+        if r.status_code == 429:
+            raise PetfinderRateLimitExceeded(message='Daily Rate Limit Exceed. Resets at 12:00am UTC',
+                                             err=(r.reason, r.status_code))
 
         if r.status_code == 500:
             raise PetfinderUnexpectedError(message='The Petfinder API encountered an unexpected error.',

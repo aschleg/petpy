@@ -99,20 +99,26 @@ def test_animals():
     for i in response1['animals'][0:3]:
         animal_ids.append(i['id'])
 
-    response3 = pf.animals(animal_id=animal_ids)
-    response3_df = pf.animals(animal_id=animal_ids, return_df=True)
+    response3 = pf.animals(animal_id=animal_ids, results_per_page=5)
+    response3_df = pf.animals(animal_id=animal_ids, return_df=True, results_per_page=5)
 
-    response4 = pf.animals(animal_id=animal_ids[0])
-    response4_df = pf.animals(animal_id=animal_ids[0], return_df=True)
+    response4 = pf.animals(animal_id=animal_ids[0], results_per_page=5)
+    response4_df = pf.animals(animal_id=animal_ids[0], return_df=True, results_per_page=5)
 
-    response5 = pf.animals(good_with_children=1, good_with_cats=1)
+    response5 = pf.animals(good_with_children=1, good_with_cats=1, results_per_page=5)
 
-    response6 = pf.animals(before_date='2020-06-30', after_date='2020-01-01')
-    response7 = pf.animals(before_date='2020-06-30 0:0:0', after_date='2020-01-01 12:00:00')
+    response6 = pf.animals(before_date='2020-06-30', after_date='2020-01-01', results_per_page=5)
+    response7 = pf.animals(before_date='2020-06-30 0:0:0', after_date='2020-01-01 12:00:00', results_per_page=5)
 
-    response8 = pf.animals(good_with_dogs=1)
-    response9 = pf.animals(good_with_dogs=1, good_with_cats=1, good_with_children=1, return_df=True)
-    response10 = pf.animals(special_needs=1, house_trained=1, declawed=1, return_df=True)
+    response8 = pf.animals(good_with_dogs=1, results_per_page=5)
+    response9 = pf.animals(good_with_dogs=1, good_with_cats=1, good_with_children=1, return_df=True,
+                results_per_page=5)
+    response10 = pf.animals(special_needs=1, house_trained=1, declawed=1, return_df=True, results_per_page=5)
+
+    with pytest.raises(ValueError):
+        pf.animals(after_date='2021-07-02', before_date='2021-07-01', results_per_page=5)
+
+    response11 = pf.animals(status=['found', 'adoptable'], results_per_page=5)
 
     assert isinstance(response1, dict)
     assert len(response1['animals']) == 20
@@ -153,6 +159,7 @@ def test_animals():
     assert all(x == response10['attributes.house_trained'][0] for x in response10['attributes.house_trained'])
     assert all(x == response10['attributes.special_needs'][0] for x in response10['attributes.special_needs'])
 
+    assert isinstance(response11['animals'], list)
 
 @vcr.use_cassette('tests/cassettes/organizations.yml')
 def test_organizations():

@@ -157,3 +157,12 @@ class PetfinderInvalidParameters(PetfinderError):
         self.err = err
 
         super(PetfinderInvalidParameters, self).__init__(message, err, *args)
+
+
+class PetfinderRateLimitExceeded(PetfinderError):
+
+    def __init__(self, message, err, *args):
+        self.message = message
+        self.err = err
+
+        super(PetfinderRateLimitExceeded, self).__init__(message, err, *args)
