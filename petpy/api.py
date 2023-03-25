@@ -10,6 +10,7 @@ https://www.petfinder.com/developers/
 """
 
 
+import sys
 from pandas import DataFrame
 from pandas import json_normalize
 import requests
@@ -413,9 +414,9 @@ class Petfinder(object):
         sort : {'recent', '-recent', 'distance', '-distance'}, optional
             Sorts by specified attribute. Leading dashes represents a reverse-order sort. Must be one of 'recent',
             '-recent', 'distance', or '-distance'.
-        pages : int, default 1
-            Specifies which page of results to return. Defaults to the first page of results. If set to :code:`None`,
-            all results will be returned.
+        pages : int|range, default 1
+            Specifies which page(s) of results to return. Defaults to the first page of results. If set to :code:`None`,
+            all results will be returned. Could be a range of individual pages. `pages=range(5, 7)` results the two pages 5 and 6.
         results_per_page : int, default 20
             Number of results to return per page. Defaults to 20 results and cannot exceed 100 results per page.
         return_df : boolean, default False
@@ -442,7 +443,6 @@ class Petfinder(object):
         >>> animals = pf.animals(results_per_page=50, pages=3, return_df=True)
 
         """
-        max_page_warning = False
 
         if before_date is not None:
             if isinstance(before_date, str):
@@ -460,33 +460,28 @@ class Petfinder(object):
                     after_date = datetime.datetime.strptime(after_date, '%Y-%m-%d')
             after_date = after_date.astimezone().replace(microsecond=0).isoformat()
 
-        if after_date is not None and before_date is not None:
-            if before_date < after_date:
-                raise ValueError('before_date parameter must be more recent than after_date parameter.')
+        if after_date and before_date and before_date < after_date:
+            raise ValueError('before_date parameter must be more recent than after_date parameter.')
+
+        animals = []
 
         if animal_id is not None:
             url = urljoin(self._host, 'animals/{id}')
-            if isinstance(animal_id, (tuple, list)):
-                animals = []
-                for ani_id in animal_id:
-                    r = self._get_result(url.format(id=ani_id),
-                                    headers={
-                                        'Authorization': 'Bearer ' + self._access_token
-                                    })
+            for ani_id in animal_id if isinstance(animal_id, (tuple, list)) else [animal_id]:
+                r = self._get_result(url.format(id=ani_id),
+                                     headers={
+                                         'Authorization': 'Bearer ' + self._access_token
+                                     })
+                try:
                     animals.append(r.json()['animal'])
-
-            else:
-                r = self._get_result(url.format(id=animal_id),
-                                headers={
-                                    'Authorization': 'Bearer ' + self._access_token
-                                })
-                animals = r.json()['animal']
+                except (TypeError, AttributeError):
+                    pass
 
         else:
             url = urljoin(self._host, 'animals/')
 
             if animal_type: # Petfinder API does not return correct results for animal_type otherwise
-                    url += '?type={}'.format(animal_type)
+                    url += f'?type={animal_type}'
 
             params = _parameters(animal_type=animal_type,
                                  breed=breed,
@@ -513,76 +508,35 @@ class Petfinder(object):
 
             if pages is None:
                 params['limit'] = 100
-                params['page'] = 1
-
-                r = self._get_result(url,
-                                headers={
-                                    'Authorization': 'Bearer ' + self._access_token
-                                },
-                                params=params)
-
-                animals = r.json()['animals']
-                max_pages = r.json()['pagination']['total_pages']
-
-                for page in range(2, max_pages + 1):
-
-                    params['page'] = page
-
-                    r = self._get_result(url,
-                                    headers={
-                                        'Authorization': 'Bearer ' + self._access_token
-                                    },
-                                    params=params)
-
-                    if isinstance(r.json(), dict):
-                        if 'animals' in r.json().keys():
-                            for i in r.json()['animals']:
-                                animals.append(i)
-
+                page_range = range(1, 2)
+            elif not isinstance(pages, range):
+                # If, for example, 3 pages were requested, then a range(1, 4) = [1, 2, 3] is created
+                page_range = range(1, max(2, pages + 1))
             else:
-                pages += 1
-                params['page'] = 1
-                
+                page_range = pages
+
+            # Retrieve at the first request
+            max_pages = None
+            for page in page_range:
+                if max_pages and page > max_pages:
+                    print(f'Requested page number {page:d} exceeds the number of pages available for this request. Stopped at {max_pages:d} instead',
+                          file=sys.stderr)
+                    break
+
+                params['page'] = page
                 r = self._get_result(url,
-                                headers={
-                                    'Authorization': 'Bearer ' + self._access_token
-                                },
-                                params=params)
+                                     headers={
+                                         'Authorization': 'Bearer ' + self._access_token
+                                     },
+                                     params=params)
+                try:
+                    animals.extend(r.json()['animals'])
+                    if max_pages is None:
+                        max_pages = r.json()['pagination']['total_pages']
+                except (TypeError, AttributeError):
+                    pass
 
-                animals = r.json()['animals']
-                max_pages = r.json()['pagination']['total_pages']
-
-                if pages > int(max_pages):
-                    pages = max_pages
-                    max_page_warning = True
-
-                for page in range(2, pages):
-
-                    params['page'] = page
-
-                    r = self._get_result(url,
-                                    headers={
-                                        'Authorization': 'Bearer ' + self._access_token
-                                    },
-                                    params=params)
-
-                    if isinstance(r.json(), dict):
-                        if 'animals' in r.json().keys():
-                            for i in r.json()['animals']:
-                                animals.append(i)
-
-        animals = {
-            'animals': animals
-        }
-
-        if return_df:
-            animals = _coerce_to_dataframe(animals)
-
-        if max_page_warning:
-            print('pages parameter exceeded maximum number of available pages available from the Petfinder API. As '
-                  'a result, the maximum number of pages {max_page} was returned'.format(max_page=max_pages))
-
-        return animals
+        return _coerce_to_dataframe(animals) if return_df else { 'animals': animals }
 
     @on_exception(expo, RateLimitException, max_tries=10)
     @limits(calls=50, period=1)
