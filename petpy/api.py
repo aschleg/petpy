@@ -75,7 +75,7 @@ class Petfinder(object):
         """
         self.key = key
         self.secret = secret
-        self._host = 'http://api.petfinder.com/v2/'
+        self._host = 'https://api.petfinder.com/v2/'
         self._access_token = self._authenticate()
 
     def _authenticate(self):
