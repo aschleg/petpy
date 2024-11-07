@@ -28,8 +28,6 @@ def test_authentication():
 
 
 def authenticate():
-    key = os.environ.get('PETPY_PETFINDER_KEY')
-    secret_key = os.environ.get('PETPY_PETFINDER_SECRET_KEY')
     petf = Petfinder(key=key, secret=secret_key)
 
     return petf
