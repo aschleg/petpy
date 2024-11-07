@@ -27,7 +27,7 @@ jobs:
           command: |
             export PETPY_PETFINDER_KEY=$PETPY_PETFINDER_KEY
             export PETPY_PETFINDER_SECRET_KEY=$PETPY_PETFINDER_SECRET_KEY
-            echo $PETPY_PETFINDER_SECRET_KEY
+            echo "printing $PETPY_PETFINDER_KEY"
             cd tests/ 
             pytest
             cd ../
