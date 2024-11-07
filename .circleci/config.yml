@@ -24,7 +24,10 @@ jobs:
           command: python setup.py install
       - run:
           name: Run tests
-          command: pytest
+          command: |
+            cd tests/ 
+            pytest
+            cd ../
       - run:
           name: codecov
           command: codecov -t $CODECOV_TOKEN
