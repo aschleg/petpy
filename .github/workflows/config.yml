@@ -42,8 +42,6 @@ jobs:
           PETPY_PETFINDER_KEY: ${{ secrets.PETPY_PETFINDER_KEY }}
           PETPY_PETFINDER_SECRET_KEY: ${{ secrets.PETPY_PETFINDER_SECRET_KEY }}
         run: |
-          echo $PETPY_PETFINDER_KEY
-          echo $PETPY_PETFINDER_SECRET_KEY
           pytest
 
       - name: Codecov

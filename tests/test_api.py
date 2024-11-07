@@ -7,7 +7,7 @@ from pandas import DataFrame
 from petpy.api import Petfinder
 
 tape = vcr.VCR(
-    cassette_library_dir='cassettes',
+    cassette_library_dir='tests/cassettes',
     serializer='json',
     record_mode='once'
 )
@@ -20,7 +20,7 @@ animal_types = ('dog', 'cat', 'rabbit', 'small-furry',
                 'horse', 'bird', 'scales-fins-other', 'barnyard')
 
 
-@vcr.use_cassette('cassettes/authenticate.yml')
+@vcr.use_cassette('tests/cassettes/authenticate.yml')
 def test_authentication():
     p = Petfinder(key=key, secret=secret_key)
 
@@ -36,7 +36,7 @@ def authenticate():
 petf = authenticate()
 
 
-@vcr.use_cassette('cassettes/animal_types.yml')
+@vcr.use_cassette('tests/cassettes/animal_types.yml')
 def test_animal_types():
     response1 = petf.animal_types()
     response2 = petf.animal_types('cat')
@@ -58,7 +58,7 @@ def test_animal_types():
         petf.animal_types(types={})
 
 
-@vcr.use_cassette('cassettes/breeds.yml')
+@vcr.use_cassette('tests/cassettes/breeds.yml')
 def test_breeds():
 
     response1 = petf.breeds()
@@ -88,7 +88,7 @@ def test_breeds():
         petf.breeds(types={})
 
 
-@vcr.use_cassette('cassettes/animals.yml')
+@vcr.use_cassette('tests/cassettes/animals.yml')
 def test_animals():
     response1 = petf.animals()
     response1_df = petf.animals(return_df=True)
@@ -162,7 +162,7 @@ def test_animals():
     assert isinstance(response11['animals'], list)
 
 
-@vcr.use_cassette('cassettes/organizations.yml')
+@vcr.use_cassette('tests/cassettes/organizations.yml')
 def test_organizations():
     response1 = petf.organizations()
     response1_df = petf.organizations(return_df=True)
