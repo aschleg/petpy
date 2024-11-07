@@ -1,0 +1,287 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJ6SnI0SnlCSEFsNjdlMlhqMFUyaFF0dVVJR2lMWWpxeWdLOEZNZ2xnUWlUR2VxRTJ6MCIsImp0aSI6IjExM2NmNzJlN2U0ODZiNGViYmNkOGJlYjYxNzAzOWMxZmRmMmE4YmM0OGIzZTYzNTU4YmYyZmMzODQ1YzQzNGYwZDYyMzMyYjdhZjExMDRhIiwiaWF0IjoxNzMwOTUwMDgyLCJuYmYiOjE3MzA5NTAwODIsImV4cCI6MTczMDk1MzY4Miwic3ViIjoiIiwic2NvcGVzIjpbXX0.sll19pDBM3tExcSFKFI2Ra8F1ORIYzvD6JsDdcd4n6LnWsSGiNb5ZUGzbCMnsrmvgaVK0fDL6_DiPLnD2GkiVB7wYpwJ_G8zAo3olVHDJjTzidckNX4KZFyMH8CUeorwaBCd5YhktHBJJvGJ0KEOpXElgjcM7IMjDDbCP0ZmiD30htH9ju-kID4UKmxE4qpkcXny6HcMkDzfLVvyT2Q9fz9YDSHYlC0Ls-CZogHL2dX-HtRvxOqDA5qldbeuJUKdtHihkPImFpjkHnHibHKv2rLjnY1Z5cCuOeFjDRs65w6F_-P8OsGNOA3ZJyxaPD_yq4a1WF0XF6tEJ7wlDWrYvQ
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA71WTW8aMRD9K6s9NRKIKIcecgtJ00QiCgLaqCpR5WUNWBh764+kKOK/d2bs3ewS
+        PhKJ9rK2x2PvzHvPY7+kblVwm57/fEkVW/L0PL3Ss7SVTjRzaE5vmDCSWwu24VwbB+0dz4VfQqen
+        Ffo+CMOhufRGrtJHXCu1ocUXhRET7ZJxJ+lyMUOvrqBp7Ek2WWBrhMolzRn9rND5cq7Bizk0ftUy
+        5wo7hq1oJ+k5tkMhnzhudMMgwt9eKIoN+skn9Dl5HQ54jiNowu7cOuUprHvDFMU1ZBnFMDIhQNgD
+        o2klFGYrGfvT07PPycNcONqZOrSb4QzB+MGl1M9oGTEV4tSK/nfNnhXiMuMq5wGYO0Y/u+ZL7MDc
+        LynUAqZeUsvlFNu54dCm487T2bhDLI07OXCzbqWZ4Ty3e5zGneiyXq9bFbOXzH2I2QaVFVvYNtCg
+        lP0fnmuaBnJKSGjQ10K5XeR2/XTa2KyyVTASeqAuJoEY7JTLq53pd+h6+6TNqjKU01dCevCuNojj
+        EaSsheV2DsQhFxJQqhYFsTUD2ynAngBQqqVBUpuLS2snARUi5JzJaslwqRckPpZlq6i8BlQntcm3
+        8NRmt8dYc+hxXTBDuhwW2rlwMuJkI8iafQRn1yRDZ0QR7dpkgodOA8WQ7lHEPgG5HhQ7OG0X+wAi
+        Fw29lyJ/q+2LmfZO1EtSRA/R3CXdUuRE/jaCY0EJDCR3zDgqY8Dbv8XNhMwPQhf8tqM3hF/KUsLX
+        3tCx2lc59oB6ITOhdANdLCElPu/C+vXws2XBZoqMQkG0WtW42MXBPszLUv7piplF+8sKBX4UHixi
+        2J4SeAfJqDlvZ+QGYOU1Ejbu2YJJrS1DAAOMUAYGmtJuiLq0IcpUaycLu6CbswFt7YYcamO4DCAv
+        8Y7DEsqKAu7VSNmVL69nanzw6YlQHPss1Lg+RLgMQujDrRx7gmdM5tRTTsc7OgYZT05IqBy8Bhwt
+        IZbjHqE5gX2QNHLbTldXmHwXW3VCGlxMp3UcOZWLewk4VtIOQOHivjdIARD0XWjJXYAOv94SbwM/
+        1d5W4i/FHp4pe2Fqpd/UQunwaHkfYBmmexAv9NpRbybwY9tKroWyZdm5d3MS0Ecw3ADv1oic2wmv
+        3csVdBVg/wMfS/m1p5BeW1NehyvC5pIdQmNGrVhDbB+76Tafc+mbF/krrlF7UWjxlIZXxAaQRzmG
+        WZnbYWVFzzpGj+u/ckN+xd4MAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Akamai-GRN:
+      - 0.ca0e2017.1730950083.1b22b8d9
+      Alt-Svc:
+      - h3=":443"; ma=93600
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '932'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 07 Nov 2024 03:28:04 GMT
+      Expires:
+      - Thu, 07 Nov 2024 03:28:04 GMT
+      Pragma:
+      - no-cache
+      Server-Timing:
+      - ak_p; desc="1730950083391_387976906_455260377_63436_32706_63_53_-";dur=1
+      Strict-Transport-Security:
+      - max-age=15768000
+      Vary:
+      - Accept-Encoding
+      X-Amz-Cf-Id:
+      - nCMeLR8eY9MpxLvd_JMswaYrTcTAJTK9y72hCOf2aW6-vYdzR3BAng==
+      X-Amz-Cf-Pop:
+      - DFW3-C1
+      x-amz-apigw-id:
+      - A20GnFMUIAMEEQA=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Date:
+      - Thu, 07 Nov 2024 03:28:03 GMT
+      x-amzn-RequestId:
+      - 633ab763-3b26-4e72-bc28-7c2a560c1922
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJ6SnI0SnlCSEFsNjdlMlhqMFUyaFF0dVVJR2lMWWpxeWdLOEZNZ2xnUWlUR2VxRTJ6MCIsImp0aSI6IjExM2NmNzJlN2U0ODZiNGViYmNkOGJlYjYxNzAzOWMxZmRmMmE4YmM0OGIzZTYzNTU4YmYyZmMzODQ1YzQzNGYwZDYyMzMyYjdhZjExMDRhIiwiaWF0IjoxNzMwOTUwMDgyLCJuYmYiOjE3MzA5NTAwODIsImV4cCI6MTczMDk1MzY4Miwic3ViIjoiIiwic2NvcGVzIjpbXX0.sll19pDBM3tExcSFKFI2Ra8F1ORIYzvD6JsDdcd4n6LnWsSGiNb5ZUGzbCMnsrmvgaVK0fDL6_DiPLnD2GkiVB7wYpwJ_G8zAo3olVHDJjTzidckNX4KZFyMH8CUeorwaBCd5YhktHBJJvGJ0KEOpXElgjcM7IMjDDbCP0ZmiD30htH9ju-kID4UKmxE4qpkcXny6HcMkDzfLVvyT2Q9fz9YDSHYlC0Ls-CZogHL2dX-HtRvxOqDA5qldbeuJUKdtHihkPImFpjkHnHibHKv2rLjnY1Z5cCuOeFjDRs65w6F_-P8OsGNOA3ZJyxaPD_yq4a1WF0XF6tEJ7wlDWrYvQ
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/cat
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA31SwWrDMAz9FePTBoWUHnbosRndBi0bS2CHZQwlURNTxw620y6U/vvkpA1pO+aL
+        7PeeZOmhA3dtjXx+4AoqijwExyc80+Asn3/yZxBGorWERaU2nltjLpqKLiutCv7lxVKbTr2QkG2J
+        6SJLmul09sA+SuGQJQGLmx/MdUc3yEKDUJ0fb1ooX3th9F55bVhqKgsOPdhsNhfFBoxqQidfwl4R
+        GoIUmf9hSB8qd9956ctOm3YAzvSjkA2phwKnd0wja2HRliglwUtJLg1JTwba68Z6LGDdWBQjIXdo
+        vFuCTBlSXw2oAq+Tz2jA3jH3liPIISWq9NaLYkjTlt3dWnU/Im/tGbF/9zgSrFDXYPKOq7VzmI/I
+        iyZHeCwKNCxyRtQnXJtUYH+5cLEflzanQJVjvzprkF66xMpfiPuWQm2t30yLcuNjaZAiT4LdLAn8
+        2tokyGhdjxOeGsTc/iNKgpPkSOcXMofZT/UCAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Akamai-GRN:
+      - 0.ca0e2017.1730950084.1b22d311
+      Alt-Svc:
+      - h3=":443"; ma=93600
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '371'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 07 Nov 2024 03:28:04 GMT
+      Expires:
+      - Thu, 07 Nov 2024 03:28:04 GMT
+      Pragma:
+      - no-cache
+      Server-Timing:
+      - ak_p; desc="1730950084396_387976906_455267089_26274_37086_72_160_-";dur=1
+      Strict-Transport-Security:
+      - max-age=15768000
+      Vary:
+      - Accept-Encoding
+      X-Amz-Cf-Id:
+      - Oyq2rTU_u_sgP6sUysbEkooWZHq98iIppOU0x_9AWFsZI4tJhp_ZVQ==
+      X-Amz-Cf-Pop:
+      - DFW3-C1
+      x-amz-apigw-id:
+      - A20GyEMtoAMEiIA=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Date:
+      - Thu, 07 Nov 2024 03:28:04 GMT
+      x-amzn-RequestId:
+      - 71220f3f-6d72-4752-9192-0717783007f9
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJ6SnI0SnlCSEFsNjdlMlhqMFUyaFF0dVVJR2lMWWpxeWdLOEZNZ2xnUWlUR2VxRTJ6MCIsImp0aSI6IjExM2NmNzJlN2U0ODZiNGViYmNkOGJlYjYxNzAzOWMxZmRmMmE4YmM0OGIzZTYzNTU4YmYyZmMzODQ1YzQzNGYwZDYyMzMyYjdhZjExMDRhIiwiaWF0IjoxNzMwOTUwMDgyLCJuYmYiOjE3MzA5NTAwODIsImV4cCI6MTczMDk1MzY4Miwic3ViIjoiIiwic2NvcGVzIjpbXX0.sll19pDBM3tExcSFKFI2Ra8F1ORIYzvD6JsDdcd4n6LnWsSGiNb5ZUGzbCMnsrmvgaVK0fDL6_DiPLnD2GkiVB7wYpwJ_G8zAo3olVHDJjTzidckNX4KZFyMH8CUeorwaBCd5YhktHBJJvGJ0KEOpXElgjcM7IMjDDbCP0ZmiD30htH9ju-kID4UKmxE4qpkcXny6HcMkDzfLVvyT2Q9fz9YDSHYlC0Ls-CZogHL2dX-HtRvxOqDA5qldbeuJUKdtHihkPImFpjkHnHibHKv2rLjnY1Z5cCuOeFjDRs65w6F_-P8OsGNOA3ZJyxaPD_yq4a1WF0XF6tEJ7wlDWrYvQ
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/cat
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA31SwWrDMAz9FePTBoWUHnbosRndBi0bS2CHZQwlURNTxw620y6U/vvkpA1pO+aL
+        7PeeZOmhA3dtjXx+4AoqijwExyc80+Asn3/yZxBGorWERaU2nltjLpqKLiutCv7lxVKbTr2QkG2J
+        6SJLmul09sA+SuGQJQGLmx/MdUc3yEKDUJ0fb1ooX3th9F55bVhqKgsOPdhsNhfFBoxqQidfwl4R
+        GoIUmf9hSB8qd9956ctOm3YAzvSjkA2phwKnd0wja2HRliglwUtJLg1JTwba68Z6LGDdWBQjIXdo
+        vFuCTBlSXw2oAq+Tz2jA3jH3liPIISWq9NaLYkjTlt3dWnU/Im/tGbF/9zgSrFDXYPKOq7VzmI/I
+        iyZHeCwKNCxyRtQnXJtUYH+5cLEflzanQJVjvzprkF66xMpfiPuWQm2t30yLcuNjaZAiT4LdLAn8
+        2tokyGhdjxOeGsTc/iNKgpPkSOcXMofZT/UCAAA=
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Akamai-GRN:
+      - 0.ca0e2017.1730950085.1b22e5b1
+      Alt-Svc:
+      - h3=":443"; ma=93600
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '371'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 07 Nov 2024 03:28:05 GMT
+      Expires:
+      - Thu, 07 Nov 2024 03:28:05 GMT
+      Pragma:
+      - no-cache
+      Server-Timing:
+      - ak_p; desc="1730950085189_387976906_455271857_26789_9596_68_130_-";dur=1
+      Strict-Transport-Security:
+      - max-age=15768000
+      Vary:
+      - Accept-Encoding
+      X-Amz-Cf-Id:
+      - -NBObuYAKEeWWimkjDgShCJxbCisi1fN3KjSk0voGrJUeuwrkHgtNg==
+      X-Amz-Cf-Pop:
+      - DFW3-C1
+      x-amz-apigw-id:
+      - A20G5FbLIAMEuwQ=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Date:
+      - Thu, 07 Nov 2024 03:28:05 GMT
+      x-amzn-RequestId:
+      - 22e19506-b5bd-4669-a0af-a5c61d45509a
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJ6SnI0SnlCSEFsNjdlMlhqMFUyaFF0dVVJR2lMWWpxeWdLOEZNZ2xnUWlUR2VxRTJ6MCIsImp0aSI6IjExM2NmNzJlN2U0ODZiNGViYmNkOGJlYjYxNzAzOWMxZmRmMmE4YmM0OGIzZTYzNTU4YmYyZmMzODQ1YzQzNGYwZDYyMzMyYjdhZjExMDRhIiwiaWF0IjoxNzMwOTUwMDgyLCJuYmYiOjE3MzA5NTAwODIsImV4cCI6MTczMDk1MzY4Miwic3ViIjoiIiwic2NvcGVzIjpbXX0.sll19pDBM3tExcSFKFI2Ra8F1ORIYzvD6JsDdcd4n6LnWsSGiNb5ZUGzbCMnsrmvgaVK0fDL6_DiPLnD2GkiVB7wYpwJ_G8zAo3olVHDJjTzidckNX4KZFyMH8CUeorwaBCd5YhktHBJJvGJ0KEOpXElgjcM7IMjDDbCP0ZmiD30htH9ju-kID4UKmxE4qpkcXny6HcMkDzfLVvyT2Q9fz9YDSHYlC0Ls-CZogHL2dX-HtRvxOqDA5qldbeuJUKdtHihkPImFpjkHnHibHKv2rLjnY1Z5cCuOeFjDRs65w6F_-P8OsGNOA3ZJyxaPD_yq4a1WF0XF6tEJ7wlDWrYvQ
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/dog
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA31RwWoCMRD9lSWnFhZWPPTgrVrUQ6XQFaR0SxnN1A1mEzvJKiL+e2dmC701l/cy
+        8/LymLmafDmimVxNgI7RPMW9Kc0uQk5m8m6W4MhjSlyr20iZcYXW9R2T5xhEu3GEDLOe/MV8yFsf
+        SR8/HsntYi6aqpii24tq6rQtzMPuIEguWK89iucg4lkbWQVZiovoLQYhBBd18j0K1s6fUIyWwAm/
+        exc0G/PiTjT3f9dXtHJjGNwx5dBrrBeCoLlq2GqGNQ0B2UPSlIXGLIumH43GD8WmdVmdlagbIcgw
+        3tD7eJbKGsKQMwb9bw7nIHPZY7A4DGYF+tkcOyHc+/QuHJKsIaH/EmwJGU1TncZNJTtKTWV5N7fS
+        bAnRpn9ETfUrufH5AV9lQAPiAQAA
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Akamai-GRN:
+      - 0.ca0e2017.1730950085.1b22f17e
+      Alt-Svc:
+      - h3=":443"; ma=93600
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '306'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 07 Nov 2024 03:28:06 GMT
+      Expires:
+      - Thu, 07 Nov 2024 03:28:06 GMT
+      Pragma:
+      - no-cache
+      Server-Timing:
+      - ak_p; desc="1730950085752_387976906_455274878_20249_15182_23_52_-";dur=1
+      Strict-Transport-Security:
+      - max-age=15768000
+      Vary:
+      - Accept-Encoding
+      X-Amz-Cf-Id:
+      - P9l93K2i0MMsalnNEZOFri4bd-cGp3BmoRG4YNa5JX91-Ctv4neWJQ==
+      X-Amz-Cf-Pop:
+      - DFW3-C1
+      x-amz-apigw-id:
+      - A20G-FhooAMEMgg=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Date:
+      - Thu, 07 Nov 2024 03:28:05 GMT
+      x-amzn-RequestId:
+      - 9186ebe7-4e40-49f5-b7a1-ad36a90f0174
+    status:
+      code: 200
+      message: OK
+version: 1

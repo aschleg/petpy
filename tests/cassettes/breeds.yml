@@ -1,0 +1,161 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJ6SnI0SnlCSEFsNjdlMlhqMFUyaFF0dVVJR2lMWWpxeWdLOEZNZ2xnUWlUR2VxRTJ6MCIsImp0aSI6IjExM2NmNzJlN2U0ODZiNGViYmNkOGJlYjYxNzAzOWMxZmRmMmE4YmM0OGIzZTYzNTU4YmYyZmMzODQ1YzQzNGYwZDYyMzMyYjdhZjExMDRhIiwiaWF0IjoxNzMwOTUwMDgyLCJuYmYiOjE3MzA5NTAwODIsImV4cCI6MTczMDk1MzY4Miwic3ViIjoiIiwic2NvcGVzIjpbXX0.sll19pDBM3tExcSFKFI2Ra8F1ORIYzvD6JsDdcd4n6LnWsSGiNb5ZUGzbCMnsrmvgaVK0fDL6_DiPLnD2GkiVB7wYpwJ_G8zAo3olVHDJjTzidckNX4KZFyMH8CUeorwaBCd5YhktHBJJvGJ0KEOpXElgjcM7IMjDDbCP0ZmiD30htH9ju-kID4UKmxE4qpkcXny6HcMkDzfLVvyT2Q9fz9YDSHYlC0Ls-CZogHL2dX-HtRvxOqDA5qldbeuJUKdtHihkPImFpjkHnHibHKv2rLjnY1Z5cCuOeFjDRs65w6F_-P8OsGNOA3ZJyxaPD_yq4a1WF0XF6tEJ7wlDWrYvQ
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/dog/breeds
+  response:
+    body:
+      string: !!binary |
+        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
+        j6T67/f/A/el0vkUTgAA
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Akamai-GRN:
+      - 0.ca0e2017.1730950086.1b22fc06
+      Alt-Svc:
+      - h3=":443"; ma=93600
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '2124'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 07 Nov 2024 03:28:06 GMT
+      Expires:
+      - Thu, 07 Nov 2024 03:28:06 GMT
+      Pragma:
+      - no-cache
+      Server-Timing:
+      - ak_p; desc="1730950086229_387976906_455277574_24104_45964_75_46_-";dur=1
+      Strict-Transport-Security:
+      - max-age=15768000
+      Vary:
+      - Accept-Encoding
+      X-Amz-Cf-Id:
+      - qHwGWArTMBeEkY2nenww8r_t_hxjx_BO4T67w_aMZVLTSZisdUm0_A==
+      X-Amz-Cf-Pop:
+      - DFW3-C1
+      x-amz-apigw-id:
+      - A20HDHVaIAMEYHg=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Date:
+      - Thu, 07 Nov 2024 03:28:06 GMT
+      x-amzn-RequestId:
+      - 927a7548-3586-4ed1-98fa-cf77707168bd
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJ6SnI0SnlCSEFsNjdlMlhqMFUyaFF0dVVJR2lMWWpxeWdLOEZNZ2xnUWlUR2VxRTJ6MCIsImp0aSI6IjExM2NmNzJlN2U0ODZiNGViYmNkOGJlYjYxNzAzOWMxZmRmMmE4YmM0OGIzZTYzNTU4YmYyZmMzODQ1YzQzNGYwZDYyMzMyYjdhZjExMDRhIiwiaWF0IjoxNzMwOTUwMDgyLCJuYmYiOjE3MzA5NTAwODIsImV4cCI6MTczMDk1MzY4Miwic3ViIjoiIiwic2NvcGVzIjpbXX0.sll19pDBM3tExcSFKFI2Ra8F1ORIYzvD6JsDdcd4n6LnWsSGiNb5ZUGzbCMnsrmvgaVK0fDL6_DiPLnD2GkiVB7wYpwJ_G8zAo3olVHDJjTzidckNX4KZFyMH8CUeorwaBCd5YhktHBJJvGJ0KEOpXElgjcM7IMjDDbCP0ZmiD30htH9ju-kID4UKmxE4qpkcXny6HcMkDzfLVvyT2Q9fz9YDSHYlC0Ls-CZogHL2dX-HtRvxOqDA5qldbeuJUKdtHihkPImFpjkHnHibHKv2rLjnY1Z5cCuOeFjDRs65w6F_-P8OsGNOA3ZJyxaPD_yq4a1WF0XF6tEJ7wlDWrYvQ
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://api.petfinder.com/v2/types/cat/breeds
+  response:
+    body:
+      string: '{"type":"https://httpstatus.es/500", "status":500, "title":"error",
+        "detail":"error"}'
+    headers:
+      Akamai-GRN:
+      - 0.ca0e2017.1730950086.1b2306ca
+      Alt-Svc:
+      - h3=":443"; ma=93600
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '85'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 07 Nov 2024 03:28:12 GMT
+      Expires:
+      - Thu, 07 Nov 2024 03:28:12 GMT
+      Pragma:
+      - no-cache
+      Server-Timing:
+      - ak_p; desc="1730950086711_387976906_455280330_524713_9141_59_63_-";dur=1
+      Strict-Transport-Security:
+      - max-age=15768000
+      X-Amz-Cf-Id:
+      - iiujgzwg7ULGrpfjls7C5pk-sp8LFKjRnutpWj25-h9VtnF8xbt4_g==
+      X-Amz-Cf-Pop:
+      - DFW3-C1
+      x-amz-apigw-id:
+      - A20HIEQTIAMEfQQ=
+      x-amzn-Remapped-Connection:
+      - keep-alive
+      x-amzn-Remapped-Content-Length:
+      - '85'
+      x-amzn-Remapped-Date:
+      - Thu, 07 Nov 2024 03:28:11 GMT
+      x-amzn-RequestId:
+      - 55f52fee-8055-45fa-b9da-f1db9f2e08b6
+    status:
+      code: 500
+      message: Internal Server Error
+version: 1
