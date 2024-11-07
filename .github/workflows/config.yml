@@ -38,6 +38,9 @@ jobs:
           python setup.py install
 
       - name: Run Tests
+        env:
+          PETPY_PETFINDER_KEY: ${{ secrets.PETPY_PETFINDER_KEY }}
+          PETPY_PETFINDER_SECRET_KEY: ${{ secrets.PETPY_PETFINDER_SECRET_KEY }}
         run: |
           pytest
 
@@ -46,6 +49,9 @@ jobs:
           codecov -t $CODECOV_TOKEN
 
       - name: Coveralls
+        env:
+          PETPY_PETFINDER_KEY: ${{ secrets.PETPY_PETFINDER_KEY }}
+          PETPY_PETFINDER_SECRET_KEY: ${{ secrets.PETPY_PETFINDER_SECRET_KEY }}
         run: |
           coverage run --source=petpy -m pytest
           coveralls
