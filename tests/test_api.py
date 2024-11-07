@@ -28,20 +28,21 @@ def test_authentication():
 
 
 def authenticate():
-    print('keys', key, secret_key)
-    pf = Petfinder(key=key, secret=secret_key)
+    key = os.environ.get('PETPY_PETFINDER_KEY')
+    secret_key = os.environ.get('PETPY_PETFINDER_SECRET_KEY')
+    petf = Petfinder(key=key, secret=secret_key)
 
-    return pf
+    return petf
 
 
-pf = authenticate()
+petf = authenticate()
 
 
 @vcr.use_cassette('cassettes/animal_types.yml')
 def test_animal_types():
-    response1 = pf.animal_types()
-    response2 = pf.animal_types('cat')
-    response3 = pf.animal_types(['cat', 'dog'])
+    response1 = petf.animal_types()
+    response2 = petf.animal_types('cat')
+    response3 = petf.animal_types(['cat', 'dog'])
 
     assert isinstance(response1, dict)
     assert isinstance(response2, dict)
@@ -52,22 +53,22 @@ def test_animal_types():
     assert str.lower(response3['types'][1]['name']) == 'dog'
 
     with pytest.raises(ValueError):
-        pf.animal_types(types='elephant')
+        petf.animal_types(types='elephant')
     with pytest.raises(ValueError):
-        pf.animal_types(types=['dragon', 'unicorn'])
+        petf.animal_types(types=['dragon', 'unicorn'])
     with pytest.raises(TypeError):
-        pf.animal_types(types={})
+        petf.animal_types(types={})
 
 
 @vcr.use_cassette('cassettes/breeds.yml')
 def test_breeds():
 
-    response1 = pf.breeds()
-    response1_df = pf.breeds(return_df=True)
-    response2 = pf.breeds('cat')
-    response2_df = pf.breeds('cat', return_df=True)
-    response3 = pf.breeds(['cat', 'dog'])
-    response3_df = pf.breeds(['cat', 'dog'], return_df=True)
+    response1 = petf.breeds()
+    response1_df = petf.breeds(return_df=True)
+    response2 = petf.breeds('cat')
+    response2_df = petf.breeds('cat', return_df=True)
+    response3 = petf.breeds(['cat', 'dog'])
+    response3_df = petf.breeds(['cat', 'dog'], return_df=True)
 
     assert isinstance(response1, dict)
     assert len(list(set(list(response1['breeds'].keys())).difference(animal_types))) == 0
@@ -82,44 +83,44 @@ def test_breeds():
     assert isinstance(response3_df, DataFrame)
 
     with pytest.raises(ValueError):
-        pf.breeds(types='elephant')
+        petf.breeds(types='elephant')
     with pytest.raises(ValueError):
-        pf.breeds(types=['dragon', 'unicorn'])
+        petf.breeds(types=['dragon', 'unicorn'])
     with pytest.raises(TypeError):
-        pf.breeds(types={})
+        petf.breeds(types={})
 
 
 @vcr.use_cassette('cassettes/animals.yml')
 def test_animals():
-    response1 = pf.animals()
-    response1_df = pf.animals(return_df=True)
-    response2 = pf.animals(results_per_page=50, pages=3)
-    response2_df = pf.animals(results_per_page=50, pages=3, return_df=True)
+    response1 = petf.animals()
+    response1_df = petf.animals(return_df=True)
+    response2 = petf.animals(results_per_page=50, pages=3)
+    response2_df = petf.animals(results_per_page=50, pages=3, return_df=True)
 
     animal_ids = []
     for i in response1['animals'][0:3]:
         animal_ids.append(i['id'])
 
-    response3 = pf.animals(animal_id=animal_ids, results_per_page=5)
-    response3_df = pf.animals(animal_id=animal_ids, return_df=True, results_per_page=5)
+    response3 = petf.animals(animal_id=animal_ids, results_per_page=5)
+    response3_df = petf.animals(animal_id=animal_ids, return_df=True, results_per_page=5)
 
-    response4 = pf.animals(animal_id=animal_ids[0], results_per_page=5)
-    response4_df = pf.animals(animal_id=animal_ids[0], return_df=True, results_per_page=5)
+    response4 = petf.animals(animal_id=animal_ids[0], results_per_page=5)
+    response4_df = petf.animals(animal_id=animal_ids[0], return_df=True, results_per_page=5)
 
-    response5 = pf.animals(good_with_children=1, good_with_cats=1, results_per_page=5)
+    response5 = petf.animals(good_with_children=1, good_with_cats=1, results_per_page=5)
 
-    response6 = pf.animals(before_date='2020-06-30', after_date='2020-01-01', results_per_page=5)
-    response7 = pf.animals(before_date='2020-06-30 0:0:0', after_date='2020-01-01 12:00:00', results_per_page=5)
+    response6 = petf.animals(before_date='2020-06-30', after_date='2020-01-01', results_per_page=5)
+    response7 = petf.animals(before_date='2020-06-30 0:0:0', after_date='2020-01-01 12:00:00', results_per_page=5)
 
-    response8 = pf.animals(good_with_dogs=1, results_per_page=5)
-    response9 = pf.animals(good_with_dogs=1, good_with_cats=1, good_with_children=1, return_df=True,
+    response8 = petf.animals(good_with_dogs=1, results_per_page=5)
+    response9 = petf.animals(good_with_dogs=1, good_with_cats=1, good_with_children=1, return_df=True,
                 results_per_page=5)
-    response10 = pf.animals(special_needs=1, house_trained=1, declawed=1, return_df=True, results_per_page=5)
+    response10 = petf.animals(special_needs=1, house_trained=1, declawed=1, return_df=True, results_per_page=5)
 
     with pytest.raises(ValueError):
-        pf.animals(after_date='2021-07-02', before_date='2021-07-01', results_per_page=5)
+        petf.animals(after_date='2021-07-02', before_date='2021-07-01', results_per_page=5)
 
-    response11 = pf.animals(status=['found', 'adoptable'], results_per_page=5)
+    response11 = petf.animals(status=['found', 'adoptable'], results_per_page=5)
 
     assert isinstance(response1, dict)
     assert len(response1['animals']) == 20
@@ -165,20 +166,20 @@ def test_animals():
 
 @vcr.use_cassette('cassettes/organizations.yml')
 def test_organizations():
-    response1 = pf.organizations()
-    response1_df = pf.organizations(return_df=True)
-    response2 = pf.organizations(results_per_page=50, pages=3)
-    response2_df = pf.organizations(results_per_page=50, pages=3, return_df=True)
+    response1 = petf.organizations()
+    response1_df = petf.organizations(return_df=True)
+    response2 = petf.organizations(results_per_page=50, pages=3)
+    response2_df = petf.organizations(results_per_page=50, pages=3, return_df=True)
 
     org_ids = []
     for i in response1['organizations'][0:3]:
         org_ids.append(i['id'])
 
-    response3 = pf.organizations(organization_id=org_ids)
-    response3_df = pf.organizations(organization_id=org_ids, return_df=True)
+    response3 = petf.organizations(organization_id=org_ids)
+    response3_df = petf.organizations(organization_id=org_ids, return_df=True)
 
-    response4 = pf.organizations(organization_id=org_ids[0])
-    response4_df = pf.organizations(organization_id=org_ids[0], return_df=True)
+    response4 = petf.organizations(organization_id=org_ids[0])
+    response4_df = petf.organizations(organization_id=org_ids[0], return_df=True)
 
     assert isinstance(response1, dict)
     assert len(response1['organizations']) == 20
@@ -217,42 +218,42 @@ def test_check_parameters():
     good_with_dogs = 'yes'
 
     with pytest.raises(ValueError):
-        pf.animals(size=size1)
+        petf.animals(size=size1)
     with pytest.raises(ValueError):
-        pf.animals(size=[size1, size2])
+        petf.animals(size=[size1, size2])
     with pytest.raises(ValueError):
-        pf.animals(gender=gender1)
+        petf.animals(gender=gender1)
     with pytest.raises(ValueError):
-        pf.animals(gender=[gender1, gender2])
+        petf.animals(gender=[gender1, gender2])
     with pytest.raises(ValueError):
-        pf.animals(age=age1)
+        petf.animals(age=age1)
     with pytest.raises(ValueError):
-        pf.animals(age=[age1, age2])
+        petf.animals(age=[age1, age2])
     with pytest.raises(ValueError):
-        pf.animals(coat=coat1)
+        petf.animals(coat=coat1)
     with pytest.raises(ValueError):
-        pf.animals(coat=[coat1, coat2])
+        petf.animals(coat=[coat1, coat2])
     with pytest.raises(ValueError):
-        pf.animals(status=status)
+        petf.animals(status=status)
     with pytest.raises(ValueError):
-        pf.animals(sort=sort)
+        petf.animals(sort=sort)
     with pytest.raises(ValueError):
-        pf.animals(distance=distance_int)
+        petf.animals(distance=distance_int)
     with pytest.raises(ValueError):
-        pf.animals(distance=distance_str)
+        petf.animals(distance=distance_str)
     with pytest.raises(ValueError):
-        pf.animals(results_per_page=limit_int)
+        petf.animals(results_per_page=limit_int)
     with pytest.raises(ValueError):
-        pf.animals(results_per_page=limit_str)
+        petf.animals(results_per_page=limit_str)
     with pytest.raises(ValueError):
-        pf.animals(declawed=declawed)
+        petf.animals(declawed=declawed)
     with pytest.raises(ValueError):
-        pf.animals(house_trained=house_trained)
+        petf.animals(house_trained=house_trained)
     with pytest.raises(ValueError):
-        pf.animals(special_needs=special_needs)
+        petf.animals(special_needs=special_needs)
     with pytest.raises(ValueError):
-        pf.animals(good_with_cats=good_with_cats)
+        petf.animals(good_with_cats=good_with_cats)
     with pytest.raises(ValueError):
-        pf.animals(good_with_dogs=good_with_dogs)
+        petf.animals(good_with_dogs=good_with_dogs)
     with pytest.raises(ValueError):
-        pf.animals(good_with_children=good_with_children)
+        petf.animals(good_with_children=good_with_children)
