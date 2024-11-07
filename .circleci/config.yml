@@ -31,5 +31,7 @@ jobs:
       - run:
           name: coveralls
           command: |
-            coverage run --source=petpy -m pytest tests/
+            cd tests/
+            coverage run --source=petpy -m pytest
+            cd ../
             coveralls
