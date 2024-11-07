@@ -39,9 +39,7 @@ jobs:
 
       - name: Run Tests
         run: |
-          cd tests/ 
           pytest
-          cd ../
 
       - name: Codecov
         run: |
@@ -49,7 +47,5 @@ jobs:
 
       - name: Coveralls
         run: |
-          cd tests/
           coverage run --source=petpy -m pytest
-          cd ../
           coveralls
