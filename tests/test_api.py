@@ -28,6 +28,7 @@ def test_authentication():
 
 
 def authenticate():
+    print(key, secret_key)
     pf = Petfinder(key=key, secret=secret_key)
 
     return pf
