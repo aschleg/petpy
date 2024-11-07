@@ -12,7 +12,7 @@ tape = vcr.VCR(
     record_mode='once'
 )
 
-load_dotenv('../.env')
+#load_dotenv('../.env')
 key = os.environ.get('PETPY_PETFINDER_KEY')
 secret_key = os.environ.get('PETPY_PETFINDER_SECRET_KEY')
 
