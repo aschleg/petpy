@@ -15,7 +15,7 @@ jobs:
 
       - name: setup-python ${{ matrix.python }}
         id: setup-python
-        uses: ./
+        uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python }}
 
