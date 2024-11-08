@@ -8,3 +8,4 @@ requests>=2.18.4
 ratelimit>=2.2.1
 backoff>=1.11.1
 setuptools
+pytest-recording

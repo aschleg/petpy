@@ -3,14 +3,18 @@
 
 Changelog and version changes made with each release.
 
-## Version 2.3.2
+## Version 2.4.0
 
 * Implemented rate-limiting for API calls that could potentially exceed the quotas 
   set by Petfinder (50 calls/second, 1,000/day). An exponential backoff strategy is employed when rates exceed 
   the given limits and tries ten more times before giving up and returning the collected results.
-* Access token that is generated on first initialization of Petfinder is now refreshed automatically
-  after expiring. 
-  
+* Access token that is generated on first initialization of Petfinder should now refresh automatically
+  after expiring.
+* Removed the `max_page_warning` that would be displayed when there were fewer total pages 
+  in the Petfinder API results to those requested in the `pages` parameter.
+* A `response` key has been added to the returned animal or organization object. If an ID isn't found,
+  the `response` value will be 404.
+* Type annotations have been added to the `Petfinder` methods.
 
 ## Version 2.3.1
 
@@ -25,7 +29,7 @@ Changelog and version changes made with each release.
     - `special_needs`: Filters results by animals that have special needs
 * Search filters that can take multiple values in the `animals()` function, 
   including `age`, `gender`, `status`, `animal_type`, `size`, and `coat`, should 
-  now correctly accept both comma-delimited strings, such as `age='baby,'young'` 
+  now correctly accept both comma-delimited strings, such as `age='baby,young'` 
   and lists or tuples.
 * The required version for `pandas` has been updated to at least version `1.0.0`
 
@@ -37,7 +41,7 @@ Very small maintenance patch to update several `setup.py` settings. There is no 
 
 * Support for Python 3.5 has been discontinued. 
 * The `animals()` method has been updated to include new parameters provided by Petfinder's `animal` 
-  endpoint. This parameters include:
+  endpoint. These parameters include:
   - `good_with_cats`: Boolean for filtering animals that are designated as good with cats.
   - `good_with_children`: Boolean for filtering animals that are designated as good with children.
   - `good_with_dogs`: Boolean for filtering animals that are designated as good with dogs.
