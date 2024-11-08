@@ -5,8 +5,8 @@
 [![codecov](https://codecov.io/gh/aschleg/petpy/branch/master/graph/badge.svg)](https://codecov.io/gh/aschleg/petpy)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ac2a4c228a9e425ba11af69f7a5c9e51)](https://www.codacy.com/app/aschleg/petpy?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=aschleg/petpy&amp;utm_campaign=Badge_Grade)
 [![Dependencies](https://img.shields.io/librariesio/github/aschleg/petpy.svg?label=dependencies)](https://libraries.io/github/aschleg/petpy)
-[![https://pypi.org/project/petpy/](https://img.shields.io/badge/pypi%20version-2.3.1-blue.svg)](https://pypi.org/project/petpy/)
-[![https://pypi.org/project/petpy/](https://img.shields.io/badge/python-3.6%2C%203.7%2C%203.8-blue.svg)](https://pypi.org/project/petpy/)
+[![https://pypi.org/project/petpy/](https://img.shields.io/badge/pypi%20version-2.4.0-blue.svg)](https://pypi.org/project/petpy/)
+[![https://pypi.org/project/petpy/](https://img.shields.io/badge/python-3.6%2C%203.7%2C%203.8%2C%203.9%2C%203.10%2C%203.11%2C%203.12-blue.svg)](https://pypi.org/project/petpy/)
 
 :cat2: :dog2: :rooster: :rabbit2: :racehorse:
 

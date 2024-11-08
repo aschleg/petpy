@@ -4,7 +4,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='petpy',
-    version='2.3.2',
+    version='2.4.0',
     author='Aaron Schlegel',
     author_email='aaron@aaronschlegel.me',
     url='https://github.com/aschleg/petpy',
@@ -30,6 +30,10 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
         'Topic :: Software Development :: Libraries :: Python Modules'
     ]
 )
