@@ -10,17 +10,30 @@ https://www.petfinder.com/developers/
 """
 
 
-import sys
-from pandas import DataFrame
-from pandas import json_normalize
-import requests
 import datetime
 from urllib.parse import urljoin
+
+import pandas as pd
 from ratelimit import limits, RateLimitException
 from backoff import on_exception, expo
+from pandas import json_normalize
+import requests
 
-from petpy.exceptions import PetfinderInvalidCredentials, PetfinderInsufficientAccess, PetfinderResourceNotFound, \
-    PetfinderUnexpectedError, PetfinderInvalidParameters, PetfinderRateLimitExceeded
+from petpy.petpy_types import (
+    AnimalTypes,
+    AnimalFeatures,
+    Animals,
+    Date,
+    PetfinderID
+)
+from petpy.exceptions import (
+    PetfinderInvalidCredentials,
+    PetfinderInsufficientAccess,
+    PetfinderResourceNotFound,
+    PetfinderUnexpectedError,
+    PetfinderInvalidParameters,
+    PetfinderRateLimitExceeded
+)
 
 #################################################################################################################
 #
@@ -35,15 +48,10 @@ class Petfinder(object):
 
     Attributes
     ----------
-    host : str
-        The base URL of the Petfinder API.
     key : str
         The key from the Petfinder API passed when the :code:`Petfinder` class is initialized.
     secret : str
         The secret key obtained from the Petfinder API passed when the :code:`Petfinder` class is initialized.
-    auth : str
-        The authorization token string returned when the connection to the Petfinder API is made with the specified
-        :code:`key` and :code:`secret`.
 
     Methods
     -------
@@ -60,7 +68,7 @@ class Petfinder(object):
         Finds animal organizations based on specified criteria in the Petfinder API database.
 
     """
-    def __init__(self, key, secret):
+    def __init__(self, key: str, secret: str):
         r"""
         Initialization method of the :code:`Petfinder` class.
 
@@ -78,7 +86,7 @@ class Petfinder(object):
         self._host = 'https://api.petfinder.com/v2/'
         self._access_token = self._authenticate()
 
-    def _authenticate(self):
+    def _authenticate(self) -> str:
         r"""
         Internal function for authenticating users to the Petfinder API.
 
@@ -111,15 +119,14 @@ class Petfinder(object):
 
         r = requests.post(url, data=data)
 
-        if r.status_code == 401:
-            raise PetfinderInvalidCredentials(message=r.reason, err='Invalid Credentials')
+        self._check_codes(r)
 
         return r.json()['access_token']
 
     @on_exception(expo, RateLimitException, max_tries=10)
     @limits(calls=50, period=1)
     @limits(calls=1000, period=86400)
-    def animal_types(self, types=None):
+    def animal_types(self, types: AnimalTypes = None) -> dict:
         r"""
         Returns data on an animal type, or types available from the Petfinder API. This data includes the
         available type's coat names and colors, gender and other specific information relevant to the
@@ -172,9 +179,9 @@ class Petfinder(object):
             url = urljoin(self._host, 'types')
 
             r = self._get_result(url,
-                            headers={
-                                'Authorization': 'Bearer ' + self._access_token
-                            })
+                                 headers={
+                                     'Authorization': 'Bearer ' + self._access_token
+                                 })
 
             result = r.json()
 
@@ -182,9 +189,9 @@ class Petfinder(object):
             url = urljoin(self._host, 'types/{type}'.format(type=types))
 
             r = self._get_result(url,
-                            headers={
-                                'Authorization': 'Bearer ' + self._access_token
-                            })
+                                 headers={
+                                     'Authorization': 'Bearer ' + self._access_token
+                                 })
 
             result = r.json()
 
@@ -195,9 +202,9 @@ class Petfinder(object):
                 url = urljoin(self._host, 'types/{type}'.format(type=t))
 
                 r = self._get_result(url,
-                                headers={
-                                    'Authorization': 'Bearer ' + self._access_token
-                                })
+                                     headers={
+                                         'Authorization': 'Bearer ' + self._access_token
+                                     })
 
                 types_collection.append(r.json()['type'])
 
@@ -211,7 +218,8 @@ class Petfinder(object):
     @on_exception(expo, RateLimitException, max_tries=10)
     @limits(calls=50, period=1)
     @limits(calls=1000, period=86400)
-    def breeds(self, types=None, return_df=False, raw_results=False):
+    def breeds(self, types: AnimalTypes = None,
+               return_df: bool = False, raw_results: bool = False) -> dict:
         r"""
         Returns breed names of specified animal type, or types.
 
@@ -286,9 +294,9 @@ class Petfinder(object):
                 url = urljoin(self._host, 'types/{type}/breeds'.format(type=t))
 
                 r = self._get_result(url,
-                                headers={
-                                    'Authorization': 'Bearer ' + self._access_token
-                                })
+                                     headers={
+                                         'Authorization': 'Bearer ' + self._access_token
+                                     })
                 breeds.append({t: r.json()})
 
             result = {'breeds': breeds}
@@ -297,9 +305,9 @@ class Petfinder(object):
             url = urljoin(self._host, 'types/{type}/breeds'.format(type=types))
 
             r = self._get_result(url,
-                            headers={
-                                'Authorization': 'Bearer ' + self._access_token
-                            })
+                                 headers={
+                                     'Authorization': 'Bearer ' + self._access_token
+                                 })
             result = r.json()
 
         else:
@@ -307,13 +315,13 @@ class Petfinder(object):
 
         if return_df:
             raw_results = True
-            df_results = DataFrame()
+            df_results = []
             if isinstance(types, (tuple, list)):
                 for t in range(0, len(types)):
-                    df_results = df_results.append(json_normalize(result['breeds'][t][types[t]]['breeds']))
+                    df_results.append(json_normalize(result['breeds'][t][types[t]]['breeds']))
             else:
-                df_results = df_results.append(json_normalize(result['breeds']))
-
+                df_results.append(json_normalize(result['breeds']))
+            df_results = pd.concat(df_results)
             df_results.rename(columns={'_links.type.href': 'breed'}, inplace=True)
             df_results['breed'] = df_results['breed'].str.replace('/v2/types/', '').str.capitalize()
 
@@ -346,11 +354,31 @@ class Petfinder(object):
     @on_exception(expo, RateLimitException, max_tries=10)
     @limits(calls=50, period=1)
     @limits(calls=1000, period=86400)
-    def animals(self, animal_id=None, animal_type=None, breed=None, size=None, gender=None,
-                age=None, color=None, coat=None, status=None, name=None, organization_id=None,
-                location=None, distance=None, good_with_children=None, good_with_dogs=None, good_with_cats=None,
-                house_trained=None, declawed=None, special_needs=None, before_date=None, after_date=None,
-                sort=None, pages=1, results_per_page=20, return_df=False):
+    def animals(self, animal_id: PetfinderID = None,
+                animal_type: str = None,
+                breed: AnimalFeatures = None,
+                size: AnimalFeatures = None,
+                gender: AnimalFeatures = None,
+                age: AnimalFeatures = None,
+                color: str = None,
+                coat: AnimalFeatures = None,
+                status: str = None,
+                name: str = None,
+                organization_id: AnimalFeatures = None,
+                location: str = None,
+                distance: int = None,
+                good_with_children: bool = None,
+                good_with_dogs: bool = None,
+                good_with_cats: bool = None,
+                house_trained: bool = None,
+                declawed: bool = None,
+                special_needs: bool = None,
+                before_date: Date = None,
+                after_date: Date = None,
+                sort: str = None,
+                pages: int = 1,
+                results_per_page: int = 20,
+                return_df: bool = False) -> Animals:
         r"""
         Returns adoptable animal data from Petfinder based on specified criteria.
 
@@ -411,12 +439,12 @@ class Petfinder(object):
         after_date : str, datetime
             Returns results that have been published after the specified datetime. Must be a valid ISO8601 date-time
             string or a datetime object.
-        sort : {'recent', '-recent', 'distance', '-distance'}, optional
+        sort : {'recent', '-recent', 'distance', '-distance'}, str, optional
             Sorts by specified attribute. Leading dashes represents a reverse-order sort. Must be one of 'recent',
             '-recent', 'distance', or '-distance'.
-        pages : int|range, default 1
-            Specifies which page(s) of results to return. Defaults to the first page of results. If set to :code:`None`,
-            all results will be returned. Could be a range of individual pages. `pages=range(5, 7)` results the two pages 5 and 6.
+        pages : int, default 1
+            Specifies which page of results to return. Defaults to the first page of results. If set to :code:`None`,
+            all results will be returned.
         results_per_page : int, default 20
             Number of results to return per page. Defaults to 20 results and cannot exceed 100 results per page.
         return_df : boolean, default False
@@ -443,8 +471,7 @@ class Petfinder(object):
         >>> animals = pf.animals(results_per_page=50, pages=3, return_df=True)
 
         """
-
-        if before_date is not None:
+        if before_date:
             if isinstance(before_date, str):
                 try:
                     before_date = datetime.datetime.strptime(before_date, '%Y-%m-%d %H:%M:%S')
@@ -452,7 +479,7 @@ class Petfinder(object):
                     before_date = datetime.datetime.strptime(before_date, '%Y-%m-%d')
             before_date = before_date.astimezone().replace(microsecond=0).isoformat()
 
-        if after_date is not None:
+        if after_date:
             if isinstance(after_date, str):
                 try:
                     after_date = datetime.datetime.strptime(after_date, '%Y-%m-%d %H:%M:%S')
@@ -460,28 +487,46 @@ class Petfinder(object):
                     after_date = datetime.datetime.strptime(after_date, '%Y-%m-%d')
             after_date = after_date.astimezone().replace(microsecond=0).isoformat()
 
-        if after_date and before_date and before_date < after_date:
-            raise ValueError('before_date parameter must be more recent than after_date parameter.')
-
-        animals = []
+        if after_date is not None and before_date is not None:
+            if before_date < after_date:
+                raise ValueError('before_date parameter must be more recent than after_date parameter.')
 
         if animal_id is not None:
             url = urljoin(self._host, 'animals/{id}')
-            for ani_id in animal_id if isinstance(animal_id, (tuple, list)) else [animal_id]:
-                r = self._get_result(url.format(id=ani_id),
-                                     headers={
-                                         'Authorization': 'Bearer ' + self._access_token
-                                     })
+            if isinstance(animal_id, (tuple, list)):
+                animals = []
+                for ani_id in animal_id:
+                    try:
+                        r = self._get_result(url.format(id=ani_id),
+                                             headers={
+                                                 'Authorization': 'Bearer ' + self._access_token
+                                             })
+                        animal_data = r.json()['animal']
+                        animal_data['response'] = 200
+                    except PetfinderResourceNotFound:
+                        animal_data = animals.append({
+                            'id': ani_id,
+                            'response': 404
+                        })
+                    animals.append(animal_data)
+            else:
                 try:
-                    animals.append(r.json()['animal'])
-                except (TypeError, AttributeError):
-                    pass
+                    r = self._get_result(url.format(id=animal_id),
+                                         headers={
+                                             'Authorization': 'Bearer ' + self._access_token
+                                         })
+                    animals = r.json()['animal']
+                except PetfinderResourceNotFound:
+                    animals = {
+                        'id': animal_id,
+                        'response': 404
+                    }
 
         else:
             url = urljoin(self._host, 'animals/')
 
-            if animal_type: # Petfinder API does not return correct results for animal_type otherwise
-                    url += f'?type={animal_type}'
+            if animal_type:  # Petfinder API does not return correct results for animal_type otherwise
+                url += '?type={}'.format(animal_type)
 
             params = _parameters(animal_type=animal_type,
                                  breed=breed,
@@ -506,43 +551,85 @@ class Petfinder(object):
                                  declawed=declawed,
                                  special_needs=special_needs)
 
-            if pages is None:
+            if not pages:
                 params['limit'] = 100
-                page_range = range(1, 2)
-            elif not isinstance(pages, range):
-                # If, for example, 3 pages were requested, then a range(1, 4) = [1, 2, 3] is created
-                page_range = range(1, max(2, pages + 1))
-            else:
-                page_range = pages
+                params['page'] = 1
 
-            # Retrieve at the first request
-            max_pages = None
-            for page in page_range:
-                if max_pages and page > max_pages:
-                    print(f'Requested page number {page:d} exceeds the number of pages available for this request. Stopped at {max_pages:d} instead',
-                          file=sys.stderr)
-                    break
-
-                params['page'] = page
                 r = self._get_result(url,
                                      headers={
                                          'Authorization': 'Bearer ' + self._access_token
                                      },
                                      params=params)
-                try:
-                    animals.extend(r.json()['animals'])
-                    if max_pages is None:
-                        max_pages = r.json()['pagination']['total_pages']
-                except (TypeError, AttributeError):
-                    pass
 
-        return _coerce_to_dataframe(animals) if return_df else { 'animals': animals }
+                animals = r.json()['animals']
+                max_pages = r.json()['pagination']['total_pages']
+
+                for page in range(2, max_pages + 1):
+                    params['page'] = page
+                    r = self._get_result(url,
+                                         headers={
+                                             'Authorization': 'Bearer ' + self._access_token
+                                         },
+                                         params=params)
+
+                    if isinstance(r.json(), dict):
+                        if 'animals' in r.json().keys():
+                            for i in r.json()['animals']:
+                                animals.append(i)
+
+            else:
+                pages += 1
+                params['page'] = 1
+
+                r = self._get_result(url,
+                                     headers={
+                                         'Authorization': 'Bearer ' + self._access_token
+                                     },
+                                     params=params)
+
+                animals = r.json()['animals']
+                max_pages = r.json()['pagination']['total_pages']
+
+                if pages > int(max_pages):
+                    pages = max_pages
+
+                for page in range(2, pages):
+                    params['page'] = page
+                    r = self._get_result(url,
+                                         headers={
+                                             'Authorization': 'Bearer ' + self._access_token
+                                         },
+                                         params=params)
+
+                    if isinstance(r.json(), dict):
+                        if 'animals' in r.json().keys():
+                            for i in r.json()['animals']:
+                                animals.append(i)
+
+        animals = {
+            'animals': animals
+        }
+
+        if return_df:
+            animals = _coerce_to_dataframe(animals)
+
+        return animals
 
     @on_exception(expo, RateLimitException, max_tries=10)
     @limits(calls=50, period=1)
     @limits(calls=1000, period=86400)
-    def organizations(self, organization_id=None, name=None, location=None, distance=None, state=None,
-                      country=None, query=None, sort=None, results_per_page=20, pages=1, return_df=False):
+    def organizations(self,
+                      organization_id: PetfinderID = None,
+                      name: str = None,
+                      location: str = None,
+                      distance: int = None,
+                      state: str = None,
+                      country: str = None,
+                      query: str = None,
+                      sort: str = None,
+                      results_per_page: int = 20,
+                      pages: int = 1,
+                      return_df: bool = False):
         r"""
         Returns data on an animal welfare organization, or organizations, based on specified criteria.
 
@@ -567,7 +654,7 @@ class Petfinder(object):
             to the United States and Canada.
         query : str, optional
             Search matching and partially matching name, city or state.
-        sort : {'recent', '-recent', 'distance', '-distance'}, optional
+        sort : {'recent', '-recent', 'distance', '-distance'}, str, optional
             Sorts by specified attribute. Leading dashes represents a reverse-order sort. Must be one of 'recent',
             '-recent', 'distance', or '-distance'.
         pages : int, default 1
@@ -594,94 +681,62 @@ class Petfinder(object):
         >>> wa_organizations = pf.organizations(state='WA')
 
         """
-        max_page_warning = False
-
         if organization_id is not None:
-
             url = urljoin(self._host, 'organizations/{id}')
-
             if isinstance(organization_id, (tuple, list)):
-
                 organizations = []
-
                 for org_id in organization_id:
-                    r = self._get_result(url.format(id=org_id),
-                                    headers={
-                                        'Authorization': 'Bearer ' + self._access_token
-                                    })
-
-                    organizations.append(r.json()['organization'])
-
+                    org = self._get_org(url=url, org_id=org_id)
+                    organizations.append(org)
             else:
-                r = self._get_result(url.format(id=organization_id),
-                                headers={
-                                    'Authorization': 'Bearer ' + self._access_token
-                                })
-
-                organizations = r.json()['organization']
-
+                organizations = self._get_org(url=url, org_id=organization_id)
         else:
-
             url = urljoin(self._host, 'organizations/')
-
             params = _parameters(name=name, location=location, distance=distance,
                                  state=state, country=country, query=query, sort=sort,
                                  results_per_page=results_per_page)
-
             if pages is None:
                 params['limit'] = 100
                 params['page'] = 1
-
                 r = self._get_result(url,
-                                headers={
-                                    'Authorization': 'Bearer ' + self._access_token
-                                },
-                                params=params)
-
+                                     headers={
+                                         'Authorization': 'Bearer ' + self._access_token
+                                     },
+                                     params=params)
                 organizations = r.json()['organizations']
-
                 max_pages = r.json()['pagination']['total_pages']
-
                 for page in range(2, max_pages + 1):
-
                     params['page'] = page
-
                     r = self._get_result(url,
-                                    headers={
-                                        'Authorization': 'Bearer ' + self._access_token
-                                    },
-                                    params=params)
-
+                                         headers={
+                                             'Authorization': 'Bearer ' + self._access_token
+                                         },
+                                         params=params)
                     if isinstance(r.json(), dict):
                         if 'organizations' in r.json().keys():
                             for i in r.json()['organizations']:
                                 organizations.append(i)
-
             else:
                 pages += 1
                 params['page'] = 1
-
                 r = self._get_result(url,
-                                headers={
-                                    'Authorization': 'Bearer ' + self._access_token
-                                },
-                                params=params)
+                                     headers={
+                                         'Authorization': 'Bearer ' + self._access_token
+                                     },
+                                     params=params)
                 organizations = r.json()['organizations']
                 max_pages = r.json()['pagination']['total_pages']
 
                 if pages > int(max_pages):
                     pages = max_pages
-                    max_page_warning = True
 
                 for page in range(2, pages):
-
                     params['page'] = page
-
                     r = self._get_result(url,
-                                    headers={
-                                        'Authorization': 'Bearer ' + self._access_token
-                                    },
-                                    params=params)
+                                         headers={
+                                             'Authorization': 'Bearer ' + self._access_token
+                                         },
+                                         params=params)
                     if isinstance(r.json(), dict):
                         if 'organizations' in r.json().keys():
                             for i in r.json()['organizations']:
@@ -694,12 +749,27 @@ class Petfinder(object):
         if return_df:
             organizations = _coerce_to_dataframe(organizations)
 
-        if max_page_warning:
-            print('pages parameter exceeded maximum number of available pages available from the Petfinder API. As '
-                  'a result, the maximum number of pages {max_page} was returned'.format(max_page=max_pages))
-
         return organizations
 
+    def _get_org(self, url, org_id):
+        try:
+            r = self._get_result(url.format(id=org_id),
+                                 headers={
+                                     'Authorization': 'Bearer ' + self._access_token
+                                 })
+
+            org = r.json()['organization']
+            org['response'] = 200
+        except PetfinderResourceNotFound:
+            org = {
+                'id': org_id,
+                'response': 404
+            }
+        return org
+
+    @on_exception(expo, RateLimitException, max_tries=10)
+    @limits(calls=50, period=1)
+    @limits(calls=1000, period=86400)
     def _get_result(self, url, headers, params=None):
         r"""
 
@@ -714,6 +784,11 @@ class Petfinder(object):
                          headers=headers,
                          params=params)
 
+        self._check_codes(r)
+
+        return r
+
+    def _check_codes(self, r):
         if r.status_code == 400:
             raise PetfinderInvalidParameters(message='There are invalid parameters in the API query.',
                                              err=r.json()['invalid-params'])
@@ -741,8 +816,6 @@ class Petfinder(object):
             raise PetfinderUnexpectedError(message='The Petfinder API encountered an unexpected error.',
                                            err=(r.reason, r.status_code))
 
-        return r
-
 
 #################################################################################################################
 #
@@ -751,11 +824,33 @@ class Petfinder(object):
 #################################################################################################################
 
 
-def _parameters(breed=None, size=None, gender=None, color=None, coat=None, animal_type=None, location=None,
-                distance=None, state=None, country=None, query=None, sort=None, name=None, age=None,
-                good_with_children=None, good_with_dogs=None, good_with_cats=None, declawed=None,
-                house_trained=None, special_needs=None, before_date=None, after_date=None, animal_id=None,
-                organization_id=None, status=None, results_per_page=None, page=None):
+def _parameters(breed: AnimalFeatures = None,
+                size: AnimalFeatures = None,
+                gender: AnimalFeatures = None,
+                color: str = None,
+                coat: AnimalFeatures = None,
+                animal_type: str = None, 
+                location: int = None,
+                distance: int = None,
+                state: str = None,
+                country: str = None,
+                query: str = None,
+                sort: str = None,
+                name: str = None,
+                age: str = None,
+                good_with_children: bool = None,
+                good_with_dogs: bool = None,
+                good_with_cats: bool = None,
+                declawed: bool = None,
+                house_trained: bool = None,
+                special_needs: bool = None,
+                before_date: Date = None,
+                after_date: Date = None,
+                animal_id: PetfinderID = None,
+                organization_id: PetfinderID = None,
+                status: str = None,
+                results_per_page: int = None,
+                page: int = None):
     r"""
     Internal function for determining which parameters have been passed and aligning them to their respective
     Petfinder API parameters.
@@ -787,12 +882,12 @@ def _parameters(breed=None, size=None, gender=None, color=None, coat=None, anima
     state : str, optional
         Filters the results by the selected state. Must be a two-letter state code abbreviation of the state
         name, such as 'WA' for Washington or 'NY' for New York.
-    country : {'US', 'CA'}, optional
+    country : {'US', 'CA'}, str, optional
         Filters results to specified country. Must be a two-letter abbreviation of the country and is limited
         to the United States and Canada.
     query : str, optional
         Search matching and partially matching name, city or state.
-    sort : {'recent', '-recent', 'distance', '-distance'}, optional
+    sort : {'recent', '-recent', 'distance', '-distance'}, str, optional
             Sorts by specified attribute. Leading dashes represents a reverse-order sort. Must be one of 'recent',
             '-recent', 'distance', or '-distance'.
     name : str, optional
@@ -860,10 +955,23 @@ def _parameters(breed=None, size=None, gender=None, color=None, coat=None, anima
     if special_needs is not None:
         special_needs = int(special_needs)
 
-    _check_parameters(animal_types=animal_type, size=size, gender=gender, age=age, coat=coat, status=status,
-                      distance=distance, sort=sort, limit=results_per_page, good_with_cats=good_with_cats,
-                      good_with_children=good_with_children, good_with_dogs=good_with_dogs, declawed=declawed,
-                      house_trained=house_trained, special_needs=special_needs)
+    _check_parameters(
+        animal_types=animal_type,
+        size=size,
+        gender=gender,
+        age=age,
+        coat=coat,
+        status=status,
+        distance=distance,
+        sort=sort,
+        limit=results_per_page,
+        good_with_cats=good_with_cats,
+        good_with_children=good_with_children,
+        good_with_dogs=good_with_dogs,
+        declawed=declawed,
+        house_trained=house_trained,
+        special_needs=special_needs
+    )
 
     args = {
         'breed': breed,
@@ -900,9 +1008,22 @@ def _parameters(breed=None, size=None, gender=None, color=None, coat=None, anima
     return args
 
 
-def _check_parameters(animal_types=None, size=None, gender=None, age=None, coat=None, status=None,
-                      distance=None, good_with_children=None, good_with_dogs=None, good_with_cats=None,
-                      declawed=None, house_trained=None, special_needs=None, sort=None, limit=None):
+def _check_parameters(
+        animal_types: str = None,
+        size: AnimalFeatures = None,
+        gender: AnimalFeatures = None,
+        age: AnimalFeatures = None,
+        coat: AnimalFeatures = None,
+        status: str = None,
+        distance: int = None,
+        good_with_children: bool = None,
+        good_with_dogs: bool = None,
+        good_with_cats: bool = None,
+        declawed: bool = None,
+        house_trained: bool = None,
+        special_needs: bool = None,
+        sort: str = None,
+        limit: int = None):
     r"""
     Internal function for checking the passed parameters against valid options available in the Petfinder API.
 
@@ -927,7 +1048,7 @@ def _check_parameters(animal_types=None, size=None, gender=None, age=None, coat=
     distance : int, optional
         Returns results within the distance of the specified location. If not given, defaults to 100 miles.
         Maximum distance range is 500 miles.
-    sort : {'recent', '-recent', 'distance', '-distance'}, optional
+    sort : {'recent', '-recent', 'distance', '-distance'}, str, optional
             Sorts by specified attribute. Leading dashes represents a reverse-order sort. Must be one of 'recent',
             '-recent', 'distance', or '-distance'.
     limit : int, default 20

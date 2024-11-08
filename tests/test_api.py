@@ -1,18 +1,20 @@
 import os
 import pytest
 import vcr
-from dotenv import load_dotenv
-from pandas import DataFrame
+import time
 
+from pandas import DataFrame
+from dotenv import load_dotenv
 from petpy.api import Petfinder
+
 
 tape = vcr.VCR(
     cassette_library_dir='tests/cassettes',
     serializer='json',
-    record_mode='once'
+    record_mode='all'
 )
 
-load_dotenv('../.env')
+load_dotenv('.env')
 key = os.environ.get('PETPY_PETFINDER_KEY')
 secret_key = os.environ.get('PETPY_PETFINDER_SECRET_KEY')
 
@@ -29,7 +31,6 @@ def test_authentication():
 
 def authenticate():
     pf = Petfinder(key=key, secret=secret_key)
-
     return pf
 
 
@@ -38,8 +39,11 @@ pf = authenticate()
 
 @vcr.use_cassette('tests/cassettes/animal_types.yml')
 def test_animal_types():
+    time.sleep(2)
     response1 = pf.animal_types()
+    time.sleep(2)
     response2 = pf.animal_types('cat')
+    time.sleep(2)
     response3 = pf.animal_types(['cat', 'dog'])
 
     assert isinstance(response1, dict)
@@ -51,21 +55,29 @@ def test_animal_types():
     assert str.lower(response3['types'][1]['name']) == 'dog'
 
     with pytest.raises(ValueError):
+        time.sleep(2)
         pf.animal_types(types='elephant')
     with pytest.raises(ValueError):
+        time.sleep(2)
         pf.animal_types(types=['dragon', 'unicorn'])
     with pytest.raises(TypeError):
+        time.sleep(2)
         pf.animal_types(types={})
 
 
 @vcr.use_cassette('tests/cassettes/breeds.yml')
 def test_breeds():
-
+    time.sleep(2)
     response1 = pf.breeds()
+    time.sleep(2)
     response1_df = pf.breeds(return_df=True)
+    time.sleep(2)
     response2 = pf.breeds('cat')
+    time.sleep(2)
     response2_df = pf.breeds('cat', return_df=True)
+    time.sleep(2)
     response3 = pf.breeds(['cat', 'dog'])
+    time.sleep(2)
     response3_df = pf.breeds(['cat', 'dog'], return_df=True)
 
     assert isinstance(response1, dict)
@@ -81,43 +93,54 @@ def test_breeds():
     assert isinstance(response3_df, DataFrame)
 
     with pytest.raises(ValueError):
+        time.sleep(2)
         pf.breeds(types='elephant')
     with pytest.raises(ValueError):
+        time.sleep(2)
         pf.breeds(types=['dragon', 'unicorn'])
     with pytest.raises(TypeError):
+        time.sleep(2)
         pf.breeds(types={})
 
 
 @vcr.use_cassette('tests/cassettes/animals.yml')
 def test_animals():
     response1 = pf.animals()
+    time.sleep(2)
     response1_df = pf.animals(return_df=True)
+    time.sleep(2)
     response2 = pf.animals(results_per_page=50, pages=3)
+    time.sleep(2)
     response2_df = pf.animals(results_per_page=50, pages=3, return_df=True)
 
     animal_ids = []
     for i in response1['animals'][0:3]:
         animal_ids.append(i['id'])
-
+    time.sleep(2)
     response3 = pf.animals(animal_id=animal_ids, results_per_page=5)
+    time.sleep(2)
     response3_df = pf.animals(animal_id=animal_ids, return_df=True, results_per_page=5)
-
+    time.sleep(2)
     response4 = pf.animals(animal_id=animal_ids[0], results_per_page=5)
+    time.sleep(2)
     response4_df = pf.animals(animal_id=animal_ids[0], return_df=True, results_per_page=5)
-
+    time.sleep(2)
     response5 = pf.animals(good_with_children=1, good_with_cats=1, results_per_page=5)
-
+    time.sleep(2)
     response6 = pf.animals(before_date='2020-06-30', after_date='2020-01-01', results_per_page=5)
+    time.sleep(2)
     response7 = pf.animals(before_date='2020-06-30 0:0:0', after_date='2020-01-01 12:00:00', results_per_page=5)
-
+    time.sleep(2)
     response8 = pf.animals(good_with_dogs=1, results_per_page=5)
+    time.sleep(2)
     response9 = pf.animals(good_with_dogs=1, good_with_cats=1, good_with_children=1, return_df=True,
-                results_per_page=5)
+                           results_per_page=5)
+    time.sleep(2)
     response10 = pf.animals(special_needs=1, house_trained=1, declawed=1, return_df=True, results_per_page=5)
-
+    time.sleep(2)
     with pytest.raises(ValueError):
         pf.animals(after_date='2021-07-02', before_date='2021-07-01', results_per_page=5)
-
+    time.sleep(2)
     response11 = pf.animals(status=['found', 'adoptable'], results_per_page=5)
 
     assert isinstance(response1, dict)
@@ -161,6 +184,7 @@ def test_animals():
 
     assert isinstance(response11['animals'], list)
 
+
 @vcr.use_cassette('tests/cassettes/organizations.yml')
 def test_organizations():
     response1 = pf.organizations()
@@ -171,10 +195,9 @@ def test_organizations():
     org_ids = []
     for i in response1['organizations'][0:3]:
         org_ids.append(i['id'])
-
+    
     response3 = pf.organizations(organization_id=org_ids)
     response3_df = pf.organizations(organization_id=org_ids, return_df=True)
-
     response4 = pf.organizations(organization_id=org_ids[0])
     response4_df = pf.organizations(organization_id=org_ids[0], return_df=True)
 

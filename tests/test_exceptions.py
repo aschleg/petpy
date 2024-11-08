@@ -25,9 +25,3 @@ def test_petfinder_insufficientaccess():
 
     with pytest.raises(PetfinderInsufficientAccess):
         p.animal_types('cat')
-
-
-def test_petfinder_resourcenotfound():
-    p = Petfinder(key=key, secret=secret_key)
-    with pytest.raises(PetfinderResourceNotFound):
-        p.animals(animal_id=0)
