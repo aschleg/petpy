@@ -3,6 +3,17 @@
 
 Changelog and version changes made with each release.
 
+## Version 2.4.1
+
+* Hotfix to correct issue with change released in 2.4.0 that would return a sparse JSON result
+  if an animal ID couldn't be found.
+* There seems to be some intermittent issues with the Petfinder API (at the time of this writing November 7th, 2024) 
+  where an increased volume of `500` errors are being raised, at least according to my own testing. A 
+  change has been made to attempt an API call three times in the event of a `500` error rather than immediately 
+  raising a `500` status code. If a non-authentication request reaches the three count retry, a sparse JSON dictionary
+  is returned with the response code. 
+  - If anyone else has experienced this, please let me know.
+
 ## Version 2.4.0
 
 * Implemented rate-limiting for API calls that could potentially exceed the quotas 
