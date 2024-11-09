@@ -116,12 +116,19 @@ class Petfinder(object):
             'client_id': self.key,
             'client_secret': self.secret
         }
-
-        r = requests.post(url, data=data)
-
-        self._check_codes(r)
-
-        return r.json()['access_token']
+        try:
+            r = requests.post(url, data=data)
+            return r.json()['access_token']
+        except PetfinderUnexpectedError:
+            try_count = 1
+            while try_count <= 3:
+                print(f'Petfinder API encountered an unexpected error during authentication. '
+                      f'Re-trying 3 times. Attempt {try_count}')
+                self._authenticate()
+                try_count += 1
+            raise PetfinderUnexpectedError(message="Couldn't authenticate after three tries.",
+                                           err=("Petfinder API encountered an unexpected error.", 500)
+                                           )
 
     @on_exception(expo, RateLimitException, max_tries=10)
     @limits(calls=50, period=1)
@@ -501,13 +508,14 @@ class Petfinder(object):
                                              headers={
                                                  'Authorization': 'Bearer ' + self._access_token
                                              })
+
                         animal_data = r.json()['animal']
                         animal_data['response'] = 200
                     except PetfinderResourceNotFound:
-                        animal_data = animals.append({
+                        animal_data = {
                             'id': ani_id,
                             'response': 404
-                        })
+                        }
                     animals.append(animal_data)
             else:
                 try:
@@ -767,9 +775,6 @@ class Petfinder(object):
             }
         return org
 
-    @on_exception(expo, RateLimitException, max_tries=10)
-    @limits(calls=50, period=1)
-    @limits(calls=1000, period=86400)
     def _get_result(self, url, headers, params=None):
         r"""
 
@@ -784,11 +789,6 @@ class Petfinder(object):
                          headers=headers,
                          params=params)
 
-        self._check_codes(r)
-
-        return r
-
-    def _check_codes(self, r):
         if r.status_code == 400:
             raise PetfinderInvalidParameters(message='There are invalid parameters in the API query.',
                                              err=r.json()['invalid-params'])
@@ -796,6 +796,11 @@ class Petfinder(object):
         if r.status_code == 401:
             if r.json()['detail'] == 'Access token invalid or expired':
                 self._access_token = self._authenticate()
+                r = self._get_result(url=url,
+                                     headers=headers,
+                                     params=params)
+
+                return r
             else:
                 raise PetfinderInvalidCredentials(message='Invalid Credentials',
                                                   err=(r.reason, r.status_code))
@@ -813,8 +818,26 @@ class Petfinder(object):
                                              err=(r.reason, r.status_code))
 
         if r.status_code == 500:
+            try_count = 1
+            while try_count <= 3:
+                print(f'Petfinder API encountered unexpected error. Re-trying 3 times. Attempt {try_count}')
+                try:
+                    r = self._get_result(url=url,
+                                         headers=headers,
+                                         params=params)
+
+                    return r
+                except PetfinderUnexpectedError:
+                    try_count += 1
+                finally:
+                    r = {
+                        'response': 500
+                    }
+                    return r
             raise PetfinderUnexpectedError(message='The Petfinder API encountered an unexpected error.',
                                            err=(r.reason, r.status_code))
+
+        return r
 
 
 #################################################################################################################
