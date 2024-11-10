@@ -3,6 +3,10 @@
 
 Changelog and version changes made with each release.
 
+## Version 2.4.2
+
+* Another hotfix for correctly incrementing re-tries in the event of a 500 error.
+
 ## Version 2.4.1
 
 * Hotfix to correct issue with change released in 2.4.0 that would return a sparse JSON result

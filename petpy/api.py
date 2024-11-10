@@ -775,69 +775,66 @@ class Petfinder(object):
             }
         return org
 
-    def _get_result(self, url, headers, params=None):
-        r"""
+    import requests
 
-        Parameters
-        ----------
-
-        Returns
-        -------
-
-        """
-        r = requests.get(url,
-                         headers=headers,
-                         params=params)
-
-        if r.status_code == 400:
-            raise PetfinderInvalidParameters(message='There are invalid parameters in the API query.',
-                                             err=r.json()['invalid-params'])
-
-        if r.status_code == 401:
-            if r.json()['detail'] == 'Access token invalid or expired':
-                self._access_token = self._authenticate()
-                r = self._get_result(url=url,
-                                     headers=headers,
-                                     params=params)
-
+    def _get_result(self, url, headers, params=None, max_retries=3):
+        def handle_response(r):
+            if r.status_code == 200:
                 return r
+            elif r.status_code == 400:
+                raise PetfinderInvalidParameters(
+                    message='There are invalid parameters in the API query.',
+                    err=r.json().get('invalid-params')
+                )
+            elif r.status_code == 401:
+                if r.json().get('detail') == 'Access token invalid or expired':
+                    self._access_token = self._authenticate()
+                    return self._get_result(url, headers, params)
+                else:
+                    raise PetfinderInvalidCredentials(
+                        message='Invalid Credentials',
+                        err=(r.reason, r.status_code)
+                    )
+            elif r.status_code == 403:
+                raise PetfinderInsufficientAccess(
+                    message='Insufficient Access',
+                    err=(r.reason, r.status_code)
+                )
+            elif r.status_code == 404:
+                raise PetfinderResourceNotFound(
+                    message='Requested Resource not Found',
+                    err=(r.reason, r.status_code)
+                )
+            elif r.status_code == 429:
+                raise PetfinderRateLimitExceeded(
+                    message='Daily Rate Limit Exceeded. Resets at 12:00am UTC',
+                    err=(r.reason, r.status_code)
+                )
+            elif r.status_code == 500:
+                return None
             else:
-                raise PetfinderInvalidCredentials(message='Invalid Credentials',
-                                                  err=(r.reason, r.status_code))
+                raise PetfinderUnexpectedError(
+                    message='The Petfinder API encountered an unexpected error.',
+                    err=(r.reason, r.status_code)
+                )
+        response = None
+        for attempt in range(1, max_retries + 1):
+            response = requests.get(url, headers=headers, params=params)
+            result = handle_response(response)
 
-        if r.status_code == 403:
-            raise PetfinderInsufficientAccess(message='Insufficient Access',
-                                              err=(r.reason, r.status_code))
+            if result:
+                return result
+            elif response.status_code == 500:
+                print(f'Attempt {attempt} of {max_retries} failed with status 500. Retrying...')
+                if attempt == max_retries:
+                    raise PetfinderUnexpectedError(
+                        message='The Petfinder API encountered an unexpected error after maximum retries.',
+                        err=(response.reason, response.status_code)
+                    )
+            else:
+                break
 
-        if r.status_code == 404:
-            raise PetfinderResourceNotFound(message='Requested Resource not Found',
-                                            err=(r.reason, r.status_code))
-
-        if r.status_code == 429:
-            raise PetfinderRateLimitExceeded(message='Daily Rate Limit Exceed. Resets at 12:00am UTC',
-                                             err=(r.reason, r.status_code))
-
-        if r.status_code == 500:
-            try_count = 1
-            while try_count <= 3:
-                print(f'Petfinder API encountered unexpected error. Re-trying 3 times. Attempt {try_count}')
-                try:
-                    r = self._get_result(url=url,
-                                         headers=headers,
-                                         params=params)
-
-                    return r
-                except PetfinderUnexpectedError:
-                    try_count += 1
-                finally:
-                    r = {
-                        'response': 500
-                    }
-                    return r
-            raise PetfinderUnexpectedError(message='The Petfinder API encountered an unexpected error.',
-                                           err=(r.reason, r.status_code))
-
-        return r
+        return response
 
 
 #################################################################################################################
