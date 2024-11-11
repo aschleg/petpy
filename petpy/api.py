@@ -524,6 +524,7 @@ class Petfinder(object):
                                              'Authorization': 'Bearer ' + self._access_token
                                          })
                     animals = r.json()['animal']
+                    animals['response'] = 200
                 except PetfinderResourceNotFound:
                     animals = {
                         'id': animal_id,

@@ -3,6 +3,10 @@
 
 Changelog and version changes made with each release.
 
+## Version 2.4.21
+
+* Now correctly returns the response from the API when only requesting one animal ID.
+
 ## Version 2.4.2
 
 * Another hotfix for correctly incrementing re-tries in the event of a 500 error.
