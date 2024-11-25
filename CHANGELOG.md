@@ -3,6 +3,12 @@
 
 Changelog and version changes made with each release.
 
+## Version 2.4.22
+
+* A `PetfinderInvalidCredentials` error will now be raised when initializing the Petfinder API 
+  if passing invalid credentials.
+* Removed the rate limit decorator for daily number of calls.
+
 ## Version 2.4.21
 
 * Now correctly returns the response from the API when only requesting one animal ID.

@@ -118,6 +118,11 @@ class Petfinder(object):
         }
         try:
             r = requests.post(url, data=data)
+            if r.status_code == 401:
+                raise PetfinderInvalidCredentials(
+                    message="Client authentication failed.",
+                    err=("Invalid credentials", 401)
+                )
             return r.json()['access_token']
         except PetfinderUnexpectedError:
             try_count = 1
@@ -132,7 +137,6 @@ class Petfinder(object):
 
     @on_exception(expo, RateLimitException, max_tries=10)
     @limits(calls=50, period=1)
-    @limits(calls=1000, period=86400)
     def animal_types(self, types: AnimalTypes = None) -> dict:
         r"""
         Returns data on an animal type, or types available from the Petfinder API. This data includes the
@@ -224,7 +228,6 @@ class Petfinder(object):
 
     @on_exception(expo, RateLimitException, max_tries=10)
     @limits(calls=50, period=1)
-    @limits(calls=1000, period=86400)
     def breeds(self, types: AnimalTypes = None,
                return_df: bool = False, raw_results: bool = False) -> dict:
         r"""
@@ -360,7 +363,6 @@ class Petfinder(object):
 
     @on_exception(expo, RateLimitException, max_tries=10)
     @limits(calls=50, period=1)
-    @limits(calls=1000, period=86400)
     def animals(self, animal_id: PetfinderID = None,
                 animal_type: str = None,
                 breed: AnimalFeatures = None,
@@ -626,7 +628,6 @@ class Petfinder(object):
 
     @on_exception(expo, RateLimitException, max_tries=10)
     @limits(calls=50, period=1)
-    @limits(calls=1000, period=86400)
     def organizations(self,
                       organization_id: PetfinderID = None,
                       name: str = None,
